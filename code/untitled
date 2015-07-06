@@ -1,0 +1,2 @@
+a = "NULL ({ 7 }) This ({ 1 }) paper ({ 2 }) analyzes ({ 3 })"
+a.gsub("NULL","").gsub(/\(\{\s\d+\s\}\s\)/,"").strip

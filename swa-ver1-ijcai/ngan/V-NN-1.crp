@@ -1,0 +1,1389 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Improving protein coreference resolution by simple semantic classification
+Improving protein coreference resolution by simple semantic classification
+3
+</title>
+</title>
+4
+<section label= " Background " >
+<section label= " Background " >
+5
+<p>
+<p>
+6
+Recent research shows a major part of difficult cases in event extraction for the biomedical domain are related to coreference .
+Current research has shown that major difficulties in event extraction cases for the biomedical domain are related to coreference .
+7
+Therefore , coreference resolution is believed to be useful for the improvement of event extraction .
+Therefore , coreference resolution is believed to be useful for improving event extraction .
+8
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in the BioNLP-ST 2011 as a supporting task .
+To address coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in the BioNLP-ST 2011 , as a supporting task .
+9
+However , the shared task results showed that transferring coreference resolution methods developed for other domains to the biological domain was not straight forward , which is supposed to be caused by the domain differences in coreference phenomena .
+However , the shared task results indicated that transferring coreference resolution methods developed for other domains to the biological domain was not straightforward , due to the domain differences in the coreference phenomena .
+10
+<p>
+<p>
+11
+</section>
+</section>
+12
+<section label= " Results " >
+<section label= " Results " >
+13
+<p>
+<p>
+14
+We studied the contribution of domain-specific information , i .e information indicating the protein type , in a rule-based protein coreference resolution system .
+We studied the contribution of domain-specific information , including information that indicates the protein type , in a rule-based protein coreference resolution system .
+15
+In particular , the domain-specific information is encoded into semantic classification modules whose output is used in different components of the coreference resolution .
+In particular , the domain-specific information is encoded into semantic classification modules for which the output is used in different components of the coreference resolution .
+16
+We compared our system with the top four systems in the BioNLP-ST 2011 , and surprisingly we found that the minimal configuration has outperformed the best system in the BioNLP-ST 2011 .
+We compared our system with the top four systems in the BioNLP-ST 2011 ; surprisingly , we found that the minimal configuration had outperformed the best system in the BioNLP-ST 2011 .
+17
+Analysis of the experimental results showed that semantic classification using protein information has contributed to an increase in performance ( 2.3 % on the test data , and 4 .0% on the development data , in F-score ) .
+Analysis of the experimental results revealed that semantic classification , using protein information , had contributed to an increase in performance by 2.3 % on the test data , and 4 .0% on the development data , in F-score .
+18
+</p>
+</p>
+19
+</section>
+</section>
+20
+<section title= " Conclusions " >
+<section title= " Conclusions " >
+21
+<p>
+<p>
+22
+The use of domain-specific information in semantic classification is important for coreference resolution .
+The use of domain-specific information in semantic classification is important for coreference resolution .
+23
+Since such information is difficult to be transferred across different domains , we need to continue seeking for methods to exploit and use it in coreference resolution .
+Since it is difficult to transfer domain-specific information across different domains , we need to continue to seek methods to exploit and use it in coreference resolution .
+24
+</p>
+</p>
+25
+</section>
+</section>
+26
+<section title= " Background " >
+<section title= " Background " >
+27
+<p>
+<p>
+28
+While named entity recognition ( NER ) and relation or event extraction are regarded as standard tasks of biomedical information extraction ( IE ) , coreference resolution [ 2 , 16 , 30 ] is more and more recognized as an important component of IE for a higher performance .
+While named entity recognition ( NER ) and relation / event extraction are regarded as standard tasks for biomedical information extraction ( IE ) , coreference resolution [ 2 , 16 , 30 ] is being recognized more and more as an important component of IE to achieve a higher performance .
+29
+Without coreference resolution , the performance of IE is often substantially limited due to an abundance of coreference relations in natural language text , i.e. , information pieces written in text with involvement of a coreference relation are hard to be captured [ 9 , 14 ] .
+Without coreference resolution , oftentimes , the IE performance issubstantially limited , due to the abundance of coreference relations in natural language text ; information pieces written in text with the involvement of a coreference relation are hard to be captured [ 9 , 14 ] .
+30
+There have been several attempts for coreference resolution , particularly for newswire texts [ 7 , 8 , 22 , 23 , 28 , 30 ] .
+There have been several attempts for coreference resolution ; in particular , they have been for newswire texts [ 7 , 8 , 22 , 23 , 28 , 30 ] .
+31
+It is also one of the lessons from BioNLP Shared Task ( BioNLP-ST , hereafter ) 2009 that coreference relations in biomedical text substantially hinder the progress of fine-grained IE [ 10 ] .
+Coreference resolution is also one of the lessons from the BioNLP Shared Task ( BioNLP-ST , hereafter ) 2009 , in which it was communicated that coreference relations in biomedical text substantially hinder the progress of fine-grained IE [ 10 ] .
+32
+</p>
+</p>
+33
+<p>
+<p>
+34
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in BioNLP-ST 2011 as a supporting task .
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in BioNLP-ST 2011 as a supporting task .
+35
+This task definition focuses on a specific type of entities , i.e. Protein .
+This task definition focuses on protein , as a specific type of entity .
+36
+Figure 1 shows an example text segmented into four sentences , S2 - S5 , where coreferential expressions are shown in brackets .
+Figure 1 shows an example text segmented into four sentences , S2 - S5 , where coreferential expressions are shown in brackets .
+37
+In the figure , protein names are highlighted in bold face , P4 - P10 , and targeted anaphoric expressions of the shared task , e.g. pronouns and definite noun phrases , are T29 , and T32 , of which the antecedents are indicated by arrows if found in the text .
+In the figure , protein names P4 - P10 are highlighted in boldface ; the targeted anaphoric expressions of the shared task ( pronouns and definite noun phrases ) are T29 , and T32 , for which the antecedents are indicated by arrows , if found in the text .
+38
+In the example , the definite-noun-phrase expression , this transcription factor ( T32 ) , is considered coreferential with the protein mention p65 ( P10 ) .
+In the example , the definite-noun-phrase expression , this transcription factor ( T32 ) , is considered coreferential with the protein mention p65 ( P10 ) .
+39
+Without knowing this coreference relation , it becomes hard to capture the information written in the phrase , nuclear exclusion of this transcription factor , which is localization of p65 ( out of nucleus ) according to the framework of BioNLP-ST .
+Without knowing this coreference relation , it becomes difficult to capture the information written in the phrase , nuclear exclusion of this transcription factor , which is a localization of p65 ( out of nucleus ) , according to the framework of BioNLP-ST .
+40
+The terminologies used in this paper are similar to those in [ 25 ] .
+The terminologies used in this paper are similar to those in [ 25 ] .
+41
+A new term is introduced in the BioNLP-ST is antecedent protein , which indicates the protein mention contained in the antecedent expression , e.g. p65 in T28 .
+A new term introduced in the BioNLP-ST is antecedent protein , which indicates the protein mention contained in the antecedent expression , e.g. , p65 in T28 .
+42
+There are other coreferential expressions which are ignored in the context of this COREF task such as this complex and the NF-kappa B transcription factor complex ( Figure 1 ) , since we only focus on the antecedent expressions that contain and point to protein mentions .
+There are other coreferential expressions , which are ignored in the context of this COREF task , such as : this complex and the NF-kappa B transcription factor complex ( Figure 1 ) , since our focus is on the antecedent expressions that contain and point to protein mentions .
+43
+</p>
+</p>
+44
+<p>
+<p>
+45
+The best system in the COREF shared task according to the primary evaluation found 22 .2% of anaphoric protein references at the precision of 73 .3% ( 34 .1% Fscore ) .
+The best system in the COREF shared task , according to the primary evaluation , found 22 .2% of the anaphoric protein references at the precision of 73 .3% ( 34 .1% F-score ) .
+46
+This is an encouraging result , since the authors make use of an external coreference resolution tool originally built for the news domain , without much domain adaptation on the main coreference resolution algorithm .
+The results are promising , since the authors make use of an external coreference resolution tool originally built for the news domain , without much domain adaptation on the main coreference resolution algorithm .
+47
+Modifications are mostly made to the markable detection component and post processing for the output coreference links [ 11 ] .
+Modifications are mostly made to the markable detection component and post-processing for the output coreference links [ 11 ] .
+48
+However , the external coreference tool achieves much lower results on biological texts than that on news texts , from 66 .38% down to 49 .65% in MUC-score [ 11 , 27 ] , which is supposed to be caused by domain differences .
+However , the external coreference tool " s performance drops for biological texts than for news texts , from 66 .38% to 49 .65% in MUC-score [ 11 , 27 ] , which is supposed to be caused by domain differences .
+49
+</p>
+</p>
+50
+<p>
+<p>
+51
+A detailed analysis on the _nal submissions of the COREF task participants was reported in the organizer 's papers [ 15 , 31 ] , which is summarized in table 2 .
+A detailed analysis on the _nal submission of the COREF task participants was reported in the organizer 's papers [ 15 , 31 ] , and is summarized in table 2 .
+52
+In this analysis , the submitted predictions on the test data set of the COREF shared task are analyzed according to four types of anaphoric expressions : DNP for definite noun phrases , RELAT for relative pronouns , PRON for other pronouns including personal , possessive , and demonstrative pronouns , and OTHER for catch-all type .
+In this analysis , the submitted predictions on the test data set of the COREF shared task are analyzed according to four types of anaphoric expressions : DNP for definite noun phrases , RELAT for relative pronouns , PRON for other pronouns including personal , possessive , and demonstrative pronouns , and OTHER for catch-all type .
+53
+Below are examples of the coreference types .
+Examples of the coreference types are outlined below :
+54
+</p>
+</p>
+55
+<p>
+<p>
+56
+- " . . . ,the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+- " [ . . . ] the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+57
+</p>
+</p>
+58
+<p>
+<p>
+59
+- " Subnuclear fractionation reveals that there are [ two ATF1 isoforms ] [ which ] appear to differ with respect to DNA binding activity , " ( RELAT )
+- " Subnuclear fractionation reveals that there are [ two ATF1 isoforms , which ] appear to differ with respect to DNA binding activity , " ( RELAT )
+60
+</p>
+</p>
+61
+<p>
+<p>
+62
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential , " ( PRON )
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential , " ( PRON )
+63
+</p>
+</p>
+64
+<p>
+<p>
+65
+The analysis results in also showed that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type are 27 .5% F-score and 10 .1 F-score respectively , which are far less than that for relative pronoun ( the RELAT type ) 66 .2 % F-score .
+An analysis of the results indicated that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type was 27 .5% F-score and 10 .1 F-score , respectively ; the scores were much lower than the F-score for relative pronouns ( the RELAT type ) , which yielded a 66 .2 % F-score .
+66
+Thus , it can be inferred that definite noun phrases and pronouns are more difficult to be resolved than relative pronouns .
+Thus , it can be inferred that it is more difficult to resolve definite noun phrases and pronouns than relative pronouns .
+67
+</p>
+</p>
+68
+<p>
+<p>
+69
+The top four official results of the COREF shared task are shown again in the top four rows of Table 2 .
+The top four official results of the COREF shared task are presented in the top four rows of Table 2 .
+70
+In this paper , we compare the contributions of different features in coreference resolution , two simple types of domain-portable information : discourse preference and number-agreement , and domain-specific information which can be considered as more difficult to be transferred across different domains .
+In this paper , we compare the contributions of different features in coreference resolution ; two simple types of domain-portable information : discourse preference and number-agreement , is compared , as well as domain-specific information , which is considered to be more difficult to be transferred across different domains .
+71
+We implemented a protein coreference system that makes use of syntactic information from parser output , and protein-indicated information encoded in rule-based semantic classification .
+We implemented a protein coreference system that makes use of syntactic information from the parser output , and protein-indicated information encoded in rule-based semantic classification .
+72
+Experimental results showed that domain specific semantic information is important for coreference resolution , and that simple semantic classification using semantic features helped our system to outperform the best reported result in the shared task .
+Experimental results showed that domain-specific semantic information is important for coreference resolution , and that simple semantic classification using semantic features helped our system to outperform the best-reported system results in the shared task .
+73
+</p>
+</p>
+74
+</section>
+</section>
+75
+<section title= " Methods " >
+<section title= " Methods " >
+76
+<p>
+<p>
+77
+As we needed to get an insight into the problem , we took a rule-based approach , analyzing the training data of BioNLP-ST 2011 Coref task .
+In order to acquire insight into the problem , we took a rule-based approach , analyzing the training data of BioNLP-ST 2011 Coref task .
+78
+The performance of the system evaluated on the official test data set of the COREF task shows a significant improvement over the official winning system of the task .
+The performance of the system evaluated on the official test dataset of the COREF task shows a significant improvement over the official winning system of the task .
+79
+This section presents the overview and the performance evaluation of our system .
+This section presents the overview and the performance evaluation of our system .
+80
+</p>
+</p>
+81
+</section>
+</section>
+82
+<subsection title= " System overview " >
+<subsection title= " System overview " >
+83
+<p>
+<p>
+84
+Figure 2 shows the overall design of the system , which includes five main components : preprocessing , markable detection , anaphor selection , antecedent candidate selection , and antecedent prediction .
+Figure 2 shows the overall design of the system , which includes five main components : preprocessing , markable detection , anaphor selection , antecedent candidate selection , and antecedent prediction .
+85
+Processing of each component is briefly described as below .
+Processing of each component is briefly described below .
+86
+More details of implementation can be found in the method section .
+More details of implementation can be found in the method section .
+87
+</p>
+</p>
+88
+<p>
+<p>
+89
+Step 0 - Preprocessing : The input text is preprocessed using NLP tools for sentence segmentation , and syntactic parsing .
+Step 0 - Preprocessing : The input text is preprocessed using NLP tools for sentence segmentation , and syntactic parsing .
+90
+We used Genia Sentence Splitter and Enju Parser [ 15 ] for the purposes , respectively .
+We used the Genia Sentence Splitter and Enju Parser [ 15 ] for sentence segmentation and syntactic parsing , respectively .
+91
+( Enju parser comes with a default tokenizer and part-of-speech tagger for biological text . ) Row 1 in the example Table 1 shows three sentences outputted from Genia Sentence Splitter , and noun phrases outputted from Enju Parser for the sentence S3 .
+( Enju parser comes with a default tokenizer and part-of-speech tagger for biological text . ) Row 1 in the example of Table 1 shows three sentences as the output from the Genia Sentence Splitter , and noun phrases as the output from the Enju Parser for the sentence , S3 .
+92
+Due to the limit of space , only a part of the phrases are shown in the table .
+Due to the limited space , only a part of the phrases are shown in the table .
+93
+The full parse tree of this sentence is separately shown in Figure 3 .
+The full parse tree for this sentence is separately shown in Figure 3 .
+94
+</p>
+</p>
+95
+<p>
+<p>
+96
+Step 1 - Markable detection : collects text chunks that are candidate coreferential expressions , which are also called markables following the jargon of MUC-7 .
+Step 1 - Markable detection : Text chunks that are candidate coreferential expressions , which are also called markables following the jargon of MUC-7 , are collected .
+97
+For the set of markables , noun phrases , which do not include subordinate clause , are collected as analyzed by a syntactic parser , Enju in our case .
+For the set of markables , noun phrases , which do not include a subordinate clause , are collected as they are analyzed by a syntactic parser ( in our case , Enju ) .
+98
+Pronouns are also collected as markables .
+Pronouns are also collected as markables .
+99
+Then , for chunks that share the same head word , which is normally the main noun of a noun phrase , only the longest is taken .
+Then , for chunks that share the same head word , which is normally the main noun of a noun phrase , only the longest chunk is taken .
+100
+Since the Enju parser output such head-word information for every noun phrase , we make use of this information for our processing without any modification .
+Since the Enju parser outputs head-word information for every noun phrase , we make use of this information for our processing , without any modification .
+101
+The third row of Table 1 shows the result of markable detection for the sample text .
+The third row of Table 1 shows the result of markable detection for the sample text .
+102
+In the sentence S3 , three noun phrases recognized by the NX and NP tags of Enju output , role , role for c-Myc in apoptosis , and this role for c-Myc in apoptosis ( Step 0 results ) share the same head word role , thus only the longest one this role for c-Myc in apoptosis is selected .
+In the sentence S3 , three noun phrases recognized by the NX and NP tags of the Enju output , role , role for c-Myc in apoptosis , and this role for c-Myc in apoptosis ( Step 0 results ) share the same head-word role ; thus , only the longest noun phrase , this role for c-Myc in apoptosis , is selected .
+103
+However , between studies and studies using . . .
+However , between studies and studies using . . .
+104
+apoptosis , the former chunk is selected , since the latter contains a subordinate clause .
+apoptosis , the former chunk is selected , since the latter contains a subordinate clause .
+105
+</p>
+</p>
+106
+<p>
+<p>
+107
+Step 2 - Anaphor selection : determines candidate anaphoric expressions , which are basically pronouns and definite noun phrases ( a minority of anaphors are indefinite noun phrases or entity names , which act as appositions . )
+Step 2 - Anaphor selection : Candidate anaphoric expressions , which are basically pronouns and definite noun phrases , are determined . A minority of anaphors are indefinite noun phrases or entity names , which act as appositions .
+108
+The system first considers all pronouns and definite noun phrases in the markable set as anaphors .
+The system first considers all pronouns and definite noun phrases in the markable set as anaphors .
+109
+Then , several filters are applied to remove anaphors that are not relevant to the task definition .
+Then , several filters are applied to remove anaphors that are not relevant to the task definition .
+110
+We implemented two types of filters : syntactic and semantic filters .
+We implemented two types of filters : syntactic and semantic .
+111
+Syntactic filters are used to filter out pleonastic its , or pronouns such as he , she , which are not expected to refer to proteins .
+Syntactic filters are used to filter out pleonastic its , or pronouns , like : he , she , which are not expected to refer to proteins .
+112
+Moreover , because the focus of our task is protein references , semantic filters can be used to filter out non-protein anaphors at this stage .
+Moreover , because our task focuses on protein references , semantic filters can be used to filter out non-protein anaphors at this stage .
+113
+In practice , for definite noun phrase type of anaphors , this is done using a list of possible head words of protein references , and for pronouns , their context words are used .
+In practice , for definite noun phrase type of anaphors , this is accomplished , by using a list of possible head-words of protein references ; for pronouns , their context words are used .
+114
+More details of the methods can be found in the following section .
+More details of these methods can be found in the following section .
+115
+</p>
+</p>
+116
+<p>
+<p>
+117
+Step 3 - Antecedent candidate selection : For each anaphor , this component collects the antecedent candidates from the preceding expressions .
+Step 3 - Antecedent candidate selection : For each anaphor , this component collects the antecedent candidates from the preceding expressions .
+118
+One of the candidates will become the response antecedent as a result of the antecedent prediction step .
+One of the candidates will become the response antecedent , as a result of the antecedent prediction step .
+119
+In theory , all expressions in the set of markables can become antecedent candidates , however too much candidates makes it difficult to achieve correct antecedent prediction .
+In theory , all expressions in the set of markables can become antecedent candidates ; however , too many candidates makes it difficult to achieve correct antecedent prediction .
+120
+Moreover , we also filter out candidates that violate syntactic or semantic constraints raised by the anaphor .
+Moreover , we also filter out candidates that violate syntactic or semantic constraints raised by the anaphor .
+121
+In our system , this is done by using a window size in sentences , together with several syntactic filters .
+In our system , this is done by using a particular window size in sentences , together with several syntactic filters .
+122
+</p>
+</p>
+123
+<p>
+<p>
+124
+One of the syntactic filters is based on syntactic relations among phrases outputted from the parser .
+One of the syntactic filters is based on syntactic relations among phrases outputted from the parser .
+125
+The idea behind this is that some types of syntactic relations imply the impossibility of coreference relations between its argument noun phrases and the inclusive expressions of these noun phrases .
+The idea behind this filter is that some types of syntactic relations imply the impossibility of coreference relations between its argument noun phrases and the inclusive expressions of these noun phrases .
+126
+For example , the two expressions dominant negative form and its in our example in Table 1 , can not be coreferential with each other , since they are connected via the preposition of .
+For example , the two expressions : dominant negative form and its in our example in Table 1 , cannot be coreferential with each other , since they are connected via the preposition of .
+127
+</p>
+</p>
+128
+<p>
+<p>
+129
+Another syntactic filter removes pronouns which are not in the same pronoun family as the anaphor .
+Another syntactic filter removes pronouns that are not in the same pronoun family as the anaphor .
+130
+This results in the disappearance of this in candidate antecedents of its .
+This results in the disappearance of this in candidate antecedents of its .
+131
+Pronouns in the same family as its are its , it , and itself .
+Pronouns in the same family as its are its , it , and itself .
+132
+</p>
+</p>
+133
+<p>
+<p>
+134
+Step 4 - Antecedent predicion : selects the best candidate in the antecedent candidate set , and forms a response coreference link .
+Step 4 - Antecedent prediction : The best candidate in the antecedent candidate set is selected , and a response coreference link is formed .
+135
+Antecedent candidates are compared with one another using a comparison procedure .
+Antecedent candidates are compared with one another using a comparison procedure .
+136
+This procedure implements a decision rule list containing four rules , encoding the following selection preference conditions :
+This procedure implements a decision rule list containing four rules , encoding the following selection preference conditions :
+137
+</p>
+</p>
+138
+<p>
+<p>
+139
+-Rule 1 ( Number agreement - NUM-AGREE ) : The candidate which is not number conflict with anaphor is selected .
+-Rule 1 ( Number agreement - NUM-AGREE ) : The candidate , which does not conflict in number with the anaphor , is selected .
+140
+<p>
+<p>
+141
+-Rule 2 ( Semantic constraint - SEM-CONS ) : If anaphor is a protein reference , then protein candidate is selected .
+-Rule 2 ( Semantic constraint - SEM-CONS ) : If the anaphor is a protein reference , then a protein candidate is selected .
+142
+</p>
+</p>
+143
+<p>
+<p>
+144
+-Rule 3 ( Discourse preference - DISC-PREF ) : According to the anaphor type , the farther candidate is selected .
+-Rule 3 ( Discourse preference - DISC-PREF ) : According to the anaphor type , the farther candidate is selected .
+145
+</p>
+</p>
+146
+<p>
+<p>
+147
+-Default rule ( Default discourse preference - DEFAULT ) : The closer candidate is selected .
+-Default rule ( Default discourse preference - DEFAULT ) : The closer candidate is selected .
+148
+</p>
+</p>
+149
+<p>
+<p>
+150
+The rules are implemented using different features of expressions such as syntactic types of expression , head noun , semantic types , etc. , in a similar way to [ 22 ] .
+The rules are implemented using different features of expressions , such as syntactic types of expressions , head noun , semantic types , etc. , in a similar way to [ 22 ] .
+151
+Each rule in the decision list compares two candidates , and returns the preferrable candidate in concern with the anaphor .
+Each rule in the decision list compares two candidates , and returns the preferable candidate in concern with the anaphor .
+152
+If equility happens , the next rule in the list is applied .
+If equility happens , the next rule in the list is applied .
+153
+The default and also last rule in the decision rule list is special in the sense that depending on the anaphor , it prefers the closer or the farther candidate .
+The default and also last rule in the decision rule list is special in the sense that depending on the anaphor , it prefers the closer or the farther candidate .
+154
+Thanks to this rule , the decision list never results in the equility result .
+Because of this particular rule , the decision list never results in the equility result .
+155
+By this way , candidates can be sorted , and the best candidate is selected as antecedent .
+In this way , candidates can be sorted , and the best candidate is selected as the antecedent .
+156
+Figure 4 illustrates how the decision list works when comparing two candidates and .
+Figure 4 illustrates how the decision list works when comparing two candidates : and .
+157
+</p>
+</p>
+158
+<p>
+<p>
+159
+More details about the implementation of the main components of our system shown in Figure 2 are presented below .
+More details concerning the implementation of the main components of our system shown in Figure 2 are presented below .
+160
+</p>
+</p>
+161
+</subsection>
+</subsection>
+162
+<subsection title= " Anaphor selection " >
+<subsection title= " Anaphor selection " >
+163
+<p>
+<p>
+164
+In this step , we want to filter out those pronouns and definite noun phrases that are not target of this task , comprised of two types : non-anaphoric expressions , and anaphoric expressions which do not point to proteins .
+In this step , we want to filter out those pronouns and definite noun phrases that are not a target of this task . The expressions are comprised of two types : non-anaphoric expressions , and anaphoric expressions , which do not point to proteins .
+165
+The term anaphoric is used with the common sense in NLP community .
+The term anaphoric is used with the common sense in the NLP community .
+166
+Anaphoric expression means an expression that has a noun phrase as antecedent .
+Anaphoric expression refers to an expression that has a noun phrase as an antecedent .
+167
+This means expressions with a sentence or phrase antecedents , or nominal but successive antecedents , are not our target and should be filtered out .
+Thus , expressions with a sentence or phrase antecedents , or nominal but successive antecedents , are not our target and should be filtered out .
+168
+</p>
+</p>
+169
+<p>
+<p>
+170
+Non-anaphoric expressions includes first and second person pronouns such as I , we , you , . . . , and pleonastic it .
+Non-anaphoric expressions include first and second-person pronouns such as I , we , you , and pleonastic it .
+171
+First and second person pronouns are easily to be recognized by the part-of-speech tags , thus we use part-of-speech information for the filtering .
+First and second-person pronouns are easily recognized by the part-of-speech tags ; thus , we use part-of-speech information for the filtering .
+172
+For pleonastic it , we make use of the following four patterns , which are similar to [ 13 ]
+For pleonastic it , we make use of the following four patterns , which are similar to [ 13 ] :
+173
+</p>
+</p>
+174
+<p>
+<p>
+175
+It be [ Adj|Adv| verb ]* that
+It be [ Adj|Adv| verb ]* that
+176
+</p>
+</p>
+177
+<p>
+<p>
+178
+It be Adj [ for NP ] to VP
+It be Adj [ for NP ] to VP
+179
+</p>
+</p>
+180
+<p>
+<p>
+181
+It [ seems|appears|means|follows ] [ that ]*
+It [ seems|appears|means|follows ] [ that ]*
+182
+</p>
+</p>
+183
+<p>
+<p>
+184
+NP [ makes|finds|take ] it [ Adj ]* [ for NP ]* [ to VP|Ving ]
+NP [ makes|finds|take ] it [ Adj ]* [ for NP ]* [ to VP|Ving ]
+185
+</p>
+</p>
+186
+<p>
+<p>
+187
+To recognize and filter anaphoric expressions which do not point to proteins , the system is based on the protein semantic classification results determined by the method presented below .
+To recognize and filter anaphoric expressions that do not point to proteins , the system is based on the protein semantic classification results determined by the method presented below .
+188
+</p>
+</p>
+189
+</subsection>
+</subsection>
+190
+<subsection title= " Antecedent candidate selection " >
+<subsection title= " Antecedent candidate selection " >
+191
+<p>
+<p>
+192
+For each anaphoric markable , the system collects a list of antecedent candidates , and select the most probable candidate to be the antecedent of the anaphor .
+For each anaphoric markable , the system collects a list of antecedent candidates , and select the most probable candidate to be the antecedent of the anaphor .
+193
+Basically all expressions detected in the initial expression set are antecedent candidate , except for anaphoric pronouns .
+Basically , all of the expressions detected in the initial expression set are an antecedent candidate , with the exception of anaphoric pronouns .
+194
+However , if the list contains too many candidates , then it may be more difficult for the later antecedent-selection algorithm .
+However , if the list contains too many candidates , then it may be more difficult for the later antecedent-selection algorithm .
+195
+Therefore , candidates that are not probable to be antecedent of the anaphor should be filtered out .
+Therefore , candidates that are not probable to be an antecedent of the anaphor should be filtered out .
+196
+There are several filters that can be used :
+There are several filters that can be used :
+197
+</p>
+</p>
+198
+<p>
+<p>
+199
+Window size sets a border to include or exclude antecedent candidates .
+Window size Borders are set to include or exclude antecedent candidates .
+200
+This is a common method for antecedent candidate filtering having been used in the previous work [ 3 , 5 , 26 ] .
+This is a common method for antecedent candidate filtering , as seen in the previous work [ 3 , 5 , 26 ] .
+201
+Since our task focuses on anaphoric coreference , antecedent expressions normally appear not too far ( in sentence distance ) from the anaphors , using window sizes is a proper technique .
+Since our task focuses on anaphoric coreference , antecedent expressions normally appear not too far ( in sentence distance ) from the anaphors . Thus , using window sizes is a proper technique .
+202
+</p>
+</p>
+203
+<p>
+<p>
+204
+Syntactic dependency relations The fact that arguments of some dependency relations such as poss-arg12 and prep-arg12 do not corefer with each other enables us to use them to correctly eliminate the number of antecedent candidates .
+Syntactic dependency relations Since arguments of some dependency relations ( such as poss-arg12 and prep-arg12 ) do not corefer with each other , they can be used to correctly eliminate the number of antecedent candidates .
+205
+For instance , two such truncated forms definitely cannot be antecedent of the protein in this context two such truncated forms of the protein
+For instance , two such truncated forms definitely cannot be an antecedent of the protein in this context : two such truncated forms of the protein .
+206
+</p>
+</p>
+207
+</subsection>
+</subsection>
+208
+<subsection title= " Antecedent prediction " >
+<subsection title= " Antecedent prediction " >
+209
+<p>
+<p>
+210
+After filtering non-relevant antecedent candidates for an anaphor in the above step , depending on the anaphor type , the remained candidates are ranked by fixed rules , or by using a pairwise comparison procedure :
+After filtering non-relevant antecedent candidates for an anaphor in the step above , depending on the anaphor type , the remaining candidates are ranked by fixed rules , or by using a pairwise comparison procedure :
+211
+</p>
+</p>
+212
+<subsubsection title= " Fixed rules for relative pronouns " >
+<subsubsection title= " Fixed rules for relative pronouns " >
+213
+<p>
+<p>
+214
+The relative pronoun can be said to be the easiest type of coreference resolution , because its antecedent expression is very close to the anaphor , and in many cases , it is right before the anaphor .
+The relative pronoun can be said to be the easiest type of coreference resolution , because its antecedent expression is very close to the anaphor , and in many cases , it is right before the anaphor .
+215
+For this type of anaphors , any syntactic parser can be used to find the relations between relative pronouns and their arguments .
+For these types of anaphors , any syntactic parser can be used to find the relation between relative pronouns and their arguments .
+216
+This is exactly what our system does .
+Our system accomplishes this task .
+217
+It simply produces coreference links between the relative pronouns and their arguments .
+It simply produces coreference links between the relative pronouns and their arguments .
+218
+</p>
+</p>
+219
+<p>
+<p>
+220
+However , a disadvantage of this method is when the parser makes mistake on finding the correct arguments , coreference also fails , as in the example " . . .of transcription factor NF-kappa B also encodes a p70 I kappa B protein , I kappa B gamma , which is identical to the C-terminal 607 amino acids of . . . "
+However , a disadvantage to using this method is that when the parser makes a mistake on finding the correct arguments , the coreference also fails . This is exemplified in the following : " . . .of transcription factor NF-kappa B also encodes a p70 I kappa B protein , I kappa B gamma , which is identical to the C-terminal 607 amino acids of . . . "
+221
+</p>
+</p>
+222
+</subsubsection>
+</subsubsection>
+223
+<subsubsection title= " Antecedent candidate ranking based on pairwise comparison rules " >
+<subsubsection title= " Antecedent candidate ranking based on pairwise comparison rules " >
+224
+<p>
+<p>
+225
+This procedure compares two candidate expressions at a time with respect to preferences raised by the anaphor .
+This procedure compares two candidate expressions at a time with respect to preferences raised by the anaphor .
+226
+The best antecedent expression is selected to form a response coreference link .
+The best antecedent expression is selected to form a response coreference link .
+227
+In particular , a list of rules is used to compare two candidates of an anaphor in a deterministic manner .
+In particular , a list of rules is used to compare two candidates of an anaphor in a deterministic manner .
+228
+For each rule , both of the candidates are checked against the condition hold by that rule .
+For each rule , both of the candidates are checked against the condition hold by that rule .
+229
+If one candidate satisfies and the other does not , the procedure ends with the result that the former will be preferable to the latter .
+If one candidate satisfies and the other does not , the procedure ends with the result that the former will be preferable over the latter .
+230
+If both satisfy or both do not satisfy , the procedure proceeds to the next rule in the same manner .
+If both satisfy or both do not satisfy , the procedure proceeds to the next rule in the same manner .
+231
+The rules are applied in a succession order one after another until the inequality occurs , or end of the rule list is reached .
+The rules are applied in a successive order , one after another , until the inequality occurs , or until the end-of-the-rule list is reached .
+232
+The default rule of the procedure prefers the closer antecedent candidate .
+The default rule of the procedure , is in the preference of the closer antecedent candidate .
+233
+</p>
+</p>
+234
+</subsubsection>
+</subsubsection>
+235
+</subsection>
+</subsection>
+236
+<subsection title= " Semantic type classification in coreference resolution " >
+<subsection title= " Semantic type classification in coreference resolution " >
+237
+<p>
+<p>
+238
+By definition , two coreferential expressions refer to the same thing , which implies a semantic-constraint on coreference relationship .
+By definition , two coreferential expressions are identical , which implies a semantic-constraint on coreference relationship .
+239
+In other words , semantic types of coreferents must be compatible .
+In other words , semantic types of coreferents must be compatible .
+240
+In practice , this compatibility is checked based on a given taxonomy of semantic classes in the following manner : two semantic classes are considered compatible or agreed with each other , when they have synonym relation , e.g. , or hypernym-hyponym relation .
+In practice , this compatibility is checked based on a given taxonomy of semantic classes in the following manner : two semantic classes are considered compatible or agreed with each other , when they have a synonym relation , or hypernym-hyponym relation .
+241
+In this work , we only focus on the Protein type , ignoring other possible semantic types , so we do not take the structure of taxonomy into account .
+In this work , we only focus on the Protein type , ignoring other possible semantic types , so the structure of the taxonomy is not taken into account .
+242
+Thus , the likelihood that two expressions are semantically compatible is definitely beneficial for antecedent prediction , besides syntactic information .
+Therefore , the likelihood that two expressions are semantically compatible , is definitely beneficial for antecedent prediction , besides syntactic information .
+243
+Focusing on specific entity types , i.e. Protein type , helps us to find a proper method for determining the likelihood , and how to encode the likelihood in coreference resolution .
+Focusing on specific entity types , i.e. , Protein type , enables us to find a proper method for determining the likelihood , and method for encoding the likelihood in coreference resolution .
+244
+</p>
+</p>
+245
+<subsubsection title= " Accurate semantic type classification based on given Pronoun mentions , for nominal expressions ( ANTE-SEM ) " >
+<subsubsection title= " Accurate semantic type classification based on given Pronoun mentions , for nominal expressions ( ANTE-SEM ) " >
+246
+<p>
+<p>
+247
+Since gold protein annotations are given , we can use them in combination with syntactic information to judge whether an expression is protein-referential expession or not .
+Since gold protein annotations are given , we can use them in combination with syntactic information to judge whether an expression is a protein-referential expression or not .
+248
+In details , if an expression is a noun phrase with a single head word , and it contains a protein mention that completely overlaps with the head word , then the expression is classied as Protein .
+If an expression is a noun phrase with a single head word , and it contains a protein mention that completely overlaps with the head word , then the expression is classified as Protein .
+249
+Another case is when the head noun is either protein or gene , and has a protein mention as its premodifier , such as the Tax protein .
+In another case , when the head noun is either protein or gene , and has a protein mention as its premodifier , such as the Tax protein .
+250
+For a coordinated noun phrase , if one of its constituents is classified as Protein , then that noun phrase is also classified as Protein .
+For a coordinated noun phrase , if one of its constituents is classified as a Protein , then that noun phrase is also classified as a Protein .
+251
+</p>
+</p>
+252
+</subsubsection>
+</subsubsection>
+253
+<subsubsection title= " Semantic type classification for pronominal anaphors ( PRO-ANA-SEM ) " >
+<subsubsection title= " Semantic type classification for pronominal anaphors ( PRO-ANA-SEM ) " >
+254
+<p>
+<p>
+255
+Pronouns , in particular , possessive pronouns occupy the majority of anaphoric pronouns in biological texts ( Table 5 ) .
+Pronouns , in particular , possessive pronouns , occupy the majority of anaphoric pronouns in biological texts ( Table 5 ) .
+256
+However , they do not contain in themselves much useful information for the resolution , thus we need to exploit more information from its context [ 17 ] .
+However , they do not contain very much useful information for the resolution ; thus , we need to exploit more information from its context [ 17 ] .
+257
+The analysis of BioNLP-ST 2011 also showed that we need different strategy to resolve such pronouns [ 18 ] .
+The analysis of BioNLP-ST 2011 also showed that we need a different strategy to resolve such pronouns [ 18 ] .
+258
+Fortunately , the key to this problem lies in the context of pronouns .
+Fortunately , the key to this problem lies in the context of pronouns .
+259
+</p>
+</p>
+260
+<p>
+<p>
+261
+We implemented a simple function to classify the semantic type of a possessive pronoun based on its context word .
+We implemented a simple function to classify the semantic type of a possessive pronoun , based on its context word .
+262
+In particular , we check the noun phrase whose determiner is its or their ; if the noun phrase contains a protein key word then the inclusive pronoun is classified into the Protein semantic type .
+In particular , we check the noun phrase in which the determiner is its or their ; if the noun phrase contains a protein key word , then the inclusive pronoun is classified into the Protein semantic type .
+263
+protein key words can be a verb , a noun or an adjective that coocurred with protein mentions and can be used as a clue to distinguish the protein type from other semantic types .
+Protein key words can be a verb , a noun or an adjective that co-occurred with protein mentions , and can be used as a clue to distinguish the protein type from other semantic types .
+264
+For example , the word binding in the following noun phrases its heterodimeric binding partner , or its binding site is a good clue to infer that it must be a protein reference .
+For example , the word binding in the following noun phrases : its heterodimeric binding partner , or its binding site , is a clue to infer that it must be a protein reference .
+265
+For our preliminary experiment , we collect these key words manually by checking the noun phrases containing its and their in training data .
+For our preliminary experiment , we collect these keywords manually by checking the noun phrases containing its and their in the training data .
+266
+Our final protein key word set includes 12 words : binding , expression , interaction , regulation , phosphatase activity , localization , gene , sequence , region , phosphorylation , transactivation , and transcription .
+Our final protein keyword set includes 12 words : binding , expression , interaction , regulation , phosphatase activity , localization , gene , sequence , region , phosphorylation , transactivation , and transcription .
+267
+In future , the protein key words can be collected automatically using the term corpus , or other resources of proteins .
+In future , the protein key words can be collected automatically using the term corpus , or other resources of proteins .
+268
+</p>
+</p>
+269
+</subsubsection>
+</subsubsection>
+270
+<subsubsection title= " Semantic type classification for definite noun phrase anaphors ( DEFNP-ANA-SEM ) " >
+<subsubsection title= " Semantic type classification for definite noun phrase anaphors ( DEFNP-ANA-SEM ) " >
+271
+<p>
+<p>
+272
+Coreferential definite noun phrases in text are used in broader meaning of coreference .
+Coreferential definite noun phrases in text are used to include a broader definition of coreference .
+273
+In other words , their antecedents do not necessarily exist in the textual context ; in particular in biomedical scientific papers , many definite noun phrases do not have antecedents since the referred concepts can be anything understood by experts in the domain .
+In other words , their antecedents do not necessarily exist in the textual context ; in particular , in biomedical scientific papers , many definite noun phrases do not have antecedents , since the referenced concepts can include any concept that is understood by subject matter experts in the domain .
+274
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is an uneasy task .
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is a difficult task .
+275
+Knowing their semantic type helps to filter out irrelevant candidate antecedents , increasing chance to pick up the right antecedent or the precision of antecedent prediction .
+Knowing their semantic type helps to filter out irrelevant candidate antecedents , thereby increasing the chance of picking up the right antecedent , and increasing the precision of antecedent prediction .
+276
+</p>
+</p>
+277
+<p>
+<p>
+278
+In our implementation , decision to keep an anaphoric expression for further processing steps for an anaphoric definite noun phrase is based on a protein head word list .
+In our implementation , the decision to keep an anaphoric expression for further processing steps for an anaphoric definite noun phrase is based on a protein head word list .
+279
+We tested two different head word lists : one is built automatically from the gold anaphoric nominals in gold data , the other word list contains top seven common head words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+We tested two different head word lists : one is built automatically from the gold anaphoric nominals in gold data ; the other word list contains the top seven common head words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+280
+<> / p
+<> / p
+281
+</subsubsection>
+</subsubsection>
+282
+<subsubsection title= " Encoding semantic types in coreference resolution " >
+<subsubsection title= " Encoding semantic types in coreference resolution " >
+283
+<p>
+<p>
+284
+Semantic type information can be used in coreference resolution in several ways .
+Semantic type information can be used in coreference resolution in several ways .
+285
+First , in anaphor selection , semantic information can be used to filter out non-protein anaphoric expressions .
+First , in anaphor selection , semantic information can be used to filter out non-protein anaphoric expressions .
+286
+Second , in antecedent candidate filtering , semantic agreement between the antecedent candidates and the anaphoric expression is checked .
+Second , in antecedent candidate filtering , semantic agreement between the antecedent candidates and the anaphoric expression is checked .
+287
+Those candidates which are not agree with the anaphor in semantics are filtered out .
+Those candidates that are not in agreement with the anaphor in semantics are filtered out .
+288
+For example , if anaphor is classified as protein referent , then non-protein antecedent candidates are removed from the candidate set of the anaphor .
+For example , if an anaphor is classified as a protein referent , then the non-protein antecedent candidates are removed from the candidate set of the anaphor .
+289
+Finally , in antecedent prediction : semantic agreement again can be used as a constraint when comparing two antecedent candidates to select the more probable candidate .
+Finally , in antecedent prediction : semantic agreement can again be used as a constraint when comparing two antecedent candidates to select the more probable candidate .
+290
+</p>
+</p>
+291
+</subsubsection>
+</subsubsection>
+292
+</subsection>
+</subsection>
+293
+</section>
+</section>
+294
+<section title= " Results " >
+<section title= " Results " >
+295
+<subsection title= " Performance evaluation " >
+<subsection title= " Performance evaluation " >
+296
+<p>
+<p>
+297
+Our minimal system configuration includes all the processing and filters from step 0 to step 3 as explained in the above section ( RB-MIN ) .
+Our minimal system configuration includes all of the processing and filters from step 0 to step 3 , as explained in the section above ( RB-MIN ) .
+298
+For antecedent candidate selection , the window size used in step 4 is set to 2 , which means antecedent candidates are collected in the two nearest sentences from the anaphor , and the sentence embedding the anaphor .
+For antecedent candidate selection , the window size used in step 4 is set to 2 , which means that antecedent candidates are collected in the two nearest sentences from the anaphor , and the sentence embedding the anaphor .
+299
+As the statistics measured on the training set of the corpus shows that 97 .0% percent of protein coreference links have antecedents appearing in within 2 sentences .
+The statistics measured on the training set of the corpus shows that 97 .0% percent of protein coreference links have antecedents appearing in within 2 sentences .
+300
+With this window size , the average number of candidates per anaphor is 6 .1 .
+With this window size , the average number of candidates per anaphor is 6 .1 .
+301
+Also , experiments with wider window sizes did not help .
+Also , experiments with wider window sizes did not help .
+302
+</p>
+</p>
+303
+<p>
+<p>
+304
+The word list used to filter out anaphoric definite noun phrases in step 2 contains the following words : protein , gene , factor , molecule , element ,family , inhibitor , and receptor .
+The word list used to filter out anaphoric definite noun phrases in step 2 contains the following words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+305
+These words are selected from the top appearring head words extracted from the training data .
+These words are selected from the top appearing head words extracted from the training data .
+306
+Besides , premodifiers of definite noun phrases are also limited to numbers and popular premodifiers of proteins such as nuclear , transcription .
+Premodifiers of definite noun phrases are also limited to numbers and popular premodifiers of proteins , such as nuclear , and transcription .
+307
+Using this head word list and premodifiers , the system covers 83 .5 percent of the coreference links .
+Using this head word list and premodifiers , the system covers 83 .5 percent of the coreference links .
+308
+To keep the minimal configuration simple , step 4 - antecedent selection of the baseline only uses the default comparison rule , which assures the closest antecedent candidate is selected .
+To keep the minimal configuration simple , step 4 - antecedent selection of the baseline only uses the default comparison rule , which assures that the closest antecedent candidate is selected .
+309
+</p>
+</p>
+310
+<p>
+<p>
+311
+Table 2 compares our system with the top four official results of the COREF shared task in BioNLP-ST 2011 [ 18 ] : UU [ 11 ] , UZ [ 29 ] , CU , and UT [ 4 ] .
+Table 2 compares our system with the top four official results of the COREF shared task in BioNLP-ST 2011 [ 18 ] : UU [ 11 ] , UZ [ 29 ] , CU , and UT [ 4 ] .
+312
+The scoring scheme used throughout this paper is the protein coreference evaluation , the primary evaluation method of the COREF shared task [ 18 ] .
+The scoring scheme used throughout this paper is the protein coreference evaluation , the primary evaluation method of the COREF shared task [ 18 ] .
+313
+This primary evaluation method , which was particularly designed for the shared task , is based on protein coreference links automatically generated from manually annotated coreference links .
+This primary evaluation method , which was particularly designed for the shared task , is based on protein coreference links that have been automatically generated from manually annotated coreference links .
+314
+The last column ALL shows the overall results , while its preceding three columns PRON , DNP , and RELAT shows the protein resolution results by three major subtypes of anaphors : pronouns , definite noun phrase and relative pronouns , respectively .
+The last column ALL shows the overall results , while its preceding three columns PRON , DNP , and RELAT shows the protein resolution results by three major subtypes of anaphors : pronouns , definite noun phrase and relative pronouns , respectively .
+315
+Note that RB-MIN with minimal configuration already outperforms the best result by the UU team , with up to 7 .1% higher in Fscore .
+Note that the results from RB-MIN with minimal configuration , already surpasses the best results obtained by the UU team , with up to 7 .1% higher performance in F-score .
+316
+Since RB-MIN uses similar preprocessing tools as UU [ 11 ] , but less information in antecedent prediction , this gap in performance is supposed to be caused by the different markable detection methods .
+Since RB-MIN uses similar preprocessing tools as UU [ 11 ] , but less information in antecedent prediction , this gap in performance is likely caused by the different markable detection methods .
+317
+UU pointed in their paper that markable detection is one of the challenges of this task [ 11 ] .
+UU pointed in their paper that markable detection is one of the challenges of this task [ 11 ] .
+318
+In their system , UU used a machine learning approach , and tested two distinguished models for markable detection : one solved both anaphors and antecedents together , the other treated anaphors and antecedents separately .
+In their system , UU used a machine learning approach , and tested two distinguished models for markable detection : one solved both anaphors and antecedents together , the other treated anaphors and antecedents separately .
+319
+Meanwhile , our method is basically based on the boundary of noun phrases and pronouns , as is outputted from the parser .
+Meanwhile , our method is basically based on the boundary of noun phrases and pronouns , as is outputted from the parser .
+320
+The patterns used to extract the proper noun phrases and pronouns , are manually designed concerning the markable boundaries annotated in the training data .
+The patterns used to extract the proper noun phrases and pronouns , are manually designed concerning the markable boundaries annotated in the training data .
+321
+</p>
+</p>
+322
+<p>
+<p>
+323
+Breaking down the system performance by types of anaphors gives us an insight into what have been solved by our methods , and what needs more improvement effort .
+Breaking down the system performance by the different types of anaphors provides us with insight into what has been accomplished / solved by our methods , and also provides us with improvement opportunities .
+324
+Concerning the RELAT type of coreference , we can see that RB-MIN and RB-FULL both achieve comparable results with the best team in BioNLP-ST 2011 .
+Concerning the RELAT type of coreference , we can see that RB-MIN and RB-FULL both achieve comparable results with the best team in BioNLP-ST 2011 .
+325
+However , it should be noted that our antecedent prediction for the RELAT type is based completely on the output of Enju parser for the RELAT type , so in order to improve this type of coreference , we have to find ways to overcome the parse errors on noun phrase boundary detection and relative clause attachment ( See section Discussions ) .
+However , it should be noted that our antecedent prediction for the RELAT type is based solely on the output of the Enju parser for the RELAT type , so in order to improve this type of coreference , we have to find ways to overcome the parse errors on noun phrase boundary detection and relative clause attachment ( See Discussions section ) .
+326
+</p>
+</p>
+327
+<p>
+<p>
+328
+The increase in system performance on the PRON and DNP types by RB-FULL demonstrate the effectiveness of discourse and semantic information in the performance of protein coreference resolution .
+The increase in system performance on the PRON and DNP types by RB-FULL demonstrate the effectiveness of discourse and semantic information in the performance of protein coreference resolution .
+329
+Comparing RB-MIN , RB-FULL and RB-MIN+1 , 3 , we found that rule 3 , which stands for discourse preference , works well for the PRON type ( 2 ) .
+Comparing RB-MIN , RB-FULL and RB-MIN+1 , 3 , we found that rule 3 , which stands for discourse preference , works well for the PRON type ( 2 ) .
+330
+On the other hand , the major contribution to the improvement of DNP resolution is from rule 2 .
+On the other hand , the major contribution to the improvement of DNP resolution is from rule 2 .
+331
+This rule successfully utilizes the domain-specific information , which shows that coreference resolution requires domain-specific information .
+This rule successfully utilizes the domain-specific information , which shows that coreference resolution requires domain-specific information .
+332
+To further explore the elements contributed to this significant improvement , we analyzed our system in more details .
+To further explore the elements contributed to this significant improvement , we analyzed our system in more detail .
+333
+The analysis results are given in section Discussions .
+The analyses of the results are provided in the section entitled Discussions .
+334
+</p>
+</p>
+335
+</subsection>
+</subsection>
+336
+</section>
+</section>
+337
+<section title= " Discussions " >
+<section title= " Discussions " >
+338
+<subsection title= " Contribution of rules
+<subsection title= " Contribution of rules
+339
+" >
+" >
+340
+<p>
+<p>
+341
+Table 3 compares various configurations of the rule-based system .
+Table 3 compares various configurations of the rule-based system .
+342
+The first , RB-MIN , is the minimal system .
+The first , RB-MIN , is the minimal system .
+343
+The following three show contribution of the three rules , NUM-AGREE , SEM-CONS , and DISC-PREF .
+The following three show the contribution of the three rules , NUM-AGREE , SEM-CONS , and DISC-PREF .
+344
+RB-FULL is the full system .
+RB-FULL is the full system .
+345
+To emphasize the contribution of the semantic rules , it also shows RB-FULL-sem system .
+To emphasize the contribution of the semantic rules , it also shows RB-FULL-sem system .
+346
+</p>
+</p>
+347
+<p>
+<p>
+348
+The combination of rule 1 , 2 and 3 resulted in 62 .4% fscore ( RB-MIN+1 , 2 , 3 ) ( Table 3 ) In this configuration , rule 2 contribute to the increasement of 4 points Fscore on the development set , and 2 .3 points Fscore on the test set , when comparing RB-MIN+1 , 3 and RB-MIN+1 , 2 , 3 .
+The combination of rule 1 , 2 and 3 resulted in a 62 .4% F-score ( RB-MIN+1 , 2 , 3 ) ( Table 3 ) In this configuration , rule 2 contributes to a 4-point F-score increase in the development set , and 2 .3-point F-score increase on the test set , when comparing RB-MIN+1 , 3 and RB-MIN+1 , 2 , 3 .
+349
+However , the result of RB-MIN is more than still 7 points higher than the state-of-the-art performance .
+However , the result of RB-MIN is still more than 7 points higher than in state-of-the-art performance .
+350
+This gain is due to the fact that the rule ensures the semantic type of antecedents is the same as their anaphors , enabling the correct detection of antecedents .
+This gain is due to the fact that the rule ensures that the semantic type of antecedents is the same as for their anaphors , thus enabling the correct detection of antecedents .
+351
+In other words , if anaphor is classified as a protein reference , then antecedent must also be a protein reference .
+In other words , if an anaphor is classified as a protein reference , then the antecedent must also be a protein reference .
+352
+The following examples illustrate the way rule 2 works .
+The following examples illustrate the way rule 2 works .
+353
+( Coreference examples in this paper are represented as below : gold anaphoric and antecedent expressions are bracketed , antecedents before anaphors ; gold protein mentions are underlined ; and incorrect response antecedents are in italics . )
+( Coreference examples in this paper are represented in the following manner : gold anaphoric and antecedent expressions are bracketed , antecedents before anaphors ; gold protein mentions are underlined ; and incorrect response antecedents are in italics . )
+354
+</p>
+</p>
+355
+<p>
+<p>
+356
+- " Therefore , [ IRF-1 ] may be an important contributor to IL-12 signaling , and we speculate that the defective IL-12 responses seen in IRF-1- / - mice might be attributable , in part , to the absence of [ this transcription factor ] . " ( PMID-10358173 )
+- " Therefore , [ IRF-1 ] may be an important contributor to IL-12 signaling , and we speculate that the defective IL-12 responses seen in IRF-1- / - mice might be attributable , in part , to the absence of [ this transcription factor ] . " ( PMID-10358173 )
+357
+</p>
+</p>
+358
+<p>
+<p>
+359
+In this example , without rule 2 , the faulty response antecedent of this transcription factor is part because it is the closet antecedent candidate agreeing with the anaphor on the singular number .
+In this example , without rule 2 , the faulty response antecedent of this transcription factor is part because it is the closet antecedent candidate agreeing with the anaphor on the singular number .
+360
+Meanwhile since this transcription factor is recognized as a protein reference , its closest protein antecedent IRF-1 was successfully detected by RB-FULL .
+Meanwhile , since this transcription factor is recognized as a protein reference , its closest protein antecedent IRF-1 was successfully detected by RB-FULL .
+361
+</p>
+</p>
+362
+<p>
+<p>
+363
+Another interesting example is
+Another example is :
+364
+</p>
+</p>
+365
+<p>
+<p>
+366
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( PMID-7964516 )
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( PMID-7964516 )
+367
+</p>
+</p>
+368
+<p>
+<p>
+369
+Concerning the anaphoric pronoun its in this example , there are several antecedent candidates : this role , c-Myc , apoptosis , studies , a dominant negative form of its heterodimeric binding partner .
+Concerning the anaphoric pronoun its in this example , there are several antecedent candidates : this role , c-Myc , apoptosis , studies , a dominant negative form of its heterodimeric binding partner .
+370
+Although studies and a dominant negative form of its heterodimeric binding partner have been crossed out because of disagreement in numbers , and violation of abandoned syntactic constraints correspondingly , the system would return the incorrect antecedent apoptosis instead of c-Myc .
+Although studies and a dominant negative form of its heterodimeric binding partner have been crossed out because of disagreement in numbers , and violation of abandoned syntactic constraints , correspondingly , the system would return the incorrect antecedent apoptosis instead of c-Myc .
+371
+Fortunately , the containing noun phrase of the anaphor its has the modifier word binding , which is a clue for classifying its as a protein reference ( See Semantic type classification for pronominal anaphors ) .
+Fortunately , the containing noun phrase of the anaphor its has the modifier word binding , which is a clue for classifying its as a protein reference ( See Semantic type classification for pronominal anaphors ) .
+372
+Rule 2 utilizes semantic classification result to make correct selection .
+Rule 2 utilizes semantic classification result to make the correct selection .
+373
+</p>
+</p>
+374
+</subsection>
+</subsection>
+375
+<subsection title= " Contribution of semantic information in anaphor selection " >
+<subsection title= " Contribution of semantic information in anaphor selection " >
+376
+<p>
+<p>
+377
+In our system , domain-specific semantic information is ultilized at two places : anaphor selection and antecedent prediction .
+In our system , domain-specific semantic information is utilized in two places : anaphor selection and antecedent prediction .
+378
+The effect of semantic information in antecedent prediction has been analyzed in above section .
+The effect of semantic information in antecedent prediction has been analyzed in the sections above .
+379
+In this subsection , we are going to explore the contribution of semantic information in the anaphor selection step .
+In this subsection , we are going to explore the contribution of semantic information in the anaphor selection step .
+380
+</p>
+</p>
+381
+<p>
+<p>
+382
+To classify anaphors into protein or non-protein reference , our system employs a head-word based classfier for definite noun phrases , DEFNP-ANA-SEM , and a context-based classifier for pronouns , PRO-ANA-SEM ( Section Methods ) .
+To classify anaphors into protein or non-protein reference , our system employs a head-word based classifier for definite noun phrases , DEFNP-ANA-SEM , and a context-based classifier for pronouns , PRO-ANA-SEM ( Section Methods ) .
+383
+Without limiting the number of anaphors by using semantic information-based filtering , the precision significantly drops , causing a big decrease in Fscore ( Table 4 , RB-FULL w / o DEFNP-ANA-SEM ) . .
+Without limiting the number of anaphors by using semantic information-based filtering , the precision significantly drops , causing a big decrease in the F-score ( Table 4 , RB-FULL without DEFNP-ANA-SEM ) .
+384
+This is because the semantic filter is the only way to filter out definite noun phrase anaphors .
+This decrease is due to the fact that the semantic filter is the only way to filter out definite noun phrase anaphors .
+385
+Without the filter , all definite expressions , which include a huge amount of non-anaphoric expressions , are considered as anaphors .
+Without the filter , all definite expressions , which include a huge amount of non-anaphoric expressions , are considered as anaphors .
+386
+Besides the anaphoric use , definite noun phrases are also used to refer to entities or concepts in the common domain knowledge shared between readers and writers .
+Besides the anaphoric use , definite noun phrases are also used to refer to entities or concepts in the common domain knowledge shared between readers and writers .
+387
+Statistics in [ 21 ] show that only around 30% of definite noun phrases are anaphoric , and the other uses according to their classification include associative , unfamiliar / larger situation , idiom and doubt .
+Statistics in [ 21 ] show that only around 30% of definite noun phrases are anaphoric , and the other uses according to their classification include associative , unfamiliar / larger situation , idiom and doubt .
+388
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is extremely difficult .
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is extremely difficult .
+389
+</p>
+</p>
+390
+<p>
+<p>
+391
+In our system , contextual information of possessive pronouns is utilized through the protein key words ( Section Methods ) , and this contributed to 1 .8% gain in f-score ( Table 4 , RB-FULL w / o PRO-ANA-SEM ) .
+In our system , contextual information of possessive pronouns is utilized through the protein key words ( Section Methods ) , and this contributed to a 1 .8% gain in F-score ( Table 4 , RB-FULL without PRO-ANA-SEM ) .
+392
+This is an encouraging sign to seek for a systematic method to exploit and include such contextual information in coreference resolution .
+This gain is a good indication for seeking a systematic method to develop and include such contextual information in coreference resolution .
+393
+Below are the examples showing the effectiveness of semantic information from the context of pronouns .
+Examples showing the effectiveness of semantic information from the context of pronouns is provided below :
+394
+</p>
+</p>
+395
+<p>
+<p>
+396
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( MID-7964516 )
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( MID-7964516 )
+397
+</p>
+</p>
+398
+<p>
+<p>
+399
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential . " ( PMID-10221658 )
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential . " ( PMID-10221658 )
+400
+</p>
+</p>
+401
+<p>
+<p>
+402
+- " In transient transfectin experiments , [ BCL6 ] can repress transcription from promoters linked to [ its ] DNA target sequence and this activity is . . . " ( PMID-8692924 )
+- " In transient transfectin experiments , [ BCL6 ] can repress transcription from promoters linked to [ its ] DNA target sequence and this activity is . . . " ( PMID-8692924 )
+403
+</p>
+</p>
+404
+<p>
+<p>
+405
+- " [ Human immunodeficiency virus type 1 ( HIV-1 ) Tat ] , an early regulatory protein that is critical for viral gene expression and replication , transactivates the HIV-1 long terminal repeat ( LTR ) via [ its ] binding to the transactivation response element ( TAR ) and , . . . " ( PMID-9261367 )
+- " [ Human immunodeficiency virus type 1 ( HIV-1 ) Tat ] , an early regulatory protein that is critical for viral gene expression and replication , transactivates the HIV-1 long terminal repeat ( LTR ) via [ its ] binding to the transactivation response element ( TAR ) and , . . . " ( PMID-9261367 )
+406
+</p>
+</p>
+407
+<p>
+<p>
+408
+In all the above examples , the appearance of words such as binding , transactivation , DNA target sequence in the noun phrases of which the anaphor plays a role as a determiner , is contextual indicator for the protein type .
+In all the examples above , the appearance of words such as binding , transactivation , DNA target sequence in the noun phrases for which the anaphor plays a role as a determiner , is a contextual indicator for the protein type .
+409
+Since the anaphors are predicted as protein reference from their context , the system correctly detects their protein antecedents .
+Since the anaphors are predicted as protein reference from their context , the system correctly detects their protein antecedents .
+410
+</p>
+</p>
+411
+</subsection>
+</subsection>
+412
+<subsection title= " Other issues " >
+<subsection title= " Other issues " >
+413
+<p>
+<p>
+414
+Other challenges specific to the protein coreference task Number agreement is a constraint in English writing .
+Other challenges specific to the protein coreference task Number agreement is a constraint in English writing .
+415
+However , we found in the data several coreferential expressions violating this constraint .
+However , in the data , we found several coreferential expressions that violate this constraint .
+416
+For instance , the anaphor and antecedent in the following :
+The anaphor and antecedent in the following is an instance of this violation :
+417
+</p>
+</p>
+418
+<p>
+<p>
+419
+- " . . .for OTF-2 in DRA gene transcription .
+- " . . .for OTF-2 in DRA gene transcription .
+420
+In contrast , [ OTF-1-enriched protein fractions ] did not affect DRA gene transcription although [ it ] functionally enhanced the transcription of another . . . " ( PMID-1560002 )
+In contrast , [ OTF-1-enriched protein fractions ] did not affect DRA gene transcription although [ it ] functionally enhanced the transcription of another . . . " ( PMID-1560002 )
+421
+</p>
+</p>
+422
+<p>
+<p>
+423
+Coreference annotation and evaluation Current protein coreference evaluation scheme generates protein links ( links between anaphors and antecedent proteins ) from surface links ( links between anaphors and antecedent expressions ) , without concerning the relative position of antecedent proteins in the antecedent expression .
+Coreference annotation and evaluation Current protein coreference evaluation schemes generate protein links ( links between anaphors and antecedent proteins ) from surface links ( links between anaphors and antecedent expressions ) , without concerning the relative position of antecedent proteins in the antecedent expression .
+424
+Therefore , when the proteins appear in premodifiers or postmodifers of noun phrases as [ cDNAs encoding EBF or a covalent homodimer of E47 ] in this example
+Therefore , when the proteins appear in premodifiers or postmodifers of noun phrases as [ cDNAs encoding EBF or a covalent homodimer of E47 ] in this example :
+425
+</p>
+</p>
+426
+<p>
+<p>
+427
+- " With the aim of identifying genetic targets for these transcription factors , we stably transfected [ cDNAs encoding EBF or a covalent homodimer of E47 ] , individually or together , into immature hematopoietic Ba / F3 cells , which lack [ both factors ] . " ( PMID-9252117 )
+- " With the aim of identifying genetic targets for these transcription factors , we stably transfected [ cDNAs encoding EBF or a covalent homodimer of E47 ] , individually or together , into immature hematopoietic Ba / F3 cells , which lack [ both factors ] . " ( PMID-9252117 )
+428
+</p>
+</p>
+429
+<p>
+<p>
+430
+Such proteins might not be the right antecedent proteins .
+Such proteins might not be the correct antecedent proteins .
+431
+In furture , corpus annotation and evaluation scheme should be revised for the ease of automation of coreference resolution .
+In future , revision of corpus annotation and evaluation schemes would benefit the ease of automation of coreference resolution .
+432
+</p>
+</p>
+433
+<p>
+<p>
+434
+Parse error Coreference expression boundary is determined mostly based on noun phrase boundary output from parser .
+Parse error Coreference expression boundary is determined mostly based on noun phrase boundary output from the parser .
+435
+Therefore , parse error on noun phrase boundary strongly affects the performance of coreference resolution .
+Therefore , parse error on noun phrase boundary strongly affects the performance of coreference resolution .
+436
+Examining the data , we found that many antecedent expressions of plural anaphors are coordinated noun phrases , which are unfortunately difficult cases to many parsers including Enju .
+Examining the data , we found that many antecedent expressions of plural anaphors are coordinated noun phrases , which are unfortunately difficult cases to many parsers including Enju .
+437
+Incorporation of recent works for coordination resolution like [ 20 ] should be useful to improve the performance .
+Incorporation of recent works for coordination resolution like [ 20 ] should be useful for improving the performance .
+438
+The following example shows a coordination-structured antecedent AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 that was failed to be detected by the parser .
+The following example shows a coordination-structured antecedent AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 that failed to be detected by the parser .
+439
+The spurious response expression is transcription factors from several families .
+The spurious response expression is transcription factors from several families .
+440
+</p>
+</p>
+441
+<p>
+<p>
+442
+- " granulocytic and monocytic lineages , transcription factors from several families are active , including [ AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 ] .
+- " granulocytic and monocytic lineages , transcription factors from several families are active , including [ AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 ] .
+443
+Few of [ these factors ] are expressed exclusively in myeloid cells ; . . . " ( PMID-9291089 )
+Few of [ these factors ] are expressed exclusively in myeloid cells ; . . . " ( PMID-9291089 )
+444
+</p>
+</p>
+445
+</subsection>
+</subsection>
+446
+<section title= " Conclusions " >
+<section title= " Conclusions " >
+447
+<p>
+<p>
+448
+Our work has confirmed again that domain knowledge is indispensable for coreference resolution .
+Our current work has reconfirmed that domain knowledge is indispensable for coreference resolution .
+449
+Since the biologicaldomain has richer knowledge resources than any other domain , it would be interesting to continue studying how to exploit and employ domain-specific semantic information in coreference resolution for this domain .
+Since the biological domain has richer knowledge resources than any other domain , it would be interesting to continue studying how to exploit and employ domain-specific semantic information in coreference resolution for this domain .
+450
+</p>
+</p>
+451
+<p>
+<p>
+452
+Another conclusion concerns with markable detection .
+Another conclusion concerns markable detection .
+453
+This subproblem is often thought as an easy task in coreference resolution systems , however , indeed it is an important subtask which strongly affects the performance of coreference system .
+This sub-problem is often regarded as an easy task in coreference resolution systems ; however , in actuality , it is an important subtask , which strongly affects the performance of coreference system .
+454
+Sticking to the gold data in the designing markable detection method as we did in this paper is one of the strategies .
+Sticking to the gold data in designing the markable detection method , as done in this paper , is one employed strategy .
+455
+However , from another perspective , the perspective of coreference data creation , we should revise the markable annotations , for the sake of automatic and robust markable detection .
+However , from the perspective of coreference data creation , revision of the markable annotations would aid in automatic and robust markable detection .
+456
+</p>
+</p>
+457
+<p>
+<p>
+458
+As for the future , more effort should be spent on automating the semantic classification for coreference expressions using context .
+For future opportunities , more effort should be spent on automating the semantic classification for coreference expressions , using context .
+459
+Furthermore , it would be interesting to test the results in this study in a machine learning framework .
+Furthermore , it would be interesting to test the results in this study in a machine-learning framework .
+460
+</p>
+</p>
+461
+</section>
+</section>
+462
+</document>
+</document>

@@ -1,0 +1,630 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Face detection , tracking , and recognition for broadcast video
+Face detection , tracking , and recognition for broadcast video
+3
+</title>
+</title>
+4
+<section label = " Introduction " >
+<section label = " Introduction ">
+5
+<p>
+<p>
+6
+Human face processing techniques for broadcast video including face detection , tracking and recognition have long been a topic that attracts much research interest due to its crucial value in various applications including video structuring , indexing , retrieval , summarization , etc.
+Human face processing techniques for broadcast video , including face detection , tracking , and recognition , have long been a topic that has attracted a lot of research interest due to its crucial value in various applications , such as in video structuring , indexing , retrieval , and summarization .
+7
+The main reason is human face provides rich information for people 's appearance such as a government leader in a news video , a pitcher in a sport video or a hero in a movie , and is the basis for interpreting facts .
+The main reason for this is that the human face provides rich information for people 's appearances , such as for a government leader in a news video , a pitcher in a sports video or a hero in a movie , and is the basis for interpreting facts .
+8
+</p>
+</p>
+9
+<p>
+<p>
+10
+This article describes state-of-the art techniques for face detection , tracking and recognition with application to broadcast video .
+This article describes some state-of-the art techniques for face detection , tracking , and recognition with applications to broadcast video .
+11
+</p>
+</p>
+12
+</section >
+</section >
+13
+<section label = " Face detection " >
+<section label = " Face detection ">
+14
+<p>
+<p>
+15
+Face detection which is the task of localizing faces in an input image is fundamental for any face processing system .
+Face detection , which is the task of localizing faces in an input image , is a fundamental part of any face processing system .
+16
+The extracted faces can then be used for initializing of face tracking or automatic face recognition .
+The extracted faces can then be used for initializing face tracking or automatic face recognition .
+17
+An ideal face detector should possess the following characteristics :
+An ideal face detector should possess the following characteristics :
+18
+</p>
+</p>
+19
+<p>
+<p>
+20
+- Robustness : it should be capable of handling appearance variations of pose changes , size , illuminations , occlusions , complex background , facial expressions , low resolutions , etc.
+- Robustness : it should be capable of handling appearance variations , such as pose changes , size , illuminations , occlusions , complex backgrounds , facial expressions , and low resolutions .
+21
+</p>
+</p>
+22
+<p>
+<p>
+23
+- Fastness : it should be fast for real-time processing which is an important factor in processing large video archives .
+- Quickness : it should be fast in order to perform real-time processing , which is an important factor in processing large video archives .
+24
+</p>
+</p>
+25
+<p>
+<p>
+26
+- Simplicity : The training process should be simple .
+- Simplicity : the training process should be simple .
+27
+For example , the training time is short , the number of parameters is small and training samples are collected without costly .
+For example , the training time is short , the number of parameters is small , and training samples are collected cheaply .
+28
+</p>
+</p>
+29
+<p>
+<p>
+30
+Many approaches have been proposed for building fast and robust face detectors \CITE .
+Many approaches have been proposed for building faster and more robust face detectors \CITE .
+31
+Among them , those using advanced learning methods such as neural network , support vector machines and boosting are the best .
+Among them , those using advanced learning methods , such as neural network , support vector machines and boosting , are the best .
+32
+Typically , detecting faces in an image includes the following steps :
+Typically , detecting the faces in an image takes the following steps :
+33
+</p>
+</p>
+34
+<p>
+<p>
+35
+- Window scanning : in order to detect faces at multiple locations and sizes , a fixed window size ( e.g. 24x24 pixels ) is used to extract image patterns at every location and scale .
+- Window scanning : in order to detect faces at multiple locations and sizes , a fixed window size ( e.g. 24 x 24 pixels ) is used to extract image patterns at every location and scale .
+36
+The number of patterns extracted from one 320x240 frame image is large , approximately 160 ,000 in which only a small number of patterns containing face .
+The number of patterns extracted from a 320 x 240 frame image is large , approximately 160 ,000 , in which only a small number of patterns contain a face .
+37
+</p>
+</p>
+38
+<p>
+<p>
+39
+- Feature extraction : given an image pattern , features are extracted .
+- Feature extraction : given an image pattern , the features are extracted .
+40
+The most popular feature type is Haar wavelet since it is very fast to compute using the integral image \CITE .
+The most popular feature type is the Haar wavelet because it is very fast to compute using the integral image \CITE .
+41
+Other feature types can be listed including pixel intensity \CITE , local binary patterns \CITE and edge orientation histogram \CITE .
+Other feature types can be listed including the pixel intensity \CITE , local binary patterns \CITE , and edge orientation histogram \CITE .
+42
+</p>
+</p>
+43
+<p>
+<p>
+44
+- Classification : the extracted features is passed through a classifier which is trained beforehand to classify the input pattern associated with these features as a face or a non-face .
+- Classification : the extracted features are passed through a classifier that has been previously trained to classify the input pattern associated with these features as a face or a non-face . //[trained / programmed ?]
+45
+</p>
+</p>
+46
+<p>
+<p>
+47
+- Merging overlapping detections : since the classifier is insensitive to small changes in translation and scale , there might be multiple detections around each face .
+- Merging overlapping detections : since the classifier is insensitive to small changes in translation and scale , there might be multiple detections around each face .
+48
+In order to return one final detection per face , it is necessary to combine overlapping detections into a single detection .
+In order to return a single final detection per face , it is necessary to combine the overlapping detections into a single detection .
+49
+</p>
+</p>
+50
+<p>
+<p>
+51
+Since the number of processed patterns is large while the vast majority of them are non-face , a single classifier based systems such as neural network \CITE and support vector machines \CITE are usually slow .
+Since the vast majority of processed patterns are non-face , the single classifier based systems , such as the neural network \CITE and the support vector machines \CITE , are usually slow .
+52
+To overcome this problem , a combination of simple-to-complex classifiers has been proposed \CITE leading to the first real-time robust face detector in the world .
+To overcome this problem , a combination of simple-to-complex classifiers has been proposed \CITE leading to the first real-time robust face detector in the world .
+53
+In this structure , fast and simple classifiers are used as filters at the earliest stages to quickly reject a large number of non-face patterns and slower yet more accurate classifiers are then used for classifying face-like patterns .
+In this structure , fast and simple classifiers are used as filters in the earliest stages to quickly reject a large number of the non-face patterns and then slower but more accurate classifiers are used for classifying the face-like patterns .
+54
+In this way , the complexity of classifiers can be adapted corresponding to the increasing difficulty in the input patterns .
+In this way , the complexity of classifiers can be adapted to correspond to the increasing difficulty with the input patterns .
+55
+</p>
+</p>
+56
+<p>
+<p>
+57
+Training classifiers usually consists of several steps :
+Training classifiers usually consist of the following steps :
+58
+</p>
+</p>
+59
+<p>
+<p>
+60
+- Training set preparation : Supervised learning methods require a large number of training samples to obtain accurate classifiers .
+- Training set preparation : Supervised learning methods require a large number of training samples to obtain accurate classifiers .
+61
+The training samples are patterns that must be labeled as face ( positive sample ) or non-face ( negative sample ) in advance .
+The training samples are patterns that must be labeled as face ( positive samples ) or non-face ( negative samples ) in advance .
+62
+Face patterns are manually collected in images containing faces and then are scaled to the same size and normalized to a canonical pose which eyes , mouth and nose are aligned .
+Face patterns are manually collected from images containing faces and then are scaled to the same size and normalized to a canonical pose in which the eyes , mouth , and nose are aligned .
+63
+Then these face patterns can be used to generate other artificial faces by randomly rotating the images ( about their center points ) up to 10 degree , scaling between 90% and 110% , translating up to half a pixel , and mirroring to enlarge the number of positive samples \CITE .
+Then these face patterns can be used to generate other artificial faces by randomly rotating the images ( about their center points ) by up to 10 degrees , scaling them between 90 and 110% , translating them up to half a pixel , and mirroring them to enlarge the number of positive samples \CITE .
+64
+Collecting non-face patterns are usually done automatically by scanning through images which contain no faces .
+The collection of non-face patterns is usually done automatically by scanning through images which contain no faces .
+65
+The accurate classifier described in \CITE requires about five thousand original face patterns and hundreds of million non-face patterns extracted from 9 ,500 non-face images .
+The accurate classifier described in \CITE requires about five thousand original face patterns and hundreds of millions of non-face patterns extracted from 9 ,500 non-face images .
+66
+In \CITE a smaller number of training samples can be used to build a robust face detector by using edge orientation histogram feature .
+In \CITE a smaller number of training samples can be used to build a robust face detector by using an edge orientation histogram .
+67
+</p>
+</p>
+68
+<p>
+<p>
+69
+- Learning method selection : Basically , in the ideal case with proper settings , advanced learning methods such as neural network , support vector machines and AdaBoost produce similar performance .
+- Learning method selection : Basically , in an ideal situation with the proper settings , the advanced learning methods , such as the neural network , support vector machines , and AdaBoost , can perform similarly .
+70
+However , in practice , it is difficult to find these proper settings .
+However , in practice , it is difficult to find these proper settings .
+71
+Using neural network requires the design of layers , nodes , etc.hich is complicated .
+Using a neural network requires the design of layers , nodes , etc. , which is complicated .
+72
+Therefore , it is preferable to use support vector machines since the number of parameters is only two if using RBF kernel and many tools are available .
+Therefore , it is preferable to use support vector machines because only two parameters are necessary if a RBF kernel is used and many tools are available .
+73
+Another learning method which has been used widely in many object detection systems is AdaBoost and its variants .
+Another learning method that has been widely used in many object detection systems is AdaBoost and its variants .
+74
+The advantage of AdaBoost is it can be used for both selecting features and learning the classifier .
+The advantage of AdaBoost is it can be used for both selecting features and learning the classifier .
+75
+</p>
+</p>
+76
+</section>
+</section>
+77
+<section label = " Overview of face tracking " >
+<section label = " Overview of face tracking ">
+78
+<p>
+<p>
+79
+Face tracking is the process of locating a moving face or several ones in time using a camera , as illustrated in Figure 1 .
+Face tracking is the process of locating a moving face or several of them over a period of time using a camera , as illustrated in Fig. 1 .
+80
+Face is first initialized manually or by a face detector .
+A given face is first initialized manually or by a face detector .
+81
+Face tracker then analyses subsequent video frames and outputs the location of the initialized face within these frames by estimating the motion parameters of the moving face .
+The face tracker then analyzes the subsequent video frames and outputs the location of the initialized face within these frames by estimating the motion parameters of the moving face .
+82
+Different from face detection , the outcome of which is the position and scale of one single face in one single frame , face tracking enables the information acquisition of multiple consecutive faces within consecutive video frames .
+This is different from face detection , the outcome of which is the position and scale of one single face in one single frame ; face tracking enables the information acquisition of multiple consecutive faces within consecutive video frames .
+83
+More important , these faces have the same identity .
+More important , these faces have the same identity .
+84
+</p>
+</p>
+85
+</section >
+</section >
+86
+<section label = " Benefits of face tracking " >
+<section label = " Benefits of face tracking ">
+87
+<p>
+<p>
+88
+Although frame-based face detection techniques have demonstrated success on real images , the current ability on detecting faces from video is still primitive .
+Although frame-based face detection techniques have been successfully demonstrated on real images , the current ability for detecting faces from video is still primitive .
+89
+The detector responses can decrease due to different reasons including occlusions , lighting conditions and face pose .
+The quality of the detector responses can decrease due to different reasons including occlusions , lighting conditions , and face poses .
+90
+Without any additional information , these responses can easily be rejected even if they indicate the presence of a face .
+Without any additional information , these responses can easily be rejected , even if they indicate the presence of a face .
+91
+It is therefore important to incorporate the temporal information in a video sequence to provide more complete video segments displaying the person of interest , which is always named as face tracking .
+It is therefore important to incorporate the temporal information in a video sequence to provide more complete video segments displaying the person of interest , which is always named as / already called ? face tracking .
+92
+</p>
+</p>
+93
+<p>
+<p>
+94
+One of the main applications of face tracking is person retrieval from broadcast video , for example : intelligent fast-forwards " , where the video jumps to the next scene containing a certain person / actor ; or retrieval of different TV interventions , e.g. interviews , shows , etc. , of a given person in a video or a large collection of TV broadcast videos .
+One of the main applications for face tracking is in the person retrieval from broadcast video , for example : " Intelligent fast-forwards�E, where the video jumps to the next scene containing a certain person / actor ; or retrieval of different TV interventions , e.g. interviews , shows , etc. , of a given person in a video or a large collection of TV broadcast videos .
+95
+In [5] , a person retrieval system for feature-length movie video is proposed using straightforward face tracking .
+In [5] , the person retrieval system for a feature-length movie video is proposed using straightforward face tracking .
+96
+At run time a user outlines a face in a frame of the video , and the face tracks within the movie are then ranked according to the similarity to the outlined query face in the manner of Google .
+At run time a user outlines a face in a video frame , and the face tracks within the movie are then ranked according to their similarity to the outlined query face in the same way as Google .
+97
+Since one face track corresponds to one identity , the workload of intra-shot face matching is greatly reduced , which is not available in frame-based face detection .
+Since one face track corresponds to one identity , the workload of intra-shot face matching is greatly reduced , which is not available in frame-based face detection .
+98
+In addition , face tracking provides multiple examples of the same character 's appearance to help with inter-shot face matching .
+In addition , face tracking provides multiple examples of the same character 's appearance to help with inter-shot face matching .
+99
+</p>
+</p>
+100
+<p>
+<p>
+101
+Face tracking also finds applications in the area of face-name association , the objective of which is to label television or movie footage with the identity of the person present in each frame of the video .
+Face tracking is also used in the area of face-name association , the objective of which is to label television or movie footage with the identity of the person present in each frame of the video .
+102
+Everingham et al [8] proposed an automatic face-name association system .
+Everingham et al. [8] proposed an automatic face-name association system .
+103
+This system uses a face tracker similar with [5] to extract a few hundred tracks of a particular character each in a single shot .
+This system uses a face tracker similar to the one in [5] that can extract a few hundred tracks of each particular character in a single shot .
+104
+Based on the temporal information obtained from the face tracker , textual information for TV and movie footage including subtitles and transcripts is employed to assign the character 's name to each face track .
+Based on the temporal information obtained from the face tracker , the textual information for TV and the movie footage including the subtitles and transcripts is employed to assign the character 's name to each face track .
+105
+For instance , shots containing a particular person can be retrieved by a keyword like " Bush " or " Julia Roberts " instead of an outlined query face as used in [5] .
+For instance , shots containing a particular person can be retrieved by a keyword like " Bush " or " Julia Roberts " instead of the use of an outlined query face as used in [5] .
+106
+</p>
+</p>
+107
+<p>
+<p>
+108
+Besides broadcast video , face tracker also has important applications in the video used in humanoid robotics , visual surveillance , human-computer interaction ( HCI ) , video conferencing , face-based biometric person authentication , etc.
+Besides broadcast video , face tracker also has important applications in the videos used in humanoid robotics , visual surveillance , human-computer interaction ( HCI ) , video conferencing , and face-based biometric person authentication among others .
+109
+</p>
+</p>
+110
+</section >
+</section >
+111
+<section label = " Selection criteria of face tracking methods " >
+<section label = " Selection criteria of face tracking methods ">
+112
+<p>
+<p>
+113
+Choosing a face tracker can be a difficult task due to the variety of face trackers available .
+Choosing a face tracker can be a difficult task because of the variety of face trackers currently available .
+114
+The application provider will have to decide which face tracker is best suited to his / her individual needs and , of course , the type of video that he / she wants to use as the target .
+The application provider will have to decide which face tracker is best suited to his / her individual needs and , of course , the type of video that he / she wants to use as the target .
+115
+Generally speaking , the important issues that should be addressed include speed , robustness and accuracy .
+Generally speaking , the important issues that should be addressed include speed , robustness , and accuracy .
+116
+</p>
+</p>
+117
+<p>
+<p>
+118
+Can the system run in real time ? Similar with many other processing tools for broadcast video , speed is not the most critical issue because offline processing is permitted in most cases of video structuring and indexing .
+Can the system run in real time ? Similar to many other processing tools for broadcast video , speed is not the most critical issue because offline processing is permitted in most video structuring and indexing cases .
+119
+However , a real-time face tracker will become necessary if the target archive is established from too large quantities of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+However , a real-time face tracker will become necessary if a target archive is established from too large a quantity of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+120
+On the other hand , the speed of the tracker is critical in most cases of applications for non-broadcast video , e.g. HCI .
+On the other hand , the speed of the tracker is critical in most of the application cases for non-broadcast video , e.g. HCI .
+121
+It should be noted that there is always a tradeoff between speed and performance-related issues including robustness and accuracy .
+It should be noted that there is always a tradeoff between speed and performance-related issues including the robustness and accuracy .
+122
+</p>
+</p>
+123
+<p>
+<p>
+124
+Can the system cope with varying illumination , facial expression , scale , pose , camerawork , occlusion and large head motion ? A number of illumination factors , e.g. light sources , background colors , luminance levels , and media , impact greatly on the change in appearance of a moving face , for instance , when tracking a person who are moving from indoor to outdoor environment .
+Can the system cope with varying illuminations , facial expressions , scales , poses , camerawork , occlusion , and large head motions ? A number of illumination factors , e.g. light sources , background colors , luminance levels , and media , impact greatly on the change in appearance of a moving face , for instance , when tracking a person who is moving from an indoor to an outdoor environment .
+125
+Face tracking also tends to fail under large facial deformations of eyes , nose , mouth , etc. due to facial expression variation .
+Face tracking also tends to fail under large facial deformations of the eyes , nose , mouth , etc. due to the facial expression variation .
+126
+Different from non-broadcast video , e.g. video used for HCI , faces appearing in broadcast video varies from large close-up faces to small faces taken by a long-shot .
+Different from non-broadcast video , e.g. video used for HCI , faces appearing in broadcast video vary from large close-up faces to small faces taken by a long-shot .
+127
+Small face scale always leads to low resolution and will reject most face trackers designed by computer vision researchers .
+A smaller face scale always leads to a lower resolution and will reject most face trackers designed by computer vision researchers .
+128
+Pose variation , i.e. head rotations including pitch , roll and yaw , is another influencing factor , which can cause disappearance of part of the face .
+Pose variations , i.e. head rotations including the pitch , roll , and yaw , is another influencing factor , which can cause disappearances of parts of faces .
+129
+In some cases , the variation of scale and pose might be caused by camerawork change .
+In some cases , the scale and pose variations might be caused by camerawork changes .
+130
+Disappearance of part of the face is also apt to happen due to occlusion by other objects , and motion information may be distracted by alternate motion of them .
+The partial disappearance of a face is also apt to happen due to occlusion by other objects , and motion information may be distracted by an alternate motion .
+131
+Moreover , the task of face tracking becomes even more difficult when the head are moving fast relative to the frame rate so that the tracker fails to arrive in time " .
+Moreover , the task of face tracking becomes even more difficult when the head is moving fast relative to the frame rate , so that the tracker fails to �arrive in time�E.
+132
+</p>
+</p>
+133
+<p>
+<p>
+134
+How accurate is the tracking ? The first factor that affects the accuracy might be the false face detections generated when initializing the tracker by a face detector .
+How accurate is the tracking ? The first factor that affects the accuracy might be the false face detections generated when initializing the tracker by a face detector .
+135
+This problem is difficult to solve due to a fixed threshold .
+This problem is difficult to solve because it has a fixed threshold .
+136
+Lowering the threshold of the face detector reduces false rejections but increases the number of false detections , and vice versa .
+Lowering the threshold of the face detector reduces the number of false rejections , but increases the number of false detections , and vice versa .
+137
+The drifting or the long sequence motion problem is another factor that might affect the accuracy .
+The drifting or the long sequence motion problem is another factor that might affect the accuracy .
+138
+This problem always happens due to the imperfect motion estimation technique .
+This problem always happens due to the imperfect motion estimation technique .
+139
+A tracker might accumulate motion errors and eventually lose track of the face , for instance , when tracking faces that change from a frontal view to a profile position .
+A tracker might accumulate motion errors and eventually lose track of a face , for instance , when tracking faces that change from a frontal view to a profile position .
+140
+</p>
+</p>
+141
+</section >
+</section >
+142
+<section label = " Workflow of face tracking " >
+<section label = " Workflow of face tracking ">
+143
+<p>
+<p>
+144
+Face tracking can be considered as an algorithm that analyses the video frames and outputs the location of moving faces within the video frame .
+Face tracking can be considered an algorithm that analyzes the video frames and outputs the location of moving faces within the video frame .
+145
+For each tracked face , three steps are involved that are initialization , tracking and a stopping procedure , as illustrated in Figure 2 .
+For each tracked face , three steps are involved , which are the initialization , tracking , and stopping procedures , as illustrated in Fig. 2 .
+146
+</p>
+</p>
+147
+<p>
+<p>
+148
+Most of the developed methods use a face detector as the initialization of their tracking process .
+Most of the developed methods use a face detector for the initialization of their tracking processes .
+149
+An always ignored but existing difficulty of this step lies in the control of false face detections described above .
+An always ignored but existing difficulty with this step lies in the control of the false face detections described above .
+150
+Another problem is the difficulty in handling the appearance of new non-frontal faces .
+Another problem is the difficulty in handling the appearance of new non-frontal faces .
+151
+Although there have been literatures in profile or intermediate pose face detector , this kind of work suffers from the false-detection problem far more than frontal face detector .
+Although there have been literatures on profile or intermediate pose face detectors , this kind of work suffers from the false-detection problem far more than a frontal face detector .
+152
+To alleviate these two problems , Chaudhury et al [1] used two face probability maps instead of a fixed threshold to initialize face tracker , one for frontal views and one for profiles .
+To alleviate these two problems , Chaudhury et al. [1] used two face probability maps instead of a fixed threshold to initialize the face tracker , one for frontal views and one for profiles .
+153
+All local maxima in these maps are chosen as the face candidates , the face probabilities of which are propagated throughout the temporal sequence .
+All local maxima in these maps are chosen as the face candidates , the face probabilities of which are propagated throughout the temporal sequence .
+154
+Candidates whose probabilities either go to zero or remain low over time are determined as non-face and eliminated .
+Candidates whose probabilities either go to zero or remain low over time are determined as non-face and eliminated .
+155
+The information from two face probability maps is combined to represent intermediate head pose .
+The information from the two face probability maps is combined to represent an intermediate head pose .
+156
+Their experiments showed that the proposed probabilistic detector improved the accuracy over traditional face detector and is able to handle the head movement covering a range of �90 degrees out-of-plane rotation ( yaw ) .
+Their experiments showed that the proposed probabilistic detector improved the accuracy more than a traditional face detector and is able to handle the head movement covering a range of �90 degrees out-of-plane rotation ( yaw ) .
+157
+</p>
+</p>
+158
+<p>
+<p>
+159
+After initialization , one should choose what features to track before tracking the face .
+After initialization , one should choose what features to track before tracking a face .
+160
+The exploitation of color is one of the common choices in order to be invariant to facial expression , scale and pose change [4 , 9] .
+The exploitation of color is one of the more common choices in order to be invariant to facial expressions , scale , and pose changes [4 , 9] .
+161
+However , color-based face trackers often depend on a learning set dedicated to the type of processed videos and are not guaranteed to be easily expendable to unknown videos with varying illumination conditions or different races .
+However , color-based face trackers often depend on a learning set dedicated to the type of processed videos and are not guaranteed to be easily expendable to unknown videos with varying illumination conditions or different races .
+162
+Also , color is susceptible to occlusion by other head-like objects .
+Also , color is susceptible to occlusion by other head-like objects .
+163
+Another two choices are key-point [5 , 8] and facial features [3 , 6 , 10] , e.g. eyes , nose , mouth , etc. , both of which are more robust to varying illumination and occlusion .
+Two other choices are the key-point [5 , 8] and facial features [3 , 6 , 10] , e.g. eyes , nose , mouth , etc. , both of which are more robust to varying illuminations and occlusions .
+164
+Although the generality of key-point allows for tracking different kinds of objects , without any face-specific knowledge its discriminant power between target and clutter might be in peril under tough conditions , e.g. strong background noise .
+Although the generality of key-points allows for tracking different kinds of objects , without any face-specific knowledge its discriminant power between the target and clutter might be in peril under tough conditions , e.g. strong background noise .
+165
+Facial features enable to track higher-level information from a human face but are weak in low video quality .
+Facial features enable the tracking of higher-level information from a human face , but are weak in lower video quality .
+166
+Most facial-feature-based face trackers [6 , 10] are only tested by using non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+Most facial-feature-based face trackers [6 , 10] have been tested using only non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+167
+Note that these different cues described above may be combined .
+Note that these different cues described above may be combined .
+168
+</p>
+</p>
+169
+<p>
+<p>
+170
+An appearance-based or featureless tracker matches an observation model of the entire facial appearance with the input image , instead of choosing a few features to track .
+An appearance-based or featureless tracker matches an observation model of the entire facial appearance with the input image , instead of choosing only a few features to track .
+171
+One example of appearance-based face tracker is [1] that has been introduced above .
+One example of an appearance-based face tracker is [1] , which was introduced above .
+172
+Another example is proposed by Li et al [9] , which uses a multi-view face detector to detect and track faces of different poses .
+Another example was proposed by Li et al. [9] , which uses a multi-view face detector to detect and track faces from different poses .
+173
+Besides the face-based observation model , a head model is also included to represent the information of head rear .
+Besides the face-based observation model , a head model is also included to represent the information of head rear .
+174
+It is based on the idea that head can be considered as the object of interest instead of face because face is not always present in the tracking process .
+It is based on the idea that a head can be considered an object of interest instead of a face , because the face is not always present in the tracking process .
+175
+An extended particle filter is proposed to fuse these two interrelated information so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
+An extended particle filter is proposed to fuse these two interrelated information together so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
+176
+</p>
+</p>
+177
+<p>
+<p>
+178
+During the tracking procedure , face tracking systems usually employ a motion model that describes how the image of the target might change for different possible motions of the face to track .
+During the tracking procedure , face tracking systems usually use a motion model that describes how the image of the target might change for different possible motions of the face to track .
+179
+Examples of simple motion models are as follows .
+Some examples of simple motion models are as follows .
+180
+Based on the assumption that face can be considered as a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
+Based on the assumption that a face can be considered a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
+181
+Some researchers assume the face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
+Some researchers view a face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
+182
+However , face is actually both 3D and deformable .
+However , a face is actually both 3D and deformable .
+183
+Some system try to model face in this sense , and the image of deformable faces can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
+Some systems try to model faces in this sense , and the image of deformed face can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
+184
+The motion of the face is defined by the position of the nodes of the mesh .
+The motion of the face is defined by the position of the nodes of the mesh .
+185
+Generally if the quality of the video is high , more sophisticated motion model is used , more accurate result the face tracker generates .
+Generally if the quality of the video is high , a more sophisticated motion model is used , and then the face tracker generates a more accurate result .
+186
+For instance , a sophisticated geometry and texture model might suffer from false face detections and drifting less than a simple 2D transformation model .
+For instance , a sophisticated geometry and texture model might suffer from false face detections and a level of drifting [less than / that is worse than ?] a simple 2D transformation model .
+187
+But note that most 3D-based and mesh-based face trackers require relatively clear appearance , high resolution , and limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
+However , it must be noted that most 3D-based and mesh-based face trackers require a relatively clear appearance , high resolution , and a limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
+188
+Both of these requirements are always unavailable in the case of broadcast video .
+Both of these requirements are always unavailable in the case of broadcast video .
+189
+Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
+Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
+190
+</p>
+</p>
+191
+<p>
+<p>
+192
+Finally , the stopping procedure is rarely discussed .
+Finally , the stopping procedure is rarely discussed .
+193
+This constitutes a major deficiency of face tracking algorithms that are generally not able to stop a face track in case of tracking error , i.e. drifting .
+This constitutes a major deficiency for the face tracking algorithms that are generally not able to stop a face track in case of tracking errors , i.e. drifting .
+194
+Arnaud et al [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
+Arnaud et al. [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
+195
+Two positions of tracked eyes are compared with tracked face position .
+The two positions of the tracked eyes are compared with the tracked face position .
+196
+If none of the two eyes are in the face region , it will be determined as drifting and the tracking process will be stopped .
+If neither of the eyes is in the face region , it will be determined as drifting and the tracking process will be stopped .
+197
+Besides , most mesh-based trackers and top-down trackers are considered to be able to avoid drifting .
+In addition , most mesh-based and top-down trackers are assumed to be able to avoid drifting .
+198
+</p>
+</p>
+199
+</section >
+</section >
+200
+<section label = " Discussions " >
+<section label = " Discussions ">
+201
+<p>
+<p>
+202
+Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide application .
+Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide applications .
+203
+However , while most attempts have been made on face tracking for videos with high quality by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
+However , while most of the attempts have been on the face tracking for high-quality videos by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
+204
+This is because the current ability of face tracking still depends on relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
+This is because the current ability of face tracking still depends on a relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
+205
+On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
+On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
+206
+A general evaluation criterion , in terms of speed , robustness and accuracy , is needed for performance comparison between face trackers of different purposes .
+A general evaluation criterion , in terms of speed , robustness , and accuracy , is needed for a performance comparison between the face trackers with different purposes .
+207
+</p>
+</p>
+208
+</section>
+</section>
+209
+</document>
+</document>

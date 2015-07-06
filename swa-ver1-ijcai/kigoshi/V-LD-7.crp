@@ -1,0 +1,1206 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+A Multi-Stage Approach to Fast Face Detection
+A Multi-Stage Approach to Fast Face Detection
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+A multi-stage approach --- which is fast , robust and easy to train --- for a face-detection system is proposed .
+A multi-stage approach that is fast , robust , and easy to train is proposed for a face-detection system .
+7
+Motivated by the work of Viola and Jones [1] , this approach uses a cascade of classifiers to yield a coarse-to-fine strategy to reduce significantly detection time while maintaining a high detection rate .
+Motivated by the work of Viola and Jones [1] , this approach uses a cascade of classifiers to yield a coarse-to-fine strategy to significantly reduce detection time while maintaining a high detection rate .
+8
+However , it is distinguished from previous work by two features .
+However , our [system / approach?] is distinguished from previous work by two features .
+9
+First , a new stage is added to detect face candidate regions more quickly by using a larger window size and larger moving step size .
+First , a new stage has been added to detect face candidate regions more quickly by using a larger window size and larger moving step size .
+10
+Second , SVM classifiers are used instead of AdaBoost classifiers in the last stage , and Haar wavelet features selected by the previous stage are reused for the SVM classifier robustly and efficiently .
+Second , support vector machine ( SVM ) classifiers are used instead of AdaBoost classifiers in the last stage , and Haar wavelet features selected by the previous stage are reused for the SVM classifier robustly and efficiently .
+11
+By combining AdaBoost and SVM classifiers , the final system can achieve both fast and robust detection because most non-face patterns are rejected quickly in earlier layers , while only a small number of promising face patterns is classified robustly in later layers .
+By combining AdaBoost and SVM classifiers , the final system can achieve both fast and robust detection because most non-face patterns are rejected quickly in earlier layers , while only a small number of promising face patterns are classified robustly in later layers .
+12
+The proposed multi-stage-based system is shown to run faster than the original AdaBoost-based system while maintaining comparable accuracy .
+The proposed multi-stage-based system has been shown to run faster than the original AdaBoost-based system while maintaining comparable accuracy .
+13
+</p>
+</p>
+14
+</abstract>
+</abstract>
+15
+<section label= " Introduction " >
+<section label= " Introduction " >
+16
+<p>
+<p>
+17
+Face detection is one of the most active research areas in computer vision because of its many interesting applications in fields such as security , surveillance , multimedia retrieval , and human-computer interaction .
+Face detection is one of the most active research areas in computer vision because of its many interesting applications in fields such as security , surveillance , multimedia retrieval , and human-computer interaction .
+18
+For example , face detection is combined with other modules to identify who a person in a video sequence is [2] .
+For example , face detection is combined with other modules to identify a person in a video sequence [2] .
+19
+Face locations , the results of a face detection system , can be used for applications such as face recognition and video indexing [3] .
+Face locations , the results of a face detection system , can be used for applications such as face recognition and video indexing [3] .
+20
+Although it has been studied for more than 30 years , developing a fast and robust face detection system that can handle the variations found in different faces in real applications , such as facial expressions , pose changes , illumination changes , complex backgrounds , and low resolutions , is still a challenging research target [4] .
+Although this area has been studied for more than 30 years , developing a fast and robust face detection system that can handle the variations found in different faces in real applications , such as facial expressions , pose changes , illumination changes , complex backgrounds , and low resolutions , is still a challenging research target [4] .
+21
+</p>
+</p>
+22
+<p>
+<p>
+23
+Recently , with advances in machine learning research , Neural Network [5] ,[6] , Support Vector Machines ( SVM ) [7] ,[8] ,[9] and AdaBoost [1] ,[10] ,[11] ,[12] ,[13] are typical choices for building robust face detectors .
+Recently , with advances in machine learning research , neural networks [5] , [6] , support vector machines ( SVM ) [7] , [8] , [9] and AdaBoost [1] , [10] , [11] , [12] , [13] are typical choices for building robust face detectors .
+24
+Current research is focusing on feature extractions and appropriate structures for combining classifiers .
+Current research is focusing on feature extractions and appropriate structures for combining classifiers .
+25
+</p>
+</p>
+26
+<p>
+<p>
+27
+Generally , to classify an input pattern of intensities as a face or non-face , features must be extracted and normalized before passing to a classifier [14] .
+Generally , to classify an input pattern of intensities as a face or non-face , features must be extracted and normalized before passing [the image / the pattern / the results?] to a classifier [14] .
+28
+There are many kinds of features that have been used ranging from simple features such as intensity values [7] ,[5] and eigenspace [15] to complex features such as wavelets [16] ,[1] ,[12] , edge orientation histograms [17] ,[18] and Bayesian discriminating features ( BDF ) [19] .
+Many kinds of features have been used , ranging from simple ones such as intensity values [7] , [5] and eigenspace [15] to complex ones such as wavelets [16] , [1] , [12] , edge orientation histograms [17] , [18] , and Bayesian discriminating features ( BDF ) [19] .
+29
+Discriminative and informative features usually increase detection rate and reduce complexity of the training procedure [17] .
+Discriminative and informative features usually increase detection rates and reduce the complexity of training procedures [17] .
+30
+</p>
+</p>
+31
+<p>
+<p>
+32
+In a typical face detector which is scale-free and location-free , the number of analyzed patterns is usually very large ( 160 ,000 patterns for a 320x240 pixel image ) because the face classifier has to scan over the input image at every location and every scale .
+In a typical face detector that is scale- and location-free , the number of analyzed patterns is usually very large ( 160 ,000 patterns for a 320x240 pixel image ) because the face classifier has to scan over the input image at every location and every scale .
+33
+However , the huge majority of the analyzed patterns are non-face .
+However , the vast majority of the analyzed patterns are non-face .
+34
+Statistics from [9] have shown that the ratio of non-face to face patterns is about 50 ,000 to 1 .
+Statistics from [9] have shown that the ratio of non-face to face patterns is about 50 ,000 to 1 .
+35
+Face detectors based on single classifiers such as SVM [7] ,[8] ,[9] and Neural Network [6] ,[5] are usually slow because they process non-face regions and face regions in the input image equally .
+Face detectors based on single classifiers such as SVM [7] , [8] , [9] and neural networks [6] , [5] are usually slow because they equally process non-face and face regions in the input image .
+36
+</p>
+</p>
+37
+<p>
+<p>
+38
+To deal with the problem of processing a large number of patterns , a combination of simple-to-complex classifiers is proposed [8] ,[1] ,[9] ,[20] ,[21] ,[11] .
+To deal with the problem of processing a large number of patterns , a combination of simple-to-complex classifiers has been proposed [8] , [1] , [9] , [20] , [21] , [11] .
+39
+In particular , fast and simple classifiers are used as filters at the earliest stages to quickly reject a large number of non-face patterns and a slower yet more accurate classifier is then used for classifying face-like patterns .
+In particular , fast and simple classifiers are [recommended to be?] used as filters at the earliest stages to quickly reject a large number of non-face patterns and a slower yet more accurate classifier is then recommended to be used for classifying face-like patterns .
+40
+By this way , the complexity of classifiers is adapted corresponding to the difficulty in the input patterns .
+In this way , the complexity of classifiers can be adapted corresponding to the difficulty in the input patterns . / / [is / can be?]
+41
+In [8] , non linear SVM classifiers using pixel-based features are arranged into a sequence with increasing number of support vectors , or in [9] , linear SVM classifiers trained at different resolutions are used for rejection and a reduced set of principle component analysis ( PCA )-based features are used with the non linear SVM at the classification stage in order to reduce computation time .
+In [8] , nonlinear SVM classifiers using pixel-based features were arranged into a sequence by increasing the number of support vectors , while in [9] , linear SVM classifiers trained at different resolutions were used for rejection and a reduced set of principle component analysis ( PCA )-based features were used with the nonlinear SVM at the classification stage in order to reduce computation time .
+42
+In [1] , AdaBoost based classifiers are arranged in a degeneration decision tree or a cascade .
+In [1] , AdaBoost-based classifiers were arranged in a degeneration decision tree or a cascade .
+43
+Using about 10 features of the first two layers , more than 90\% of non-face patterns are rejected .
+Using about 10 features of the first two layers , more than 90\% of non-face patterns were rejected .
+44
+Recently , boosting chain [20] and nested cascade [11] have also been proposed for improvements .
+Recently , a boosting chain [20] and a nested cascade [11] have also been proposed for improvements .
+45
+It is believed that the cascade structure of classifiers is the key factor in enhancement of current real-time face detectors .
+It is believed that the cascade structure of classifiers is the key factor in enhancement of current real-time face detectors . / / It is believed?This sounds vague?who believes this? " May researchers believe , " for example , would be clearer and sound more believable .]
+46
+</p>
+</p>
+47
+<p>
+<p>
+48
+This work is motivated by Viola and Jones [1] who proposed a framework for fast and robust face detection .
+This work is motivated by Viola and Jones [1] , who proposed a framework for fast and robust face detection .
+49
+Their success mainly comes from three contributions :
+Their success comes mainly from three contributions :
+50
+</p>
+</p>
+51
+<p>
+<p>
+52
+-Firstly , the cascaded structure of simple-to-complex classifiers reduces computation time dramatically ( as mentioned above ) .
+-The cascaded structure of simple-to-complex classifiers reduces computation time dramatically .
+53
+</p>
+</p>
+54
+<p>
+<p>
+55
+-Secondly , AdaBoost is used to select discriminative and significant features from a pool of a very large number of features and then construct the classifier .
+-AdaBoost is used to select discriminative and significant features from a pool of a very large number of features and then construct the classifier .
+56
+The output classifier built from these selected features is very fast and robust in classification .
+The output classifier built from these selected features is very fast and robust in classification .
+57
+Compared to SVM-based classifiers or neural network-based classifiers , AdaBoost based classifiers are hundreds of times faster .
+Compared to SVM-based classifiers or neural network-based classifiers , AdaBoost-based classifiers are hundreds of times faster .
+58
+</p>
+</p>
+59
+<p>
+<p>
+60
+-Thirdly , Haar-wavelet features used for all stages are informative [22] and evaluated extremely fast due to the introduction of the integral image .
+-Haar wavelet features used for all stages are informative [22] and can be evaluated extremely quickly due to the introduction of the integral image .
+61
+</p>
+</p>
+62
+<p>
+<p>
+63
+However , this framework still has the following problems :
+However , this framework still has the following problems :
+64
+</p>
+</p>
+65
+<p>
+<p>
+66
+-First , the cascaded classifiers that use AdaBoost and Haar wavelet features are only efficient in quickly rejecting simple non-face patterns .
+-First , the cascaded classifiers that use AdaBoost and Haar wavelet features are only efficient in quickly rejecting simple non-face patterns .
+67
+To robustly classify complex patterns , it is necessary to use a larger number of features and layer classifiers .
+To robustly classify complex patterns , it is necessary to use a larger number of features and layer classifiers .
+68
+This need is apparent when face and non-face patterns become hard to distinguish , weak classifiers are too weak to boost [22] .
+This need is apparent because when face and non-face patterns become hard to distinguish , weak classifiers are too weak to boost [22] .
+69
+With the first several layers in our experiment ( cf. Figure 1 ) , using some 800 weak classifiers , more than \MATH of non-face patterns are rejected .
+With the first several layers in our experiment ( cf . Figure 1 ) , using some 800 weak classifiers , more than \MATH of non-face patterns were rejected .
+70
+However , turning the later layers into robustly classifying a smaller number of remaining patterns , it requires a lot more , e.g. , 5 ,660 , weak classifiers , thus making the training task much more complicated .
+However , enabling the later layers to robustly classify a smaller number of remaining patterns requires many more weak classifiers ( around 5 ,660 ) , thus making the training task much more complicated .
+71
+</p>
+</p>
+72
+<p>
+<p>
+73
+-Second , the training process is complicated .
+-Second , the training process is complicated .
+74
+Firstly , it requires a long training time because the training time is proportional to the number of features in the input feature set ( which is normally hundreds of thousands ) and the number of training samples ( which is generally tens of thousands ) .
+It requires a long time because the training time is proportional to the number of features in the input feature set ( which is normally hundreds of thousands ) and the number of training samples ( which is generally tens of thousands ) .
+75
+In our experiment , with 20 ,000 training samples and 134 ,736 features , the average training time for choosing one feature associated with the weak classifier is about 30 minutes on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+In our experiment , with 20 ,000 training samples and 134 ,736 features , the average training time for choosing one feature associated with the weak classifier was about 30 minutes on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+76
+Therefore , training a cascade of classifiers with around 6 ,060 features [1] might take in order of several weeks .
+Therefore , training a cascade of classifiers with around 6 ,060 features [1] might take on the order of several weeks .
+77
+Secondly , AdaBoost-based classifiers are constructed by adding features after each round of boosting , so several training parameters must be tuned manually while training .
+Another thing that complicates the training process is that AdaBoost-based classifiers are constructed by adding features after each round of boosting , so several training parameters must be tuned manually while training .
+78
+In practice , for stopping training a classifier , at least the following three parameters must be determined in advance : minimum detection rate , maximum false positive rate , and maximum number of boosting rounds ( or the number of weak classifiers of each layer ) .
+In practice , for stopping training a classifier , at least the following three parameters must be determined in advance : minimum detection rate , maximum false positive rate , and maximum number of boosting rounds ( or the number of weak classifiers of each layer ) .
+79
+Because the complexity of the training sets varies through layers in the cascade , it is undetermined how to choose these parameters automatically and optimally .
+Because the complexity of the training sets varies throughout the layers in the cascade , a way to choose these parameters automatically and optimally has not been determined .
+80
+For example , in the first layers , it is quite easy to train a classifier with a minimum detection rate of \MATH and a maximum false-positive rate of \MATH .
+For example , in the first layers , it is quite easy to train a classifier with a minimum detection rate of \MATH and a maximum false-positive rate of \MATH .
+81
+However , in later layers , choosing the detection rate of \MATH will give a false positive rate greater than \MATH [22] .
+However , in later layers , choosing the detection rate of \MATH will give a false positive rate greater than \MATH [22] .
+82
+Adding more features directly increases computation time and might cause over-fitting .
+Adding more features directly increases computation time and might cause over-fitting .
+83
+</p>
+</p>
+84
+<p>
+<p>
+85
+The authors therefore propose a multi-stage approach to build a face-detection system by adopting the advantages of Viola and Jones' approach and by introducing a method to address the above problems .
+The authors therefore propose a multi-stage approach to build a face-detection system by adopting the advantages of Viola and Jones' approach and by introducing a method to address the above problems .
+86
+Specifically , for quick rejection of non-face patterns , we reuse two key ingredients of Viola and Jones' system , that is , the cascaded structure of simple-to-complex classifiers and AdaBoost trained with Haar-wavelet features .
+Specifically , for quick rejection of non-face patterns , we have reused two key ingredients of Viola and Jones' system , that is , the cascaded structure of simple-to-complex classifiers and AdaBoost trained with Haar wavelet features .
+87
+Furthermore , for robust classification and simple training , we propose using SVM classifiers for later layers .
+Furthermore , for robust classification and simple training , we propose using SVM classifiers for later layers .
+88
+The contribution of this approach is three fold :
+The contribution of this approach is threefold :
+89
+</p>
+</p>
+90
+<p>
+<p>
+91
+-First , to detect the face candidate regions , a new stage ( using a larger window size and a larger moving step size ) is added .
+-First , to detect the face candidate regions , a new stage ( using a larger window size and a larger moving step size ) has been added .
+92
+We use 36 x 36-pixel window-based classifiers with a moving step size of 12 pixels , to quickly estimate the candidate face regions .
+We use 36 x 36-pixel window-based classifiers with a moving step size of 12 pixels to quickly estimate the candidate face regions .
+93
+The idea of using larger windows and moving the step size was adopted in [5] , but it severely degraded performance .
+The idea of using larger windows and moving the step size was adopted in [5] , but it severely degraded performance .
+94
+To improve speed while maintaining high accuracy , our approach takes advantage of the combination of the Haar wavelet features and the AdaBoost learning for fast and robust evaluation
+To improve speed while maintaining high accuracy , our approach takes advantage of the combination of the Haar wavelet features and the AdaBoost learning for fast and robust evaluation .
+95
+</p>
+</p>
+96
+<p>
+<p>
+97
+Second , how to efficiently reuse the features selected by AdaBoost in the previous stage , for the SVM classifiers of the last stage , is investigated .
+Second , we have investigated how to efficiently reuse the features selected by AdaBoost in the previous stage for the SVM classifiers of the last stage .
+98
+Reusing these features brings to two advantages : ( i ) Haar wavelet features are very fast in evaluating and normalizing [1] .
+Reusing these features brings two advantages : ( i ) Haar wavelet features are very fast in being evaluated and normalized [1] .
+99
+Furthermore , it is unnecessary to re-evaluate these features because they have been previously evaluated .
+Furthermore , these features do not need to be re-evaluated because they have already been evaluated .
+100
+( ii ) By using SVM classifiers with powerful generalization , using too many features in the cascade is avoided , therefore importantly training time is saved and over-fitting is avoided .
+( ii ) By using SVM classifiers with powerful generalization , using too many features in the cascade is avoided , with the important results of saving training time and avoiding over-fitting .
+101
+</p>
+</p>
+102
+<p>
+<p>
+103
+Third , the training time of AdaBoost classifiers is shortened by using simple sampling techniques to reduce the number of features in the feature set .
+Third , the training time of AdaBoost classifiers has been shortened by using simple sampling techniques to reduce the number of features in the feature set .
+104
+Experiments will show that for rejection , using a full feature set and a sampled feature set gives the comparable performance .
+Experiments showed that for rejection , the performance gained by using a sampled feature set was comparable to that of a full feature set .
+105
+Along with using several SVM classifiers instead of many AdaBoost classifiers in later layers , the total training time is reduced significantly .
+Along with using several SVM classifiers instead of many AdaBoost classifiers in later layers , the total training time has been significantly reduced .
+106
+</p>
+</p>
+107
+</section>
+</section>
+108
+<section label= " Related Work " >
+<section label= " Related Work " >
+109
+<p>
+<p>
+110
+There have been several studies working on how to handle the drawbacks of Viola and Jones' system .
+Several studies have worked on addressing the drawbacks of Viola and Jones' system .
+111
+Wu et al. [23] used direct feature selection to reduce training time while maintaining comparable performance .
+Wu et al. [23] used direct feature selection to reduce training time while maintaining comparable performance .
+112
+Their idea is to separate the training process into two stages : feature selection and classifier construction .
+Their idea is to separate the training process into two stages : feature selection and classifier construction .
+113
+In Viola and Jones' work , features are selected by the discriminative performance of their associated weak classifiers through the boosting process .
+In Viola and Jones' work , features are selected by the discriminative performance of their associated weak classifiers through the boosting process .
+114
+It is therefore very time consuming because all weak classifiers must be trained every time one feature is selected .
+This process is very time consuming because all weak classifiers must be trained every time one feature is selected .
+115
+With their new proposal , weak classifiers are trained only once and features are selected by the direct feature selection method that directly maximizes the learning objective of the output classifier .
+With the new proposal of Wu et al. , weak classifiers are trained only once and features are selected by the direct feature selection method , which directly maximizes the learning objective of the output classifier .
+116
+They claim that their method is 100 times faster than Viola and Jones' method .
+They claim that their method is 100 times faster than Viola and Jones' method .
+117
+</p>
+</p>
+118
+<p>
+<p>
+119
+Another direction is to optimally build the cascade to improve the overall performance of the cascade .
+Another direction is to optimally build the cascade to improve its overall performance .
+120
+Sun et al. [24] and [25] propose a scheme to optimally tune parameters in layer classifiers .
+Sun et al. [24] and [25] proposed a scheme to optimally tune parameters in layer classifiers .
+121
+However , their approach is somewhat complicated and is not easy to implement .
+However , their approach is somewhat complicated and is not easy to implement .
+122
+Xiao et al. [20] and Huang et al. [11] propose the boosting chain structure in which subsequent layers utilize historical information of previous layers .
+Xiao et al. [20] and Huang et al. [11] proposed a boosting chain structure in which subsequent layers utilize the historical information of the previous layers .
+123
+This significantly reduces the number of features used in each layer .
+This significantly reduces the number of features used in each layer .
+124
+Discrete AdaBoost uses a binary weak classifier that is too weak to boost in the case of the hard distinguished dataset .
+Discrete AdaBoost uses a binary weak classifier that is too weak to boost in the case of a hard distinguished dataset .
+125
+Studies based on RealBoost [26] , such as [12] ,[10] ,[27] ,[11] , introduced new kinds of weak classifiers that are stronger than binary weak classifiers .
+Studies based on RealBoost [26] , such as [12] , [10] , [27] , and [11] , introduced new kinds of weak classifiers that are stronger than binary weak classifiers .
+126
+New real-valued weak classifiers can effectively discriminate face and non-face distributions and , in consequence , the total number of features used also reduces dramatically .
+These new real-valued weak classifiers can effectively discriminate face and non-face distributions , so the total number of features used is also reduced dramatically .
+127
+Face detection systems such as [27] ,[11] only use around 800 features .
+Face detection systems such as [27] and [11] only use around 800 features .
+128
+However , the main problem with these systems is how to choose the most appropriate number of bins .
+However , the main problem with these systems is how to choose the most appropriate number of bins .
+129
+Small number of bins might not well approximate the real distribution while large number of bins might cause over-fitting , increase computation time and waste storage space .
+A small number of bins might not accurately approximate the real distribution , while a large number of bins might cause over-fitting , increase computation time , and waste storage space .
+130
+Actually , our system can benefit from this approach when building the rejection stage and thus also reduce the training time much more .
+However , our system can benefit from this approach when building the rejection stage and can thus reduce the training time even further .
+131
+</p>
+</p>
+132
+</section>
+</section>
+133
+<section label= " System Overview " >
+<section label= " System Overview " >
+134
+<p>
+<p>
+135
+The proposed face detection system consists of three stages that classify a 24x24 pixel window as either a face or a non-face .
+The proposed face detection system consists of three stages that classify a 24x24-pixel window as either a face or a non-face .
+136
+To detect faces of different sizes and locations , the detector is applied at every location and scale in the input image with a scale factor of 1 .2 , which is similar to the other approaches [5] ,[6] ,[9] .
+To detect faces of different sizes and locations , the detector is applied at every location and scale in the input image with a scale factor of 1 .2 , which is similar to other approaches [5] , [6] , [9] .
+137
+An outline of this system is given in Figure 2 .
+An outline of this system is given in Figure 2 .
+138
+</p>
+</p>
+139
+<p>
+<p>
+140
+The first stage is a cascade of classifiers used to estimate face candidate regions by evaluating 36x36 input windows , with a moving step of 12 pixels .
+The first stage is a cascade of classifiers used to estimate face candidate regions by evaluating 36x36 input windows , with a moving step of 12 pixels .
+141
+If a 36x36 window is detected as the existence of a face , 144 ( i.e. 12x12 ) likely face positions are collected and passed to the next stage .
+If a 36x36-pixel window is detected as the existence of a face , 144 ( i.e. , 12x12 ) likely face positions are collected and passed to the next stage .
+142
+The second stage is a cascade of classifiers used to investigate 24x24 window face candidate locations returned from the previous stage .
+The second stage is a cascade of classifiers used to investigate 24x24 window face candidate locations returned from the previous stage .
+143
+</p>
+</p>
+144
+<p>
+<p>
+145
+The main purpose of designing these two stages is trying to filter out a large number of non-face patterns as quick as possible before passing complex patterns to the final stage classifier .
+The main purpose of designing these two stages is trying to filter out a large number of non-face patterns as quickly as possible before passing complex patterns to the final stage classifier .
+146
+This is done by taking advantages of Viola and Jones' approach [1] , in which Haar wavelet features and the cascaded AdaBoost classifiers are extremely fast in computation .
+This is done by taking advantage of Viola and Jones' approach [1] , in which Haar wavelet features and the cascaded AdaBoost classifiers enable extremely fast computation .
+147
+</p>
+</p>
+148
+<p>
+<p>
+149
+Although the cascade of \MATH AdaBoost classifiers rejects non-face patterns rapidly , it is still influenced by the large number of \MATH patterns that it must process .
+Although the cascade of \MATH AdaBoost classifiers rejects non-face patterns rapidly , it is still influenced by the large number of \MATH patterns that it must process .
+150
+The reason why the fist stage , which is a cascade of \MATH classifiers , is added is to decrease the number of analyzed patterns .
+For this reason , the first stage , which is a cascade of \MATH classifiers , is added is to decrease the number of analyzed patterns .
+151
+To this end , this stage is trained specially to make the classifiers invariant to small face translations .
+To this end , this stage is trained specially to make the classifiers invariant to small face translations .
+152
+These classifiers can detect faces that are off-center by up to six pixels in any direction .
+These classifiers can detect faces that are off-center by up to six pixels in any direction .
+153
+An illustration of the difference between 24x24 and \MATH face training samples is depicted in Figure 3 .
+An illustration of the difference between 24x24 and \MATH face training samples is depicted in Figure 3 .
+154
+The \MATH window is chosen in accordance with the idea from [5] stated that the classifier can be trained to be invariant to translation by up to \MATH of original window size .
+The \MATH window is chosen in accordance with the idea in [5] that the classifier can be trained to be invariant to translation by up to \MATH of the original window size .
+155
+With this flexible classifier , the moving step size can be increased up to 12 pixels that reduce dramatically number of analyzed patterns .
+With this flexible classifier , the moving step size can be increased up to 12 pixels to dramatically reduce the number of analyzed patterns .
+156
+Efficiency of this stage will be discussed further in section 6 .3 .
+The efficiency of this stage will be discussed further in section 6 .3 .
+157
+</p>
+</p>
+158
+<p>
+<p>
+159
+The last stage is a cascade of non-linear SVM classifiers that reuses features that have been selected by AdaBoost in the second stage classifier .
+The last stage is a cascade of nonlinear SVM classifiers that reuses features that have been selected by AdaBoost in the second stage classifier .
+160
+These feature values are evaluated and scaled to be between 0 and 1 to form a feature vector .
+These feature values are evaluated and scaled to be between 0 and 1 to form a feature vector .
+161
+In our experiments , only 100 features are used and hence it is faster than using any pixel-based SVM classifiers [8] ,[9] .
+In our experiments , only 100 features were used , making classification faster than it would have been using pixel-based SVM classifiers [8] , [9] .
+162
+</p>
+</p>
+163
+</section>
+</section>
+164
+<section label= " Training Cascaded Classifiers " >
+<section label= " Training Cascaded Classifiers " >
+165
+<subsection label= " Haar Wavelet Features " >
+<subsection label= " Haar Wavelet Features " >
+166
+<p>
+<p>
+167
+The same feature set as proposed in [1] is used ( cf. Figure 4 ) .
+The same feature set proposed in [1] was used ( cf . Figure 4 ) .
+168
+It consists of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+It consists of four kinds of features modeled from adjacent basic rectangles of the same size and shape .
+169
+The feature value is defined as the difference of sum of the pixels within rectangles .
+The feature value is defined as the difference of the sum of the pixels within rectangles .
+170
+Each feature is parameterized by four parameters : the position within the window \MATH , width \MATH and height \MATH ( cf. Figure 5 ) .
+Each feature is parameterized by four parameters : the position within the window \MATH , the width \MATH , and the height \MATH ( cf . Figure 5 ) .
+171
+</p>
+</p>
+172
+<p>
+<p>
+173
+By using integral image definition [1] , these rectangle feature values can be computed extremely quickly .
+By using integral image definition [1] , the feature values of these rectangles can be computed extremely quickly .
+174
+The integral image at location \MATH is defined as \MATH , where \MATH is the integral image and \MATH is the original image .
+The integral image at location \MATH is defined as \MATH , where \MATH is the integral image and \MATH is the original image .
+175
+In practice , \MATH can be computed simply by using the following recurrent function :\MATH , and sum of the pixels within a rectangle can be computed from four integral image values of its vertices , for example , \MATH .
+In practice , \MATH can be computed simply by using the following recurrent function :\MATH , and sum of the pixels within a rectangle can be computed from four integral image values of its vertices , for example , \MATH .
+176
+</p>
+</p>
+177
+</subsection>
+</subsection>
+178
+<subsection label= " AdaBoost Learning " >
+<subsection label= " AdaBoost Learning " >
+179
+<p>
+<p>
+180
+Boosting is used to improve the classification performance of any given simple learning algorithm [28] .
+Boosting is used to improve the classification performance of any given simple learning algorithm [28] .
+181
+Given \MATH weak classifiers \MATH learned through \MATH rounds of boosting , the strong classifier is formed by a linear combination : \MATH where \MATH are coefficients found in the boosting process .
+Given \MATH weak classifiers \MATH learned through \MATH rounds of boosting , the strong classifier is formed by a linear combination : \MATH , where \MATH are coefficients found in the boosting process .
+182
+</p>
+</p>
+183
+<p>
+<p>
+184
+Each weak classifier \MATH is associated with a feature \MATH and a threshold \MATH such that the number of incorrect classified examples corresponding to this weak classifier is minimized : \MATH , where polarity \MATH indicates the direction of the inequality sign .
+Each weak classifier \MATH is associated with a feature \MATH and a threshold \MATH such that the number of incorrectly classified examples corresponding to the weak classifier is minimized : \MATH , where polarity \MATH indicates the direction of the inequality sign .
+185
+</p>
+</p>
+186
+<p>
+<p>
+187
+In each round of boosting , the best weak classifier \MATH that has the lowest error \MATH will be chosen .
+In each round of boosting , the best weak classifier \MATH that has the lowest error \MATH will be chosen .
+188
+The error of each weak classifier is measured with respect to the set of weights over each example of the training set \MATH , where \MATH and \MATH are the weight and the label of the training example \MATH , respectively .
+The error of each weak classifier is measured with respect to the set of weights over each example of the training set \MATH , where \MATH and \MATH are the respective weight and label of the training example \MATH .
+189
+After each round , these weights are updated such that the weak learner will focus much more on the hard examples in the next round .
+After each round , these weights are updated such that the weak learner will focus much more on the hard examples in the next round .
+190
+</p>
+</p>
+191
+</subsection>
+</subsection>
+192
+<subsection label= " Cascade of classifiers " >
+<subsection label= " Cascade of classifiers " >
+193
+<p>
+<p>
+194
+The main idea of building a cascade of classifiers is to reduce the computation time by giving different treatments to different complexities of input windows ( cf .
+The main idea of building a cascade of classifiers is to reduce the computation time by giving different treatments to different complexities of input windows ( cf .
+195
+Figure 7 ) .
+Figure 7 ) .
+196
+Only input windows that have passed through all layers of the cascade are classified as faces .
+Only input windows that have passed through all layers of the cascade are classified as faces .
+197
+</p>
+</p>
+198
+<p>
+<p>
+199
+Training cascaded classifiers that can achieve both good detection rate and less computation time is quite complex , because a higher detection rate requires more features , but more features are correspondent to more time for evaluation .
+Training cascaded classifiers that can achieve both good detection rates and less computation time is quite complex ; a higher detection rate requires more features , but more features correspond to more time needed for evaluation .
+200
+To simplify this , the detection rate goal and the false positive rate goal for each layer are usually set beforehand .
+To simplify this , the detection rate goal and the false positive rate goal for each layer are usually set beforehand .
+201
+Viola and Jones [1] stated that , if the layer classifier could achieve the predefined target goals after 200 features are used , the training process will stop and a new layer will be added .
+Viola and Jones [1] stated that , if the layer classifier has achieved the predefined target goals after 200 features are used , the training process will stop and a new layer will be added .
+202
+</p>
+</p>
+203
+</subsection>
+</subsection>
+204
+</section>
+</section>
+205
+1 .	<section label= " SVM Classifier " >
+1 .	<section label= " SVM Classifier " >
+206
+<p>
+<p>
+207
+The support vector machine is a statistical learning method based on the structure-risk minimization principle .
+The support vector machine is a statistical learning method based on the structure-risk minimization principle .
+208
+It has been very efficiently proved in many pattern recognition applications [29] ,[8] ,[9] .
+It has been very efficiently proven in many pattern recognition applications [29] , [8] , [9] .
+209
+In the binary classification case , the objective of the SVM is to find the best separating hyperplane with a maximum margin .
+In the binary classification case , the objective of the SVM is to find the best separating hyperplane with a maximum margin .
+210
+</p>
+</p>
+211
+<p>
+<p>
+212
+The form of SVM classifiers is : \MATH where : \MATH is the d-dimensional vector of an observation example , \MATH is a class label , and \MATH is the vector of the \MATH training example .
+The form of SVM classifiers is : \MATH where \MATH is the d-dimensional vector of an observation example , \MATH is a class label , and \MATH is the vector of the \MATH training example .
+213
+All the \MATH corresponding to non-zero \MATH are called support vectors .
+All the \MATH corresponding to non-zero \MATH are called support vectors .
+214
+</p>
+</p>
+215
+<p>
+<p>
+216
+It is important to choose the appropriate kernel and parameter \MATH in order to to obtain the robust SVM classifier .
+It is important to choose the appropriate kernel and parameter \MATH in order to obtain the robust SVM classifier .
+217
+Although many kernels have been introduced by researchers , the following four kernels are commonly used : \MATH where \MATH and \MATH are kernel parameters .
+Although many kernels have been introduced by researchers , the following four kernels are commonly used : \MATH where \MATH , and \MATH are kernel parameters .
+218
+</p>
+</p>
+219
+<p>
+<p>
+220
+Compared to AdaBoost classifiers , SVM classifiers run much slower in running because of the large number of support vectors and heavy kernel computation .
+Compared to AdaBoost classifiers , SVM classifiers run much more slowly because of the large number of support vectors and the heavy kernel computation .
+221
+To control the trade-off between the number of support vectors and errors , Scholkopf et al. [30] proposed using a new parameter \MATH instead of the parameter \MATH .
+To control the trade-off between the number of support vectors and errors , Scholkopf et al. [30] proposed using a new parameter \MATH instead of the parameter \MATH .
+222
+They proved that the parameter \MATH is an upper bound of the fraction of margin errors and a lower bound of the fraction of support vectors .
+They proved that the parameter \MATH is an upper bound of the fraction of margin errors and a lower bound of the fraction of support vectors .
+223
+The implementations of \MATH and \MATH are provided by LibSVM [31] .
+The implementations of \MATH and \MATH are provided by LibSVM [31] .
+224
+<p>
+</p>
+225
+</section>
+</section>
+226
+<section label= " Experiments " >
+<section label= " Experiments " >
+227
+<subsection label= " Experiment Setup " >
+<subsection label= " Experiment Setup " >
+228
+<p>
+<p>
+229
+For training , we collected 7 ,500 , 24x24-size face patterns from the Internet .
+For training , we collected 7 ,500 , 24x24-size face patterns from the Internet . / / size / pixel?
+230
+Non-face patterns were generated at different locations and scales from 8 ,440 images with various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+Non-face patterns were generated at different locations and scales from 8 ,440 images with various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+231
+Some examples of the collected 24x24 face patterns are shown in Figure 8 .
+Some examples of the collected 24x24 face patterns are shown in Figure 8 .
+232
+</p>
+</p>
+233
+<p>
+<p>
+234
+Face patterns for training the 36x36 classifiers are generated by selecting 36x36 windows containing the 24x24 face window of the input image .
+Face patterns for training the 36x36 classifiers were generated by selecting 36x36 windows containing the 24x24 face window of the input image .
+235
+Figure 9 shows some examples of 36x36 face patterns that include various kinds of floating positions and backgrounds .
+Figure 9 shows some examples of 36x36 face patterns that include various kinds of floating positions and backgrounds .
+236
+</p>
+</p>
+237
+<p>
+<p>
+238
+To train the cascade of 24x24 AdaBoost classifiers used in the rejection stage , the same 7 ,500 face patterns are used for all layers .
+To train the cascade of 24x24 AdaBoost classifiers used in the rejection stage , the same 7 ,500 face patterns were used for all layers .
+239
+Non-face patterns of the training and the validating sets of the first layer in the cascade are selected randomly .
+Non-face patterns of the training and the validating sets of the first layer in the cascade were selected randomly .
+240
+Non-face patterns of the subsequent layer classifiers are false positives collected by the partially trained cascade on the set of non-face images .
+Non-face patterns of the subsequent layer classifiers are false positives collected by the partially trained cascade on the set of non-face images .
+241
+For each layer classifier , 7 ,500 non-face patterns are used for training and 7 ,500 other non-face patterns are used for validating .
+For each layer classifier , 7 ,500 non-face patterns were used for training and 7 ,500 other non-face patterns were used for validating .
+242
+</p>
+</p>
+243
+<p>
+<p>
+244
+To compare the performance of classifiers , we have implemented a fully cascade of classifiers trained by AdaBoost , similar to that used by Viola and Jones [1] .
+To compare the performance of classifiers , we implemented a full cascade of classifiers trained by AdaBoost , similar to that used by Viola and Jones [1] .
+245
+The training parameters of each layer were set as follows .
+The training parameters of each layer were set as follows .
+246
+The minimum of the detection rate is \MATH , the maximum of the false positive rate is \MATH and the maximum of the number of features in each layer is 200 .
+The minimum of the detection rate was \MATH , the maximum of the false positive rate was \MATH , and the maximum of the number of features in each layer was 200 .
+247
+This setting resulted in a face detector that consists of 38 layers with 6 ,360 features .
+This setting resulted in a face detector that consists of 38 layers with 6 ,360 features .
+248
+</p>
+</p>
+249
+<p>
+<p>
+250
+All experiments were run on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+All experiments were run on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+251
+The training process was terminated when no more false positives were found in the non-face images of the data set .
+The training process was terminated when no more false positives were found in the non-face images of the data set .
+252
+</p>
+</p>
+253
+</subsection>
+</subsection>
+254
+<subsection label= " Simplification of Training the Rejection Stage " >
+<subsection label= " Simplification of Training the Rejection Stage " >
+255
+<p>
+<p>
+256
+If \MATH is the number of Haar wavelet features and \MATH is the number of training patterns , the learning time of AdaBoost to train \MATH weak classifiers is roughly[1] .
+If \MATH is the number of Haar wavelet features and \MATH is the number of training patterns , the learning time of AdaBoost to train \MATH weak classifiers is roughly [1] .
+257
+Therefore , if the number of training patterns is fixed , the learning time can be shortened when either the number of features in the feature set or the number of weak classifiers in the final cascade is reduced .
+Therefore , if the number of training patterns is fixed , the learning time can be shortened when either the number of features in the feature set or the number of weak classifiers in the final cascade is reduced .
+258
+In our approach , the cascaded classifiers are only used for efficient rejection , so we can reduce both these numbers in order to keep training time for the full system reasonable .
+In our approach , the cascaded classifiers are only used for efficient rejection , so we can reduce both of these numbers in order to keep the training time for the full system reasonable .
+259
+</p>
+</p>
+260
+<p>
+<p>
+261
+As mentioned in section 4 .1 , each feature is parameterized by a tuple of four parameters \MATH .
+As mentioned in section 4 .1 , each feature is parameterized by a tuple of four parameters \MATH . / / If this ( and other places ) do not display with spaces after the commas , spaces must be insert . A comma should always be followed by a space . I recommend checking this carefully throughout .]
+262
+A set of features is then formed by changing these parameters in correspondent steps \MATH .
+A set of features is then formed by changing these parameters in corresponding steps \MATH .
+263
+In the other hand , a feature set is parameterized by \MATH .
+A feature set , on the other hand , is parameterized by \MATH .
+264
+One of the simplest ways to sub-sample the feature set is to change parameters \MATH , for example , from a full feature set \MATH to a reduced feature set \MATH .
+One of the simplest ways to sub-sample the feature set is to change parameters \MATH , for example , from a full feature set \MATH to a reduced feature set \MATH .
+265
+Because the full feature set is redundant , this sub-sampling is expected not to affect the rejection performance of AdaBoost classifiers significantly .
+Because the full feature set is redundant , this sub-sampling is expected not to significantly affect the rejection performance of AdaBoost classifiers .
+266
+</p>
+</p>
+267
+<p>
+<p>
+268
+We carried out experiments to compare the performance of classifiers trained on these two feature sets : the full feature set \MATH containing 134 ,736 features and the reduced feature set \MATH containing 14 ,807 features ( excluding features with the small size ) .
+We carried out experiments to compare the performance of classifiers trained on these two feature sets : the full feature set \MATH , containing 134 ,736 features and the reduced feature set \MATH , containing 14 ,807 features ( excluding features of small size ) .
+269
+Two classifiers are trained up to the maximum of 200 features .
+Two classifiers were trained up to the maximum of 200 features .
+270
+The classifier 's threshold is changed to meet the detection rate of \MATH .
+The classifier 's threshold was changed to meet the detection rate of \MATH .
+271
+The training set contains 7 ,500 face patterns and 7 ,500 non-face patterns .
+The training set contains 7 ,500 face patterns and 7 ,500 non-face patterns .
+272
+Rejection performance is evaluated through the false positive rate on a validation test set which contains 500 ,000 non-face patterns .
+Rejection performance was evaluated through the false positive rate on a validation test set that contains 500 ,000 non-face patterns .
+273
+All non-face patterns are selected randomly from the training set mentioned above .
+All non-face patterns were selected randomly from the training set mentioned above .
+274
+</p>
+</p>
+275
+<p>
+<p>
+276
+The result shown in Figure 10 indicates that the performances of these two classifiers are no different , especially when the number of features is large enough , for example , more than 50 .
+The results shown in Figure 10 indicate that the performances of these two classifiers were no different , especially when the number of features was large enough , for example , more than 50 .
+277
+As a result , by using the reduced feature set , the training time can be shortened approximately to one ninth .
+As a result , by using the reduced feature set , the training time can be shortened to approximately one-ninth .
+278
+</p>
+</p>
+279
+<p>
+<p>
+280
+Our another experiment has shown that , for similar performance , the AdaBoost classifier trained on the reduced feature set that uses larger sampling step sizes requires more features than that trained on the full feature set .
+Another experiment we conducted showed that , for similar performance , an AdaBoost classifier trained on the reduced feature set that uses larger sampling step sizes requires more features than one trained on the full feature set . / / [Do you need a reference here , or is this still talking about the experiments you report in this paper?]
+281
+Therefore , only the sampling parameter \MATH was used in training the 24x24 AdaBoost classifiers .
+Therefore , only the sampling parameter \MATH was used in training the 24x24 AdaBoost classifiers .
+282
+<p>
+<p>
+283
+</subsection>
+</subsection>
+284
+<subsection label= " Efficiency of the Cascaded 36x36 Classifiers " >
+<subsection label= " Efficiency of the Cascaded 36x36 Classifiers " >
+285
+<p>
+<p>
+286
+In our system , the first stage is a cascade of classifiers that processes 36x36 patterns with a moving step size of 12 pixels .
+In our system , the first stage is a cascade of classifiers that processes 36x36 patterns with a moving step size of 12 pixels .
+287
+By taking advantage of simplification in training classifiers only for rejection demonstrated in section 6 .2 , training this cascade only uses the feature set generated from a 36x36 window with sampling parameters \MATH .
+By taking advantage of simplification in training classifiers only for rejection , as demonstrated in section 6 .2 , training this cascade only uses the feature set generated from a 36x36 window with sampling parameters \MATH .
+288
+As a result , 12 ,223 features are produced .
+As a result , 12 ,223 features are produced .
+289
+The training set contains 12 ,000 face patterns and 12 ,000 non-face patterns .
+The training set contains 12 ,000 face patterns and 12 ,000 non-face patterns .
+290
+Since a 36x36 face sample contains a lot of background outside the 24x24 face region while the classifier is required to be fast and to keep all possible face regions , training parameters are set as follows : the minimum detection rate of \MATH and maximum of false positive rate of \MATH .
+Since a 36x36 face sample contains a large proportion of background outside the 24x24 face region and the classifier is required to be fast and to keep all possible face regions , a minimum detection rate of \MATH and a maximum of false positive rate of \MATH were set as the training parameters .
+291
+In our experiments , after reaching 50 features , the classifier 's performance does not significantly increase anymore , so the maximum number of features for each layer is set to 50 .
+In our experiments , after reaching 50 features , the classifier 's performance did not significantly increase , so the maximum number of features for each layer is set to 50 .
+292
+To keep a balance between computation speed and robustness , the maximum number of layers is set to three because using more layers would degrade the overall detection rate dramatically .
+To keep a balance between computation speed and robustness , the maximum number of layers is set to three because using more layers would degrade the overall detection rate dramatically .
+293
+</p>
+</p>
+294
+<p>
+<p>
+295
+Figure 11( a ) shows several features of the first 36x36 layer classifier selected by AdaBoost .
+Figure 11( a ) shows several features of the first 36x36 layer classifier selected by AdaBoost .
+296
+It is somehow similar to features of the first 24x24 layer classifier as shown in Figure 11( b ) .
+They are somehow similar to the features of the first 24x24 layer classifier as shown in Figure 11( b ) . / / [somehow?This sounds vague . How are they similar?]
+297
+In addition , Figure 12 shows an example of face candidate regions estimated by using this cascade .
+In addition , Figure 12 shows an example of face candidate regions estimated by using this cascade .
+298
+</p>
+</p>
+299
+</subsection>
+</subsection>
+300
+<subsection label= " Features Selected by AdaBoost for SVM " >
+<subsection label= " Features Selected by AdaBoost for SVM " >
+301
+<p>
+<p>
+302
+Two main issues surrounding the reuse of features selected by AdaBoost are : ( i ) which layer whose features will be reused for SVM is the best? and ( ii ) How many features should be used?
+Two main issues surrounding the reuse of features selected by AdaBoost are : ( i ) which layer�fs features should be reused for SVM and ( ii ) how many features should be used .
+303
+</p>
+</p>
+304
+<p>
+<p>
+305
+For comparison of the performance of SVM classifiers , 2 ,450 face patterns and 7 ,500 non-face patterns which are separated from the training set ( section 6 .1 ) were used .
+For comparison of the performance of SVM classifiers , 2 ,450 face patterns and 7 ,500 non-face patterns that were separated from the training set ( section 6 .1 ) were used .
+306
+The SVM classifiers were trained with a RBF kernel whose parameter \MATH is \MATH .
+The SVM classifiers were trained with a RBF kernel whose parameter \MATH is \MATH .
+307
+The parameter \MATH is set to \MATH .
+The parameter \MATH was set to \MATH .
+308
+These parameters were found by using cross-validation test .
+These parameters were found by using a cross-validation test .
+309
+</p>
+</p>
+310
+<p>
+<p>
+311
+Figure 13 compares the performance of classifiers trained on 200-feature sets selected by different layers in the cascade ( layers 14 , 17 , 20 , and 25 ) .
+Figure 13 compares the performance of classifiers trained on 200-feature sets selected by different layers in the cascade ( layers 14 , 17 , 20 , and 25 ) .
+312
+These comparable performances suggest that the second stage ( using AdaBoost ) can be switched to the final stage ( using SVM ) at any time .
+These comparable performances suggest that the second stage ( using AdaBoost ) can be switched to the final stage ( using SVM ) at any time .
+313
+As a result , total training time of the system can be easily controlled .
+As a result , the total training time of the system can easily be controlled .
+314
+</p>
+</p>
+315
+<p>
+<p>
+316
+To determine how many features is robust enough , we used the 200-feature set selected in layer 17 to generate different subsets of features with different number of features .
+To determine the number of features is that would be sufficiently robust , we used the 200-feature set selected in layer 17 to generate different subsets of features with different numbers of features .
+317
+Features in each set were selected in the order that they were added in the training process .
+Features in each set were selected in the order in which they were added in the training process .
+318
+For example , a 25-feature set consists of first 25 features selected by AdaBoost when training layer 17 .
+For example , a 25-feature set consists of the first 25 features selected by AdaBoost when training layer 17 .
+319
+The results shown in Figure 14 indicate that with more than 100 features , the performance of classifiers is comparable .
+The results shown in Figure 14 indicate that with more than 100 features , the performance of the classifiers was comparable . / / [to what?]
+320
+</p>
+</p>
+321
+<p>
+<p>
+322
+Basically , the speed of a SVM classifier is proportional to the number of features used , so the greater number of features used , the slower the classifier will be .
+Basically , the speed of a SVM classifier is proportional to the number of features used , so the greater the number of features used , the slower the classifier will be .
+323
+Figure 15 shows the processing speed of SVM classifiers that uses different subsets of features .
+Figure 15 shows the processing speed of SVM classifiers using different subsets of features .
+324
+The SVM classifier using 25 features run fastest while the SVM classifier using 200 features run slowest .
+The SVM classifier using 25 features ran the fastest , while the SVM classifier using 200 features was the slowest .
+325
+The speeds of SVM classifiers using 100 , 125 and 175 features are not importantly different because their difference in terms of number of features and number of support vectors is inconsiderable .
+The speeds of SVM classifiers using 100 , 125 , and 175 features were not importantly different because their difference in terms of number of features and number of support vectors were not large enough to have a significant impact .
+326
+Therefore , 100 features might be the best trade-off between the speed and the performance .
+Therefore , 100 features might be the best trade-off between speed and performance .
+327
+</p>
+</p>
+328
+</subsection>
+</subsection>
+329
+<subsection label= " Efficiency of SVM Classifiers " >
+<subsection label= " Efficiency of SVM Classifiers " >
+330
+<p>
+<p>
+331
+We carried out an experiment to show efficiency of a single SVM classifier over a cascade of AdaBoost classifiers .
+We carried out an experiment to show the efficiency of a single SVM classifier over a cascade of AdaBoost classifiers .
+332
+In this experiment , 40 ,000 false positives were gathered by running a cascade of 17 AdaBoost classifiers ( CAB17 ) on the set of non-face images mentioned in section 6 .1 .
+In this experiment , 40 ,000 false positives were gathered by running a cascade of 17 AdaBoost classifiers ( CAB17 ) on the set of non-face images mentioned in section 6 .1 .
+333
+These false positives then were used as hard non-face patterns to train and test the performance of two classifiers : a single RBF SVM classifier and a cascade of other 18 AdaBoost classifiers .
+These false positives then were used as hard non-face patterns to train and test the performance of two classifiers : a single RBF SVM classifier and a cascade of other 18 AdaBoost classifiers .
+334
+Of 40 ,000 non-face patterns , 7 ,500 non-face patterns were used along with 7 ,500 face patterns to train these two classifiers .
+Of 40 ,000 non-face patterns , 7 ,500 non-face patterns were used along with 7 ,500 face patterns to train these two classifiers .
+335
+The remaining 34 ,000 non-face patterns and other 2 ,450 face patterns were used to compare the accuracy .
+The remaining 34 ,000 non-face patterns and other 2 ,450 face patterns were used to compare the accuracy of the classifiers .
+336
+The cascade of AdaBoost classifiers were trained with the parameters set as in section 6 .1 .
+The cascade of AdaBoost classifiers were trained with the parameters set as in section 6 .1 .
+337
+The RBF SVM classifier reused 100 features selected by the last layer of CAB17 as the feature vector and was trained by a RBF kernel whose parameter \MATH is \MATH .
+The RBF SVM classifier reused 100 features selected by the last layer of CAB17 as the feature vector and was trained by an RBF kernel whose parameter \MATH is \MATH .
+338
+The parameter \MATH is set to \MATH .
+The parameter \MATH was set to \MATH .
+339
+These parameters are found by using cross-validation test .
+These parameters were found by using a cross-validation test .
+340
+</p>
+</p>
+341
+<p>
+<p>
+342
+The result shown in Figure 16 demonstrates that with hard classified patterns that later layers of the cascade will process , the single SVM classifier can achieve higher accuracy than the cascade of AdaBoost classifiers trained by roughly predefined training parameters .
+The result shown in Figure 16 demonstrates that with hard classified patterns that later layers of the cascade will process , the single SVM classifier can achieve higher accuracy than the cascade of AdaBoost classifiers trained by roughly predefined training parameters . / / ?NOTE : I believe that I hyphenated this term in your previous document , but after seeing it used here , I would say that it does not need to be hyphenated. My apologies for any confusion . A better way to express this , however , might be " patterns that have been classified as difficult " or " patterns shown to be difficult to classify .]
+343
+Furthermore , the training time of a single SVM ( which takes several hours ) is much smaller than that of a cascade of AdaBoost classifiers ( which might take everal weeks ) .
+Furthermore , the training time of a single SVM ( which takes several hours ) is much shorter than that of a cascade of AdaBoost classifiers ( which might take several weeks ) .
+344
+</p>
+</p>
+345
+</subsection>
+</subsection>
+346
+<subsection label= " Performance Comparison " >
+<subsection label= " Performance Comparison " >
+347
+<p>
+<p>
+348
+The final system consists of three stages .
+The final system consists of three stages .
+349
+In the first stage , the cascaded 36x36 classifiers consist of three layers , making a total number of features used of 120 .
+In the first stage , the cascaded 36x36 classifiers consist of three layers , making for a total of 120 features .
+350
+The second stage consists of 17 layers with 2 ,160 features .
+The second stage consists of 17 layers with 2 ,160 features .
+351
+Compared to the system with 6 ,061 features used in [1] , our system uses fewer features and , thus , can save significant training time ( which is approximate 27 times in total ) .
+Compared to the system with 6 ,061 features used in [1] , our system uses fewer features and can thus save significant training time ; the training time needed using the new system is approximately 27 times shorter / approximately 27 rounds of training are needed in the new system . / / <--I think that the first choice here is your intended meaning , but please check carefully .
+352
+</p>
+</p>
+353
+<p>
+<p>
+354
+The final stage is a cascade of three SVM classifiers that take 100 features of the last layer in the second stage as the feature vector .
+The final stage is a cascade of three SVM classifiers that take 100 features of the last layer in the second stage as the feature vectors .
+355
+Each SVM classifier was trained by using 7 ,500 face patterns and 7 ,500 non-face patterns .
+Each SVM classifier was trained by using 7 ,500 face patterns and 7 ,500 non-face patterns .
+356
+The same 7 ,500 face patterns were used in training all these SVM classifiers .
+The same 7 ,500 face patterns were used in training all these SVM classifiers .
+357
+By running the cascade of AdaBoost classifiers of the second stage on the set of non-face images , 40 ,000 false positives were collected and used as non-face patterns to train the SVM classifiers .
+By running the cascade of AdaBoost classifiers of the second stage on the set of non-face images , 40 ,000 false positives were collected and used as non-face patterns to train the SVM classifiers .
+358
+7 ,500 non-face patterns used to train the first SVM classifier were selected randomly from the 40 ,000 non-face patterns .
+The 7 ,500 non-face patterns used to train the first SVM classifier were selected randomly from the 40 ,000 non-face patterns .
+359
+Non-face patterns in the subsequent SVM classifiers were false positives collected by the partially cascaded SVM classifiers on these 40 ,000 non-face patterns .
+Non-face patterns in the subsequent SVM classifiers were false positives collected by the partially cascaded SVM classifiers on these 40 ,000 non-face patterns .
+360
+To control the number of support vectors , the parameter \MATH was used instead of the parameter \MATH .
+To control the number of support vectors , the parameter \MATH was used instead of the parameter \MATH .
+361
+All SVM classifiers were trained by using the RBF kernel with \MATH .
+All SVM classifiers were trained by using the RBF kernel with \MATH .
+362
+All these parameters were found by using cross-validation test tool provided by LibSVM [31]} .
+All these parameters were found by using a cross-validation test tool provided by LibSVM [31] . / / ?NOTE : I believe that I hyphenated this term in your previous document , but after seeing it used here , I would say that it does not need to be hyphenated
+363
+This training procedure resulted three SVM classifiers whose the numbers of support vectors are 4 ,725 , 5 ,043 , and 4 ,847 respectively .
+This training procedure yielded three SVM classifiers whose numbers of support vectors are 4 ,725 , 5 ,043 , and 4 ,847 .
+364
+The average evaluating speed of a SVM classifier is approximate 610 WPS ( windows per second ) .
+The average evaluating speed of a SVM classifier is approximately 610 WPS ( windows per second ) .
+365
+</p>
+</p>
+366
+<p>
+<p>
+367
+We tested our system on the MIT+CMU frontal-face standard test set [5] which consists of 124 images with 480 frontal faces ( excluding images containing hand-drawn , cartoon and small faces ) .
+We tested our system on the MIT+CMU frontal-face standard test set [5] , which consists of 124 images with 480 frontal faces ( excluding images containing hand-drawn , cartoon , and small faces ) .
+368
+The configuration and rejection performance of the classifiers are listed in Table 1 and 2 .
+The configuration and rejection performance of the classifiers are listed in Tables 1 and 2 .
+369
+The first row presents the number of features of each layer , and the second row shows the fraction of the remaining patterns after each layer processing .
+The first row presents the number of features of each layer and the second row shows the fraction of the remaining patterns after each layer were processed . / / [fraction / percentage?<--Here and after , you use " percentage " in the graph , so you may want to keep the same term here .]
+370
+The last row indicates the fraction of time that each layer consumes .
+The last row indicates the fraction of time that each layer consumed . / / [fraction / percentage?]
+371
+All these statistics are extracted from running the classifiers on the MIT+CMU test set .
+All these statistics were extracted by running the classifiers on the MIT+CMU test set .
+372
+</p>
+</p>
+373
+<p>
+<p>
+374
+The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , are rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
+The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , were rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
+375
+If the first 24x24 layer classifier is added to the cascade of 36x36 classifiers , this combination rejects 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade 24x24 classifiers .
+When the first 24x24 layer classifier was added to the cascade of 36x36 classifiers , this combination rejected 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade of 24x24 classifiers .
+376
+Furthermore , the rejection of this very large number of patterns is done extremely quickly , only using \MATH of processing time .
+Furthermore , the rejection of this very large number of patterns was done extremely quickly , only using \MATH of the total processing time . / / [the total / the standard?]
+377
+It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , is used for SVM classifiers .
+It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , was used for SVM classifiers .
+378
+</p>
+</p>
+379
+<p>
+<p>
+380
+Detection rate and speed of classifiers with ten false positives are listed in Table 3 .
+The detection rate and speed of the classifiers with ten false positives are listed in Table 3 .
+381
+It is clear that our multi-stage system runs faster than the single cascade of 24x24 AdaBoost classifiers while detection rates are comparable .
+It is clear that our multi-stage system ran faster than the single cascade of 24x24 AdaBoost classifiers while achieving comparable detection rates .
+382
+This performance is possible because of the three following reasons :
+This performance was possible for three reasons .
+383
+First , the cascade of 36x36 AdaBoost classifiers rejects a lot of non-face patterns extremely fast while slow SVM classifiers only process a very small number of the remaining patterns .
+First , the cascade of 36x36 AdaBoost classifiers rejected many of non-face patterns extremely quickly , while slow SVM classifiers only processed a very small number of the remaining patterns .
+384
+Second , many images in the MIT+CMU test set contain large portion of background which was mentioned in [9] which said the ratio of non-face to face patterns is about 50 ,000 to 1 .
+Second , many images in the MIT+CMU test set contain large portion of background , which [9] mentioned has a ratio of non-face to face patterns of about 50 ,000 to 1 .
+385
+Experimental results showed that the AdaBoost+SVM system runs faster than that of the original AdaBoost on \MATH of total number of images in this test set .
+Experimental results showed that the AdaBoost+SVM system ran faster than that of the original AdaBoost on \MATH of the total number of images in this test set .
+386
+Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers do not affect so much in final performance because it might also be rejected by 24x24 classifiers in later layers .
+Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers did not severely affect the final performance because they might also be rejected by 24x24 classifiers in later layers .
+387
+</p>
+</p>
+388
+<p>
+<p>
+389
+Some detection results are given in Figure 17 .
+Some detection results are given in Figure 17 .
+390
+</p>
+</p>
+391
+</subsection>
+</subsection>
+392
+</section>
+</section>
+393
+<section label= " Conclusion " >
+<section label= " Conclusion " >
+394
+<p>
+<p>
+395
+We have developed a method to build a fast and robust face detection system based on a multi-stage approach .
+We have developed a method to build a fast and robust face detection system based on a multi-stage approach .
+396
+The cascaded structure of AdaBoost-based classifiers in two first stages allows to best adapt to various complexities of input patterns ,while non linear SVM classifiers at the final stage are robust enough to achieve good results .
+The cascaded structure of AdaBoost-based classifiers in the two first stages allows the system to best adapt to various complexities of input patterns , while nonlinear SVM classifiers at the final stage are robust enough to achieve good results .
+397
+Extensive experiments demonstrated that a significant computation time is devoted to potential face regions because almost all non-face patterns are rejected quickly by the two first stages , and only a very small number of face-like patterns is processed by the slow SVM classifiers .
+Extensive experiments demonstrated that a significant computation time is devoted to potential face regions because almost all non-face patterns are rejected quickly by the two first stages , and only a very small number of face-like patterns are processed by the slow SVM classifiers . / / [are / need to be?]
+398
+Discriminant Haar wavelet features selected from AdaBoost are used for all stage classifier to take advantages from their efficient representation and fast evaluation .
+Discriminant Haar wavelet features selected from AdaBoost are used for all stage classifiers to take advantage of their efficient representation and fast evaluation .
+399
+</p>
+</p>
+400
+</section>
+</section>
+401
+</document>
+</document>

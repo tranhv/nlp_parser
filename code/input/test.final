@@ -1,0 +1,7 @@
+# Sentence pair (1) source length 14 target length 15 alignment score : 1.41072e-06
+This paper analyzes the effect of the structural variation of sentences on parsing performance . 
+NULL ({ 7 }) This ({ 1 }) paper ({ 2 }) analyzes ({ 3 }) the ({ 4 }) effects ({ 5 }) of ({ 6 }) structural ({ 8 }) variation ({ 9 }) of ({ 10 }) sentences ({ 11 }) on ({ 12 }) parsing ({ 13 }) performances ({ 14 }) . ({ 15 }) 
+# Sentence pair (2) source length 19 target length 19 alignment score : 8.17612e-05
+We examine the performance of both shallow and deep parsers for two sentence constructions : imperatives and questions . 
+NULL ({ }) We ({ 1 }) examined ({ 2 }) the ({ 3 }) performances ({ 4 }) of ({ 5 }) both ({ 6 }) shallow ({ 7 }) and ({ 8 }) deep ({ 9 }) parsers ({ 10 }) for ({ 11 }) two ({ 12 }) sentence ({ 13 }) constructions ({ 14 }) : ({ 15 }) imperatives ({ 16 }) and ({ 17 }) questions ({ 18 }) . ({ 19 }) 
+# Sentence pair (3) source length 18 target length 17 alignment score : 3.03196e-06
