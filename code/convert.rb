@@ -19,9 +19,6 @@ def parser line
   result = ""
 
   source_match_array.each_with_index do |item,index|
-    puts index
-    puts item
-    
     unless null_value.count == 0
       tmp_index = index - 1
     end
@@ -36,22 +33,32 @@ def parser line
         else
           e.to_i - 1
         end
-        }.join(",")
+        }.join(",").strip
     end
   end
 
-  target_tag_null = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| e.to_i - 1 }
-  result + ":" + target_tag_null.join(",")
 
+  unless null_value.count == 0 
+    target_tag_null = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
+      if e.to_i == 0
+            e.to_s
+          else
+            e.to_i - 1
+      end
+     }
+    result += " :" + target_tag_null.join(",") unless target_tag_null.count == 0
+  end
+
+  result
 end
 
-a = "   NULL ({ 7 }) This ({ 1 12 }) paper ({ 2 }) analyzes ({ 3 }) 33 ({4})"
-b = a.gsub(/\(\{(\w*\s*)*\}\)/) {
-  |tmp| tmp.gsub(/(\s*\w*)*/) {
-          |tmp1| tmp1.strip.gsub(/\s/,",")
-        }
+#a = "   NULL ({ 7 }) This ({ 1 12 }) paper ({ 2 }) analyzes ({ 3 }) 33 ({4})"
+#b = a.gsub(/\(\{(\w*\s*)*\}\)/) {
+ # |tmp| tmp.gsub(/(\s*\w*)*/) {
+  #        |tmp1| tmp1.strip.gsub(/\s/,",")
+  #      }
 
-  }.strip
+ # }.strip
 
 #For example , the parsing accuracy for the Brown corpus is significantly lower than that for the Wall Street Journal ( WSJ ) portion of the Penn Treebank , even when re-training the parser with much more in-domain training data than other successful domains . --> target
 #1   2       3 4   5       6        7   8   9     10     11 12            13    14   15   16  17  18   19     20      21 22 23 24     25 26  27   28       29 30  31   32          33  34     35   36   37   38        39       40   41   42    43         44      45  
@@ -70,7 +77,7 @@ b = a.gsub(/\(\{(\w*\s*)*\}\)/) {
 
 
 def main
-  Dir.glob("input/test.final") {|filename|
+  Dir.glob("input/test.UA3.final") {|filename|
   file = File.new(filename)
   puts "Running file: #{File.basename(file)}"
   
