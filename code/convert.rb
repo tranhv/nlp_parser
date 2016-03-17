@@ -1,56 +1,55 @@
-
+# Document convert NLP
+# Convert NLP
 class Convert
-
-def parser line
-  source = line.gsub("NULL","").gsub(/\s*\(\{(\w*\s*)*\}\)\s*/," ").strip
+  def parser line
+    source = line.gsub("NULL","").gsub(/\s*\(\{(\w*\s*)*\}\)\s*/," ").strip
 
   #  "NULL ({7}) This ({1,12}) paper ({2}) analyzes ({3}) 33 ({4})"
   # ["NULL", "({7})", "This", "({1,12})", "paper", "({2})", "analyzes", "({3})", "33", "({4})"]
   source_group_matches = line.gsub(/\(\{(\w*\s*)*\}\)/) {
-  |tmp| tmp.gsub(/(\s*\w*)*/) {
-          |tmp1| tmp1.strip.gsub(/\s/,",")
-        }
+    |tmp| tmp.gsub(/(\s*\w*)*/) {
+      |tmp1| tmp1.strip.gsub(/\s/,",")
+      }
+    }.strip.split(' ')
 
-  }.strip.split(" ")
+    source_match_array = source_group_matches.each_slice(2).map { |e| e }
 
-  source_match_array = source_group_matches.each_slice(2).map { |e| e }
+    null_value = []
+    result = ""
 
-  null_value = []
-  result = ""
+    source_match_array.each_with_index do |item,index|
+      unless null_value.count == 0
+        tmp_index = index - 1
+      end
 
-  source_match_array.each_with_index do |item,index|
-    unless null_value.count == 0
-      tmp_index = index - 1
-    end
-
-    if item[0] == 'NULL'
-      null_value << item
-    else
-      target_tag = item[1].gsub(/[{()}]/,"")
-      result += ' ' + tmp_index.to_s + ':' + target_tag.split(",").map {|e| 
-        if e.to_i == 0
-          e.to_s
-        else
-          e.to_i - 1
-        end
-        }.join(",").strip
-    end
-  end
-
-
-  unless null_value.count == 0 
-    target_tag_null = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
-      if e.to_i == 0
+      if item[0] == 'NULL'
+        null_value << item
+      else
+        target_tag = item[1].gsub(/[{()}]/,"")
+        result += ' ' + tmp_index.to_s + ':' + target_tag.split(",").map {|e| 
+          if e.to_i == 0
             e.to_s
           else
             e.to_i - 1
+          end
+          }.join(",").strip
+        end
       end
-     }
-    result += " :" + target_tag_null.join(",") unless target_tag_null.count == 0
-  end
 
-  result
-end
+
+      unless null_value.count == 0 
+        target_tag_null = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
+          if e.to_i == 0
+            e.to_s
+          else
+            e.to_i - 1
+          end
+        }
+        result += " :" + target_tag_null.join(",") unless target_tag_null.count == 0
+      end
+
+      result
+    end
 
 #a = "   NULL ({ 7 }) This ({ 1 12 }) paper ({ 2 }) analyzes ({ 3 }) 33 ({4})"
 #b = a.gsub(/\(\{(\w*\s*)*\}\)/) {
@@ -78,23 +77,23 @@ end
 
 def main
   Dir.glob("input/test.UA3.final") {|filename|
-  file = File.new(filename)
-  puts "Running file: #{File.basename(file)}"
-  
-  file_out = File.new("output/#{File.basename(file,".*")}_out.txt", "w+")
-  
-  line_count = 0
-  File.foreach(file) { |r|
-    line_count += 1
+    file = File.new(filename)
+    puts "Running file: #{File.basename(file)}"
 
-    if (line_count % 3) == 0
-      file_out.write(parser(r))
-      file_out.write("\n")
-    end
+    file_out = File.new("output/#{File.basename(file,".*")}_out.txt", "w+")
+
+    line_count = 0
+    File.foreach(file) { |r|
+      line_count += 1
+
+      if (line_count % 3) == 0
+        file_out.write(parser(r))
+        file_out.write("\n")
+      end
+    }
+
+    file_out.close
   }
-
-  file_out.close
-}
 end
 
 end
