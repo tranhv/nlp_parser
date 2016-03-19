@@ -75,9 +75,10 @@ class FindNil
     end
 
     puts "para ==> #{para}"
+    puts "count_second ==> #{count_second}"
 
-    count_second.flatten!.sort! { |a, b| a <=> b} if count_second
-    count_first.flatten!.sort! { |a, b| a <=> b} if count_first
+    count_second.flatten!.sort! { |a, b| a <=> b} unless count_second.count == 0
+    count_first.flatten!.sort! { |a, b| a <=> b} unless count_first.count == 0
 
 
     remain_first = (0..(first.split(" ").count - 1)).to_a - count_first
