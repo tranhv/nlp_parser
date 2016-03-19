@@ -10,9 +10,9 @@ class FindNil
     para = {}
     index = 0
 
-    file_out = File.new("output/out.txt", "w+")
+    file_out = File.new("output/out_nil.txt", "w+")
 
-    Dir.glob("input/Annotation-3-with-preprocess.txt") {|filename|
+    Dir.glob("input/test.txt") {|filename|
       file = File.new(filename)
       puts "Running file: #{File.basename(file)}"
 
@@ -46,17 +46,16 @@ class FindNil
       if nil_first_tmp.count != 0 or nil_second_tmp.count != 0
         nil_first += nil_first_tmp.count
         nil_second += nil_second_tmp.count
-        file_out.write("--------------------------")
+        file_out.write("--------------------------\n")
         file_out.write(para)
-        file_out.write("\n")
-        file_out.write("nil_first --> #{nil_first_tmp.inspect}")
-        file_out.write("nil_second --> #{nil_second_tmp.inspect}")
+        file_out.write("nil_first --> #{nil_first_tmp.inspect}\n")
+        file_out.write("nil_second --> #{nil_second_tmp.inspect}\n")
       end
     }
 
-    file_out.write("Total first --> #{nil_first}")
-    file_out.write("Total second --> #{nil_second}")
-    file_out.write("Total --> #{nil_second + nil_first}")
+    file_out.write("Total first --> #{nil_first}\n")
+    file_out.write("Total second --> #{nil_second} \n")
+    file_out.write("Total --> #{nil_second + nil_first}\n")
     file_out.close
   end
 
@@ -77,12 +76,12 @@ class FindNil
 
     puts "para ==> #{para}"
 
-    count_second.flatten!.sort! { |a, b| a <=> b}
-    count_first.flatten!.sort! { |a, b| a <=> b}
+    count_second.flatten!.sort! { |a, b| a <=> b} if count_second
+    count_first.flatten!.sort! { |a, b| a <=> b} if count_first
 
 
-    remain_first = (0..count_first.max).to_a - count_first
-    remain_second = (0..count_second.max).to_a - count_second
+    remain_first = (0..(first.split(" ").count - 1)).to_a - count_first
+    remain_second = (0..(second.split(" ").count - 1)).to_a - count_second
 
     
     #puts "count_first --> #{count_first.inspect}"
