@@ -12,7 +12,7 @@ class FindNil
 
     file_out = File.new("output/out_nil.txt", "w+")
 
-    Dir.glob("input/test.txt") {|filename|
+    Dir.glob("input/Annotation-4-with-preprocess.txt") {|filename|
       file = File.new(filename)
       puts "Running file: #{File.basename(file)}"
 
