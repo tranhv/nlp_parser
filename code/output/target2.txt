@@ -157,7 +157,18 @@ Both the Brown questions and QuestionBank are in the question domain .
 In this section , we examine whether a parser adapted to one domain could be ported to another domain .
 QuestionBank does not provide function tags , and therefore in training and evaluation of the parsers , abstracted dependencies were extracted from the corpus .
 As a result , a parser adapted to one domain could not provide correct dependency labels on functions for the other domain .
-0
+However , we would expect that sentence constructions are basically common and portable between two domains , which would provide a correct boundary for phrases and therefore , the correct dependencies in phrases would be introduced by the adaptation .
+Table \REF gives the parsing or tagging accuracy of each parser and the POS tagger for Brown questions and QuestionBank .
+These results differ from those in Table \REF in that the parsers and the tagger have been adapted to another question domain .
+The table shows that the parsers adapted to the Brown questions improved their parsing accuracy with QuestionBank , whereas the parsers adapted to QuestionBank decreased in accuracy .
+Table \REF could explain this result .
+Using Brown questions , many wh-questions were learnt , which is what QuestionBank mainly contains . On the other hand , despite yes-no questions constituting more than half the Brown corpus , these were not learnt using QuestionBank for training .
+A question domain contains various types of questions with various sentence constructions .
+In order to parse questions correctly , we need to capture each of these correctly .
+This type of problem was not so obvious when we were working mainly with declarative sentences .
+Through experiments with various parsers we observed that simple supervised adaptation methods are insufficient to achieve parsing accuracy comparable with that of declarative sentences .
+This observation holds both for POS tagging and syntactic parsing , and indicates that the parsers need to be fundamentally improved , such as re-constructing feature designs or changing parsing models .
+Following on from this study , future work includes investigating parsing frameworks that are robust for sentences with different sentence constructions , and / or methods that can effectively adapt a parser to different sentence constructions including imperatives and questions , among others .
 While word segmentation is necessary for processing the Chinese and Japanese languages , its effects on Statistical Machine Translation ( SMT ) have not yet been thoroughly discussed for such languages .
 In this paper , we investigate the effects of word segmentation methods on SMT , by comparing the evaluation results of the translation outputs , while varying word segmentation methods .
 Additionally , meta-evaluations of evaluation metrics are also provided to investigate the validity of the metrics .
@@ -310,7 +321,9 @@ In Table 2 , REUTERS was the best and WIKIPEDIA was the worst in terms of BLEU ,
 For instance , in terms of BLEU in Characters , CHAR , JUMAN , and MeCab achieved the best scores in Table 3 .
 This work focused on how the differences in word segmentation affected SMT outputs , the quality of the unsupervised word segmentation on SMT , and the meta-evaluation of the current evaluation metrics .
 In summary , we found that the representative morphological analyzers were competitive and much better than both the unsupervised analyzer and one of our heuristic methods .
-0
+Nevertheless , a heuristic word segmentation method CHAR achieved relatively good word-based BLEU scores and competitive character-based BLEU results , compared to the supervised analyzers .
+Additionally , as we could not always obtain consistent scores from the current evaluation metrics , the data was insufficient for discussing the relative advantages and disadvantages of word segmentation , with accuracy .
+We have also suggested that it is possible to implement more optimized word segmentation on SMT .
 On Contribution of Syntactic Dependencies to Word Sense Disambiguation
 Traditionally , many researchers have addressed word sense disambiguation ( WSD ) as an independent classification problem for each word .
 However , the problem with these approaches , is that they disregard the interdependencies of word senses , and that it is limited in its applicability to the word senses for which training instances are served .**[<-This sentence is a bit confusing]
@@ -619,7 +632,25 @@ The embarrassment of these theories over the naturalness of death is an illustra
 Although the correct sense time#5 ( noun .Tops , the continuum of experience in which events pass from the future through the present to the past ) is not a frequent sense , our model correctly output the correct sense by using the dependency SS :noun .object-of-WS :time%1%5 ( / MATH ) , given natural order#1 belongs to the supersense noun .object .
 Through our result , we observed that the noun-noun dependencies in coordination relations work remarkably well .
 In the following sentence , three words nails , levels , and T squares are in a coordination relation .
-0
+He also bought a huge square of pegboard for hanging up his tools , and lumber for his workbench , sandpaper and glue and assorted nails , levels and T squares and plumb lines and several gadgets that he had no idea how touse or what they were for .
+Here , the correct sense for nail is nail#2 ( noun .artifact , a thin pointed piece of metal ) , and that for level is level#5 ( noun .artifact , indicator of the horizontal ) .
+The relatively low frequency of these senses prevent our model from outputting the correct senses in an ordinal way .
+However , the dependency model could capture the fact that two words in a coordination relation are quite likely to belong to the same semantic group ( SS :noun .artifact-( COORD )-SS :noun .artifact ( / MATH ) ) , and hence succeeded in the correct disambiguation of these three words .
+More generally , we have observed that the coordination features for an edge that connects the same supersense all have positive weights .
+In this paper , we proposed a novel approach for the all-words WSD , focusing on the use of syntactic dependencies of word senses , and investigated the contribution of these dependencies to WSD .
+Our proposals were twofold : to apply tree-structured CRFs to the dependency trees , and to use the combined bigrams of fine- and coarse-grained senses as edge features .
+In our experiments , the sense dependency features were shown to work effectively for WSD , with a 0 .29% , 0 .64% , and 0 .30% improvement of recalls for SemCor , Senseval-2 , and Senseval-3 data sets , respectively .
+Despite the small improvements in overall figures , these improvements indeed correspond to 25%-57% improvements over the first sense baseline .
+The dependency tree structures were shown to be appropriate in modeling the dependencies of word senses , because the results of the tree-structured models outperformed the [results of ?] linear-chain models .
+In the analysis section , we presented an in-depth analysis of the observed instances , and observed that the noun-noun dependencies particularly contribute to the positive instances .
+In addition , the combination of coarse-grained tag sets with the sense dependency features were proved to be effective .
+However , our experiments showed that even when combined with the coarse-grained tag sets , the sense dependency features do not improve the performance , unless combined with proper sense frequency information . This is due to the data sparseness problem .
+The supersense-based WSD models , on the contrary , exhibited the robustness [of ...] regardless of the existence of the sense frequency information , while they are defeated by the synset-based models in recalls .
+These results show the importance of fine-grained and coarse-grained sense information , and show that the combination of both enables us to build a more precise and robust WSD system .
+The performance of our tree-structured model was comparable to that of the state-of-the-art WSD systems .
+Although our model was based on a simple framework , and was trained only on the SemCor corpus , the results that we gained were promising . They suggested that our model still has a great potential for improvement .
+Our next interest is to combine our framework with the recently-developed semi-supervised frameworks .
+The combination of the local and syntactic dependencies with the global information is expected to further the WSD research .
 Generating short summary videos for rushes is a challenging task due to the difficulty in eliminating redundancy and determining the important objects and events to be placed in the summary .
 Redundancy elimination is difficult since repetitive segments , which are takes of the same scene , usually have different lengths and motion patterns .
 This makes approaches using one keyframe for a shot representation fail when trying to form a cluster .
@@ -773,25 +804,6 @@ In the second approach, NII-2, all the frames of each sub-shot are used to compu
 With each representative segment of each cluster, the middle part is selected to form the summary with a skipping rate of two frames .
 This approach is good for recall and has a reasonably good usability score .
 Compared to other systems participating in the TRECVID 2008 summarization task, NII-2 is among the best systems with a good balance between recall and usability .
-533
-Here , the correct sense for nail is nail#2 ( noun .artifact , a thin pointed piece of metal ) , and that for level is level#5 ( noun .artifact , indicator of the horizontal ) .
-The relatively low frequency of these senses prevent our model from outputting the correct senses in an ordinal way .
-However , the dependency model could capture the fact that two words in a coordination relation are quite likely to belong to the same semantic group ( SS :noun .artifact-( COORD )-SS :noun .artifact ( / MATH ) ) , and hence succeeded in the correct disambiguation of these three words .
-More generally , we have observed that the coordination features for an edge that connects the same supersense all have positive weights .
-In this paper , we proposed a novel approach for the all-words WSD , focusing on the use of syntactic dependencies of word senses , and investigated the contribution of these dependencies to WSD .
-Our proposals were twofold : to apply tree-structured CRFs to the dependency trees , and to use the combined bigrams of fine- and coarse-grained senses as edge features .
-In our experiments , the sense dependency features were shown to work effectively for WSD , with a 0 .29% , 0 .64% , and 0 .30% improvement of recalls for SemCor , Senseval-2 , and Senseval-3 data sets , respectively .
-Despite the small improvements in overall figures , these improvements indeed correspond to 25%-57% improvements over the first sense baseline .
-The dependency tree structures were shown to be appropriate in modeling the dependencies of word senses , because the results of the tree-structured models outperformed the [results of ?] linear-chain models .
-In the analysis section , we presented an in-depth analysis of the observed instances , and observed that the noun-noun dependencies particularly contribute to the positive instances .
-In addition , the combination of coarse-grained tag sets with the sense dependency features were proved to be effective .
-However , our experiments showed that even when combined with the coarse-grained tag sets , the sense dependency features do not improve the performance , unless combined with proper sense frequency information . This is due to the data sparseness problem .
-The supersense-based WSD models , on the contrary , exhibited the robustness [of ...] regardless of the existence of the sense frequency information , while they are defeated by the synset-based models in recalls .
-These results show the importance of fine-grained and coarse-grained sense information , and show that the combination of both enables us to build a more precise and robust WSD system .
-The performance of our tree-structured model was comparable to that of the state-of-the-art WSD systems .
-Although our model was based on a simple framework , and was trained only on the SemCor corpus , the results that we gained were promising . They suggested that our model still has a great potential for improvement .
-Our next interest is to combine our framework with the recently-developed semi-supervised frameworks .
-The combination of the local and syntactic dependencies with the global information is expected to further the WSD research .
 Face Retrieval Improvement by the Learning of Visual Consistency
 Searching for images of people is one of the essential tasks required by users for image and video search engines .
 However , the current search engines have limited capabilities for this task since they usually rely on texts associated with image and video , which are likely to return many irrelevant results .
@@ -938,6 +950,7 @@ This classifier was used to rank input faces for the next step .
 Since the labels of training sets were still noisy , the classifiers trained from these datasets were weak .
 By combining multiple weak classifiers in a bagging framework , we constructed the final strong classifier , which produced good results .
 To obtain the initial rank for the first step , we proposed using a common outlier detection method .
+Experiments on a large number of persons with thousands of retrieved images showed the effectiveness of the proposed method .
 Face detection , tracking , and recognition for broadcast video
 Human face processing techniques for broadcast video , including face detection , tracking , and recognition , have long been a topic that has attracted a lot of research interest due to its crucial value in various applications , such as in video structuring , indexing , retrieval , and summarization .
 The main reason for this is that the human face provides rich information for people 's appearances , such as for a government leader in a news video , a pitcher in a sports video or a hero in a movie , and is the basis for interpreting facts .
@@ -965,9 +978,6 @@ To overcome this problem , a combination of simple-to-complex classifiers has be
 In this structure , fast and simple classifiers are used as filters in the earliest stages to quickly reject a large number of the non-face patterns and then slower but more accurate classifiers are used for classifying the face-like patterns .
 In this way , the complexity of classifiers can be adapted to correspond to the increasing difficulty with the input patterns .
 Training classifiers usually consist of the following steps :
-339
-Additionally , as we could not always obtain consistent scores from the current evaluation metrics , the data was insufficient for discussing the relative advantages and disadvantages of word segmentation , with accuracy .
-We have also suggested that it is possible to implement more optimized word segmentation on SMT .
 - Training set preparation : Supervised learning methods require a large number of training samples to obtain accurate classifiers .
 The training samples are patterns that must be labeled as face ( positive samples ) or non-face ( negative samples ) in advance .
 Face patterns are manually collected from images containing faces and then are scaled to the same size and normalized to a canonical pose in which the eyes , mouth , and nose are aligned .
@@ -1045,6 +1055,32 @@ Note that these different cues described above may be combined .
 An appearance-based or featureless tracker matches an observation model of the entire facial appearance with the input image , instead of choosing only a few features to track .
 One example of an appearance-based face tracker is [1] , which was introduced above .
 Another example was proposed by Li et al. [9] , which uses a multi-view face detector to detect and track faces from different poses .
+Besides the face-based observation model , a head model is also included to represent the information of head rear .
+It is based on the idea that a head can be considered an object of interest instead of a face , because the face is not always present in the tracking process .
+An extended particle filter is proposed to fuse these two interrelated information together so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
+During the tracking procedure , face tracking systems usually use a motion model that describes how the image of the target might change for different possible motions of the face to track .
+Some examples of simple motion models are as follows .
+Based on the assumption that a face can be considered a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
+Some researchers view a face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
+However , a face is actually both 3D and deformable .
+Some systems try to model faces in this sense , and the image of deformed face can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
+The motion of the face is defined by the position of the nodes of the mesh .
+Generally if the quality of the video is high , a more sophisticated motion model is used , and then the face tracker generates a more accurate result .
+For instance , a sophisticated geometry and texture model might suffer from false face detections and a level of drifting [less than / that is worse than ?] a simple 2D transformation model .
+However , it must be noted that most 3D-based and mesh-based face trackers require a relatively clear appearance , high resolution , and a limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
+Both of these requirements are always unavailable in the case of broadcast video .
+Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
+Finally , the stopping procedure is rarely discussed .
+This constitutes a major deficiency for the face tracking algorithms that are generally not able to stop a face track in case of tracking errors , i.e. drifting .
+Arnaud et al. [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
+The two positions of the tracked eyes are compared with the tracked face position .
+If neither of the eyes is in the face region , it will be determined as drifting and the tracking process will be stopped .
+In addition , most mesh-based and top-down trackers are assumed to be able to avoid drifting .
+Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide applications .
+However , while most of the attempts have been on the face tracking for high-quality videos by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
+This is because the current ability of face tracking still depends on a relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
+On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
+A general evaluation criterion , in terms of speed , robustness , and accuracy , is needed for a performance comparison between the face trackers with different purposes .
 Unsupervised Face Annotation by Mining the Web
 Searching for images of people is an essential task for image and video search engines .
 However , current search engines have limited capabilities for this task since they rely on text associated with images and video , and such text is likely to return many irrelevant results .
@@ -1158,18 +1194,6 @@ After that , we use an SVM with probabilistic output \CITE implemented in LibSVM
 This model is applied to faces of the original set , and the output probabilistic scores are used to re-rank these faces .
 Since it is not guaranteed that faces lying at two ends of the input rank list correctly correspond to the faces of person-\MATH and faces of non person-\MATH , we adopt the [idea / concept?] of a bagging framework \CITE in which randomly selecting subsets to train weak classifiers , and then combining these classifiers help reduce the risk of using noisy training sets .
 The details of the Rank-By-Bagging-ProbSVM-InnerLoop method , improving an input rank list by combining weak classifiers trained from subsets annotated by that rank list , are described in Algorithm 2 .
-314
-Table \REF gives the parsing or tagging accuracy of each parser and the POS tagger for Brown questions and QuestionBank .
-These results differ from those in Table \REF in that the parsers and the tagger have been adapted to another question domain .
-The table shows that the parsers adapted to the Brown questions improved their parsing accuracy with QuestionBank , whereas the parsers adapted to QuestionBank decreased in accuracy .
-Table \REF could explain this result .
-Using Brown questions , many wh-questions were learnt , which is what QuestionBank mainly contains . On the other hand , despite yes-no questions constituting more than half the Brown corpus , these were not learnt using QuestionBank for training .
-A question domain contains various types of questions with various sentence constructions .
-In order to parse questions correctly , we need to capture each of these correctly .
-This type of problem was not so obvious when we were working mainly with declarative sentences .
-Through experiments with various parsers we observed that simple supervised adaptation methods are insufficient to achieve parsing accuracy comparable with that of declarative sentences .
-This observation holds both for POS tagging and syntactic parsing , and indicates that the parsers need to be fundamentally improved , such as re-constructing feature designs or changing parsing models .
-Following on from this study , future work includes investigating parsing frameworks that are robust for sentences with different sentence constructions , and / or methods that can effectively adapt a parser to different sentence constructions including imperatives and questions , among others .
 Step 1 : Train a weak classifier , hi .
 Step 1 .1 : Select a set Spos including p% of top ranked faces and then randomly select a subset S?pos from Spos .
 Label faces in S?pos as positive samples .
@@ -1275,6 +1299,36 @@ Figure \REF shows an examples of the top 50 faces ranked using the TBL , DBO , D
 The performance of DBO is poor since a low threshold is used .
 This ranks irrelevant faces that are near duplicates ( rows 2 and 3 in Figure \REF( b ) ) higher than relevant faces .
 This explains the same situation with DSG .
+In Figure \REF , we show the performance of five single classifiers and that of five ensemble classifiers .
+The ensemble classifier \MATH is formed by combining single classifiers from \MATH to \MATH .
+It clearly indicates that the ensemble classifier is more stable than single weak classifiers . //You use both plural and singular forms of " classifier " here , so it is a bit confusing if you are talking about a single classifier or more than one . I suggest you use the same form throughout if applicable .]
+We conducted another experiment to show the effectiveness of our approach in which learned models are used to annotate new faces of other databases .
+We used each name in the list as a query to obtain the top 500 images from the Google Image Search Engine ( GoogleSE ) .
+Next , these images were processed using the steps described in section \REF : extracting faces , detecting eyes , and doing normalization .
+We projected these faces to the PCA subspace trained for that name and used the learned model to re-rank faces .
+There were 4 ,103 faces ( including false positives - non-faces detected as faces ) detected from 7 ,500 returned images .
+We manually labeled these faces and there were 2 ,342 relevant faces .
+On average , the accuracy of the GoogleSE is 57 .08\% .
+In Table \REF , we compare the performance of the methods .
+The performance of UEL-LDS was obtained by running the best system , which is shown as the peak of the UEL-LDS curve in Figure \REF .
+The performances of SVM-SUP-05 and SVM-SUP-10 correspond to the supervised systems ( cf . section \REF ) that used \MATH of the data set , respectively .
+We evaluated the performance by calculating the precision of the top 20 returned faces , which is common for image search engines and recall and precision on all detected faces of the test set .
+UEL-LDS achieved comparable performance to the supervised methods and outperformed the baseline GoogleSE .
+The precision of the top 20 of SVM-SUP-05 is poorer than that of UEL-LDS due to the small number of training samples .
+Figure \REF shows top 20 faces ranked using these two methods .
+Our approach works fairly well for well known people , where the main assumption that text-based search engines return a large fraction of relevant images is satisfied .
+Figure \REF shows an example where this assumption is broken .
+Consequently , as shown in Figure \REF , the model learned by this set performed poorly in recognizing new faces returned by GoogleSE .
+Our approach solely relies on the above assumption ; therefore , it is not affected by the ranking of text-based search engines .
+The iteration of bagging SVM classifiers does not guarantee a significant improvement in performance .
+The aim of our future work is to study how to improve the quality of the training sets used in this iteration .
+We presented a method for ranking faces retrieved using text-based correlation methods in searches for a specific person .
+This method learns the visual consistency among faces in a two-stage process .
+In the first stage , a relative density score is used to form a ranked list in which faces ranked at the top or bottom of the list are likely to be relevant or irrelevant faces , respectively .
+In the second stage , a bagging framework is used to combine weak classifiers trained on subsets labeled from the ranked list into a strong classifier .
+This strong classifier is then applied to the original set to re-rank faces on the basis of the output probabilistic scores .
+Experiments on various face sets showed the effectiveness of this method .
+Our approach is beneficial when there are several faces in a returned image , as shown in Figure \REF .
 A Text Segmentation Based Approach to Video Shot Boundary Detection
 Video shot boundary detection is one of the fundamental tasks of video indexing and retrieval applications .
 Although many methods have been proposed for this task , finding a general and robust shot boundary method that is able to handle the various transition types caused by photo flashes , rapid camera movement , and object movement is still challenging .
@@ -1389,6 +1443,12 @@ In Figure \REF , we superimposed our result on the results reported in the shot 
 Our system achieves a high precision and recall for the CUT transition and this result is comparable to the third-ranked system .
 Note that our system is general and has no special treatment for particular shot transitions .
 Many previous shot boundary detectors usually divide the system into sub-systems in which special treatments are proposed to handle different types of shot transitions .
+Therefore , it is generalization is difficult for new test sets .
+We have proposed a unified and general framework for shot boundary detection that uses a text segmentation based approach .
+Firstly , we label the frames with one of the six labels defined for different types of frames : NORM -FRM , PRE -CUT , POST -CUT , PRE -GRAD , IN -GRAD , and POST -GRAD .
+Then we extract the shot boundaries and types from these labeled frames .
+In order to label frames , we proposed a new feature type to model the difference and motion in color and the edges between the frames and used it in the classification with SVM classifiers .
+The experiments we conducted on various videos from TRECVID 2003 have shown that our approach is effective .
 Ent-Boost : Boosting Using Entropy Measures
 for Robust Object Detection
 Recently , boosting has come to be used widely in object detection applications because of its impressive performance in both speed and accuracy .
@@ -1525,7 +1585,7 @@ We have described Ent-Boost , a variant of AdaBoost , which uses entropy measure
 The resultant strong classifier has good performance and achieves compact storage .
 Furthermore , this new boosting scheme overcomes the main limitation of Real AdaBoost , which is difficulty in determining the suitable number of bins for subspace splitting .
 Because it considers the class information and the distribution of the input data in the splitting process , this method is generic and can be used for other applications .
-0
+Experiments have shown promising results , especially in the building of a robust face detector .
 ROBUST OBJECT DETECTION USING FAST FEATURE SELECTION FROM HUGE FEATURE SETS
 This paper describes an efficient feature selection method which that quickly selects a small subset out of a given huge feature set ; the proposed method for will be useful for building robust object detection systems .
 In this filter-based method , features are selected so that not only to maximizeing their relevance with the target class but also to minimizeing their mutual dependency .
@@ -1602,7 +1662,23 @@ Gabor wavelet features have also often been used often in face recognition syste
 The Gabor representation of a face image is computed by convolving the face image with the Gabor filters .
 Let \MATH be the face image ; , its convolution with a Gabor filter �� ,_( z ) is defined as : \MATH where \MATH denotes the convolution operator .
 Similar to [12] , Gabor kernels at five scales , \MATH , and eight orientations , \MATH , were used .
-0
+At each pixel position , 40 Gabor features are computed by convolving the input image with the real part of Gabor filters .
+As a result , one \MATH training sample hasthere are \MATH Gabor features for one 24x24 training sample .
+To prove the effectiveness of the proposed feature selection method ( CMI-Multi ) , we compared it with two other feature selection methods ?that are forward feature selection ( FFS ) [16] and a CMI-based methods using binary features ( CMI-Binary ) [8 , 7] ? on the data set and feature sets mentioned described above .
+All classifiers were trained using AdaBoost similar to [1] .
+We chose the forward feature selection proposed by Wu et. al. [16] because it has very impressive results , when not only reducing significantly the training time of the AdaBoost-based face detection systems [1] by ( about 100 times , ) but also maintaining comparable performance .
+Figure 2 shows performance of classifiers trained by Haar feature subsets selected by three feature selection methods .
+The figureIt indicates that , the proposed method , CMI-Multi , outperforms the others while the performances of FFS and CMI-Binary have were comparable performanceto one another .
+The A similar result is was also shown when the three feature selection methods were tested on Gabor wavelet features .
+In this case , CMI-based feature selection methods obviously clearly outperformed FFS , and CMI-Multi is was confirmed to be more efficient than CMI-Binary .
+Because our proposed method uses same principle as FFS , which only trains weak classifiers once , it is extremely fast compared with AdaBoost [1] .
+We built two cascades of AdaBoost classifiers that use CMI-Multi and AdaBoost [1] as feature selection methods .
+Testing on the standard benchmark MIT+CMU test set , they hadve comparable performance .
+However , CMI-Multi wasis trained faster than was AdaBoost by approximately 70 times .
+We have presented a fast feature selection method using conditional mutual information to handle huge feature sets .
+The estimation of mutual information is simplified by using an MDLP- based discretization method .
+Integrated into AdaBoost-based object detection systems , our proposed methodit can not only reduces the training time significantly , but also achieves high classification performance .
+Experiments on two popular feature sets have demonstrated the effectiveness of the proposed method . //[Please note : I am not sure which of the following you mean .--> one composed of such as Haar wavelets and the other composed of Gabor wavelets / ? Haar wavelets and Gabor wavelets ?]
 A Multi-Stage Approach to Fast Face Detection
 A multi-stage approach that is fast , robust , and easy to train is proposed for a face-detection system .
 Motivated by the work of Viola and Jones [1] , this approach uses a cascade of classifiers to yield a coarse-to-fine strategy to significantly reduce detection time while maintaining a high detection rate .
@@ -1822,7 +1898,30 @@ The 7 ,500 non-face patterns used to train the first SVM classifier were selecte
 Non-face patterns in the subsequent SVM classifiers were false positives collected by the partially cascaded SVM classifiers on these 40 ,000 non-face patterns .
 To control the number of support vectors , the parameter \MATH was used instead of the parameter \MATH .
 All SVM classifiers were trained by using the RBF kernel with \MATH .
-0
+All these parameters were found by using a cross-validation test tool provided by LibSVM [31] . / / ?NOTE : I believe that I hyphenated this term in your previous document , but after seeing it used here , I would say that it does not need to be hyphenated
+This training procedure yielded three SVM classifiers whose numbers of support vectors are 4 ,725 , 5 ,043 , and 4 ,847 .
+The average evaluating speed of a SVM classifier is approximately 610 WPS ( windows per second ) .
+We tested our system on the MIT+CMU frontal-face standard test set [5] , which consists of 124 images with 480 frontal faces ( excluding images containing hand-drawn , cartoon , and small faces ) .
+The configuration and rejection performance of the classifiers are listed in Tables 1 and 2 .
+The first row presents the number of features of each layer and the second row shows the fraction of the remaining patterns after each layer were processed . / / [fraction / percentage?<--Here and after , you use " percentage " in the graph , so you may want to keep the same term here .]
+The last row indicates the fraction of time that each layer consumed . / / [fraction / percentage?]
+All these statistics were extracted by running the classifiers on the MIT+CMU test set .
+The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , were rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
+When the first 24x24 layer classifier was added to the cascade of 36x36 classifiers , this combination rejected 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade of 24x24 classifiers .
+Furthermore , the rejection of this very large number of patterns was done extremely quickly , only using \MATH of the total processing time . / / [the total / the standard?]
+It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , was used for SVM classifiers .
+The detection rate and speed of the classifiers with ten false positives are listed in Table 3 .
+It is clear that our multi-stage system ran faster than the single cascade of 24x24 AdaBoost classifiers while achieving comparable detection rates .
+This performance was possible for three reasons .
+First , the cascade of 36x36 AdaBoost classifiers rejected many of non-face patterns extremely quickly , while slow SVM classifiers only processed a very small number of the remaining patterns .
+Second , many images in the MIT+CMU test set contain large portion of background , which [9] mentioned has a ratio of non-face to face patterns of about 50 ,000 to 1 .
+Experimental results showed that the AdaBoost+SVM system ran faster than that of the original AdaBoost on \MATH of the total number of images in this test set .
+Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers did not severely affect the final performance because they might also be rejected by 24x24 classifiers in later layers .
+Some detection results are given in Figure 17 .
+We have developed a method to build a fast and robust face detection system based on a multi-stage approach .
+The cascaded structure of AdaBoost-based classifiers in the two first stages allows the system to best adapt to various complexities of input patterns , while nonlinear SVM classifiers at the final stage are robust enough to achieve good results .
+Extensive experiments demonstrated that a significant computation time is devoted to potential face regions because almost all non-face patterns are rejected quickly by the two first stages , and only a very small number of face-like patterns are processed by the slow SVM classifiers . / / [are / need to be?]
+Discriminant Haar wavelet features selected from AdaBoost are used for all stage classifiers to take advantage of their efficient representation and fast evaluation .
 Unsupervised Face Re-Ranking By Mining the Web and Video Archives
 It is necessary to utilize visual information to improve the efficiency of retrieval in image-search engines that use textual information for indexing .
 One popular approach has been to learn visual consistency between images returned by these search engines .
@@ -2038,7 +2137,12 @@ For example , the complexity of the fast lookup of $k$ approximate nearest neigh
 Studying other techniques to speed up the process of query-feature extraction is our next step in future work .
 376
 We have presented a novel method of re-ranking face images returned by existing search engines .
-0
+Instead of training a specific classifier for each new query , we only trained one generic classifier and used it for ranking new queries .
+This helped make the ranking application more scalable .
+We propose a simple unsupervised method to train the generic classifier to obtain a large number of labeled faces from video archives .
+It uses temporal information to group faces belonging to one person in one shot into one track .
+Several heuristics are employed to guarantee that a subset of face tracks has the correct labels used in the training process .
+Experiments revealed that although our method is unsupervised and independent of underlying algorithms in existing search engines , it successfully learned visual consistency between returned faces to boost efficiency of retrieval .
 Enhancing mathematical searches with names of formulas
 We present a method to enhance the performance of a mathematical search system .
 By targeting mathematical formulas that appear in natural language documents , we collect the names of formulas from the surrounding text and incorporate the correspondence into the search system 's database .
@@ -2247,6 +2351,36 @@ In the experiments , we extended the conventional definition of " Translation Er
 There are three types of edit operation : substituting a node , inserting a node , and deleting a node .
 - the Translation Error Rate \CITE : the translation error rate is an error metric for machine translation that measures the number of edits required to change a system output into one of the references .
 We called the new metric the Tree Edit Distance Rate ( TEDR ) .
+TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B . // <The " rate between " is unclear to me . Do you mean , " the ratio of " >
+It can be computed using Eq . \REF .
+For example , the output tree using the translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depicted in Figure \REF .
+Compared with the reference tree in Figure \REF , we need to substitute X nodes , insert Y nodes , and delete Z nodes , so that $ TED( A , B ) = x $ , while the maximum number of nodes of the two trees is y .
+Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
+It appeared that SnuggleTeX was not applicable to the data from the Wolfram Function site since it uses ASCII MathML but the site does not .
+Therefore , we could not do a comparison on this data .
+Our experimental results show that our approach gives reasonable results , that is , a 20 percent TEDR with large training data .
+For small data ( less than 3000 training samples ) , the results vary from 50 to 75 percent TEDR .
+For ACL-ARC data , the experimental results show that our system significantly outperforms SnuggleTeX in terms of the Tree Edit Distance Rate .
+Our system had a 24 percent lower TEDR in comparison with SnuggleTeX .
+To investigate the correlation between the TEDR score and training set size , we set up an experiment using mathematical expressions in the Elementary Functions category .
+We started with one fifth of the data and increased the data by one fifth in each run .
+Our experimental results conformed with the theoretical analysis that the more training data we have , the better the results are .
+Table \REF and Table \REF show the TEDR of our method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
+Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
+We discussed the problem of semantic enrichment of mathematical expressions .
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expressions to Content MathML expressions is a significant improvement over prior systems .
+As we mentioned before , mathematical notations are context-dependent .
+That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
+In the scope of this paper , we only considered the first sort of context information .
+Since this is a first attempt to translate from Presentation to Content MathML using a machine learning method , there is room for further improvement .
+Possible improvements are
+- Increasing the training data so the system can cover more mathematical notations
+- Expanding the work by incorporating the surrounding information of mathematical expressions , for example , definitions or other mathematical expressions .
+Our approach combining automatic extraction of fragment rules and translation rules has shown promising results .
+The experimental results confirm that it would be helpful for automatic understanding of mathematical expressions .
+However , this is only a first step ; many important issues remain for future studies .
+Currently , our system deals with a limited range of mathematical notations .
+In the future , we should consider expanding it to cover all mathematical notations .
 Improving protein coreference resolution by simple semantic classification
 Current research has shown that major difficulties in event extraction cases for the biomedical domain are related to coreference .
 Therefore , coreference resolution is believed to be useful for improving event extraction .
@@ -2481,8 +2615,7 @@ In all the examples above , the appearance of words such as binding , transactiv
 Since the anaphors are predicted as protein reference from their context , the system correctly detects their protein antecedents .
 Other challenges specific to the protein coreference task Number agreement is a constraint in English writing .
 However , in the data , we found several coreferential expressions that violate this constraint .
-259
-417
+The anaphor and antecedent in the following is an instance of this violation :
 - " . . .for OTF-2 in DRA gene transcription .
 In contrast , [ OTF-1-enriched protein fractions ] did not affect DRA gene transcription although [ it ] functionally enhanced the transcription of another . . . " ( PMID-1560002 )
 Coreference annotation and evaluation Current protein coreference evaluation schemes generate protein links ( links between anaphors and antecedent proteins ) from surface links ( links between anaphors and antecedent expressions ) , without concerning the relative position of antecedent proteins in the antecedent expression .
@@ -2506,147 +2639,6 @@ Sticking to the gold data in designing the markable detection method , as done i
 However , from the perspective of coreference data creation , revision of the markable annotations would aid in automatic and robust markable detection .
 For future opportunities , more effort should be spent on automating the semantic classification for coreference expressions , using context .
 Furthermore , it would be interesting to test the results in this study in a machine-learning framework .
-TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B . // <The " rate between " is unclear to me . Do you mean , " the ratio of " >
-It can be computed using Eq . \REF .
-For example , the output tree using the translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depicted in Figure \REF .
-Compared with the reference tree in Figure \REF , we need to substitute X nodes , insert Y nodes , and delete Z nodes , so that $ TED( A , B ) = x $ , while the maximum number of nodes of the two trees is y .
-Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
-It appeared that SnuggleTeX was not applicable to the data from the Wolfram Function site since it uses ASCII MathML but the site does not .
-Therefore , we could not do a comparison on this data .
-Our experimental results show that our approach gives reasonable results , that is , a 20 percent TEDR with large training data .
-For small data ( less than 3000 training samples ) , the results vary from 50 to 75 percent TEDR .
-For ACL-ARC data , the experimental results show that our system significantly outperforms SnuggleTeX in terms of the Tree Edit Distance Rate .
-Our system had a 24 percent lower TEDR in comparison with SnuggleTeX .
-To investigate the correlation between the TEDR score and training set size , we set up an experiment using mathematical expressions in the Elementary Functions category .
-We started with one fifth of the data and increased the data by one fifth in each run .
-Our experimental results conformed with the theoretical analysis that the more training data we have , the better the results are .
-Table \REF and Table \REF show the TEDR of our method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
-Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
-We discussed the problem of semantic enrichment of mathematical expressions .
-Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expressions to Content MathML expressions is a significant improvement over prior systems .
-As we mentioned before , mathematical notations are context-dependent .
-That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
-In the scope of this paper , we only considered the first sort of context information .
-Since this is a first attempt to translate from Presentation to Content MathML using a machine learning method , there is room for further improvement .
-Possible improvements are
-- Increasing the training data so the system can cover more mathematical notations
-- Expanding the work by incorporating the surrounding information of mathematical expressions , for example , definitions or other mathematical expressions .
-Our approach combining automatic extraction of fragment rules and translation rules has shown promising results .
-The experimental results confirm that it would be helpful for automatic understanding of mathematical expressions .
-However , this is only a first step ; many important issues remain for future studies .
-Currently , our system deals with a limited range of mathematical notations .
-In the future , we should consider expanding it to cover all mathematical notations .
-381
-This helped make the ranking application more scalable .
-We propose a simple unsupervised method to train the generic classifier to obtain a large number of labeled faces from video archives .
-It uses temporal information to group faces belonging to one person in one shot into one track .
-Several heuristics are employed to guarantee that a subset of face tracks has the correct labels used in the training process .
-Experiments revealed that although our method is unsupervised and independent of underlying algorithms in existing search engines , it successfully learned visual consistency between returned faces to boost efficiency of retrieval .
-363
-This training procedure yielded three SVM classifiers whose numbers of support vectors are 4 ,725 , 5 ,043 , and 4 ,847 .
-The average evaluating speed of a SVM classifier is approximately 610 WPS ( windows per second ) .
-We tested our system on the MIT+CMU frontal-face standard test set [5] , which consists of 124 images with 480 frontal faces ( excluding images containing hand-drawn , cartoon , and small faces ) .
-The configuration and rejection performance of the classifiers are listed in Tables 1 and 2 .
-The first row presents the number of features of each layer and the second row shows the fraction of the remaining patterns after each layer were processed . / / [fraction / percentage?<--Here and after , you use " percentage " in the graph , so you may want to keep the same term here .]
-The last row indicates the fraction of time that each layer consumed . / / [fraction / percentage?]
-All these statistics were extracted by running the classifiers on the MIT+CMU test set .
-The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , were rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
-When the first 24x24 layer classifier was added to the cascade of 36x36 classifiers , this combination rejected 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade of 24x24 classifiers .
-Furthermore , the rejection of this very large number of patterns was done extremely quickly , only using \MATH of the total processing time . / / [the total / the standard?]
-It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , was used for SVM classifiers .
-The detection rate and speed of the classifiers with ten false positives are listed in Table 3 .
-It is clear that our multi-stage system ran faster than the single cascade of 24x24 AdaBoost classifiers while achieving comparable detection rates .
-This performance was possible for three reasons .
-First , the cascade of 36x36 AdaBoost classifiers rejected many of non-face patterns extremely quickly , while slow SVM classifiers only processed a very small number of the remaining patterns .
-Second , many images in the MIT+CMU test set contain large portion of background , which [9] mentioned has a ratio of non-face to face patterns of about 50 ,000 to 1 .
-Experimental results showed that the AdaBoost+SVM system ran faster than that of the original AdaBoost on \MATH of the total number of images in this test set .
-Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers did not severely affect the final performance because they might also be rejected by 24x24 classifiers in later layers .
-Some detection results are given in Figure 17 .
-We have developed a method to build a fast and robust face detection system based on a multi-stage approach .
-The cascaded structure of AdaBoost-based classifiers in the two first stages allows the system to best adapt to various complexities of input patterns , while nonlinear SVM classifiers at the final stage are robust enough to achieve good results .
-Extensive experiments demonstrated that a significant computation time is devoted to potential face regions because almost all non-face patterns are rejected quickly by the two first stages , and only a very small number of face-like patterns are processed by the slow SVM classifiers . / / [are / need to be?]
-Discriminant Haar wavelet features selected from AdaBoost are used for all stage classifiers to take advantage of their efficient representation and fast evaluation .
-151
-As a result , one \MATH training sample hasthere are \MATH Gabor features for one 24x24 training sample .
-To prove the effectiveness of the proposed feature selection method ( CMI-Multi ) , we compared it with two other feature selection methods ?that are forward feature selection ( FFS ) [16] and a CMI-based methods using binary features ( CMI-Binary ) [8 , 7] ? on the data set and feature sets mentioned described above .
-All classifiers were trained using AdaBoost similar to [1] .
-We chose the forward feature selection proposed by Wu et. al. [16] because it has very impressive results , when not only reducing significantly the training time of the AdaBoost-based face detection systems [1] by ( about 100 times , ) but also maintaining comparable performance .
-Figure 2 shows performance of classifiers trained by Haar feature subsets selected by three feature selection methods .
-The figureIt indicates that , the proposed method , CMI-Multi , outperforms the others while the performances of FFS and CMI-Binary have were comparable performanceto one another .
-The A similar result is was also shown when the three feature selection methods were tested on Gabor wavelet features .
-In this case , CMI-based feature selection methods obviously clearly outperformed FFS , and CMI-Multi is was confirmed to be more efficient than CMI-Binary .
-Because our proposed method uses same principle as FFS , which only trains weak classifiers once , it is extremely fast compared with AdaBoost [1] .
-We built two cascades of AdaBoost classifiers that use CMI-Multi and AdaBoost [1] as feature selection methods .
-Testing on the standard benchmark MIT+CMU test set , they hadve comparable performance .
-However , CMI-Multi wasis trained faster than was AdaBoost by approximately 70 times .
-We have presented a fast feature selection method using conditional mutual information to handle huge feature sets .
-The estimation of mutual information is simplified by using an MDLP- based discretization method .
-Integrated into AdaBoost-based object detection systems , our proposed methodit can not only reduces the training time significantly , but also achieves high classification performance .
-Experiments on two popular feature sets have demonstrated the effectiveness of the proposed method . //[Please note : I am not sure which of the following you mean .--> one composed of such as Haar wavelets and the other composed of Gabor wavelets / ? Haar wavelets and Gabor wavelets ?]
-250
-Therefore , it is generalization is difficult for new test sets .
-We have proposed a unified and general framework for shot boundary detection that uses a text segmentation based approach .
-Firstly , we label the frames with one of the six labels defined for different types of frames : NORM -FRM , PRE -CUT , POST -CUT , PRE -GRAD , IN -GRAD , and POST -GRAD .
-Then we extract the shot boundaries and types from these labeled frames .
-In order to label frames , we proposed a new feature type to model the difference and motion in color and the edges between the frames and used it in the classification with SVM classifiers .
-The experiments we conducted on various videos from TRECVID 2003 have shown that our approach is effective .
-In Figure \REF , we show the performance of five single classifiers and that of five ensemble classifiers .
-The ensemble classifier \MATH is formed by combining single classifiers from \MATH to \MATH .
-It clearly indicates that the ensemble classifier is more stable than single weak classifiers . //You use both plural and singular forms of " classifier " here , so it is a bit confusing if you are talking about a single classifier or more than one . I suggest you use the same form throughout if applicable .]
-We conducted another experiment to show the effectiveness of our approach in which learned models are used to annotate new faces of other databases .
-We used each name in the list as a query to obtain the top 500 images from the Google Image Search Engine ( GoogleSE ) .
-Next , these images were processed using the steps described in section \REF : extracting faces , detecting eyes , and doing normalization .
-We projected these faces to the PCA subspace trained for that name and used the learned model to re-rank faces .
-There were 4 ,103 faces ( including false positives - non-faces detected as faces ) detected from 7 ,500 returned images .
-We manually labeled these faces and there were 2 ,342 relevant faces .
-On average , the accuracy of the GoogleSE is 57 .08\% .
-In Table \REF , we compare the performance of the methods .
-The performance of UEL-LDS was obtained by running the best system , which is shown as the peak of the UEL-LDS curve in Figure \REF .
-The performances of SVM-SUP-05 and SVM-SUP-10 correspond to the supervised systems ( cf . section \REF ) that used \MATH of the data set , respectively .
-We evaluated the performance by calculating the precision of the top 20 returned faces , which is common for image search engines and recall and precision on all detected faces of the test set .
-UEL-LDS achieved comparable performance to the supervised methods and outperformed the baseline GoogleSE .
-The precision of the top 20 of SVM-SUP-05 is poorer than that of UEL-LDS due to the small number of training samples .
-Figure \REF shows top 20 faces ranked using these two methods .
-Our approach works fairly well for well known people , where the main assumption that text-based search engines return a large fraction of relevant images is satisfied .
-Figure \REF shows an example where this assumption is broken .
-Consequently , as shown in Figure \REF , the model learned by this set performed poorly in recognizing new faces returned by GoogleSE .
-Our approach solely relies on the above assumption ; therefore , it is not affected by the ranking of text-based search engines .
-The iteration of bagging SVM classifiers does not guarantee a significant improvement in performance .
-The aim of our future work is to study how to improve the quality of the training sets used in this iteration .
-We presented a method for ranking faces retrieved using text-based correlation methods in searches for a specific person .
-This method learns the visual consistency among faces in a two-stage process .
-In the first stage , a relative density score is used to form a ranked list in which faces ranked at the top or bottom of the list are likely to be relevant or irrelevant faces , respectively .
-In the second stage , a bagging framework is used to combine weak classifiers trained on subsets labeled from the ranked list into a strong classifier .
-This strong classifier is then applied to the original set to re-rank faces on the basis of the output probabilistic scores .
-Experiments on various face sets showed the effectiveness of this method .
-Our approach is beneficial when there are several faces in a returned image , as shown in Figure \REF .
-Besides the face-based observation model , a head model is also included to represent the information of head rear .
-It is based on the idea that a head can be considered an object of interest instead of a face , because the face is not always present in the tracking process .
-An extended particle filter is proposed to fuse these two interrelated information together so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
-During the tracking procedure , face tracking systems usually use a motion model that describes how the image of the target might change for different possible motions of the face to track .
-Some examples of simple motion models are as follows .
-Based on the assumption that a face can be considered a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
-Some researchers view a face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
-However , a face is actually both 3D and deformable .
-Some systems try to model faces in this sense , and the image of deformed face can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
-The motion of the face is defined by the position of the nodes of the mesh .
-Generally if the quality of the video is high , a more sophisticated motion model is used , and then the face tracker generates a more accurate result .
-For instance , a sophisticated geometry and texture model might suffer from false face detections and a level of drifting [less than / that is worse than ?] a simple 2D transformation model .
-However , it must be noted that most 3D-based and mesh-based face trackers require a relatively clear appearance , high resolution , and a limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
-Both of these requirements are always unavailable in the case of broadcast video .
-Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
-Finally , the stopping procedure is rarely discussed .
-This constitutes a major deficiency for the face tracking algorithms that are generally not able to stop a face track in case of tracking errors , i.e. drifting .
-Arnaud et al. [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
-The two positions of the tracked eyes are compared with the tracked face position .
-If neither of the eyes is in the face region , it will be determined as drifting and the tracking process will be stopped .
-In addition , most mesh-based and top-down trackers are assumed to be able to avoid drifting .
-Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide applications .
-However , while most of the attempts have been on the face tracking for high-quality videos by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
-This is because the current ability of face tracking still depends on a relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
-On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
-A general evaluation criterion , in terms of speed , robustness , and accuracy , is needed for a performance comparison between the face trackers with different purposes .
-Experiments on a large number of persons with thousands of retrieved images showed the effectiveness of the proposed method .
 Syntactically annotated corpora have become important resources for natural language processing , due in part to the success of corpus-based methods .
 Since words are often considered as primitive units of language structures , the annotation of word segmentation forms the basis of these corpora .
 This is also a concern for the Vietnamese Treebank ( VTB ) , which is the first and only publicly available syntactically annotated corpus thus far for the Vietnamese language .
@@ -2804,6 +2796,23 @@ With the exception of STRUCT_NC , all of the modifications to the original VTB c
 However , the word segmentation criterion with higher performance is not necessarily a better criterion , but a criterion should also be judged through applications of word segmentation .
 In both SMT and TC experiments , the BASE model , which is based on the manually-modified inconsistency of special characters , achieved better results than the ORG model .
 In particular , in the TC experiment , the BASE model achieved 0 .66 point higher than ORG , which is a significant improvement .
+The results support the conclusion that the quality of the word-segmentation corpus is very important for building NLP applications .
+The SMT results show that three out of six augmented models , VAR_SPLIT , VAR_FREQ and BASE , performed better than the ORG configuration .
+Among them , the best-performing model , VAR_SPLIT achieved 36 .91 BLEU score , which is 0 .55 higher than ORG .
+In TC results , all six augmented models achieved higher results than ORG .
+In general , the augmented models performed better than the ORG .
+Additionally , because our automatic methods for inconsistency detection could not cover all of the types of inconsistencies in word segmentation annotation , further improvement of corpus quality is demanded .
+Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining affxes with their head nouns resulted in slightly better results for WS and TC , and did not change the performance of SMT .
+However , the combination of classifier nouns with their head nouns had negative effects on WS and SMT .
+Another part of the scope of our experiment is to compare two solutions for controversial cases of word segmentation , splitting and combining .
+Splitting and combining variations are reflected by VAR_COMB and VAR_SPLIT , while STRUCT_AFFIX and STRUCT_NC represent the combination of affixes or classifier nouns with the words that they modify .
+STRUCT_AFFIX and STRUCT_NC are contrasted with BASE where affxes and classifier nouns remain untouched .
+Comparing VAR_COMB and VAR_SPLIT in both the TC experiment and SMT experiment , we see that the VAR_SPLIT results are better in both cases .
+Since the ratio of combined variations in the ORG corpus is 60 .9% , it can be observed that splitting seems to be better than combining for WS , TC and SMT .
+In this paper , we have provided a quantitative analysis of the difficulties in word segmentation , through the detection of problematic cases in the Vietnamese Treebank .
+Based on the analysis , we automatically created data that represent the different word segmentation criteria , and evaluated the criteria indirectly through their applications .
+Our experimental results showed that manual modification , done for annotation of special characters , and most other word segmentation criteria , significantly improved the performances of automatic word segmentation , text classification and statistical machine translation , in comparison with the use of the original VTB corpus .
+Since the VTB corpus is the first effort in building a treebank for Vietnamese , and is the only corpus that is publicly available for NLP research , this study contributes to further improvement of the corpus quality , which is essential for building efficient NLP systems .
 Face retrieval in large-scale news video datasets
 Face retrieval in news video has been identified as a challenging task due to huge variations in the visual appearance of the human face .
 Although several approaches have been proposed to deal with this problem , their extremely high computational cost limits their scalability to large-scale video datasets that may contain millions of faces of hundreds of characters .
@@ -3197,6 +3206,16 @@ In terms of accuracy , k-Faces takes second place , with 73.65% in the Trevid da
 The difference in MAP between our approach and pair:min is 2.89% .
 Meanwhile , k- Faces.Temporal is significantly better than MSM and CMSM , which respectively achieved 69.20% and 64.62% accuracy .
 In the NHKNews7 dataset , k-Faces.Temporal is better than CMSM , but worse than pair:min and MSM .
+One may question why MSM performed poorly in the Trecvid dataset , but was superior to k-Faces.Temporal in NHKNews7 .
+The reason for this is the fact that the face tracks in the NHKNews7 dataset are larger than those in the Trecvid dataset .
+Therefore , more sample faces in each face track can be used to obtain a reliable subspace .
+As expected , the results of this experiment show that our proposed approach is extremely efficient while achieving comparable performance with state-of-the-art approaches .
+In this paper , we investigate face retrieval in large-scale news video datasets .
+Our contribution is threefold .
+First , we present the practical problems encountered when a tracker is used to extract face tracks in news videos .
+Based on these , we introduce techniques and solutions to overcome these problems to achieve robust face-track extraction .
+Second , we present an approach for face-track matching that significantly reduces the computational cost while achieving competitive performance compared with state-of-the-art approaches .
+Third , we prepare datasets , evaluate state-of-the-art face retrieval approaches , and publish real-world face-track datasets of such scales that have never been considered in the literature.
 Recommend-Me : recommending query regions for image search
 This paper presents a novel recommendation system , named Recommend-Me , to facilitate users in searching and exploring images in unknown image databases .
 Given an initial query image , Recommend-Me automatically shows its recommendations to users .
@@ -3436,30 +3455,3 @@ Given an initial query image and a retrieved database , Recommend-Me gives recom
 Such recommendations help users to select the search query , to rapidly refine the initial query image or to explore the database .
 An efficient solution to make Recommend-Me practical was also presented .
 To the best of our knowledge , Recommend-Me is the first attempt at developing a targeted suggestion scheme .
-The results support the conclusion that the quality of the word-segmentation corpus is very important for building NLP applications .
-The SMT results show that three out of six augmented models , VAR_SPLIT , VAR_FREQ and BASE , performed better than the ORG configuration .
-Among them , the best-performing model , VAR_SPLIT achieved 36 .91 BLEU score , which is 0 .55 higher than ORG .
-In TC results , all six augmented models achieved higher results than ORG .
-In general , the augmented models performed better than the ORG .
-Additionally , because our automatic methods for inconsistency detection could not cover all of the types of inconsistencies in word segmentation annotation , further improvement of corpus quality is demanded .
-Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining affxes with their head nouns resulted in slightly better results for WS and TC , and did not change the performance of SMT .
-However , the combination of classifier nouns with their head nouns had negative effects on WS and SMT .
-Another part of the scope of our experiment is to compare two solutions for controversial cases of word segmentation , splitting and combining .
-Splitting and combining variations are reflected by VAR_COMB and VAR_SPLIT , while STRUCT_AFFIX and STRUCT_NC represent the combination of affixes or classifier nouns with the words that they modify .
-STRUCT_AFFIX and STRUCT_NC are contrasted with BASE where affxes and classifier nouns remain untouched .
-Comparing VAR_COMB and VAR_SPLIT in both the TC experiment and SMT experiment , we see that the VAR_SPLIT results are better in both cases .
-Since the ratio of combined variations in the ORG corpus is 60 .9% , it can be observed that splitting seems to be better than combining for WS , TC and SMT .
-In this paper , we have provided a quantitative analysis of the difficulties in word segmentation , through the detection of problematic cases in the Vietnamese Treebank .
-Based on the analysis , we automatically created data that represent the different word segmentation criteria , and evaluated the criteria indirectly through their applications .
-Our experimental results showed that manual modification , done for annotation of special characters , and most other word segmentation criteria , significantly improved the performances of automatic word segmentation , text classification and statistical machine translation , in comparison with the use of the original VTB corpus .
-Since the VTB corpus is the first effort in building a treebank for Vietnamese , and is the only corpus that is publicly available for NLP research , this study contributes to further improvement of the corpus quality , which is essential for building efficient NLP systems .
-One may question why MSM performed poorly in the Trecvid dataset , but was superior to k-Faces.Temporal in NHKNews7 .
-The reason for this is the fact that the face tracks in the NHKNews7 dataset are larger than those in the Trecvid dataset .
-Therefore , more sample faces in each face track can be used to obtain a reliable subspace .
-As expected , the results of this experiment show that our proposed approach is extremely efficient while achieving comparable performance with state-of-the-art approaches .
-In this paper , we investigate face retrieval in large-scale news video datasets .
-Our contribution is threefold .
-First , we present the practical problems encountered when a tracker is used to extract face tracks in news videos .
-Based on these , we introduce techniques and solutions to overcome these problems to achieve robust face-track extraction .
-Second , we present an approach for face-track matching that significantly reduces the computational cost while achieving competitive performance compared with state-of-the-art approaches .
-Third , we prepare datasets , evaluate state-of-the-art face retrieval approaches , and publish real-world face-track datasets of such scales that have never been considered in the literature.
