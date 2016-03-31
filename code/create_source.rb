@@ -1,3 +1,7 @@
+// Create source file from file full
+// by extracting the first sentence in each pair
+// and removing all latex tags and number 
+
 class String
   def is_integer?
     self.to_i.to_s == self
