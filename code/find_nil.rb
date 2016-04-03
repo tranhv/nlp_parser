@@ -48,14 +48,14 @@ class FindNil
         nil_second += nil_second_tmp.count
         file_out.write("--------------------------\n")
         file_out.write(para)
-        file_out.write("nil_first --> #{nil_first_tmp.inspect}\n")
-        file_out.write("nil_second --> #{nil_second_tmp.inspect}\n")
+        file_out.write("\nnil_first --> #{nil_first_tmp.inspect} \n")
+        file_out.write("nil_second --> #{nil_second_tmp.inspect} \n")
       end
     }
 
-    file_out.write("Total first --> #{nil_first}\n")
+    file_out.write("Total first --> #{nil_first} \n")
     file_out.write("Total second --> #{nil_second} \n")
-    file_out.write("Total --> #{nil_second + nil_first}\n")
+    file_out.write("Total --> #{nil_second + nil_first} \n")
     file_out.close
   end
 
