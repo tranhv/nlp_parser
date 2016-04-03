@@ -33,12 +33,12 @@ class Get_data
 
   end
   def main
-    files = Dir.glob(INPUT_PATH + "/full.txt").entries
+    files = Dir.glob(INPUT_PATH + "/full_crp.txt").entries
 
-    source_file = File.open("./output/source2.txt","w")
+    source_file = File.open("./output/source.txt","w")
     source_file.write("")
 
-    target_file = File.open("./output/target2.txt","w")
+    target_file = File.open("./output/target.txt","w")
     target_file.write("")
 
     source_file = File.open(source_file,"a+")
