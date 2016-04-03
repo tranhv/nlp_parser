@@ -9,13 +9,13 @@ class Join
   	begin
       first_line = ''
       contents = ''
-      i = 0
+      #i = 0
       file = File.open(in_path, "r").each do |line|
-        i += 1
-        if i == 1
-          puts "line -->#{line}----"
-        end
-        next if i == 1
+        #i += 1
+        #if i == 1
+          #puts "line -->#{line}----"
+        #end
+        #next if i == 1
         join_file.write(line)
      end
 
