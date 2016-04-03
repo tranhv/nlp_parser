@@ -1,3 +1,10 @@
+# Replace create_source and create_target
+
+# Create source and target file from file full
+# by removing all latex tags and number,
+# extracting the first and second sentence in each pair,
+# and putting them to corresponding files
+
 class Get_data
   INPUT_PATH = "./input"
   OUTPUT_PATH = "./output"

@@ -1,5 +1,5 @@
-# Document convert NLP
-# Convert NLP
+# Find and count unaligned words in annotation file by Blast
+
 class FindNil
 
   def main

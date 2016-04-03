@@ -1,5 +1,5 @@
-# Document convert NLP
-# Convert NLP
+# Convert from GIZA++ alignment file format to Yawat alignment file format
+
 class Convert
   def parser line
     source = line.gsub("NULL","").gsub(/\s*\(\{(\w*\s*)*\}\)\s*/," ").strip

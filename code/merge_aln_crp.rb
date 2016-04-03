@@ -1,16 +1,8 @@
-# REPLACED BY get_data
+# Merge full_aln.txt and full_crp.txt
+# Input: Corpus *.aln, *.crp
+# Output: full.txt
 
-# Create source file from file full
-# by extracting the first sentence in each pair
-# and removing all latex tags and number 
-
-class String
-  def is_integer?
-    self.to_i.to_s == self
-  end
-end
-
-class Join
+class Merge_aln_crp
   INPUT_PATH = "./input"
   OUTPUT_PATH = "./output"
   
@@ -44,28 +36,34 @@ class Join
   end
   
  def main
-    files = Dir.new(INPUT_PATH).entries
-
-	header_file = File.open("./output/header.txt","w")
-	header_file.write("")
+    file1 = File.open(INPUT_PATH + "/full_aln.txt", 'r').readlines
+    file2 = File.open(INPUT_PATH + "/full_crp.txt", 'r').readlines
+		
 	
-	join_file = File.open("./output/source.txt","w")
+	
+	join_file = File.open("./output/full.txt","w")
 	join_file.write("")
-	
-    files.each do |file|
-      if file != "." and file != ".." and file != ".DS_Store"
-        in_path = "#{INPUT_PATH}/#{file}"
-        out_path = "#{OUTPUT_PATH}/source.txt"
-		puts "in_put: #{in_path}"
-		puts "out_put: #{out_path}"
-		join_files(in_path,out_path)
 
-      end
+	out_path = "#{OUTPUT_PATH}/full.txt"
+    join_file = File.open(out_path,"a+")
+
+    file1.each_with_index do |line1, index|
+    	
+    	puts "index: #{index}"
+    	puts "line1: #{line1}"
+    	line2 = file2[index]
+    	puts "line2: #{line2}"
+
+      	#join_files(line1, line2, out_path)
+      	
     end
+    
+    join_file.close
+
   end
   
 end
 
 
-obj = Join.new
+obj = Merge_aln_crp.new
 obj.main

@@ -1,3 +1,5 @@
+# Join all files having file extension aln in Input folder into one file "full_aln.txt"
+
 class Join
   INPUT_PATH = "./input"
   OUTPUT_PATH = "./output"
@@ -7,8 +9,14 @@ class Join
   	begin
       first_line = ''
       contents = ''
+      i = 0
       file = File.open(in_path, "r").each do |line|
-       join_file.write(line)
+        i += 1
+        if i == 1
+          puts "line -->#{line}----"
+        end
+        next if i == 1
+        join_file.write(line)
      end
 
    rescue Exception => e
@@ -18,11 +26,11 @@ class Join
 end
 
 def main
-  files = Dir.glob(INPUT_PATH + "/SWA/*.crp").entries
+  files = Dir.glob(INPUT_PATH + "/SWA/*.aln").entries
 
-  join_file = File.open("./output/full.txt","w")
+  join_file = File.open("./output/full_aln.txt","w")
   join_file.write("")
-  out_path = "#{OUTPUT_PATH}/full.txt"
+  out_path = "#{OUTPUT_PATH}/full_aln.txt"
   join_file = File.open(out_path,"a+")
 
   files.each do |file|
