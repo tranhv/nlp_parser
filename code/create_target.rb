@@ -1,4 +1,4 @@
-#REPLACED BY get_data
+# REPLACED BY get_data
 
 # Create target file from file full
 # by extracting the second sentence in each pair

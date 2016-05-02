@@ -7,61 +7,77 @@ class Paraphrases
   OUTPUT_PATH = "./output"
   
 
-  def paraphrases(in_path,out_path)
+  def paraphrases(out_path)
   
-  	begin
-		first_line = ''
-		contents = ''
+  	#begin
+  		arr_para = []
+  		arr = []
 
-		flag = false
-		join_file = File.open(out_path,"a+")
-		file = File.open(in_path, "r").each do |line|
+  		File.open(INPUT_PATH + "/full_ann_crp_aln.txt", 'r').each_with_index do |line, index|
+  			#puts "line #{line.inspect}"
+  			if (index%5 == 0)
+  				arr = []
+  				arr << line
+  				next
+  			end
 
-			if (flag == true)
-				flag = false
-				next
-			end
-			next if line.match(/^</)			# if the first character of the line is < --> skip this line
-			#next if !/\A\d+\z/.match(line[0,1]) 
-			next if line.strip.match(/\A\d+\z/)			# if the line is numeric --> skip this line
-			join_file.write(line)
-			flag = true							# if we have written a line --> mark the flag and we will skip the next line
-			
-		end
+  			if (index - 1)%5 == 0
+  				arr << line
+  				next
+  			end
+
+  			if (index - 2)%5 == 0
+  				arr1 = line.split(" ")
+  				arr_temp1 = []
+  				arr1.each do |word1|
+  					if word1.include? "para"
+  						arr_temp1 << word1
+  					end
+  				end 
+  				arr << arr_temp1
+  				next
+  			end
+
+  			if (index - 3)%5 == 0
+  				
+  				arr2 = line.split(" ")
+  				arr_temp2 = []
+  				arr2.each do |word2|
+  					if word2.include? "paraphrase"
+  						arr_temp2 << word2
+  					end
+  				end 
+  				arr << arr_temp2
+  				arr_para << arr
+  			end
+  		end
+
+  		extract_paraphrase = File.open(out_path, "w")
+  		extract_paraphrase.write("")
+
+  		arr_para.each do |arr|
+  			arr.each_with_index do |line, index|
+  				extract_paraphrase.write(line.gsub("\n","")) if index <= 1
+  				extract_paraphrase.write(line.join(" ").gsub("\n","")) if index > 1 and line.count > 0
+  				extract_paraphrase.write("\n")
+  			end
+  			extract_paraphrase.write("\n")
+  		end
+  		extract_paraphrase.close
 		
-	rescue Exception => e
-		puts "Error happened in #{e.message}"
 	end
+		
+	#rescue Exception => e
+		#puts "My error happened in #{e.message}"
+	#end
   
-  end
   
  def main
-    files = Dir.new(INPUT_PATH + "/full.txt").entries
-
-    File.open(INPUT_PATH + "/Annot4.txt", 'r').each do |line|
-		
-	end
-	
-	header_file = File.open("./output/header.txt","w")
-	header_file.write("")
-	
-	join_file = File.open("./output/paraphrases.txt","w")
-	join_file.write("")
-	
-    files.each do |file|
-      if file != "." and file != ".." and file != ".DS_Store"
-        in_path = "#{INPUT_PATH}/#{file}"
-        out_path = "#{OUTPUT_PATH}/paraphrases.txt"
-		puts "in_put: #{in_path}"
-		puts "out_put: #{out_path}"
-		join_files(in_path,out_path)
-
-      end
-    end
-  end
+   paraphrases("#{OUTPUT_PATH}/paraphrases.txt")
+ end
   
 end
 
 
-obj = Join.new
+obj = Paraphrases.new
 obj.main

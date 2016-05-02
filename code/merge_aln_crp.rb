@@ -1,6 +1,8 @@
 # Merge full_aln.txt and full_crp.txt
-# Input: Corpus *.aln, *.crp
-# Output: full.txt
+# Input: Corpus *.aln, *.crp, annotation file from Blast
+# Output: full_ann_crp_aln.txt
+# This script is used to display all paraphrases extracted from Blast & SWA.
+# Then we can have a close look at this and compare paraphrases from these 2 systems
 
 class Merge_aln_crp
   INPUT_PATH = "./input"
@@ -95,7 +97,7 @@ class Merge_aln_crp
   
   def main
 
-    write_merge("#{OUTPUT_PATH}/file_merge_ano_crp_aln.txt")
+    write_merge("#{OUTPUT_PATH}/full_ann_crp_aln.txt")
 
     puts "get_crp #{get_crp.count}"
     puts "get_alns #{get_alns.count}"
