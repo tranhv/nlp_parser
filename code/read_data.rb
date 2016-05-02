@@ -1,5 +1,7 @@
 class ReadData
   DATA_PATH = "./data"
+  Para = Struct.new(:source, :target, :aline)
+  Aline = Struct.new(:source_numbers, :target_number, :tag_name)
 
   def get_aln
     array_alns = []
@@ -80,13 +82,54 @@ class ReadData
   def main
     merged_aln_crp = File.open(DATA_PATH + "/merged_aln_crp.txt","w")
     merged_aln_crp.write("")
-    puts "#{merged_aln_crp}"
-
     merge_aln_crp(merged_aln_crp)
+
+    get_data(DATA_PATH + "/merged_aln_crp.txt")
   end 
 
+  #Input: file
+  #Output: Array of Para
+  #:aline is a array of Aline struct
+  def get_data(path)
+    data = []
+    para = Para.new
+    File.open(path, 'r').each_with_index do |line, index|
+      if (index%4 == 0)
+        para = Para.new
+        para.source = line
+        next
+      end
+
+      if (index - 1)%4 == 0
+        para.target = line
+        next
+      end
+
+      if (index - 2)%4 == 0
+        para.aline = parse_aline(line)
+        data << para
+      end
+    end
+    data.each_with_index do |line, index|
+      puts "#{line}"
+      puts "\n"
+      break if index > 4
+    end
+    data
+  end
+
+  def parse_aline(aline)
+    data = []
+    arr = aline.split(" ")
+    arr.delete_at(0)
+    arr.each_with_index do |e, index|
+      data << Aline.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
+    end
+    data
+  end
 end
 
 
 obj = ReadData.new
 obj.main
+
