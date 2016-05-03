@@ -1,7 +1,7 @@
 class ReadData
   DATA_PATH = "./data"
-  Para = Struct.new(:source, :target, :aline)
-  Aline = Struct.new(:source_numbers, :target_number, :tag_name)
+  Sentence_Pair = Struct.new(:source, :target, :Alignment)
+  Alignment = Struct.new(:source_numbers, :target_number, :tag_name)
 
   def get_aln
     array_alns = []
@@ -84,30 +84,32 @@ class ReadData
     merged_aln_crp.write("")
     merge_aln_crp(merged_aln_crp)
 
-    get_data(DATA_PATH + "/merged_aln_crp.txt")
+    data = get_data(DATA_PATH + "/merged_aln_crp.txt")
+ 
+    puts "#{count_alignment(data)}"
   end 
 
   #Input: file
-  #Output: Array of Para
-  #:aline is a array of Aline struct
+  #Output: Array of sentence pairs
+  #:Alignment is a array of Alignment struct
   def get_data(path)
     data = []
-    para = Para.new
+    sentence_pair = Sentence_Pair.new
     File.open(path, 'r').each_with_index do |line, index|
       if (index%4 == 0)
-        para = Para.new
-        para.source = line
+        sentence_pair = Sentence_Pair.new
+        sentence_pair.source = line
         next
       end
 
       if (index - 1)%4 == 0
-        para.target = line
+        sentence_pair.target = line
         next
       end
 
       if (index - 2)%4 == 0
-        para.aline = parse_aline(line)
-        data << para
+        sentence_pair.Alignment = parse_alignment(line)
+        data << sentence_pair
       end
     end
     data.each_with_index do |line, index|
@@ -115,18 +117,32 @@ class ReadData
       puts "\n"
       break if index > 4
     end
-    data
+    return data
   end
 
-  def parse_aline(aline)
+  # parse a line in Yawat format into an Alignment struct
+  def parse_alignment(align)
     data = []
-    arr = aline.split(" ")
+    arr = align.split(" ")
     arr.delete_at(0)
     arr.each_with_index do |e, index|
-      data << Aline.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
+      data << Alignment.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
     end
-    data
+    return data
   end
+
+  def count_alignment(sentence_pair_array)
+    count = 0
+    sentence_pair_array.each_with_index do |pairs, index|
+      count = count + pairs.Alignment.length 
+    end
+    return count
+  end
+
+  def compare_alignment(align1, align2)
+    align1.each_with_index do |
+  end
+
 end
 
 
