@@ -1,0 +1,11 @@
+This paper analyzes the effects of structural variation of sentences on parsing performances .
+This paper analyzes the effect of the structural variation of sentences on parsing performance .
+0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-others 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:bigrammar-others 13:14:preserved :6:mogrammar-det
+
+We examined the performances of both shallow and deep parsers for two sentence constructions : imperatives and questions .
+We examine the performance of both shallow and deep parsers for two sentence constructions : imperatives and questions .
+0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:bigrammar-others 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The target parsers are adapted to the sentences for these constructions extracted from fiction and query texts .
+The target parsers are adapted to sentences of these constructions extracted from fiction and query texts .
+0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6::mogrammar-det 7:6:preserved 8:7:bigrammar-prep 9,11:8,10:preserved 10:9:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved
