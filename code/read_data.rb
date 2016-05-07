@@ -80,37 +80,32 @@ class ReadData
   end  
 
   def main
-    merged_aln_crp = File.open(DATA_PATH + "/merged_aln_crp.txt","w")
-    merged_aln_crp.write("")
-    merge_aln_crp(merged_aln_crp)
+    # merged_aln_crp = File.open(DATA_PATH + "/merged_aln_crp.txt","w")
+    # merged_aln_crp.write("")
+    # merge_aln_crp(merged_aln_crp)
 
-    data = get_data(DATA_PATH + "/merged_aln_crp.txt")
-
-    # data.each_with_index do |line, index|
-    #   puts "#{line}"
-    #   puts "\n"
-    #   break if index > 0
-    # end
+    # data = get_merged_aln_crp(DATA_PATH + "/merged_aln_crp.txt")
  
-    puts "#{count_alignment(data)}"
+    # puts "#{count_alignment(data)}"
 
-    #puts "#{compare_aln_arr(data[0].Alignment, data[1].Alignment)}"
+    # #puts "#{compare_aln_arr(data[0].Alignment, data[1].Alignment)}"
 
-    meteor_data = convert_to_Meteor_tag(data)
-    meteor_data.each_with_index do |line, index|
-      puts "#{line.source}\n#{line.target}\n"
-      line.Alignment.each do |align|
-        puts "#{align.source_numbers}\n#{align.target_numbers}\n#{align.tag_name}\n\n"
-      end
-      break if index > 2
-    end 
+    # meteor_data = convert_to_Meteor_tag(data)
+    # meteor_data.each_with_index do |line, index|
+    #   puts "#{line.source}\n#{line.target}\n"
+    #   line.Alignment.each do |align|
+    #     puts "#{align.source_numbers}\n#{align.target_numbers}\n#{align.tag_name}\n\n"
+    #   end
+    #   break if index > 2
+    # end 
 
-  end 
+    get_anotation_with_preprocess(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+  end
 
   #Input: file
   #Output: Array of sentence pairs
   #:Alignment is a array of Alignment struct
-  def get_data(path)
+  def get_merged_aln_crp(path)
     data = []
     sentence_pair = Sentence_Pair.new
     File.open(path, 'r').each_with_index do |line, index|
@@ -129,6 +124,49 @@ class ReadData
         sentence_pair.Alignment = parse_alignment(line)
         data << sentence_pair
       end
+    end
+
+    return data
+  end
+
+  def get_anotation_with_preprocess(path)
+    data = []
+    sentence_pair = Sentence_Pair.new
+    File.open(path, 'r').each_with_index do |line, index|
+      
+      next if index <= 2
+
+      if ((index-3)%5 == 0)
+        sentence_pair = Sentence_Pair.new
+        sentence_pair.source = line
+        next
+      end
+
+      if (index - 4)%5 == 0
+        sentence_pair.target = line
+        next
+      end
+
+      if (index)%5 == 0
+        sentence_pair.Alignment = parse_alignment_anotation_with_preprocess(line)
+        data << sentence_pair
+      end
+    end
+    
+    data.each_with_index do |e, index|
+      puts e.inspect
+      break if index > 5
+    end
+
+    return data
+  end
+
+    # parse a line in Yawat format into an Alignment struct
+  def parse_alignment_anotation_with_preprocess(align)
+    data = []
+    arr = align.split(" ")
+    arr.each_with_index do |e, index|
+      data << Alignment.new(e.split("#")[2], e.split("#")[1], e.split("#")[3])
     end
     return data
   end
