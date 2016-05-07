@@ -1,7 +1,7 @@
 class ReadData
   DATA_PATH = "./data"
   Sentence_Pair = Struct.new(:source, :target, :Alignment)
-  Alignment = Struct.new(:source_numbers, :target_number, :tag_name)
+  Alignment = Struct.new(:source_numbers, :target_numbers, :tag_name)
 
   def get_aln
     array_alns = []
@@ -11,13 +11,13 @@ class ReadData
     return array_alns
   end
 
-  def get_crp_1
-    array_crp = []
-    File.open(DATA_PATH + "/full_crp.txt", 'r').each do |line|
-      array_crp << line
-    end
-    return array_crp
-  end
+  # def get_crp_1
+  #   array_crp = []
+  #   File.open(DATA_PATH + "/full_crp.txt", 'r').each do |line|
+  #     array_crp << line
+  #   end
+  #   return array_crp
+  # end
 
   def get_crp
     array_crps = []
@@ -47,24 +47,24 @@ class ReadData
     return array_crps
   end
 
-  def merge_aln_crp_1(output_file)
-    array_aln = get_aln
-    array_crp = get_crp
+  # def merge_aln_crp_1(output_file)
+  #   array_aln = get_aln
+  #   array_crp = get_crp
     
-    flag = false
-    array_crp.each_with_index do |line, index|
-      if (flag == true)
-        flag = false
-        output_file.write(line)
-        output_file.write(array_aln[index])
-        next
-      end
-      next if line.match(/^</)      # if the first character of the line is < --> skip this line
-      next if line.strip.match(/\A\d+\z/)     # if the line is numeric --> skip this line
-      output_file.write(line)
-      flag = true             # if we have written a line --> mark the flag and we will skip the next line
-    end
-  end
+  #   flag = false
+  #   array_crp.each_with_index do |line, index|
+  #     if (flag == true)
+  #       flag = false
+  #       output_file.write(line)
+  #       output_file.write(array_aln[index])
+  #       next
+  #     end
+  #     next if line.match(/^</)      # if the first character of the line is < --> skip this line
+  #     next if line.strip.match(/\A\d+\z/)     # if the line is numeric --> skip this line
+  #     output_file.write(line)
+  #     flag = true             # if we have written a line --> mark the flag and we will skip the next line
+  #   end
+  # end
 
   def merge_aln_crp(output_file)
     array_crp = get_crp
@@ -87,6 +87,8 @@ class ReadData
     data = get_data(DATA_PATH + "/merged_aln_crp.txt")
  
     puts "#{count_alignment(data)}"
+
+    puts "#{compare_aln_arr(data[0].Alignment, data[0].Alignment)}"
   end 
 
   #Input: file
@@ -115,7 +117,7 @@ class ReadData
     data.each_with_index do |line, index|
       puts "#{line}"
       puts "\n"
-      break if index > 4
+      break if index > 0
     end
     return data
   end
@@ -139,8 +141,30 @@ class ReadData
     return count
   end
 
-  def compare_alignment(align1, align2)
-    align1.each_with_index do |
+  def compare_aln_arr(aln_arr1, aln_arr2)
+    count = 0 # number of identical alignments
+    count_aln1 = 0 # number of different alignments in aln_arr1
+    count_aln2 = 0 # number of different alignments in aln_arr2
+    # aln_arr1.each_with_index do |alignment1, index1|
+    #   aln_arr2.each_with_index do |alignment2, index2|
+    #     if compare_alignment(alignment1, alignment2)
+    #       count = count + 1
+    #     end
+    #   end
+    # end
+    count = (aln_arr1 & aln_arr2).length
+    count_aln1 = (aln_arr1 - aln_arr2).length
+    count_aln2 = (aln_arr2 - aln_arr1).length
+
+    return count, count_aln1, count_aln2
+  end
+
+  def compare_alignment(aln1, aln2)
+    if (aln1.source_numbers == aln2.source_numbers) and (aln1.target_numbers == aln2.target_numbers) and (aln1.tag_name == aln2.tag_name)
+      return true
+    else
+      return false
+    end
   end
 
 end
