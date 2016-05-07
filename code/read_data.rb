@@ -85,10 +85,26 @@ class ReadData
     merge_aln_crp(merged_aln_crp)
 
     data = get_data(DATA_PATH + "/merged_aln_crp.txt")
+
+    # data.each_with_index do |line, index|
+    #   puts "#{line}"
+    #   puts "\n"
+    #   break if index > 0
+    # end
  
     puts "#{count_alignment(data)}"
 
-    puts "#{compare_aln_arr(data[0].Alignment, data[0].Alignment)}"
+    #puts "#{compare_aln_arr(data[0].Alignment, data[1].Alignment)}"
+
+    meteor_data = convert_to_Meteor_tag(data)
+    meteor_data.each_with_index do |line, index|
+      puts "#{line.source}\n#{line.target}\n"
+      line.Alignment.each do |align|
+        puts "#{align.source_numbers}\n#{align.target_numbers}\n#{align.tag_name}\n\n"
+      end
+      break if index > 2
+    end 
+
   end 
 
   #Input: file
@@ -113,11 +129,6 @@ class ReadData
         sentence_pair.Alignment = parse_alignment(line)
         data << sentence_pair
       end
-    end
-    data.each_with_index do |line, index|
-      puts "#{line}"
-      puts "\n"
-      break if index > 0
     end
     return data
   end
@@ -165,6 +176,32 @@ class ReadData
     else
       return false
     end
+  end
+
+  def convert_to_Meteor_tag(data)
+    stem_mapping = ["bigrammar-vtense", "bigrammar-wform", "bigrammar-inter"]
+    unaligned_mapping = ["unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "spelling", "duplicate"]
+    data.each do |aln_arr|
+      aln_arr.Alignment.each do |aln|
+        if (aln.tag_name == "preserved")
+          aln.tag_name = "exact"
+        end
+        if (stem_mapping.include? aln.tag_name)
+          aln.tag_name = "stem"        
+        end
+        if (unaligned_mapping.include? aln.tag_name)
+          aln.tag_name = "unaligned"
+        end
+        if (aln.tag_name == "paraphrase")
+          if !(aln.source_numbers.include? ",") and !(aln.target_numbers.include? ",")
+            aln.tag_name = "synonym"
+          else
+            aln.tag_name = "paraphrase"
+          end
+        end
+      end
+    end
+    return data
   end
 
 end
