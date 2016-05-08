@@ -84,28 +84,40 @@ class ReadData
     # merged_aln_crp.write("")
     # merge_aln_crp(merged_aln_crp)
 
-    # data = get_merged_aln_crp(DATA_PATH + "/merged_aln_crp.txt")
+    data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
  
-    # puts "#{count_alignment(data)}"
+    data_SWA = convert_to_Meteor_tag(data_SWA)
+    data_meteor_blast = insert_unaligned(data_meteor_blast)
 
-    # #puts "#{compare_aln_arr(data[0].Alignment, data[1].Alignment)}"
+    identical, difference_swa, difference_meteor = compare_data_count(data_SWA, data_meteor_blast)
+    puts "#{identical}\n#{difference_swa}\n#{difference_meteor}\n"
+    puts "#{count_alignment(data_SWA)} , #{count_alignment(data_meteor_blast)}"
 
-    # meteor_data = convert_to_Meteor_tag(data)
-    # meteor_data.each_with_index do |line, index|
-    #   puts "#{line.source}\n#{line.target}\n"
-    #   line.Alignment.each do |align|
-    #     puts "#{align.source_numbers}\n#{align.target_numbers}\n#{align.tag_name}\n\n"
-    #   end
-    #   break if index > 2
-    # end 
+    puts "#{data_SWA.length} , #{data_meteor_blast.length}"
 
-    get_anotation_with_preprocess(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+    data_SWA.each_with_index do |line, index|
+      puts "#{line}\n\n" if line.source.include? "For example , the parsing accuracy for"
+      break if line.source.include? "For example , the parsing accuracy for"
+    end 
+
+    data_meteor_blast.each_with_index do |line, index|
+      puts "#{line}\n\n" if line.source.include? "For example , the parsing accuracy for"
+      break if line.source.include? "For example , the parsing accuracy for"
+    end 
+
+    # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
+    # puts "#{data_meteor_blast.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
+   
+    tags = ["exact", "stem", "syn", "para", "unaligned"]
+    puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
+
   end
 
   #Input: file
   #Output: Array of sentence pairs
   #:Alignment is a array of Alignment struct
-  def get_merged_aln_crp(path)
+  def get_data_SWA(path)
     data = []
     sentence_pair = Sentence_Pair.new
     File.open(path, 'r').each_with_index do |line, index|
@@ -121,7 +133,7 @@ class ReadData
       end
 
       if (index - 2)%4 == 0
-        sentence_pair.Alignment = parse_alignment(line)
+        sentence_pair.Alignment = parse_alignment_SWA(line)
         data << sentence_pair
       end
     end
@@ -129,7 +141,7 @@ class ReadData
     return data
   end
 
-  def get_anotation_with_preprocess(path)
+  def get_data_meteor_blast(path)
     data = []
     sentence_pair = Sentence_Pair.new
     File.open(path, 'r').each_with_index do |line, index|
@@ -148,21 +160,16 @@ class ReadData
       end
 
       if (index)%5 == 0
-        sentence_pair.Alignment = parse_alignment_anotation_with_preprocess(line)
+        sentence_pair.Alignment = parse_alignment_meteor_blast(line)
         data << sentence_pair
       end
-    end
-    
-    data.each_with_index do |e, index|
-      puts e.inspect
-      break if index > 5
     end
 
     return data
   end
 
-    # parse a line in Yawat format into an Alignment struct
-  def parse_alignment_anotation_with_preprocess(align)
+    # parse a line in Meteor Blast format into an Alignment struct
+  def parse_alignment_meteor_blast(align)
     data = []
     arr = align.split(" ")
     arr.each_with_index do |e, index|
@@ -172,12 +179,37 @@ class ReadData
   end
 
   # parse a line in Yawat format into an Alignment struct
-  def parse_alignment(align)
+  def parse_alignment_SWA(align)
     data = []
     arr = align.split(" ")
     arr.delete_at(0)
     arr.each_with_index do |e, index|
       data << Alignment.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
+    end
+    return data
+  end
+
+  def insert_unaligned(data)
+    data.each_with_index do |pairs, index|
+      source_length = pairs.source.split(" ").length
+      target_length = pairs.target.split(" ").length
+      source_num = []
+      target_num = []
+      pairs.Alignment.each_with_index do |aln, i|
+        source_num << aln.source_numbers.split(",")
+        target_num << aln.target_numbers.split(",")
+      end
+      # puts "source_num: #{source_num}"
+      # puts "target_num: #{target_num}"
+      source_remain = (0..(source_length - 1)).to_a - source_num.flatten.map{|e| e.to_i}
+      target_remain = (0..(target_length - 1)).to_a - target_num.flatten.map{|e| e.to_i}
+
+      source_remain.each do |remain|
+        pairs.Alignment << Alignment.new(remain.to_s,"","unaligned")
+      end
+      target_remain.each do |remain|
+        pairs.Alignment << Alignment.new("",remain.to_s,"unaligned")
+      end
     end
     return data
   end
@@ -190,23 +222,39 @@ class ReadData
     return count
   end
 
-  def compare_aln_arr(aln_arr1, aln_arr2)
+  def compare_data_count(data1, data2)
     count = 0 # number of identical alignments
-    count_aln1 = 0 # number of different alignments in aln_arr1
-    count_aln2 = 0 # number of different alignments in aln_arr2
-    # aln_arr1.each_with_index do |alignment1, index1|
-    #   aln_arr2.each_with_index do |alignment2, index2|
-    #     if compare_alignment(alignment1, alignment2)
-    #       count = count + 1
-    #     end
-    #   end
-    # end
-    count = (aln_arr1 & aln_arr2).length
-    count_aln1 = (aln_arr1 - aln_arr2).length
-    count_aln2 = (aln_arr2 - aln_arr1).length
-
+    count_aln1 = 0 # number of different alignments in data1
+    count_aln2 = 0 # number of different alignments in data2
+    data1.each_with_index do |alignment1, index|
+      count = count + (data1[index].Alignment & data2[index].Alignment).length
+      count_aln1 = count_aln1 + (data1[index].Alignment - data2[index].Alignment).length
+      count_aln2 = count_aln2 + (data2[index].Alignment - data1[index].Alignment).length
+    end
     return count, count_aln1, count_aln2
   end
+
+  def compare_data(data1, data2, tags)
+    tags_count = {}
+    tags.each_with_index do |line, index|
+      tags_count[line] = 0
+    end
+
+    data1.each_with_index do |alignment1, index|
+      arr_tmp = data1[index].Alignment & data2[index].Alignment
+
+      tags.each_with_index do |tag, index|
+        arr_tmp.each do |aln|
+          if aln.tag_name == tag
+            tags_count[tag] = tags_count[tag] + 1
+          end
+        end
+      end
+    end
+
+    return tags_count
+  end
+
 
   def compare_alignment(aln1, aln2)
     if (aln1.source_numbers == aln2.source_numbers) and (aln1.target_numbers == aln2.target_numbers) and (aln1.tag_name == aln2.tag_name)
@@ -232,9 +280,9 @@ class ReadData
         end
         if (aln.tag_name == "paraphrase")
           if !(aln.source_numbers.include? ",") and !(aln.target_numbers.include? ",")
-            aln.tag_name = "synonym"
+            aln.tag_name = "syn"
           else
-            aln.tag_name = "paraphrase"
+            aln.tag_name = "para"
           end
         end
       end
