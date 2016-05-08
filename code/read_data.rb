@@ -112,6 +112,7 @@ class ReadData
     tags = ["exact", "stem", "syn", "para", "unaligned"]
     puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
 
+    get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
   end
 
   #Input: file
@@ -166,9 +167,84 @@ class ReadData
     end
 
     return data
+  end  
+
+  def get_data_meteor_1_5(path)
+    data = []
+    sentence_pair = Sentence_Pair.new
+    start_para = -1
+    File.open(path, 'r').each_with_index do |line, index|
+      line_array = line.split(" ")
+      if line_array[0] == 'Alignment' and line_array.length == 2  
+        start_para = 0
+        next
+      end
+
+      if start_para == 0
+        start_para = 1
+        sentence_pair = Sentence_Pair.new
+        sentence_pair.source = line
+        sentence_pair.Alignment = []
+        next
+      end
+
+      if start_para == 1
+        sentence_pair.target = line
+        start_para = 2
+        next
+      end
+
+      if start_para == 2
+        start_para = 3
+        next
+      end
+
+      if line == "\n"
+        data << sentence_pair
+        start_para = -1
+      end
+
+      if start_para == 3
+        sentence_pair.Alignment << parse_alignment_meteor(line)
+        next
+      end
+    end
+    
+    #put example data
+    data.each_with_index do |e, index|
+      puts e.inspect
+      break if index > 5
+    end
+
+    return data
   end
 
-    # parse a line in Meteor Blast format into an Alignment struct
+  def parse_alignment_meteor(line_align)
+    line_align.gsub!("\t\t\t", "\t\t")
+    line_array = line_align.split("\t\t")
+    mapping = {"0" => "exact", "1" => "stem", "2" => "synonym", "3" => "paraphrase"}
+
+    align = Alignment.new
+    align.target_numbers = parse_each_part_meteor(line_array[0])
+    align.source_numbers = parse_each_part_meteor(line_array[1])
+    align.tag_name = mapping[line_array[2]]
+
+    align
+  end
+
+  def parse_each_part_meteor(tmp)
+    target_align_arr = tmp.split(":")
+    data = target_align_arr[0]
+
+    if target_align_arr[1].to_i > 1
+      ((target_align_arr[0].to_i + 1) .. (target_align_arr[1].to_i + target_align_arr[0].to_i - 1)).each do |i|
+        data += ',' + i.to_s
+      end
+    end
+    data
+  end
+
+    # parse a line in Yawat format into an Alignment struct
   def parse_alignment_meteor_blast(align)
     data = []
     arr = align.split(" ")
