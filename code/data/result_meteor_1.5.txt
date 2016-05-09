@@ -57491,11 +57491,6 @@ Line2Start:Length	Line1Start:Length	Module		Score
 17:1			15:1			0		1.0
 18:1			16:1			0		1.0
 
-Alignment 2138
-b</subsection>
-376
-Line2Start:Length	Line1Start:Length	Module		Score
-
 Alignment 2139
 We have presented a novel method for re-ranking face images returned by existing search engines .
 We have presented a novel method of re-ranking face images returned by existing search engines .

@@ -86,33 +86,64 @@ class ReadData
 
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
     data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
- 
+    data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+
     data_SWA = convert_to_Meteor_tag(data_SWA)
     data_meteor_blast = insert_unaligned(data_meteor_blast)
+    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
 
-    identical, difference_swa, difference_meteor = compare_data_count(data_SWA, data_meteor_blast)
-    puts "#{identical}\n#{difference_swa}\n#{difference_meteor}\n"
-    puts "#{count_alignment(data_SWA)} , #{count_alignment(data_meteor_blast)}"
-
-    puts "#{data_SWA.length} , #{data_meteor_blast.length}"
-
-    data_SWA.each_with_index do |line, index|
-      puts "#{line}\n\n" if line.source.include? "For example , the parsing accuracy for"
-      break if line.source.include? "For example , the parsing accuracy for"
-    end 
-
-    data_meteor_blast.each_with_index do |line, index|
-      puts "#{line}\n\n" if line.source.include? "For example , the parsing accuracy for"
-      break if line.source.include? "For example , the parsing accuracy for"
-    end 
-
-    # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
-    # puts "#{data_meteor_blast.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
-   
+    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "spelling", "duplicate"]
     tags = ["exact", "stem", "syn", "para", "unaligned"]
-    puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
+    puts "#{count_tags(data_SWA, tags)}"
+    puts "#{count_tags(data_meteor_blast, tags)}"
+    puts "#{count_tags(data_meteor_1_5, tags)}"
+    puts "\n"
 
-    get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
+    puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
+    puts "#{compare_data(data_meteor_blast, data_meteor_1_5, tags)}"
+    puts "\n"
+
+    # a, b, c = compare_data_on_tag(data_meteor_blast, data_meteor_1_5, "exact")
+
+    # a.each_with_index do |line, index|
+    #   puts "#{line}\n\n"
+    #   break if index > 2
+    # end
+
+    print_data(data_SWA)
+
+    # identical, difference_swa, difference_meteor = compare_data_count(data_SWA, data_meteor_blast)
+    # puts "#{identical}\n#{difference_swa}\n#{difference_meteor}\n"
+    # puts "#{count_alignment(data_SWA)} , #{count_alignment(data_meteor_blast)}"
+
+    # puts "#{data_SWA.length} , #{data_meteor_blast.length}, #{data_meteor_1_5.length}"
+
+
+    # data_SWA.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
+    #   break if line.source.include? "The conditional probability of a label sequence"
+    # end 
+    # data_meteor_blast.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
+    #   break if line.source.include? "The conditional probability of a label sequence"
+    # end 
+    # data_SWA.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if index == 2784
+    #   break if index == 2784
+    # end
+    # data_meteor_blast.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if index == 2784
+    #   break if index == 2784
+    # end
+
+    # data_meteor_1_5.each_with_index do |line, index|
+    #   puts "#{line}\n\n#{index}\n" if line.source.include? "A phrase-based SMT system"
+    #   break if line.source.include? "A phrase-based SMT system"
+    # end 
+
+    # # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
+    # puts "#{data_meteor_1_5.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
   end
 
   #Input: file
@@ -209,12 +240,6 @@ class ReadData
         next
       end
     end
-    
-    #put example data
-    data.each_with_index do |e, index|
-      puts e.inspect
-      break if index > 5
-    end
 
     return data
   end
@@ -222,7 +247,7 @@ class ReadData
   def parse_alignment_meteor(line_align)
     line_align.gsub!("\t\t\t", "\t\t")
     line_array = line_align.split("\t\t")
-    mapping = {"0" => "exact", "1" => "stem", "2" => "synonym", "3" => "paraphrase"}
+    mapping = {"0" => "exact", "1" => "stem", "2" => "syn", "3" => "para"}
 
     align = Alignment.new
     align.target_numbers = parse_each_part_meteor(line_array[0])
@@ -263,6 +288,21 @@ class ReadData
       data << Alignment.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
     end
     return data
+  end
+
+  def print_data(data)
+    output = File.open(DATA_PATH + "/output", "w")
+    output.write("")
+
+    data.each do |line|
+      output.write(line.source)
+      output.write(line.target)
+      line.Alignment.each do |aln|
+        output.write(aln.source_numbers + ":" + aln.target_numbers + ":" + aln.tag_name)
+      end
+      output.write("\n")
+    end
+    output.close
   end
 
   def insert_unaligned(data)
@@ -327,7 +367,70 @@ class ReadData
         end
       end
     end
+    return tags_count
+  end
 
+  def compare_data_on_tag(data1, data2, tag)
+    inter_arr = []
+    different_arr1 = []
+    different_arr2 = []
+
+    data1.each_with_index do |alignment1, index|
+      inter_arr_tmp = data1[index].Alignment & data2[index].Alignment
+      different_arr1_tmp = data1[index].Alignment & data2[index].Alignment
+      different_arr2_tmp = data2[index].Alignment & data1[index].Alignment
+
+      sentence_pair = Sentence_Pair.new
+      sentence_pair.source = alignment1.source
+      sentence_pair.target = alignment1.target
+      sentence_pair.Alignment = []
+
+      inter_arr_tmp.each do |aln|
+        if aln.tag_name == tag
+          sentence_pair.Alignment << aln
+          # puts "#{aln}"
+        end
+      end
+      #sentence_pair.Alignment = tmp
+      inter_arr << sentence_pair
+      puts "#{sentence_pair}"
+      sentence_pair.Alignment = []
+
+      different_arr1_tmp.each do |aln|
+        if aln.tag_name == tag
+          sentence_pair.Alignment << aln
+        end
+      end
+      different_arr1 << sentence_pair
+      sentence_pair.Alignment = []
+
+      different_arr2_tmp.each do |aln|
+        if aln.tag_name == tag
+          sentence_pair.Alignment << aln
+        end
+      end
+      different_arr2 << sentence_pair  
+      sentence_pair.Alignment = []    
+      
+    end
+    return inter_arr, different_arr1, different_arr2
+  end
+
+  def count_tags(data, tags)
+    tags_count = {}
+    tags.each do |line|
+      tags_count[line] = 0
+    end
+
+    data.each_with_index do |alignment, index|
+      tags.each do |tag|
+        alignment.Alignment.each do |aln|
+          if aln.tag_name == tag
+            tags_count[tag] = tags_count[tag] + 1
+          end
+        end
+      end
+    end
     return tags_count
   end
 
