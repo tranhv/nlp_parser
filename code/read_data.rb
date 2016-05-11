@@ -80,29 +80,30 @@ class ReadData
   end  
 
   def main
+      get_data_giza(DATA_PATH + "/test.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/merged_aln_crp.txt","w")
     # merged_aln_crp.write("")
     # merge_aln_crp(merged_aln_crp)
 
-    data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
-    data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    # data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
 
-    data_SWA = convert_to_Meteor_tag(data_SWA)
-    data_meteor_blast = insert_unaligned(data_meteor_blast)
-    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    # data_SWA = convert_to_Meteor_tag(data_SWA)
+    # data_meteor_blast = insert_unaligned(data_meteor_blast)
+    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
 
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "spelling", "duplicate"]
-    tags = ["exact", "stem", "syn", "para", "unaligned"]
-    puts "#{count_tags(data_SWA, tags)}"
-    puts "#{count_tags(data_meteor_blast, tags)}"
-    puts "#{count_tags(data_meteor_1_5, tags)}"
-    puts "\n"
+    # # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "spelling", "duplicate"]
+    # tags = ["exact", "stem", "syn", "para", "unaligned"]
+    # puts "#{count_tags(data_SWA, tags)}"
+    # puts "#{count_tags(data_meteor_blast, tags)}"
+    # puts "#{count_tags(data_meteor_1_5, tags)}"
+    # puts "\n"
 
-    puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
-    puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
-    puts "#{compare_data(data_meteor_blast, data_meteor_1_5, tags)}"
-    puts "\n"
+    # puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
+    # puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
+    # puts "#{compare_data(data_meteor_blast, data_meteor_1_5, tags)}"
+    # puts "\n"
 
     # a, b, c = compare_data_on_tag(data_meteor_blast, data_meteor_1_5, "exact")
 
@@ -111,7 +112,7 @@ class ReadData
     #   break if index > 2
     # end
 
-    print_data(data_SWA)
+    #print_data(data_SWA)
 
     # identical, difference_swa, difference_meteor = compare_data_count(data_SWA, data_meteor_blast)
     # puts "#{identical}\n#{difference_swa}\n#{difference_meteor}\n"
@@ -242,6 +243,96 @@ class ReadData
     end
 
     return data
+  end
+
+  def get_data_giza(path)
+    data = []
+    sentence_pair = Sentence_Pair.new
+    File.open(path, 'r').each_with_index do |line, index|
+      next if (index % 3) == 0
+
+      if (index - 1)%3 == 0
+        sentence_pair = Sentence_Pair.new
+        sentence_pair.source = line
+        sentence_pair.Alignment = []
+        next
+      end
+
+      if (index - 2)%3 == 0
+        sentence_pair.Alignment, sentence_pair.target = parse_giza_line(line)
+        data << sentence_pair
+      end
+    end
+
+    data.each_with_index do |e, index|
+      puts "-------------------------------------"
+      puts e.inspect
+      break if index > 3
+    end
+    return data
+  end
+
+
+  def parse_giza_line(line)
+    data = []
+    source = line.gsub("NULL","").gsub(/\s*\(\{(\w*\s*)*\}\)\s*/," ").strip
+
+    #  "NULL ({7}) This ({1,12}) paper ({2}) analyzes ({3}) 33 ({4})"
+    # ["NULL", "({7})", "This", "({1,12})", "paper", "({2})", "analyzes", "({3})", "33", "({4})"]
+    source_group_matches = line.gsub(/\(\{(\w*\s*)*\}\)/) {
+      |tmp| tmp.gsub(/(\s*\w*)*/) {
+    |tmp1| tmp1.strip.gsub(/\s/,",")
+      }
+    }.strip.split(' ')
+
+    source_match_array = source_group_matches.each_slice(2).map { |e| e }
+
+    null_value = []
+    result = ""
+    target = []
+
+    source_match_array.each_with_index do |item,index|
+      unless null_value.count == 0
+        tmp_index = index - 1
+      end
+
+      if item[0] == 'NULL'
+        null_value << item
+      else
+        align = Alignment.new
+        align.tag_name = ''
+        
+        target << item[0]
+        target_tag = item[1].gsub(/[{()}]/,"")
+
+        align.target_numbers = tmp_index.to_s
+        align.source_numbers = target_tag.split(",").map {|e| 
+                                  if e.to_i == 0
+                                    e.to_s
+                                  else
+                                    e.to_i - 1
+                                  end
+                                  }.join(",").strip
+        data << align
+      end
+    end
+
+
+    unless null_value.count == 0 
+      align = Alignment.new
+      align.tag_name = ''
+      align.source_numbers = ''
+      
+      align.target_numbers = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
+        if e.to_i == 0
+          e.to_s
+        else
+          e.to_i - 1
+        end
+      }.join(",")
+      data << align
+    end
+    return [data, target.join(" ")]
   end
 
   def parse_alignment_meteor(line_align)
