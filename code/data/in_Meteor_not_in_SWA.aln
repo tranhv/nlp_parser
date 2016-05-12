@@ -1,0 +1,905 @@
+0 9:8:exact 11:10:exact 
+1 13:25:exact 
+2 10:14:exact 17:17:exact 18:18:exact 
+3 16:21:exact 20:26:exact 21:27:exact 22:28:exact 23:29:exact 24:30:exact 32:38:exact 33:39:exact 38:44:exact 
+4 29:29:exact 
+5 19:23:exact 20:24:exact 21:25:exact 28:32:exact 29:33:exact 30:34:exact 37:41:exact 
+6 1:7:exact 5:9:exact 6:10:exact 7:11:exact 8:3:exact 
+7 7:15:exact 
+8 1:2:exact 3:6:exact 4:7:exact 9:12:exact 14:9:exact 24:18:exact 
+9 11:11:exact 13:20:exact 
+10 2:14:exact 
+11 4:14:exact 
+12 1:4:exact 4:18:exact 5:19:exact 20:24:exact 
+13 6:2:exact 9:4:exact 11:5:exact 16:11:exact 23:18:exact 24:19:exact 28:23:exact 
+14 1:8:exact 
+15 3:3:exact 
+16 5:11:exact 15:17:exact 
+17 2:3:exact 5:1:exact 
+18 0:0:exact 1:4:exact 
+19 20:45:exact 
+20 4:3:exact 
+21 7:5:exact 
+22 31:30:exact 34:38:exact 37:33:exact 39:36:exact 
+23 15:15:exact 
+24 12:8:exact 14:9:exact 15:10:exact 16:11:exact 18:12:exact 19:13:exact 20:14:exact 21:15:exact 22:16:exact 23:17:exact 24:18:exact 26:20:exact 27:21:exact 28:22:exact 
+25 22:21:exact 28:5:exact 
+26 6:6:exact 15:27:exact 16:18:exact 
+27 14:14:exact 
+28 13:27:exact 14:14:exact 
+29 45:49:exact 46:50:exact 47:51:exact 
+30 15:15:exact 
+31 11:22:exact 
+32 0:0:exact 1:1:exact 2:2:exact 15:7:exact 19:3:exact 20:28:exact 21:6:exact 33:27:exact 37:32:exact 38:33:exact 39:34:exact 
+33 14:15:exact 
+34 2:28:exact 33:23:exact 34:24:exact 35:31:exact 
+35 11:10:exact 24:22:exact 28:31:exact 
+36 1:1:exact 
+37 19:14:exact 
+38 15:20:exact 17:22:exact 
+39 6:16:exact 15:35:exact 26:40:exact 31:30:exact 
+40 17:2:exact 22:28:exact 
+41 3:4:exact 16:17:exact 28:32:exact 34:38:exact 38:44:exact 
+42 4:6:exact 
+43 15:25:exact 24:18:exact 25:19:exact 
+44 1:9:exact 40:76:exact 77:80:exact 
+45 3:34:exact 17:16:exact 
+46 15:20:exact 19:19:exact 25:23:exact 30:26:exact 40:36:exact 
+47 2:13:exact 7:2:exact 13:9:exact 26:22:exact 27:23:exact 28:24:exact 34:30:exact 
+48 31:35:exact 32:36:exact 33:37:exact 
+49 44:63:exact 60:65:exact 61:66:exact 63:68:exact 
+50 3:13:exact 4:14:exact 6:2:exact 15:25:exact 16:32:exact 
+51 8:9:exact 
+52 22:27:exact 
+53 5:12:exact 8:4:exact 22:30:exact 29:29:exact 
+54 2:15:exact 13:39:exact 20:23:exact 26:30:exact 31:34:exact 
+55 4:11:exact 
+56 17:13:exact 
+57 1:3:exact 6:22:exact 8:2:exact 36:27:exact 
+58 25:25:exact 
+59 3:7:exact 
+60 2:10:exact 11:12:exact 12:13:exact 14:26:exact 19:18:exact 21:9:exact 25:20:exact 
+61 12:17:exact 19:12:exact 
+62 36:36:exact 37:17:exact 39:33:exact 
+63 3:29:exact 4:3:exact 5:5:exact 35:31:exact 
+64 27:11:exact 54:18:exact 
+65 1:17:exact 
+66 2:19:exact 16:17:exact 
+67 3:33:exact 4:34:exact 11:18:exact 20:16:exact 43:39:exact 
+68 0:13:exact 3:6:exact 4:7:exact 18:22:exact 
+69 11:8:exact 
+70 12:8:exact 16:20:exact 19:34:exact 34:15:exact 
+71 8:6:exact 
+72 19:15:exact 
+73 0:0:exact 3:7:exact 
+74 5:4:exact 9:11:exact 
+75 6:5:exact 
+76 16:17:exact 
+77 7:8:exact 8:9:exact 
+78 2:6:exact 4:5:exact 7:12:exact 12:19:exact 13:20:exact 14:21:exact 15:22:exact 16:23:exact 17:24:exact 18:25:exact 19:26:exact 20:27:exact 
+79 2:19:exact 
+80 2:9:exact 
+81 4:8:exact 18:14:exact 23:17:exact 
+82 4:4:exact 5:7:exact 
+83 14:27:exact 17:23:exact 22:28:exact 23:29:exact 24:30:exact 25:31:exact 26:32:exact 27:33:exact 
+84 4:4:exact 
+85 9:9:exact 
+86 25:8:exact 
+87 6:20:exact 7:21:exact 15:28:exact 18:14:exact 23:7:exact 24:17:exact 
+88 36:40:exact 37:41:exact 38:42:exact 39:43:exact 40:44:exact 41:45:exact 42:46:exact 43:47:exact 44:48:exact 
+89 16:9:exact 25:24:exact 
+90 1:14:exact 3:18:exact 17:26:exact 
+91 2:6:exact 3:7:exact 4:8:exact 5:9:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 12:1:exact 13:2:exact 
+92 0:0:exact 
+93 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 
+94 6:5:exact 
+95 2:1:exact 
+96 16:21:exact 17:22:exact 18:23:exact 20:25:exact 
+97 20:2:exact 22:1:exact 
+98 1:9:exact 11:19:exact 14:11:exact 20:22:exact 21:17:exact 22:18:exact 
+99 16:14:exact 
+100 7:12:exact 12:11:exact 13:20:exact 
+101 1:12:exact 5:3:exact 
+102 4:3:exact 
+103 6:16:exact 
+104 2:9:exact 3:10:exact 4:11:exact 
+105 10:6:exact 
+106 6:23:exact 
+107 19:28:exact 
+108 35:39:exact 36:40:exact 37:41:exact 38:42:exact 
+109 12:11:exact 22:34:exact 28:35:exact 29:36:exact 30:37:exact 
+110 12:16:exact 13:17:exact 
+111 6:10:exact 
+112 6:5:exact 
+113 2:13:exact 9:4:exact 10:5:exact 11:6:exact 12:7:exact 13:8:exact 
+114 1:13:exact 
+115 1:16:exact 
+116 14:30:exact 18:19:exact 20:26:exact 21:21:exact 
+117 9:10:exact 
+118 8:12:exact 
+119 32:27:exact 
+120 7:16:exact 16:27:exact 17:28:exact 
+121 25:16:exact 
+122 2:3:exact 
+123 6:34:exact 7:2:exact 9:14:exact 17:27:exact 18:22:exact 22:28:exact 23:29:exact 24:30:exact 25:31:exact 26:32:exact 27:33:exact 29:35:exact 
+124 16:23:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 
+125 22:26:exact 23:41:exact 24:42:exact 25:43:exact 26:44:exact 27:45:exact 28:46:exact 29:47:exact 31:49:exact 33:50:exact 
+126 14:1:exact 15:2:exact 
+127 13:14:exact 
+128 4:11:exact 12:23:exact 
+129 1:11:exact 
+130 28:36:exact 
+131 8:7:exact 9:8:exact 
+132 3:4:exact 6:16:exact 8:6:exact 18:28:exact 23:30:exact 
+133 12:17:exact 
+134 14:18:exact 25:15:exact 
+135 6:12:exact 14:18:exact 
+136 3:8:exact 4:9:exact 5:10:exact 6:11:exact 7:12:exact 8:13:exact 9:6:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 22:1:exact 24:3:exact 25:4:exact 
+137 5:9:exact 6:10:exact 7:11:exact 8:13:exact 9:14:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:24:exact 19:25:exact 20:26:exact 
+138 15:14:exact 
+139 21:21:exact 25:30:exact 26:31:exact 27:32:exact 28:33:exact 29:34:exact 
+140 1:11:exact 
+141 10:14:exact 14:23:exact 15:24:exact 23:29:exact 24:15:exact 29:36:exact 
+142 2:12:exact 3:13:exact 4:14:exact 5:15:exact 6:16:exact 7:17:exact 8:18:exact 9:19:exact 10:20:exact 11:21:exact 12:22:exact 13:23:exact 15:1:exact 16:2:exact 17:3:exact 18:4:exact 19:5:exact 20:6:exact 21:7:exact 22:8:exact 
+143 1:7:exact 
+144 0:0:exact 1:1:exact 
+145 7:10:exact 11:15:exact 
+146 1:7:exact 
+147 14:11:exact 
+148 2:3:exact 6:1:exact 7:2:exact 9:4:exact 10:5:exact 11:6:exact 13:7:exact 14:8:exact 15:9:exact 16:10:exact 17:11:exact 18:12:exact 19:13:exact 20:14:exact 21:15:exact 22:16:exact 23:17:exact 24:18:exact 25:19:exact 26:20:exact 27:21:exact 
+149 7:20:exact 14:26:exact 
+150 17:17:exact 18:18:exact 20:21:exact 
+151 13:28:exact 
+152 5:20:exact 
+153 14:10:exact 
+154 6:10:exact 7:16:exact 8:17:exact 9:18:exact 10:6:exact 11:7:exact 12:8:exact 17:14:exact 
+155 3:11:exact 
+156 1:7:exact 8:11:exact 12:17:exact 18:20:exact 
+157 13:15:exact 21:27:exact 
+158 9:21:exact 
+159 3:1:exact 8:6:exact 
+160 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 22:18:exact 23:19:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 
+161 1:8:exact 
+162 20:36:exact 
+163 11:6:exact 12:7:exact 
+164 13:23:exact 14:24:exact 15:25:exact 23:29:exact 
+165 5:13:exact 
+166 18:22:exact 20:29:exact 
+167 23:44:exact 
+168 5:4:exact 14:10:exact 15:11:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 23:19:exact 24:20:exact 25:21:exact 27:23:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 32:28:exact 33:29:exact 34:30:exact 35:31:exact 36:32:exact 37:33:exact 38:34:exact 39:35:exact 40:36:exact 41:37:exact 42:38:exact 
+169 4:15:exact 
+170 3:27:exact 6:18:exact 7:2:exact 8:3:exact 9:4:exact 10:5:exact 11:6:exact 12:7:exact 13:8:exact 14:9:exact 15:10:exact 16:11:exact 17:12:exact 18:13:exact 19:14:exact 20:15:exact 21:16:exact 22:17:exact 24:19:exact 25:20:exact 26:21:exact 27:22:exact 28:23:exact 29:24:exact 30:25:exact 31:26:exact 34:29:exact 35:30:exact 36:31:exact 
+171 14:36:exact 15:37:exact 30:35:exact 32:16:exact 33:38:exact 34:39:exact 35:40:exact 36:41:exact 37:42:exact 38:43:exact 39:44:exact 40:45:exact 
+172 1:32:exact 12:8:exact 13:9:exact 24:31:exact 
+173 0:0:exact 1:1:exact 2:2:exact 3:3:exact 4:4:exact 5:5:exact 6:6:exact 7:7:exact 8:8:exact 9:9:exact 10:16:exact 
+174 3:21:exact 5:1:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 23:19:exact 24:20:exact 25:39:exact 26:22:exact 27:23:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 32:28:exact 36:47:exact 37:33:exact 38:34:exact 39:35:exact 40:36:exact 41:37:exact 42:38:exact 44:40:exact 45:41:exact 46:42:exact 47:43:exact 48:44:exact 49:45:exact 50:46:exact 53:49:exact 54:50:exact 55:51:exact 56:52:exact 57:53:exact 58:54:exact 59:55:exact 60:56:exact 61:57:exact 
+175 1:5:exact 
+176 4:4:exact 6:30:exact 
+177 13:20:exact 20:24:exact 24:32:exact 32:46:exact 
+178 6:13:exact 13:22:exact 22:35:exact 27:18:exact 30:34:exact 32:36:exact 33:37:exact 34:38:exact 
+179 11:15:exact 
+180 20:24:exact 24:30:exact 
+181 10:17:exact 17:21:exact 21:26:exact 22:27:exact 
+182 22:28:exact 
+183 19:26:exact 
+184 46:62:exact 
+185 6:13:exact 
+186 14:24:exact 
+187 1:11:exact 3:2:exact 12:27:exact 28:47:exact 
+188 24:53:exact 
+189 9:32:exact 
+190 4:4:exact 
+191 5:10:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:22:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 27:23:exact 35:24:exact 
+192 6:34:exact 23:9:exact 26:30:exact 27:31:exact 28:32:exact 29:33:exact 34:38:exact 35:39:exact 
+193 13:17:exact 
+194 5:1:exact 6:2:exact 7:3:exact 8:4:exact 
+195 3:10:exact 7:3:exact 8:4:exact 9:5:exact 12:8:exact 13:9:exact 14:14:exact 15:11:exact 16:12:exact 17:13:exact 20:16:exact 21:17:exact 22:18:exact 
+196 6:9:exact 9:13:exact 10:14:exact 11:15:exact 12:6:exact 13:7:exact 14:8:exact 
+197 14:29:exact 
+198 0:0:exact 1:1:exact 9:13:exact 12:16:exact 13:17:exact 14:18:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 
+199 12:13:exact 
+200 12:22:exact 
+201 19:24:exact 20:25:exact 21:26:exact 22:19:exact 23:18:exact 24:27:exact 
+202 15:15:exact 
+203 2:1:exact 
+204 14:16:exact 
+205 14:22:exact 
+206 8:4:exact 
+207 1:5:exact 2:6:exact 
+208 1:8:exact 8:11:exact 11:14:exact 14:22:exact 19:1:exact 21:19:exact 
+209 5:13:exact 
+210 2:6:exact 
+211 2:11:exact 
+212 17:25:exact 18:26:exact 
+213 19:14:exact 20:15:exact 
+214 1:7:exact 
+215 23:28:exact 
+216 22:25:exact 25:33:exact 
+217 25:27:exact 
+218 1:12:exact 12:11:exact 14:14:exact 
+219 20:30:exact 
+220 28:32:exact 29:33:exact 30:34:exact 31:35:exact 32:36:exact 33:37:exact 
+221 10:28:exact 11:29:exact 29:33:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 
+222 14:2:exact 
+223 18:2:exact 23:27:exact 
+224 13:6:exact 14:7:exact 15:8:exact 16:9:exact 17:10:exact 18:11:exact 19:13:exact 
+225 3:4:exact 6:5:exact 7:6:exact 
+226 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 23:19:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 28:24:exact 29:25:exact 
+227 11:9:exact 12:12:exact 14:16:exact 
+228 14:15:exact 
+229 20:7:exact 
+230 38:23:exact 42:25:exact 
+231 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 13:9:exact 
+232 4:29:exact 10:15:exact 
+233 8:17:exact 
+234 1:3:exact 3:5:exact 7:2:exact 
+235 9:9:exact 
+236 12:20:exact 
+237 10:10:exact 
+238 1:34:exact 2:36:exact 3:37:exact 4:38:exact 6:8:exact 8:18:exact 9:10:exact 10:11:exact 12:2:exact 13:3:exact 14:4:exact 16:9:exact 19:12:exact 20:13:exact 21:14:exact 22:15:exact 23:16:exact 24:17:exact 26:21:exact 27:22:exact 28:23:exact 29:24:exact 30:25:exact 31:26:exact 32:27:exact 33:28:exact 34:29:exact 35:30:exact 36:31:exact 
+239 18:33:exact 
+240 10:13:exact 
+241 12:12:exact 
+242 8:8:exact 20:20:exact 
+243 6:3:exact 7:4:exact 8:54:exact 9:55:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 23:19:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 32:28:exact 33:29:exact 34:30:exact 35:31:exact 36:32:exact 37:33:exact 38:34:exact 39:35:exact 40:36:exact 41:37:exact 42:38:exact 43:39:exact 44:40:exact 45:41:exact 46:42:exact 47:43:exact 48:44:exact 49:45:exact 50:46:exact 51:47:exact 52:48:exact 53:49:exact 54:50:exact 55:51:exact 56:52:exact 61:57:exact 62:58:exact 63:59:exact 64:60:exact 65:61:exact 66:62:exact 67:63:exact 69:65:exact 70:66:exact 71:67:exact 72:68:exact 73:69:exact 74:70:exact 75:71:exact 76:72:exact 77:82:exact 83:74:exact 89:79:exact 90:80:exact 91:81:exact 
+244 8:8:exact 
+245 14:14:exact 
+246 12:20:exact 20:28:exact 21:29:exact 22:30:exact 23:31:exact 29:21:exact 30:22:exact 31:23:exact 
+247 7:7:exact 
+248 18:25:exact 
+249 6:9:exact 
+250 10:9:exact 
+251 22:22:exact 
+252 26:26:exact 
+253 3:3:exact 
+254 15:11:exact 
+255 22:28:exact 23:29:exact 24:30:exact 25:31:exact 26:32:exact 27:33:exact 28:34:exact 29:35:exact 30:36:exact 31:37:exact 33:42:exact 34:43:exact 35:44:exact 36:45:exact 37:46:exact 38:47:exact 39:48:exact 41:7:exact 
+256 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 13:18:exact 14:19:exact 16:22:exact 17:23:exact 18:24:exact 19:25:exact 20:26:exact 21:27:exact 22:28:exact 23:29:exact 24:30:exact 25:31:exact 26:32:exact 28:34:exact 29:35:exact 30:36:exact 31:37:exact 32:38:exact 33:39:exact 34:40:exact 35:41:exact 36:42:exact 37:43:exact 38:44:exact 39:45:exact 40:46:exact 41:47:exact 42:48:exact 43:49:exact 
+257 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 
+258 29:11:exact 
+259 10:14:exact 15:7:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 
+260 8:3:exact 
+261 26:30:exact 
+262 1:1:exact 3:4:exact 4:5:exact 5:6:exact 9:18:exact 14:29:exact 15:8:exact 19:12:exact 20:13:exact 21:14:exact 22:16:exact 23:17:exact 24:19:exact 25:20:exact 26:21:exact 27:22:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 
+263 32:27:exact 
+264 12:13:exact 
+265 5:23:exact 
+266 7:25:exact 24:39:exact 36:47:exact 44:48:exact 45:49:exact 46:50:exact 47:51:exact 48:52:exact 49:53:exact 50:54:exact 51:55:exact 
+267 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:31:exact 27:32:exact 31:37:exact 
+268 15:20:exact 16:11:exact 17:12:exact 
+269 13:25:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 24:28:exact 
+270 10:28:exact 
+271 5:5:exact 6:8:exact 
+272 14:18:exact 15:19:exact 17:21:exact 
+273 30:34:exact 31:35:exact 32:36:exact 
+274 5:40:exact 21:44:exact 39:52:exact 43:47:exact 46:49:exact 48:51:exact 51:63:exact 
+275 3:8:exact 
+276 20:28:exact 27:33:exact 
+277 9:7:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:24:exact 17:21:exact 18:22:exact 19:20:exact 20:10:exact 
+278 12:27:exact 
+279 32:36:exact 
+280 8:15:exact 
+281 6:27:exact 
+282 1:2:exact 2:3:exact 7:9:exact 
+283 25:7:exact 
+284 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 
+285 6:13:exact 
+286 11:28:exact 
+287 9:9:exact 
+288 3:3:exact 
+289 12:22:exact 
+290 19:28:exact 
+291 3:12:exact 
+292 5:15:exact 15:5:exact 
+293 11:14:exact 
+294 5:20:exact 17:25:exact 18:26:exact 19:27:exact 24:28:exact 
+295 19:16:exact 20:29:exact 21:30:exact 22:31:exact 23:32:exact 24:33:exact 
+296 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:24:exact 19:25:exact 20:26:exact 21:27:exact 22:28:exact 23:29:exact 24:30:exact 25:31:exact 26:32:exact 27:33:exact 28:34:exact 29:35:exact 30:36:exact 31:37:exact 32:38:exact 33:39:exact 34:40:exact 35:41:exact 36:42:exact 37:43:exact 38:44:exact 39:45:exact 40:46:exact 41:47:exact 
+297 5:22:exact 
+298 4:7:exact 
+299 25:4:exact 
+300 29:25:exact 
+301 10:18:exact 
+302 10:13:exact 
+303 3:33:exact 9:0:exact 11:1:exact 12:2:exact 13:3:exact 14:4:exact 15:5:exact 16:6:exact 17:7:exact 18:8:exact 20:10:exact 21:11:exact 22:12:exact 23:13:exact 24:14:exact 25:15:exact 26:16:exact 27:17:exact 28:18:exact 29:19:exact 30:20:exact 31:21:exact 32:23:exact 33:24:exact 34:25:exact 35:26:exact 36:27:exact 37:28:exact 38:29:exact 43:34:exact 44:35:exact 45:36:exact 46:37:exact 47:38:exact 48:39:exact 
+304 2:15:exact 
+305 10:19:exact 12:27:exact 13:20:exact 14:21:exact 15:22:exact 16:23:exact 17:24:exact 18:25:exact 19:26:exact 21:14:exact 22:29:exact 23:30:exact 24:31:exact 25:32:exact 26:33:exact 27:34:exact 28:35:exact 29:36:exact 30:37:exact 33:5:exact 34:16:exact 35:17:exact 
+306 3:7:exact 4:8:exact 5:9:exact 6:10:exact 
+307 2:15:exact 3:16:exact 4:17:exact 5:18:exact 8:12:exact 9:2:exact 10:3:exact 11:4:exact 12:5:exact 13:6:exact 14:7:exact 15:8:exact 16:9:exact 17:10:exact 19:29:exact 
+308 8:13:exact 13:16:exact 14:15:exact 15:14:exact 
+309 21:35:exact 36:45:exact 46:62:exact 
+310 5:27:exact 
+311 2:7:exact 
+312 9:23:exact 24:25:exact 
+313 2:12:exact 8:4:exact 9:5:exact 10:6:exact 
+314 14:21:exact 
+315 6:13:exact 21:27:exact 
+316 13:12:exact 14:20:exact 18:14:exact 19:15:exact 20:16:exact 25:21:exact 26:22:exact 27:23:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 32:28:exact 33:29:exact 34:30:exact 
+317 16:20:exact 
+318 1:9:exact 
+319 44:50:exact 51:65:exact 
+320 10:13:exact 
+321 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 20:24:exact 
+322 11:18:exact 19:28:exact 20:29:exact 21:30:exact 24:16:exact 28:19:exact 29:20:exact 30:21:exact 
+323 4:7:exact 
+324 1:12:exact 3:15:exact 
+325 3:16:exact 4:17:exact 
+326 11:6:exact 12:21:exact 
+327 8:1:exact 11:12:exact 
+328 12:11:exact 
+329 13:8:exact 14:9:exact 15:10:exact 16:11:exact 
+330 34:38:exact 
+331 4:9:exact 10:16:exact 
+332 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 21:17:exact 22:18:exact 23:19:exact 28:24:exact 29:25:exact 32:28:exact 33:29:exact 34:30:exact 
+333 1:13:exact 17:21:exact 19:19:exact 
+334 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 16:12:exact 
+335 42:50:exact 43:51:exact 44:52:exact 45:53:exact 46:54:exact 47:55:exact 48:57:exact 49:56:exact 52:58:exact 
+336 35:17:exact 
+337 12:14:exact 
+338 30:34:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 
+339 22:24:exact 
+340 1:6:exact 2:8:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 
+341 9:11:exact 25:31:exact 26:32:exact 29:33:exact 30:34:exact 31:35:exact 32:36:exact 37:42:exact 38:43:exact 39:44:exact 40:45:exact 
+342 9:5:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 
+343 25:32:exact 
+344 17:19:exact 32:38:exact 33:39:exact 34:40:exact 35:41:exact 36:42:exact 
+345 6:19:exact 12:24:exact 13:25:exact 
+346 9:15:exact 
+347 13:38:exact 
+348 9:1:exact 10:2:exact 11:3:exact 12:4:exact 13:9:exact 
+349 1:16:exact 
+350 37:41:exact 38:42:exact 39:43:exact 
+351 12:23:exact 13:24:exact 14:25:exact 15:26:exact 22:36:exact 23:37:exact 24:38:exact 25:15:exact 35:13:exact 36:14:exact 
+352 10:18:exact 
+353 19:23:exact 20:24:exact 21:25:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 26:31:exact 27:32:exact 28:33:exact 29:34:exact 30:35:exact 31:36:exact 32:37:exact 33:38:exact 34:39:exact 35:40:exact 36:41:exact 37:42:exact 38:43:exact 39:44:exact 40:45:exact 41:46:exact 42:47:exact 
+354 10:10:exact 
+355 19:23:exact 20:24:exact 21:25:exact 23:27:exact 24:28:exact 
+356 23:27:exact 24:28:exact 25:29:exact 26:30:exact 
+357 23:31:exact 
+358 16:16:exact 
+359 2:2:exact 3:3:exact 4:6:exact 
+360 10:1:exact 11:2:exact 12:3:exact 13:4:exact 14:5:exact 15:6:exact 16:7:exact 17:8:exact 18:9:exact 19:10:exact 20:11:exact 23:15:exact 24:16:exact 25:17:exact 27:19:exact 
+361 4:7:exact 
+362 14:4:exact 
+363 16:22:exact 
+364 10:17:exact 
+365 12:8:exact 13:9:exact 14:10:exact 17:16:exact 19:13:exact 20:14:exact 21:15:exact 24:18:exact 25:19:exact 26:20:exact 
+366 20:26:exact 
+367 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 21:28:exact 22:29:exact 23:31:exact 24:32:exact 25:33:exact 
+368 10:10:exact 
+369 13:22:exact 
+370 8:1:exact 
+371 20:22:exact 
+372 1:3:exact 4:6:exact 7:1:exact 8:2:exact 15:7:exact 16:8:exact 17:9:exact 
+373 1:21:exact 
+374 4:4:exact 19:31:exact 20:32:exact 32:20:exact 
+375 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 
+376 18:20:exact 
+377 8:10:exact 
+378 4:11:exact 5:12:exact 6:13:exact 7:14:exact 8:15:exact 9:16:exact 10:17:exact 11:18:exact 12:19:exact 13:20:exact 14:21:exact 15:22:exact 18:25:exact 19:26:exact 20:27:exact 21:28:exact 22:29:exact 23:30:exact 
+379 1:24:exact 24:28:exact 28:40:exact 37:5:exact 
+380 11:18:exact 12:19:exact 13:20:exact 14:21:exact 15:22:exact 16:23:exact 17:24:exact 18:25:exact 19:26:exact 
+381 17:34:exact 18:22:exact 21:28:exact 22:29:exact 23:30:exact 24:31:exact 25:32:exact 26:33:exact 28:35:exact 29:36:exact 
+382 17:5:exact 19:19:exact 
+383 3:5:exact 7:3:exact 8:4:exact 
+384 15:19:exact 16:37:exact 18:5:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 28:33:exact 29:34:exact 30:35:exact 31:36:exact 34:39:exact 35:40:exact 36:41:exact 37:42:exact 38:43:exact 39:44:exact 
+385 7:31:exact 28:12:exact 29:36:exact 30:37:exact 32:25:exact 
+386 5:5:exact 
+387 9:17:exact 10:18:exact 18:8:exact 
+388 5:16:exact 14:8:exact 
+389 18:25:exact 21:21:exact 31:40:exact 34:36:exact 38:42:exact 
+390 4:11:exact 
+391 8:21:exact 
+392 5:13:exact 
+393 13:18:exact 14:19:exact 
+394 19:29:exact 
+395 10:14:exact 11:15:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 
+396 21:26:exact 22:31:exact 23:32:exact 24:33:exact 25:34:exact 26:35:exact 27:36:exact 
+397 16:22:exact 17:23:exact 18:24:exact 19:25:exact 20:26:exact 21:27:exact 22:28:exact 23:29:exact 24:30:exact 
+398 3:9:exact 4:10:exact 5:11:exact 6:12:exact 7:13:exact 8:14:exact 9:15:exact 
+399 13:19:exact 14:20:exact 15:21:exact 16:22:exact 17:23:exact 18:24:exact 
+400 23:38:exact 
+401 32:36:exact 33:37:exact 34:38:exact 35:40:exact 36:41:exact 37:42:exact 38:43:exact 39:44:exact 40:45:exact 41:48:exact 42:49:exact 43:50:exact 44:51:exact 45:53:exact 50:58:exact 51:59:exact 52:60:exact 54:62:exact 55:63:exact 56:64:exact 57:65:exact 58:66:exact 59:67:exact 60:46:exact 
+402 24:25:exact 25:29:exact 26:30:exact 27:31:exact 28:32:exact 
+403 35:40:exact 
+404 6:22:exact 26:27:exact 28:30:exact 
+405 2:7:exact 3:8:exact 4:9:exact 5:10:exact 6:11:exact 7:12:exact 8:13:exact 9:14:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 26:31:exact 27:33:exact 28:34:exact 29:35:exact 30:36:exact 31:37:exact 32:38:exact 33:39:exact 34:40:exact 35:41:exact 
+406 14:26:exact 15:19:exact 17:21:exact 18:22:exact 19:23:exact 20:25:exact 24:32:exact 25:33:exact 26:34:exact 27:35:exact 28:36:exact 29:37:exact 30:38:exact 31:39:exact 32:40:exact 
+407 8:9:exact 
+408 1:6:exact 2:7:exact 8:3:exact 9:4:exact 10:5:exact 
+409 12:24:exact 13:25:exact 14:26:exact 
+410 7:2:exact 
+411 14:18:exact 15:19:exact 16:21:exact 17:22:exact 18:23:exact 
+412 8:15:exact 9:16:exact 
+413 40:45:exact 
+414 34:41:exact 35:43:exact 36:44:exact 37:45:exact 38:46:exact 39:47:exact 40:48:exact 41:49:exact 42:50:exact 43:51:exact 44:52:exact 45:53:exact 46:54:exact 47:55:exact 48:56:exact 49:57:exact 50:58:exact 51:59:exact 52:60:exact 53:61:exact 54:62:exact 
+415 14:18:exact 15:19:exact 16:20:exact 
+416 51:55:exact 52:56:exact 
+417 36:40:exact 37:41:exact 38:42:exact 39:43:exact 40:44:exact 41:45:exact 42:46:exact 
+418 12:18:exact 13:19:exact 14:20:exact 15:21:exact 16:23:exact 18:27:exact 
+419 7:15:exact 8:16:exact 9:17:exact 10:18:exact 11:19:exact 12:20:exact 
+420 10:11:exact 
+421 6:32:exact 7:33:exact 8:34:exact 9:35:exact 10:36:exact 11:41:exact 12:42:exact 13:6:exact 14:7:exact 18:24:exact 19:12:exact 20:13:exact 21:14:exact 
+422 18:13:exact 19:14:exact 
+423 2:6:exact 4:9:exact 5:10:exact 6:11:exact 7:12:exact 8:13:exact 9:14:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 26:31:exact 27:32:exact 28:33:exact 29:34:exact 30:35:exact 31:36:exact 32:37:exact 33:38:exact 
+424 5:6:exact 
+425 30:37:exact 31:38:exact 32:39:exact 33:40:exact 34:41:exact 35:42:exact 36:43:exact 37:44:exact 38:45:exact 
+426 23:31:exact 24:32:exact 25:33:exact 26:34:exact 27:35:exact 
+427 13:44:exact 32:7:exact 
+428 8:8:exact 9:9:exact 
+429 24:30:exact 
+430 26:32:exact 
+431 33:39:exact 34:40:exact 35:41:exact 36:42:exact 37:43:exact 38:44:exact 
+432 9:10:exact 
+433 4:26:exact 5:27:exact 6:28:exact 11:10:exact 15:51:exact 27:4:exact 28:5:exact 
+434 7:6:exact 
+435 17:10:exact 
+436 12:13:exact 
+437 15:25:exact 27:18:exact 28:19:exact 30:26:exact 31:27:exact 32:28:exact 33:29:exact 34:30:exact 38:34:exact 
+438 6:33:exact 9:6:exact 10:7:exact 11:8:exact 15:12:exact 20:17:exact 
+439 1:21:exact 2:9:exact 3:10:exact 4:11:exact 5:12:exact 6:13:exact 7:14:exact 8:15:exact 9:16:exact 10:17:exact 11:18:exact 12:19:exact 13:20:exact 15:22:exact 16:23:exact 17:24:exact 18:25:exact 19:26:exact 20:27:exact 21:28:exact 22:29:exact 23:30:exact 24:31:exact 25:32:exact 
+440 26:27:exact 
+441 16:21:exact 
+442 26:4:exact 
+443 5:7:exact 7:2:exact 8:3:exact 
+444 23:27:exact 24:28:exact 
+445 9:10:exact 
+446 8:11:exact 9:21:exact 10:22:exact 11:23:exact 13:20:exact 15:13:exact 16:14:exact 18:6:exact 20:7:exact 
+447 20:22:exact 
+448 1:2:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 
+449 1:2:exact 
+450 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 23:28:exact 24:29:exact 25:30:exact 26:31:exact 27:32:exact 28:33:exact 29:34:exact 30:35:exact 31:36:exact 
+451 10:19:exact 
+452 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 
+453 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 
+454 17:17:exact 
+455 3:21:exact 
+456 8:13:exact 14:28:exact 
+457 11:14:exact 
+458 22:26:exact 23:27:exact 24:28:exact 25:29:exact 
+459 7:11:exact 9:8:exact 10:9:exact 
+460 39:24:exact 
+461 32:35:exact 
+462 17:25:exact 
+463 8:8:exact 
+464 9:14:exact 
+465 6:14:exact 
+466 9:8:exact 
+467 7:17:exact 8:18:exact 17:7:exact 
+468 1:5:exact 2:6:exact 3:7:exact 4:8:exact 6:1:exact 7:2:exact 
+469 3:3:exact 
+470 5:5:exact 
+471 3:3:exact 
+472 4:4:exact 
+473 11:16:exact 16:33:exact 33:53:exact 
+474 6:6:exact 31:51:exact 32:52:exact 34:48:exact 35:49:exact 38:50:exact 39:33:exact 40:34:exact 41:35:exact 42:36:exact 43:37:exact 44:38:exact 45:40:exact 46:41:exact 47:42:exact 48:43:exact 49:44:exact 50:45:exact 
+475 16:16:exact 
+476 22:21:exact 29:25:exact 30:26:exact 31:27:exact 33:29:exact 34:30:exact 35:31:exact 
+477 20:20:exact 
+478 4:4:exact 
+479 8:12:exact 9:13:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 28:32:exact 29:33:exact 
+480 32:40:exact 
+481 4:4:exact 
+482 3:3:exact 
+483 18:64:exact 30:35:exact 31:36:exact 32:46:exact 35:50:exact 
+484 11:35:exact 
+485 4:4:exact 
+486 9:19:exact 
+487 9:22:exact 26:10:exact 
+488 21:22:exact 24:35:exact 
+489 38:38:exact 
+490 0:7:exact 1:8:exact 2:9:exact 3:12:exact 8:15:exact 9:16:exact 10:17:exact 11:18:exact 12:19:exact 13:20:exact 14:21:exact 20:4:exact 21:5:exact 22:6:exact 
+491 0:0:exact 1:3:exact 2:17:exact 8:12:exact 11:5:exact 12:6:exact 13:7:exact 14:8:exact 15:9:exact 16:10:exact 17:11:exact 20:14:exact 24:18:exact 25:19:exact 26:20:exact 
+492 0:0:exact 1:2:exact 2:23:exact 
+493 12:9:exact 
+494 1:6:exact 
+495 14:12:exact 16:15:exact 
+496 2:2:exact 3:5:exact 9:16:exact 13:4:exact 
+497 2:3:exact 4:2:exact 
+498 27:29:exact 28:30:exact 29:31:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 35:39:exact 
+499 5:6:exact 7:8:exact 8:9:exact 
+500 0:0:exact 
+501 5:0:exact 6:1:exact 
+502 1:20:exact 2:21:exact 4:0:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 
+503 21:12:exact 
+504 22:23:exact 
+505 29:32:exact 
+506 6:13:exact 
+507 2:11:exact 3:12:exact 4:13:exact 5:14:exact 6:15:exact 7:16:exact 11:2:exact 12:3:exact 15:6:exact 16:7:exact 17:8:exact 
+508 1:7:exact 2:8:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 
+509 15:24:exact 
+510 3:22:exact 4:23:exact 5:24:exact 21:21:exact 
+511 0:16:exact 1:11:exact 3:18:exact 4:19:exact 5:20:exact 6:21:exact 7:3:exact 9:23:exact 10:24:exact 11:25:exact 12:26:exact 13:27:exact 16:8:exact 17:9:exact 19:12:exact 20:15:exact 21:1:exact 22:2:exact 26:5:exact 
+512 1:14:exact 
+513 2:10:exact 
+514 0:0:exact 3:1:exact 5:5:exact 6:7:exact 18:20:exact 19:21:exact 20:22:exact 
+515 3:3:exact 4:14:exact 6:16:exact 7:5:exact 8:6:exact 16:17:exact 17:18:exact 
+516 1:15:exact 
+517 10:11:exact 
+518 1:16:exact 6:2:exact 7:3:exact 18:15:exact 20:17:exact 
+519 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 
+520 1:7:exact 2:8:exact 7:24:exact 9:0:exact 10:1:exact 11:2:exact 28:25:exact 
+521 1:17:exact 6:1:exact 7:2:exact 8:3:exact 9:4:exact 10:5:exact 11:6:exact 12:7:exact 13:8:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 22:18:exact 
+522 1:15:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 20:16:exact 
+523 1:5:exact 5:0:exact 6:1:exact 7:2:exact 8:3:exact 9:4:exact 12:7:exact 
+524 1:14:exact 2:15:exact 3:16:exact 8:21:exact 9:1:exact 10:2:exact 11:3:exact 12:4:exact 13:5:exact 14:6:exact 15:8:exact 16:9:exact 17:10:exact 18:11:exact 19:12:exact 20:13:exact 
+525 4:11:exact 5:0:exact 6:1:exact 13:21:exact 23:23:exact 
+526 4:0:exact 5:1:exact 
+527 12:23:exact 
+528 17:31:exact 25:28:exact 
+529 2:10:exact 10:32:exact 
+530 2:10:exact 3:11:exact 4:7:exact 5:13:exact 6:14:exact 9:17:exact 14:2:exact 15:3:exact 16:4:exact 17:5:exact 18:6:exact 20:8:exact 21:9:exact 
+531 1:8:exact 4:0:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 
+532 13:16:exact 
+533 16:27:exact 17:28:exact 
+534 1:18:exact 2:19:exact 3:20:exact 4:21:exact 5:22:exact 6:23:exact 7:24:exact 8:25:exact 9:26:exact 10:27:exact 12:29:exact 15:0:exact 18:3:exact 20:6:exact 21:7:exact 23:9:exact 24:10:exact 25:11:exact 26:12:exact 27:13:exact 28:14:exact 29:28:exact 
+535 4:12:exact 
+536 28:39:exact 
+537 3:24:exact 
+538 7:11:exact 
+539 3:24:exact 4:0:exact 5:1:exact 
+540 2:8:exact 3:9:exact 4:10:exact 5:11:exact 6:12:exact 7:13:exact 8:14:exact 9:15:exact 10:16:exact 11:17:exact 12:18:exact 13:19:exact 16:1:exact 17:2:exact 18:3:exact 19:4:exact 20:5:exact 21:6:exact 22:7:exact 
+541 2:6:exact 3:7:exact 4:13:exact 5:0:exact 6:1:exact 7:2:exact 8:3:exact 
+542 17:21:exact 18:22:exact 19:23:exact 
+543 2:16:exact 
+544 15:29:exact 
+545 7:22:exact 8:23:exact 9:24:exact 
+546 2:8:exact 
+547 12:26:exact 26:12:exact 
+548 1:6:exact 2:7:exact 3:16:exact 4:0:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 
+549 9:18:exact 10:19:exact 11:20:exact 
+550 1:11:exact 2:12:exact 3:13:exact 5:0:exact 6:1:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 
+551 1:5:exact 
+552 1:13:exact 2:14:exact 4:0:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 
+553 1:5:exact 
+554 2:9:exact 
+555 1:12:exact 2:13:exact 3:14:exact 4:15:exact 5:16:exact 6:17:exact 7:18:exact 8:19:exact 9:20:exact 10:21:exact 12:0:exact 13:1:exact 14:2:exact 15:3:exact 16:4:exact 17:5:exact 18:8:exact 19:9:exact 20:10:exact 
+556 1:21:exact 
+557 2:6:exact 3:7:exact 4:8:exact 5:9:exact 7:13:exact 8:14:exact 9:15:exact 10:16:exact 11:5:exact 18:2:exact 19:3:exact 
+558 11:18:exact 19:28:exact 20:29:exact 21:30:exact 24:16:exact 28:19:exact 29:20:exact 30:21:exact 
+559 1:6:exact 2:7:exact 3:8:exact 4:9:exact 5:10:exact 6:11:exact 7:12:exact 8:13:exact 9:14:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 17:1:exact 18:2:exact 19:3:exact 20:4:exact 
+560 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 
+561 3:9:exact 4:10:exact 5:11:exact 6:12:exact 7:13:exact 8:14:exact 9:15:exact 10:16:exact 11:3:exact 12:4:exact 13:6:exact 14:7:exact 15:8:exact 
+562 1:16:exact 2:17:exact 6:2:exact 7:9:exact 8:3:exact 9:4:exact 10:5:exact 13:19:exact 14:21:exact 15:22:exact 16:23:exact 17:24:exact 
+563 9:15:exact 
+564 9:36:exact 
+565 9:22:exact 
+566 4:20:exact 
+567 14:8:exact 15:9:exact 16:10:exact 17:11:exact 18:12:exact 19:13:exact 20:14:exact 21:15:exact 22:16:exact 
+568 1:5:exact 
+569 1:12:exact 2:13:exact 3:14:exact 4:15:exact 5:16:exact 6:17:exact 7:18:exact 8:19:exact 9:20:exact 10:21:exact 11:22:exact 12:23:exact 15:1:exact 17:3:exact 18:4:exact 19:5:exact 20:8:exact 21:6:exact 22:7:exact 26:11:exact 
+570 6:18:exact 11:24:exact 16:10:exact 
+571 10:2:exact 11:13:exact 
+572 9:14:exact 
+573 12:19:exact 
+574 2:33:exact 31:18:exact 
+575 8:21:exact 25:9:exact 
+576 9:6:exact 
+577 21:28:exact 24:33:exact 25:34:exact 26:35:exact 27:36:exact 28:37:exact 29:38:exact 31:39:exact 
+578 6:16:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 21:17:exact 
+579 1:7:exact 2:8:exact 3:9:exact 4:10:exact 6:0:exact 7:1:exact 8:2:exact 9:3:exact 10:4:exact 11:5:exact 
+580 13:29:exact 
+581 1:6:exact 5:13:exact 7:1:exact 8:2:exact 9:3:exact 10:4:exact 11:5:exact 14:8:exact 15:9:exact 16:10:exact 17:11:exact 18:12:exact 19:26:exact 22:14:exact 24:16:exact 32:15:exact 36:20:exact 37:21:exact 38:22:exact 39:23:exact 40:24:exact 41:25:exact 
+582 7:9:exact 
+583 27:29:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 36:32:exact 
+584 22:17:exact 23:27:exact 24:31:exact 25:25:exact 28:32:exact 
+585 1:8:exact 2:9:exact 3:10:exact 
+586 6:7:exact 16:10:exact 
+587 17:42:exact 48:38:exact 
+588 18:14:exact 19:15:exact 
+589 11:18:exact 12:19:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 
+590 16:11:exact 20:15:exact 21:16:exact 22:17:exact 23:18:exact 24:19:exact 25:20:exact 26:21:exact 
+591 5:6:exact 
+592 5:9:exact 8:16:exact 
+593 7:2:exact 8:3:exact 11:5:exact 14:6:exact 15:8:exact 16:9:exact 17:10:exact 18:11:exact 19:12:exact 20:13:exact 
+594 12:4:exact 
+595 1:9:exact 7:8:exact 
+596 1:5:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 
+597 6:1:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 
+598 6:3:exact 10:9:exact 13:18:exact 
+599 5:22:exact 9:6:exact 12:9:exact 
+600 7:3:exact 
+601 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:27:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 23:19:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 28:24:exact 29:25:exact 30:26:exact 32:28:exact 
+602 14:10:exact 15:11:exact 
+603 11:17:exact 15:27:exact 16:28:exact 25:18:exact 29:33:exact 30:34:exact 31:35:exact 32:36:exact 
+604 18:45:exact 
+605 4:4:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 27:32:exact 28:33:exact 29:34:exact 
+606 39:31:exact 
+607 10:14:exact 
+608 14:12:exact 
+609 14:16:exact 17:27:exact 
+610 9:15:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 
+611 5:11:exact 
+612 12:12:exact 16:11:exact 21:17:exact 22:18:exact 23:22:exact 28:24:exact 29:25:exact 30:26:exact 
+613 20:32:exact 21:33:exact 28:27:exact 
+614 1:22:exact 5:1:exact 6:2:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 28:23:exact 29:24:exact 30:25:exact 
+615 1:15:exact 
+616 5:12:exact 11:20:exact 
+617 41:31:exact 
+618 2:8:exact 3:9:exact 4:10:exact 5:11:exact 6:12:exact 7:13:exact 8:14:exact 9:15:exact 10:16:exact 11:17:exact 
+619 1:9:exact 2:10:exact 4:0:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 
+620 2:9:exact 3:10:exact 5:0:exact 6:1:exact 7:2:exact 8:3:exact 9:4:exact 
+621 5:5:exact 
+622 1:9:exact 3:8:exact 5:1:exact 6:2:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 
+623 16:22:exact 18:18:exact 
+624 18:25:exact 
+625 24:19:exact 
+626 4:7:exact 18:23:exact 
+627 2:24:exact 3:25:exact 5:8:exact 6:16:exact 13:20:exact 14:21:exact 21:1:exact 22:2:exact 
+628 5:4:exact 
+629 2:8:exact 3:13:exact 7:20:exact 14:16:exact 
+630 6:1:exact 7:2:exact 9:4:exact 10:5:exact 13:6:exact 
+631 5:1:exact 7:3:exact 8:4:exact 9:5:exact 10:6:exact 11:7:exact 12:8:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 
+632 12:12:exact 
+633 6:17:exact 16:20:exact 
+634 14:3:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 
+635 11:12:exact 
+636 20:13:exact 
+637 17:17:exact 
+638 1:11:exact 11:16:exact 16:20:exact 
+639 5:4:exact 
+640 9:15:exact 10:16:exact 11:17:exact 12:18:exact 13:19:exact 14:20:exact 15:21:exact 16:22:exact 
+641 1:11:exact 36:49:exact 
+642 1:8:exact 2:9:exact 4:12:exact 5:13:exact 6:14:exact 9:1:exact 10:2:exact 11:3:exact 24:11:exact 27:22:exact 28:23:exact 29:24:exact 30:25:exact 
+643 8:9:exact 11:7:exact 12:8:exact 15:11:exact 16:12:exact 17:13:exact 
+644 5:1:exact 6:2:exact 7:3:exact 8:4:exact 10:5:exact 11:6:exact 12:7:exact 13:8:exact 14:9:exact 15:10:exact 
+645 21:25:exact 
+646 13:1:exact 
+647 0:0:exact 1:2:exact 
+648 4:5:exact 8:10:exact 20:19:exact 
+649 2:9:exact 12:19:exact 
+650 28:25:exact 32:26:exact 33:27:exact 34:28:exact 35:29:exact 36:31:exact 37:32:exact 38:33:exact 
+651 23:23:exact 
+652 3:2:exact 5:4:exact 
+653 17:44:exact 34:34:exact 38:36:exact 45:17:exact 46:48:exact 47:49:exact 
+654 6:16:exact 16:32:exact 23:5:exact 25:11:exact 
+655 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 26:31:exact 
+656 17:25:exact 18:26:exact 19:27:exact 20:28:exact 21:29:exact 22:30:exact 23:31:exact 24:32:exact 25:33:exact 26:34:exact 27:35:exact 28:36:exact 29:37:exact 30:38:exact 31:39:exact 32:40:exact 33:41:exact 
+657 10:6:exact 
+658 11:31:exact 12:6:exact 13:7:exact 14:8:exact 15:34:exact 16:24:exact 24:43:exact 27:32:exact 
+659 3:7:exact 4:3:exact 
+660 34:36:exact 
+661 2:11:exact 
+662 23:21:exact 
+663 1:5:exact 
+664 2:3:exact 3:4:exact 4:5:exact 19:2:exact 20:7:exact 
+665 2:4:exact 16:25:exact 25:39:exact 38:56:exact 52:59:exact 53:60:exact 54:61:exact 55:62:exact 56:63:exact 
+666 7:13:exact 8:14:exact 9:15:exact 10:16:exact 11:17:exact 14:10:exact 15:11:exact 
+667 14:26:exact 26:29:exact 28:33:exact 29:34:exact 34:30:exact 35:41:exact 36:42:exact 37:43:exact 38:44:exact 39:45:exact 40:46:exact 41:47:exact 42:48:exact 43:49:exact 
+668 1:9:exact 3:2:exact 
+669 12:2:exact 14:18:exact 16:20:exact 
+670 28:32:exact 29:33:exact 30:34:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 37:44:exact 38:45:exact 39:46:exact 40:47:exact 41:48:exact 42:50:exact 43:51:exact 
+671 4:9:exact 
+672 24:31:exact 25:32:exact 29:34:exact 
+673 57:61:exact 58:62:exact 59:63:exact 
+674 20:31:exact 24:14:exact 
+675 3:9:exact 
+676 3:3:exact 
+677 12:22:exact 13:14:exact 14:17:exact 15:15:exact 19:23:exact 20:24:exact 
+678 22:34:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 28:32:exact 29:33:exact 30:38:exact 31:35:exact 32:36:exact 33:37:exact 34:39:exact 35:40:exact 36:41:exact 37:42:exact 38:43:exact 39:44:exact 40:45:exact 
+679 20:15:exact 21:16:exact 22:17:exact 
+680 5:4:exact 9:6:exact 
+681 18:25:exact 
+682 10:14:exact 11:15:exact 12:16:exact 15:21:exact 16:22:exact 17:23:exact 
+683 24:27:exact 
+684 5:1:exact 
+685 4:65:exact 19:23:exact 20:24:exact 21:25:exact 22:50:exact 24:30:exact 25:31:exact 27:34:exact 28:35:exact 29:36:exact 30:37:exact 31:38:exact 32:39:exact 33:40:exact 34:41:exact 35:42:exact 36:43:exact 37:44:exact 38:45:exact 39:46:exact 40:47:exact 41:48:exact 42:49:exact 43:55:exact 44:51:exact 45:52:exact 46:53:exact 47:54:exact 49:56:exact 50:57:exact 51:58:exact 52:59:exact 53:60:exact 54:61:exact 55:62:exact 56:63:exact 57:64:exact 59:26:exact 60:66:exact 61:67:exact 62:69:exact 
+686 19:20:exact 
+687 7:12:exact 8:13:exact 9:14:exact 10:15:exact 11:16:exact 
+688 24:13:exact 
+689 2:26:exact 
+690 2:8:exact 
+691 5:24:exact 23:5:exact 
+692 37:42:exact 38:43:exact 39:46:exact 40:47:exact 41:48:exact 42:49:exact 43:50:exact 
+693 21:14:exact 22:26:exact 24:28:exact 25:29:exact 26:30:exact 
+694 20:34:exact 33:36:exact 35:38:exact 37:40:exact 39:42:exact 41:44:exact 43:46:exact 
+695 6:21:exact 
+696 1:15:exact 
+697 8:12:exact 9:13:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:28:exact 24:30:exact 
+698 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 28:33:exact 
+699 8:12:exact 
+700 33:39:exact 39:48:exact 40:49:exact 45:44:exact 
+701 11:5:exact 
+702 0:0:exact 3:12:exact 4:9:exact 5:10:exact 6:11:exact 9:14:exact 10:15:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 
+703 0:0:exact 1:2:exact 5:11:exact 7:6:exact 
+704 2:8:exact 5:2:exact 6:3:exact 12:9:exact 
+705 2:6:exact 3:7:exact 
+706 1:9:exact 
+707 5:25:exact 
+708 26:25:exact 
+709 16:21:exact 
+710 4:4:exact 5:9:exact 6:3:exact 17:13:exact 18:14:exact 24:18:exact 25:19:exact 26:20:exact 27:21:exact 28:22:exact 29:23:exact 
+711 1:14:exact 2:11:exact 3:1:exact 
+712 1:17:exact 2:18:exact 3:19:exact 4:20:exact 8:1:exact 9:2:exact 10:5:exact 11:6:exact 12:7:exact 13:8:exact 14:9:exact 15:10:exact 16:21:exact 
+713 6:12:exact 13:18:exact 
+714 7:8:exact 12:6:exact 15:15:exact 
+715 8:8:exact 9:11:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 28:32:exact 29:33:exact 30:34:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 35:39:exact 36:40:exact 37:41:exact 38:42:exact 39:43:exact 40:44:exact 41:45:exact 
+716 1:8:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 27:31:exact 28:32:exact 29:33:exact 
+717 6:7:exact 
+718 1:10:exact 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:5:exact 16:22:exact 17:11:exact 18:12:exact 20:14:exact 21:15:exact 22:16:exact 23:17:exact 24:18:exact 25:19:exact 26:20:exact 27:21:exact 29:23:exact 30:24:exact 31:25:exact 32:26:exact 33:27:exact 
+719 2:7:exact 3:8:exact 4:3:exact 7:19:exact 19:16:exact 20:4:exact 
+720 4:4:exact 5:5:exact 6:6:exact 16:32:exact 31:16:exact 36:33:exact 37:34:exact 45:36:exact 46:37:exact 47:38:exact 48:39:exact 49:40:exact 50:41:exact 51:42:exact 52:43:exact 53:44:exact 54:45:exact 55:46:exact 56:47:exact 57:48:exact 58:49:exact 59:50:exact 
+721 14:17:exact 
+722 1:14:exact 2:15:exact 3:16:exact 4:17:exact 5:18:exact 6:19:exact 7:20:exact 17:7:exact 
+723 24:23:exact 
+724 2:23:exact 6:10:exact 21:30:exact 27:34:exact 28:35:exact 29:36:exact 30:37:exact 32:40:exact 33:41:exact 37:45:exact 38:46:exact 39:47:exact 40:48:exact 41:49:exact 
+725 1:24:exact 24:37:exact 37:42:exact 
+726 28:31:exact 
+727 27:27:exact 
+728 5:5:exact 6:6:exact 
+729 14:29:exact 
+730 1:15:exact 2:16:exact 3:17:exact 5:19:exact 6:20:exact 7:13:exact 9:2:exact 10:3:exact 11:4:exact 12:5:exact 13:6:exact 14:7:exact 15:8:exact 16:9:exact 17:10:exact 18:11:exact 
+731 11:27:exact 
+732 0:0:exact 1:1:exact 
+733 8:13:exact 19:16:exact 
+734 12:13:exact 13:14:exact 
+735 15:26:exact 
+736 16:17:exact 
+737 19:14:exact 
+738 3:13:exact 
+739 8:8:exact 19:19:exact 
+740 8:16:exact 9:4:exact 15:22:exact 16:2:exact 
+741 5:14:exact 14:30:exact 
+742 7:18:exact 
+743 3:4:exact 8:10:exact 
+744 17:22:exact 
+745 1:11:exact 13:28:exact 15:22:exact 
+746 22:25:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 35:39:exact 36:40:exact 
+747 9:14:exact 11:17:exact 12:19:exact 16:23:exact 17:24:exact 18:25:exact 19:26:exact 24:31:exact 25:32:exact 26:33:exact 
+748 28:19:exact 29:33:exact 30:34:exact 31:35:exact 
+749 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 21:17:exact 22:18:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 28:24:exact 31:26:exact 32:27:exact 33:28:exact 34:29:exact 35:30:exact 36:31:exact 
+750 17:22:exact 20:17:exact 
+751 9:18:exact 10:19:exact 11:20:exact 12:21:exact 13:9:exact 14:10:exact 15:11:exact 16:12:exact 17:13:exact 18:14:exact 19:15:exact 20:16:exact 
+752 12:17:exact 13:18:exact 14:19:exact 
+753 9:9:exact 
+754 29:40:exact 30:34:exact 31:35:exact 32:36:exact 33:37:exact 34:38:exact 35:39:exact 36:68:exact 37:41:exact 38:42:exact 39:43:exact 40:44:exact 41:45:exact 42:46:exact 43:47:exact 44:48:exact 45:49:exact 46:50:exact 47:51:exact 48:52:exact 53:57:exact 54:58:exact 55:59:exact 56:60:exact 58:62:exact 59:63:exact 60:64:exact 61:65:exact 62:66:exact 63:67:exact 65:69:exact 66:70:exact 67:71:exact 68:72:exact 69:73:exact 70:74:exact 71:75:exact 72:76:exact 
+755 37:34:exact 
+756 2:5:exact 
+757 15:26:exact 24:43:exact 
+758 5:5:exact 
+759 20:24:exact 
+760 1:0:exact 2:2:exact 5:5:exact 
+761 3:10:exact 
+762 2:18:exact 3:16:exact 5:13:exact 8:8:exact 9:7:exact 13:11:exact 
+763 1:9:exact 
+764 1:15:exact 10:17:exact 18:1:exact 20:16:exact 21:30:exact 22:18:exact 23:19:exact 24:20:exact 28:24:exact 29:25:exact 30:26:exact 31:27:exact 32:28:exact 33:29:exact 
+765 4:8:exact 6:10:exact 8:2:exact 9:3:exact 10:4:exact 11:5:exact 
+766 28:32:exact 
+767 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 
+768 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 
+769 4:4:exact 
+770 9:26:exact 14:15:exact 
+771 3:4:exact 
+772 1:6:exact 2:7:exact 3:8:exact 4:9:exact 5:10:exact 6:11:exact 
+773 6:1:exact 7:2:exact 
+774 0:19:exact 3:22:exact 4:23:exact 5:24:exact 6:25:exact 7:26:exact 8:27:exact 9:28:exact 11:29:exact 12:30:exact 13:31:exact 14:32:exact 15:6:exact 16:7:exact 18:9:exact 19:10:exact 20:11:exact 21:12:exact 22:13:exact 23:14:exact 24:15:exact 25:16:exact 26:17:exact 27:18:exact 28:33:exact 30:1:exact 33:3:exact 34:4:exact 35:5:exact 
+775 23:19:exact 24:20:exact 25:21:exact 
+776 9:11:exact 
+777 1:1:exact 
+778 4:10:exact 6:13:exact 10:18:exact 11:19:exact 12:20:exact 
+779 12:1:exact 
+780 7:12:exact 
+781 15:14:exact 20:22:exact 21:23:exact 25:19:exact 
+782 5:28:exact 13:7:exact 
+783 4:14:exact 
+784 6:12:exact 
+785 16:28:exact 
+786 4:10:exact 
+787 2:21:exact 47:51:exact 48:52:exact 49:53:exact 50:54:exact 51:55:exact 52:56:exact 53:57:exact 54:58:exact 55:59:exact 
+788 3:20:exact 
+789 2:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 15:3:exact 
+790 8:12:exact 9:13:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:9:exact 19:10:exact 20:11:exact 
+791 4:4:exact 
+792 11:26:exact 12:27:exact 26:11:exact 27:12:exact 
+793 21:3:exact 
+794 1:13:exact 
+795 13:17:exact 14:18:exact 15:19:exact 
+796 9:3:exact 
+797 23:6:exact 
+798 27:31:exact 
+799 20:25:exact 21:7:exact 23:13:exact 25:30:exact 
+800 1:8:exact 
+801 12:12:exact 
+802 9:11:exact 
+803 4:16:exact 
+804 14:17:exact 15:6:exact 
+805 34:39:exact 
+806 34:18:exact 
+807 9:0:exact 10:1:exact 
+808 6:1:exact 
+809 8:8:exact 25:15:exact 26:16:exact 
+810 11:33:exact 32:15:exact 
+811 10:15:exact 
+812 6:0:exact 
+813 12:31:exact 30:34:exact 
+814 14:1:exact 
+815 8:12:exact 9:13:exact 10:14:exact 11:15:exact 13:1:exact 14:2:exact 15:3:exact 
+816 1:9:exact 2:10:exact 3:11:exact 4:0:exact 6:2:exact 
+817 10:16:exact 17:13:exact 
+818 11:18:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 25:29:exact 26:30:exact 29:35:exact 34:40:exact 
+819 31:36:exact 
+820 12:20:exact 
+821 6:2:exact 7:3:exact 
+822 8:12:exact 9:13:exact 10:14:exact 
+823 0:4:exact 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:10:exact 11:16:exact 12:17:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:28:exact 24:29:exact 25:30:exact 30:34:exact 31:35:exact 32:38:exact 33:39:exact 34:40:exact 35:41:exact 36:43:exact 39:44:exact 
+824 12:20:exact 13:30:exact 14:31:exact 15:32:exact 16:33:exact 17:7:exact 18:8:exact 19:9:exact 20:10:exact 21:11:exact 23:14:exact 24:15:exact 25:16:exact 26:17:exact 27:18:exact 28:19:exact 30:21:exact 
+825 9:0:exact 10:1:exact 
+826 4:9:exact 5:10:exact 
+827 7:21:exact 
+828 6:5:exact 
+829 21:19:exact 
+830 7:16:exact 
+831 14:5:exact 15:6:exact 16:7:exact 17:8:exact 
+832 14:2:exact 17:20:exact 19:15:exact 
+833 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 12:1:exact 13:2:exact 
+834 16:62:exact 20:24:exact 21:17:exact 22:18:exact 23:19:exact 24:20:exact 25:21:exact 26:22:exact 27:23:exact 33:28:exact 34:29:exact 35:30:exact 42:37:exact 43:38:exact 44:39:exact 45:40:exact 47:43:exact 48:44:exact 49:45:exact 50:46:exact 51:47:exact 52:48:exact 53:49:exact 55:50:exact 56:51:exact 57:52:exact 58:53:exact 59:54:exact 60:55:exact 61:56:exact 63:59:exact 64:60:exact 65:61:exact 67:63:exact 68:64:exact 69:65:exact 70:66:exact 71:67:exact 72:68:exact 73:69:exact 74:70:exact 75:71:exact 
+835 2:6:exact 3:7:exact 4:8:exact 5:9:exact 6:10:exact 7:11:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 16:4:exact 17:5:exact 
+836 6:7:exact 
+837 5:9:exact 6:10:exact 8:13:exact 12:32:exact 13:18:exact 14:19:exact 15:20:exact 16:21:exact 17:22:exact 18:23:exact 19:24:exact 20:25:exact 21:26:exact 22:27:exact 23:5:exact 24:6:exact 26:28:exact 28:41:exact 37:11:exact 38:43:exact 41:46:exact 
+838 31:35:exact 32:36:exact 33:37:exact 34:38:exact 35:39:exact 36:40:exact 37:41:exact 
+839 4:4:exact 
+840 2:2:exact 7:35:exact 10:8:exact 
+841 10:3:exact 11:0:exact 12:1:exact 
+842 15:11:exact 
+843 8:12:exact 9:13:exact 10:14:exact 
+844 8:9:exact 
+845 3:10:exact 4:11:exact 6:13:exact 7:14:exact 8:15:exact 10:25:exact 
+846 9:0:exact 
+847 0:0:exact 3:8:exact 4:9:exact 7:2:exact 8:3:exact 
+848 1:4:exact 12:16:exact 13:17:exact 14:18:exact 16:21:exact 17:22:exact 18:23:exact 
+849 18:21:exact 21:24:exact 
+850 3:7:exact 15:19:exact 16:20:exact 17:21:exact 25:9:exact 28:10:exact 
+851 0:20:exact 1:21:exact 2:22:exact 3:23:exact 4:11:exact 7:24:exact 8:25:exact 9:26:exact 10:27:exact 11:28:exact 12:29:exact 13:31:exact 14:32:exact 15:33:exact 18:34:exact 19:35:exact 20:36:exact 21:37:exact 22:38:exact 23:39:exact 24:40:exact 
+852 6:5:exact 12:11:exact 13:17:exact 14:18:exact 
+853 14:14:exact 
+854 10:8:exact 
+855 17:18:exact 18:19:exact 30:31:exact 32:30:exact 
+856 19:23:exact 20:24:exact 23:29:exact 
+857 16:4:exact 17:21:exact 18:22:exact 19:23:exact 
+858 3:8:exact 4:6:exact 
+859 2:21:exact 18:24:exact 19:25:exact 20:26:exact 21:27:exact 22:28:exact 27:33:exact 28:34:exact 29:35:exact 30:36:exact 33:37:exact 
+860 29:43:exact 
+861 2:24:exact 6:30:exact 7:31:exact 9:2:exact 10:3:exact 12:5:exact 13:6:exact 15:8:exact 16:9:exact 17:10:exact 18:11:exact 19:12:exact 20:13:exact 21:15:exact 22:16:exact 23:17:exact 24:18:exact 25:19:exact 26:20:exact 27:21:exact 28:22:exact 29:23:exact 31:25:exact 32:26:exact 33:27:exact 34:28:exact 35:29:exact 39:33:exact 
+862 11:7:exact 12:8:exact 
+863 7:16:exact 11:7:exact 
+864 2:11:exact 
+865 5:17:exact 19:5:exact 
+866 7:9:exact 
+867 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 
+868 6:6:exact 17:21:exact 18:22:exact 19:23:exact 
+869 22:30:exact 23:31:exact 29:35:exact 30:36:exact 31:37:exact 33:16:exact 35:41:exact 40:45:exact 
+870 15:9:exact 
+871 8:6:exact 
+872 6:10:exact 8:12:exact 9:13:exact 10:14:exact 11:15:exact 12:16:exact 13:17:exact 14:18:exact 15:19:exact 16:20:exact 17:21:exact 18:22:exact 19:23:exact 20:24:exact 21:25:exact 22:26:exact 23:27:exact 24:28:exact 
+873 2:4:exact 
+874 29:32:exact 
+875 25:39:exact 
+876 7:10:exact 14:16:exact 
+877 14:36:exact 
+878 6:3:exact 
+879 3:9:exact 
+880 2:3:exact 
+881 11:18:exact 
+882 3:13:exact 
+883 11:9:exact 
+884 5:10:exact 21:32:exact 33:35:exact 
+885 16:8:exact 
+886 5:0:exact 6:1:exact 
+887 4:5:exact 
+888 9:23:exact 
+889 27:4:exact 
+890 2:18:exact 
+891 7:19:exact 
+892 15:26:exact 17:25:exact 
+893 17:9:exact 23:16:exact 35:24:exact 
+894 4:1:exact 
+895 2:39:exact 
+896 12:16:exact 13:17:exact 15:19:exact 
+897 31:16:exact 
+898 5:5:exact 
+899 4:5:exact 
+900 3:16:exact 24:19:exact 25:20:exact 26:21:exact 27:22:exact 28:23:exact 29:24:exact 30:25:exact 31:26:exact 32:27:exact 33:28:exact 34:29:exact 35:30:exact 
+901 5:6:exact 
+902 5:9:exact 9:6:exact 
+903 4:8:exact 
+904 9:3:exact 10:4:exact 11:5:exact 12:6:exact 14:9:exact 15:10:exact 17:12:exact 

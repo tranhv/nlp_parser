@@ -1,0 +1,1038 @@
+0
+The analysis of the experimental results will illustrate the necessity for handling various sentence constructions by fundamental improvement of parsers such as re-construction of feature designs .
+Analysis of the experimental results illustrates the need to handle different sentence constructions through fundamental improvement of the parsers such as re-construction of feature designs .
+1
+This research attempts to identify the cause of these difficulties , and focuses on two types of sentence constructions which were not extensively studied in the recent parsing research : imperatives and questions .
+This research attempts to identify the cause of these difficulties , and focuses on two types of sentence constructions that have not been extensively studied in recent parsing research : imperatives and questions .
+2
+Since domain adaptation has been an extensive research area in parsing research \CITE , a lot of ideas have been proposed , including un- / semi-supervised approaches \CITE and supervised approaches \CITE .
+Since domain adaptation is an extensive research area in parsing research \CITE , many ideas have been proposed , including un- or semi-supervised approaches \CITE and supervised approaches \CITE .
+3
+Their main focus was on adapting parsing models trained with a specific genre of text ( in most cases Penn Treebank WSJ ) to other genres of text , such as biomedical research papers and broadcast news .
+The main focus of these works is on adapting parsing models trained with a specific genre of text ( in most cases the Penn Treebank WSJ ) to other genres of text , such as biomedical research papers and broadcast news .
+4
+In our work , sentences are collected from the Brown corpus , which includes a wider range of types of questions and imperatives .
+For our study , sentences were collected from the Brown corpus , which includes a wider range of types of questions and imperatives .
+5
+In the experiments , we will additionally use QuestionBank for comparison .
+In the experiments , we also used QuestionBank for comparison .
+6
+All parsers assume that the input is already POS-tagged .
+All parsers assumed that the input was already POS-tagged .
+7
+When they are embedded in another imperative or question , we only extracted the outermost one .
+However , is these were embedded in another imperative or question , we only extracted the outermost one .
+8
+Extracted sentences are post-processed so that they have natural sentence forms : first characters are capitalized , and question marks or periods are added when appropriate .
+Extracted sentences were post-processed to fit the natural sentence form ; that is , with first characters capitalized and question marks or periods added as appropriate .
+9
+The number of sentences for each section is shown in Table \REF .
+The numbers of sentences for each section are given in Table \REF .
+10
+We will not use this data in the experiments .
+This data was not used in the experiments .
+11
+Hence , we will show experimental results on Enju only with the Brown data .
+Hence , we show experimental results for Enju only with the Brown data .
+12
+The table shows the adaptation could improve the tagging accuracy to some extent , while the table also shows that the improved accuracy for the imperatives and questions could not reach eventhe accuracy of adapted tagger for Brown overall .
+The table shows that the adaptation improved the tagging accuracy to some extent , but that the improved accuracy for imperatives and questions was still below that of the adapted tagger for Brown overall .
+13
+Especially , the problem would be more serious for imperatives .
+In particular , the problem is more serious for imperatives .
+14
+Firstly , declarative sentences normally begin with noun phrases while imperative sentences normally begin with verb phrases .
+First , a declarative sentence normally begins with a noun phrase , whereas an imperative sentence normally begins with a verb phrase .
+15
+Secondly , main verbs in imperative sentences take base forms while main verbs in declarative sentences take the forms according to tense .
+Second , the main verb in an imperative sentence takes a base form , whereas the main verb in a declarative sentence takes a form based on tense .
+16
+For the QuestionBank , 25 to 35 points accuracy improvements were observed .
+For QuestionBank , 25 to 35 percent improvement in accuracy was observed .
+17
+In Figure \REF , when we focus on the QuestionBank where we could use much more training data than Brown questions , the parser accuracies were approaching the accuracies of WSJ parser for WSJ or exceeded the accuracy .
+In Figure \REF , the parser accuracy for QuestionBank , for which we could use much more training data than for Brown questions , approaches or even exceeds that of the WSJ parser for WSJ .
+18
+Since ROOT dependencies , that is , heads of sentences would be critical to construction of sentences , we mainly focus on that type of errors .
+Since ROOT dependencies , that is , heads of sentences , are critical to the construction of sentences , we focus mainly on this type of error .
+19
+When we focus on this type of errors , we could find that the WSJ parser could often make mistakes in parsing sentences which began or ended with the names of persons who were talk to .
+On investigation , we found that the WSJ parser often made mistakes in parsing sentences which began or ended with the name of the person being addressed .
+20
+Second , when the different constructions of sentences were in one sentence , such as , the case where to-infinitive phrases or subordinate clauses precede imperatives and questions , the parser would often be confused .
+Second , having different sentence constructions within a single sentence , such as , where a to-infinitive phrase or subordinate clause precedes an imperative or question , often confused the parser .
+21
+In this section , we examined whether the parser adapted to one domain would be portable to the other domain .
+In this section , we examine whether a parser adapted to one domain could be ported to another domain .
+22
+However , we would be able to expect that sentence constructions would be basically common and portable between two domains , which would contribute to give correct boundary for phrases and therefore the correct dependencies in phrases would be introduced by the adaptation .
+However , we would expect that sentence constructions are basically common and portable between two domains , which would provide a correct boundary for phrases and therefore , the correct dependencies in phrases would be introduced by the adaptation .
+23
+the difference from Table \REF was that the parsers and the tagger were adapted to another question domain .
+These results differ from those in Table \REF in that the parsers and the tagger have been adapted to another question domain .
+24
+This type of problem would not be noticed so much when we were working mainly on declarative sentences .
+This type of problem was not so obvious when we were working mainly with declarative sentences .
+25
+Following the present work , future work should include investigating parsing frameworks that are robust for sentences with various sentence constructions , and / or methods that can effectively adapt a parser to different sentence constructions including imperatives , questions , and more .
+Following on from this study , future work includes investigating parsing frameworks that are robust for sentences with different sentence constructions , and / or methods that can effectively adapt a parser to different sentence constructions including imperatives and questions , among others .
+26
+However , a character-based segmentation has achieved 10 .27 positive and 1 .95 negative differences in word-based and character-based BLEU , depending on corpus sizes and domains .
+However , a character-based segmentation achieved 10 .27 positive and 1 .95 negative differences in word-based and character-based BLEU , depending on the corpus sizes and domains .
+27
+In the case of REUTERS , we have used all 56 ,282 sentences .
+For REUTERS , we used all 56 ,282 sentences .
+28
+In this data , we have combined JENAAD and REUTERS news corpora to get one news corpus .
+For this data , we combined the JENAAD and REUTERS news corpora to acquire one news corpus .
+29
+We have used all 56 ,282 and 150 ,000 sentences respectively .
+We used all 56 ,282 and 150 ,000 sentences , respectively .
+30
+Firstly , since the WIKIPEDIA corpus is a multi-category XML dataset , we have sorted them by the DOCID in the ascending order and by the document categories LTT , EPR , FML , BDS , CLT , BLD , GNM , SCL , ROD , SNT , PNM , HST , RLW , and SAT .
+Since the WIKIPEDIA corpus is a multi-category XML dataset , we sorted them by the DOCID in ascending order , and by the document categories : LTT , EPR , FML , BDS , CLT , BLD , GNM , SCL , ROD , SNT , PNM , HST , RLW , and SAT .
+31
+Thirdly , sentence pairs that include a character " | " in English or Japanese are removed because it caused a problem with Moses .
+Then , sentence pairs that include a character “|” in English or Japanese were removed , because it caused a problem with Moses .
+32
+In order to adjust the balance of the domains , we have sampled the data twice : First we extract the first line for every 477 lines .
+In order to adjust the balance of the domains , we sampled the data twice : First , we extracted the first line for every 477 lines .
+33
+After this , we have merged the remaining 476 ,012 lines and from this extract the first line for every 952 lines .
+Then , we merged the remaining 476 ,012 lines , and from this extract , we extracted the first line for every 952 lines .
+34
+Finally , we have obtained 1 ,000 test , 500 development , and 475 ,512 training data .
+Finally , we obtained 1 ,000 test , 500 development , and 475 ,512 training data .
+35
+And the best results were obtained when we use the same word segmentation as the training data .
+The best results were obtained when we used the same word segmentation as the training data .
+36
+In this case , the evaluation scores are lower than English-Japanese translations in general .
+For Japanese-English translations , the evaluation scores were generally lower than for English-Japanese translations .
+37
+We found the results of the supervised morphological analyzers are better in both English-Japanese and Japanese-English experiments .
+We found that the results of the supervised morphological analyzers were better in both English-Japanese and Japanese-English experiments .
+38
+Additionally , as we could not always obtain consistent scores from the current evaluation metrics , they were not sufficient to discuss more accurately about the relative advantages and disadvantages of word segmentation .
+Additionally , as we could not always obtain consistent scores from the current evaluation metrics , the data was insufficient for discussing the relative advantages and disadvantages of word segmentation , with accuracy .
+39
+We also suggested it is possible to implement more optimized word segmentation on SMT .
+We have also suggested that it is possible to implement more optimized word segmentation on SMT .
+40
+However , problems with their approaches are the disregard of the interdependencies of word senses , and the limited applicability to those word senses for which training instances are served .
+However , the problem with these approaches , is that they disregard the interdependencies of word senses , and that it is limited in its applicability to the word senses for which training instances are served .**[<-This sentence is a bit confusing]
+41
+Some researchers have addressed directly the scarcity of the training data , and explored the methods to obtain more tagged instances , by the co-training and self-training .
+Some researchers have addressed the scarcity of the training data directly , and have explored the methods to obtain more tagged instances , by co-training and self-training .
+42
+Although the use of the global information has succeeded in dramatically increase the performance of WSD , there are much room left to examine the effectiveness of local or syntactic information .
+Although the use of global information has succeeded in dramatically increasing the performance of WSD , there is much room left to examine the effectiveness of local or syntactic information .
+43
+All nouns and verbs except some top-level concepts are classified into primitive groups called supersenses , which we describe later .
+All nouns and verbs , with the exception of some top-level concepts , are classified into primitive groups called supersenses , which we will describe later .
+44
+This is reflected in the low inter-annotator agreement of sense tagging ( typically around 70% ) , which implies that WSD models are unlikely to perform better than this accuracy .
+This is reflected in the low inter-annotator agreement of sense tagging ( typically around 70% ) , which implies that WSD models would be unlikely to perform better than the accuracy achieved .
+45
+For the linear-chain models , we do not need to parse a sentence .
+For the linear-chain models , parsing a sentence is unnecessary .
+46
+In this section , we introduce corpora we use for the evaluation .
+In this section , we introduce corpora that we have used for the evaluation .
+47
+However , by the incorporation of the sense dependencies , the improvements with the sense ranking features are even smaller , and the deteriorations without them are even larger than in the tree-structured case .
+Nonetheless , by the incorporation of the sense dependencies , the improvements with the sense ranking features was even less , and the deteriorations without them[define " them " ] were even more than in the tree-structured case .
+48
+In the first approach , one keyframe is used for shot representation in doing clustering; and sub-segments are selected using motion information for generating the summary .
+In the first approach , one keyframe is used for representing a shot when forming a cluster; and sub-segments are selected using the motion information for generating the summary .
+49
+Video summarization is a significant research that helps to meet these needs by developing a condensed version of a full length digital video with the most important contents \CITE .
+Video summarization significantly helps to meet this need by developing a condensed version of a full length digital video using only the most important contents \CITE .
+50
+Summary videos can help users to browse and navigate large video archives efficiently and effectively .
+Summary videos can help users more efficiently and effectively browse and navigate through large video archives .
+51
+Generating summary videos for BBC rushes \CITE is a challenging task due to difficulty in redundancy elimination and determination of important objects and events being placed in the summary .
+Generating summary videos for BBC rushes \CITE is a challenging task due to the difficulty with redundancy elimination and determining the most important objects and events to be placed in the summary .
+52
+" ', with this length constraint , it is difficult to present it in a pleasant tempo and rhythm .
+" ', with this length constraint , it would be difficult to present it in a pleasant tempo and rhythm .
+53
+On the contrary , smooth presentation of events consumes a lot number of frames , that decrease the recall .
+On the other hand , a smooth presentation of these events would consume a large number of frames , which would decrease the recall .
+54
+In the other case , assume that we have selected appropriate segments , the total length of these segments are usually larger than that of the final summary .
+In the other case , assuming that we have selected the appropriate segments , the total length of these segments is usually larger than that of the final summary .
+55
+The question is how to determine the important part of the selected segment such that it conveys information of the scene as much as possible .
+The question is how to determine the most important parts of the selected segments so that they convey as much of the information of the scene as possible .
+56
+The shot boundary detection algorithm in \CITE is used to determine shot boundary and partition the input video into shots .
+The shot boundary detection algorithm in \CITE is used to determine the shot boundary and to partition the input video into shots .
+57
+If the value of the \MATH is smaller than threshold \MATH , then these sub-shot is defined as a color bar sub-shot .
+If the value of the \MATH is smaller than the threshold \MATH , then these sub-shots are defined as a color bar sub-shot .
+58
+So far , we completely remove the unused contents from rushes video and reduce repetition of the story contents .
+So far , we have completely removed the unused contents from rushes videos and reduced any repetition of the story contents .
+59
+The comparable performance in junk elimination of both systems suggests that simple methods are more favorable .
+The comparable performance in the junk elimination of both systems suggests that simpler methods are more favorable .
+60
+Although the result is not very high as expected, we still believe that this approach is promising .
+Although the results are not as high as expected, we still believe that this approach is promising .
+61
+With each representative segment of each cluster, the portion that has high degree of motion is selected to form the summary .
+With each representative segment of each cluster, the portion with the highest degree of motion is selected to form the summary .
+62
+( ii ) current face recognition techniques are still unmatured with wild-face databases even with supervised learning methods .
+( ii ) current face recognition techniques are still immature with wild-face databases even with supervised learning methods .
+63
+With the rapid growing of digital technology , large image and video databases are available easier than ever to users .
+With the rapid growth of digital technology , large image and video databases are more available than ever to users .
+64
+One of the typical examples for this application is to search a specific person by providing his or her name .
+A typical example for this application is searching for a specific person by providing his or her name .
+65
+This subset then is used to train a classifier using a supervised method such as support vector machines ( SVM ) .
+This subset then is used to train a classifier using supervised methods such as support vector machines ( SVM ) .
+66
+Furthermore , with recent studies \CITE SVM classifiers can provide probability outputs that are suitable for ranking .
+Furthermore , recent studies suggest that \CITE SVM classifiers provide probability outputs that are suitable for ranking .
+67
+Since it is not guaranteed top \MATH and bottom \MATH of faces in the rank list are correctly correspondent to faces of the queried person \MATH and faces of non person \MATH as shown in Figure \REF , selecting randomly subsets to train weak classifiers and then combining these classifiers might help to reduce risk of using noisy training sets .
+Since it is not guaranteed that the top \MATH and bottom \MATH of faces in the rank list correctly correspond to the faces of the queried person-\MATH and faces of non person-\MATH as shown in Figure \REF , randomly selecting subsets to train weak classifiers , and then combining these classifiers might help reduce the risk of using noisy training sets .
+68
+The outliers detection process is summarized as follows :
+This outlier detection process is summarized as follows :
+69
+This dataset consists of approximately half a million news pictures and captions from Yahoo News over a period of roughly two years .
+This dataset consisted of approximately half a million news pictures and captions from Yahoo News over a period of roughly two years .
+70
+After eliminating faces whose facial features are poorly detected by a rectification process and faces whose associated names are not extracted properly from corresponding captions , 30 , 281 faces were kept .
+After eliminating faces whose facial features were poorly detected by a rectification process and faces whose associated names were not extracted properly from the corresponding captions , 30 , 281 faces were kept .
+71
+For each person , variations of his name are collected . For example , George W . Bush , President Bush , U . S . President , etc are variations of U . S . President Bush .
+For each person , variations of his name were collected . For example , George W . Bush , President Bush , U . S . President , etc are variations of U . S . President Bush .
+72
+The faces retrieved from different names of each person are merged into a set used for our ranking process .
+The faces retrieved from different names of each person were merged into a set used for our ranking process .
+73
+In total , 3 , 907 faces are retrieved in which 2 , 094 faces are relevant .
+In total , 3 , 907 faces were retrieved in which 2 , 094 faces were relevant .
+74
+On average , the precision is 52.49% .
+On average , the precision was 52.49% . //[precision / accuracy ? ]
+75
+The number of eigenfaces was selected so that 97% of the total energy are retained \CITE .
+A number of eigenfaces was selected so that 97% of the total energy was retained \CITE . //[What is that number ? ]
+76
+In the baseline method , faces are sorted by the time that the associated news article is published .
+In the baseline method , faces were sorted by the time the associated news article was published .
+77
+It indicates that DBO-based method outperforms the others .
+It indicated that the DBO-based method outperformed the others .
+78
+This suggests that the input face sets are quite dense .
+This suggests that the input face sets were quite dense .
+79
+To select one subset , we set \MATH and \MATH which means 20% of highest ranked faces are used for \MATH and 30% of lowest ranked faces are used for \MATH .
+To select one subset , we set \MATH and \MATH which means 20% of the highest ranked faces were used for \MATH and 30% of the lowest ranked faces were used for \MATH .
+80
+The subsets \MATH and \MATH are generated by randomly selecting with replacement 70% samples of \MATH amd \MATH .
+The subsets \MATH and \MATH were generated by randomly selecting with replacement 70% samples of \MATH and \MATH .[�gWith replacement�h does not make sense here . I am not sure what you want to say .]
+81
+As shown in Figure \REF , the performance does not change so much after 5 iterations .
+As shown in Figure \REF , the performance did not change much after five iterations .
+82
+As shown in Figure \REF , \REF , \REF , our proposed method produces better results in terms of average precision in which relevant faces are put on the top of the returned list .
+As shown in Figures \REF , \REF , \REF , our proposed method produced better results in terms of average precision in which relevant faces were put at the top of the returned list .
+83
+This classifier is used to rank input faces for the next step .
+This classifier was used to rank input faces for the next step .
+84
+Since labels of training sets are still noisy , the classified trained by these datasets are weak .
+Since the labels of training sets were still noisy , the classifiers trained from these datasets were weak .
+85
+To get initial rank for the first step , we propose to use common outliers detection method .
+To obtain the initial rank for the first step , we proposed using a common outlier detection method .
+86
+Human face processing techniques for broadcast video including face detection , tracking and recognition have long been a topic that attracts much research interest due to its crucial value in various applications including video structuring , indexing , retrieval , summarization , etc.
+Human face processing techniques for broadcast video , including face detection , tracking , and recognition , have long been a topic that has attracted a lot of research interest due to its crucial value in various applications , such as in video structuring , indexing , retrieval , and summarization .
+87
+Many approaches have been proposed for building fast and robust face detectors \CITE .
+Many approaches have been proposed for building faster and more robust face detectors \CITE .
+88
+- Classification : the extracted features is passed through a classifier which is trained beforehand to classify the input pattern associated with these features as a face or a non-face .
+- Classification : the extracted features are passed through a classifier that has been previously trained to classify the input pattern associated with these features as a face or a non-face . //[trained / programmed ?]
+89
+However , a real-time face tracker will become necessary if the target archive is established from too large quantities of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+However , a real-time face tracker will become necessary if a target archive is established from too large a quantity of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+90
+For each tracked face , three steps are involved that are initialization , tracking and a stopping procedure , as illustrated in Figure 2 .
+For each tracked face , three steps are involved , which are the initialization , tracking , and stopping procedures , as illustrated in Fig. 2 .
+91
+Facial features enable to track higher-level information from a human face but are weak in low video quality .
+Facial features enable the tracking of higher-level information from a human face , but are weak in lower video quality .
+92
+Most facial-feature-based face trackers [6 , 10] are only tested by using non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+Most facial-feature-based face trackers [6 , 10] have been tested using only non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+93
+One example of appearance-based face tracker is [1] that has been introduced above .
+One example of an appearance-based face tracker is [1] , which was introduced above .
+94
+Another example is proposed by Li et al [9] , which uses a multi-view face detector to detect and track faces of different poses .
+Another example was proposed by Li et al. [9] , which uses a multi-view face detector to detect and track faces from different poses .
+95
+Among the faces retrieved by the text-based search engines for a query of person-\MATH , as shown in Figure \REF , relevant faces usually look similar and can form the largest cluster .
+Among the faces retrieved by text-based search engines for a query of person-\MATH , as shown in Figure \REF , relevant faces usually look similar and forms the largest cluster .
+96
+One limitation of the local density score based ranking is it could not handle the case that faces of another person have strong association in \MATH-neighbor set ( for example , many duplicates ) .
+One limitation of the local density score based ranking is it cannot handle faces of another person strongly associated in the \MATH-neighbor set ( for example , many duplicates ) .
+97
+Only frontal faces were considered since current frontal face detection systems \CITE can work in real time and have accuracies exceeding 95\% .
+Only the front of faces were considered since current frontal face detection systems \CITE work in real time and have accuracies exceeding 95\% .
+98
+We conducted another experiment to show the effectiveness of our approach in which learned models can be used to annotate new faces of other databases .
+We conducted another experiment to show the effectiveness of our approach in which learned models are used to annotate new faces of other databases .
+99
+With a large amount of information encoded in one video , typically the first step of any video processing tools is to segment the input video into elementary shots in which each shot is defined as continuous frames from a single camera at a time .
+With a large amount of information encoded in one video , typically the first step of any video processing tools is to segment the input video into elementary shots in which each shot is defined as a continuous frame from a single camera at a given moment .
+100
+To label a frame in video , firstly we extract features for that frame and then use a classifier , that has been trained by annotated frames in advance , to classify it into one of six categories mentioned above .
+To label a frame in a video , we must firstly extract the features for that frame and then use a classifier , which has been trained in advance by the annotated frames , to classify it into one of the six categories mentioned above .
+101
+By this way , we can have a unified framework for shot boundary detection and consequently avoid to have special treatments for different shot boundary types as described in many works participated the TRECVID benchmark \CITE .
+In this way , we can have a unified framework for the shot boundary detection and consequently avoid having to give special treatment to the different shot boundary types as described in many of the works that participated the TRECVID benchmark \CITE .
+102
+It has been very efficiently proved in many pattern recognition applications \CITE .
+They have been very efficiently proved to be useful in many pattern recognition applications \CITE .
+103
+We divided 8 videos , each 30-minute length , into two sets : training set and testing set .
+We divided eight videos , each 30-minute long , into two sets : a training set and a test set .
+104
+Specifically , we selected three sampling rates \MATH which are \MATH and \MATH .
+Specifically , we selected three sampling rates \MATH , which were \MATH and \MATH .
+105
+As shown in Figure \REF , the best performance is obtained with the sampling rate of \MATH .
+As shown in Figure \REF , the best performance was obtained at a sampling rate of \MATH .
+106
+The number of dimensions of feature vectors using GCM and EOH is 20 while that of feature vectors using GCM+EOH is 40 .
+The number of dimensions of the feature vectors using GCM and EOH was 20 , while that of feature vectors using GCM+EOH was 40 .
+107
+Many previous shot boundary detectors usually divided the system into sub-systems in which special treatments were proposed to handle different types of shot transitions .
+Many previous shot boundary detectors usually divide the system into sub-systems in which special treatments are proposed to handle different types of shot transitions .
+108
+Therefore , it is difficult to generalize for new test sets .
+Therefore , it is generalization is difficult for new test sets .
+109
+Recently , boosting is used widely in object detection applications because of its impressive performance in both speed and accuracy .
+Recently , boosting has come to be used widely in object detection applications because of its impressive performance in both speed and accuracy .
+110
+Experiments have shown that strong classifiers learned by Ent-Boost can achieve good performance , and have compact storage space .
+Experiments showed that strong classifiers learned by Ent-Boost can achieve good performance and be stored compactly . //[be stored compactly / achieve compact storage?]
+111
+Boosting [3] and its variants [4] ,[5] ,[6] ,[7] ,[8] ,[9] ,[10] have recently gained a lot of attentions from researchers because of its excellent performance .
+Boosting [3] and its variants [4] ? [10] have recently gained much attention from researchers because of their excellent performance .
+112
+This leads weak classifiers are too weak to boost when handling complex data sets .
+This leads weak classifiers to be too weak to boost when handling complex data sets .
+113
+Meanwhile choosing a small number of bins might not well approximate the real densities of the data distribution and thus influence selection of the best weak classifier .
+Choosing a small number of bins , however , might not accurately approximate the real densities of the data distribution and could influence the selection of the best weak classifier .
+114
+Originally , Discrete AdaBoost proposed by Freund and Schapire [16] is a learning method of combining weak classifiers to a strong classier .
+Originally , Discrete AdaBoost , proposed by Freund and Schapire [16] , was a learning method of combining weak classifiers to form a strong classier .
+115
+Generally , optimally selecting the suitable weak classifier will make the final strong classifier more robust and efficient .
+Optimally selecting the suitable weak classifier makes the final strong classifier more robust and efficient .
+116
+For experiments , face and non-face patterns are of size 24x24 .
+For our experiments , face and non-face patterns were of size 24x24 . //[what is the unit here?]
+117
+The 10 ,000 patterns in each set are divided into a training set of 6 ,000 patterns and a test set of 4 ,000 examples .
+The 10 ,000 patterns in each set were divided into a training set of 6 ,000 patterns and a test set of 4 ,000 examples .
+118
+Haar wavelet feature that has been widely used in many face detection systems [4] ,[6] ,[14] is used in our experiments .
+Haar wavelet features , which have been used in many face detection systems [4] , [6] , [14] , were used in our experiments .
+119
+It consists of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+These consisted of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+120
+The feature value is defined as the difference of sum of the pixels within rectangles ( cf . Figure 3 ) .
+The feature value was defined as the difference of the sum of the pixels within rectangles ( Figure 3 ) .
+121
+The curves indicate that the performances of Real AdaBoost and Ent-Boost are better than that of AdaBoost .
+The curves indicate that the performances of Real AdaBoost and Ent-Boost were better than that of AdaBoost .
+122
+The result cascade has 25 layers employing 3 ,850 features .
+The resulting cascade has 25 layers using 3 ,850 features .
+123
+Performances of AdaBoost-based face detector [4] and Ent-Boost based face detector on MIT+CMU test set [1] shown in Table 2 has confirmed the effectiveness of our proposed boosting scheme .
+The performances of the AdaBoost-based face detector [4] and our Ent-Boost-based face detector on the MIT+CMU test set [1] confirmed the effectiveness of our proposed boosting scheme ( Table 2 ) .
+124
+First , there are many ways to represent a target object , leading to a huge feature set .
+First , there are many ways can be used to represent a target object , and this variety leadsleading to a huge feature set .
+125
+Furthermore , less complex model is easier to understand and verify .
+Furthermore , less complex models is are easier to understand and verify .
+126
+However , the mutual relationships between features is often not taken into account , leading selected features might be highly redundant and less informative because two features with high individual predict power when combined together might not bring significant performance improvement compared with two features which one of them has low predictive power but is useful when combined with others .
+However , because the mutual relationships between features is are often not taken into account , leading the selected features might be highly redundant and less informative because two features with high individual predictive power , when combined together , might not bring significant performance improvement . Combining compared with two features of which one of them has low predictive power but is useful when combined with others would thus be more effective for improving performance .
+127
+For example , in the state of the art face detection system [1] , choosing a 6 ,061- feature set out of a 180 ,000-feature set by AdaBoost has taken several weeks .
+For example , in the state- of- the- art face detection system in [1] , choosing a 6 ,061- feature set out of a 180 ,000-feature set by using AdaBoost has takentook several weeks . //[by using / generated by?]
+128
+However , binarizing features is not a suitable way to handle highly complex data for which it is hard to find the best threshold .
+However , binarizing features is not a suitable way to handle highly complex data for which it is hard to finding the best threshold is difficult .
+129
+Experiments show that the proposed method can well handle huge feature sets for face detection such as Haar wavelets [1] and Gabor wavelets [12] , significantly reduce the training time while maintaining high classification performance .
+Experiments show that the proposed method can well capably handle huge feature sets of data such as Haar wavelets [1] and Gabor wavelets [12] for face detection , significantly reducinge the training time while maintaining high classification performance .
+130
+Testing on the standard benchmark MIT+CMU test set , they have comparable performance .
+Testing on the standard benchmark MIT+CMU test set , they hadve comparable performance .
+131
+First , a new stage is added to detect face candidate regions more quickly by using a larger window size and larger moving step size .
+First , a new stage has been added to detect face candidate regions more quickly by using a larger window size and larger moving step size .
+132
+The proposed multi-stage-based system is shown to run faster than the original AdaBoost-based system while maintaining comparable accuracy .
+The proposed multi-stage-based system has been shown to run faster than the original AdaBoost-based system while maintaining comparable accuracy .
+133
+To deal with the problem of processing a large number of patterns , a combination of simple-to-complex classifiers is proposed [8] ,[1] ,[9] ,[20] ,[21] ,[11] .
+To deal with the problem of processing a large number of patterns , a combination of simple-to-complex classifiers has been proposed [8] , [1] , [9] , [20] , [21] , [11] .
+134
+By this way , the complexity of classifiers is adapted corresponding to the difficulty in the input patterns .
+In this way , the complexity of classifiers can be adapted corresponding to the difficulty in the input patterns . / / [is / can be?]
+135
+In [8] , non linear SVM classifiers using pixel-based features are arranged into a sequence with increasing number of support vectors , or in [9] , linear SVM classifiers trained at different resolutions are used for rejection and a reduced set of principle component analysis ( PCA )-based features are used with the non linear SVM at the classification stage in order to reduce computation time .
+In [8] , nonlinear SVM classifiers using pixel-based features were arranged into a sequence by increasing the number of support vectors , while in [9] , linear SVM classifiers trained at different resolutions were used for rejection and a reduced set of principle component analysis ( PCA )-based features were used with the nonlinear SVM at the classification stage in order to reduce computation time .
+136
+In [1] , AdaBoost based classifiers are arranged in a degeneration decision tree or a cascade .
+In [1] , AdaBoost-based classifiers were arranged in a degeneration decision tree or a cascade .
+137
+Using about 10 features of the first two layers , more than 90\% of non-face patterns are rejected .
+Using about 10 features of the first two layers , more than 90\% of non-face patterns were rejected .
+138
+-Thirdly , Haar-wavelet features used for all stages are informative [22] and evaluated extremely fast due to the introduction of the integral image .
+-Haar wavelet features used for all stages are informative [22] and can be evaluated extremely quickly due to the introduction of the integral image .
+139
+With the first several layers in our experiment ( cf. Figure 1 ) , using some 800 weak classifiers , more than \MATH of non-face patterns are rejected .
+With the first several layers in our experiment ( cf . Figure 1 ) , using some 800 weak classifiers , more than \MATH of non-face patterns were rejected .
+140
+In our experiment , with 20 ,000 training samples and 134 ,736 features , the average training time for choosing one feature associated with the weak classifier is about 30 minutes on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+In our experiment , with 20 ,000 training samples and 134 ,736 features , the average training time for choosing one feature associated with the weak classifier was about 30 minutes on a PC ( Pentium 4 , 2 .8 MHz , 512-MB RAM ) .
+141
+Specifically , for quick rejection of non-face patterns , we reuse two key ingredients of Viola and Jones' system , that is , the cascaded structure of simple-to-complex classifiers and AdaBoost trained with Haar-wavelet features .
+Specifically , for quick rejection of non-face patterns , we have reused two key ingredients of Viola and Jones' system , that is , the cascaded structure of simple-to-complex classifiers and AdaBoost trained with Haar wavelet features .
+142
+-First , to detect the face candidate regions , a new stage ( using a larger window size and a larger moving step size ) is added .
+-First , to detect the face candidate regions , a new stage ( using a larger window size and a larger moving step size ) has been added .
+143
+Third , the training time of AdaBoost classifiers is shortened by using simple sampling techniques to reduce the number of features in the feature set .
+Third , the training time of AdaBoost classifiers has been shortened by using simple sampling techniques to reduce the number of features in the feature set .
+144
+Experiments will show that for rejection , using a full feature set and a sampled feature set gives the comparable performance .
+Experiments showed that for rejection , the performance gained by using a sampled feature set was comparable to that of a full feature set .
+145
+Along with using several SVM classifiers instead of many AdaBoost classifiers in later layers , the total training time is reduced significantly .
+Along with using several SVM classifiers instead of many AdaBoost classifiers in later layers , the total training time has been significantly reduced .
+146
+To detect faces of different sizes and locations , the detector is applied at every location and scale in the input image with a scale factor of 1 .2 , which is similar to the other approaches [5] ,[6] ,[9] .
+To detect faces of different sizes and locations , the detector is applied at every location and scale in the input image with a scale factor of 1 .2 , which is similar to other approaches [5] , [6] , [9] .
+147
+In our experiments , only 100 features are used and hence it is faster than using any pixel-based SVM classifiers [8] ,[9] .
+In our experiments , only 100 features were used , making classification faster than it would have been using pixel-based SVM classifiers [8] , [9] .
+148
+The same feature set as proposed in [1] is used ( cf. Figure 4 ) .
+The same feature set proposed in [1] was used ( cf . Figure 4 ) .
+149
+The error of each weak classifier is measured with respect to the set of weights over each example of the training set \MATH , where \MATH and \MATH are the weight and the label of the training example \MATH , respectively .
+The error of each weak classifier is measured with respect to the set of weights over each example of the training set \MATH , where \MATH and \MATH are the respective weight and label of the training example \MATH .
+150
+Viola and Jones [1] stated that , if the layer classifier could achieve the predefined target goals after 200 features are used , the training process will stop and a new layer will be added .
+Viola and Jones [1] stated that , if the layer classifier has achieved the predefined target goals after 200 features are used , the training process will stop and a new layer will be added .
+151
+Face patterns for training the 36x36 classifiers are generated by selecting 36x36 windows containing the 24x24 face window of the input image .
+Face patterns for training the 36x36 classifiers were generated by selecting 36x36 windows containing the 24x24 face window of the input image .
+152
+To train the cascade of 24x24 AdaBoost classifiers used in the rejection stage , the same 7 ,500 face patterns are used for all layers .
+To train the cascade of 24x24 AdaBoost classifiers used in the rejection stage , the same 7 ,500 face patterns were used for all layers .
+153
+Non-face patterns of the training and the validating sets of the first layer in the cascade are selected randomly .
+Non-face patterns of the training and the validating sets of the first layer in the cascade were selected randomly .
+154
+For each layer classifier , 7 ,500 non-face patterns are used for training and 7 ,500 other non-face patterns are used for validating .
+For each layer classifier , 7 ,500 non-face patterns were used for training and 7 ,500 other non-face patterns were used for validating .
+155
+To compare the performance of classifiers , we have implemented a fully cascade of classifiers trained by AdaBoost , similar to that used by Viola and Jones [1] .
+To compare the performance of classifiers , we implemented a full cascade of classifiers trained by AdaBoost , similar to that used by Viola and Jones [1] .
+156
+The minimum of the detection rate is \MATH , the maximum of the false positive rate is \MATH and the maximum of the number of features in each layer is 200 .
+The minimum of the detection rate was \MATH , the maximum of the false positive rate was \MATH , and the maximum of the number of features in each layer was 200 .
+157
+Two classifiers are trained up to the maximum of 200 features .
+Two classifiers were trained up to the maximum of 200 features .
+158
+The classifier 's threshold is changed to meet the detection rate of \MATH .
+The classifier 's threshold was changed to meet the detection rate of \MATH .
+159
+Rejection performance is evaluated through the false positive rate on a validation test set which contains 500 ,000 non-face patterns .
+Rejection performance was evaluated through the false positive rate on a validation test set that contains 500 ,000 non-face patterns .
+160
+All non-face patterns are selected randomly from the training set mentioned above .
+All non-face patterns were selected randomly from the training set mentioned above .
+161
+The result shown in Figure 10 indicates that the performances of these two classifiers are no different , especially when the number of features is large enough , for example , more than 50 .
+The results shown in Figure 10 indicate that the performances of these two classifiers were no different , especially when the number of features was large enough , for example , more than 50 .
+162
+In our experiments , after reaching 50 features , the classifier 's performance does not significantly increase anymore , so the maximum number of features for each layer is set to 50 .
+In our experiments , after reaching 50 features , the classifier 's performance did not significantly increase , so the maximum number of features for each layer is set to 50 .
+163
+Two main issues surrounding the reuse of features selected by AdaBoost are : ( i ) which layer whose features will be reused for SVM is the best? and ( ii ) How many features should be used?
+Two main issues surrounding the reuse of features selected by AdaBoost are : ( i ) which layer�fs features should be reused for SVM and ( ii ) how many features should be used .
+164
+For comparison of the performance of SVM classifiers , 2 ,450 face patterns and 7 ,500 non-face patterns which are separated from the training set ( section 6 .1 ) were used .
+For comparison of the performance of SVM classifiers , 2 ,450 face patterns and 7 ,500 non-face patterns that were separated from the training set ( section 6 .1 ) were used .
+165
+The parameter \MATH is set to \MATH .
+The parameter \MATH was set to \MATH .
+166
+The results shown in Figure 14 indicate that with more than 100 features , the performance of classifiers is comparable .
+The results shown in Figure 14 indicate that with more than 100 features , the performance of the classifiers was comparable . / / [to what?]
+167
+The SVM classifier using 25 features run fastest while the SVM classifier using 200 features run slowest .
+The SVM classifier using 25 features ran the fastest , while the SVM classifier using 200 features was the slowest .
+168
+The speeds of SVM classifiers using 100 , 125 and 175 features are not importantly different because their difference in terms of number of features and number of support vectors is inconsiderable .
+The speeds of SVM classifiers using 100 , 125 , and 175 features were not importantly different because their difference in terms of number of features and number of support vectors were not large enough to have a significant impact .
+169
+The parameter \MATH is set to \MATH .
+The parameter \MATH was set to \MATH .
+170
+These parameters are found by using cross-validation test .
+These parameters were found by using a cross-validation test .
+171
+All these statistics are extracted from running the classifiers on the MIT+CMU test set .
+All these statistics were extracted by running the classifiers on the MIT+CMU test set .
+172
+The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , are rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
+The fraction of the remaining patterns on these two tables indicates that most of the non-face patterns , i.e. , \MATH , were rejected by the first stage , the cascade of 36x36 AdaBoost classifiers .
+173
+If the first 24x24 layer classifier is added to the cascade of 36x36 classifiers , this combination rejects 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade 24x24 classifiers .
+When the first 24x24 layer classifier was added to the cascade of 36x36 classifiers , this combination rejected 85 .91\% of analyzed patterns compared to \MATH of using only the first layer of the single cascade of 24x24 classifiers .
+174
+Furthermore , the rejection of this very large number of patterns is done extremely quickly , only using \MATH of processing time .
+Furthermore , the rejection of this very large number of patterns was done extremely quickly , only using \MATH of the total processing time . / / [the total / the standard?]
+175
+It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , is used for SVM classifiers .
+It also shows that most of the processing time used by the AdaBoost+SVM system , \MATH , was used for SVM classifiers .
+176
+It is clear that our multi-stage system runs faster than the single cascade of 24x24 AdaBoost classifiers while detection rates are comparable .
+It is clear that our multi-stage system ran faster than the single cascade of 24x24 AdaBoost classifiers while achieving comparable detection rates .
+177
+This performance is possible because of the three following reasons :
+This performance was possible for three reasons .
+178
+Experimental results showed that the AdaBoost+SVM system runs faster than that of the original AdaBoost on \MATH of total number of images in this test set .
+Experimental results showed that the AdaBoost+SVM system ran faster than that of the original AdaBoost on \MATH of the total number of images in this test set .
+179
+Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers do not affect so much in final performance because it might also be rejected by 24x24 classifiers in later layers .
+Third , at a small number of false positives , some true face candidate regions rejected by 36x36 classifiers did not severely affect the final performance because they might also be rejected by 24x24 classifiers in later layers .
+180
+One popular approach is to learn visual consistency among the images returned by these search engines .
+One popular approach has been to learn visual consistency between images returned by these search engines .
+181
+The drawback of these methods is it requires computational cost and processing time that are unsuitable for handling a large number of queries .
+The main drawback with these methods is that they require computational cost and processing time that are unsuitable for handling a large number of queries .
+182
+One popular approach \CITE combining both text and visual information is to use text information to quickly retrieve a set of candidates and then do post-processing (i . e . re-rank) on this set to improve the precision .
+One popular approach \CITE combining both text and visual information has been to use text information to quickly retrieve a set of candidates and then do post-processing ( i . e . , re-ranking ) on this set to improve precision .
+183
+There are two ways for post-processing : The first way \CITE is to build a ranker or a classifier specific to the given query using the returned images .
+There are two ways of doing post-processing : The first \CITE has been to build a ranker or a classifier specific to the given query using the returned images .
+184
+The second way \CITE is to build a generic classifier once and then use it for all new queries .
+The second way \CITE has been to build a generic classifier once and then use it for all new queries .
+185
+We follow the latter way for the problem of face retrieval in which the system enables users to search persons's appearance by their names .
+We pursued the latter way to solve the problem with face retrieval in which the system enables users to search people's appearances by their names .
+186
+experimental results show that the relevance classifier that is independent with underlying ranking algorithm of existing search engines can significantly boost the performance .
+The experimental results demonstrated that the relevance classifier that is independent of the underlying ranking algorithms of existing search engines could significantly boost performance .
+187
+To distinguish face tracks of different persons , we assume that if multiple faces are detected at different locations in one frame , they are of different persons (cf . Figure \REF) .
+To distinguish the face tracks of different people , we assumed that if multiple faces were detected at different locations in one frame , they would be of different people ( cf .
+188
+Using this assumption , we collect the face tracks whose faces are detected in the same frames to guarantee that each face track is associated to one unique person .
+Using this assumption , we collected face tracks whose faces were detected in the same frames to guarantee that each face track was associated with one unique person .
+189
+From these faces , We can artificially generate face sets similar to the sets returned by search engines given person names .
+We could artificially generate face sets from these faces similar to the sets returned by search engines given people's names .
+190
+Since we know the relevance of these faces to the artificial sets , the labels of each face can be easily generated and no human intervention is needed for this process .
+Since we knew the relevance of these faces to the artificial sets , the labels for each face could be easily generated and no human intervention was needed in this process .
+191
+given a query described by text , for example , 'airplane' or 'George Bush' , finding relevant images with high precision is essential for image search engines .
+It is essential for image-search engines to find relevant images with a high degree of precision given queries described by text , e.g. , 'airplane' or 'George Bush' .
+192
+There are different approaches described in \CITE for re-ranking images containing general objects and faces returned from text-based search engines .
+There have been different approaches \CITE to re-ranking images containing general objects and faces returned from text-based search engines .
+193
+Work such as \CITE extend topics models using probabilistic Late Semantic Analysis , Latent Dirichlet Allocation , or Hierarchical Dirichlet Process to learn generative model based classifiers .
+Work \CITE has extended to topics on models using probabilistic Late Semantic Analysis , Latent Dirichlet Allocation , or the Hierarchical Dirichlet Process to learn generative model-based classifiers .
+194
+In \CITE , Textual information is used to build a text ranker to re-rank the returned images \CITE .
+Textual information has been used to build a text ranker to re-rank the returned images \CITE .
+195
+The top images in this ranked list are used as positive samples to train visual classifiers using SVM (Support vector machines) .
+The top images in this ranked list were used as positive samples to train visual classifiers using SVM ( Support vector machines ) .
+196
+This method makes the training data cleaner that leads to performance improvement .
+This method made the training data cleaner and led to improved performance .
+197
+In \CITE , A multiple instance learning framework is used to learn category models from images associated with keywords \CITE .
+A multiple-instance learning framework has been used to learn category models from images associated with keywords \CITE .
+198
+The returned images are treated as positive bag .
+The returned images were treated as a positive bag .
+199
+Negative bags are collected from image sets corresponding to unrelated keywords .
+Negative bags were collected from image sets corresponding to unrelated keywords .
+200
+The learned model is used to re-rank the images .
+The learned model was used to re-rank the images .
+201
+In \CITE , Discriminative approach based models such as SVM and linear discriminant analysis are used instead of Gaussian mixture models \CITE .
+Discriminative-approach-based models such as SVM and linear discriminant analysis have been used instead of Gaussian mixture models \CITE .
+202
+In \CITE , A densest graph based method is used for finding the face group relevant to the query \CITE .
+A densest-graph-based method has been used for finding the face group relevant to the query \CITE .
+203
+In \CITE{Krapac10CVPR} , Only one generic classifier is built in advance \CITE and then used for all queries .
+Only one generic classifier has been built in advance \CITE and then used for all queries .
+204
+This generic classifier is a relevance classifier that learns relevancy between an image and the query .
+This generic classifier was a relevance classifier that learned relevance between an image and the query .
+205
+Our method is inspired by the generic classifier based approach .
+Our method was inspired by the generic-classifier-based approach .
+206
+The ranked list is then return to users as shown in Figure \REF( b ) .
+The ranked list is then returned to users as shown in Figure \REF( b ) .
+207
+In \CITE , the Query-dependent features using textual information are proposed \CITE .
+Query-dependent features using textual information has been proposed \CITE .
+208
+Each feature is treated as binary indicating the presence or absence of the query terms in textual data associated with the input image , for example , filename , image title , and nearby text .
+Each feature was treated as binary indicating the presence or absence of query terms in the textual data associated with the input image , e.g. , filenames , image titles , and nearby text .
+209
+Extending this query-dependent feature for using visual information is not trivial since we can not compute the presence and absence of the query term such as 'George Bush' in each face .
+Extending this query-dependent feature to use visual information is not trivial since we cannot compute the presence or absence of query terms such as 'George Bush' in each face .
+210
+To be able to model the relevance between a face and the given query , We assume that there is visual consistency among faces returned by search engines for that query .
+We assumed that there would be visual consistency between faces returned by search engines for a query to be able to model the relevance between a face and that given query .
+211
+In the other word , we assume faces that are relevant to the query form the largest cluster .
+In the other words , we assumed faces that were relevant to the query would form the largest cluster .
+212
+In other words , as shown in Figure \REF , \MATH might have several face clusters and the largest cluster is equivalent to the faces relevant to the query if returning by a search engine .
+In other words , as seen in Figure \REF , \MATH might have several face clusters and the largest cluster is equivalent to the faces relevant to the query if they are returned by a search engine .
+213
+-If there are more than one face appearing in different locations in one frame , they likely belong to different persons .
+-If there is more than one face appearing in different locations in one frame , they are likely to belong to different people .
+214
+If we have large video archives , using these heuristics we can collect a sufficient number of training samples for learning the relevance classifier .
+If we have large video archives , we can collect a sufficient number of training samples to learn the relevance classifier by using these heuristics .
+215
+To keep the assumption of visual consistency satisfied , the number of faces selected in each set Generating \MATH must be smaller than the number of faces in set Generating \MATH .
+To keep satisfying the assumption of visual consistency , the number of faces selected in each set Generating \MATH must be smaller than the number of faces in set Generating \MATH .
+216
+There are 527 video programs broadcast on 7 channels in 3 languages including English , Chinese and Arabic .
+There were 527 video programs broadcast on seven channels in three languages including English , Chinese , and Arabic .
+217
+To guarantee selected face tracks representing different persons , for one channel , only face tracks of one shot was picked .
+To guarantee selected face tracks representing different people , only the face tracks from one shot were picked for one channel .
+218
+As a result , there are 5 ,126 faces of 19 face tracks picked from the 7 channels corresponding to 19 different persons .
+As a result , there were 5 ,126 faces of 19 face tracks selected from the seven channels corresponding to 19 different people .
+219
+Note that , the system does not know the identity of these faces .
+Note that the system did not know the identity of these faces .
+220
+It only knows any two face tracks represent different persons .
+It only knew any two face tracks represented different people .
+221
+Using these face tracks , We generated 133 labeled sets described in Section \REF and used them for training the relevance classifier .
+We generated the 133 labeled sets described in Section \REF using these face tracks and used them to train the relevance classifier .
+222
+These names are widely used in experiments such as \CITE .
+These names have widely been used in experiments \CITE .
+223
+Each face is then represented as a point in a very high dimensional feature space .
+Each face was then represented as a point in a very high dimensional feature space .
+224
+In total , There were 13 feature points from which features are extracted .
+There were a total of 13 feature points from which features were extracted .
+225
+The features are intensity values lying within the circle with radius of 15 pixels .
+The features were intensity values lying within a circle with a radius of 15 pixels .
+226
+The output feature has 13x149 = 1 ,937 dimensions .
+The output feature had 13x149 = 1 ,937 dimensions .
+227
+-DistScore-TrainGoogleImages : The training set is the set of annotated faces returned by Google Images Search for 23 person names .
+-DistScore-TrainGoogleImages : The training set was the set of annotated faces returned by Google Images Search for 23 people�fs names .
+228
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+229
+-NNScore-TrainGoogleImages : The training set is the same as DistScore-TrainGoogleImages .
+-NNScore-TrainGoogleImages : The training set was the same as DistScore-TrainGoogleImages .
+230
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+231
+DistScore-TrainTRECVID : The feature vector is computed using .
+DistScore-TrainTRECVID : The feature vector was computed using .
+232
+The training set is the set of annotated faces artificially generated by our method described in Section \REF .
+The training set was the set of annotated faces artificially generated with our method described in Section \REF .
+233
+-NNScore-TrainTRECVID : The training set is the same as DistScore-TrainTRECVID .
+-NNScore-TrainTRECVID : The training set was the same as DistScore-TrainTRECVID .
+234
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+235
+-Krapac[11]-TrainGoogleImages : The training set is the same as DistScore-TrainGoogleImages .
+-Krapac[11]-TrainGoogleImages : The training set was the same as DistScore-TrainGoogleImages .
+236
+Since this method was proposed to handle images , not for faces , we modified it for handling faces .
+Since this method was proposed to handle images , not faces , we modified it to handle faces .
+237
+Specifically , Each face is represented as a bag of visual words .
+Each face was specifically represented as a bag of visual words .
+238
+The codebook is formed by clustering all visual words extracted from all faces of the training set into 200 clusters .
+The codebook was formed by clustering all visual words extracted from all faces of the training set into 200 clusters .
+239
+top-$k$ visual words strongly related to the returned faces of each query and the binary feature vector are computed as described in \CITE .
+The top-$k$ visual words strongly related to the returned faces of each query and the binary feature vector were computed as described in \CITE .
+240
+The method Krapac[11]-TrainGoogleImages is similar to our method in which one generic classifier is trained in advance and then is used for new queries .
+Krapac[11]-TrainGoogleImages is similar to our method in which one generic classifier is trained in advance and then used for new queries .
+241
+Figure \REF shows the performance comparison of these systems when testing on YahooNews Images dataset .
+Figure \REF compares the performance of these systems when they were tested on the YahooNews Images dataset .
+242
+-The performance of DistScore and NNScore are not affected by selecting the number of features .
+-The performance of DistScore and NNScore was not affected by selecting the number of features .
+243
+Therefore , we can use small number of features for reducing the computational cost .
+Therefore , we could use small numbers of features to reduce the computational cost .
+244
+-The performance of the system using the training data generated artificially by our method is comparable with that of the system using the training data returned by search engines .
+-The performance of the system using training data generated artificially with our method was comparable to that of the system using training data returned by search engines .
+245
+-Our proposed method DistScore-TrainTRECVID has comparable performance to the state of the art method in specific classifier-based approach Mensink[15]-Friends .
+-The method of DistScore-TrainTRECVID we propose performed comparably to the state-of-the-art method in the specific classifier-based approach of Mensink[15]-Friends .
+246
+It outperforms the method using only visual information Mensink[15]-GaussianModels .
+It outperformed the method where only visual information was used , i.e. , Mensink[15]-GaussianModels .
+247
+-Our proposed method DistScore-TrainTRECVID outperforms the method proposed by Krapac et al . customized for handling faces .
+-Our proposed method DistScore-TrainTRECVID outperformed the method proposed by Krapac et al. , which was customized to handle faces .
+248
+As shown in Figure \REF , DistScore-TrainTRECVID outperforms original ranking of Google Images Search Engine if using from 20 to 50 features .
+As seen in Figure \REF , DistScore-TrainTRECVID outperformed the original ranking of the Google Images Search Engine if from 20 to 50 features were used .
+249
+The result of DistScore-TrainTRECVID on YahooNews Images set and Google Images set indicates that the relevance classifier of our proposed method is able to generalize well on different queries and independent with underlying ranking algorithms of search engines .
+The results for DistScore-TrainTRECVID on the YahooNews Images set and Google Images set indicate that the relevance classifier with our proposed method was able to generalize well on different queries and was independent of underlying ranking algorithms used in search engines .
+250
+Our query-dependent feature is based on nearest neighbors of the images in the returned image set that usually have complexity of \MATH , where \MATH is the total number of images in the set .
+Our query-dependent feature was based on the nearest neighbors of images in the returned image set that usually have a complexity of \MATH , where \MATH is the total number of images in the set .
+251
+However , recent studies on indexing techniques such as \MATH -d tree , locality sensitive hashing ( LSH ) , and SASH \CITE can speed up the nearest neighbor search significantly .
+However , recent studies on indexing techniques such as \MATH -d tree , locality sensitive hashing ( LSH ) , and a Self Adaptive Set of Histograms ( SASH ) \CITE could significantly speed up the nearest neighbor search .
+252
+Instead of training a specific classifier for each new query , we train only one generic classifier and use it for ranking new queries .
+Instead of training a specific classifier for each new query , we only trained one generic classifier and used it for ranking new queries .
+253
+In the current digital environment , the mathematical content being published on the Web is increasing day by day . While more and more mathematical contents being available on the Web , retrieving mathematical contents becomes an important issue for many users .
+The mathematical content being published on the Web is increasing day by day , and retrieving mathematical content has become an important issue for many users .
+254
+Therefore , users need specialized search systems to nd the formula that is relevant to their requirements .
+Moreover , users need specialized search systems to find formulas that are relevant to their needs .
+255
+Relations between formulas and their name could also be used to correct errors in mathematical OCR systems , such as Infty [5] .
+The relationship between formulas and their names can also be used to correct errors in mathematical OCR systems , such as Infty [5] .
+256
+In this paper , we use the presentation MathML format for mathematical formulas .
+In this paper , we shall use the MathML format for mathematical formulas .
+257
+At this point , we use some heuristics to provide an adequate solution for matching mathematical formulas with their names .
+We used heuristics to ensure adequate matching of mathematical formulas with their names .
+258
+In the second case , users can input the mathematical formulas directly , for example : \MATH .
+In a formula content search , users directly input the formulas , for example : \MATH .
+259
+The experimental results have shown how helpful this information provides to the users of mathematical search .
+The experimental results showed how helpful this information is to mathematical search users .
+260
+Experimental results on the Wolfram Function Site show that our approach achieves an improvement against the prior rule-based system .
+Experimental results on the Wolfram Function Site show that our approach is an improvement over prior rule-based systems . // <Note : It seems that where were two prior systems that were compared . If not , you can go back to using a prior system .> .
+261
+The direct application of this is enabling semantic searches for mathematical expressions by understanding the intent of the searcher and the contextual meaning of mathematical terms improve search accuracy .
+The direct application of this idea enables semantic searches for mathematical expressions whereby the system 's �eunderstanding ' of the intent of the searcher and the contextual meaning of mathematical terms improves search accuracy .
+262
+There are three reasons why we choose MathML markup in our research .
+There are three reasons why we chose MathML markup in our research .
+263
+In this paper , we propose an approach that automatically learn the semantics inference from a presentation from parallel markup data .
+In this paper , we propose an approach that automatically learns semantic inferences in a presentation from parallel markup data . // <The original has too many from to be logically clear . The rewrite is a guess . > .
+264
+The probability distribution will be automatically learned from data that have both Presentation and Content MathML markup , that is the parallel markup MathML data .
+The probability distribution is automatically learned from both Presentation and Content MathML markup data , that is , parallel markup MathML data .
+265
+We set up another experiment to confirm the correlation between system performance and training set size and saw that increasing the size of training data actually boost the system performance .
+We performed another experiment to assess the correlation between the system 's performance and training set size and found that increasing the size of the training data boosted the system 's performance .
+266
+In some web pages , such as the Wikipedia site , a formula is displayed in both image and \TeX{} formats .
+In some web pages , such as on the Wikipedia site , formulas are displayed in both image and \TeX{} formats .
+267
+The similarity scores obtained were weighted , summed up , and normalized by the length of the considered context .
+The similarity scores obtained are weighted , summed up , and normalized by the length of the considered context .
+268
+The detail is described in the next section .
+The details are described in the next section .
+269
+Another example are the pairs of parentheses , it is used to indicate that the expressions in the parentheses go together , while its structure already encoded that information .
+Another example is pairs of parentheses ; these are used to indicate that the expressions in the parentheses go together , despite that their structure already encodes that information . // <The original is unclear . The rewrite is a guess . > .
+270
+For simplification , expressions with more than 200 content nodes also be removed .
+For simplification , expressions with more than 200 content nodes are also removed .
+271
+Each rule in fragment rule set is associated with its probability , that is the frequent that rule happened in the training data .
+Each rule in the fragment rule set is associated with a probability , that is , the frequency at which a rule occurs in the training data .
+272
+In the previous steps , we got two sets of rules , fragment rule set and translation rule set .
+In the previous steps , we get two sets of rules , a fragment rule set and a translation rule set .
+273
+- Second , the fragment rule is applied to the expression until it could not be divided any further .
+- Second , the fragment rule is applied to the expression until it cannot be divided any further .
+274
+- Third , the small sub-expressions in Presentation MathML markup will be translated into sub-expressions in Content MathML markup using translation rule set .
+- Third , the small sub-expressions in Presentation MathML markup are translated into sub-expressions in Content MathML markup by using the translation rule set .
+275
+These datasets we used contain 205 , 653 mathematical expressions belong to 6 categories .
+The datasets we used contain 205 , 653 mathematical expressions belonging to six categories .
+276
+Training and testing were performed using 10-fold cross-validation ; for each category , the original corpus is partitioned into 10 subsets .
+Training and testing were performed using ten-fold cross-validation ; for each category , the original corpus was partitioned into ten subsets .
+277
+Of the 10 subsets , a single subset is retained as the validation data for testing the model , and the remaining subsets are used as training data .
+Of the ten subsets , a single subset was retained as the validation data for testing the model , and the remaining subsets were used as training data .
+278
+The cross-validation process is then repeated 10 times , with each of the 10 subsets used exactly once as the validation data .
+The cross-validation process was repeated ten times , with each of the ten subsets used exactly once as the validation data .
+279
+The 10 results from the folds then are averaged to produce a single estimation .
+The ten results from the folds then were averaged to produce a single estimation .
+280
+In the first experiment , the data is not compatible with SnuggleTeX since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+In the first experiment , the data was not compatible with SnuggleTeX since SnuggleTeX uses ASCII MathML but the Wolfram Functions site does not .
+281
+For the data in Wolfram Function site , it appeared that SnuggleTeX is not applicable to this data since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+It appeared that SnuggleTeX was not applicable to the data from the Wolfram Function site since it uses ASCII MathML but the site does not .
+282
+We started with one fifth of the data , and then increase data one fifth each run .
+We started with one fifth of the data and increased the data by one fifth in each run .
+283
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expression to a Content MathML expression has the significant improvement over a prior system .
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expressions to Content MathML expressions is a significant improvement over prior systems .
+284
+Recent research shows a major part of difficult cases in event extraction for the biomedical domain are related to coreference .
+Current research has shown that major difficulties in event extraction cases for the biomedical domain are related to coreference .
+285
+We compared our system with the top four systems in the BioNLP-ST 2011 , and surprisingly we found that the minimal configuration has outperformed the best system in the BioNLP-ST 2011 .
+We compared our system with the top four systems in the BioNLP-ST 2011 ; surprisingly , we found that the minimal configuration had outperformed the best system in the BioNLP-ST 2011 .
+286
+Analysis of the experimental results showed that semantic classification using protein information has contributed to an increase in performance ( 2.3 % on the test data , and 4 .0% on the development data , in F-score ) .
+Analysis of the experimental results revealed that semantic classification , using protein information , had contributed to an increase in performance by 2.3 % on the test data , and 4 .0% on the development data , in F-score .
+287
+Since such information is difficult to be transferred across different domains , we need to continue seeking for methods to exploit and use it in coreference resolution .
+Since it is difficult to transfer domain-specific information across different domains , we need to continue to seek methods to exploit and use it in coreference resolution .
+288
+- " . . . ,the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+- " [ . . . ] the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+289
+The analysis results in also showed that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type are 27 .5% F-score and 10 .1 F-score respectively , which are far less than that for relative pronoun ( the RELAT type ) 66 .2 % F-score .
+An analysis of the results indicated that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type was 27 .5% F-score and 10 .1 F-score , respectively ; the scores were much lower than the F-score for relative pronouns ( the RELAT type ) , which yielded a 66 .2 % F-score .
+290
+In this paper , we compare the contributions of different features in coreference resolution , two simple types of domain-portable information : discourse preference and number-agreement , and domain-specific information which can be considered as more difficult to be transferred across different domains .
+In this paper , we compare the contributions of different features in coreference resolution ; two simple types of domain-portable information : discourse preference and number-agreement , is compared , as well as domain-specific information , which is considered to be more difficult to be transferred across different domains .
+291
+Window size sets a border to include or exclude antecedent candidates .
+Window size Borders are set to include or exclude antecedent candidates .
+292
+For this type of anaphors , any syntactic parser can be used to find the relations between relative pronouns and their arguments .
+For these types of anaphors , any syntactic parser can be used to find the relation between relative pronouns and their arguments .
+293
+This paper focuses on the word segmentation issues since the most basic unit of a treebank is word ( Di Sciullo and Edwin , 1987 ) , and defining `` What are words ? '' is the first problem that a treebank has to solve ( Xia , 2000b ,a ; Sornlertlamvanich et al ., 1997 , 1999 ) .
+This paper focuses on the word segmentation , since the most basic unit of a treebank are words ( Di Sciullo and Edwin , 1987 ) , and defining `` words '' is the first step ( Xia , 2000b ,a ; Sornlertlamvanich et al ., 1997 , 1999 ) .
+294
+However , for some tokens , we could not find any appropriate English translation , so we give it an empty translation marked with an asterisk .
+However , for some tokens , we could not find any appropriate English translation , so we gave it an empty translation , marked with an asterisk .
+295
+Only one instance is an ambiguous sequence giá c , which is one word when it means price , and two words giá / price c / all in đàu có giá c / all have ( their own ) price .
+Only one instance of inconsistency was an ambiguous sequence giá c , which is one word when it means price , and two words giá / price c / all in đàu có giá c / all have ( their own ) price .
+296
+Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining affxes with their head nouns resulted in slightly better results for WS , TC , and does not change the performance of SMT .
+Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining affxes with their head nouns resulted in slightly better results for WS and TC , and did not change the performance of SMT .
+297
+Although these approaches shown promising results on benchmark datasets , they require high computational costs to characterize the representation of face-tracks , such as computing the convex geometric region in \CITE , the probability in \CITE , and the eigenvectors in \CITE .
+Although these approaches have shown promising results in benchmark datasets , they require high computational costs to characterize the representation of face tracks , such as computing the convex geometric region in \CITE , the probability in \CITE , and the eigenvectors in \CITE .
+298
+The remaining of this paper is organized as follows .
+The remainder of this paper is organized as follows .
+299
+Then , in the second step , detected faces of the same character will be grouped by using either clustering approaches \CITE or tracking approaches \CITE .
+, In the second step , the detected faces of the same character are grouped by using either clustering \CITE or tracking approaches \CITE .
+300
+A concatenated vector of the normalized color histograms represents the face .
+A concatenated vector of the normalized color histogram represented the face .
+301
+Another way of using tracker is introduced by Everingham et al .
+Another way of using a tracker was introduced by Everingham et al .
+302
+They than use the trained statistical face model to incorporate identity evidence over a sequence .
+They then used the trained statistical face model to incorporate identity evidence over a sequence .
+303
+Cevikalp and Triggs \CITE claimed a face sequence was a set of points and discovered a convex geometric region expanded by these points .
+Cevikalp and Triggs \CITE claimed that a face sequence is a set of points and discovered a convex geometric region expanded by these points .
+304
+Our contribution here is to make the face-track extraction approach robust to sudden illumination changes , scattered appearance of characters , and occlusions.
+Our contribution here is making the face-track extraction approach robust to sudden illumination changes , scattered appearances of characters , and occlusions.
+305
+in \CITE propose to use KLT tracker for this purpose .
+in \CITE proposed the use of a KLT tracker for this purpose .
+306
+And , faces appeared in those frames are less informative for recognition since most of the facial identity characteristics are loss due to overlighting .
+and that the , faces that appear in those frames are less informative for recognition because most of the facial identity characteristics are lost due to over-lighting .
+307
+This helps us to save computational cost as well as to avoid tracking errors caused by transition effects between shots .
+This helps us to save on computational cost and avoid tracking errors caused by transition effects between shots .
+308
+A face detector based on Viola-Jones approach \CITE was used for detecting near frontal faces in every frame of these video sequences .
+A face detector based on the Viola-Jones approach \CITE is used to detect near frontal faces in every frame of the video sequences .
+309
+Thus , there is no clue to re-group face of that person after such full occlusions .
+After such full occlusions , there is no clue to regrouping the face of that person .
+310
+However , we observe that fully occlusion is rarely happened in news video since characters reported in the news are recorded with care , especially with important and well-known character .
+Nevertheless , we observe that full occlusion rarely happens in news video because the characters featured in the news are recorded with care , especially the important and well-known ones .
+311
+The whole process , including detecting shot boundaries and face-track extraction , is fully automatic.
+The whole process , including shot boundary detection and face-track extraction , is fully automated.
+312
+All of these approaches had been shown their robustness on benchmark datasets , such as MoBo , HondaUCSD , and Youtube Faces .
+All of these approaches have shown their robustness in benchmark datasets , such as MoBo , HondaUCSD , and YouTube Faces .
+313
+In the original way , we proposed to select these faces by partitioning the face-track following temporal order and selecting the middle face of each partition .
+In the original way , we proposed selecting these faces by partitioning the face track according to the temporal order and choosing the middle face of each partition .
+314
+Secondly , videos in NHKNews7 are recorded during a long time ( i.e. , 11 years ) .
+Second , the videos in NHKNews7 were recorded over a long time ( i.e. , 11 years ) .
+315
+A reasonable replacement can be Euclidean distance .
+A reasonable replacement is the Euclidean distance .
+316
+One may concern that why MSM perform poorly on Trecvid dataset , but it is superior to our k-Faces.Temporal on NHKNews7 .
+One may question why MSM performed poorly in the Trecvid dataset , but was superior to k-Faces.Temporal in NHKNews7 .
+317
+As a result , the exponential growth of image repositories creates the urgent needs for searching images . Because of its importance and wide applications , image search has attracted more interest in recent years .
+The resulting exponential growth of image repositories , however , has created an urgent need for effective ways of searching images .
+318
+A normal user without prior knowledge about the retrieved database has no choice but search by trial-and-error .
+A normal user without prior knowledge about a database has no choice but to search it by trial-and-error .
+319
+The efficiency advantages of our approach come from various methodologies .
+The advantage in efficiency comes from our use of various methodologies .
+320
+Based on these insights , we make an yet another efficiency boost by formulating the problem as an optimization problem which can be solved by applying a branh-and-bound algorithm .
+Based on this insight , we can boost efficiency yet again by formulating the problem as an optimization problem that can be solved by applying a branch-and-bound algorithm .
+321
+There is a pool of region pairs if we compare each region in the initial query image with each region in images of the database .
+There will be a pool of region pairs if we compare each region in the initial query image with each region in images of the database .
+322
+They are perceived as the same item by human being .
+These regions would be perceived as the same item by users .
+323
+Once \MATH is found , we can obtain the other top region pairs by continuing the search processs with the remaining search spaces , in which found top pairs eliminated .
+Once \MATH is found , we can obtain the other top region pairs by continuing the search process with the remaining search space , in which the found top pairs have been eliminated .
+324
+Otherwise , given \MATH with \MATH are direct child nodes of \MATH , \MATH can be recursively defined as follows : \MATH
+Otherwise , given \MATH with \MATH being direct child nodes of \MATH , \MATH can be recursively defined as follows : \MATH
+325
+We then rely on NHI to define \MATH bounding the values of \MATH , with : \MATH
+We will then rely on NHI to define \MATH bounding the values of \MATH , with : \MATH
+326
+To obtain more than one region pair , we simply continue the loop in the Algorithm 1 until the expected number of region pairs \MATH have been reached .
+To obtain more than one region pair , we simply repeat the loop in Algorithm 1 until the expected number of region pairs \MATH is reached .
+327
+Note that , because the hierarchical for regions of images in the database is independent of query , we construct it only one time .
+Note that because the hierarchy of the regions of images in the database is independent of the query , we construct it only one time .
+328
+This number is then divided by the size of all possible region pairs formed by regions in the initial query image and regions in images of the database .
+This number was then divided by the size of all possible region pairs formed by regions in the initial query image and regions in images of the database . //< " the size of all possible region pairs " is unclear to me . Do you mean " the average size of all possible region pairs " or " the sizes of all possible region pairs " ?>
+329
+Note that , regions in images are pre-selected as in Step 1 of our framework .
+Note that regions in images were pre-selected as in Step 1 of our framework .
+330
+Visual words in images are located by dense grid sampling and Different-of-Gaussian( DoG ) detector .
+Visual words in the images were located by using dense grid sampling and a Different-of-Gaussian ( DoG ) detector .
+331
+A codebook of 2000 visual words is built using standard K-Means algorithm .
+A codebook of 2000 visual words was built using the standard K-Means algorithm .
+332
+%to cluster points on a set of random images .% Additionally , the set of interest points obtained by DoG in the query image is used to remove regions without any of such points inside .
+%to cluster points on a set of random images .% Additionally , the set of points of interest obtained by the DoG in the query image was used to remove regions without any such points inside .
+333
+As mentioned above , we use the approach introduced in \CITE on different color channel for region selection .
+As mentioned above , we used the approach first introduced in \CITE on different color channels for the region selection .
+334
+A virtual root node is created to compose two color-dependent binary trees into one unique binary tree for each image .
+A virtual root node was created to compose two color-dependent binary trees into one unique binary tree for each image .
+335
+In addition , rectangular regions which do not contain any visual word or are smaller than 40 x 40 pixels are discarded .% since they can form a meaningful recommendation .
+In addition , the rectangular regions which did not contain any visual word or were smaller than 40 x 40 pixels were discarded .% since they can form a meaningful recommendation .
+336
+Given the set of regions in the initial query image , we build a graph in which two regions are connected if they highly overlap each other ( we use the approach of Pascal VOC with tighter threshold , 0 .8 ) .
+Given the set of regions in the initial query image , we built a graph in which two regions were connected if they nearly overlapped each other ( we use the approach of Pascal VOC with a tighter threshold , 0 .8 ) .
+337
+Bron-Kerbosch algorithm is then applied to find all maximal cliques in the graph .
+The Bron-Kerbosch algorithm was then applied to find all maximal cliques in the graph .
+338
+One clique is one group of regions .
+One clique was one group of regions .
+339
+On the returned list of all recommendations , a hit recommendation usually takes the first two places on the list .
+On the returned list of all recommendations , hit recommendations usually take the first two places on the list .
+340
+We observed that there are two types of false recommendations on the top places of the list .
+There were two types of false recommendation in the top places of the list .
+341
+The second type is the items lacking of manual annotation such as windows , cars and humans .
+The second type was items lacking manual annotations such as windows , cars , and humans .
+342
+However , if users are interested in using them as hints to explore the database , they are still very much helpful .
+However , if users are interested in using them as hints to explore the database , they may still be very helpful .
+343
+By increasing \MATH , we obtain more region pairs with sufficient hight similarity scores .
+By increasing \MATH , we can obtain more region pairs with sufficiently high similarity scores .
+344
+Its superiority is important for practical applications .
+This advantage will be important for practical applications .
+345
+An efficient solution to make Recommend-Me practical is presented .
+An efficient solution to make Recommend-Me practical was also presented .
