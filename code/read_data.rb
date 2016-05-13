@@ -86,22 +86,23 @@ class ReadData
     merge_aln_crp(merged_aln_crp)
 
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
 
-    # data_SWA = convert_to_Meteor_tag(data_SWA)
+    data_SWA = refine_tag_preserved(data_SWA)
+    data_SWA = convert_to_Meteor_tag(data_SWA)
     # data_meteor_blast = insert_unaligned(data_meteor_blast)
-    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
 
     # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec"]
-    # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    # puts "#{count_tags(data_SWA, tags)}"
+    tags = ["exact", "stem", "syn", "para", "unaligned"]
+    puts "#{count_tags(data_SWA, tags)}"
     # puts "#{count_tags(data_meteor_blast, tags)}"
-    # puts "#{count_tags(data_meteor_1_5, tags)}"
+    puts "#{count_tags(data_meteor_1_5, tags)}"
     # puts "\n"
 
     puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}"
-    puts "#{compare_data_alignment(data_SWA, data_meteor_blast)}"
+    # puts "#{compare_data_alignment(data_SWA, data_meteor_blast)}"
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
@@ -132,8 +133,8 @@ class ReadData
 
 
     # data_SWA.each_with_index do |line, index|
-    #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
-    #   break if line.source.include? "The conditional probability of a label sequence"
+    #   puts "#{line}\n\n" if line.source.include? "Boosting [3] and its variants"
+    #   break if line.source.include? "Boosting [3] and its variants"
     # end 
     # data_meteor_blast.each_with_index do |line, index|
     #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
@@ -152,8 +153,6 @@ class ReadData
     #   puts "#{line}\n\n" if index == 2784
     #   break if index == 2784
     # end
-
-
 
     # # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
     # puts "#{data_meteor_1_5.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
@@ -276,11 +275,6 @@ class ReadData
       end
     end
 
-    # data.each_with_index do |e, index|
-    #   puts "-------------------------------------"
-    #   puts e.inspect
-    #   break if index > 3
-    # end
     return data
   end
 
@@ -437,6 +431,38 @@ class ReadData
       end
     end
     return data
+  end
+
+  def refine_tag_preserved(data)
+    data.each do |line| 
+
+      aln_arrs = []
+      aln_delete = []
+      line.Alignment.each_with_index do |aln,i|
+        if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
+          aln_arrs << break_alignment(aln)
+          aln_delete << i
+        end
+      end
+
+      # delete old preserved alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+
+      # add new preserved alignments into the original array
+      line.Alignment << aln_arrs.flatten
+      line.Alignment.flatten!
+    end 
+    return data
+  end
+
+  def break_alignment(aln)
+    aln_arr = []
+    source_tmp = aln.source_numbers.split(",").map { |e| e.to_i }.sort
+    target_tmp = aln.target_numbers.split(",").map { |e| e.to_i }.sort
+    source_tmp.each_with_index do |line,i|
+      aln_arr << Alignment.new(source_tmp[i].to_s,target_tmp[i].to_s,"preserved")
+    end
+    return aln_arr
   end
 
   def count_alignment(sentence_pair_array)
