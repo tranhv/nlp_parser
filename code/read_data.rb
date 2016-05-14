@@ -1,7 +1,83 @@
+require 'engtagger'
+require 'lemmatizer'
+
 class ReadData
   DATA_PATH = "./data"
   Sentence_Pair = Struct.new(:source, :target, :Alignment)
   Alignment = Struct.new(:source_numbers, :target_numbers, :tag_name)
+
+  Features = Struct.new(:s_str,
+                        :t_str,
+                        :st_samestr,
+                        :s_stem, 
+                        :t_stem,
+                        :st_samestem,
+                        :s_pos, # NN JJ
+                        :t_pos,
+                        :st_precede, #precede word (compare 2 words target vs source)
+                        :st_follow, #following word (compare 2 words target vs source)
+                        # :st_matrix1, Mấy thuộc tính này chưa biết làm
+                        # :st_matrix2,
+                        # :st_matrix3,
+                        # :st_matrix4,
+                        # :st_matrix5,
+                        # :st_matrix6,
+                        # :st_matrix7,
+                        # :st_matrix8,
+                        :tag_name
+                        )
+
+  
+  def get_list_of_features(data)
+    #Todo: build Array of Features
+    data_features = []
+    
+    data.each_with_index do |sentence_pair, index|
+      sentence_pair.Alignment.each_with_index do |align, index_aln|
+        data_features << get_feature(align, sentence_pair)
+      end
+    end
+
+  end
+
+  def get_feature(align, sentence_pair)
+    feature = Features.new
+    feature.s_str = get_string_by(align.source_numbers, sentence_pair.source)
+    feature.t_str = get_string_by(align.target_numbers, sentence_pair.target)
+    feature.st_samestr = (feature.s_str == feature.t_str)
+    feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))
+    feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))
+    feature.s_stem = get_stem_by_data(feature.s_str)
+    feature.t_stem = get_stem_by_data(feature.t_str)
+    feature.st_samestem = (feature.s_stem == feature.t_stem)
+
+
+    return feature
+  end
+
+  def get_stem_by_data(data)
+    data.split(" ").map { |e| get_stem(e) }.join(" ")
+  end
+
+  def get_stem(value)
+    lem = Lemmatizer.new
+    lem.lemma(value)
+  end
+
+  def get_precede_word(index_string, data)
+    precede_index = index_string.split(",").map { |e| e.to_i }.sort.first
+    return data.split(" ")[precede_index]
+  end
+
+  def get_following_word(index_string, data)
+    precede_index = index_string.split(",").map { |e| e.to_i }.sort.reverser.first
+    return data.split(" ")[precede_index]
+  end
+
+  def get_string_by_index(index_string, data)
+    return index_string.split(",").map{|e| data.split(" ")[e.to_i]}.join(" ")
+  end
+
 
   def get_aln
     array_alns = []
