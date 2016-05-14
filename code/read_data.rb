@@ -27,7 +27,11 @@ class ReadData
                         :tag_name
                         )
 
-  
+  def print_arff(data)
+    data_features = get_list_of_features(data)
+
+  end
+
   def get_list_of_features(data)
     #Todo: build Array of Features
     data_features = []
@@ -36,27 +40,26 @@ class ReadData
       sentence_pair.Alignment.each_with_index do |align, index_aln|
         data_features << get_feature(align, sentence_pair)
       end
+      puts "#{data_features}" if sentence_pair.source.include? "This paper analyzes the effects"
     end
-
+    return data_features
   end
 
   def get_feature(align, sentence_pair)
     feature = Features.new
-    feature.s_str = get_string_by(align.source_numbers, sentence_pair.source)
-    feature.t_str = get_string_by(align.target_numbers, sentence_pair.target)
+    feature.s_str = get_string_by_index(align.source_numbers, sentence_pair.source)
+    feature.t_str = get_string_by_index(align.target_numbers, sentence_pair.target)
     feature.st_samestr = (feature.s_str == feature.t_str)
     feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))
     feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))
-    feature.s_stem = get_stem_by_data(feature.s_str)
-    feature.t_stem = get_stem_by_data(feature.t_str)
+    feature.s_stem = get_stem_string(feature.s_str)
+    feature.t_stem = get_stem_string(feature.t_str)
     feature.st_samestem = (feature.s_stem == feature.t_stem)
-
-
     return feature
   end
 
-  def get_stem_by_data(data)
-    data.split(" ").map { |e| get_stem(e) }.join(" ")
+  def get_stem_string(str)
+    str.split(" ").map { |e| get_stem(e) }.join(" ")
   end
 
   def get_stem(value)
@@ -64,20 +67,25 @@ class ReadData
     lem.lemma(value)
   end
 
-  def get_precede_word(index_string, data)
+  # Given the string index and the source/target sentence,
+  # return the preceding word
+  def get_precede_word(index_string, sentence)
+    return "" if index_string.empty?
     precede_index = index_string.split(",").map { |e| e.to_i }.sort.first
-    return data.split(" ")[precede_index]
+    return sentence.split(" ")[precede_index]
   end
 
-  def get_following_word(index_string, data)
-    precede_index = index_string.split(",").map { |e| e.to_i }.sort.reverser.first
-    return data.split(" ")[precede_index]
+  # Given the string index and the source/target sentence,
+  # return the following word
+  def get_following_word(index_string, sentence)
+    return "" if index_string.empty?
+    precede_index = index_string.split(",").map { |e| e.to_i }.sort.reverse.first
+    return sentence.split(" ")[precede_index]
   end
 
-  def get_string_by_index(index_string, data)
-    return index_string.split(",").map{|e| data.split(" ")[e.to_i]}.join(" ")
+  def get_string_by_index(index_string, sentence)
+    return index_string.split(",").map{|e| sentence.split(" ")[e.to_i]}.join(" ")
   end
-
 
   def get_aln
     array_alns = []
@@ -172,13 +180,14 @@ class ReadData
 
     # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec"]
     tags = ["exact", "stem", "syn", "para", "unaligned"]
-    puts "#{count_tags(data_SWA, tags)}"
+    # puts "#{count_tags(data_SWA, tags)}"
     # puts "#{count_tags(data_meteor_blast, tags)}"
-    puts "#{count_tags(data_meteor_1_5, tags)}"
+    # puts "#{count_tags(data_meteor_1_5, tags)}"
     # puts "\n"
 
-    puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}"
+    # puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}"
     # puts "#{compare_data_alignment(data_SWA, data_meteor_blast)}"
+    get_list_of_features(data_SWA)
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
