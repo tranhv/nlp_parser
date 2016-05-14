@@ -27,21 +27,28 @@ class ReadData
                         :tag_name
                         )
 
+  def lemmatizer
+    return @Lemmatizer if @Lemmatizer
+    @Lemmatizer = Lemmatizer.new
+  end
+
   def print_arff(data)
     data_features = get_list_of_features(data)
 
   end
 
   def get_list_of_features(data)
+    puts "Start #{Time.now}"
     #Todo: build Array of Features
     data_features = []
-    
+    puts "data --> #{data.count}"
     data.each_with_index do |sentence_pair, index|
       sentence_pair.Alignment.each_with_index do |align, index_aln|
         data_features << get_feature(align, sentence_pair)
       end
       puts "#{data_features}" if sentence_pair.source.include? "This paper analyzes the effects"
     end
+    puts "End #{Time.now}"
     return data_features
   end
 
@@ -63,8 +70,7 @@ class ReadData
   end
 
   def get_stem(value)
-    lem = Lemmatizer.new
-    lem.lemma(value)
+    lemmatizer.lemma(value)
   end
 
   # Given the string index and the source/target sentence,
@@ -72,7 +78,7 @@ class ReadData
   def get_precede_word(index_string, sentence)
     return "" if index_string.empty?
     precede_index = index_string.split(",").map { |e| e.to_i }.sort.first
-    return sentence.split(" ")[precede_index]
+    return sentence.split(" ")[precede_index - 1]
   end
 
   # Given the string index and the source/target sentence,
@@ -80,7 +86,7 @@ class ReadData
   def get_following_word(index_string, sentence)
     return "" if index_string.empty?
     precede_index = index_string.split(",").map { |e| e.to_i }.sort.reverse.first
-    return sentence.split(" ")[precede_index]
+    return sentence.split(" ")[precede_index + 1]
   end
 
   def get_string_by_index(index_string, sentence)
@@ -164,22 +170,22 @@ class ReadData
   end  
 
   def main
-    get_data_giza(DATA_PATH + "/test.UA3.final")
-    merged_aln_crp = File.open(DATA_PATH + "/merged_aln_crp.txt","w")
-    merged_aln_crp.write("")
-    merge_aln_crp(merged_aln_crp)
+    # get_data_giza(DATA_PATH + "/test.UA3.final")
+    # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
+    # merged_aln_crp.write("")
+    # merge_aln_crp(merged_aln_crp)
 
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
-    data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
 
-    data_SWA = refine_tag_preserved(data_SWA)
-    data_SWA = convert_to_Meteor_tag(data_SWA)
-    # data_meteor_blast = insert_unaligned(data_meteor_blast)
-    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    # data_SWA = refine_tag_preserved(data_SWA)
+    # data_SWA = convert_to_Meteor_tag(data_SWA)
+    # # data_meteor_blast = insert_unaligned(data_meteor_blast)
+    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
 
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec"]
-    tags = ["exact", "stem", "syn", "para", "unaligned"]
+    # # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec"]
+    # tags = ["exact", "stem", "syn", "para", "unaligned"]
     # puts "#{count_tags(data_SWA, tags)}"
     # puts "#{count_tags(data_meteor_blast, tags)}"
     # puts "#{count_tags(data_meteor_1_5, tags)}"
