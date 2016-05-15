@@ -1529,7 +1529,7 @@ corpus,corpus,1,corpus,corpus,1,NNS,NNS,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 character,character,1,character,character,1,NN,NN,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
-',',1,?,?,1,PPR,PPR,1,1,preserved
+'\'','\'',1,\,\,1,SYM,SYM,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 replaced,replaced,1,replace,replace,1,VBN,VBN,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
@@ -2238,7 +2238,7 @@ for,for,1,for,for,1,IN,IN,1,0,preserved
 WSJ,WSJ,1,WSJ,WSJ,1,NNP,NNP,0,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 97,97,1,97,97,1,CD,CD,1,1,preserved
-.53\%,.53\%,1,.53\%,.53\%,1,NN,NN,1,1,preserved
+'.53\%','.53\%',1,'.53\%','.53\%',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 Table,Table,1,Table,Table,1,NNP,NNP,1,1,preserved
 \REF,\REF,1,\REF,\REF,1,NNP,NNP,1,1,preserved
@@ -3517,7 +3517,7 @@ as,as,1,as,as,1,IN,IN,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 Lift,Lift,1,Lift,Lift,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-don't,don't,1,dont,dont,1,RB,RB,1,1,preserved
+'don\'t','don\'t',1,don\t,don\t,1,POS,POS,1,1,preserved
 shove,shove,1,shove,shove,1,VB,VB,1,1,preserved
 lift!,lift!,1,lift!,lift!,1,PP,PP,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
@@ -4849,7 +4849,7 @@ reported,reported,1,report,report,1,VBN,VBN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 be,be,1,be,be,1,VB,VB,1,1,preserved
 over,over,1,over,over,1,IN,IN,1,0,preserved
-98\%,98%,0,98\%,98%,0,NN,NN,1,1,preserved
+'98\%','98%',0,'98\%','98%',0,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,0,1,preserved
 news,news,1,news,news,1,NN,NN,1,0,preserved
 text,texts,0,text,text,1,NN,NNS,1,1,bigrammar-others
@@ -4865,7 +4865,7 @@ method,method,1,method,method,1,NN,NN,1,0,preserved
 latticelm,latticelm,1,latticelm,latticelm,1,NN,NN,0,0,preserved
 achieved,achieved,1,achieve,achieve,1,VBN,VBN,0,1,preserved
 66,66,1,66,66,1,CD,CD,1,1,preserved
-.6%,.6%,1,.6%,.6%,1,NN,NN,1,1,preserved
+'.6%','.6%',1,'.6%','.6%',1,POS,POS,1,1,preserved
 accuracy,accuracy,1,accuracy,accuracy,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 Mochihashi,Mochihashi,1,Mochihashi,Mochihashi,1,NNP,NNP,1,1,preserved
@@ -5226,7 +5226,7 @@ Bilingual,Bilingual,1,Bilingual,Bilingual,1,JJ,JJ,1,1,preserved
 Corpus,Corpus,1,Corpus,Corpus,1,NNP,NNP,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 Wikipedia,Wikipedia,1,Wikipedia,Wikipedia,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 Kyoto,Kyoto,1,Kyoto,Kyoto,1,NNP,NNP,1,1,preserved
 Articles,Articles,1,Articles,Articles,1,NNPS,NNPS,1,1,preserved
 2,2,1,2,2,1,CD,CD,1,1,preserved
@@ -5903,7 +5903,7 @@ lowercase,lowercase,1,lowercase,lowercase,1,NN,NN,1,1,preserved
 English,English,1,English,English,1,NNP,NNP,1,0,preserved
 text,texts,0,text,text,1,NN,NNS,1,1,bigrammar-others
 by,by,1,by,by,1,IN,IN,0,1,preserved
-Moses',Moses',1,Moses,Moses,1,POS,POS,1,1,preserved
+'Moses\'','Moses\'',1,Moses\,Moses\,1,NNP,NNP,1,1,preserved
 tokenizer,tokenizer,1,tokenizer,tokenizer,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 lowercase,lowercase,1,lowercase,lowercase,1,NN,NN,1,1,preserved
@@ -5914,7 +5914,7 @@ language,language,1,language,language,1,NN,NN,0,1,preserved
 models,models,1,model,model,1,NNS,NNS,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 target,target,1,target,target,1,NN,NN,1,1,preserved
-languages',languages',1,language,language,1,POS,POS,1,1,preserved
+'languages\'','languages\'',1,languages\,languages\,1,NN,NN,1,1,preserved
 training,training,1,train,train,1,NN,NN,1,1,preserved
 data,data,1,datum,datum,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -6017,7 +6017,7 @@ al.,al.,1,al.,al.,1,PP,PP,1,1,preserved
 Reverse,Reverse,1,Reverse,Reverse,1,VBP,VBP,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 phrase,phrase,1,phrase,phrase,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 word,word,1,word,word,1,NN,NN,1,1,preserved
 orders,orders,1,order,order,1,NNS,NNS,1,1,preserved
 when,when,1,when,when,1,WRB,WRB,1,1,preserved
@@ -6080,7 +6080,7 @@ when,when,1,when,when,1,WRB,WRB,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 head,head,1,head,head,1,NN,NN,1,1,preserved
 verb,verb,1,verb,verb,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 voice,voice,1,voice,voice,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 passive,passive,1,passive,passive,1,JJ,JJ,1,1,preserved
@@ -6402,7 +6402,7 @@ supervised,supervised,1,supervise,supervise,1,JJ,JJ,1,1,preserved
 result,result,1,result,result,1,NN,NN,1,1,preserved
 was,was,1,be,be,1,VBD,VBD,1,1,preserved
 KyTea,KyTea,1,KyTea,KyTea,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 39,39,1,39,39,1,CD,CD,1,1,preserved
 .82,.82,1,.82,.82,1,CD,CD,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -7596,7 +7596,7 @@ each,each,1,each,each,1,DET,DET,1,1,preserved
 word,word,1,word,word,1,NN,NN,1,0,preserved
 each,each,1,each,each,1,DET,DET,0,1,preserved
 word,word,1,word,word,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 treated,treated,1,treat,treat,1,VBN,VBN,1,1,preserved
@@ -7692,7 +7692,7 @@ interaction,interaction,1,interaction,interaction,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 word,word,1,word,word,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
 ambiguity,ambiguity,1,ambiguity,ambiguity,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,0,preserved
@@ -8291,9 +8291,9 @@ relation,relation,1,relation,relation,1,NN,NN,1,1,preserved
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
 The,The,1,The,The,1,DET,DET,1,1,preserved
 synset,synset,1,synset,synset,1,NN,NN,1,1,preserved
-{group#1,{group#1,1,{group#1,{group#1,1,CD,CD,1,1,preserved
+'{group#1','{group#1',1,'{group#1','{group#1',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-grouping#1},grouping#1},1,grouping#1},grouping#1},1,RRB,RRB,1,1,preserved
+'grouping#1}','grouping#1}',1,'grouping#1}','grouping#1}',1,PPS,PPS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
 broad,broad,1,broad,broad,1,JJ,JJ,1,1,preserved
@@ -8310,17 +8310,17 @@ group,.group,0,group,.group,0,NN,NNP,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
 lower,lower,1,low,low,1,JJR,JJR,1,1,preserved
 synsets,synsets,1,synset,synset,1,NNS,NNS,1,1,preserved
-{social,{social,1,{social,{social,1,JJ,JJ,1,1,preserved
-group#1},group#1},1,group#1},group#1},1,RRB,RRB,1,1,preserved
+'{social','{social',1,'{social','{social',1,PPR,PPR,1,1,preserved
+'group#1}','group#1}',1,'group#1}','group#1}',1,PPS,PPS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-{organization#1,{organization#1,1,{organization#1,{organization#1,1,CD,CD,1,1,preserved
+'{organization#1','{organization#1',1,'{organization#1','{organization#1',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-organisation#3},organisation#3},1,organisation#3},organisation#3},1,RRB,RRB,1,1,preserved
+'organisation#3}','organisation#3}',1,'organisation#3}','organisation#3}',1,PPS,PPS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-{institution#1,{institution#1,1,{institution#1,{institution#1,1,CD,CD,1,1,preserved
+'{institution#1','{institution#1',1,'{institution#1','{institution#1',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-establishment#2},establishment#2},1,establishment#2},establishment#2},1,RRB,RRB,1,1,preserved
+'establishment#2}','establishment#2}',1,'establishment#2}','establishment#2}',1,PPS,PPS,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 more,more,1,more,more,1,JJR,JJR,1,1,preserved
@@ -8725,7 +8725,7 @@ achieved,achieved,1,achieve,achieve,1,VBN,VBN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 accuracies,accuracies,1,accuracy,accuracy,1,NNS,NNS,1,1,preserved
 65,65,1,65,65,1,CD,CD,1,1,preserved
-.3%,.3%,1,.3%,.3%,1,NN,NN,1,1,preserved
+'.3%','.3%',1,'.3%','.3%',1,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 Senseval-2,Senseval-2,1,Senseval-2,Senseval-2,1,CD,CD,1,1,preserved
@@ -8736,7 +8736,7 @@ data,data,1,datum,datum,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 63,63,1,63,63,1,CD,CD,1,1,preserved
-.4%,.4%,1,.4%,.4%,1,NN,NN,1,1,preserved
+'.4%','.4%',1,'.4%','.4%',1,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 Senseval-3,Senseval-3,1,Senseval-3,Senseval-3,1,CD,CD,1,1,preserved
@@ -8772,14 +8772,14 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 SemCor,SemCor,1,SemCor,SemCor,1,NNP,NNP,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 75,75,1,75,75,1,CD,CD,1,1,preserved
-.9%,.9%,1,.9%,.9%,1,NN,NN,1,1,preserved
+'.9%','.9%',1,'.9%','.9%',1,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 brown1,brown1,1,brown1,brown1,1,CD,CD,1,1,preserved
 section,section,1,section,section,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 74,74,1,74,74,1,CD,CD,1,1,preserved
-.3%,.3%,1,.3%,.3%,1,NN,NN,1,1,preserved
+'.3%','.3%',1,'.3%','.3%',1,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 brown2,brown2,1,brown2,brown2,1,CD,CD,1,1,preserved
@@ -9447,7 +9447,7 @@ tagging,tagging,1,tag,tag,1,VBG,VBG,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 typically,typically,1,typically,typically,1,RB,RB,1,1,preserved
 around,around,1,around,around,1,IN,IN,1,1,preserved
-70%,70%,1,70%,70%,1,NN,NN,1,1,preserved
+'70%','70%',1,'70%','70%',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
@@ -9523,7 +9523,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 inter-annotator,inter-annotator,1,inter-annotator,inter-annotator,1,JJ,JJ,1,1,preserved
 agreements,agreements,1,agreement,agreement,1,NNS,NNS,1,0,preserved
 'are turned out to reach','have reached',0,'be turn out to reach','have reach',0,'VBP VBN IN TO POS','VB PPR',1,0,paraphrase
-'around 90%',nearly90%,0,'around 90%',nearly90%,0,'IN POS',NN,0,1,paraphrase
+'around 90%','nearly90%',0,'around 90%','nearly90%',0,'IN POS',POS,0,1,paraphrase
 For,For,1,For,For,1,IN,IN,1,1,preserved
 this,this,1,this,this,1,DET,DET,1,1,preserved
 reason,reason,1,reason,reason,1,NN,NN,1,1,preserved
@@ -9561,7 +9561,7 @@ classification,classification,1,classification,classification,1,NN,NN,1,1,preser
 of,of,1,of,of,1,IN,IN,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 word,word,1,word,word,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,0,preserved
 regardless,regardless,1,regardless,regardless,1,RB,RB,0,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
@@ -10424,7 +10424,7 @@ the,?,0,the,?,0,DET,?,0,0,mogrammar-det
 Sagae,Sagae,1,Sagae,Sagae,1,NNP,NNP,0,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 Tsujii,Tsujii,1,Tsujii,Tsujii,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 parser,parser,1,parser,parser,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -11005,7 +11005,7 @@ be,be,1,be,be,1,VB,VB,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
 confidence(,confidence(,1,confidence(,confidence(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 strongly,strongly,1,strongly,strongly,1,RB,RB,1,1,preserved
 related,related,1,relate,relate,1,JJ,JJ,1,1,preserved
@@ -11032,7 +11032,7 @@ bank,bank,1,bank,bank,1,NN,NN,1,1,preserved
 while,while,1,while,while,1,IN,IN,1,1,preserved
 confidence(,confidence(,1,confidence(,confidence(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 depends,depends,1,depend,depend,1,VBZ,VBZ,1,1,preserved
 mostly,mostly,1,mostly,mostly,1,RB,RB,1,1,preserved
 on,on,1,on,on,1,IN,IN,1,1,preserved
@@ -11060,9 +11060,9 @@ weight,weight,1,weight,weight,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 confidence(,confidence(,1,confidence(,confidence(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2-bank(,)#2-bank(,1,)#2-bank(,)#2-bank(,1,LRB,LRB,1,1,preserved
+')#2-bank(',')#2-bank(',1,')#2-bank(',')#2-bank(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 expected,expected,1,expect,expect,1,VBN,VBN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
@@ -11095,7 +11095,7 @@ assume,assume,1,assume,assume,1,VB,VB,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 usually,usually,1,usually,usually,1,RB,RB,1,1,preserved
 associated,associated,1,associate,associate,1,VBN,VBN,1,1,preserved
@@ -11106,7 +11106,7 @@ objects,objects,1,object,object,1,NNS,NNS,1,1,preserved
 whereas,whereas,1,whereas,whereas,1,IN,IN,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 can,can,1,can,can,1,MD,MD,1,1,preserved
 take,take,1,take,take,1,VB,VB,1,1,preserved
 either,either,1,either,either,1,DET,DET,1,1,preserved
@@ -11138,15 +11138,15 @@ weights,weights,1,weight,weight,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-confidence(,)#2-confidence(,1,)#2-confidence(,)#2-confidence(,1,LRB,LRB,1,1,preserved
+')#2-confidence(',')#2-confidence(',1,')#2-confidence(',')#2-confidence(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-confidence(,)#2-confidence(,1,)#2-confidence(,)#2-confidence(,1,LRB,LRB,1,1,preserved
+')#2-confidence(',')#2-confidence(',1,')#2-confidence(',')#2-confidence(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 would,would,1,would,would,1,MD,MD,1,1,preserved
 be,be,1,be,be,1,VB,VB,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -11179,15 +11179,15 @@ see,see,1,see,see,1,VB,VB,1,1,preserved
 /,/,1,/,/,1,SYM,SYM,1,1,preserved
 MATHdestroy(,MATHdestroy(,1,MATHdestroy(,MATHdestroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 confidence(,confidence(,1,confidence(,confidence(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 bank(,bank(,1,bank(,bank(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 /,/,1,/,/,1,SYM,SYM,1,1,preserved
 MATH,MATH,1,MATH,MATH,1,NNP,NNP,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
@@ -11208,15 +11208,15 @@ such,such,1,such,such,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
 confidence(,confidence(,1,confidence(,confidence(,1,LRB,LRB,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2-bank(,)#2-bank(,1,)#2-bank(,)#2-bank(,1,LRB,LRB,1,1,preserved
+')#2-bank(',')#2-bank(',1,')#2-bank(',')#2-bank(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-confidence(,)#2-confidence(,1,)#2-confidence(,)#2-confidence(,1,LRB,LRB,1,1,preserved
+')#2-confidence(',')#2-confidence(',1,')#2-confidence(',')#2-confidence(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 may,may,1,may,may,1,MD,MD,1,1,preserved
 not,not,1,not,not,1,RB,RB,1,1,preserved
 appear,appear,1,appear,appear,1,VB,VB,1,1,preserved
@@ -11251,9 +11251,9 @@ such,such,1,such,such,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-affection(,)#2-affection(,1,)#2-affection(,)#2-affection(,1,LRB,LRB,1,1,preserved
+')#2-affection(',')#2-affection(',1,')#2-affection(',')#2-affection(',1,NN,NN,1,1,preserved
 n,n,1,n,n,1,NN,NN,1,1,preserved
-)#1,)#1,1,)#1,)#1,1,CD,CD,1,1,preserved
+')#1',')#1',1,')#1',')#1',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 training,training,1,train,train,1,NN,NN,1,1,preserved
@@ -11276,7 +11276,7 @@ synset-supersense,synset-supersense,1,synset-supersense,synset-supersense,1,JJ,J
 bigram,bigram,1,bigram,bigram,1,NN,NN,1,1,preserved
 destroy(,destroy(,1,destroy(,destroy(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-noun,)#2-noun,1,)#2-noun,)#2-noun,1,JJ,JJ,1,1,preserved
+')#2-noun',')#2-noun',1,')#2-noun',')#2-noun',1,PPR,PPR,1,1,preserved
 .feeling,.feeling,1,.feeling,.feeling,1,NNP,NNP,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
@@ -11381,7 +11381,7 @@ SS,SS,1,SS,SS,1,NNP,NNP,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 WS,WS,1,WS,WS,1,NNP,NNP,1,1,preserved
-:bank#1,:bank#1,1,:bank#1,:bank#1,1,CD,CD,1,1,preserved
+':bank#1',':bank#1',1,':bank#1',':bank#1',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 SS,SS,1,SS,SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
@@ -12025,10 +12025,10 @@ labels,labels,1,label,label,1,NNS,NNS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 e.g.,e.g.,1,e.g.,e.g.,1,PP,PP,1,1,preserved
 WS,WS,1,WS,WS,1,NNP,NNP,1,1,preserved
-:confidence#2-(,:confidence#2-(,1,:confidence#2-(,:confidence#2-(,1,LRB,LRB,1,1,preserved
+':confidence#2-(',':confidence#2-(',1,':confidence#2-(',':confidence#2-(',1,NN,NN,1,1,preserved
 NMOD,NMOD,1,NMOD,NMOD,1,NNP,NNP,1,1,preserved
 )-WS,)-WS,1,)-WS,)-WS,1,NNP,NNP,1,1,preserved
-:bank#1,:bank#1,1,:bank#1,:bank#1,1,CD,CD,1,1,preserved
+':bank#1',':bank#1',1,':bank#1',':bank#1',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
@@ -12043,8 +12043,8 @@ between,between,1,between,between,1,IN,IN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 e.g.,e.g.,1,e.g.,e.g.,1,PP,PP,1,1,preserved
 WS,WS,1,WS,WS,1,NNP,NNP,1,1,preserved
-:confidence#2-in-WS,:confidence#2-in-WS,1,:confidence#2-in-WS,:confidence#2-in-WS,1,JJ,JJ,1,1,preserved
-:bank#1,:bank#1,1,:bank#1,:bank#1,1,CD,CD,1,1,preserved
+':confidence#2-in-WS',':confidence#2-in-WS',1,':confidence#2-in-WS',':confidence#2-in-WS',1,PPR,PPR,1,1,preserved
+':bank#1',':bank#1',1,':bank#1',':bank#1',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Consequently,Consequently,1,Consequently,Consequently,1,RB,RB,1,1,preserved
@@ -12635,7 +12635,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 Sagae,Sagae,1,Sagae,Sagae,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 Tsujii,Tsujii,1,Tsujii,Tsujii,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 parser,parser,1,parser,parser,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -13080,7 +13080,7 @@ model,model,1,model,model,1,NN,NN,1,0,preserved
 only,only,1,only,only,1,RB,RB,0,0,preserved
 by,by,1,by,by,1,IN,IN,0,0,preserved
 0,0,1,0,0,1,CD,CD,0,1,preserved
-.37%,.37%,1,.37%,.37%,1,NN,NN,1,1,preserved
+'.37%','.37%',1,'.37%','.37%',1,POS,POS,1,1,preserved
 on,on,1,on,on,1,IN,IN,1,1,preserved
 SEM,SEM,1,SEM,SEM,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -13089,7 +13089,7 @@ further,further,1,far,far,1,JJ,JJ,1,1,preserved
 improvement,improvement,1,improvement,improvement,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.21%,.21%,1,.21%,.21%,1,NN,NN,1,1,preserved
+'.21%','.21%',1,'.21%','.21%',1,POS,POS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,0,preserved
 considerable,substantial,0,considerable,substantial,0,JJ,JJ,1,0,paraphrase
 because,because,1,because,because,1,IN,IN,0,0,preserved
@@ -13099,7 +13099,7 @@ dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 model,model,1,model,model,1,NN,NN,1,1,preserved
 could,could,1,could,could,1,MD,MD,1,1,preserved
 handle,handle,1,handle,handle,1,VB,VB,1,1,preserved
-57%,57%,1,57%,57%,1,NN,NN,1,1,preserved
+'57%','57%',1,'57%','57%',1,POS,POS,1,1,preserved
 more,more,1,more,more,1,JJR,JJR,1,1,preserved
 instances,instances,1,instance,instance,1,NNS,NNS,1,1,preserved
 over,over,1,over,over,1,IN,IN,1,1,preserved
@@ -13252,14 +13252,14 @@ overall,overall,1,overall,overall,1,JJ,JJ,1,1,preserved
 improvements,improvements,1,improvement,improvement,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.29%,.29%,1,.29%,.29%,1,NN,NN,1,1,preserved
+'.29%','.29%',1,'.29%','.29%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.20%,.20%,1,.20%,.20%,1,NN,NN,1,1,preserved
+'.20%','.20%',1,'.20%','.20%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.30%,.30%,1,.30%,.30%,1,NN,NN,1,1,preserved
+'.30%','.30%',1,'.30%','.30%',1,POS,POS,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 three,three,1,three,three,1,CD,CD,1,1,preserved
@@ -13458,9 +13458,9 @@ features,features,1,feature,feature,1,NNS,NNS,1,1,preserved
 MATH,MATH,1,MATH,MATH,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-Tree-WS-SR',Tree-WS-SR',1,Tree-WS-SR,Tree-WS-SR,1,PPR,PPR,1,1,preserved
+'Tree-WS-SR\'','Tree-WS-SR\'',1,Tree-WS-SR\,Tree-WS-SR\,1,JJ,JJ,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Tree-WS',Tree-WS',1,Tree-WS,Tree-WS,1,PPR,PPR,1,1,preserved
+'Tree-WS\'','Tree-WS\'',1,Tree-WS\,Tree-WS\,1,JJ,JJ,1,1,preserved
 only,only,1,only,only,1,RB,RB,1,1,preserved
 use,use,1,use,use,1,NN,NN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -13570,7 +13570,7 @@ overall,overall,1,overall,overall,1,JJ,JJ,0,1,preserved
 improvements,improvements,1,improvement,improvement,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.69%,.69%,1,.69%,.69%,1,NN,NN,1,1,preserved
+'.69%','.69%',1,'.69%','.69%',1,POS,POS,1,1,preserved
 with,with,1,with,with,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
@@ -13578,7 +13578,7 @@ frequency,frequency,1,frequency,frequency,1,NN,NN,1,1,preserved
 information,information,1,information,information,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 1,1,1,1,1,1,CD,CD,1,1,preserved
-.41%,.41%,1,.41%,.41%,1,NN,NN,1,1,preserved
+'.41%','.41%',1,'.41%','.41%',1,POS,POS,1,1,preserved
 without,without,1,without,without,1,IN,IN,1,1,preserved
 it,it,1,it,it,1,PRP,PRP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -13680,7 +13680,7 @@ behind,behind,1,behind,behind,1,IN,IN,1,1,preserved
 PNNL,PNNL,1,PNNL,PNNL,1,NNP,NNP,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
 1,1,1,1,1,1,CD,CD,1,1,preserved
-.6%,.6%,1,.6%,.6%,1,NN,NN,1,1,preserved
+'.6%','.6%',1,'.6%','.6%',1,POS,POS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 However,However,1,However,However,1,RB,RB,0,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,0,preserved
@@ -14140,7 +14140,7 @@ dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 corresponding,corresponding,1,correspond,correspond,1,JJ,JJ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
-48%,48%,1,48%,48%,1,NN,NN,1,1,preserved
+'48%','48%',1,'48%','48%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 all,all,1,all,all,1,DET,DET,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -14266,7 +14266,7 @@ outputting,outputting,1,output,output,1,VBG,VBG,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 correct,correct,1,correct,correct,1,JJ,JJ,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
-take#4,take#4,1,take#4,take#4,1,CD,CD,1,1,preserved
+'take#4','take#4',1,'take#4','take#4',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 SS,SS,1,SS,SS,1,NNP,NNP,1,1,preserved
 :verb,:verb,1,:verb,:verb,1,NNP,NNP,1,1,preserved
@@ -14293,7 +14293,7 @@ MATH,MATH,1,MATH,MATH,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 given,given,1,give,give,1,VBN,VBN,1,1,preserved
-dust#1,dust#1,1,dust#1,dust#1,1,CD,CD,1,1,preserved
+'dust#1','dust#1',1,'dust#1','dust#1',1,POS,POS,1,1,preserved
 belongs,belongs,1,belong,belong,1,VBZ,VBZ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
@@ -14371,7 +14371,7 @@ here,here,1,here,here,1,RB,RB,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 have(,have(,1,have(,have(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2,)#2,1,)#2,)#2,1,CD,CD,1,1,preserved
+')#2',')#2',1,')#2',')#2',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 SS,SS,1,SS,SS,1,NNP,NNP,1,1,preserved
 :verb,:verb,1,:verb,:verb,1,NNP,NNP,1,1,preserved
@@ -14386,7 +14386,7 @@ feature,feature,1,feature,feature,1,NN,NN,1,1,preserved
 Given,Given,1,Given,Given,1,VBN,VBN,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
-humor#1,humor#1,1,humor#1,humor#1,1,CD,CD,1,1,preserved
+'humor#1','humor#1',1,'humor#1','humor#1',1,POS,POS,1,1,preserved
 belongs,belongs,1,belong,belong,1,VBZ,VBZ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -14407,7 +14407,7 @@ dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 G1,G1,1,G1,G1,1,CD,CD,1,1,preserved
 :have(,:have(,1,:have(,:have(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-(,)#2-(,1,)#2-(,)#2-(,1,LRB,LRB,1,1,preserved
+')#2-(',')#2-(',1,')#2-(',')#2-(',1,NN,NN,1,1,preserved
 OBJ,OBJ,1,OBJ,OBJ,1,NNP,NNP,1,1,preserved
 )-SS,)-SS,1,)-SS,)-SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
@@ -14439,7 +14439,7 @@ weight,weight,1,weight,weight,1,NN,NN,1,1,preserved
 G1,G1,1,G1,G1,1,CD,CD,1,1,preserved
 :have(,:have(,1,:have(,:have(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-(,)#2-(,1,)#2-(,)#2-(,1,LRB,LRB,1,1,preserved
+')#2-(',')#2-(',1,')#2-(',')#2-(',1,NN,NN,1,1,preserved
 SBJ,SBJ,1,SBJ,SBJ,1,NNP,NNP,1,1,preserved
 )-SS,)-SS,1,)-SS,)-SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
@@ -14525,7 +14525,7 @@ for,for,1,for,for,1,IN,IN,1,1,preserved
 show,show,1,show,show,1,NN,NN,1,1,preserved
 here,here,1,here,here,1,RB,RB,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-show#2,show#2,1,show#2,show#2,1,CD,CD,1,1,preserved
+'show#2','show#2',1,'show#2','show#2',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 verb,verb,1,verb,verb,1,NN,NN,1,1,preserved
 .cognition,.cognition,1,.cognition,.cognition,1,NNP,NNP,1,1,preserved
@@ -14539,7 +14539,7 @@ but,but,1,but,but,1,CC,CC,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 model,model,1,model,model,1,NN,NN,1,1,preserved
 output,output,1,output,output,1,NN,NN,1,1,preserved
-show#3,show#3,1,show#3,show#3,1,CD,CD,1,1,preserved
+'show#3','show#3',1,'show#3','show#3',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 verb,verb,1,verb,verb,1,NN,NN,1,1,preserved
 .communication,.communication,1,.communication,.communication,1,NNP,NNP,1,1,preserved
@@ -14556,7 +14556,7 @@ dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 WS,WS,1,WS,WS,1,NNP,NNP,1,1,preserved
 :testify(,:testify(,1,:testify(,:testify(,1,LRB,LRB,1,1,preserved
 v,v,1,v,v,1,NN,NN,1,1,preserved
-)#2-(,)#2-(,1,)#2-(,)#2-(,1,LRB,LRB,1,1,preserved
+')#2-(',')#2-(',1,')#2-(',')#2-(',1,NN,NN,1,1,preserved
 SBJ,SBJ,1,SBJ,SBJ,1,NNP,NNP,1,1,preserved
 )-SS,)-SS,1,)-SS,)-SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
@@ -14639,7 +14639,7 @@ you,you,1,you,you,1,PRP,PRP,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 trained,trained,1,train,train,1,JJ,JJ,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
-career#1,career#1,1,career#1,career#1,1,CD,CD,1,1,preserved
+'career#1','career#1',1,'career#1','career#1',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -14652,7 +14652,7 @@ or,or,1,or,or,1,CC,CC,1,1,preserved
 professional,professional,1,professional,professional,1,JJ,JJ,1,1,preserved
 life,life,1,life,life,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
-career#2,career#2,1,career#2,career#2,1,CD,CD,1,1,preserved
+'career#2','career#2',1,'career#2','career#2',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 From,From,1,From,From,1,IN,IN,1,1,preserved
@@ -14685,7 +14685,7 @@ is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
 preference,preference,1,preference,preference,1,NN,NN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
-career#2,career#2,1,career#2,career#2,1,CD,CD,1,1,preserved
+'career#2','career#2',1,'career#2','career#2',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
 captured,captured,1,capture,capture,1,VBN,VBN,1,1,preserved
@@ -14694,7 +14694,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 largest-weighted,largest-weighted,1,largest-weighted,largest-weighted,1,JJ,JJ,1,1,preserved
 dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 WS,WS,1,WS,WS,1,NNP,NNP,1,1,preserved
-:career%1%2-(,:career%1%2-(,1,:career%1%2-(,:career%1%2-(,1,LRB,LRB,1,1,preserved
+':career%1%2-(',':career%1%2-(',1,':career%1%2-(',':career%1%2-(',1,NN,NN,1,1,preserved
 NMOD,NMOD,1,NMOD,NMOD,1,NNP,NNP,1,1,preserved
 )-SS,)-SS,1,)-SS,)-SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
@@ -14718,7 +14718,7 @@ for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 correct,correct,1,correct,correct,1,JJ,JJ,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
-career#1,career#1,1,career#1,career#1,1,CD,CD,1,1,preserved
+'career#1','career#1',1,'career#1','career#1',1,POS,POS,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
@@ -14734,7 +14734,7 @@ to,to,1,to,to,1,TO,TO,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 wrong,wrong,1,wrong,wrong,1,JJ,JJ,1,1,preserved
 answer,answer,1,answer,answer,1,NN,NN,1,1,preserved
-career#2,career#2,1,career#2,career#2,1,CD,CD,1,1,preserved
+'career#2','career#2',1,'career#2','career#2',1,POS,POS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
 determining,determining,1,determine,determine,1,VBG,VBG,1,1,preserved
@@ -14855,7 +14855,7 @@ Although,Although,1,Although,Although,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 correct,correct,1,correct,correct,1,JJ,JJ,1,1,preserved
 sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
-time#5,time#5,1,time#5,time#5,1,CD,CD,1,1,preserved
+'time#5','time#5',1,'time#5','time#5',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
 .Tops,.Tops,1,.Tops,.Tops,1,NNP,NNP,1,1,preserved
@@ -14898,7 +14898,7 @@ dependency,dependency,1,dependency,dependency,1,NN,NN,1,1,preserved
 SS,SS,1,SS,SS,1,NNP,NNP,1,1,preserved
 :noun,:noun,1,:noun,:noun,1,NNP,NNP,1,1,preserved
 .object-of-WS,.object-of-WS,1,.object-of-WS,.object-of-WS,1,JJ,JJ,1,1,preserved
-:time%1%5,:time%1%5,1,:time%1%5,:time%1%5,1,CD,CD,1,1,preserved
+':time%1%5',':time%1%5',1,':time%1%5',':time%1%5',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 /,/,1,/,/,1,SYM,SYM,1,1,preserved
 MATH,MATH,1,MATH,MATH,1,NNP,NNP,1,1,preserved
@@ -14906,7 +14906,7 @@ MATH,MATH,1,MATH,MATH,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 given,given,1,give,give,1,VBN,VBN,1,1,preserved
 natural,natural,1,natural,natural,1,JJ,JJ,1,1,preserved
-order#1,order#1,1,order#1,order#1,1,CD,CD,1,1,preserved
+'order#1','order#1',1,'order#1','order#1',1,POS,POS,1,1,preserved
 belongs,belongs,1,belong,belong,1,VBZ,VBZ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -15006,7 +15006,7 @@ sense,sense,1,sense,sense,1,NN,NN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 nail,nail,1,nail,nail,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-nail#2,nail#2,1,nail#2,nail#2,1,CD,CD,1,1,preserved
+'nail#2','nail#2',1,'nail#2','nail#2',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
 .artifact,.artifact,1,.artifact,.artifact,1,NNP,NNP,1,1,preserved
@@ -15023,7 +15023,7 @@ that,that,1,that,that,1,IN,IN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 level,level,1,level,level,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-level#5,level#5,1,level#5,level#5,1,CD,CD,1,1,preserved
+'level#5','level#5',1,'level#5','level#5',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
 .artifact,.artifact,1,.artifact,.artifact,1,NNP,NNP,1,1,preserved
@@ -15211,14 +15211,14 @@ WSD,WSD,1,WSD,WSD,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 with,with,1,with,with,1,IN,IN,1,0,preserved
 0,0,1,0,0,1,CD,CD,0,1,preserved
-.29%,.29%,1,.29%,.29%,1,NN,NN,1,1,preserved
+'.29%','.29%',1,'.29%','.29%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.64%,.64%,1,.64%,.64%,1,NN,NN,1,1,preserved
+'.64%','.64%',1,'.64%','.64%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 0,0,1,0,0,1,CD,CD,1,1,preserved
-.30%,.30%,1,.30%,.30%,1,NN,NN,1,0,preserved
+'.30%','.30%',1,'.30%','.30%',1,POS,POS,1,0,preserved
 improvements,improvement,0,improvement,improvement,1,NNS,NN,1,1,bigrammar-others
 of,of,1,of,of,1,IN,IN,0,1,preserved
 recalls,recalls,1,recall,recall,1,NNS,NNS,1,1,preserved
@@ -15246,7 +15246,7 @@ improvements,improvements,1,improvement,improvement,1,NNS,NNS,1,1,preserved
 indeed,indeed,1,indeed,indeed,1,RB,RB,1,1,preserved
 correspond,correspond,1,correspond,correspond,1,VB,VB,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
-25%-57%,25%-57%,1,25%-57%,25%-57%,1,NN,NN,1,1,preserved
+'25%-57%','25%-57%',1,'25%-57%','25%-57%',1,POS,POS,1,1,preserved
 improvements,improvements,1,improvement,improvement,1,NNS,NNS,1,1,preserved
 over,over,1,over,over,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -15810,7 +15810,7 @@ summary,summary,1,summary,summary,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 limited,limited,1,limit,limit,1,JJ,JJ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
-2\%,2\%,1,2\%,2\%,1,NN,NN,1,1,preserved
+'2\%','2\%',1,'2\%','2\%',1,POS,POS,1,1,preserved
 duration,duration,1,duration,duration,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -15927,7 +15927,7 @@ large,large,1,large,large,1,JJ,JJ,1,1,preserved
 bag,bag,1,bag,bag,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
-'',','',',1,',',',',1,PPR,PPR,1,1,preserved
+'\',','\',',1,'\,','\,',1,POS,POS,1,1,preserved
 with,with,1,with,with,1,IN,IN,1,1,preserved
 this,this,1,this,this,1,DET,DET,1,1,preserved
 length,length,1,length,length,1,NN,NN,1,1,preserved
@@ -16551,11 +16551,11 @@ provided,provided,1,provide,provide,1,VBN,VBN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 OpenCV,OpenCV,1,OpenCV,OpenCV,1,NNP,NNP,1,1,preserved
-toolkit\footnote{http,toolkit\footnote{http,1,toolkit\footnote{http,toolkit\footnote{http,1,NN,NN,1,1,preserved
+'toolkit\footnote{http','toolkit\footnote{http',1,'toolkit\footnote{http','toolkit\footnote{http',1,POS,POS,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 //opencvlibrary.sourceforge.net,//opencvlibrary.sourceforge.net,1,//opencvlibrary.sourceforge.net,//opencvlibrary.sourceforge.net,1,NNP,NNP,1,1,preserved
 /,/,1,/,/,1,SYM,SYM,1,1,preserved
-},},1,},},1,RRB,RRB,1,1,preserved
+'}','}',1,'}','}',1,PPS,PPS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
 magnitude,magnitude,1,magnitude,magnitude,1,NN,NN,1,1,preserved
@@ -17283,7 +17283,7 @@ duration,duration,1,duration,duration,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,0,preserved
 summary,summary,1,summary,summary,1,NN,NN,0,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-2\%,2\%,1,2\%,2\%,1,NN,NN,1,1,preserved
+'2\%','2\%',1,'2\%','2\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 original,original,1,original,original,1,JJ,JJ,1,1,preserved
@@ -18901,14 +18901,14 @@ faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 classified,classified,1,classify,classify,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,0,preserved
-'personX','person-X',0,personX,person-X,0,POS,PPR,1,1,spelling
+'\'personX\'','\'person-X\'',0,\personX\,\person-X\,0,NN,NN,1,1,spelling
 (,(,1,(,(,1,LRB,LRB,0,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 queried,queried,1,query,query,1,VBN,VBN,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,0,preserved
-'non-personX','non-person-X',0,non-personX,non-person-X,0,PPR,PPR,1,0,spelling
+'\'non-personX\'','\'non-person-X\'',0,\non-personX\,\non-person-X\,0,NN,NN,1,0,spelling
 and,and,1,and,and,1,CC,CC,0,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
@@ -18923,7 +18923,7 @@ inferred,inferred,1,infer,infer,1,VBN,VBN,0,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 probability,probability,1,probability,probability,1,NN,NN,1,1,preserved
 output,output,1,output,output,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -19413,7 +19413,7 @@ inferred,inferred,1,infer,infer,1,VBN,VBN,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 probability,probability,1,probability,probability,1,NN,NN,1,1,preserved
 output,output,1,output,output,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -19834,7 +19834,7 @@ problem,problem,1,problem,problem,1,NN,NN,1,1,preserved
 'Working closely','closely is related',0,'Working closely','closely be relate',0,'NNP PPR','RB VBZ PPR',0,1,paraphrase
 ',',',',1,',',',',1,PPR,PPR,0,1,preserved
 in,by,0,in,by,0,IN,IN,0,0,bigrammar-prep
-\cite{Ozkan06CVPR},\CITE,0,\cite{Ozkan06CVPR},\CITE,0,RRB,NNP,0,1,preserved
+'\cite{Ozkan06CVPR}',\CITE,0,'\cite{Ozkan06CVPR}',\CITE,0,PPS,NNP,0,1,preserved
 'based graph',graph-based,0,'base graph',graph-based,0,'VBN POS',JJ,0,1,spelling
 and,and,1,and,and,1,CC,CC,0,0,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
@@ -20064,7 +20064,7 @@ faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 more,more,1,more,more,1,JJR,JJR,1,1,preserved
 than,than,1,than,than,1,IN,IN,1,1,preserved
-12%,12%,1,12%,12%,1,NN,NN,1,1,preserved
+'12%','12%',1,'12%','12%',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 eliminated,eliminated,1,eliminate,eliminate,1,VBN,VBN,1,1,preserved
@@ -21134,7 +21134,7 @@ average,average,1,average,average,1,JJ,JJ,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 precision,precision,1,precision,precision,1,NN,NN,1,0,preserved
 is,was,0,be,be,1,VBZ,VBD,1,1,bigrammar-wform
-52.49%,52.49%,1,52.49%,52.49%,1,NN,NN,0,1,preserved
+'52.49%','52.49%',1,'52.49%','52.49%',1,POS,POS,0,1,preserved
 .,.,1,.,.,1,PP,PP,1,0,preserved
 We,We,1,We,We,1,PRP,PRP,1,1,preserved
 used,used,1,use,use,1,VBN,VBN,1,1,preserved
@@ -21234,7 +21234,7 @@ was,was,1,be,be,1,VBD,VBD,1,1,preserved
 selected,selected,1,select,select,1,JJ,JJ,1,1,preserved
 so,so,1,so,so,1,RB,RB,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
-97%,97%,1,97%,97%,1,NN,NN,1,1,preserved
+'97%','97%',1,'97%','97%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 total,total,1,total,total,1,JJ,JJ,1,1,preserved
@@ -21550,7 +21550,7 @@ and,and,1,and,and,1,CC,CC,1,1,preserved
 \MATH,\MATH,1,\MATH,\MATH,1,NNP,NNP,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
 means,means,1,mean,mean,1,NNS,NNS,1,1,preserved
-20%,20%,1,20%,20%,1,NN,NN,1,1,preserved
+'20%','20%',1,'20%','20%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,0,preserved
 highest,highest,1,high,high,1,JJS,JJS,0,1,preserved
 ranked,ranked,1,rank,rank,1,VBN,VBN,1,1,preserved
@@ -21559,7 +21559,7 @@ faces,faces,1,face,face,1,NNS,NNS,1,0,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 \MATH,\MATH,1,\MATH,\MATH,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-30%,30%,1,30%,30%,1,NN,NN,1,1,preserved
+'30%','30%',1,'30%','30%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,0,preserved
 lowest,lowest,1,lowest,lowest,1,JJS,JJS,0,1,preserved
 ranked,ranked,1,rank,rank,1,VBN,VBN,1,1,preserved
@@ -21581,7 +21581,7 @@ randomly,randomly,1,randomly,randomly,1,RB,RB,1,1,preserved
 selecting,selecting,1,select,select,1,NN,NN,1,1,preserved
 with,with,1,with,with,1,IN,IN,1,1,preserved
 replacement,replacement,1,replacement,replacement,1,NN,NN,1,1,preserved
-70%,70%,1,70%,70%,1,NN,NN,1,1,preserved
+'70%','70%',1,'70%','70%',1,POS,POS,1,1,preserved
 samples,samples,1,sample,sample,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 \MATH,\MATH,1,\MATH,\MATH,1,NNP,NNP,1,0,preserved
@@ -21716,7 +21716,7 @@ the,the,1,the,the,1,DET,DET,0,1,preserved
 supervised,supervised,1,supervise,supervise,1,JJ,JJ,1,1,preserved
 method,method,1,method,method,1,NN,NN,1,1,preserved
 using,using,1,use,use,1,VBG,VBG,1,1,preserved
-5%,5%,1,5%,5%,1,NN,NN,1,1,preserved
+'5%','5%',1,'5%','5%',1,POS,POS,1,1,preserved
 annotation,annotation,1,annotation,annotation,1,NN,NN,1,1,preserved
 data,data,1,datum,datum,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -21963,7 +21963,7 @@ rich,rich,1,rich,rich,1,JJ,JJ,1,1,preserved
 information,information,1,information,information,1,NN,NN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 people,people,1,people,people,1,NNS,NNS,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,0,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,0,preserved
 such,such,1,such,such,1,JJ,JJ,0,1,preserved
 as,as,1,as,as,1,IN,IN,1,0,preserved
 This,This,1,This,This,1,DET,DET,1,1,preserved
@@ -22599,9 +22599,9 @@ degree,degrees,0,degree,degree,1,NN,NNS,1,1,bigrammar-others
 ',',',',1,',',',',1,PPR,PPR,0,1,preserved
 scaling,scaling,1,scale,scale,1,NN,NN,1,0,preserved
 between,between,1,between,between,1,IN,IN,0,0,preserved
-90%,90,0,90%,90,0,NN,CD,1,1,spelling
+'90%',90,0,'90%',90,0,POS,CD,1,1,spelling
 and,and,1,and,and,1,CC,CC,0,1,preserved
-110%,110%,1,110%,110%,1,NN,NN,1,1,preserved
+'110%','110%',1,'110%','110%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 translating,translating,1,translate,translate,1,VBG,VBG,1,0,preserved
 up,up,1,up,up,1,IN,IN,0,1,preserved
@@ -23168,7 +23168,7 @@ of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 same,same,1,same,same,1,JJ,JJ,1,1,preserved
 character,character,1,character,character,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 appearance,appearance,1,appearance,appearance,1,NN,NN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 help,help,1,help,help,1,NN,NN,1,1,preserved
@@ -23276,7 +23276,7 @@ to,to,1,to,to,1,TO,TO,1,1,preserved
 assign,assign,1,assign,assign,1,VB,VB,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 character,character,1,character,character,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 name,name,1,name,name,1,NN,NN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
@@ -25286,9 +25286,9 @@ faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 classified,classified,1,classify,classify,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
-'person-$X$','person-$X$',1,person-$X$,person-$X$,1,NN,NN,1,1,preserved
+'\'person-$X$\'','\'person-$X$\'',1,\person-$X$\,\person-$X$\,1,SYM,SYM,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
-'non-person-$X$','non-person-$X$',1,non-person-$X$,non-person-$X$,1,NN,NN,1,1,preserved
+'\'non-person-$X$\'','\'non-person-$X$\'',1,\non-person-$X$\,\non-person-$X$\,1,SYM,SYM,1,1,preserved
 ;,;,1,;,;,1,PPS,PPS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -25304,7 +25304,7 @@ inferred,inferred,1,infer,infer,1,VBN,VBN,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 probability,probability,1,probability,probability,1,NN,NN,1,1,preserved
 output,output,1,output,output,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -25809,7 +25809,7 @@ inferred,inferred,1,infer,infer,1,VBN,VBN,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 probability,probability,1,probability,probability,1,NN,NN,1,1,preserved
 output,output,1,output,output,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -26431,7 +26431,7 @@ faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 more,more,1,more,more,1,JJR,JJR,1,1,preserved
 than,than,1,than,than,1,IN,IN,1,1,preserved
-12\%,12\%,1,12\%,12\%,1,NN,NN,1,1,preserved
+'12\%','12\%',1,'12\%','12\%',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 have,have,1,have,have,1,VB,VB,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
@@ -26746,8 +26746,8 @@ queried,queried,1,query,query,1,VBN,VBN,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 e.g.,e.g.,1,e.g.,e.g.,1,PP,PP,1,1,preserved
-'George,'George,1,George,George,1,NNP,NNP,1,1,preserved
-Bush',Bush',1,Bush,Bush,1,POS,POS,1,1,preserved
+'\'George','\'George',1,\George,\George,1,POS,POS,1,1,preserved
+'Bush\'','Bush\'',1,Bush\,Bush\,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 we,we,1,we,we,1,PRP,PRP,1,1,preserved
@@ -26760,7 +26760,7 @@ learning,learning,1,learn,learn,1,VBG,VBG,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
 |\MATH,|\MATH,1,|\MATH,|\MATH,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 model,model,1,model,model,1,NN,NN,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
 follows,follows,1,follow,follow,1,VBZ,VBZ,1,1,preserved
@@ -26991,7 +26991,7 @@ densities,densities,1,density,density,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Instead,Instead,1,Instead,Instead,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,0,preserved
-\cite{xx},?,0,\cite{xx},?,0,RRB,?,0,0,unaligned
+'\cite{xx}',?,0,'\cite{xx}',?,0,PPS,?,0,0,unaligned
 a,a,1,a,a,1,DET,DET,1,0,preserved
 'graph based',graph-based,0,'graph base',graph-based,0,'NN PPR',JJ,1,1,spelling
 CITEin,'in \CITE',0,CITEin,'in \CITE',0,NNP,'IN POS',0,1,preserved
@@ -27688,7 +27688,7 @@ a,a,1,a,a,1,DET,DET,1,1,preserved
 set,set,1,set,set,1,NN,NN,1,1,preserved
 Spos,Spos,1,Spos,Spos,1,NNP,NNP,1,1,preserved
 including,including,1,include,include,1,VBG,VBG,1,1,preserved
-p%,p%,1,p%,p%,1,NN,NN,1,0,preserved
+'p%','p%',1,'p%','p%',1,POS,POS,1,0,preserved
 top,top,1,top,top,1,JJ,JJ,0,1,preserved
 ranked,ranked,1,rank,rank,1,VBN,VBN,1,1,preserved
 faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
@@ -27720,7 +27720,7 @@ a,a,1,a,a,1,DET,DET,1,1,preserved
 set,set,1,set,set,1,NN,NN,1,1,preserved
 Sneg,Sneg,1,Sneg,Sneg,1,NNP,NNP,1,1,preserved
 including,including,1,include,include,1,VBG,VBG,1,1,preserved
-p%,p%,1,p%,p%,1,NN,NN,1,0,preserved
+'p%','p%',1,'p%','p%',1,POS,POS,1,0,preserved
 bottom,bottom,1,bottom,bottom,1,NN,NN,0,1,preserved
 ranked,ranked,1,rank,rank,1,VBN,VBN,1,1,preserved
 faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
@@ -28186,7 +28186,7 @@ and,and,1,and,and,1,CC,CC,1,1,preserved
 have,have,1,have,have,1,VB,VB,1,1,preserved
 accuracies,accuracies,1,accuracy,accuracy,1,NNS,NNS,1,1,preserved
 exceeding,exceeding,1,exceed,exceed,1,VBG,VBG,1,1,preserved
-95\%,95\%,1,95\%,95\%,1,NN,NN,1,1,preserved
+'95\%','95\%',1,'95\%','95\%',1,POS,POS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 44,44,1,44,44,1,CD,CD,1,1,preserved
 ',773',',773',1,',773',',773',1,POS,POS,1,1,preserved
@@ -28286,7 +28286,7 @@ variations,Variations,0,variation,Variations,0,NNS,NNS,0,1,preserved
 in,in,1,in,in,1,IN,IN,0,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 name,name,1,name,name,1,NN,NN,1,1,preserved
 were,were,1,be,be,1,VBD,VBD,1,1,preserved
 collected,collected,1,collect,collect,1,VBN,VBN,1,1,preserved
@@ -28412,7 +28412,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 accuracy,accuracy,1,accuracy,accuracy,1,NN,NN,1,1,preserved
 was,was,1,be,be,1,VBD,VBD,1,1,preserved
 60,60,1,60,60,1,CD,CD,1,1,preserved
-.22\%,.22\%,1,.22\%,.22\%,1,NN,NN,1,1,preserved
+'.22\%','.22\%',1,'.22\%','.22\%',1,POS,POS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 We,We,1,We,We,1,PRP,PRP,1,1,preserved
 used,used,1,use,use,1,VBN,VBN,1,1,preserved
@@ -28443,7 +28443,7 @@ approach,approach,1,approach,approach,1,NN,NN,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,0,preserved
 in,'that of Viola and jones',0,in,'that of Viola and jones',0,IN,'IN IN NNP CC POS',1,1,paraphrase
 \CITE,\CITE,1,\CITE,\CITE,1,NNP,NNP,0,1,preserved
-95\%,95\%,1,95\%,95\%,1,NN,NN,1,1,preserved
+'95\%','95\%',1,'95\%','95\%',1,POS,POS,1,1,preserved
 had,had,1,have,have,1,VBD,VBD,1,1,preserved
 an,an,1,an,an,1,DET,DET,1,1,preserved
 accuracy,accuracy,1,accuracy,accuracy,1,NN,NN,1,1,preserved
@@ -28557,7 +28557,7 @@ was,was,1,be,be,1,VBD,VBD,1,1,preserved
 selected,selected,1,select,select,1,JJ,JJ,1,1,preserved
 so,so,1,so,so,1,RB,RB,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
-97\%,97\%,1,97\%,97\%,1,NN,NN,1,1,preserved
+'97\%','97\%',1,'97\%','97\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 total,total,1,total,total,1,JJ,JJ,1,1,preserved
@@ -28817,7 +28817,7 @@ selected,selected,1,select,select,1,JJ,JJ,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 i,i,1,i,i,1,FW,FW,1,1,preserved
 .e,.e,1,.e,.e,1,NNP,NNP,1,1,preserved
-40\%,40\%,1,40\%,40\%,1,NN,NN,1,1,preserved
+'40\%','40\%',1,'40\%','40\%',1,POS,POS,1,1,preserved
 samples,samples,1,sample,sample,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -28934,7 +28934,7 @@ iterations,iterations,1,iteration,iteration,1,NNS,NNS,0,0,preserved
 making,making,1,make,make,1,VBG,VBG,0,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 system,system,1,system,system,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 speed,speed,1,speed,speed,1,NN,NN,1,1,preserved
 slower,slower,1,slow,slow,1,JJR,JJR,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -29132,7 +29132,7 @@ for,for,1,for,for,1,IN,IN,1,1,preserved
 experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 \MATH,\MATH,1,\MATH,\MATH,1,NNP,NNP,1,1,preserved
-.},.},1,.},.},1,RRB,RRB,1,1,preserved
+'.}','.}',1,'.}','.}',1,PPS,PPS,1,1,preserved
 Densest,Densest,1,Densest,Densest,1,NNP,NNP,1,1,preserved
 Sub-Graph,Sub-Graph,1,Sub-Graph,Sub-Graph,1,JJ,JJ,1,1,preserved
 based,based,1,base,base,1,VBN,VBN,1,1,preserved
@@ -29834,7 +29834,7 @@ the,the,1,the,the,1,DET,DET,1,0,preserved
 GoogleSE,GoogleSE,1,GoogleSE,GoogleSE,1,NNP,NNP,0,0,preserved
 is,is,1,be,be,1,VBZ,VBZ,0,1,preserved
 57,57,1,57,57,1,CD,CD,1,1,preserved
-.08\%,.08\%,1,.08\%,.08\%,1,NN,NN,1,1,preserved
+'.08\%','.08\%',1,'.08\%','.08\%',1,POS,POS,1,1,preserved
 In,In,1,In,In,1,IN,IN,1,1,preserved
 Table,Table,1,Table,Table,1,NNP,NNP,1,1,preserved
 \REF,\REF,1,\REF,\REF,1,NNP,NNP,1,1,preserved
@@ -30490,7 +30490,7 @@ shots,shots,1,shot,shot,1,NNS,NNS,1,1,preserved
 According,According,1,According,According,1,VBG,VBG,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 TRECVID,TRECVID,1,TRECVID,TRECVID,1,NNP,NNP,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 categorization,categorization,1,categorization,categorization,1,NN,NN,1,1,preserved
 \CITE,\CITE,1,\CITE,\CITE,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -32043,7 +32043,7 @@ POS-GRAD,POS-GRAD,1,POS-GRAD,POS-GRAD,1,NNP,NNP,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
-',',1,?,?,1,PPR,PPR,1,0,preserved
+'\'','\'',1,\,\,1,SYM,SYM,1,0,preserved
 and,and,1,and,and,1,CC,CC,0,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
 cut,cut,1,cut,cut,1,NN,NN,1,1,preserved
@@ -32051,7 +32051,7 @@ transition,transition,1,transition,transition,1,NN,NN,1,1,preserved
 usually,usually,1,usually,usually,1,RB,RB,1,1,preserved
 has,has,1,have,have,1,VBZ,VBZ,1,0,preserved
 the,a,0,the,a,0,DET,DET,1,0,bigrammar-det
-pattern,'pattern,0,pattern,pattern,1,NN,NN,0,0,preserved
+pattern,'\'pattern',0,pattern,\pattern,0,NN,POS,0,0,preserved
 '"','"',1,'"','"',1,PPR,PPR,0,1,preserved
 `,`,1,`,`,1,PPL,PPL,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -32358,7 +32358,7 @@ studies,studies,1,study,study,1,NNS,NNS,1,1,preserved
 when,when,1,when,when,1,WRB,WRB,1,1,preserved
 participating,participating,1,participate,participate,1,VBG,VBG,1,0,preserved
 TRECVID,TRECVID,1,TRECVID,TRECVID,1,NNP,NNP,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 tasks,tasks,1,task,task,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,in,0,?,in,0,?,IN,0,0,mogrammar-prep
@@ -32440,7 +32440,7 @@ of,of,1,of,of,1,IN,IN,1,1,preserved
 NORM-FRM,NORM-FRM,1,NORM-FRM,NORM-FRM,1,NNP,NNP,1,1,preserved
 frames,frames,1,frame,frame,1,NNS,NNS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-100\%,100\%,1,100\%,100\%,1,NN,NN,1,1,preserved
+'100\%','100\%',1,'100\%','100\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 other,other,1,other,other,1,JJ,JJ,1,1,preserved
@@ -38816,7 +38816,7 @@ layers,layers,1,layer,layer,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 more,more,1,more,more,1,JJR,JJR,1,1,preserved
 than,than,1,than,than,1,IN,IN,1,1,preserved
-90\%,90\%,1,90\%,90\%,1,NN,NN,1,1,preserved
+'90\%','90\%',1,'90\%','90\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 non-face,non-face,1,non-face,non-face,1,JJ,JJ,1,1,preserved
 patterns,patterns,1,pattern,pattern,1,NNS,NNS,1,0,preserved
@@ -39411,7 +39411,7 @@ advantages,advantages,1,advantage,advantage,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 approach,approach,1,approach,approach,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
@@ -39441,7 +39441,7 @@ ingredients,ingredients,1,ingredient,ingredient,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 system,system,1,system,system,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
@@ -39750,7 +39750,7 @@ drawbacks,drawbacks,1,drawback,drawback,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 system,system,1,system,system,1,NN,NN,1,1,preserved
 Wu,Wu,1,Wu,Wu,1,NNP,NNP,1,1,preserved
 et,et,1,et,et,1,NNP,NNP,1,1,preserved
@@ -39790,7 +39790,7 @@ construction,construction,1,construction,construction,1,NN,NN,1,1,preserved
 In,In,1,In,In,1,IN,IN,1,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 work,work,1,work,work,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 features,features,1,feature,feature,1,NNS,NNS,1,1,preserved
@@ -39870,7 +39870,7 @@ faster,faster,1,fast,fast,1,RBR,RBR,1,1,preserved
 than,than,1,than,than,1,IN,IN,1,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 method,method,1,method,method,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Another,Another,1,Another,Another,1,DET,DET,1,1,preserved
@@ -40305,7 +40305,7 @@ advantages,advantage,0,advantage,advantage,1,NNS,NN,1,1,bigrammar-others
 of,of,1,of,of,1,IN,IN,0,1,preserved
 Viola,Viola,1,Viola,Viola,1,NNP,NNP,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-Jones',Jones',1,Jones,Jones,1,POS,POS,1,1,preserved
+'Jones\'','Jones\'',1,Jones\,Jones\,1,NNP,NNP,1,1,preserved
 approach,approach,1,approach,approach,1,NN,NN,1,1,preserved
 [1],[1],1,[1],[1],1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -41878,7 +41878,7 @@ features,features,1,feature,feature,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 threshold,threshold,1,threshold,threshold,1,NN,NN,1,0,preserved
 'is changed','was changed',0,'be change','be change',1,'VBZ PPR','VBD PPR',1,1,bigrammar-vtense
 to,to,1,to,to,1,TO,TO,1,1,preserved
@@ -42190,7 +42190,7 @@ features,features,1,feature,feature,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 classifier,classifier,1,classifier,classifier,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 performance,performance,1,performance,performance,1,NN,NN,1,0,preserved
 'does increase','did increase',0,'do increase','do increase',1,'VBZ POS','VBD POS',1,0,bigrammar-vtense
 not,not,1,not,not,1,RB,RB,0,1,preserved
@@ -43188,7 +43188,7 @@ tool,tool,1,tool,tool,1,NN,NN,1,1,preserved
 provided,provided,1,provide,provide,1,VBN,VBN,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
 LibSVM,LibSVM,1,LibSVM,LibSVM,1,NNP,NNP,1,0,preserved
-[31]},[31],0,[31]},[31],0,NN,RRB,1,1,preserved
+'[31]}',[31],0,'[31]}',[31],0,POS,RRB,1,1,preserved
 .,.,1,.,.,1,PP,PP,0,0,preserved
 ?,a,0,?,a,0,?,DET,0,0,mogrammar-det
 This,This,1,This,This,1,DET,DET,1,1,preserved
@@ -43389,7 +43389,7 @@ this,this,1,this,this,1,DET,DET,1,1,preserved
 combination,combination,1,combination,combination,1,NN,NN,1,0,preserved
 rejects,rejected,0,reject,reject,1,VBZ,VBN,1,1,bigrammar-vtense
 85,85,1,85,85,1,CD,CD,0,1,preserved
-.91\%,.91\%,1,.91\%,.91\%,1,NN,NN,1,1,preserved
+'.91\%','.91\%',1,'.91\%','.91\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 analyzed,analyzed,1,analyze,analyze,1,VBN,VBN,1,1,preserved
 patterns,patterns,1,pattern,pattern,1,NNS,NNS,1,1,preserved
@@ -44166,7 +44166,7 @@ enables,enables,1,enable,enable,1,VBZ,VBZ,1,1,preserved
 users,users,1,user,user,1,NNS,NNS,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 search,search,1,search,search,1,NN,NN,1,0,preserved
-'persons's appearance','people's appearances',0,'person appearance','people appearance',0,'POS POS','POS POS',1,1,bigrammar-inter
+'persons\'s appearance','people\'s appearances',0,'persons\s appearance','people\s appearance',0,'PRP POS','PRP POS',1,1,bigrammar-inter
 by,by,1,by,by,1,IN,IN,0,1,preserved
 their,their,1,their,their,1,PRPS,PRPS,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
@@ -44335,13 +44335,13 @@ as,as,1,as,as,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 appearance,appearance,1,appearance,appearance,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
-'personX','personX',1,personX,personX,1,POS,POS,1,1,preserved
+'\'personX\'','\'personX\'',1,\personX\,\personX\,1,NN,NN,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
 not,not,1,not,not,1,RB,RB,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 appearance,appearance,1,appearance,appearance,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
-'personX','personX',1,personX,personX,1,POS,POS,1,1,preserved
+'\'personX\'','\'personX\'',1,\personX\,\personX\,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Instead,Instead,1,Instead,Instead,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -44586,7 +44586,7 @@ by,by,1,by,by,1,IN,IN,1,1,preserved
 search,search,1,search,search,1,NN,NN,1,1,preserved
 engines,engines,1,engine,engine,1,NNS,NNS,1,1,preserved
 given,given,1,give,give,1,VBN,VBN,1,0,preserved
-person,people's,0,person,people,0,NN,POS,1,1,paraphrase
+person,'people\'s',0,person,people\s,0,NN,POS,1,1,paraphrase
 names,names,1,name,name,1,NNS,NNS,0,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 From,from,0,From,from,0,IN,IN,0,1,preserved
@@ -44745,10 +44745,10 @@ with,with,1,with,with,1,IN,IN,1,0,preserved
 described,described,1,describe,describe,1,VBN,VBN,0,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
 text,text,1,text,text,1,NN,NN,1,1,preserved
-'airplane','airplane',1,airplane,airplane,1,POS,POS,1,1,preserved
+'\'airplane\'','\'airplane\'',1,\airplane\,\airplane\,1,NN,NN,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
-'George,'George,1,George,George,1,NNP,NNP,1,1,preserved
-Bush',Bush',1,Bush,Bush,1,POS,POS,1,0,preserved
+'\'George','\'George',1,\George,\George,1,POS,POS,1,1,preserved
+'Bush\'','Bush\'',1,Bush\,Bush\,1,NNP,NNP,1,0,preserved
 relevant,relevant,1,relevant,relevant,1,JJ,JJ,0,1,preserved
 images,images,1,image,image,1,NNS,NNS,1,1,preserved
 Existing,Existing,1,Existing,Existing,1,VBG,VBG,1,0,preserved
@@ -45148,12 +45148,12 @@ classifiers,classifiers,1,classifier,classifier,1,NNS,NNS,1,0,preserved
 is,is,1,be,be,1,VBZ,VBZ,0,1,preserved
 classified,classified,1,classify,classify,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
-'class-A','class-A',1,class-A,class-A,1,PPR,PPR,1,1,preserved
+'\'class-A\'','\'class-A\'',1,\class-A\,\class-A\,1,NN,NN,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
-'non-class-A','non-class-A',1,non-class-A,non-class-A,1,PPR,PPR,1,1,preserved
+'\'non-class-A\'','\'non-class-A\'',1,\non-class-A\,\non-class-A\,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 where,where,1,where,where,1,WRB,WRB,1,1,preserved
-'class-A','class-A',1,class-A,class-A,1,PPR,PPR,1,1,preserved
+'\'class-A\'','\'class-A\'',1,\class-A\,\class-A\,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 category,category,1,category,category,1,NN,NN,1,1,preserved
@@ -45164,7 +45164,7 @@ query,query,1,query,query,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,0,preserved
 'for example',e.g.,0,'for example',e.g.,0,'IN POS',PP,1,1,paraphrase
 ',',',',1,',',',',1,PPR,PPR,0,1,preserved
-'airplane','airplane',1,airplane,airplane,1,POS,POS,1,1,preserved
+'\'airplane\'','\'airplane\'',1,\airplane\,\airplane\,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Each,Each,1,Each,Each,1,DET,DET,0,1,preserved
 image,image,1,image,image,1,NN,NN,1,0,preserved
@@ -45296,8 +45296,8 @@ queried,queried,1,query,query,1,VBN,VBN,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,0,preserved
 'e .g',e.g.,0,'e .g',e.g.,0,'NN POS',PP,1,0,preserved
-'George,'George,1,George,George,1,NNP,NNP,0,1,preserved
-Bush',Bush',1,Bush,Bush,1,POS,POS,1,1,preserved
+'\'George','\'George',1,\George,\George,1,POS,POS,0,1,preserved
+'Bush\'','Bush\'',1,Bush\,Bush\,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 our,our,1,our,our,1,PRPS,PRPS,1,1,preserved
@@ -45409,7 +45409,7 @@ by,by,1,by,by,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 query,query,1,query,query,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
-'personX','personX',1,personX,personX,1,POS,POS,1,1,preserved
+'\'personX\'','\'personX\'',1,\personX\,\personX\,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 face,face,1,face,face,1,NN,NN,1,1,preserved
@@ -45443,9 +45443,9 @@ for,for,1,for,for,1,IN,IN,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 face,face,1,face,face,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-'personX','personX',1,personX,personX,1,POS,POS,1,1,preserved
+'\'personX\'','\'personX\'',1,\personX\,\personX\,1,NN,NN,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
-'non-personX','non-personX',1,non-personX,non-personX,1,PPR,PPR,1,1,preserved
+'\'non-personX\'','\'non-personX\'',1,\non-personX\,\non-personX\,1,NN,NN,1,1,preserved
 meaning,meaning,1,mean,mean,1,NN,NN,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
 it,it,1,it,it,1,PRP,PRP,1,1,preserved
@@ -45454,7 +45454,7 @@ relevant,relevant,1,relevant,relevant,1,JJ,JJ,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
 irrelevant,irrelevant,1,irrelevant,irrelevant,1,JJ,JJ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
-'personX','personX',1,personX,personX,1,POS,POS,1,1,preserved
+'\'personX\'','\'personX\'',1,\personX\,\personX\,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Meanwhile,Further,0,Meanwhile,Further,0,RB,RB,1,1,paraphrase
 ',',',',1,',',',',1,PPR,PPR,0,0,preserved
@@ -45469,7 +45469,7 @@ classifier,classifier,1,classifier,classifier,1,NN,NN,1,0,preserved
 is,is,1,be,be,1,VBZ,VBZ,0,1,preserved
 independent,independent,1,independent,independent,1,JJ,JJ,1,0,preserved
 any,any,1,any,any,1,DET,DET,0,0,preserved
-\textit{'personX'},'personX',0,\textit{personX},personX,0,RRB,POS,1,0,preserved
+'\textit{\'personX\'}','\'personX\'',0,'\textit{\personX\}',\personX\,0,PPS,NN,1,0,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 face,face,1,face,face,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
@@ -45570,8 +45570,8 @@ query,query,1,query,query,1,NN,NN,0,0,preserved
 term,terms,0,term,term,1,NN,NNS,1,1,bigrammar-others
 such,such,1,such,such,1,JJ,JJ,0,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
-'George,'George,1,George,George,1,NNP,NNP,1,1,preserved
-Bush',Bush',1,Bush,Bush,1,POS,POS,1,1,preserved
+'\'George','\'George',1,\George,\George,1,POS,POS,1,1,preserved
+'Bush\'','Bush\'',1,Bush\,Bush\,1,NNP,NNP,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 each,each,1,each,each,1,DET,DET,1,1,preserved
 face,face,1,face,face,1,NN,NN,1,1,preserved
@@ -47680,7 +47680,7 @@ of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 target,target,1,target,target,1,NN,NN,1,1,preserved
 person,person,1,person,person,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 friends,friends,1,friend,friend,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 The,?,0,The,?,0,DET,?,0,0,mogrammar-det
@@ -48278,7 +48278,7 @@ to,into,0,to,into,0,TO,IN,1,1,bigrammar-prep
 the,the,1,the,the,1,DET,DET,0,1,preserved
 search,search,1,search,search,1,NN,NN,1,1,preserved
 system,system,1,system,system,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 database,database,1,database,database,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,By,0,?,By,0,?,IN,0,0,mogrammar-prep
@@ -48570,7 +48570,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 semantics,semantics,1,semantics,semantics,1,NNS,NNS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
-formulas',formulas',1,formula,formula,1,POS,POS,1,1,preserved
+'formulas\'','formulas\'',1,formulas\,formulas\,1,NN,NN,1,1,preserved
 surrounding,surrounding,1,surround,surround,1,VBG,VBG,1,1,preserved
 text,text,1,text,text,1,NN,NN,1,0,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
@@ -48615,7 +48615,7 @@ their,their,1,their,their,1,PRPS,PRPS,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,0,preserved
 their,?,0,their,?,0,PRPS,?,0,0,mogrammar-det
-variables',variable,0,variable,variable,1,POS,JJ,0,1,bigrammar-wform
+'variables\'',variable,0,variables\,variable,0,NN,JJ,0,1,bigrammar-wform
 descriptions,descriptions,1,description,description,1,NNS,NNS,0,0,preserved
 and,and,1,and,and,1,CC,CC,0,1,preserved
 other,other,1,other,other,1,JJ,JJ,1,1,preserved
@@ -48914,12 +48914,12 @@ indexing,indexing,1,index,index,1,NN,NN,1,1,preserved
 The,The,1,The,The,1,DET,DET,1,1,preserved
 keywords,keywords,1,keywords,keywords,1,NNS,NNS,1,0,preserved
 include,included,0,include,include,1,VB,VBN,1,1,bigrammar-vtense
-formulas',formulas',1,formula,formula,1,POS,POS,0,1,preserved
+'formulas\'','formulas\'',1,formulas\,formulas\,1,NN,NN,0,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 operators,operators,1,operator,operator,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-variables',variables',1,variable,variable,1,POS,POS,1,1,preserved
+'variables\'','variables\'',1,variables\,variables\,1,NN,NN,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
@@ -49123,7 +49123,7 @@ without,without,1,without,without,1,IN,IN,1,1,preserved
 using,using,1,use,use,1,VBG,VBG,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 formula,formula,1,formula,formula,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Table,Table,1,Table,Table,1,NNP,NNP,1,1,preserved
@@ -49177,7 +49177,7 @@ to,to,1,to,to,1,TO,TO,1,1,preserved
 input,input,1,input,input,1,NN,NN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 formula,formula,1,formula,formula,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 name,name,1,name,name,1,NN,NN,1,1,preserved
 directly,directly,1,directly,directly,1,RB,RB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -49213,7 +49213,7 @@ not,not,1,not,not,1,RB,RB,1,1,preserved
 match,match,1,match,match,1,NN,NN,1,1,preserved
 any,any,1,any,any,1,DET,DET,1,1,preserved
 function,function,1,function,function,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 name,name,1,name,name,1,NN,NN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 our,our,1,our,our,1,PRPS,PRPS,1,1,preserved
@@ -49330,7 +49330,7 @@ study,study,1,study,study,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Using,Using,1,Using,Using,1,VBG,VBG,1,0,preserved
 formula,formula,1,formula,formula,1,NN,NN,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 name,name,1,name,name,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,0,preserved
 one,one,1,one,one,1,CD,CD,0,1,preserved
@@ -49353,14 +49353,14 @@ information,information,1,information,information,1,NN,NN,1,1,preserved
 such,such,1,such,such,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,0,preserved
 formula,formula,1,formula,formula,1,NN,NN,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 description,description,1,description,description,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,0,preserved
 ?,a,0,?,a,0,?,DET,0,0,mogrammar-det
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
 ?,its,0,?,it,0,?,PRPS,0,0,mogrammar-det
 variable,variable,1,variable,variable,1,JJ,JJ,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 description,description,1,description,description,1,NN,NN,1,1,preserved
 Currently,Currently,1,Currently,Currently,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -50225,7 +50225,7 @@ knowledge,knowledge,1,knowledge,knowledge,1,NN,NN,1,1,preserved
 such,such,1,such,such,1,JJ,JJ,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,0,preserved
 symbol,symbol,1,symbol,symbol,1,NN,NN,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 meanings,meanings,1,mean,mean,1,NNS,NNS,1,1,preserved
 or,or,1,or,or,1,CC,CC,1,1,preserved
 structural,structural,1,structural,structural,1,JJ,JJ,1,1,preserved
@@ -50489,7 +50489,7 @@ For,in,0,For,in,0,IN,IN,0,1,bigrammar-prep
 .,.,1,.,.,1,PP,PP,0,1,preserved
 scientific,scientific,1,scientific,scientific,1,JJ,JJ,0,1,preserved
 documents,documents,1,document,document,1,NNS,NNS,1,0,preserved
-\TeX{},\TeX{},1,\TeX{},\TeX{},1,NN,NN,0,1,preserved
+'\TeX{}','\TeX{}',1,'\TeX{}','\TeX{}',1,POS,POS,0,1,preserved
 has,has,1,have,have,1,VBZ,VBZ,1,1,preserved
 been,been,1,be,be,1,VBN,VBN,1,1,preserved
 used,used,1,use,use,1,VBN,VBN,1,1,preserved
@@ -50533,7 +50533,7 @@ in,in,1,in,in,1,IN,IN,1,1,preserved
 both,both,1,both,both,1,DET,DET,1,1,preserved
 image,image,1,image,image,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-\TeX{},\TeX{},1,\TeX{},\TeX{},1,NN,NN,1,1,preserved
+'\TeX{}','\TeX{}',1,'\TeX{}','\TeX{}',1,POS,POS,1,1,preserved
 formats,formats,1,format,format,1,NNS,NNS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,on,0,?,on,0,?,IN,0,0,mogrammar-prep
@@ -50639,9 +50639,9 @@ of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 expression,expression,1,expression,expression,1,NN,NN,1,1,preserved
 $,$,1,$,$,1,PPD,PPD,1,1,preserved
-C_{-\frac{17}{2}}=,C_{-\frac{17}{2}}=,1,C_{-\frac{17}{2}}=,C_{-\frac{17}{2}}=,1,SYM,SYM,1,1,preserved
+'C_{-\frac{17}{2}}=','C_{-\frac{17}{2}}=',1,'C_{-\frac{17}{2}}=','C_{-\frac{17}{2}}=',1,SYM,SYM,1,1,preserved
 \tilde,\tilde,1,\tilde,\tilde,1,NNP,NNP,1,1,preserved
-{\infty},{\infty},1,{\infty},{\infty},1,RRB,RRB,1,1,preserved
+'{\infty}','{\infty}',1,'{\infty}','{\infty}',1,PPS,PPS,1,1,preserved
 $,$,1,$,$,1,PPD,PPD,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 depicted,depicted,1,depict,depict,1,VBN,VBN,1,1,preserved
@@ -50859,7 +50859,7 @@ result,result,1,result,result,1,NN,NN,1,1,preserved
 was,was,1,be,be,1,VBD,VBD,1,0,preserved
 68.26,68.26,1,68.26,68.26,1,CD,CD,0,1,preserved
 $,$,1,$,$,1,PPD,PPD,0,0,preserved
-F_{0.5},F_{0.5},1,F_{0.5},F_{0.5},1,RRB,RRB,0,1,preserved
+'F_{0.5}','F_{0.5}',1,'F_{0.5}','F_{0.5}',1,PPS,PPS,0,1,preserved
 $,$,1,$,$,1,PPD,PPD,0,0,preserved
 score,score,1,score,score,1,NN,NN,1,0,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
@@ -51334,11 +51334,11 @@ Token,Token,1,Token,Token,1,JJ,JJ,0,1,preserved
 elements,elements,1,elements,elements,1,NNS,NNS,1,1,preserved
 represent,represent,1,represent,represent,1,VB,VB,1,0,preserved
 identifier,identifier,1,identifier,identifier,1,NN,NN,0,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 function,function,1,function,function,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 names,names,1,name,name,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 numbers,numbers,1,number,number,1,NNS,NNS,1,1,preserved
@@ -51871,7 +51871,7 @@ It,It,1,It,It,1,PRP,PRP,1,1,preserved
 contains,contains,1,contain,contain,1,VBZ,VBZ,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 world,world,1,world,world,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 most,most,1,most,most,1,JJS,JJS,1,1,preserved
 encyclopedic,encyclopedic,1,encyclopedic,encyclopedic,1,JJ,JJ,1,1,preserved
 collection,collection,1,collection,collection,1,NN,NN,1,1,preserved
@@ -52359,9 +52359,9 @@ for,for,1,for,for,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 expression,expression,1,expression,expression,1,NN,NN,1,1,preserved
 $,$,1,$,$,1,PPD,PPD,1,1,preserved
-C_{-\frac{17}{2}}=,C_{-\frac{17}{2}}=,1,C_{-\frac{17}{2}}=,C_{-\frac{17}{2}}=,1,SYM,SYM,1,1,preserved
+'C_{-\frac{17}{2}}=','C_{-\frac{17}{2}}=',1,'C_{-\frac{17}{2}}=','C_{-\frac{17}{2}}=',1,SYM,SYM,1,1,preserved
 \tilde,\tilde,1,\tilde,\tilde,1,NNP,NNP,1,1,preserved
-{\infty},{\infty},1,{\infty},{\infty},1,RRB,RRB,1,1,preserved
+'{\infty}','{\infty}',1,'{\infty}','{\infty}',1,PPS,PPS,1,1,preserved
 $,$,1,$,$,1,PPD,PPD,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,0,preserved
 depict,depicted,0,depict,depict,1,VB,VBN,1,1,bigrammar-vtense
@@ -52427,7 +52427,7 @@ A,A,1,A,A,1,DET,DET,1,1,preserved
 B,B,1,B,B,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 =,=,1,=,=,1,SYM,SYM,1,1,preserved
-\frac{x}{y},\frac{x}{y},1,\frac{x}{y},\frac{x}{y},1,RRB,RRB,1,1,preserved
+'\frac{x}{y}','\frac{x}{y}',1,'\frac{x}{y}','\frac{x}{y}',1,PPS,PPS,1,1,preserved
 =,=,1,=,=,1,SYM,SYM,1,1,preserved
 z,z,1,z,z,1,SYM,SYM,1,1,preserved
 $,$,1,$,$,1,PPD,PPD,1,1,preserved
@@ -53079,7 +53079,7 @@ increase,increase,1,increase,increase,1,NN,NN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 performance,performance,1,performance,performance,1,NN,NN,1,0,preserved
 2.3,2.3,1,2.3,2.3,1,CD,CD,0,1,preserved
-%,%,1,%,%,1,NN,NN,1,1,preserved
+'%','%',1,'%','%',1,POS,POS,1,1,preserved
 on,on,1,on,on,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 test,test,1,test,test,1,NN,NN,1,1,preserved
@@ -53087,7 +53087,7 @@ data,data,1,datum,datum,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 4,4,1,4,4,1,CD,CD,1,1,preserved
-.0%,.0%,1,.0%,.0%,1,NN,NN,1,1,preserved
+'.0%','.0%',1,'.0%','.0%',1,POS,POS,1,1,preserved
 on,on,1,on,on,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 development,development,1,development,development,1,NN,NN,1,1,preserved
@@ -53570,7 +53570,7 @@ primary,primary,1,primary,primary,1,JJ,JJ,1,1,preserved
 evaluation,evaluation,1,evaluation,evaluation,1,NN,NN,1,0,preserved
 found,found,1,find,find,1,VBN,VBN,0,1,preserved
 22,22,1,22,22,1,CD,CD,1,1,preserved
-.2%,.2%,1,.2%,.2%,1,NN,NN,1,1,preserved
+'.2%','.2%',1,'.2%','.2%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,0,preserved
 anaphoric,anaphoric,1,anaphoric,anaphoric,1,NN,NN,0,1,preserved
 protein,protein,1,protein,protein,1,NN,NN,1,1,preserved
@@ -53580,10 +53580,10 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 precision,precision,1,precision,precision,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 73,73,1,73,73,1,CD,CD,1,1,preserved
-.3%,.3%,1,.3%,.3%,1,NN,NN,1,1,preserved
+'.3%','.3%',1,'.3%','.3%',1,POS,POS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 34,34,1,34,34,1,CD,CD,1,1,preserved
-.1%,.1%,1,.1%,.1%,1,NN,NN,1,0,preserved
+'.1%','.1%',1,'.1%','.1%',1,POS,POS,1,0,preserved
 Fscore,F-score,0,Fscore,F-score,0,NNP,JJ,1,1,preserved
 ),),1,),),1,RRB,RRB,0,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -53656,10 +53656,10 @@ texts,texts,1,text,text,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 66,66,1,66,66,1,CD,CD,1,1,preserved
-.38%,.38%,1,.38%,.38%,1,NN,NN,1,0,preserved
+'.38%','.38%',1,'.38%','.38%',1,POS,POS,1,0,preserved
 'down to',to,0,'down to',to,0,'RB PPR',TO,1,1,bigrammar-prep
 49,49,1,49,49,1,CD,CD,1,1,preserved
-.65%,.65%,1,.65%,.65%,1,NN,NN,1,1,preserved
+'.65%','.65%',1,'.65%','.65%',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 MUC-score,MUC-score,1,MUC-score,MUC-score,1,JJ,JJ,1,1,preserved
 [,[,1,[,[,1,LRB,LRB,1,1,preserved
@@ -53695,7 +53695,7 @@ reported,reported,1,report,report,1,VBN,VBN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 organizer,organizer,1,organizer,organizer,1,NN,NN,1,1,preserved
-'s,'s,1,s,s,1,PRP,PRP,1,1,preserved
+'\'s','\'s',1,\s,\s,1,PPR,PPR,1,1,preserved
 papers,papers,1,paper,paper,1,NNS,NNS,1,1,preserved
 [,[,1,[,[,1,LRB,LRB,1,1,preserved
 15,15,1,15,15,1,CD,CD,1,1,preserved
@@ -53881,7 +53881,7 @@ PRON,PRON,1,PRON,PRON,1,NNP,NNP,1,1,preserved
 type,type,1,type,type,1,NN,NN,1,0,preserved
 are,was,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
 27,27,1,27,27,1,CD,CD,0,1,preserved
-.5%,.5%,1,.5%,.5%,1,NN,NN,1,1,preserved
+'.5%','.5%',1,'.5%','.5%',1,POS,POS,1,1,preserved
 F-score,F-score,1,F-score,F-score,1,JJ,JJ,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 10,10,1,10,10,1,CD,CD,1,1,preserved
@@ -53905,7 +53905,7 @@ type,type,1,type,type,1,NN,NN,1,1,preserved
 ?,a,0,?,a,0,?,DET,0,0,mogrammar-det
 66,66,1,66,66,1,CD,CD,0,1,preserved
 .2,.2,1,.2,.2,1,CD,CD,1,1,preserved
-%,%,1,%,%,1,NN,NN,1,1,preserved
+'%','%',1,'%','%',1,POS,POS,1,1,preserved
 F-score,F-score,1,F-score,F-score,1,JJ,JJ,1,1,preserved
 Thus,Thus,1,Thus,Thus,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -56894,7 +56894,7 @@ corpus,corpus,1,corpus,corpus,1,NNS,NNS,1,1,preserved
 shows,shows,1,show,show,1,NNS,NNS,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
 97,97,1,97,97,1,CD,CD,1,1,preserved
-.0%,.0%,1,.0%,.0%,1,NN,NN,1,1,preserved
+'.0%','.0%',1,'.0%','.0%',1,POS,POS,1,1,preserved
 percent,percent,1,percent,percent,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 protein,protein,1,protein,protein,1,NN,NN,1,1,preserved
@@ -57215,7 +57215,7 @@ with,with,1,with,with,1,IN,IN,1,1,preserved
 up,up,1,up,up,1,IN,IN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 7,7,1,7,7,1,CD,CD,1,1,preserved
-.1%,.1%,1,.1%,.1%,1,NN,NN,1,1,preserved
+'.1%','.1%',1,'.1%','.1%',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,0,0,preserved
 Fscore,F-score,0,Fscore,F-score,0,NNP,JJ,1,1,preserved
 Since,Since,1,Since,Since,1,IN,IN,1,1,preserved
@@ -57660,7 +57660,7 @@ and,and,1,and,and,1,CC,CC,1,1,preserved
 resulted,resulted,1,result,result,1,VBN,VBN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,0,preserved
 62,62,1,62,62,1,CD,CD,0,1,preserved
-.4%,.4%,1,.4%,.4%,1,NN,NN,1,0,preserved
+'.4%','.4%',1,'.4%','.4%',1,POS,POS,1,0,preserved
 fscore,F-score,0,fscore,F-score,0,NN,JJ,1,1,spelling
 (,(,1,(,(,1,LRB,LRB,0,1,preserved
 RB-MIN+1,RB-MIN+1,1,RB-MIN+1,RB-MIN+1,1,CD,CD,1,1,preserved
@@ -58303,7 +58303,7 @@ show,show,1,show,show,1,NN,NN,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
 only,only,1,only,only,1,RB,RB,1,1,preserved
 around,around,1,around,around,1,IN,IN,1,1,preserved
-30%,30%,1,30%,30%,1,NN,NN,1,1,preserved
+'30%','30%',1,'30%','30%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 definite,definite,1,definite,definite,1,JJ,JJ,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
@@ -58370,7 +58370,7 @@ this,this,1,this,this,1,DET,DET,1,1,preserved
 contributed,contributed,1,contribute,contribute,1,VBN,VBN,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,0,preserved
 1,1,1,1,1,1,CD,CD,0,1,preserved
-.8%,.8%,1,.8%,.8%,1,NN,NN,1,1,preserved
+'.8%','.8%',1,'.8%','.8%',1,POS,POS,1,1,preserved
 gain,gain,1,gain,gain,1,NN,NN,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,0,preserved
 f-score,F-score,0,f-score,F-score,0,JJ,JJ,1,1,preserved
@@ -59446,7 +59446,7 @@ processing,processing,1,process,process,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 VLSP,VLSP,1,VLSP,VLSP,1,NNP,NNP,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 Nguyen,Nguyen,1,Nguyen,Nguyen,1,NNP,NNP,1,1,preserved
 et,et,1,et,et,1,NNP,NNP,1,1,preserved
@@ -59489,7 +59489,7 @@ parser,parser,1,parser,parser,1,NN,NN,1,1,preserved
 achieved,achieved,1,achieve,achieve,1,VBN,VBN,1,1,preserved
 only,only,1,only,only,1,RB,RB,1,1,preserved
 65,65,1,65,65,1,CD,CD,1,1,preserved
-.8%,.8%,1,.8%,.8%,1,NN,NN,1,1,preserved
+'.8%','.8%',1,'.8%','.8%',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 F-score,F-score,1,F-score,F-score,1,JJ,JJ,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -59516,7 +59516,7 @@ Treebank,Treebank,1,Treebank,Treebank,1,NNP,NNP,1,1,preserved
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
 ?,'which reported',0,?,'which report',0,?,'WDT PPR',0,0,unaligned
 90,90,1,90,90,1,CD,CD,0,1,preserved
-.3%,.3%,1,.3%,.3%,1,NN,NN,1,1,preserved
+'.3%','.3%',1,'.3%','.3%',1,POS,POS,1,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 F-score,F-score,1,F-score,F-score,1,JJ,JJ,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
@@ -59601,7 +59601,7 @@ defining,defining,1,define,define,1,VBG,VBG,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,0,preserved
 'What are',?,0,'What be',?,0,'WP POS',?,0,0,unaligned
 words,words,1,word,word,1,NNS,NNS,0,0,preserved
-'','',1,?,?,1,PPR,PPR,0,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,0,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 'the first that problem a treebank has to solve','the step first',0,'the first that problem a treebank have to solve','the step first',0,'DET JJ IN NN DET NN VBZ TO PPR','DET NN PPR',1,1,paraphrase
 (,(,1,(,(,1,LRB,LRB,0,1,preserved
@@ -59659,7 +59659,7 @@ What,What,1,What,What,1,WP,WP,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 words,words,1,word,word,1,NNS,NNS,1,1,preserved
 ?,?,1,?,?,1,PP,PP,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 not,not,1,not,not,1,RB,RB,1,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
@@ -59682,7 +59682,7 @@ students,students,1,student,student,1,NNS,NNS,1,1,preserved
 learn,learn,1,learn,learn,1,VB,VB,1,1,preserved
 biology,biology,1,biology,biology,1,NN,NN,1,1,preserved
 )1,)1,1,)1,)1,1,CD,CD,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 composed,composed,1,compose,compose,1,VBN,VBN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
@@ -59694,7 +59694,7 @@ sinh,sinh,1,sinh,sinh,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 student,student,1,student,student,1,NN,NN,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 h❅c,h❅c,1,h❅c,h❅c,1,NN,NN,1,1,preserved
@@ -59702,7 +59702,7 @@ h❅c,h❅c,1,h❅c,h❅c,1,NN,NN,1,1,preserved
 learn,learn,1,learn,learn,1,VB,VB,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 sinh,sinh,1,sinh,sinh,1,NN,NN,1,1,preserved
@@ -59710,7 +59710,7 @@ h❅c,h❅c,1,h❅c,h❅c,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 biology,biology,1,biology,biology,1,NN,NN,1,1,preserved
 ),),1,),),1,RRB,RRB,1,0,preserved
-'','',1,?,?,1,PPR,PPR,0,0,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,0,0,preserved
 Word,Word,1,Word,Word,1,NN,NN,0,1,preserved
 segmentation,segmentation,1,segmentation,segmentation,1,NN,NN,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
@@ -59734,7 +59734,7 @@ sinh,sinh,1,sinh,sinh,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 student,student,1,student,student,1,NN,NN,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 sinh,sinh,1,sinh,sinh,1,NN,NN,1,1,preserved
@@ -59742,7 +59742,7 @@ h❅c,h❅c,1,h❅c,h❅c,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 biology,biology,1,biology,biology,1,NN,NN,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Note,Note,1,Note,Note,1,NN,NN,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,1,preserved
@@ -59751,7 +59751,7 @@ terminology,terminology,1,terminology,terminology,1,NN,NN,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 word,word,1,word,word,1,NN,NN,1,1,preserved
 segmentation,segmentation,1,segmentation,segmentation,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 also,also,1,also,also,1,RB,RB,1,1,preserved
 refers,refers,1,refer,refer,1,VBZ,VBZ,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
@@ -60285,7 +60285,7 @@ and,and,1,and,and,1,CC,CC,1,1,preserved
 special,special,1,special,special,1,JJ,JJ,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 words,words,1,word,word,1,NNS,NNS,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 Single,Single,1,Single,Single,1,JJ,JJ,1,1,preserved
 words,words,1,word,word,1,NNS,NNS,1,1,preserved
@@ -60360,7 +60360,7 @@ words,words,1,word,word,1,NNS,NNS,1,1,preserved
 Special,Special,1,Special,Special,1,JJ,JJ,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 words,words,1,word,word,1,NNS,NNS,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,0,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,0,preserved
 'can be',include,0,'can be',include,0,'MD PPR',VB,1,1,paraphrase
 idioms,idioms,1,idiom,idiom,1,NNS,NNS,0,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -60582,7 +60582,7 @@ common,common,1,common,common,1,JJ,JJ,1,1,preserved
 noun,noun,1,noun,noun,1,NN,NN,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 bàn,bàn,1,bàn,bàn,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,0,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,0,preserved
 means,means,1,mean,mean,1,NNS,NNS,0,1,preserved
 tables,tables,1,table,table,1,NNS,NNS,1,0,preserved
 'in general',generally,0,'in general',generally,0,'IN PPR',RB,0,0,paraphrase
@@ -60591,7 +60591,7 @@ while,while,1,while,while,1,IN,IN,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 cái,cái,1,cái,cái,1,NN,NN,1,1,preserved
 bàn,bàn,1,bàn,bàn,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 means,means,1,mean,mean,1,NNS,NNS,1,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
 specific,specific,1,specific,specific,1,JJ,JJ,1,1,preserved
@@ -60688,7 +60688,7 @@ example,example,1,example,example,1,NN,NN,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
 gái/girl,gái/girl,1,gái/girl,gái/girl,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 can,can,1,can,can,1,MD,MD,1,1,preserved
 remain,remain,1,remain,remain,1,VB,VB,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
@@ -60703,11 +60703,11 @@ two,two,1,two,two,1,CD,CD,1,1,preserved
 words,words,1,word,word,1,NNS,NNS,1,0,preserved
 ``,``,1,``,``,1,PPL,PPL,0,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 gái,gái,1,gái,gái,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 A,A,1,A,A,1,DET,DET,1,1,preserved
 variation,variation,1,variation,variation,1,NN,NN,1,1,preserved
@@ -60806,12 +60806,12 @@ example,example,1,example,example,1,NN,NN,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
 gái/girl,gái/girl,1,gái/girl,gái/girl,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
 trai/boy,trai/boy,1,trai/boy,trai/boy,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 have,have,1,have,have,1,VB,VB,1,1,preserved
 similar,similar,1,similar,similar,1,JJ,JJ,1,1,preserved
 structures,structures,1,structure,structure,1,NNS,NNS,1,0,preserved
@@ -60834,14 +60834,14 @@ when,when,1,when,when,1,WRB,WRB,1,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
 gái/girl,gái/girl,1,gái/girl,gái/girl,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,0,preserved
 splitted,split,0,splitted,split,0,NN,NN,1,0,spelling
 and,and,1,and,and,1,CC,CC,0,1,preserved
 ``,``,1,``,``,1,PPL,PPL,1,1,preserved
 con,con,1,con,con,1,JJ,JJ,1,1,preserved
 trai/boy,trai/boy,1,trai/boy,trai/boy,1,NN,NN,1,1,preserved
-'','',1,?,?,1,PPR,PPR,1,1,preserved
+'\'\'','\'\'',1,\\,\\,1,SYM,SYM,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 not,not,1,not,not,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -61066,7 +61066,7 @@ of,of,1,of,of,1,IN,IN,1,1,preserved
 variations,variations,1,variation,variation,1,NNS,NNS,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 92,92,1,92,92,1,CD,CD,1,1,preserved
-.9%,.9%,1,.9%,.9%,1,NN,NN,1,1,preserved
+'.9%','.9%',1,'.9%','.9%',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 This,This,1,This,This,1,DET,DET,1,1,preserved
@@ -61097,7 +61097,7 @@ et,et,1,et,et,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-80%,80%,1,80%,80%,1,NN,NN,1,0,preserved
+'80%','80%',1,'80%','80%',1,POS,POS,1,0,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
 Variations,Variations,1,Variations,Variations,1,NNS,NNS,1,0,preserved
 have,have,1,have,have,1,VB,VB,0,1,preserved
@@ -61109,10 +61109,10 @@ four,four,1,four,four,1,CD,CD,1,1,preserved
 tokens,tokens,1,token,token,1,NNS,NNS,1,1,preserved
 occupy,occupy,1,occupy,occupy,1,VB,VB,1,1,preserved
 6,6,1,6,6,1,CD,CD,1,1,preserved
-.1%,.1%,1,.1%,.1%,1,NN,NN,1,1,preserved
+'.1%','.1%',1,'.1%','.1%',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 1,1,1,1,1,1,CD,CD,1,1,preserved
-.0%,.0%,1,.0%,.0%,1,NN,NN,1,1,preserved
+'.0%','.0%',1,'.0%','.0%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 respectively,respectively,1,respectively,respectively,1,RB,RB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
@@ -61152,7 +61152,7 @@ that,that,1,that,that,1,IN,IN,1,1,preserved
 cases,cases,1,case,case,1,NNS,NNS,1,1,preserved
 occupying,occupying,1,occupy,occupy,1,JJ,JJ,1,1,preserved
 99,99,1,99,99,1,CD,CD,1,1,preserved
-.2%,.2%,1,.2%,.2%,1,NN,NN,1,1,preserved
+'.2%','.2%',1,'.2%','.2%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 all,all,1,all,all,1,DET,DET,1,1,preserved
 extracted,extracted,1,extract,extract,1,VBN,VBN,1,1,preserved
@@ -61907,7 +61907,7 @@ these,these,1,these,these,1,DET,DET,1,1,preserved
 special,special,1,special,special,1,JJ,JJ,1,1,preserved
 characters,characters,1,character,character,1,NNS,NNS,1,0,preserved
 including,including,1,include,include,1,VBG,VBG,0,0,preserved
-percentage%,'percentages % ( )',0,percentage%,'percentage % ( )',0,NN,'NNS NN LRB PPS',1,1,bigrammar-others
+'percentage%','percentages % ( )',0,'percentage%','percentage % ( )',0,POS,'NNS NN LRB PPS',1,1,bigrammar-others
 ',',',',1,',',',',1,PPR,PPR,0,0,preserved
 hyphen,hyphens,0,hyphen,hyphen,1,NN,NNS,1,0,bigrammar-others
 -,'( - )',0,-,'( - )',0,PPS,'LRB PPS PPS',0,1,preserved
@@ -61929,10 +61929,10 @@ example,example,1,example,example,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 character,character,1,character,character,1,NN,NN,1,0,preserved
-%,%,1,%,%,1,NN,NN,0,0,preserved
+'%','%',1,'%','%',1,POS,POS,0,0,preserved
 in,in,1,in,in,1,IN,IN,0,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
-30%,30%,1,30%,30%,1,NN,NN,1,1,preserved
+'30%','30%',1,'30%','30%',1,POS,POS,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,0,preserved
 splitted,split,0,splitted,split,0,NN,NN,1,0,spelling
@@ -61945,7 +61945,7 @@ number,number,1,number,number,1,NN,NN,0,1,preserved
 in,in,1,in,in,1,IN,IN,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 50,50,1,50,50,1,CD,CD,1,1,preserved
-%,%,1,%,%,1,NN,NN,1,1,preserved
+'%','%',1,'%','%',1,POS,POS,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
@@ -61964,7 +61964,7 @@ argued,argued,1,argue,argue,1,VBN,VBN,1,1,preserved
 that,that,1,that,that,1,IN,IN,1,0,preserved
 'whether can be splitted',splitting,0,'whether can be splitted',split,0,'IN MD VB POS',NN,1,0,paraphrase
 '"','"',1,'"','"',1,PPR,PPR,0,1,preserved
-N%,N%,1,N%,N%,1,NN,NN,1,1,preserved
+'N%','N%',1,'N%','N%',1,POS,POS,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,0,preserved
 'in between',in-between,0,'in between',in-between,0,'IN POS',JJ,1,1,spelling
 into,into,1,into,into,1,IN,IN,0,1,preserved
@@ -61984,7 +61984,7 @@ space,space,1,space,space,1,NN,NN,1,0,preserved
 N,N,1,N,N,1,NNP,NNP,0,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
-%,%,1,%,%,1,NN,NN,1,1,preserved
+'%','%',1,'%','%',1,POS,POS,1,1,preserved
 '"','"',1,'"','"',1,PPR,PPR,1,1,preserved
 'It does matter','is significant',0,'It do matter','be significant',0,'PRP VBZ POS','VBZ PPR',0,0,paraphrase
 higher-levels,Higher-levels,0,higher-levels,Higher-levels,0,JJ,JJ,0,1,preserved
@@ -63413,7 +63413,7 @@ ORG,ORG,1,ORG,ORG,1,NNP,NNP,1,1,preserved
 corpus,corpus,1,corpus,corpus,1,NNS,NNS,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
 60,60,1,60,60,1,CD,CD,1,1,preserved
-.9%,.9%,1,.9%,.9%,1,NN,NN,1,1,preserved
+'.9%','.9%',1,'.9%','.9%',1,POS,POS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 it,it,1,it,it,1,PRP,PRP,1,1,preserved
 can,can,1,can,can,1,MD,MD,1,1,preserved
@@ -64624,7 +64624,7 @@ extraction,extraction,1,extraction,extraction,1,NN,NN,1,1,preserved
 approach,approach,1,approach,approach,1,NN,NN,1,1,preserved
 achieved,achieved,1,achieve,achieve,1,VBN,VBN,1,1,preserved
 approximately,approximately,1,approximately,approximately,1,RB,RB,1,1,preserved
-95%,95%,1,95%,95%,1,NN,NN,1,1,preserved
+'95%','95%',1,'95%','95%',1,POS,POS,1,1,preserved
 accuracy,accuracy,1,accuracy,accuracy,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 a,a,1,a,a,1,DET,DET,1,1,preserved
@@ -67094,9 +67094,9 @@ that,that,1,that,that,1,IN,IN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 W,W,1,W,W,1,NNP,NNP,1,1,preserved
 =,=,1,=,=,1,SYM,SYM,1,1,preserved
-{1;,{1;,1,{1;,{1;,1,PPS,PPS,1,1,preserved
+'{1;','{1;',1,'{1;','{1;',1,PPR,PPR,1,1,preserved
 2;,2;,1,2;,2;,1,PPS,PPS,1,1,preserved
-3},3},1,3},3},1,RRB,RRB,1,1,preserved
+'3}','3}',1,'3}','3}',1,PPS,PPS,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
 optimal,optimal,1,optimal,optimal,1,NN,NN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
@@ -67820,20 +67820,20 @@ Let,Let,1,Let,Let,1,NNP,NNP,1,0,preserved
 denote,denote,1,denote,denote,1,NN,NN,0,0,preserved
 mA,mA,1,mA,mA,1,NN,NN,0,1,preserved
 =,=,1,=,=,1,SYM,SYM,1,1,preserved
-{\SYM;,{\SYM;,1,{\SYM;,{\SYM;,1,PPS,PPS,1,1,preserved
+'{\SYM;','{\SYM;',1,'{\SYM;','{\SYM;',1,PPR,PPR,1,1,preserved
 \SYM;,\SYM;,1,\SYM;,\SYM;,1,PPS,PPS,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 :;,:;,1,:;,:;,1,PPS,PPS,1,1,preserved
-\SYM},\SYM},1,\SYM},\SYM},1,RRB,RRB,1,1,preserved
+'\SYM}','\SYM}',1,'\SYM}','\SYM}',1,PPS,PPS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 mB,mB,1,mB,mB,1,NN,NN,1,1,preserved
 =,=,1,=,=,1,SYM,SYM,1,1,preserved
-{\SYM,{\SYM,1,{\SYM,{\SYM,1,NNP,NNP,1,1,preserved
+'{\SYM','{\SYM',1,'{\SYM','{\SYM',1,POS,POS,1,1,preserved
 ;,;,1,;,;,1,PPS,PPS,1,1,preserved
 \SYM;,\SYM;,1,\SYM;,\SYM;,1,PPS,PPS,1,1,preserved
 :,:,1,:,:,1,PPS,PPS,1,1,preserved
 :;,:;,1,:;,:;,1,PPS,PPS,1,1,preserved
-\SYM},\SYM},1,\SYM},\SYM},1,RRB,RRB,1,0,preserved
+'\SYM}','\SYM}',1,'\SYM}','\SYM}',1,PPS,PPS,1,0,preserved
 'two two',?,0,'two two',?,0,'CD POS',?,0,0,unaligned
 mean,mean,1,mean,mean,1,JJ,JJ,0,1,preserved
 faces,faces,1,face,face,1,NNS,NNS,1,1,preserved
@@ -68639,7 +68639,7 @@ videos,videos,1,video,video,1,NNS,NNS,1,1,preserved
 by,by,1,by,by,1,IN,IN,1,1,preserved
 successfully,successfully,1,successfully,successfully,1,RB,RB,1,1,preserved
 extracting,extracting,1,extract,extract,1,VBG,VBG,1,1,preserved
-94%,94%,1,94%,94%,1,NN,NN,1,1,preserved
+'94%','94%',1,'94%','94%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 all,all,1,all,all,1,DET,DET,1,0,preserved
 face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
@@ -68663,7 +68663,7 @@ a,the,0,a,the,0,DET,DET,1,0,bigrammar-det
 trade-o_,trade-off,0,trade-o_,trade-off,0,JJ,NN,0,1,typo
 between,between,1,between,between,1,IN,IN,0,0,preserved
 obtaining,obtaining,1,obtain,obtain,1,VBG,VBG,0,0,preserved
-6%,6%,1,6%,6%,1,NN,NN,0,1,preserved
+'6%','6%',1,'6%','6%',1,POS,POS,0,1,preserved
 remaining,remaining,1,remain,remain,1,VBG,VBG,1,0,preserved
 face-tracks,'tracks face',0,face-tracks,'track face',0,JJ,'NNS POS',1,1,spelling
 and,and,1,and,and,1,CC,CC,0,0,preserved
@@ -69797,9 +69797,9 @@ all,all,1,all,all,1,DET,DET,1,0,preserved
 MAPs,MAPs,1,MAPs,MAPs,1,NNP,NNP,0,1,preserved
 vary,vary,1,vary,vary,1,VB,VB,1,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
-64.61%,64.61%,1,64.61%,64.61%,1,NN,NN,1,1,preserved
+'64.61%','64.61%',1,'64.61%','64.61%',1,POS,POS,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
-76.54%,76.54%,1,76.54%,76.54%,1,NN,NN,1,0,preserved
+'76.54%','76.54%',1,'76.54%','76.54%',1,POS,POS,1,0,preserved
 on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
 Trecvid,Trecvid,1,Trecvid,Trecvid,1,NNP,NNP,0,1,preserved
 dataset,dataset,1,dataset,dataset,1,NN,NN,1,1,preserved
@@ -69811,7 +69811,7 @@ Meanwhile,Meanwhile,1,Meanwhile,Meanwhile,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,0,0,preserved
 MAP,?,0,MAP,?,0,NNP,?,0,0,unaligned
 is,is,1,be,be,1,VBZ,VBZ,0,1,preserved
-42.75%,42.75%,1,42.75%,42.75%,1,NN,NN,1,0,preserved
+'42.75%','42.75%',1,'42.75%','42.75%',1,POS,POS,1,0,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
 ?,in,0,?,in,0,?,IN,0,0,mogrammar-prep
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
@@ -69819,7 +69819,7 @@ the,the,1,the,the,1,DET,DET,1,1,preserved
 best,best,1,good,good,1,RB,RB,1,1,preserved
 MAP,MAP,1,MAP,MAP,1,NNP,NNP,1,1,preserved
 is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
-60.99%,60.99%,1,60.99%,60.99%,1,NN,NN,1,1,preserved
+'60.99%','60.99%',1,'60.99%','60.99%',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
 worst,worst,1,bad,bad,1,JJS,JJS,1,0,preserved
@@ -70000,9 +70000,9 @@ MAPs,MAPs,1,MAPs,MAPs,1,NNP,NNP,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
-76.54%,76.54%,1,76.54%,76.54%,1,NN,NN,1,1,preserved
+'76.54%','76.54%',1,'76.54%','76.54%',1,POS,POS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-60.99%,60.99%,1,60.99%,60.99%,1,NN,NN,1,0,preserved
+'60.99%','60.99%',1,'60.99%','60.99%',1,POS,POS,1,0,preserved
 on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
 two,two,1,two,two,1,CD,CD,0,0,preserved
 dataset,datasets,0,dataset,datasets,0,NN,NNS,1,1,bigrammar-others
@@ -70626,7 +70626,7 @@ second,second,1,second,second,1,JJ,JJ,0,1,preserved
 place,place,1,place,place,1,NN,NN,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 with,with,1,with,with,1,IN,IN,1,1,preserved
-73.65%,73.65%,1,73.65%,73.65%,1,NN,NN,1,0,preserved
+'73.65%','73.65%',1,'73.65%','73.65%',1,POS,POS,1,0,preserved
 on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
 Trevid,Trevid,1,Trevid,Trevid,1,NNP,NNP,0,1,preserved
 dataset,dataset,1,dataset,dataset,1,NN,NN,1,1,preserved
@@ -70636,7 +70636,7 @@ pair:min,pair:min,1,pair:min,pair:min,1,NNP,NNP,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
 'The gap with','between our approach and',0,'The gap with','between our approach and',0,'DET NN POS','IN PRPS NN PPS',0,1,paraphrase
-2.89%,2.89%,1,2.89%,2.89%,1,NN,NN,1,0,preserved
+'2.89%','2.89%',1,'2.89%','2.89%',1,POS,POS,1,0,preserved
 difference,difference,1,difference,difference,1,NN,NN,0,1,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
 ?,The,0,?,The,0,?,DET,0,0,mogrammar-det
@@ -70657,9 +70657,9 @@ CMSM,CMSM,1,CMSM,CMSM,1,NNP,NNP,1,1,preserved
 which,which,1,which,which,1,WDT,WDT,1,1,preserved
 respectively,respectively,1,respectively,respectively,1,RB,RB,1,0,preserved
 achieve,achieved,0,achieve,achieve,1,VB,VBN,1,1,bigrammar-vtense
-69.20%,69.20%,1,69.20%,69.20%,1,NN,NN,0,1,preserved
+'69.20%','69.20%',1,'69.20%','69.20%',1,POS,POS,0,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-64.62%,64.62%,1,64.62%,64.62%,1,NN,NN,1,0,preserved
+'64.62%','64.62%',1,'64.62%','64.62%',1,POS,POS,1,0,preserved
 .,.,1,.,.,1,PP,PP,0,1,preserved
 On,In,0,On,In,0,IN,IN,1,0,bigrammar-prep
 NHKNews7,NHKNews7,1,NHKNews7,NHKNews7,1,CD,CD,0,1,preserved
@@ -72981,8 +72981,8 @@ and,and,1,and,and,1,CC,CC,1,1,preserved
 non-leaf,non-leaf,1,non-leaf,non-leaf,1,JJ,JJ,1,1,preserved
 nodes,nodes,1,nod,nod,1,NNS,NNS,1,1,preserved
 are,are,1,be,be,1,VBP,VBP,1,1,preserved
-{\it,{\it,1,{\it,{\it,1,NNP,NNP,1,1,preserved
-virtual},virtual},1,virtual},virtual},1,RRB,RRB,1,1,preserved
+'{\it','{\it',1,'{\it','{\it',1,POS,POS,1,1,preserved
+'virtual}','virtual}',1,'virtual}','virtual}',1,PPS,PPS,1,1,preserved
 nodes,nodes,1,nod,nod,1,NNS,NNS,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 -,-,1,-,-,1,PPS,PPS,1,1,preserved
@@ -73335,7 +73335,7 @@ between,between,1,between,between,1,IN,IN,1,1,preserved
 computational,computational,1,computational,computational,1,NN,NN,1,1,preserved
 efficiency,efficiency,1,efficiency,efficiency,1,NN,NN,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
-robustness~\cite{ESR},robustness~\cite{ESR},1,robustness~\cite{ESR},robustness~\cite{ESR},1,RRB,RRB,1,1,preserved
+'robustness~\cite{ESR}','robustness~\cite{ESR}',1,'robustness~\cite{ESR}','robustness~\cite{ESR}',1,PPS,PPS,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
@@ -73771,9 +73771,9 @@ will,will,1,will,will,1,MD,MD,1,1,preserved
 be,be,1,be,be,1,VB,VB,1,1,preserved
 treated,treated,1,treat,treat,1,VBN,VBN,1,1,preserved
 as,as,1,as,as,1,IN,IN,1,1,preserved
-{\it,{\it,1,{\it,{\it,1,NNP,NNP,1,1,preserved
+'{\it','{\it',1,'{\it','{\it',1,POS,POS,1,1,preserved
 vitual,vitual,1,vitual,vitual,1,NN,NN,1,1,preserved
-nodes},nodes},1,nodes},nodes},1,RRB,RRB,1,1,preserved
+'nodes}','nodes}',1,'nodes}','nodes}',1,PPS,PPS,1,1,preserved
 and,and,1,and,and,1,CC,CC,1,1,preserved
 will,will,1,will,will,1,MD,MD,1,1,preserved
 not,not,1,not,not,1,RB,RB,1,1,preserved
@@ -74518,7 +74518,7 @@ K-Means,K-Means,1,K-Means,K-Means,1,JJ,JJ,1,1,preserved
 algorithm,algorithm,1,algorithm,algorithm,1,NN,NN,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 ?,the,0,?,the,0,?,DET,0,0,mogrammar-det
-%to,%to,1,%to,%to,1,TO,TO,1,1,preserved
+'%to','%to',1,'%to','%to',1,PPR,PPR,1,1,preserved
 cluster,cluster,1,cluster,cluster,1,NN,NN,1,1,preserved
 points,points,1,point,point,1,NNS,NNS,1,1,preserved
 on,on,1,on,on,1,IN,IN,1,1,preserved
@@ -74527,7 +74527,7 @@ set,set,1,set,set,1,NN,NN,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 random,random,1,random,random,1,JJ,JJ,1,1,preserved
 images,images,1,image,image,1,NNS,NNS,1,1,preserved
-.%,.%,1,.%,.%,1,NN,NN,1,1,preserved
+'.%','.%',1,'.%','.%',1,POS,POS,1,1,preserved
 Additionally,Additionally,1,Additionally,Additionally,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -74622,7 +74622,7 @@ channels,channels,1,channel,channel,1,NNS,NNS,1,1,preserved
 can,can,1,can,can,1,MD,MD,1,1,preserved
 cover,cover,1,cover,cover,1,NN,NN,1,1,preserved
 99,99,1,99,99,1,CD,CD,1,1,preserved
-.72\%,.72\%,1,.72\%,.72\%,1,NN,NN,1,0,preserved
+'.72\%','.72\%',1,'.72\%','.72\%',1,POS,POS,1,0,preserved
 area,area,1,area,area,1,NN,NN,0,1,preserved
 of,of,1,of,of,1,IN,IN,1,1,preserved
 the,the,1,the,the,1,DET,DET,1,1,preserved
@@ -74678,7 +74678,7 @@ x,x,1,x,x,1,SYM,SYM,1,1,preserved
 pixels,pixels,1,pixel,pixel,1,NNS,NNS,1,0,preserved
 are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
 discarded,discarded,1,discard,discard,1,VBN,VBN,0,1,preserved
-.%,.%,1,.%,.%,1,NN,NN,1,1,preserved
+'.%','.%',1,'.%','.%',1,POS,POS,1,1,preserved
 since,since,1,since,since,1,IN,IN,1,1,preserved
 they,they,1,they,they,1,PRP,PRP,1,1,preserved
 can,can,1,can,can,1,MD,MD,1,1,preserved
@@ -74814,7 +74814,7 @@ precision,precision,1,precision,precision,1,NN,NN,1,1,preserved
 (,(,1,(,(,1,LRB,LRB,1,1,preserved
 approximately,approximately,1,approximately,approximately,1,RB,RB,1,1,preserved
 80,80,1,80,80,1,CD,CD,1,1,preserved
-.27\%,.27\%,1,.27\%,.27\%,1,NN,NN,1,1,preserved
+'.27\%','.27\%',1,'.27\%','.27\%',1,POS,POS,1,1,preserved
 ),),1,),),1,RRB,RRB,1,1,preserved
 .,.,1,.,.,1,PP,PP,1,1,preserved
 On,On,1,On,On,1,IN,IN,1,1,preserved
@@ -75039,10 +75039,10 @@ precision,precision,1,precision,precision,1,NN,NN,1,0,preserved
 increases,increases,1,increase,increase,1,NNS,NNS,0,1,preserved
 from,from,1,from,from,1,IN,IN,1,1,preserved
 74,74,1,74,74,1,CD,CD,1,1,preserved
-.67\%,.67\%,1,.67\%,.67\%,1,NN,NN,1,1,preserved
+'.67\%','.67\%',1,'.67\%','.67\%',1,POS,POS,1,1,preserved
 to,to,1,to,to,1,TO,TO,1,1,preserved
 81,81,1,81,81,1,CD,CD,1,1,preserved
-.97\%,.97\%,1,.97\%,.97\%,1,NN,NN,1,1,preserved
+'.97\%','.97\%',1,'.97\%','.97\%',1,POS,POS,1,1,preserved
 ;,;,1,;,;,1,PPS,PPS,1,1,preserved
 meanwhile,meanwhile,1,meanwhile,meanwhile,1,RB,RB,1,1,preserved
 ',',',',1,',',',',1,PPR,PPR,1,1,preserved
@@ -75101,7 +75101,7 @@ hit,hit,1,hit,hit,1,NN,NN,1,1,preserved
 recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,preserved
 for,for,1,for,for,1,IN,IN,1,1,preserved
 around,around,1,around,around,1,IN,IN,1,1,preserved
-20\%,20\%,1,20\%,20\%,1,NN,NN,1,1,preserved
+'20\%','20\%',1,'20\%','20\%',1,POS,POS,1,1,preserved
 of,of,1,of,of,1,IN,IN,1,0,preserved
 initial,initial,1,initial,initial,1,JJ,JJ,0,1,preserved
 query,query,1,query,query,1,NN,NN,1,1,preserved

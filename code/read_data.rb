@@ -53,27 +53,39 @@ class ReadData
 
   def get_feature(align, sentence_pair)
     feature = Features.new
-    feature.s_str = get_string_by_index(align.source_numbers, sentence_pair.source)
-    feature.t_str = get_string_by_index(align.target_numbers, sentence_pair.target)
+    feature.s_str = esc_string(get_string_by_index(align.source_numbers, sentence_pair.source))
+    feature.t_str = esc_string(get_string_by_index(align.target_numbers, sentence_pair.target))
     feature.st_samestr = (feature.s_str == feature.t_str)? "1" : "0"
-    feature.s_pos = get_pos_string(feature.s_str)
-    feature.t_pos = get_pos_string(feature.t_str)
+    feature.s_pos = esc_string(get_pos_string(feature.s_str))
+    feature.t_pos = esc_string(get_pos_string(feature.t_str))
     feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))? "1" : "0"
     feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))? "1" : "0"
-    feature.s_stem = get_stem_string(feature.s_str.tr("'",""))
-    feature.t_stem = get_stem_string(feature.t_str.tr("'",""))
+    feature.s_stem = esc_string(get_stem_string(feature.s_str.tr("'","")))
+    feature.t_stem = esc_string(get_stem_string(feature.t_str.tr("'","")))
     feature.st_samestem = (feature.s_stem == feature.t_stem)? "1" : "0"
     feature.tag_name = align.tag_name
     return feature
   end
 
+  def esc_string(str)
+    if ["%", "'"].any? { |e| str.include? e }
+      str.gsub!("%", "\%")
+      str.gsub!('\'',%q(\\\'))
+    end
+
+    if [" ", "\"", ",", "\'", "}", "#", "{", "%"].any? { |e| str.include? e }
+      str = "'" + str + "'"
+    end
+    str
+  end
+
   def get_stem_string(str)
     tmp = str.split(" ").map { |e| get_stem(e) }.join(" ")
-    if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } # tmp.include? " " or tmp.include? "," or tmp.include? "\""
-      return "'" + tmp + "'"
-    else
-      return tmp
-    end
+    # if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } # tmp.include? " " or tmp.include? "," or tmp.include? "\""
+    #   return "'" + tmp + "'"
+    # else
+    #   return tmp
+    # end
   end
 
   def get_stem(value)
@@ -82,11 +94,11 @@ class ReadData
 
   def get_pos_string(str)
     tmp = str.split(" ").map { |e| get_pos(e) }.join(" ")
-    if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
-      return "'" + tmp + "'"
-    else
-      return tmp
-    end
+    # if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
+    #   return "'" + tmp + "'"
+    # else
+    #   return tmp
+    # end
   end
 
   def get_pos(value)
@@ -111,14 +123,14 @@ class ReadData
 
   def get_string_by_index(index_string, sentence)
     tmp = index_string.split(",").map{|e| sentence.split(" ")[e.to_i]}.join(" ")
-    if [" ", "\"", ","].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
-      tmp = "'" + tmp + "'"
-    end
-    if ["\'"].any? { |e| tmp.include? e }
-      puts "having backslashes: #{tmp}\n"
-      tmp = tmp.gsub('\'',"\b\'")
-    end
-    return tmp
+    # if [" ", "\"", ","].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
+    #   tmp = "'" + tmp + "'"
+    # end
+    # if ["\'"].any? { |e| tmp.include? e }
+    #   puts "having backslashes: #{tmp}\n"
+    #   tmp = tmp.gsub('\'',"\b\'")
+    # end
+    # return tmp
   end
 
   def get_aln
