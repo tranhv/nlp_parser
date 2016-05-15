@@ -37,8 +37,6 @@ class ReadData
     @EngTagger = EngTagger.new
   end
 
-
-
   def get_list_of_features(data)
     puts "Start #{Time.now}"
     #Todo: build Array of Features
@@ -48,7 +46,6 @@ class ReadData
       sentence_pair.Alignment.each_with_index do |align, index_aln|
         data_features << get_feature(align, sentence_pair)
       end
-      puts "#{data_features}" if sentence_pair.source.include? "This paper analyzes the effects"
     end
     puts "End #{Time.now}"
     return data_features
@@ -63,15 +60,20 @@ class ReadData
     feature.t_pos = get_pos_string(feature.t_str)
     feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))? "1" : "0"
     feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))? "1" : "0"
-    feature.s_stem = get_stem_string(feature.s_str)
-    feature.t_stem = get_stem_string(feature.t_str)
+    feature.s_stem = get_stem_string(feature.s_str.tr("'",""))
+    feature.t_stem = get_stem_string(feature.t_str.tr("'",""))
     feature.st_samestem = (feature.s_stem == feature.t_stem)? "1" : "0"
     feature.tag_name = align.tag_name
     return feature
   end
 
   def get_stem_string(str)
-    str.split(" ").map { |e| get_stem(e) }.join(" ")
+    tmp = str.split(" ").map { |e| get_stem(e) }.join(" ")
+    if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } # tmp.include? " " or tmp.include? "," or tmp.include? "\""
+      return "'" + tmp + "'"
+    else
+      return tmp
+    end
   end
 
   def get_stem(value)
@@ -79,7 +81,12 @@ class ReadData
   end
 
   def get_pos_string(str)
-    str.split(" ").map { |e| get_pos(e) }.join(" ")
+    tmp = str.split(" ").map { |e| get_pos(e) }.join(" ")
+    if [" ", "\"", ",", "\'"].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
+      return "'" + tmp + "'"
+    else
+      return tmp
+    end
   end
 
   def get_pos(value)
@@ -103,7 +110,15 @@ class ReadData
   end
 
   def get_string_by_index(index_string, sentence)
-    return index_string.split(",").map{|e| sentence.split(" ")[e.to_i]}.join(" ")
+    tmp = index_string.split(",").map{|e| sentence.split(" ")[e.to_i]}.join(" ")
+    if [" ", "\"", ","].any? { |e| tmp.include? e } #tmp.include? " " or tmp.include? "," or tmp.include? "\""
+      tmp = "'" + tmp + "'"
+    end
+    if ["\'"].any? { |e| tmp.include? e }
+      puts "having backslashes: #{tmp}\n"
+      tmp = tmp.gsub('\'',"\b\'")
+    end
+    return tmp
   end
 
   def get_aln
@@ -206,7 +221,6 @@ class ReadData
 
     # puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}"
     # puts "#{compare_data_alignment(data_SWA, data_meteor_blast)}"
-    get_list_of_features(data_SWA)
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
@@ -527,7 +541,7 @@ class ReadData
     file_arff.write("@ATTRIBUTE t_pos STRING\n")
     file_arff.write("@ATTRIBUTE st_precede {0,1}\n")
     file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
-    file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate}\n\n")
+    file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
     file_arff.write("@DATA\n")
 
     data_features = get_list_of_features(data) 
