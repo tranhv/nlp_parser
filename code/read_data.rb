@@ -32,10 +32,12 @@ class ReadData
     @Lemmatizer = Lemmatizer.new
   end
 
-  def print_arff(data)
-    data_features = get_list_of_features(data)
-
+  def engtagger
+    return @EngTagger if @EngTagger
+    @EngTagger = EngTagger.new
   end
+
+
 
   def get_list_of_features(data)
     puts "Start #{Time.now}"
@@ -56,12 +58,15 @@ class ReadData
     feature = Features.new
     feature.s_str = get_string_by_index(align.source_numbers, sentence_pair.source)
     feature.t_str = get_string_by_index(align.target_numbers, sentence_pair.target)
-    feature.st_samestr = (feature.s_str == feature.t_str)
-    feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))
-    feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))
+    feature.st_samestr = (feature.s_str == feature.t_str)? "1" : "0"
+    feature.s_pos = get_pos_string(feature.s_str)
+    feature.t_pos = get_pos_string(feature.t_str)
+    feature.st_precede = (get_precede_word(align.source_numbers,sentence_pair.source) == get_precede_word(align.target_numbers,sentence_pair.target))? "1" : "0"
+    feature.st_follow = (get_following_word(align.source_numbers,sentence_pair.source) == get_following_word(align.target_numbers,sentence_pair.target))? "1" : "0"
     feature.s_stem = get_stem_string(feature.s_str)
     feature.t_stem = get_stem_string(feature.t_str)
-    feature.st_samestem = (feature.s_stem == feature.t_stem)
+    feature.st_samestem = (feature.s_stem == feature.t_stem)? "1" : "0"
+    feature.tag_name = align.tag_name
     return feature
   end
 
@@ -71,6 +76,14 @@ class ReadData
 
   def get_stem(value)
     lemmatizer.lemma(value)
+  end
+
+  def get_pos_string(str)
+    str.split(" ").map { |e| get_pos(e) }.join(" ")
+  end
+
+  def get_pos(value)
+    tgr = engtagger.get_readable(value).split("/")[-1]
   end
 
   # Given the string index and the source/target sentence,
@@ -179,7 +192,7 @@ class ReadData
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
 
-    # data_SWA = refine_tag_preserved(data_SWA)
+    data_SWA = refine_tag_preserved(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
     # # data_meteor_blast = insert_unaligned(data_meteor_blast)
     # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
@@ -197,6 +210,7 @@ class ReadData
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
+    print_arff(data_SWA)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -497,6 +511,44 @@ class ReadData
     end
     output_crp.close
     output_aln.close
+  end
+
+  def print_arff(data)
+    file_arff = File.open(DATA_PATH + "/arff.arff", "w")
+    file_arff.write("")
+    file_arff.write("@RELATION SWA_classification\n\n")
+    file_arff.write("@ATTRIBUTE s_str STRING\n")
+    file_arff.write("@ATTRIBUTE t_str STRING\n")
+    file_arff.write("@ATTRIBUTE st_samestr {0,1}\n")
+    file_arff.write("@ATTRIBUTE s_stem STRING\n")
+    file_arff.write("@ATTRIBUTE t_stem STRING\n")
+    file_arff.write("@ATTRIBUTE st_samestem {0,1}\n")
+    file_arff.write("@ATTRIBUTE s_pos STRING\n")
+    file_arff.write("@ATTRIBUTE t_pos STRING\n")
+    file_arff.write("@ATTRIBUTE st_precede {0,1}\n")
+    file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
+    file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate}\n\n")
+    file_arff.write("@DATA\n")
+
+    data_features = get_list_of_features(data) 
+    data_features.each do |ft|
+      if ft.s_str.empty?
+        file_arff.write("?")
+      else
+        file_arff.write(ft.s_str + ",")
+      end
+      if ft.t_str.empty?
+        file_arff.write("?")
+      else
+        file_arff.write(ft.t_str + ",")
+      end
+      file_arff.write(ft.st_samestr + ",")
+      if ft.s_stem.empty?
+        file_arff.write("?")
+      else
+        file_arff.write(ft.s_stem + ",")
+      end + ft.t_stem + "," + ft.st_samestem + "," + ft.s_pos + "," + ft.t_pos + "," + ft.st_precede + "," + ft.st_follow + "," + ft.tag_name + "\n")
+    end
   end
 
   def insert_unaligned(data)
