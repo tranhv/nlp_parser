@@ -532,22 +532,8 @@ class ReadData
 
     data_features = get_list_of_features(data) 
     data_features.each do |ft|
-      if ft.s_str.empty?
-        file_arff.write("?")
-      else
-        file_arff.write(ft.s_str + ",")
-      end
-      if ft.t_str.empty?
-        file_arff.write("?")
-      else
-        file_arff.write(ft.t_str + ",")
-      end
-      file_arff.write(ft.st_samestr + ",")
-      if ft.s_stem.empty?
-        file_arff.write("?")
-      else
-        file_arff.write(ft.s_stem + ",")
-      end + ft.t_stem + "," + ft.st_samestem + "," + ft.s_pos + "," + ft.t_pos + "," + ft.st_precede + "," + ft.st_follow + "," + ft.tag_name + "\n")
+      array = [ft.s_str, ft.t_str, ft.st_samestr, ft.s_stem, ft.t_stem, ft.st_samestem, ft.s_pos, ft.t_pos, ft.st_precede, ft.st_follow, ft.tag_name]
+      file_arff.write(array.map{|e| (e == nil || e == "") ? "?" : "#{e}"}.join(",") + "\n")
     end
   end
 
