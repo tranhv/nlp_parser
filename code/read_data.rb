@@ -552,6 +552,8 @@ class ReadData
     file_arff.write("@ATTRIBUTE st_samestem {0,1}\n")
     file_arff.write("@ATTRIBUTE s_pos {#{build_distinct_value('s_pos', data_features).join(",")}}\n")
     file_arff.write("@ATTRIBUTE t_pos {#{build_distinct_value('t_pos', data_features).join(",")}}\n")
+    # file_arff.write("@ATTRIBUTE s_pos STRING")
+    # file_arff.write("@ATTRIBUTE t_pos STRING")
     file_arff.write("@ATTRIBUTE st_precede {0,1}\n")
     file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
     file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
@@ -564,8 +566,8 @@ class ReadData
   end
 
   #Data is 1 array of list of features
-  def build_distinct_value(attribute_name, data)
-    data.map { |e| e[attribute_name.to_sym] }.uniq
+  def build_distinct_value(attribute_name, data_features)
+    data_features.map { |e| e[attribute_name.to_sym] }.uniq
   end
 
   def insert_unaligned(data)
