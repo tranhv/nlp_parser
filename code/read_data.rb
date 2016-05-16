@@ -69,8 +69,8 @@ class ReadData
 
   def esc_string(str)
     if ["%", "'"].any? { |e| str.include? e }
-      str.gsub!("%", "\%")
       str.gsub!('\'',%q(\\\'))
+      str.gsub!("%", "\%")
     end
 
     if [" ", "\"", ",", "\'", "}", "#", "{", "%"].any? { |e| str.include? e }
@@ -540,27 +540,32 @@ class ReadData
   end
 
   def print_arff(data)
+    data_features = get_list_of_features(data) 
     file_arff = File.open(DATA_PATH + "/arff.arff", "w")
     file_arff.write("")
     file_arff.write("@RELATION SWA_classification\n\n")
-    file_arff.write("@ATTRIBUTE s_str STRING\n")
-    file_arff.write("@ATTRIBUTE t_str STRING\n")
+    file_arff.write("@ATTRIBUTE s_str {#{build_distinct_value('s_str', data_features).join(",")}}\n")
+    file_arff.write("@ATTRIBUTE t_str {#{build_distinct_value('t_str', data_features).join(",")}}\n")
     file_arff.write("@ATTRIBUTE st_samestr {0,1}\n")
-    file_arff.write("@ATTRIBUTE s_stem STRING\n")
-    file_arff.write("@ATTRIBUTE t_stem STRING\n")
+    file_arff.write("@ATTRIBUTE s_stem {#{build_distinct_value('s_stem', data_features).join(",")}}\n")
+    file_arff.write("@ATTRIBUTE t_stem {#{build_distinct_value('t_stem', data_features).join(",")}}\n")
     file_arff.write("@ATTRIBUTE st_samestem {0,1}\n")
-    file_arff.write("@ATTRIBUTE s_pos STRING\n")
-    file_arff.write("@ATTRIBUTE t_pos STRING\n")
+    file_arff.write("@ATTRIBUTE s_pos {#{build_distinct_value('s_pos', data_features).join(",")}}\n")
+    file_arff.write("@ATTRIBUTE t_pos {#{build_distinct_value('t_pos', data_features).join(",")}}\n")
     file_arff.write("@ATTRIBUTE st_precede {0,1}\n")
     file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
     file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
     file_arff.write("@DATA\n")
 
-    data_features = get_list_of_features(data) 
     data_features.each do |ft|
       array = [ft.s_str, ft.t_str, ft.st_samestr, ft.s_stem, ft.t_stem, ft.st_samestem, ft.s_pos, ft.t_pos, ft.st_precede, ft.st_follow, ft.tag_name]
       file_arff.write(array.map{|e| (e == nil || e == "") ? "?" : "#{e}"}.join(",") + "\n")
     end
+  end
+
+  #Data is 1 array of list of features
+  def build_distinct_value(attribute_name, data)
+    data.map { |e| e[attribute_name.to_sym] }.uniq
   end
 
   def insert_unaligned(data)
