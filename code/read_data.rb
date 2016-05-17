@@ -236,7 +236,7 @@ class ReadData
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
-    print_arff(data_SWA)
+    print_csv(data_SWA)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -558,6 +558,18 @@ class ReadData
     file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
     file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
     file_arff.write("@DATA\n")
+
+    data_features.each do |ft|
+      array = [ft.s_str, ft.t_str, ft.st_samestr, ft.s_stem, ft.t_stem, ft.st_samestem, ft.s_pos, ft.t_pos, ft.st_precede, ft.st_follow, ft.tag_name]
+      file_arff.write(array.map{|e| (e == nil || e == "") ? "?" : "#{e}"}.join(",") + "\n")
+    end
+  end
+
+  def print_csv(data)
+    data_features = get_list_of_features(data) 
+    file_arff = File.open(DATA_PATH + "/csv.csv", "w")
+    file_arff.write("")
+    file_arff.write("s_str,t_str,st_samestr,s_stem,t_stem,st_samestem,s_pos,t_pos,st_precede,st_follow,class\n")
 
     data_features.each do |ft|
       array = [ft.s_str, ft.t_str, ft.st_samestr, ft.s_stem, ft.t_stem, ft.st_samestem, ft.s_pos, ft.t_pos, ft.st_precede, ft.st_follow, ft.tag_name]
