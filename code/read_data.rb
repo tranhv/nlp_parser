@@ -210,16 +210,35 @@ class ReadData
   end  
 
   def main
-    # get_data_giza(DATA_PATH + "/test.UA3.final")
+    data_giza = get_data_giza(DATA_PATH + "/test.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
     # merged_aln_crp.write("")
     # merge_aln_crp(merged_aln_crp)
 
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    data_giza_new = compare_data_missing_tag_name(data_SWA, data_giza)
+
+    puts "con heo"
+    data_SWA.each_with_index do |line, index|
+      puts "#{line}\n\n" #if line.Alignment.select{|e|e.tag_name != ""}.count > 0
+      break if index > 10
+    end
+
+    data_giza.each_with_index do |line, index|
+      puts "-- giza \n\n #{line}\n\n" #if line.Alignment.select{|e|e.tag_name != ""}.count > 0
+      break if index > 10
+    end
+
+    puts "giza new"
+    data_giza_new.each_with_index do |line, index|
+      puts "--- giza new -- \n\n #{line}\n\n" if line.Alignment.select{|e|e.tag_name != ""}.count > 0
+      #break if index > 10
+    end
+
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
 
-    data_SWA = refine_tag_preserved(data_SWA)
+    #data_SWA = refine_tag_preserved(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
     # # data_meteor_blast = insert_unaligned(data_meteor_blast)
     # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
@@ -236,7 +255,7 @@ class ReadData
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
-    print_csv(data_SWA)
+    #print_csv(data_SWA)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -395,13 +414,13 @@ class ReadData
 
       if (index - 1)%3 == 0
         sentence_pair = Sentence_Pair.new
-        sentence_pair.source = line
+        sentence_pair.target = line
         sentence_pair.Alignment = []
         next
       end
 
       if (index - 2)%3 == 0
-        sentence_pair.Alignment, sentence_pair.target = parse_giza_line(line)
+        sentence_pair.Alignment, sentence_pair.source = parse_giza_line(line)
         data << sentence_pair
       end
     end
@@ -442,8 +461,8 @@ class ReadData
         target << item[0]
         target_tag = item[1].gsub(/[{()}]/,"")
 
-        align.target_numbers = tmp_index.to_s
-        align.source_numbers = target_tag.split(",").map {|e| 
+        align.source_numbers = tmp_index.to_s
+        align.target_numbers = target_tag.split(",").map {|e| 
                                   if e.to_i == 0
                                     e.to_s
                                   else
@@ -458,9 +477,9 @@ class ReadData
     unless null_value.count == 0 
       align = Alignment.new
       align.tag_name = ''
-      align.source_numbers = ''
+      align.target_numbers = ''
       
-      align.target_numbers = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
+      align.source_numbers = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
         if e.to_i == 0
           e.to_s
         else
@@ -661,8 +680,7 @@ class ReadData
 
   def compare_data_missing_tag_name(data1, data2)
     data1.each_with_index do |alignment1, index|
-      if data1[index].source == data2[index].source and data1[index].target == data2[index].target
-
+      if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
         # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
         alignment1_arr = data1[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
         alignment2_arr = data2[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
@@ -670,12 +688,19 @@ class ReadData
         # So sánh tìm ra phần chung
         # này là mảng 2 phần tử [["","1"], ["2,3","2,3"], ["4","4"]]
         alignment_inter = (alignment1_arr & alignment2_arr)
+        # puts "alignment_inter --> #{alignment_inter.inspect}"
+        # puts data1[index].Alignment
+        # puts data2[index].Alignment
         if alignment_inter.length > 0
           alignment_inter.each do |align|
-            algn1 = data1[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.source_numbers.split(",").sort.join(",") == align[2]}.first
-            algn2 = data2[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.source_numbers.split(",").sort.join(",") == align[2]}.first
-            
-            align2.tag_name = align1.tag_name
+            # puts "align #{align.inspect}"
+            # puts "data1[index].Alignment ==> #{data1[index].Alignment.inspect}"
+            # puts "data2[index].Alignment ==> #{data2[index].Alignment.inspect}"
+            algn1 = data1[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.target_numbers.split(",").sort.join(",") == align[1]}.first
+            algn2 = data2[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.target_numbers.split(",").sort.join(",") == align[1]}.first
+            # puts "algn1 --> #{algn1.inspect}"
+            # puts "algn2 --> #{algn2.inspect}"
+            algn2.tag_name = algn1.tag_name
           end
         end
       end
