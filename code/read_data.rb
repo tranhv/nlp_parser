@@ -659,6 +659,31 @@ class ReadData
     return count, count_aln1, count_aln2
   end
 
+  def compare_data_missing_tag_name(data1, data2)
+    data1.each_with_index do |alignment1, index|
+      if data1[index].source == data2[index].source and data1[index].target == data2[index].target
+
+        # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
+        alignment1_arr = data1[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
+        alignment2_arr = data2[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
+        
+        # So sánh tìm ra phần chung
+        # này là mảng 2 phần tử [["","1"], ["2,3","2,3"], ["4","4"]]
+        alignment_inter = (alignment1_arr & alignment2_arr)
+        if alignment_inter.length > 0
+          alignment_inter.each do |align|
+            algn1 = data1[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.source_numbers.split(",").sort.join(",") == align[2]}.first
+            algn2 = data2[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.source_numbers.split(",").sort.join(",") == align[2]}.first
+            
+            align2.tag_name = align1.tag_name
+          end
+        end
+      end
+    end
+
+    data2
+  end
+
   def compare_data(data1, data2, tags)
     tags_count = {}
     tags.each_with_index do |line, index|
