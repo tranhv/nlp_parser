@@ -210,52 +210,42 @@ class ReadData
   end  
 
   def main
-    data_giza = get_data_giza(DATA_PATH + "/test.UA3.final")
+    # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
     # merged_aln_crp.write("")
     # merge_aln_crp(merged_aln_crp)
 
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    data_giza_new = compare_data_missing_tag_name(data_SWA, data_giza)
-
-    puts "con heo"
-    data_SWA.each_with_index do |line, index|
-      puts "#{line}\n\n" #if line.Alignment.select{|e|e.tag_name != ""}.count > 0
-      break if index > 10
-    end
-
-    data_giza.each_with_index do |line, index|
-      puts "-- giza \n\n #{line}\n\n" #if line.Alignment.select{|e|e.tag_name != ""}.count > 0
-      break if index > 10
-    end
-
-    puts "giza new"
-    data_giza_new.each_with_index do |line, index|
-      puts "--- giza new -- \n\n #{line}\n\n" if line.Alignment.select{|e|e.tag_name != ""}.count > 0
-      #break if index > 10
-    end
+    # data_SWA = refine_tag_preserved(data_SWA)
 
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
-
-    #data_SWA = refine_tag_preserved(data_SWA)
-    # data_SWA = convert_to_Meteor_tag(data_SWA)
-    # # data_meteor_blast = insert_unaligned(data_meteor_blast)
     # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
 
-    # # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec"]
-    # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    # puts "#{count_tags(data_SWA, tags)}"
-    # puts "#{count_tags(data_meteor_blast, tags)}"
-    # puts "#{count_tags(data_meteor_1_5, tags)}"
-    # puts "\n"
+    # puts "#{count_alignment(data_meteor_1_5)}\n\n"
+ 
+    # data_meteor_1_5 = remove_tags(data_meteor_1_5)   
+    # data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
 
-    # puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}"
-    # puts "#{compare_data_alignment(data_SWA, data_meteor_blast)}"
+    # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
+
+    # data_meteor_1_5 = reduce_tags(data_meteor_1_5)
+    # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
+    # data_SWA = convert_to_Meteor_tag(data_SWA)
+
+    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # # tags = ["exact", "stem", "syn", "para", "unaligned"]
+    # # puts "#{count_tags(data_SWA, tags)}\n\n"
+    # puts "#{count_tags(data_meteor_1_5, tags)}\n"
+
+    # puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
+
+    # puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
 
     # print_data(data_SWA)
     # print_data(data_meteor_1_5)
-    #print_csv(data_SWA)
+    # print_csv(data_meteor_1_5)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -267,24 +257,20 @@ class ReadData
     # tmp = tmp.uniq
     # puts "#{tmp}"
 
-    # puts "#{compare_data(data_SWA, data_meteor_blast, tags)}"
-    # puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
-    # puts "#{compare_data(data_meteor_blast, data_meteor_1_5, tags)}"
-    # puts "\n"
-
     # a, b, c = compare_data_on_tag(data_SWA, data_meteor_1_5, "para")
     # print_data(c)
 
-    # identical, difference_swa, difference_meteor = compare_data_count(data_SWA, data_meteor_blast)
-    # puts "#{identical}\n#{difference_swa}\n#{difference_meteor}\n"
-    # puts "#{count_alignment(data_SWA)} , #{count_alignment(data_meteor_blast)}"
+    # So sánh chỉ dựa trên alignment, ko dựa vào tag name 
+    # identical, difference_swa, difference_giza = compare_data_count(data_SWA, data_giza_new)
+    # puts "#{identical}\n#{difference_swa}\n#{difference_giza}\n"
+    # puts "#{count_alignment(data_SWA)} , #{count_alignment(data_giza)}"
 
     # puts "#{data_SWA.length} , #{data_meteor_blast.length}, #{data_meteor_1_5.length}"
 
 
-    # data_SWA.each_with_index do |line, index|
-    #   puts "#{line}\n\n" if line.source.include? "Boosting [3] and its variants"
-    #   break if line.source.include? "Boosting [3] and its variants"
+    # data_giza.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if line.source.include? "This paper analyzes the effects"
+    #   break if line.source.include? "This paper analyzes the effects"
     # end 
     # data_meteor_blast.each_with_index do |line, index|
     #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
@@ -477,9 +463,9 @@ class ReadData
     unless null_value.count == 0 
       align = Alignment.new
       align.tag_name = ''
-      align.target_numbers = ''
+      align.source_numbers = ''
       
-      align.source_numbers = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
+      align.target_numbers = null_value[0][1].gsub(/[{()}]/,"").split(",").map { |e| 
         if e.to_i == 0
           e.to_s
         else
@@ -535,6 +521,23 @@ class ReadData
       data << Alignment.new(e.split(":")[0], e.split(":")[1], e.split(":")[2])
     end
     return data
+  end
+
+  def generate_data_manli(path)
+    output = File.open(DATA_PATH + "/input_manli.txt", "w")
+    output.write("")
+    File.open(path, 'r').each_with_index do |line, index|
+      if (index%4 == 0)
+        line = line.gsub("\n", "")
+        output.write(line + "\t")
+        next
+      end
+      if (index - 1)%4 == 0
+        line = line.gsub("\n", "")
+        output.write(line + "\n")
+        next
+      end
+    end
   end
 
   def print_data(data)
@@ -648,6 +651,61 @@ class ReadData
     return data
   end
 
+  def reduce_tags(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "preserved")
+          aln_delete << i
+          count = count + 1
+        end
+      end
+      # delete preserved alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count > 68300 #44200 giza
+    end
+
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "moproblematic") or (aln.tag_name == "biproblematic") or (aln.tag_name == "unspec")
+          aln_delete << i
+        end
+      end
+      
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+    end
+
+    return data
+  end
+
+  def reduce_tags_wa(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "wa")
+          aln_delete << i
+          count = count + 1
+        end
+      end
+      # delete preserved alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count > 12000 #35100 giza
+    end
+    return data
+  end
+
+  def remove_tags(data)
+    data.each do |line|
+      line.Alignment.each do |aln|
+        aln.tag_name = ""
+      end
+    end
+    return data
+  end
+
   def break_alignment(aln)
     aln_arr = []
     source_tmp = aln.source_numbers.split(",").map { |e| e.to_i }.sort
@@ -658,9 +716,9 @@ class ReadData
     return aln_arr
   end
 
-  def count_alignment(sentence_pair_array)
+  def count_alignment(data)
     count = 0
-    sentence_pair_array.each_with_index do |pairs, index|
+    data.each_with_index do |pairs, index|
       count = count + pairs.Alignment.length 
     end
     return count
@@ -678,7 +736,7 @@ class ReadData
     return count, count_aln1, count_aln2
   end
 
-  def compare_data_missing_tag_name(data1, data2)
+  def assign_tags(data1, data2)
     data1.each_with_index do |alignment1, index|
       if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
         # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
@@ -705,8 +763,17 @@ class ReadData
         end
       end
     end
-
     data2
+  end
+
+  def assign_tags_wa(data)
+    data.each do |line|
+      line.Alignment.each do |aln|
+        if (aln.tag_name.empty?)
+          aln.tag_name = "wa"
+        end
+      end
+    end
   end
 
   def compare_data(data1, data2, tags)
