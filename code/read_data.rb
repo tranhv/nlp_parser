@@ -1,5 +1,6 @@
 require 'engtagger'
 require 'lemmatizer'
+require 'json'
 
 class ReadData
   DATA_PATH = "./data"
@@ -390,6 +391,36 @@ class ReadData
     end
 
     return data
+  end
+
+  def get_data_json(path)
+    data = []
+    data_file = File.read(path)
+    data_json = JSON.parse(data_file)
+
+    sentence_pair = Sentence_Pair.new
+    data_json.each_with_index do |para|
+      sentence_pair = Sentence_Pair.new
+      sentence_pair.source = para["source"]
+      sentence_pair.target = para["target"]
+      sentence_pair.Alignments parse_align_json
+      data << sentence_pair 
+    end
+    data
+  end
+
+
+  def parse_align_json(sureAlign)
+    aligns = []
+    align = Alignment.new
+    sureAlign.split(" ").each do |alg|
+      align = Alignment.new
+      align.source_numbers = alg.split("-").first
+      align.target_numbers = alg.split("-").last
+      align.tag_name = ""
+      aligns << align
+    end
+    aligns
   end
 
   def get_data_giza(path)
