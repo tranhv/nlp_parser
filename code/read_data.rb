@@ -216,37 +216,72 @@ class ReadData
     # merged_aln_crp.write("")
     # merge_aln_crp(merged_aln_crp)
 
+    # generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
+
+    # SWA ====================
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    # data_SWA = refine_tag_preserved(data_SWA)
-
-    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
-    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
-    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
-    generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
-
-    # puts "#{count_alignment(data_meteor_1_5)}\n\n"
- 
-    # data_meteor_1_5 = remove_tags(data_meteor_1_5)   
-    # data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
-
-    # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
-
-    # data_meteor_1_5 = reduce_tags(data_meteor_1_5)
-    # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
+    data_SWA = refine_tag_preserved(data_SWA)
+    # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
 
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
-    # # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    # # puts "#{count_tags(data_SWA, tags)}\n\n"
-    # puts "#{count_tags(data_meteor_1_5, tags)}\n"
+    # data_SWA1, data_SWA2 = split_data(data_SWA, 2720)
 
-    # puts "#{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
+    # data_SWA2 = reduce_tags_preserved(data_SWA2)
+    # data_SWA2 = reduce_tags_paraphrase(data_SWA2)
 
+    # print_csv(data_SWA2)
+    # END SWA ================
+
+    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+    # METEOR ================
+    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    # data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
+
+    # puts "#{count_alignment(data_meteor_1_5)}\n\n"
+
+    # data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
+    # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
+    # data_meteor_1_5 = remove_tags_misc(data_meteor_1_5)
+
+    # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, 2720)
+    # data_meteor2 = reduce_tags_preserved(data_meteor2)
+    # data_meteor2 = reduce_tags_wa(data_meteor2)
+
+    # print_csv(data_meteor2)
+
+    # END METEOR ============
+
+    # MANLI =================
+    data_manli = get_data_json(DATA_PATH + "/output.json")
+    data_manli = insert_unaligned(data_manli)
+
+    puts "#{count_alignment(data_manli)}\n\n"    
+
+    data_manli = assign_tags(data_SWA, data_manli)
+    data_manli = assign_tags_wa(data_manli)
+    data_manli = remove_tags_misc(data_manli)
+
+    data_manli1, data_manli2 = split_data(data_manli, 2720)
+    data_manli2 = reduce_tags_preserved(data_manli2)
+    data_manli2 = reduce_tags_unaligned(data_manli2)
+    data_manli2 = reduce_tags_wa(data_manli2)
+
+    print_csv(data_manli2)
+    # END MANLI =============
+
+    # CHECK DATA ============
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # tags = ["exact", "stem", "syn", "para", "unaligned"]
+    puts "#{count_tags(data_manli2, tags)}\n\n"
+    # puts "#{count_tags(data_manli, tags)}\n"
+
+    # puts "#{compare_data_alignment(data_SWA, data_manli)}\n"
     # puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
 
-    # print_data(data_SWA)
-    # print_data(data_meteor_1_5)
-    # print_csv(data_meteor_1_5)
+    # # print_data(data_SWA)
+    # # print_data(data_meteor_1_5)
+    # print_csv(data_SWA2)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -258,7 +293,7 @@ class ReadData
     # tmp = tmp.uniq
     # puts "#{tmp}"
 
-    # a, b, c = compare_data_on_tag(data_SWA, data_meteor_1_5, "para")
+    # a, b, c = compare_data_on_tag(data_SWA, data_manli, "unaligned")
     # print_data(c)
 
     # So sánh chỉ dựa trên alignment, ko dựa vào tag name 
@@ -268,10 +303,9 @@ class ReadData
 
     # puts "#{data_SWA.length} , #{data_meteor_blast.length}, #{data_meteor_1_5.length}"
 
-
-    # data_giza.each_with_index do |line, index|
-    #   puts "#{line}\n\n" if line.source.include? "This paper analyzes the effects"
-    #   break if line.source.include? "This paper analyzes the effects"
+    # data1.each_with_index do |line, index|
+    #   puts "#{line}\n\n" #if line.source.include? "This paper analyzes the effects"
+    #   #break if line.source.include? "This paper analyzes the effects"
     # end 
     # data_meteor_blast.each_with_index do |line, index|
     #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
@@ -403,12 +437,12 @@ class ReadData
       sentence_pair = Sentence_Pair.new
       sentence_pair.source = para["source"]
       sentence_pair.target = para["target"]
-      sentence_pair.Alignments parse_align_json
+      sentence_pair.Alignment = parse_align_json(para["sureAlign"])
+      puts "#{para["possibleAlign"]}" if not para["possibleAlign"].empty?
       data << sentence_pair 
     end
     data
   end
-
 
   def parse_align_json(sureAlign)
     aligns = []
@@ -630,6 +664,19 @@ class ReadData
     end
   end
 
+  def split_data(data, no_sentences_of_1st_part)
+    data1 = []
+    data2 = []
+    data.each_with_index do |sent, index|
+      if index <= no_sentences_of_1st_part 
+        data1 << sent
+      else
+        data2 << sent
+      end
+    end
+    return data1, data2
+  end
+
   #Data is 1 array of list of features
   def build_distinct_value(attribute_name, data_features)
     data_features.map { |e| e[attribute_name.to_sym] }.uniq
@@ -682,7 +729,7 @@ class ReadData
     return data
   end
 
-  def reduce_tags(data)
+  def reduce_tags_preserved(data)
     count = 0
     data.each do |line|
       aln_delete = []
@@ -690,24 +737,40 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
+          break if count >= 9959
         end
+        break if count >= 9959
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count > 68300 #44200 giza
+      break if count >= 9959 
+      #57082 SWA 80
+      #12484 SWA 20
+      #12246 meteor 20
+      # 9959 manli 20
+      #68300 meteor #44200 giza
     end
+    return data
+  end
 
+  def reduce_tags_paraphrase(data)
+    count = 0
     data.each do |line|
       aln_delete = []
       line.Alignment.each_with_index do |aln, i|
-        if (aln.tag_name == "moproblematic") or (aln.tag_name == "biproblematic") or (aln.tag_name == "unspec")
+        if (aln.tag_name == "paraphrase")
           aln_delete << i
+          count = count + 1
+          break if count >= 60
         end
+        break if count >= 60
       end
-      
+      # delete paraphrase alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 60
+      # 300 SWA 80
+      # 60 SWA 20
     end
-
     return data
   end
 
@@ -719,16 +782,55 @@ class ReadData
         if (aln.tag_name == "wa")
           aln_delete << i
           count = count + 1
+          break if count >= 3222
         end
+        break if count >= 3222
       end
-      # delete preserved alignments in the original array
+      # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count > 12000 #35100 giza
+      break if count >= 3222 
+      # 2795 meteor 20
+      # 3222 manli 20
+      #12000 meteor #35100 giza
     end
     return data
   end
 
-  def remove_tags(data)
+  def reduce_tags_unaligned(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "unaligned")
+          aln_delete << i
+          count = count + 1
+          break if count >= 1579
+        end
+        break if count >= 1579
+      end
+      # delete unaligned alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 1579
+      # 1579 manli 20 
+    end
+    return data
+  end
+
+  def remove_tags_misc(data)
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "moproblematic") or (aln.tag_name == "biproblematic") or (aln.tag_name == "unspec")
+          aln_delete << i
+        end
+      end
+      
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+    end
+    return data
+  end
+
+  def remove_all_tags(data)
     data.each do |line|
       line.Alignment.each do |aln|
         aln.tag_name = ""

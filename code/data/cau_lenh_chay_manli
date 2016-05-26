@@ -1,0 +1,4 @@
+java -DJACANA_HOME=./ -jar ./build/lib/jacana-align.jar -m scripts-align/Edingburgh_RTE2.all_sure.t2s.model -a mai/input_manli.txt -o mai/output.json
+
+
+java -mx3g -DJACANA_HOME=./ -cp ./build/lib/jacana-align.jar Demo scripts-align/Edingburgh_RTE2.all_sure.t2s.model 8080
