@@ -219,8 +219,8 @@ class ReadData
     # generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
 
     # SWA ====================
-    data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    data_SWA = refine_tag_preserved(data_SWA)
+    # data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    # data_SWA = refine_tag_preserved(data_SWA)
     # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
 
@@ -253,27 +253,27 @@ class ReadData
     # END METEOR ============
 
     # MANLI =================
-    data_manli = get_data_json(DATA_PATH + "/output.json")
-    data_manli = insert_unaligned(data_manli)
+    # data_manli = get_data_json(DATA_PATH + "/output.json")
+    # data_manli = insert_unaligned(data_manli)
 
-    puts "#{count_alignment(data_manli)}\n\n"    
+    # puts "#{count_alignment(data_manli)}\n\n"    
 
-    data_manli = assign_tags(data_SWA, data_manli)
-    data_manli = assign_tags_wa(data_manli)
-    data_manli = remove_tags_misc(data_manli)
+    # data_manli = assign_tags(data_SWA, data_manli)
+    # data_manli = assign_tags_wa(data_manli)
+    # data_manli = remove_tags_misc(data_manli)
 
-    data_manli1, data_manli2 = split_data(data_manli, 2720)
-    data_manli2 = reduce_tags_preserved(data_manli2)
-    data_manli2 = reduce_tags_unaligned(data_manli2)
-    data_manli2 = reduce_tags_wa(data_manli2)
+    # data_manli1, data_manli2 = split_data(data_manli, 2720)
+    # data_manli2 = reduce_tags_preserved(data_manli2)
+    # data_manli2 = reduce_tags_unaligned(data_manli2)
+    # data_manli2 = reduce_tags_wa(data_manli2)
 
-    print_csv(data_manli2)
-    # END MANLI =============
+    # print_csv(data_manli2)
+    # # END MANLI =============
 
-    # CHECK DATA ============
-    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
-    # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    puts "#{count_tags(data_manli2, tags)}\n\n"
+    # # CHECK DATA ============
+    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # # tags = ["exact", "stem", "syn", "para", "unaligned"]
+    # puts "#{count_tags(data_manli2, tags)}\n\n"
     # puts "#{count_tags(data_manli, tags)}\n"
 
     # puts "#{compare_data_alignment(data_SWA, data_manli)}\n"
@@ -327,7 +327,82 @@ class ReadData
 
     # # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
     # puts "#{data_meteor_1_5.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
+
+    data = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    data.each_with_index do |line, index|
+      puts "#{line}\n\n" if index == 9
+      break if index == 9
+    end
   end
+
+
+  def get_data_moses(source_path, target_path, align_path)
+    #source --> file: source
+    #target --> file: target
+    #align --> file: aligned.grow-diag-final
+
+    data = []
+    sources = []
+    targets = []
+    File.open(source_path, 'r').each do |line|
+      sources << line
+    end
+
+    File.open(target_path, 'r').each do |line|
+      targets << line
+    end
+    if sources.length != targets.length
+      return data
+    end
+
+
+    sentence_pair = Sentence_Pair.new
+    File.open(align_path, 'r').each_with_index do |line, index|
+      sentence_pair = Sentence_Pair.new
+      sentence_pair.source = sources[index]
+      sentence_pair.target = targets[index]
+      sentence_pair.Alignment = parse_align_moses(line)
+      data << sentence_pair 
+    end
+    return data
+  end
+
+  def parse_align_moses(line)
+    aligns = []
+    align_1_1_array = line.split(" ")
+    next_indexs = []
+
+    align = Alignment.new
+    align_1_1_array.each_with_index do |algn,index|
+      number_source = algn.split("-")[0]
+      number_target = algn.split("-")[1]
+      algn_source_exist = nil
+      algn_target_exist = nil
+      if aligns.count > 0
+        algn_source_exist = aligns.select{|e| e.source_numbers.include?(number_source)}.first
+        if algn_source_exist
+          algn_source_exist.target_numbers += ',' + number_target unless algn_source_exist.target_numbers.include?(number_target)
+        end
+
+        algn_target_exist = aligns.select{|e| e.target_numbers.include?(number_target)}.first
+        if algn_target_exist
+          algn_target_exist.source_numbers +=  ',' + number_source unless algn_target_exist.source_numbers.include?(number_source)
+        end
+      end
+    
+      if algn_source_exist.nil? and algn_target_exist.nil?
+        align = Alignment.new
+        align.target_numbers = number_target
+        align.source_numbers = number_source
+        align.tag_name = ''
+        aligns << align
+      end
+
+    end
+    aligns
+  end
+
+
 
   #Input: file
   #Output: Array of sentence pairs
