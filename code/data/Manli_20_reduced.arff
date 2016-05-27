@@ -10,7 +10,7 @@
 @attribute t_pos {NN,JJ,VBN,IN,NNS,DET,TO,VBZ,VBP,CC,NNP,VBD,RB,VB,VBG,CD,JJR,PRPS,PP,SYM,PRP,PPR,MD,sym>,LRB,POS,WDT,RRB,WRB,PPS,RBR}
 @attribute st_precede_binarized {0,1}
 @attribute st_follow_binarized {0,1}
-@attribute class {spelling,paraphrase,bigrammar-prep,mogrammar-prep,typo,bigrammar-others,mogrammar-det,bigrammar-wform,bigrammar-det,bigrammar-vtense,unaligned,wa,preserved}
+@attribute class {preserved,bigrammar-others,mogrammar-det,bigrammar-vtense,bigrammar-prep,paraphrase,bigrammar-inter,bigrammar-det,unaligned,mogrammar-prep,spelling,typo,bigrammar-wform,duplicate,wa}
 
 @data
 splitted,split,0,splitted,split,0,NN,NN,1,1,spelling

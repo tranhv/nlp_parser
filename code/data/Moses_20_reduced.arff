@@ -1,0 +1,1433 @@
+@relation csv-weka.filters.unsupervised.attribute.NumericToBinary-Rfirst-last
+
+@attribute s_str {splitted,whole,given,of,'in particular',affxes,inconsistency,presents,the,'stand alone',fruitful,amount,'in between',ways,means,segmenation,proved,in,best,have,are,clasifier,shown,diffculties,spe-cial,effcient,on,cope,largescale,for,which,face-track,face-tracks,grouping,match,select,demonstrate,important,it,Since,is,human,to,detected,since,video,ones,While,In,works,way,facetracks,employ,compare,face-retrieval,occurrence,remaining,details,'Section Section',employed,histograms,represents,cluster,includes,expensive,'high dimensional',etl,'between frame',modelled,than,use,create,uses,a,was,'face matching',individual,dataset,one,evaluating,Because,reasons,offline,videos,One,A,appearance,results,state-ofthe-art,propose,'can not',face-track.,demonstrated,performances,with,But,liminations,pair-wise,Secondly,make,failed,appear,together,character,occurences,appeared,loss,overlighting,contain,indetify,flash-frames,measures,flash-frame,indicates,consicutive,regarding,'point tracking','face grouping',At,facetrack,faces,an,inside,case,prevent,that,through,process,achive,limits,motivate,'compare to',By,require,called,imposes,dimension,wait,outliers,these,shows,by,problem,at,'information based',However,fully,reported,property,face,this,From,trade-o_,prepare,extract,'millions frames',millions,ten,'well known',number,ours,transform,approaches,'pair-wise based',denote,better,separatable,selecting,each,Average,precision,query,as,following:,MAP,'60.99\%',gap,Firstly,those,during,themself,variation,caused,And,their,It,more,About,Meanwhile,'to perform',On,theirs,costs,obtain,We,report,separated,With,'According to',suggest,sampling,based,clustering,',',both,terms,accuracy,and,efficiency.,hundred,take,achieve,significantly,concern,perform,archiving,contributions,3-fold,presented,Thirdly,retreival,faciliate,database,introduces,matched,introduce,over,intial,opmization,promissing,needs,image,.,because,expected,clarify,higher,supports,but,requires,'scale changes',all,other,reduces,contains,sufficient,another,aim,firstly,simultanously,set,doubled,construct,compute,'get attracted',oversegmenting,region,Finding,our,proposed,Grouping,maximal,'clique technique',consistent,Formulating,'then introduce','our recommendations',Representative,'proposed approach',branch-and-bound,processs,spaces,eliminated,known,bounding,assigned,upper,bound,value,quality,function,could,any,members,part,Parts,So,Adapting,repsented,histgoram,constrainted,smaller,following,applied,'And ,',denotes,Given,paring,nodes,Dividing,covered,straightforward,utilizing,Selecting,'select be divided',An,'illustration branching',essential,'requirement evaluate necessary',how,Particularly,Assuming,'now evaluating',Intersection,', Histogram',stick,types,similarity,NHI,rely,clearly,observed,relied,Inspired,form,algorithm,best-first,manner,examines,next,continue,reached,'have been','There organization','we have constraint',satisfied,'branch-and-bound based',attach,orginal,'satisfy b )','constraints ( ) (',X,'we presented',returned,from,divisive,splits,peformed,hierarcy,'$k$-means algorithm',hierchical,'then compute',hitogram,sastified,'last unifying','show an illustration',becomes,recommendation,generation,hierarchical,'locates exists','recommendations as such','hit hit',recommendations,Thus,some,'recommendations introduced',evaluate,introducing,annotation,'existed precisely introduce','is determined',apply,used,VOC,challenge,'facilitate procedure','performance simply',evaluation,divided,size,possible,pairs,formed,regions,BoF,dense,Different-of-Gaussian(,DoG,),'of of',helps,'a the','portion sky',etc,introduced,channel,'are RGB','.72\%',created,do,build,highly,overlap,Bron-Kerbosch,'reported numbers','well perform','averaged as',we,successfully,'80 .27\%','a hit',takes,'We there','on places',consists,'lacking of','much helpful',under,'influence of',hight,'It brings',improves,'unexpected also','also increases',inreasing,relies,not,only,'\\MATH',also,robustness,comparision,techniques,Recommend-Me,cannot,provide,hit,around,'20\%',initial,images,due,fact,technique,deal,significant,variations,items,Figure,5(,b,circumstance,when,increase,decline,efficiency,improvement,This,has,visit,parts,total,search,space,order,find,extra,local,evaluations,still,performs,3,times,faster,exhaustive,'Its is',superiority,practical,applications,'\\REF',examples,'by our Recommend-Me','paper introduced new system',', ,','we named',visual,suggestion,retrieved,frequent,Such,support,users,rapidly,refine,or,explore,efficient,solution,To,knowledge,first,attempt,toward,its,targeted,scheme}
+@attribute t_str {split,overall,provided,of,for,particularly,affixes,inconsistencies,present,standalone,successful,a,number,in-between,methods,the,'refers to',segmentation,proven,best-performing,achieved,performed,classifier,difficulties,special,efficient,in,deal,to,large-scale,that,'face track','face tracks',group,matching,selects,'to achieve',show,relevant,this,from,Because,are,people,found,because,videos,appearances,Whereas,Using,approaches,ways,use,compared,'face retrieval',and,occurrences,remainder,detail,Sections,used,histogram,represented,clustered,include,its,high,high-dimensional,et,between-frame,modeled,was,then,created,is,face-matching,individuals,datasets,each,evaluate,'In view',considerations,off-line,video,Each,result,state-of-the-art,proposed,cannot,'face track.',shown,with,performance,However,restrictions,pairwise,Second,causes,'to fail',occur,simultaneously,characters,'that appear',lost,over-lighting,on,containing,identify,'flash frames',measure,'flash frame',indicating,consecutive,'according to',point-tracking,face-grouping,In,face,within,cases,into,prevents,so,over,processes,'have shown',limit,motivates,required,call,representing,dimensions,'spend waiting',outlier,problems,information-based,Nevertheless,full,featured,ones,characteristic,faces,'Based on',trade-off,prepared,extracts,million,10,well-known,numbers,'our datasets',The,transforms,those,pair-wise-based,'refer to',more,separable,choosing,queries,follows:,difference,First,themselves,reflect,variations,which,'In addition',This,'a greater',Regarding,uses,cost,divided,'As shown in',suggests,hundreds,takes,question,achieving,contribution,threefold,these,Third,retrieval,facilitate,databases,shows,describe,initial,optimization,promising,',',need,.,envisioned,'show in',larger,helps,besides,an,be,'would incur',scale,reduce,were,sufficiently,again,aims,first,studies,their,work,'In contrast',sets,doubles,constructing,computing,attracted,over-segmenting,regions,Find,Group,'maximal will',clique,'that consistent',Formulate,recommendations,'A representative',approach,By,using,'hence propose','branch-and-bound solve',process,space,'have been eliminated',;,'this is',called,'bounding \" ?>','is is are','assigned grammatical these members','upper but don know Inparticular can','bound I \'t what what they','for \" be','the the','quality quality computed','function function function','could could','take take','any any','of on of of','members //<The members','part rewrite part','. .','Those parts',Thus,constrained,'smaller than',what,follows,'can be used','And let',denote,being,Letting,indicate,'pairing //<the guess','nodes rewrite .>',get,'Dividing up','covered can be done','straightforwardly better if it correct','utilizing //<The rewrite .>',divide,branching,illustrated,'essential determine //<Or determine ?','requirement whether \" extent \" ?>','branch-and-bound algorithm','In particular','Let us assume that',evaluating,'formulas similarity Intersection',', Histogram','will use','will NHI',rely,'clearly //<I not what means context you \" derived','observed \'m sure observed this Do mean ?',can,as,relies,Moreover,'Inspired write',devised,'the the the the the','algorithm algorithm rewrite algorithm','work best-first //<The describes you In describes works','manner original way decided contrast way .>','algorithm \" The rewrite','examines //<\" unclear guess .>',next,repeat,'is reached',reached,There,constraint,'is satisfied',branch-and-bound,node,'is attached',original,satisfies,constraints,'X this organization',organization,presented,If,returned,by,'divisive //<the rewrite guess .>',we,perform,splits,hierarchy,$k$-means,hierarchical,compute,Finally,unifying,'the both','illustratie this',become,making,locates,'recommendations\"','hit \"',them,evaluated,pesenting,annotations,'existin a','will provide',recommendation,'VOC or','challenge not',simply,computed,evaluations,'divided \" me \"','the the the the','size size average size sizes','of of of of','all all all all','possible possible possible possible','region region region region','pairs //< pairs pairs pairs','formed \" Do you mean \" \" or \"','regions unclear ?>',taken,employed,'a BoF','using dense','a Different-of-Gaussian (',DoG,),'of of',helped,sky,'etc. from','first introduced',channels,RGB,'.72\% of',did,built,nearly,overlapped,'The Bron-Kerbosch',applied,reported,'and of',averages,make,'80 .27\%',hit,take,'in places',consisted,lacking,may,helpful,influenced,'can obtain',Thisgives,improving,unexpected,increases,increasing,precision,not,only,'\\MATH',but,also,robustness,region,comparison,techniques,Recommend-Me,provide,any,around,'20\%',query,images,due,fact,our,technique,significant,items,Figure,5(,b,another,circumstance,when,increase,It,decline,efficiency,improvement,algorithm,has,visit,parts,total,search,order,find,extra,local,all,still,three,times,faster,than,exhaustive,'This will be',advantage,important,practical,applications,'\\REF',presents,examples,byRecommend-Me,We,described,'oursystem making',named,visual,suggestions,Given,image,retrieved,database,gives,'impose conditions on',how,frequent,appear,Such,help,users,select,rapidly,refine,or,explore,An,solution,'also presented',To,best,knowledge,'attempt at',developing,targeted,suggestion,scheme}
+@attribute st_samestr_binarized {0,1}
+@attribute s_stem {splitted,whole,give,of,'in particular',affxes,inconsistency,present,the,'stand alone',fruitful,amount,'in between',ways,mean,segmenation,prove,in,good,have,be,clasifier,show,diffculties,spe-cial,effcient,on,cope,largescale,for,which,face-track,face-tracks,group,match,select,demonstrate,important,it,Since,human,to,detect,since,video,one,While,In,work,way,facetracks,employ,compare,face-retrieval,occurrence,remain,detail,'Section Section',histogram,represent,cluster,include,expensive,'high dimensional',etl,'between frame',model,than,use,create,a,'face match',individual,dataset,evaluate,Because,reason,offline,One,A,appearance,result,state-ofthe-art,propose,'can not',face-track.,performance,with,But,liminations,pair-wise,Secondly,make,fail,appear,together,character,occurences,loss,overlighting,contain,indetify,flash-frames,measure,flash-frame,indicate,consicutive,regard,'point track','face group',At,facetrack,face,an,inside,case,prevent,that,through,process,achive,limit,motivate,'compare to',By,require,call,impose,dimension,wait,outlier,these,by,problem,at,'information base',However,fully,report,property,this,From,trade-o_,prepare,extract,'million frame',million,ten,'well know',number,ours,transform,approach,'pair-wise base',denote,separatable,each,Average,precision,query,as,following:,MAP,'60.99\%',gap,Firstly,those,during,themself,variation,cause,And,their,It,more,About,Meanwhile,'to perform',On,theirs,cost,obtain,We,separate,With,'According to',suggest,sample,base,',',both,term,accuracy,and,efficiency.,hundred,take,achieve,significantly,concern,perform,archive,contribution,3-fold,Thirdly,retreival,faciliate,database,introduce,over,intial,opmization,promissing,need,image,.,because,expect,clarify,higher,support,but,'scale change',all,other,reduce,sufficient,another,aim,firstly,simultanously,set,double,construct,compute,'get attract',oversegmenting,region,Finding,our,Grouping,maximal,'clique technique',consistent,Formulating,'then introduce','our recommendation',Representative,'propose approach',branch-and-bound,space,eliminate,know,bound,assign,upper,bind,value,quality,function,could,any,member,part,Parts,So,Adapting,repsented,histgoram,constrainted,smaller,follow,apply,'And ,',Given,pare,nod,Dividing,cover,straightforward,utilize,Selecting,'select be divide',An,'illustration branch',essential,'requirement evaluate necessary',how,Particularly,Assuming,'now evaluate',Intersection,', Histogram',stick,type,similarity,NHI,rely,clearly,observe,Inspired,form,algorithm,best-first,manner,examine,next,continue,reach,'have be','There organization','we have constraint',satisfy,'branch-and-bound base',attach,orginal,'satisfy b )','constraint ( ) (',X,'we present',return,from,divisive,split,peformed,hierarcy,'$k$-means algorithm',hierchical,'then compute',hitogram,sastified,'last unify','show an illustration',become,recommendation,generation,hierarchical,'locate exist','recommendation as such','hit hit',Thus,some,'recommendation introduce',annotation,'exist precisely introduce','be determine',VOC,challenge,'facilitate procedure','performance simply',evaluation,divide,size,possible,pair,BoF,dense,Different-of-Gaussian(,DoG,),'of of',help,'a the','portion sky',etc,channel,'be RGB','.72\%',do,build,highly,overlap,Bron-Kerbosch,'report number','well perform','average as',we,successfully,'80 .27\%','a hit','We there','on place',consist,'lack of','much helpful',under,'influence of',hight,'It bring',improve,'unexpected also','also increase',inreasing,not,only,'\\MATH',also,robustness,comparision,technique,Recommend-Me,cannot,provide,hit,around,'20\%',initial,due,fact,deal,significant,item,Figure,5(,b,circumstance,when,increase,decline,efficiency,improvement,This,visit,total,search,order,find,extra,local,still,3,time,fast,exhaustive,'Its be',superiority,practical,application,'\\REF',example,'by our Recommend-Me','paper introduce new system',', ,','we name',visual,suggestion,retrieve,frequent,Such,user,rapidly,refine,or,explore,efficient,solution,To,knowledge,first,attempt,toward,target,scheme}
+@attribute t_stem {split,overall,provide,of,for,particularly,affix,inconsistency,present,standalone,successful,a,number,in-between,method,the,'refer to',segmentation,prove,best-performing,achieve,perform,classifier,difficulty,special,efficient,in,deal,to,large-scale,that,'face track',group,match,select,'to achieve',show,relevant,this,from,Because,be,people,find,because,video,appearance,Whereas,Using,approach,ways,use,compare,'face retrieval',and,occurrence,remainder,detail,Sections,histogram,represent,cluster,include,it,high,high-dimensional,et,between-frame,model,then,create,face-matching,individual,datasets,each,evaluate,'In view',consideration,off-line,Each,result,state-of-the-art,propose,cannot,'face track.',with,performance,However,restriction,pairwise,Second,cause,'to fail',occur,simultaneously,character,'that appear',lose,over-lighting,on,contain,identify,'flash frame',measure,indicate,consecutive,'accord to',point-tracking,face-grouping,In,face,within,case,into,prevent,so,over,process,'have show',limit,motivate,require,call,dimension,'spend wait',outlier,problem,information-based,Nevertheless,full,feature,one,characteristic,'Based on',trade-off,prepare,extract,million,10,well-known,'our datasets',The,transform,those,pair-wise-based,more,separable,choose,query,follows:,difference,First,themselves,reflect,variation,which,'In addition',This,'a greater',Regarding,cost,divide,'As show in',suggest,hundred,take,question,contribution,threefold,these,Third,retrieval,facilitate,database,describe,initial,optimization,promise,',',need,.,envision,'show in',larger,help,besides,an,'would incur',scale,reduce,sufficiently,again,aim,first,study,their,work,'In contrast',set,double,construct,compute,attract,over-segmenting,region,Find,Group,'maximal will',clique,'that consistent',Formulate,recommendation,'A representative',By,'hence propose','branch-and-bound solve',space,'have be eliminate',;,'this be','bound \" ?>','be be be','assign grammatical these member','upper but don know Inparticular can','bind I \t what what they','for \" be','the the','quality quality compute','function function function','could could','take take','any any','of on of of','member //<The member','part rewrite part','. .','Those part',Thus,constrain,'smaller than',what,follow,'can be use','And let',denote,Letting,'pair //<the guess','nod rewrite .>',get,'Dividing up','cover can be do','straightforwardly good if it correct','utilize //<The rewrite .>',branch,illustrate,'essential determine //<Or determine ?','requirement whether \" extent \" ?>','branch-and-bound algorithm','In particular','Let us assume that','formula similarity Intersection',', Histogram','will use','will NHI',rely,'clearly //<I not what mean context you \" derive','observe m sure observe this Do mean ?',can,as,Moreover,'Inspired write',devise,'the the the the the','algorithm algorithm rewrite algorithm','work best-first //<The describe you In describe work','manner original way decide contrast way .>','algorithm \" The rewrite','examine //<\" unclear guess .>',next,repeat,'be reach',reach,There,constraint,'be satisfy',branch-and-bound,node,'be attach',original,satisfy,'X this organization',organization,If,return,by,'divisive //<the rewrite guess .>',we,hierarchy,$k$-means,hierarchical,Finally,unify,'the both','illustratie this',become,make,locate,'recommendations\"','hit \"',them,pesenting,annotation,'existin a','will provide','VOC or','challenge not',simply,evaluation,'divide \" me \"','the the the the','size size average size size','of of of of','all all all all','possible possible possible possible','region region region region','pair //< pair pair pair','form \" Do you mean \" \" or \"','region unclear ?>',employ,'a BoF','use dense','a Different-of-Gaussian (',DoG,),'of of',sky,'etc. from','first introduce',channel,RGB,'.72\% of',do,build,nearly,overlap,'The Bron-Kerbosch',apply,report,'and of',average,'80 .27\%',hit,'in place',consist,lack,may,helpful,influence,'can obtain',Thisgives,improve,unexpected,increase,precision,not,only,'\\MATH',but,also,robustness,comparison,technique,Recommend-Me,any,around,'20\%',image,due,fact,our,significant,item,Figure,5(,b,another,circumstance,when,It,decline,efficiency,improvement,algorithm,have,visit,part,total,search,order,extra,local,all,still,three,time,fast,than,exhaustive,'This will be',advantage,important,practical,application,'\\REF',example,byRecommend-Me,We,'oursystem make',name,visual,suggestion,Given,retrieve,give,'impose condition on',how,frequent,appear,Such,user,rapidly,refine,or,explore,An,solution,'also present',To,good,knowledge,'attempt at',develop,target,scheme}
+@attribute st_samestem_binarized {0,1}
+@attribute s_pos {NN,JJ,VBN,IN,'IN PPR',NNS,DET,'NN PPR','IN POS',RB,VB,VBP,WDT,VBG,PRP,VBZ,TO,'NN POS','JJ POS',VBD,CD,'MD PPR',PP,CC,'VB PPR','NNS POS','RB PPR','JJ PPR',NNP,PPS,POS,PRPS,JJR,'TO PPR','VBG PPR',PPR,'PRPS POS',MD,'CC PPR','JJ VB PPR','NN VB PPR',WRB,'PPC POS','EX POS','PRP VB POS','VB NN PPS','NNS LRB RRB NN','PRP PPR','NN DET POS','NNS PPR','NNS IN PPR','VBD RB PPR','VBZ PPR','VB POS',LRB,RRB,'DET POS','VBP POS','VBD POS','CD POS','VBG POS','RB POS',RBR,'PRPS PPR','IN PRPS PPR','NN VBN JJ POS','PPC PPR'}
+@attribute t_pos {NN,JJ,VBN,IN,RB,NNS,DET,'VBZ PPR',TO,'NN POS',VBZ,'TO PPR',VBP,VBG,CC,VB,PRPS,NNP,VBD,'IN POS','NN NN','IN PPR','VBG PPR','VB PPR','VBN POS',CD,'PRPS POS',JJR,PPS,PRP,WDT,'DET PPR','IN VBN POS',PPR,PP,'MD PPR','NN PPR','DET POS','RB PPR','JJ PPR','VB VBN PPR','VBG PPR SYM','VBZ VBZ POS','JJ JJ DET POS','JJ CC VB VB NNP PPR','JJ PRP NN WP WP POS','IN PPR PPR','NN NN POS','IN IN IN POS','NNS nnp> POS','NN VB POS','SYM SYM','JJR POS',WP,'MD VB PPR','CC PPR','JJ nnp> POS','NNS VB SYM','VBG POS','VBN MD VB PPR','RB RB IN PRP PPR','JJ nnp> VB SYM','JJ VB nnp> VB PPR','NN IN PPR NN PPR SYM','JJ POS','VB PRP VB POS','NNS NN POS','PPC POS','MD POS','RB nnp> RB WP NNS NN PRP PPR PPR','JJ NN JJ JJ DET NNP JJ PPR',MD,'VBN PPR','DET DET DET DET POS','NN NN VB POS','NN JJ nnp> VBZ PRP IN VBZ POS','NN JJ NN VBN NN NN SYM','NN PPR DET PPR','VBZ NN JJ NN SYM',EX,'NNP DET POS','JJ nnp> VB NN SYM','NNP PPS','VBN PPR PRP PPR','DET DET DET POS','NN NN JJ NN POS','JJ JJ JJ PPR','NN NN NN POS','NNS sym> NNS NNS POS','VBN PPR NNP PRP JJ PPR PPR CC PPR','NNS JJ SYM','DET JJ NN',RRB,'PP POS','CC POS','CD POS',POS,LRB,WRB,RBR,'DET MD PPR','VB NNS POS'}
+@attribute st_precede_binarized {0,1}
+@attribute st_follow_binarized {0,1}
+@attribute class {preserved,bigrammar-others,mogrammar-det,bigrammar-vtense,bigrammar-prep,paraphrase,bigrammar-inter,bigrammar-det,unaligned,mogrammar-prep,spelling,typo,bigrammar-wform,duplicate,wa}
+
+@data
+splitted,split,0,splitted,split,0,NN,NN,1,1,spelling
+whole,overall,0,whole,overall,0,JJ,JJ,1,1,paraphrase
+given,provided,0,give,provide,0,VBN,VBN,1,1,paraphrase
+of,of,1,of,of,1,IN,IN,1,1,bigrammar-prep
+of,for,0,of,for,0,IN,IN,1,1,bigrammar-prep
+'in particular',particularly,0,'in particular',particularly,0,'IN PPR',RB,1,1,paraphrase
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+of,for,0,of,for,0,IN,IN,1,1,bigrammar-prep
+splitted,split,0,splitted,split,0,NN,NN,1,0,spelling
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+inconsistency,inconsistencies,0,inconsistency,inconsistency,1,NN,NNS,0,1,bigrammar-others
+presents,present,0,present,present,1,NNS,JJ,1,1,bigrammar-others
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+splitted,split,0,splitted,split,0,NN,NN,1,1,spelling
+'stand alone',standalone,0,'stand alone',standalone,0,'NN PPR',NN,1,1,spelling
+fruitful,successful,0,fruitful,successful,0,JJ,JJ,1,1,paraphrase
+splitted,split,0,splitted,split,0,NN,NN,1,1,spelling
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+inconsistency,inconsistencies,0,inconsistency,inconsistency,1,NN,NNS,1,1,bigrammar-others
+amount,number,0,amount,number,0,NN,NN,1,1,paraphrase
+splitted,split,0,splitted,split,0,NN,NN,1,0,spelling
+the,a,0,the,a,0,DET,DET,1,1,bigrammar-det
+'in between',in-between,0,'in between',in-between,0,'IN POS',JJ,1,1,spelling
+ways,methods,0,ways,method,0,NNS,NNS,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+means,'refers to',0,mean,'refer to',0,NNS,'VBZ PPR',1,1,paraphrase
+segmenation,segmentation,0,segmenation,segmentation,0,NN,NN,1,1,typo
+proved,proven,0,prove,prove,1,VBN,JJ,1,1,spelling
+in,for,0,in,for,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+splitted,split,0,splitted,split,0,NN,NN,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+of,for,0,of,for,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+of,for,0,of,for,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+best,best-performing,0,good,best-performing,0,RB,JJ,1,1,paraphrase
+have,achieved,0,have,achieve,0,VB,VBN,1,1,paraphrase
+are,performed,0,be,perform,0,VBP,VBN,1,1,paraphrase
+inconsistency,inconsistencies,0,inconsistency,inconsistency,1,NN,NNS,1,1,bigrammar-others
+clasifier,classifier,0,clasifier,classifier,0,NN,NN,1,1,typo
+affxes,affixes,0,affxes,affix,0,NNS,NNS,1,1,typo
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+shown,provided,0,show,provide,0,VBN,VBN,1,1,paraphrase
+diffculties,difficulties,0,diffculties,difficulty,0,NNS,NNS,1,1,typo
+spe-cial,special,0,spe-cial,special,0,JJ,JJ,1,1,typo
+of,?,0,of,?,0,IN,?,0,0,mogrammar-prep
+effcient,efficient,0,effcient,efficient,0,NN,JJ,1,1,typo
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+cope,deal,0,cope,deal,0,VB,NN,1,1,paraphrase
+on,to,0,on,to,0,IN,TO,1,0,bigrammar-prep
+largescale,large-scale,0,largescale,large-scale,0,NN,JJ,0,1,spelling
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+on,to,0,on,to,0,IN,TO,1,1,bigrammar-prep
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+for,?,0,for,?,0,IN,?,0,0,mogrammar-prep
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+grouping,group,0,group,group,1,VBG,NN,1,1,bigrammar-wform
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+match,matching,0,match,match,1,NN,JJ,1,0,bigrammar-wform
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+select,selects,0,select,select,1,JJ,VBZ,1,1,bigrammar-others
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+for,of,0,for,of,0,IN,IN,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,spelling
+for,'to achieve',0,for,'to achieve',0,IN,'TO PPR',0,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+demonstrate,show,0,demonstrate,show,0,VB,NN,1,1,paraphrase
+important,relevant,0,important,relevant,0,JJ,JJ,1,1,paraphrase
+of,in,0,of,in,0,IN,IN,1,1,bigrammar-prep
+it,this,0,it,this,0,PRP,DET,1,1,paraphrase
+in,from,0,in,from,0,IN,IN,1,1,bigrammar-prep
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+is,are,0,be,be,1,VBZ,VBP,1,1,bigrammar-others
+human,people,0,human,people,0,JJ,NNS,1,1,paraphrase
+on,for,0,on,for,0,IN,IN,1,1,bigrammar-prep
+to,in,0,to,in,0,TO,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+detected,found,0,detect,find,0,VBN,VBN,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+since,because,0,since,because,0,IN,IN,0,0,paraphrase
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+video,videos,0,video,video,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+ones,appearances,0,one,appearance,0,NNS,NNS,1,1,paraphrase
+While,Whereas,0,While,Whereas,0,IN,IN,1,1,paraphrase
+for,in,0,for,in,0,IN,IN,1,1,bigrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,spelling
+In,Using,0,In,Using,0,IN,VBG,1,1,paraphrase
+works,approaches,0,work,approach,0,NNS,NNS,1,1,paraphrase
+way,ways,0,way,ways,0,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+on,from,0,on,from,0,IN,IN,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+employ,use,0,employ,use,0,VB,NN,1,1,paraphrase
+on,of,0,on,of,0,IN,IN,1,1,bigrammar-prep
+compare,compared,0,compare,compare,1,VB,VBN,1,0,bigrammar-wform
+?,to,0,?,to,0,?,TO,0,0,mogrammar-prep
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-retrieval,'face retrieval',0,face-retrieval,'face retrieval',0,JJ,'NN POS',1,0,spelling
+on,in,0,on,in,0,IN,IN,0,1,bigrammar-prep
+which,and,0,which,and,0,WDT,CC,1,1,paraphrase
+face-track,'face tracks',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+occurrence,occurrences,0,occurrence,occurrence,1,NN,NNS,1,1,bigrammar-others
+remaining,remainder,0,remain,remainder,0,VBG,NN,1,1,bigrammar-wform
+details,detail,0,detail,detail,1,NNS,NN,1,1,bigrammar-others
+'Section Section',Sections,0,'Section Section',Sections,0,'NN POS',NNS,1,0,bigrammar-others
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+employed,used,0,employ,use,0,VBN,VBN,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+histograms,histogram,0,histogram,histogram,1,NNS,NN,1,0,bigrammar-others
+represents,represented,0,represent,represent,1,VBZ,VBN,0,1,bigrammar-vtense
+cluster,clustered,0,cluster,cluster,1,NN,VBN,1,1,bigrammar-vtense
+includes,include,0,include,include,1,VBZ,VB,1,0,bigrammar-others
+the,its,0,the,it,0,DET,PRPS,0,0,bigrammar-det
+expensive,high,0,expensive,high,0,JJ,JJ,0,1,paraphrase
+'high dimensional',high-dimensional,0,'high dimensional',high-dimensional,0,'JJ POS',JJ,1,1,spelling
+etl,et,0,etl,et,0,NN,NNP,1,1,typo
+in,?,0,in,?,0,IN,?,0,0,mogrammar-prep
+'between frame',between-frame,0,'between frame',between-frame,0,'IN POS',JJ,1,1,spelling
+modelled,modeled,0,model,model,1,NN,VBN,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+the,its,0,the,it,0,DET,PRPS,1,0,bigrammar-det
+is,was,0,be,be,1,VBZ,VBD,1,1,bigrammar-vtense
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+of,for,0,of,for,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+since,because,0,since,because,0,IN,IN,1,1,paraphrase
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+than,then,0,than,then,0,IN,RB,1,0,typo
+use,used,0,use,use,1,NN,VBN,0,1,bigrammar-vtense
+use,used,0,use,use,1,NN,VBN,1,1,bigrammar-vtense
+create,created,0,create,create,1,VB,VBN,1,1,bigrammar-vtense
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+uses,use,0,use,use,1,NNS,NN,1,1,bigrammar-others
+a,the,0,a,the,0,DET,DET,1,1,bigrammar-det
+was,is,0,be,be,1,VBD,VBZ,1,1,bigrammar-vtense
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+'face matching',face-matching,0,'face match',face-matching,0,'NN PPR',JJ,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+individual,individuals,0,individual,individual,1,JJ,NNS,1,1,bigrammar-others
+dataset,datasets,0,dataset,datasets,0,NN,NNS,1,1,bigrammar-others
+one,each,0,one,each,0,CD,DET,1,1,paraphrase
+evaluating,evaluate,0,evaluate,evaluate,1,VBG,VB,1,1,paraphrase
+'face matching',face-matching,0,'face match',face-matching,0,'NN PPR',JJ,1,1,spelling
+Because,'In view',0,Because,'In view',0,IN,'IN POS',1,1,paraphrase
+reasons,considerations,0,reason,consideration,0,NNS,NNS,0,1,paraphrase
+offline,off-line,0,offline,off-line,0,NN,JJ,1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+videos,video,0,video,video,1,NNS,NN,0,0,bigrammar-others
+of,?,0,of,?,0,IN,?,0,0,mogrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+One,Each,0,One,Each,0,CD,DET,1,1,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+A,Each,0,A,Each,0,DET,DET,1,1,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+appearance,appearances,0,appearance,appearance,1,NN,NNS,1,1,bigrammar-others
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+results,result,0,result,result,1,NNS,NN,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+state-ofthe-art,state-of-the-art,0,state-ofthe-art,state-of-the-art,0,JJ,JJ,1,1,typo
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-prep
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+of,in,0,of,in,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+While,Whereas,0,While,Whereas,0,IN,IN,1,1,bigrammar-others
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+propose,proposed,0,propose,propose,1,VB,JJ,1,0,bigrammar-vtense
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+which,that,0,which,that,0,WDT,IN,1,0,bigrammar-others
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,0,1,spelling
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+face-track.,'face track.',0,face-track.,'face track.',0,PP,'NN NN',1,1,spelling
+demonstrated,shown,0,demonstrate,show,0,VBN,VBN,1,1,paraphrase
+on,with,0,on,with,0,IN,IN,1,1,bigrammar-prep
+performances,performance,0,performance,performance,1,NNS,NN,1,1,bigrammar-others
+?,in,0,?,in,0,?,IN,0,0,mogrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+with,from,0,with,from,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,1,1,spelling
+which,that,0,which,that,0,WDT,IN,0,0,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+But,However,0,But,However,0,CC,RB,1,1,paraphrase
+liminations,restrictions,0,liminations,restriction,0,NNS,NNS,1,1,paraphrase
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+pair-wise,pairwise,0,pair-wise,pairwise,0,JJ,NN,0,1,spelling
+face-track,'face tracks',0,face-track,'face track',0,JJ,'NN POS',1,0,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,bigrammar-wform
+make,causes,0,make,cause,0,VB,NNS,1,1,paraphrase
+failed,'to fail',0,fail,'to fail',0,VBN,'TO PPR',1,1,paraphrase
+appear,occur,0,appear,occur,0,VB,VB,1,0,paraphrase
+together,simultaneously,0,together,simultaneously,0,RB,RB,0,1,paraphrase
+character,characters,0,character,character,1,NN,NNS,1,1,bigrammar-others
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,bigrammar-others
+appeared,'that appear',0,appear,'that appear',0,VBD,'IN PPR',1,1,paraphrase
+since,because,0,since,because,0,IN,IN,1,1,paraphrase
+loss,lost,0,loss,lose,0,NN,VBN,1,1,bigrammar-wform
+overlighting,over-lighting,0,overlighting,over-lighting,0,VBG,JJ,1,1,spelling
+of,on,0,of,on,0,IN,IN,1,1,bigrammar-prep
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+contain,containing,0,contain,contain,1,VB,VBG,1,1,bigrammar-wform
+indetify,identify,0,indetify,identify,0,NN,VB,1,0,typo
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',0,1,spelling
+measures,measure,0,measure,measure,1,NNS,NN,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+flash-frame,'flash frame',0,flash-frame,'flash frame',0,JJ,'NN POS',1,1,spelling
+for,in,0,for,in,0,IN,IN,1,1,bigrammar-prep
+indicates,indicating,0,indicate,indicate,1,VBZ,VBG,1,1,bigrammar-wform
+consicutive,consecutive,0,consicutive,consecutive,0,NN,JJ,1,1,spelling
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',1,0,spelling
+regarding,'according to',0,regard,'accord to',0,VBG,'VBG PPR',0,1,paraphrase
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',1,1,spelling
+'point tracking',point-tracking,0,'point track',point-tracking,0,'NN POS',JJ,1,1,spelling
+'face grouping',face-grouping,0,'face group',face-grouping,0,'NN PPR',JJ,1,1,spelling
+face-track.,'face track.',0,face-track.,'face track.',0,PP,'NN NN',1,1,spelling
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',1,1,spelling
+At,In,0,At,In,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',1,1,spelling
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,0,spelling
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+faces,face,0,face,face,1,NNS,NN,1,1,bigrammar-others
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,paraphrase
+which,that,0,which,that,0,WDT,IN,1,0,bigrammar-others
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,0,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+an,the,0,an,the,0,DET,DET,1,1,bigrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+inside,within,0,inside,within,0,IN,IN,1,1,bigrammar-prep
+an,and,0,an,and,0,DET,CC,1,1,typo
+of,in,0,of,in,0,IN,IN,1,1,bigrammar-prep
+case,cases,0,case,case,1,NN,NNS,1,1,bigrammar-others
+to,into,0,to,into,0,TO,IN,1,1,bigrammar-prep
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+prevent,prevents,0,prevent,prevent,1,VB,VBZ,1,1,bigrammar-others
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+that,so,0,that,so,0,IN,RB,1,1,paraphrase
+through,over,0,through,over,0,IN,IN,1,1,bigrammar-prep
+are,is,0,be,be,1,VBP,VBZ,1,1,bigrammar-others
+process,processes,0,process,process,1,NN,NNS,1,1,bigrammar-others
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+for,to,0,for,to,0,IN,TO,0,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,spelling
+achive,'have shown',0,achive,'have show',0,NN,'VB PPR',1,1,paraphrase
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,paraphrase
+limits,limit,0,limit,limit,1,NNS,NN,1,1,bigrammar-others
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+motivate,motivates,0,motivate,motivate,1,VB,NNS,1,1,bigrammar-others
+an,a,0,an,a,0,DET,DET,1,1,bigrammar-det
+which,that,0,which,that,0,WDT,IN,1,0,bigrammar-others
+'compare to',with,0,'compare to',with,0,'VB PPR',IN,1,1,paraphrase
+employ,use,0,employ,use,0,VB,NN,1,0,paraphrase
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+By,In,0,By,In,0,IN,IN,1,1,bigrammar-prep
+that,so,0,that,so,0,IN,RB,1,1,paraphrase
+require,required,0,require,require,1,VB,VBN,1,1,bigrammar-vtense
+called,call,0,call,call,1,VBN,NN,1,1,bigrammar-vtense
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+for,?,0,for,?,0,IN,?,0,0,mogrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face tracks',0,face-track,'face track',0,JJ,'NN POS',0,1,spelling
+imposes,representing,0,impose,represent,0,VBZ,VBG,1,1,paraphrase
+dimension,dimensions,0,dimension,dimension,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+employ,use,0,employ,use,0,VB,NN,1,1,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,0,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+wait,'spend waiting',0,wait,'spend wait',0,NN,'VB PPR',1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+since,because,0,since,because,0,IN,IN,1,1,paraphrase
+a,the,0,a,the,0,DET,DET,1,1,bigrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,bigrammar-others
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+for,in,0,for,in,0,IN,IN,1,1,bigrammar-prep
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+these,the,0,these,the,0,DET,DET,1,1,bigrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+A,Each,0,A,Each,0,DET,DET,1,0,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',0,1,spelling
+one,a,0,one,a,0,CD,DET,1,1,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+one,that,0,one,that,0,CD,IN,1,1,paraphrase
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',1,1,spelling
+shows,show,0,show,show,1,NNS,NN,1,1,bigrammar-others
+by,of,0,by,of,0,IN,IN,0,1,bigrammar-prep
+problem,problems,0,problem,problem,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,spelling
+which,that,0,which,that,0,WDT,IN,0,1,bigrammar-others
+at,in,0,at,in,0,IN,IN,1,1,bigrammar-prep
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+'information based',information-based,0,'information base',information-based,0,'NN PPR',JJ,1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+However,Nevertheless,0,However,Nevertheless,0,RB,RB,1,1,paraphrase
+fully,full,0,fully,full,0,RB,JJ,1,1,bigrammar-wform
+since,because,0,since,because,0,IN,IN,1,0,paraphrase
+reported,featured,0,report,feature,0,VBN,JJ,1,1,paraphrase
+character,ones,0,character,one,0,NN,NNS,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+property,characteristic,0,property,characteristic,0,NN,JJ,1,1,paraphrase
+face,faces,0,face,face,1,NN,NNS,1,1,bigrammar-others
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,typo
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+this,the,0,this,the,0,DET,DET,1,1,bigrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+From,'Based on',0,From,'Based on',0,IN,'VBN POS',1,1,paraphrase
+a,the,0,a,the,0,DET,DET,1,0,bigrammar-det
+trade-o_,trade-off,0,trade-o_,trade-off,0,JJ,NN,0,1,typo
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+prepare,prepared,0,prepare,prepare,1,VB,JJ,1,1,bigrammar-vtense
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+extract,extracts,0,extract,extract,1,NN,NNS,1,0,bigrammar-others
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+for,of,0,for,of,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+'millions frames',million,0,'million frame',million,0,'NNS POS',CD,1,1,paraphrase
+millions,million,0,million,million,1,NNS,CD,1,1,bigrammar-others
+ten,10,0,ten,10,0,NN,CD,1,1,spelling
+'well known',well-known,0,'well know',well-known,0,'RB PPR',JJ,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+with,and,0,with,and,0,IN,CC,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+number,numbers,0,number,number,1,NN,NNS,0,1,bigrammar-others
+character,characters,0,character,character,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+ours,'our datasets',0,ours,'our datasets',0,PRP,'PRPS POS',1,1,paraphrase
+for,in,0,for,in,0,IN,IN,1,1,bigrammar-prep
+of,on,0,of,on,0,IN,IN,1,1,bigrammar-prep
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+at,from,0,at,from,0,IN,IN,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,spelling
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+A,The,0,A,The,0,DET,DET,1,1,bigrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+transform,transforms,0,transform,transform,1,VB,VBZ,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+compare,compared,0,compare,compare,1,VB,VBN,1,1,bigrammar-vtense
+approaches,those,0,approach,those,0,NNS,DET,1,1,paraphrase
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+'pair-wise based',pair-wise-based,0,'pair-wise base',pair-wise-based,0,'JJ PPR',JJ,1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+denote,'refer to',0,denote,'refer to',0,NN,'VB PPR',1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'pair-wise based',pair-wise-based,0,'pair-wise base',pair-wise-based,0,'JJ PPR',JJ,1,1,spelling
+for,of,0,for,of,0,IN,IN,1,1,bigrammar-prep
+to,?,0,to,?,0,TO,?,0,0,mogrammar-prep
+By,In,0,By,In,0,IN,IN,1,1,bigrammar-prep
+that,so,0,that,so,0,IN,RB,1,1,paraphrase
+better,more,0,good,more,0,RB,JJR,1,0,paraphrase
+separatable,separable,0,separatable,separable,0,NN,NN,0,1,spelling
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,0,spelling
+selecting,choosing,0,select,choose,0,NN,VBG,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+?,to,0,?,to,0,?,TO,0,0,unaligned
+on,of,0,on,of,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+for,in,0,for,in,0,IN,IN,1,1,bigrammar-prep
+each,a,0,each,a,0,DET,DET,1,0,paraphrase
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',0,1,spelling
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,spelling
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+Average,?,0,Average,?,0,NNP,?,0,0,unaligned
+precision,?,0,precision,?,0,NN,?,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+query,queries,0,query,query,1,NN,NNS,1,1,bigrammar-others
+on,with,0,on,with,0,IN,IN,1,1,bigrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+as,?,0,as,?,0,IN,?,0,0,unaligned
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+as,?,0,as,?,0,IN,?,0,0,unaligned
+?,and,0,?,and,0,?,CC,0,0,unaligned
+following:,follows:,0,following:,follows:,0,PPS,PPS,1,1,paraphrase
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+MAP,?,0,MAP,?,0,NNP,?,0,0,unaligned
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+'60.99\%',?,0,'60.99\%',?,0,POS,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+gap,difference,0,gap,difference,0,NN,NN,1,0,paraphrase
+of,in,0,of,in,0,IN,IN,0,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Firstly,First,0,Firstly,First,0,NNP,NNP,1,1,bigrammar-wform
+those,that,0,those,that,0,DET,IN,1,1,bigrammar-others
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,paraphrase
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,bigrammar-wform
+during,over,0,during,over,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+a,the,0,a,the,0,DET,DET,1,1,bigrammar-det
+themself,themselves,0,themself,themselves,0,NN,PRP,1,1,bigrammar-others
+contain,reflect,0,contain,reflect,0,VB,VB,1,0,paraphrase
+variation,variations,0,variation,variation,1,NN,NNS,1,1,bigrammar-others
+during,over,0,during,over,0,IN,IN,1,0,bigrammar-prep
+caused,?,0,cause,?,0,VBN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+to,?,0,to,?,0,TO,?,0,0,unaligned
+?,which,0,?,which,0,?,WDT,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+dataset,datasets,0,dataset,datasets,0,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+And,'In addition',0,And,'In addition',0,CC,'IN POS',1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+their,the,0,their,the,0,PRPS,DET,1,1,bigrammar-det
+?,that,0,?,that,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+one,that,0,one,that,0,CD,IN,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+It,This,0,It,This,0,PRP,DET,1,1,paraphrase
+on,in,0,on,in,0,IN,IN,0,1,bigrammar-prep
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+more,'a greater',0,more,'a greater',0,JJR,'DET PPR',1,1,paraphrase
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+About,Regarding,0,About,Regarding,0,IN,VBG,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Since,Because,0,Since,Because,0,IN,IN,1,1,paraphrase
+use,uses,0,use,use,1,NN,NNS,1,1,bigrammar-others
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+the,?,0,the,?,0,DET,?,0,0,unaligned
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,0,spelling
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+are,?,0,be,?,0,VBP,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,spelling
+Meanwhile,However,0,Meanwhile,However,0,RB,RB,1,1,paraphrase
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,paraphrase
+'to perform',of,0,'to perform',of,0,'TO PPR',IN,1,1,paraphrase
+'high dimensional',high-dimensional,0,'high dimensional',high-dimensional,0,'JJ POS',JJ,1,1,spelling
+On,In,0,On,In,0,IN,IN,1,1,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+theirs,the,0,theirs,the,0,PRP,DET,1,1,bigrammar-det
+Since,Because,0,Since,Because,0,IN,IN,1,0,paraphrase
+costs,cost,0,cost,cost,1,NNS,NN,1,1,bigrammar-others
+to,?,0,to,?,0,TO,?,0,0,unaligned
+obtain,?,0,obtain,?,0,VB,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,in,0,?,in,0,?,IN,0,0,unaligned
+We,?,0,We,?,0,PRP,?,0,0,unaligned
+report,?,0,report,?,0,NN,?,0,0,unaligned
+in,?,0,in,?,0,IN,?,0,0,unaligned
+separated,divided,0,separate,divide,0,JJ,VBN,1,1,paraphrase
+to,?,0,to,?,0,TO,?,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,spelling
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+With,In,0,With,In,0,IN,IN,1,1,bigrammar-prep
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+for,?,0,for,?,0,IN,?,0,0,unaligned
+'According to','As shown in',0,'According to','As show in',0,'VBG PPR','IN VBN POS',1,1,paraphrase
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+suggest,suggests,0,suggest,suggest,1,VB,VBZ,1,1,bigrammar-others
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,and,0,?,and,0,?,CC,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+sampling,?,0,sample,?,0,VBG,?,0,0,unaligned
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+better,?,0,good,?,0,RB,?,0,0,unaligned
+than,?,0,than,?,0,IN,?,0,0,unaligned
+one,?,0,one,?,0,CD,?,0,0,unaligned
+based,?,0,base,?,0,VBN,?,0,0,unaligned
+on,?,0,on,?,0,IN,?,0,0,unaligned
+clustering,?,0,cluster,?,0,VBG,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+in,?,0,in,?,0,IN,?,0,0,unaligned
+both,?,0,both,?,0,DET,?,0,0,unaligned
+terms,?,0,term,?,0,NNS,?,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+accuracy,?,0,accuracy,?,0,NN,?,0,0,unaligned
+and,?,0,and,?,0,CC,?,0,0,unaligned
+efficiency.,?,0,efficiency.,?,0,PP,?,0,0,unaligned
+hundred,hundreds,0,hundred,hundred,1,CD,NNS,1,0,bigrammar-others
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+take,takes,0,take,take,1,VB,VBZ,1,1,bigrammar-others
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+achieve,achieved,0,achieve,achieve,1,VB,VBN,1,1,bigrammar-vtense
+significantly,?,0,significantly,?,0,RB,?,0,0,unaligned
+On,In,0,On,In,0,IN,IN,1,0,bigrammar-prep
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+concern,question,0,concern,question,0,NN,NN,1,0,paraphrase
+perform,performed,0,perform,perform,1,VB,VBN,1,1,bigrammar-vtense
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+is,was,0,be,be,1,VBZ,VBD,0,1,bigrammar-vtense
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+that,?,0,that,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,spelling
+on,in,0,on,in,0,IN,IN,0,0,bigrammar-det
+is,are,0,be,be,1,VBZ,VBP,1,1,bigrammar-others
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,spelling
+in,of,0,in,of,0,IN,IN,1,1,bigrammar-prep
+demonstrate,show,0,demonstrate,show,0,VB,NN,1,1,paraphrase
+archiving,achieving,0,archive,achieve,0,VBG,VBG,1,1,spelling
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+contributions,contribution,0,contribution,contribution,1,NNS,NN,1,1,bigrammar-wform
+3-fold,threefold,0,3-fold,threefold,0,JJ,RB,1,1,spelling
+Firstly,First,0,Firstly,First,0,NNP,NNP,1,1,bigrammar-wform
+presented,present,0,present,present,1,VBN,JJ,1,0,bigrammar-vtense
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+that,these,0,that,these,0,IN,DET,1,1,paraphrase
+for,'to achieve',0,for,'to achieve',0,IN,'TO PPR',1,1,paraphrase
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,bigrammar-wform
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+to,with,0,to,with,0,TO,IN,1,1,bigrammar-prep
+Thirdly,Third,0,Thirdly,Third,0,NNP,NNP,0,1,bigrammar-wform
+retreival,retrieval,0,retreival,retrieval,0,NN,NN,1,1,typo
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,that,0,?,that,0,?,IN,0,0,unaligned
+faciliate,facilitate,0,faciliate,facilitate,0,NN,VB,1,1,typo
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-prep
+database,databases,0,database,database,1,NN,NNS,1,1,bigrammar-others
+introduces,shows,0,introduce,show,0,VBZ,NNS,1,1,paraphrase
+matched,matching,0,match,match,1,VBN,JJ,1,1,bigrammar-wform
+introduce,describe,0,introduce,describe,0,VB,VB,1,1,paraphrase
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,spelling
+over,in,0,over,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-prep
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,spelling
+intial,initial,0,intial,initial,0,NN,JJ,1,1,typo
+opmization,optimization,0,opmization,optimization,0,NN,NN,1,1,typo
+promissing,promising,0,promissing,promise,0,VBG,JJ,0,1,typo
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+a,?,0,a,?,0,DET,?,0,0,mogrammar-det
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+needs,need,0,need,need,1,NNS,NN,1,1,bigrammar-others
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+image,?,0,image,?,0,NN,?,0,0,unaligned
+in,?,0,in,?,0,IN,?,0,0,unaligned
+.,?,0,.,?,0,PP,?,0,0,unaligned
+In,?,0,In,?,0,IN,?,0,0,unaligned
+a,?,0,a,?,0,DET,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,in,0,?,in,0,?,IN,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,.,0,?,.,0,?,PP,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+because,that,0,because,that,0,IN,IN,1,1,paraphrase
+the,a,0,the,a,0,DET,DET,1,0,bigrammar-det
+?,to,0,?,to,0,?,TO,0,0,unaligned
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-det
+database,databases,0,database,database,1,NN,NNS,1,1,bigrammar-others
+problem,?,0,problem,?,0,NN,?,0,0,unaligned
+expected,envisioned,0,expect,envision,0,VBN,VBN,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+clarify,'show in',0,clarify,'show in',0,VB,'NN POS',1,1,paraphrase
+higher,larger,0,higher,larger,0,JJR,JJR,1,1,paraphrase
+supports,helps,0,support,help,0,NNS,VBZ,1,1,paraphrase
+but,besides,0,but,besides,0,CC,IN,1,1,paraphrase
+?,an,0,?,an,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,be,0,?,be,0,?,VB,0,0,unaligned
+requires,'would incur',0,require,'would incur',0,VBZ,'MD PPR',1,0,paraphrase
+'scale changes',scale,0,'scale change',scale,0,'NN POS',NN,0,1,paraphrase
+?,a,0,?,a,0,?,DET,0,0,unaligned
+in,of,0,in,of,0,IN,IN,1,0,bigrammar-prep
+all,?,0,all,?,0,DET,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+over,in,0,over,in,0,IN,IN,1,1,bigrammar-prep
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,in,0,?,in,0,?,IN,0,0,unaligned
+an,the,0,an,the,0,DET,DET,1,1,bigrammar-det
+?,to,0,?,to,0,?,TO,0,0,unaligned
+the,this,0,the,this,0,DET,DET,1,1,bigrammar-det
+other,a,0,other,a,0,JJ,DET,1,1,bigrammar-det
+reduces,reduce,0,reduce,reduce,1,VBZ,VB,1,0,bigrammar-others
+?,were,0,?,be,0,?,VBD,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+contains,containing,0,contain,contain,1,VBZ,VBG,1,1,bigrammar-wform
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+all,?,0,all,?,0,DET,?,0,0,unaligned
+in,?,0,in,?,0,IN,?,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+?,that,0,?,that,0,?,IN,0,0,unaligned
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,1,bigrammar-wform
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,0,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+another,again,0,another,again,0,DET,RB,1,0,paraphrase
+which,that,0,which,that,0,WDT,IN,1,1,bigrammar-others
+to,?,0,to,?,0,TO,?,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+in,?,0,in,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+aim,aims,0,aim,aim,1,NN,NNS,1,1,bigrammar-others
+firstly,first,0,firstly,first,0,RB,JJ,1,0,bigrammar-wform
+costs,cost,0,cost,cost,1,NNS,NN,1,0,bigrammar-others
+for,of,0,for,of,0,IN,IN,0,1,bigrammar-prep
+which,that,0,which,that,0,WDT,IN,0,1,bigrammar-others
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+works,studies,0,work,study,0,NNS,NNS,1,1,paraphrase
+which,that,0,which,that,0,WDT,IN,0,0,bigrammar-others
+simultanously,simultaneously,0,simultanously,simultaneously,0,RB,RB,0,1,spelling
+for,to,0,for,to,0,IN,TO,1,1,bigrammar-prep
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+the,their,0,the,their,0,DET,PRPS,1,1,bigrammar-det
+in,?,0,in,?,0,IN,?,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+supports,helps,0,support,help,0,NNS,VBZ,1,1,paraphrase
+works,work,0,work,work,1,NNS,NN,1,0,bigrammar-others
+for,on,0,for,on,0,IN,IN,0,1,bigrammar-prep
+Meanwhile,'In contrast',0,Meanwhile,'In contrast',0,RB,'IN POS',1,1,paraphrase
+set,sets,0,set,set,1,NN,NNS,1,1,bigrammar-others
+doubled,doubles,0,double,double,1,VBN,VBZ,1,1,bigrammar-wform
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+construct,constructing,0,construct,construct,1,VB,VBG,1,0,bigrammar-wform
+compute,computing,0,compute,compute,1,VB,NN,1,1,bigrammar-wform
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+for,?,0,for,?,0,IN,?,0,0,unaligned
+for,in,0,for,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'get attracted',attracted,0,'get attract',attract,0,'VB PPR',VBN,1,1,paraphrase
+oversegmenting,over-segmenting,0,oversegmenting,over-segmenting,0,VBG,JJ,1,1,spelling
+region,regions,0,region,region,1,NN,NNS,1,1,bigrammar-others
+?,to,0,?,to,0,?,TO,0,0,unaligned
+Finding,Find,0,Finding,Find,0,NNP,VBP,1,1,bigrammar-wform
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,1,bigrammar-wform
+perform,use,0,perform,use,0,VB,NN,1,0,paraphrase
+our,the,0,our,the,0,PRPS,DET,0,0,bigrammar-det
+proposed,?,0,propose,?,0,JJ,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Grouping,Group,0,Grouping,Group,0,NNP,NNP,1,1,bigrammar-wform
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,spelling
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+maximal,'maximal will',0,maximal,'maximal will',0,NN,'NN PPR',1,0,wa
+'clique technique',clique,0,'clique technique',clique,0,'NN POS',NN,1,0,wa
+for,so,0,for,so,0,IN,RB,1,0,wa
+consistent,'that consistent',0,consistent,'that consistent',0,JJ,'IN PPR',0,0,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,be,0,?,be,0,?,VB,0,0,unaligned
+Formulating,Formulate,0,Formulating,Formulate,0,VBG,VB,1,1,bigrammar-wform
+'then introduce',show,0,'then introduce',show,0,'RB PPR',NN,1,1,wa
+'our recommendations',recommendations,0,'our recommendation',recommendation,0,'PRPS POS',NNS,1,0,wa
+Representative,'A representative',0,Representative,'A representative',0,NNP,'DET POS',1,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+introduce,describe,0,introduce,describe,0,VB,VB,1,1,paraphrase
+'proposed approach',approach,0,'propose approach',approach,0,'JJ POS',NN,1,1,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+With,By,0,With,By,0,IN,IN,1,0,wa
+a,using,0,a,use,0,DET,VBG,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+propose,'hence propose',0,propose,'hence propose',0,VB,'RB PPR',1,1,wa
+branch-and-bound,'branch-and-bound solve',0,branch-and-bound,'branch-and-bound solve',0,JJ,'JJ PPR',1,0,wa
+for,to,0,for,to,0,IN,TO,1,0,wa
+processs,process,0,process,process,1,NNS,NN,1,1,typo
+spaces,space,0,space,space,1,NNS,NN,1,1,bigrammar-others
+eliminated,'have been eliminated',0,eliminate,'have be eliminate',0,VBN,'VB VBN PPR',1,1,bigrammar-vtense
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+',',;,0,',',;,0,PPR,PPS,1,0,wa
+known,'this is',0,know,'this be',0,VBN,'DET PPR',0,0,wa
+as,called,0,as,call,0,IN,VBN,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+bounding,'bounding \" ?>',0,bound,'bound \" ?>',0,VBG,'VBG PPR SYM',1,0,wa
+is,'is is are',0,be,'be be be',0,VBZ,'VBZ VBZ POS',1,0,wa
+assigned,'assigned grammatical these members',0,assign,'assign grammatical these member',0,VBN,'JJ JJ DET POS',1,0,wa
+upper,'upper but don know Inparticular can',0,upper,'upper but don know Inparticular can',0,JJ,'JJ CC VB VB NNP PPR',1,0,wa
+bound,'bound I \'t what what they',0,bind,'bind I \t what what they',0,JJ,'JJ PRP NN WP WP POS',1,0,wa
+value,'for \" be',0,value,'for \" be',0,NN,'IN PPR PPR',1,0,wa
+that,which,0,that,which,0,IN,WDT,0,1,wa
+the,'the the',0,the,'the the',0,DET,'DET POS',0,1,wa
+quality,'quality quality computed',0,quality,'quality quality compute',0,NN,'NN NN POS',1,0,wa
+function,'function function function',0,function,'function function function',0,NN,'NN NN POS',1,0,wa
+could,'could could',0,could,'could could',0,MD,'MD PPR',1,1,wa
+take,'take take',0,take,'take take',0,VB,'VB PPR',1,1,wa
+any,'any any',0,any,'any any',0,DET,'DET POS',1,1,wa
+of,'of on of of',0,of,'of on of of',0,IN,'IN IN IN POS',1,1,wa
+members,'members //<The members',0,member,'member //<The member',0,NNS,'NNS nnp> POS',1,1,wa
+part,'part rewrite part',0,part,'part rewrite part',0,NN,'NN VB POS',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,and,0,?,and,0,?,CC,0,0,unaligned
+?,in,0,?,in,0,?,IN,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+Parts,'Those parts',0,Parts,'Those part',0,NNP,'DET POS',1,1,wa
+So,Thus,0,So,Thus,0,IN,RB,1,1,paraphrase
+Adapting,In,0,Adapting,In,0,NN,IN,1,0,wa
+to,?,0,to,?,0,TO,?,0,0,unaligned
+repsented,represented,0,repsented,represent,0,NN,VBN,1,1,typo
+histgoram,histogram,0,histgoram,histogram,0,NN,NN,1,1,typo
+at,in,0,at,in,0,IN,IN,1,1,bigrammar-prep
+constrainted,constrained,0,constrainted,constrain,0,NN,VBN,1,1,spelling
+smaller,'smaller than',0,smaller,'smaller than',0,JJR,'JJR POS',1,1,wa
+at,in,0,at,in,0,IN,IN,1,1,bigrammar-prep
+the,what,0,the,what,0,DET,WP,1,0,wa
+following,follows,0,follow,follow,1,VBG,VBZ,0,1,wa
+a,the,0,a,the,0,DET,DET,1,1,bigrammar-det
+branch-and-bound,'branch-and-bound solve',0,branch-and-bound,'branch-and-bound solve',0,JJ,'JJ PPR',0,0,wa
+applied,'can be used',0,apply,'can be use',0,VBN,'MD VB PPR',1,1,wa
+to,to,1,to,to,1,TO,TO,0,0,wa
+'And ,','And let',0,'And ,','And let',0,'CC PPR','CC PPR',1,1,wa
+denotes,denote,0,denote,denote,1,NNS,NN,1,1,bigrammar-others
+are,being,0,be,be,1,VBP,VBG,1,1,bigrammar-wform
+Given,Letting,0,Given,Letting,0,VBN,VBG,0,1,paraphrase
+indicates,indicate,0,indicate,indicate,1,VBZ,VB,1,1,bigrammar-wform
+paring,'pairing //<the guess',0,pare,'pair //<the guess',0,VBG,'JJ nnp> POS',1,0,wa
+nodes,'nodes rewrite .>',0,nod,'nod rewrite .>',0,NNS,'NNS VB SYM',0,0,wa
+have,get,0,have,get,0,VB,VB,1,1,paraphrase
+?,.,0,?,.,0,?,PP,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+So,Thus,0,So,Thus,0,IN,RB,1,1,paraphrase
+Dividing,'Dividing up',0,Dividing,'Dividing up',0,VBG,'VBG POS',0,1,wa
+covered,'covered can be done',0,cover,'cover can be do',0,VBN,'VBN MD VB PPR',1,0,wa
+straightforward,'straightforwardly better if it correct',0,straightforward,'straightforwardly good if it correct',0,JJ,'RB RB IN PRP PPR',0,0,wa
+utilizing,'utilizing //<The rewrite .>',0,utilize,'utilize //<The rewrite .>',0,VBG,'JJ nnp> VB SYM',1,0,wa
+is,is,1,be,be,1,VBZ,VBZ,0,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+to,?,0,to,?,0,TO,?,0,0,mogrammar-prep
+Selecting,The,0,Selecting,The,0,NN,DET,1,0,wa
+which,?,0,which,?,0,WDT,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'select be divided',divide,0,'select be divide',divide,0,'JJ VB PPR',NN,1,0,wa
+to,?,0,to,?,0,TO,?,0,0,unaligned
+An,The,0,An,The,0,DET,DET,1,0,wa
+'illustration branching',branching,0,'illustration branch',branch,0,'NN PPR',VBG,0,1,wa
+is,is,1,be,be,1,VBZ,VBZ,1,0,wa
+given,illustrated,0,give,illustrate,0,VBN,VBN,1,1,wa
+of,?,0,of,?,0,IN,?,0,0,unaligned
+a,?,0,a,?,0,DET,?,0,0,mogrammar-det
+essential,'essential determine //<Or determine ?',0,essential,'essential determine //<Or determine ?',0,JJ,'JJ VB nnp> VB PPR',1,0,wa
+'requirement evaluate necessary','requirement whether \" extent \" ?>',0,'requirement evaluate necessary','requirement whether \" extent \" ?>',0,'NN VB PPR','NN IN PPR NN PPR SYM',1,0,wa
+branch-and-bound,'branch-and-bound algorithm',0,branch-and-bound,'branch-and-bound algorithm',0,JJ,'JJ POS',0,1,wa
+how,the,0,how,the,0,WRB,DET,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,that,0,?,that,0,?,IN,0,0,unaligned
+Particularly,'In particular',0,Particularly,'In particular',0,RB,'IN PPR',1,1,wa
+Assuming,'Let us assume that',0,Assuming,'Let us assume that',0,VBG,'VB PRP VB POS',1,1,paraphrase
+'now evaluating',evaluating,0,'now evaluate',evaluate,0,'RB PPR',VBG,1,1,wa
+Intersection,'formulas similarity Intersection',0,Intersection,'formula similarity Intersection',0,NN,'NNS NN POS',0,1,wa
+', Histogram',', Histogram',1,', Histogram',', Histogram',1,'PPC POS','PPC POS',1,1,wa
+stick,'will use',0,stick,'will use',0,NN,'MD POS',1,0,wa
+to,the,0,to,the,0,TO,DET,0,1,wa
+types,?,0,type,?,0,NNS,?,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+similarity,?,0,similarity,?,0,NN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+NHI,'will NHI',0,NHI,'will NHI',0,NNP,'MD POS',0,1,wa
+rely,rely,1,rely,rely,1,VB,VB,1,1,wa
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+bounding,'bounding \" ?>',0,bound,'bound \" ?>',0,VBG,'VBG PPR SYM',1,0,wa
+clearly,'clearly //<I not what means context you \" derived',0,clearly,'clearly //<I not what mean context you \" derive',0,RB,'RB nnp> RB WP NNS NN PRP PPR PPR',1,0,wa
+observed,'observed \'m sure observed this Do mean ?',0,observe,'observe m sure observe this Do mean ?',0,JJ,'JJ NN JJ JJ DET NNP JJ PPR',1,0,wa
+?,.,0,?,.,0,?,PP,0,0,unaligned
+?,in,0,?,in,0,?,IN,0,0,unaligned
+?,.,0,?,.,0,?,PP,0,0,unaligned
+?,can,0,?,can,0,?,MD,0,0,unaligned
+?,be,0,?,be,0,?,VB,0,0,unaligned
+?,as,0,?,as,0,?,IN,0,0,unaligned
+relied,relies,0,rely,rely,1,VBN,VBZ,0,1,wa
+is,?,0,be,?,0,VBZ,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+And,Moreover,0,And,Moreover,0,CC,RB,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Inspired,'Inspired write',0,Inspired,'Inspired write',0,VBN,'VBN PPR',0,0,wa
+form,devised,0,form,devise,0,NN,VBN,1,1,paraphrase
+the,'the the the the the',0,the,'the the the the the',0,DET,'DET DET DET DET POS',0,1,wa
+algorithm,'algorithm algorithm rewrite algorithm',0,algorithm,'algorithm algorithm rewrite algorithm',0,NN,'NN NN VB POS',1,0,wa
+best-first,'work best-first //<The describes you In describes works',0,best-first,'work best-first //<The describe you In describe work',0,JJ,'NN JJ nnp> VBZ PRP IN VBZ POS',0,0,wa
+manner,'manner original way decided contrast way .>',0,manner,'manner original way decide contrast way .>',0,NN,'NN JJ NN VBN NN NN SYM',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+algorithm,'algorithm \" The rewrite',0,algorithm,'algorithm \" The rewrite',0,NN,'NN PPR DET PPR',1,0,wa
+examines,'examines //<\" unclear guess .>',0,examine,'examine //<\" unclear guess .>',0,VBZ,'VBZ NN JJ NN SYM',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+next,next,1,next,next,1,JJ,JJ,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+continue,repeat,0,continue,repeat,0,VB,NN,1,1,paraphrase
+the,the,1,the,the,1,DET,DET,1,1,wa
+reached,'is reached',0,reach,'be reach',0,VBN,'VBZ PPR',0,1,wa
+'have been',reached,0,'have be',reach,0,'VB PPR',VBN,0,0,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+'There organization',There,0,'There organization',There,0,'EX POS',EX,1,0,wa
+for,?,0,for,?,0,IN,?,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'we have constraint',constraint,0,'we have constraint',constraint,0,'PRP VB POS',NN,1,1,wa
+satisfied,'is satisfied',0,satisfy,'be satisfy',0,JJ,'VBZ PPR',1,1,wa
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+'branch-and-bound based',branch-and-bound,0,'branch-and-bound base',branch-and-bound,0,'JJ PPR',JJ,1,1,wa
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+nodes,node,0,nod,node,0,NNS,NN,1,1,bigrammar-others
+attach,'is attached',0,attach,'be attach',0,VB,'VBZ PPR',1,1,paraphrase
+orginal,original,0,orginal,original,0,NN,JJ,1,1,typo
+And,Moreover,0,And,Moreover,0,CC,RB,1,1,paraphrase
+'satisfy b )',satisfies,0,'satisfy b )',satisfy,0,'VB NN PPS',NNS,1,0,wa
+'constraints ( ) (',constraints,0,'constraint ( ) (',constraint,0,'NNS LRB RRB NN',NNS,0,0,wa
+.,.,1,.,.,1,PP,PP,0,1,wa
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+a,?,0,a,?,0,DET,?,0,0,unaligned
+and,?,0,and,?,0,CC,?,0,0,unaligned
+X,'X this organization',0,X,'X this organization',0,NNP,'NNP DET POS',1,1,wa
+in,of,0,in,of,0,IN,IN,0,0,wa
+presented,organization,0,present,organization,0,VBN,NN,0,0,wa
+of,from,0,of,from,0,IN,IN,1,1,bigrammar-prep
+At,In,0,At,In,0,IN,IN,1,1,bigrammar-prep
+'we presented',presented,0,'we present',present,0,'PRP PPR',VBN,1,1,wa
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+Given,If,0,Given,If,0,VBN,IN,0,1,paraphrase
+returned,returned,1,return,return,1,VBN,VBN,0,0,wa
+from,by,0,from,by,0,IN,IN,1,1,bigrammar-prep
+divisive,'divisive //<the rewrite guess .>',0,divisive,'divisive //<the rewrite guess .>',0,JJ,'JJ nnp> VB NN SYM',1,0,wa
+?,are,0,?,be,0,?,VBP,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+splits,we,0,split,we,0,VBZ,PRP,1,0,wa
+are,perform,0,be,perform,0,VBP,VB,0,0,wa
+peformed,splits,0,peformed,split,0,NN,VBZ,0,1,wa
+hierarcy,hierarchy,0,hierarcy,hierarchy,0,NN,NN,1,1,spelling
+splitted,split,0,splitted,split,0,NN,NN,1,1,spelling
+'$k$-means algorithm',$k$-means,0,'$k$-means algorithm',$k$-means,0,'NN POS',NN,1,0,wa
+hierchical,hierarchical,0,hierchical,hierarchical,0,NN,JJ,1,1,spelling
+'then compute',compute,0,'then compute',compute,0,'RB PPR',VB,1,0,wa
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+hitogram,histogram,0,hitogram,histogram,0,NN,NN,1,1,typo
+nodes,node,0,nod,node,0,NNS,NN,1,1,bigrammar-others
+at,in,0,at,in,0,IN,IN,1,1,bigrammar-prep
+sastified,'is satisfied',0,sastified,'be satisfy',0,NN,'VBZ PPR',1,1,paraphrase
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+At,Finally,0,At,Finally,0,IN,RB,1,0,wa
+'last unifying',unifying,0,'last unify',unify,0,'JJ PPR',JJ,0,0,wa
+the,'the both',0,the,'the both',0,DET,'DET POS',0,0,wa
+both,?,0,both,?,0,DET,?,0,0,unaligned
+'show an illustration','illustratie this',0,'show an illustration','illustratie this',0,'NN DET POS','NN POS',1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+becomes,become,0,become,become,1,VBZ,VBN,1,0,wa
+'proposed approach',approach,0,'propose approach',approach,0,'JJ POS',NN,1,1,wa
+recommendation,making,0,recommendation,make,0,NN,VBG,1,0,wa
+generation,recommendations,0,generation,recommendation,0,NN,NNS,0,1,wa
+are,?,0,be,?,0,VBP,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+hierarchical,hierarchy,0,hierarchical,hierarchy,0,JJ,NN,1,0,bigrammar-wform
+for,of,0,for,of,0,IN,IN,0,0,bigrammar-prep
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'locates exists',locates,0,'locate exist',locate,0,'NNS PPR',NNS,1,0,wa
+which,?,0,which,?,0,WDT,?,0,0,unaligned
+'recommendations as such','recommendations\"',0,'recommendation as such','recommendations\"',0,'NNS IN PPR',PPR,1,1,wa
+'hit hit','hit \"',0,'hit hit','hit \"',0,'NN POS','NN PPR',0,0,wa
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,0,wa
+recommendation,them,0,recommendation,them,0,NN,PRP,0,1,wa
+.,?,0,.,?,0,PP,?,0,0,unaligned
+Thus,?,0,Thus,?,0,RB,?,0,0,unaligned
+?,and,0,?,and,0,?,CC,0,0,unaligned
+some,number,0,some,number,0,DET,NN,0,1,wa
+all,the,0,all,the,0,DET,DET,1,1,wa
+'recommendations introduced',recommendations,0,'recommendation introduce',recommendation,0,'NNS PPR',NNS,0,1,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+those,these,0,those,these,0,DET,DET,1,1,bigrammar-det
+evaluate,evaluated,0,evaluate,evaluate,1,VB,VBN,1,0,bigrammar-vtense
+on,in,0,on,in,0,IN,IN,1,0,bigrammar-prep
+introducing,pesenting,0,introduce,pesenting,0,VBG,VBG,0,0,paraphrase
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,0,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+annotation,annotations,0,annotation,annotation,1,NN,NNS,1,0,bigrammar-others
+indicates,indicating,0,indicate,indicate,1,VBZ,VBG,0,0,bigrammar-wform
+to,to,1,to,to,1,TO,TO,0,0,wa
+'existed precisely introduce','existin a',0,'exist precisely introduce','existin a',0,'VBD RB PPR','NN POS',0,1,wa
+'is determined','will provide',0,'be determine','will provide',0,'VBZ PPR','MD PPR',1,0,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,1,1,wa
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,wa
+in,?,0,in,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+apply,used,0,apply,use,0,VB,VBN,1,1,paraphrase
+used,from,0,use,from,0,VBN,IN,1,0,wa
+VOC,'VOC or',0,VOC,'VOC or',0,NNP,'NNP PPS',1,0,wa
+challenge,'challenge not',0,challenge,'challenge not',0,NN,'NN PPR',1,0,wa
+in,?,0,in,?,0,IN,?,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+of,?,0,of,?,0,IN,?,0,0,mogrammar-prep
+'facilitate procedure',facilitate,0,'facilitate procedure',facilitate,0,'VB POS',VB,1,0,wa
+'performance simply',simply,0,'performance simply',simply,0,'NN PPR',RB,1,1,wa
+take,use,0,take,use,0,VB,NN,1,1,paraphrase
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+on,in,0,on,in,0,IN,IN,1,1,bigrammar-prep
+compute,computed,0,compute,compute,1,VB,NN,1,1,bigrammar-vtense
+evaluation,evaluations,0,evaluation,evaluation,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+is,was,0,be,be,1,VBZ,VBD,1,1,bigrammar-vtense
+divided,'divided \" me \"',0,divide,'divide \" me \"',0,VBN,'VBN PPR PRP PPR',1,0,wa
+the,'the the the the',0,the,'the the the the',0,DET,'DET DET DET POS',1,0,wa
+size,'size size average size sizes',0,size,'size size average size size',0,NN,'NN NN JJ NN POS',1,1,wa
+of,'of of of of',0,of,'of of of of',0,IN,'IN IN IN POS',1,1,wa
+all,'all all all all',0,all,'all all all all',0,DET,'DET DET DET POS',1,1,wa
+possible,'possible possible possible possible',0,possible,'possible possible possible possible',0,JJ,'JJ JJ JJ PPR',1,1,wa
+region,'region region region region',0,region,'region region region region',0,NN,'NN NN NN POS',1,1,wa
+pairs,'pairs //< pairs pairs pairs',0,pair,'pair //< pair pair pair',0,NNS,'NNS sym> NNS NNS POS',1,0,wa
+formed,'formed \" Do you mean \" \" or \"',0,form,'form \" Do you mean \" \" or \"',0,VBN,'VBN PPR NNP PRP JJ PPR PPR CC PPR',1,0,wa
+regions,'regions unclear ?>',0,region,'region unclear ?>',0,NNS,'NNS JJ SYM',1,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,unaligned
+?,to,0,?,to,0,?,TO,0,0,unaligned
+?,.,0,?,.,0,?,PP,0,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,1,0,wa
+reported,taken,0,report,take,0,VBN,VBN,0,0,wa
+as,be,0,as,be,0,IN,VB,0,1,wa
+?,to,0,?,to,0,?,TO,0,0,unaligned
+are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
+',',?,0,',',?,0,PPR,?,0,0,unaligned
+employ,employed,0,employ,employ,1,VB,VBN,1,0,bigrammar-vtense
+BoF,'a BoF',0,BoF,'a BoF',0,NNP,'DET POS',0,1,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
+dense,'using dense',0,dense,'use dense',0,JJ,'VBG PPR',1,1,wa
+Different-of-Gaussian(,'a Different-of-Gaussian (',0,Different-of-Gaussian(,'a Different-of-Gaussian (',0,LRB,'DET JJ NN',1,1,wa
+DoG,DoG,1,DoG,DoG,1,NNP,NNP,0,1,wa
+),),1,),),1,RRB,RRB,1,1,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+is,was,0,be,be,1,VBZ,VBD,1,1,bigrammar-vtense
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'of of','of of',1,'of of','of of',1,'IN POS','IN POS',1,0,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+used,used,1,use,use,1,VBN,VBN,0,1,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+helps,helped,0,help,help,1,VBZ,VBN,1,1,bigrammar-vtense
+'a the','the the',0,'a the','the the',0,'DET POS','DET POS',1,0,wa
+'portion sky',sky,0,'portion sky',sky,0,'NN POS',NN,0,1,wa
+etc,'etc. from',0,etc,'etc. from',0,NN,'PP POS',1,0,wa
+of,from,0,of,from,0,IN,IN,0,1,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,0,1,wa
+for,?,0,for,?,0,IN,?,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+use,used,0,use,use,1,NN,VBN,1,1,bigrammar-vtense
+introduced,'first introduced',0,introduce,'first introduce',0,VBN,'JJ PPR',1,1,wa
+channel,channels,0,channel,channel,1,NN,NNS,1,1,bigrammar-others
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+which,',',0,which,',',0,WDT,PPR,1,0,wa
+'are RGB',RGB,0,'be RGB',RGB,0,'VBP POS',NNP,0,1,wa
+'.72\%','.72\% of',0,'.72\%','.72\% of',0,POS,'NN POS',1,0,wa
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+created,created,1,create,create,1,VBN,VBN,0,1,wa
+do,did,0,do,do,1,VB,VBD,1,1,bigrammar-vtense
+are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
+are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+build,built,0,build,build,1,VB,VBN,1,1,bigrammar-det
+are,were,0,be,be,1,VBP,VBD,1,1,bigrammar-vtense
+highly,nearly,0,highly,nearly,0,RB,RB,1,0,paraphrase
+overlap,overlapped,0,overlap,overlap,1,VB,NN,0,1,bigrammar-vtense
+?,a,0,?,a,0,?,DET,0,0,mogrammar-det
+Bron-Kerbosch,'The Bron-Kerbosch',0,Bron-Kerbosch,'The Bron-Kerbosch',0,JJ,'DET PPR',1,1,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+applied,applied,1,apply,apply,1,VBN,VBN,1,1,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,bigrammar-vtense
+our,the,0,our,the,0,PRPS,DET,1,0,wa
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'reported numbers',reported,0,'report number',report,0,'VBD POS',VBN,1,0,wa
+'well perform','and of',0,'well perform','and of',0,'RB PPR','CC POS',0,1,wa
+'averaged as',averages,0,'average as',average,0,'VBD POS',NNS,1,0,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+of,?,0,of,?,0,IN,?,0,0,unaligned
+as,?,0,as,?,0,IN,?,0,0,unaligned
+as,?,0,as,?,0,IN,?,0,0,unaligned
+we,?,0,we,?,0,PRP,?,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+successfully,make,0,successfully,make,0,RB,VB,1,0,wa
+'80 .27\%','80 .27\%',1,'80 .27\%','80 .27\%',1,'CD POS','CD POS',1,1,wa
+introduce,?,0,introduce,?,0,VB,?,0,0,unaligned
+'a hit',hit,0,'a hit',hit,0,'DET POS',NN,1,0,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,1,1,wa
+takes,take,0,take,take,1,VBZ,VB,1,1,wa
+'We there',There,0,'We there',There,0,'PRP PPR',EX,1,0,wa
+are,were,0,be,be,1,VBP,VBD,0,1,bigrammar-vtense
+recommendations,recommendation,0,recommendation,recommendation,1,NNS,NN,1,0,bigrammar-others
+'on places','in places',0,'on place','in place',0,'IN POS','IN POS',0,1,wa
+observed,?,0,observe,?,0,JJ,?,0,0,unaligned
+that,?,0,that,?,0,IN,?,0,0,unaligned
+consists,consisted,0,consist,consist,1,VBZ,VBN,1,0,bigrammar-vtense
+?,of,0,?,of,0,?,IN,0,0,mogrammar-prep
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,1,0,bigrammar-vtense
+'lacking of',lacking,0,'lack of',lack,0,'VBG POS',VBG,1,1,wa
+annotation,annotations,0,annotation,annotation,1,NN,NNS,1,1,bigrammar-others
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+are,may,0,be,may,0,VBP,MD,1,1,wa
+'much helpful',helpful,0,'much helpful',helpful,0,'JJ PPR',JJ,1,1,wa
+?,be,0,?,be,0,?,VB,0,0,unaligned
+under,influenced,0,under,influence,0,IN,VBN,1,0,wa
+'influence of',by,0,'influence of',by,0,'NN POS',IN,0,1,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+obtain,'can obtain',0,obtain,'can obtain',0,VB,'MD PPR',1,1,bigrammar-vtense
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,0,bigrammar-wform
+hight,high,0,hight,high,0,NN,JJ,0,1,typo
+'It brings',Thisgives,0,'It bring',Thisgives,0,'PRP PPR',NNP,1,1,paraphrase
+improves,improving,0,improve,improve,1,VBZ,VBG,1,0,bigrammar-wform
+the,?,0,the,?,0,DET,?,0,0,mogrammar-det
+'unexpected also',unexpected,0,'unexpected also',unexpected,0,'JJ PPR',JJ,1,0,wa
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-prep
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+'also increases',increases,0,'also increase',increase,0,'RB POS',NNS,1,1,wa
+inreasing,increasing,0,inreasing,increase,0,VBG,VBG,1,1,spelling
+precision,precision,1,precision,precision,1,NN,NN,1,1,preserved
+relies,relies,1,rely,rely,1,VBZ,VBZ,1,1,preserved
+on,on,1,on,on,1,IN,IN,1,1,preserved
+not,not,1,not,not,1,RB,RB,1,1,preserved
+only,only,1,only,only,1,RB,RB,1,1,preserved
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,preserved
+but,but,1,but,but,1,CC,CC,1,1,preserved
+also,also,1,also,also,1,RB,RB,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+robustness,robustness,1,robustness,robustness,1,NNS,NNS,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+region,region,1,region,region,1,NN,NN,1,0,preserved
+comparision,comparison,0,comparision,comparison,0,NN,NN,1,1,spelling
+techniques,techniques,1,technique,technique,1,NNS,NNS,0,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+?,',',0,?,',',0,?,PPR,0,0,unaligned
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+cannot,cannot,1,cannot,cannot,1,NN,NN,1,1,preserved
+provide,provide,1,provide,provide,1,VB,VB,1,1,preserved
+any,any,1,any,any,1,DET,DET,1,1,preserved
+hit,hit,1,hit,hit,1,NN,NN,1,1,preserved
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,preserved
+for,for,1,for,for,1,IN,IN,1,1,preserved
+around,around,1,around,around,1,IN,IN,1,1,preserved
+'20\%','20\%',1,'20\%','20\%',1,POS,POS,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,0,preserved
+initial,initial,1,initial,initial,1,JJ,JJ,0,1,preserved
+query,query,1,query,query,1,NN,NN,1,1,preserved
+images,images,1,image,image,1,NNS,NNS,1,1,preserved
+due,due,1,due,due,1,JJ,JJ,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+fact,fact,1,fact,fact,1,NN,NN,1,1,preserved
+that,that,1,that,that,1,IN,IN,1,1,preserved
+our,our,1,our,our,1,PRPS,PRPS,1,1,preserved
+region,region,1,region,region,1,NN,NN,1,0,preserved
+comparision,comparison,0,comparision,comparison,0,NN,NN,1,1,spelling
+technique,technique,1,technique,technique,1,NN,NN,0,1,preserved
+cannot,cannot,1,cannot,cannot,1,NN,NN,1,1,preserved
+deal,deal,1,deal,deal,1,NN,NN,1,1,preserved
+with,with,1,with,with,1,IN,IN,1,1,preserved
+significant,significant,1,significant,significant,1,JJ,JJ,1,1,preserved
+variations,variations,1,variation,variation,1,NNS,NNS,1,0,preserved
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-prep
+items,items,1,item,item,1,NNS,NNS,0,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+Figure,Figure,1,Figure,Figure,1,NNP,NNP,1,1,preserved
+5(,5(,1,5(,5(,1,LRB,LRB,1,1,preserved
+b,b,1,b,b,1,NN,NN,1,1,preserved
+),),1,),),1,RRB,RRB,1,1,preserved
+shows,shows,1,show,show,1,NNS,NNS,1,1,preserved
+another,another,1,another,another,1,DET,DET,1,1,preserved
+circumstance,circumstance,1,circumstance,circumstance,1,NN,NN,1,1,preserved
+when,when,1,when,when,1,WRB,WRB,1,1,preserved
+we,we,1,we,we,1,PRP,PRP,1,1,preserved
+increase,increase,1,increase,increase,1,NN,NN,1,1,preserved
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+It,It,1,It,It,1,PRP,PRP,1,1,preserved
+is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+decline,decline,1,decline,decline,1,NN,NN,1,0,preserved
+of,in,0,of,in,0,IN,IN,1,0,bigrammar-prep
+efficiency,efficiency,1,efficiency,efficiency,1,NN,NN,0,1,preserved
+improvement,improvement,1,improvement,improvement,1,NN,NN,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+This,This,1,This,This,1,DET,DET,1,1,preserved
+is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
+because,because,1,because,because,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+branch-and-bound,branch-and-bound,1,branch-and-bound,branch-and-bound,1,JJ,JJ,1,1,preserved
+algorithm,algorithm,1,algorithm,algorithm,1,NN,NN,1,1,preserved
+has,has,1,have,have,1,VBZ,VBZ,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+visit,visit,1,visit,visit,1,NN,NN,1,1,preserved
+more,more,1,more,more,1,JJR,JJR,1,1,preserved
+parts,parts,1,part,part,1,NNS,NNS,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+total,total,1,total,total,1,JJ,JJ,1,1,preserved
+search,search,1,search,search,1,NN,NN,1,1,preserved
+space,space,1,space,space,1,NN,NN,1,1,preserved
+in,in,1,in,in,1,IN,IN,1,1,preserved
+order,order,1,order,order,1,NN,NN,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+find,find,1,find,find,1,VB,VB,1,1,preserved
+extra,extra,1,extra,extra,1,JJ,JJ,1,1,preserved
+local,local,1,local,local,1,JJ,JJ,1,0,preserved
+.,.,1,.,.,1,PP,PP,0,1,preserved
+However,However,1,However,However,1,RB,RB,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,preserved
+in,in,1,in,in,1,IN,IN,1,1,preserved
+all,all,1,all,all,1,DET,DET,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+our,our,1,our,our,1,PRPS,PRPS,1,1,preserved
+evaluations,evaluations,1,evaluation,evaluation,1,NNS,NNS,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,preserved
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+still,still,1,still,still,1,RB,RB,1,0,preserved
+performs,performed,0,perform,perform,1,VBZ,VBN,1,1,bigrammar-vtense
+around,around,1,around,around,1,IN,IN,0,0,preserved
+3,three,0,3,three,0,CD,CD,1,1,spelling
+times,times,1,time,time,1,NNS,NNS,0,1,preserved
+faster,faster,1,fast,fast,1,RBR,RBR,1,1,preserved
+than,than,1,than,than,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+exhaustive,exhaustive,1,exhaustive,exhaustive,1,JJ,JJ,1,1,preserved
+search,search,1,search,search,1,NN,NN,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+'Its is','This will be',0,'Its be','This will be',0,'PRPS PPR','DET MD PPR',1,1,wa
+superiority,advantage,0,superiority,advantage,0,NN,NN,0,0,paraphrase
+important,important,1,important,important,1,JJ,JJ,0,1,preserved
+for,for,1,for,for,1,IN,IN,1,1,preserved
+practical,practical,1,practical,practical,1,JJ,JJ,1,1,preserved
+applications,applications,1,application,application,1,NNS,NNS,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+Figure,Figure,1,Figure,Figure,1,NNP,NNP,1,1,preserved
+'\\REF','\\REF',1,'\\REF','\\REF',1,NNP,NNP,1,1,preserved
+presents,presents,1,present,present,1,NNS,NNS,1,1,preserved
+examples,examples,1,example,example,1,NNS,NNS,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+hit,hit,1,hit,hit,1,NN,NN,1,1,preserved
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,1,preserved
+returned,returned,1,return,return,1,VBN,VBN,1,0,preserved
+'by our Recommend-Me',byRecommend-Me,0,'by our Recommend-Me',byRecommend-Me,0,'IN PRPS PPR',JJ,1,1,wa
+.,.,1,.,.,1,PP,PP,0,1,preserved
+In,We,0,In,We,0,IN,PRP,1,0,wa
+this,described,0,this,describe,0,DET,VBN,0,0,wa
+'paper introduced new system','oursystem making',0,'paper introduce new system','oursystem make',0,'NN VBN JJ POS','NN PPR',0,0,wa
+', ,',',',0,', ,',',',0,'PPC PPR',PPR,0,1,wa
+'we named',named,0,'we name',name,0,'PRP PPR',VBN,1,1,wa
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,wa
+for,for,1,for,for,1,IN,IN,1,0,preserved
+a,making,0,a,make,0,DET,VBG,0,0,wa
+visual,visual,1,visual,visual,1,JJ,JJ,0,1,preserved
+query,query,1,query,query,1,NN,NN,1,0,preserved
+suggestion,suggestions,0,suggestion,suggestion,1,NN,NNS,1,1,bigrammar-others
+.,.,1,.,.,1,PP,PP,0,1,wa
+Given,Given,1,Given,Given,1,VBN,VBN,1,1,preserved
+an,an,1,an,an,1,DET,DET,1,1,preserved
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,preserved
+query,query,1,query,query,1,NN,NN,1,1,preserved
+image,image,1,image,image,1,NN,NN,1,1,preserved
+and,and,1,and,and,1,CC,CC,1,1,preserved
+a,a,1,a,a,1,DET,DET,1,1,preserved
+retrieved,retrieved,1,retrieve,retrieve,1,VBN,VBN,1,1,preserved
+database,database,1,database,database,1,NN,NN,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,preserved
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,0,preserved
+introduces,gives,0,introduce,give,0,VBZ,VBZ,1,1,paraphrase
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,0,1,preserved
+that,that,1,that,that,1,IN,IN,1,0,preserved
+imposes,'impose conditions on',0,impose,'impose condition on',0,VBZ,'VB NNS POS',1,1,wa
+which,which,1,which,which,1,WDT,WDT,0,1,preserved
+and,and,1,and,and,1,CC,CC,1,1,preserved
+how,how,1,how,how,1,WRB,WRB,1,1,preserved
+frequent,frequent,1,frequent,frequent,1,JJ,JJ,1,1,preserved
+items,items,1,item,item,1,NNS,NNS,1,1,preserved
+in,in,1,in,in,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,preserved
+query,query,1,query,query,1,NN,NN,1,1,preserved
+image,image,1,image,image,1,NN,NN,1,1,preserved
+appear,appear,1,appear,appear,1,VB,VB,1,1,preserved
+in,in,1,in,in,1,IN,IN,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+database,database,1,database,database,1,NN,NN,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+Such,Such,1,Such,Such,1,JJ,JJ,1,1,preserved
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,0,preserved
+support,help,0,support,help,0,NN,NN,1,1,paraphrase
+users,users,1,user,user,1,NNS,NNS,0,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+select,select,1,select,select,1,JJ,JJ,1,0,preserved
+search,search,1,search,search,1,NN,NN,0,1,preserved
+query,query,1,query,query,1,NN,NN,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+rapidly,rapidly,1,rapidly,rapidly,1,RB,RB,1,1,preserved
+refine,refine,1,refine,refine,1,VB,VB,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,preserved
+query,query,1,query,query,1,NN,NN,1,1,preserved
+image,image,1,image,image,1,NN,NN,1,1,preserved
+or,or,1,or,or,1,CC,CC,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+explore,explore,1,explore,explore,1,VB,VB,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+database,database,1,database,database,1,NN,NN,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved
+?,the,0,?,the,0,?,DET,0,0,mogrammar-det
+An,An,1,An,An,1,DET,DET,1,1,preserved
+efficient,efficient,1,efficient,efficient,1,JJ,JJ,1,1,preserved
+solution,solution,1,solution,solution,1,NN,NN,1,1,preserved
+to,to,1,to,to,1,TO,TO,1,1,preserved
+make,make,1,make,make,1,VB,VB,1,1,preserved
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+practical,practical,1,practical,practical,1,JJ,JJ,1,0,preserved
+is,was,0,be,be,1,VBZ,VBD,1,0,bigrammar-vtense
+presented,'also presented',0,present,'also present',0,VBN,'RB PPR',0,1,wa
+.,.,1,.,.,1,PP,PP,1,1,preserved
+To,To,1,To,To,1,TO,TO,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+best,best,1,good,good,1,RB,RB,1,1,preserved
+of,of,1,of,of,1,IN,IN,1,1,preserved
+our,our,1,our,our,1,PRPS,PRPS,1,1,preserved
+knowledge,knowledge,1,knowledge,knowledge,1,NN,NN,1,1,preserved
+',',',',1,',',',',1,PPR,PPR,1,1,preserved
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,preserved
+is,is,1,be,be,1,VBZ,VBZ,1,1,preserved
+the,the,1,the,the,1,DET,DET,1,1,preserved
+first,first,1,first,first,1,JJ,JJ,1,1,preserved
+attempt,'attempt at',0,attempt,'attempt at',0,NN,'NN POS',1,0,wa
+toward,developing,0,toward,develop,0,IN,VBG,0,0,paraphrase
+its,a,0,it,a,0,PRPS,DET,0,1,bigrammar-det
+targeted,targeted,1,target,target,1,JJ,JJ,0,1,preserved
+suggestion,suggestion,1,suggestion,suggestion,1,NN,NN,1,1,preserved
+scheme,scheme,1,scheme,scheme,1,NN,NN,1,1,preserved
+.,.,1,.,.,1,PP,PP,1,1,preserved

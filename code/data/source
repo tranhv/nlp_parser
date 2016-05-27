@@ -2135,7 +2135,6 @@ Our query-dependent feature is based on nearest neighbors of the images in the r
 However , recent studies on indexing techniques such as \MATH -d tree , locality sensitive hashing ( LSH ) , and SASH \CITE can speed up the nearest neighbor search significantly .
 For example , as described in \CITE , the complexity of fast lookup of $k$ approximate nearest neighbors is \MATH \CITE .
 Studying other techniques to speedup the query-feature extraction process is our next step in future work .
-b</subsection>
 We have presented a novel method for re-ranking face images returned by existing search engines .
 Instead of training a specific classifier for each new query , we train only one generic classifier and use it for ranking new queries .
 This helps to make the ranking application more scalable .

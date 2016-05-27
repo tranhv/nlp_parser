@@ -219,10 +219,11 @@ class ReadData
     # generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
 
     # SWA ====================
-    # data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    # data_SWA = refine_tag_preserved(data_SWA)
+    data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    data_SWA = refine_tag_preserved(data_SWA)
     # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
+    puts "SWA: #{count_alignment(data_SWA)}\n"
 
     # data_SWA1, data_SWA2 = split_data(data_SWA, 2720)
 
@@ -232,8 +233,9 @@ class ReadData
     # print_csv(data_SWA2)
     # END SWA ================
 
-    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     # METEOR ================
+    # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
+    
     # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
     # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
     # data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
@@ -249,17 +251,16 @@ class ReadData
     # data_meteor2 = reduce_tags_wa(data_meteor2)
 
     # print_csv(data_meteor2)
-
     # END METEOR ============
 
     # MANLI =================
-    # data_manli = get_data_json(DATA_PATH + "/output.json")
-    # data_manli = insert_unaligned(data_manli)
+    data_manli = get_data_json(DATA_PATH + "/output.json")
+    data_manli = insert_unaligned(data_manli)
 
-    # puts "#{count_alignment(data_manli)}\n\n"    
+    puts "Manli: #{count_alignment(data_manli)}\n\n"    
 
-    # data_manli = assign_tags(data_SWA, data_manli)
-    # data_manli = assign_tags_wa(data_manli)
+    data_manli = assign_tags(data_SWA, data_manli)
+    data_manli = assign_tags_wa(data_manli)
     # data_manli = remove_tags_misc(data_manli)
 
     # data_manli1, data_manli2 = split_data(data_manli, 2720)
@@ -270,14 +271,30 @@ class ReadData
     # print_csv(data_manli2)
     # # END MANLI =============
 
-    # # CHECK DATA ============
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
-    # # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    # puts "#{count_tags(data_manli2, tags)}\n\n"
-    # puts "#{count_tags(data_manli, tags)}\n"
+    # GIZA ====================
+    # data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final-and")
+    # data_moses = insert_unaligned(data_moses)
+    # puts "#{count_alignment(data_moses)}\n"
 
-    # puts "#{compare_data_alignment(data_SWA, data_manli)}\n"
-    # puts "#{compare_data(data_SWA, data_meteor_1_5, tags)}"
+    # data_moses = assign_tags(data_SWA, data_moses)
+    # data_moses = assign_tags_wa(data_moses)
+    # data_moses = remove_tags_misc(data_moses)
+
+    # data_moses1, data_moses2 = split_data(data_moses, 2720)
+    # data_moses2 = reduce_tags_preserved(data_moses2)
+    # data_moses2 = reduce_tags_unaligned(data_moses2)
+    # data_moses2 = reduce_tags_wa(data_moses2)
+
+    # print_csv(data_moses2)
+    # END GIZA ================
+
+    # # CHECK DATA ============
+    # # tags = ["exact", "stem", "syn", "para", "unaligned"]
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
+    puts "Tag count Manli: #{count_tags(data_manli, tags)}\n\n"
+    puts "#{compare_data_alignment(data_SWA, data_manli)}\n"
+    puts "#{compare_data(data_SWA, data_manli, tags)}"
 
     # # print_data(data_SWA)
     # # print_data(data_meteor_1_5)
@@ -320,19 +337,19 @@ class ReadData
     #   puts "#{line}\n\n" if index == 2784
     #   break if index == 2784
     # end
-    # data_meteor_blast.each_with_index do |line, index|
-    #   puts "#{line}\n\n" if index == 2784
-    #   break if index == 2784
-    # end
+    data_manli.each_with_index do |line, index|
+      line.Alignment.each do |aln|
+        if aln.tag_name.empty? or aln.tag_name == "" or aln.tag_name.nil?
+          puts "#{line.source}\n"
+          puts "#{aln}"
+        end
+      end
+    end
 
     # # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
     # puts "#{data_meteor_1_5.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
 
-    data = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
-    data.each_with_index do |line, index|
-      puts "#{line}\n\n" if index == 9
-      break if index == 9
-    end
+    
   end
 
 
@@ -773,10 +790,10 @@ class ReadData
       target_remain = (0..(target_length - 1)).to_a - target_num.flatten.map{|e| e.to_i}
 
       source_remain.each do |remain|
-        pairs.Alignment << Alignment.new(remain.to_s,"","unaligned")
+        pairs.Alignment << Alignment.new(remain.to_s,"","")
       end
       target_remain.each do |remain|
-        pairs.Alignment << Alignment.new("",remain.to_s,"unaligned")
+        pairs.Alignment << Alignment.new("",remain.to_s,"")
       end
     end
     return data
@@ -812,17 +829,18 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
-          break if count >= 9959
+          break if count >= 12484
         end
-        break if count >= 9959
+        break if count >= 12484
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 9959 
+      break if count >= 12484 
       #57082 SWA 80
       #12484 SWA 20
       #12246 meteor 20
       # 9959 manli 20
+      # 12087 moses 20
       #68300 meteor #44200 giza
     end
     return data
@@ -857,15 +875,16 @@ class ReadData
         if (aln.tag_name == "wa")
           aln_delete << i
           count = count + 1
-          break if count >= 3222
+          break if count >= 748
         end
-        break if count >= 3222
+        break if count >= 748
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 3222 
+      break if count >= 748 
       # 2795 meteor 20
       # 3222 manli 20
+      # 748 moses 20
       #12000 meteor #35100 giza
     end
     return data
@@ -879,14 +898,15 @@ class ReadData
         if (aln.tag_name == "unaligned")
           aln_delete << i
           count = count + 1
-          break if count >= 1579
+          break if count >= 224
         end
-        break if count >= 1579
+        break if count >= 224
       end
       # delete unaligned alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 1579
+      break if count >= 224
       # 1579 manli 20 
+      # 224 moses 20
     end
     return data
   end
@@ -1008,6 +1028,8 @@ class ReadData
   # DO NOT compare tag
   def compare_data_alignment(data1, data2)
     count = 0
+    # puts "data1: #{data1.count}"
+    # puts "data2: #{data2.count}"
     data1.each_with_index do |alignment1, index|
       arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} & data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
       count = count + arr_tmp.length

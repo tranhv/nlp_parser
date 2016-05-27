@@ -1,3 +1,0 @@
-This paper analyzes the effects of structural variation of sentences on parsing performances .
-This paper analyzes the effect of the structural variation of sentences on parsing performance .
-3 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-others 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:bigrammar-others 13:14:preserved :6:mogrammar-det
