@@ -293,8 +293,8 @@ class ReadData
     tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
     puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
     puts "Tag count Manli: #{count_tags(data_manli, tags)}\n\n"
-    puts "#{compare_data_alignment(data_SWA, data_manli)}\n"
-    puts "#{compare_data(data_SWA, data_manli, tags)}"
+    puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_manli)}\n"
+    puts "compare_data --> #{compare_data(data_SWA, data_manli, tags)}"
 
     # # print_data(data_SWA)
     # # print_data(data_meteor_1_5)
@@ -966,7 +966,7 @@ class ReadData
 
   def assign_tags(data1, data2)
     data1.each_with_index do |alignment1, index|
-      if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
+      # if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
         # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
         alignment1_arr = data1[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
         alignment2_arr = data2[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
@@ -989,7 +989,7 @@ class ReadData
             algn2.tag_name = algn1.tag_name
           end
         end
-      end
+      # end
     end
     data2
   end
@@ -1031,7 +1031,9 @@ class ReadData
     # puts "data1: #{data1.count}"
     # puts "data2: #{data2.count}"
     data1.each_with_index do |alignment1, index|
-      arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} & data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
+      arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} &
+        data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
+
       count = count + arr_tmp.length
     end
     return count
