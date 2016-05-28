@@ -27,6 +27,7 @@ class ReadData
                         # :st_matrix8,
                         :tag_name
                         )
+  N80_PERCENT = 2759
 
   def lemmatizer
     return @Lemmatizer if @Lemmatizer
@@ -221,32 +222,33 @@ class ReadData
     # SWA ====================
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
     data_SWA = refine_tag_preserved(data_SWA)
+    data_SWA = convert_typo_spelling(data_SWA)
     # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
     puts "SWA: #{count_alignment(data_SWA)}\n"
 
-    # data_SWA1, data_SWA2 = split_data(data_SWA, 2720)
+    # data_SWA1, data_SWA2 = split_data(data_SWA, N80_PERCENT)
 
     # data_SWA2 = reduce_tags_preserved(data_SWA2)
     # data_SWA2 = reduce_tags_paraphrase(data_SWA2)
 
-    # print_csv(data_SWA2)
+    #print_csv(data_SWA2)
     # END SWA ================
 
     # METEOR ================
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     
-    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
-    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
-    # data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
+    data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
 
-    # puts "#{count_alignment(data_meteor_1_5)}\n\n"
+    puts "Meteor: #{count_alignment(data_meteor_1_5)}\n\n"
 
-    # data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
-    # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
+    data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
+    data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
     # data_meteor_1_5 = remove_tags_misc(data_meteor_1_5)
 
-    # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, 2720)
+    # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, N80_PERCENT)
     # data_meteor2 = reduce_tags_preserved(data_meteor2)
     # data_meteor2 = reduce_tags_wa(data_meteor2)
 
@@ -254,16 +256,16 @@ class ReadData
     # END METEOR ============
 
     # MANLI =================
-    data_manli = get_data_json(DATA_PATH + "/output.json")
-    data_manli = insert_unaligned(data_manli)
+    # data_manli = get_data_json(DATA_PATH + "/output.json")
+    # data_manli = insert_unaligned(data_manli)
 
-    puts "Manli: #{count_alignment(data_manli)}\n\n"    
+    # puts "Manli: #{count_alignment(data_manli)}\n\n"    
 
-    data_manli = assign_tags(data_SWA, data_manli)
-    data_manli = assign_tags_wa(data_manli)
+    # data_manli = assign_tags(data_SWA, data_manli)
+    # data_manli = assign_tags_wa(data_manli)
     # data_manli = remove_tags_misc(data_manli)
 
-    # data_manli1, data_manli2 = split_data(data_manli, 2720)
+    # data_manli1, data_manli2 = split_data(data_manli, N80_PERCENT)
     # data_manli2 = reduce_tags_preserved(data_manli2)
     # data_manli2 = reduce_tags_unaligned(data_manli2)
     # data_manli2 = reduce_tags_wa(data_manli2)
@@ -280,7 +282,7 @@ class ReadData
     # data_moses = assign_tags_wa(data_moses)
     # data_moses = remove_tags_misc(data_moses)
 
-    # data_moses1, data_moses2 = split_data(data_moses, 2720)
+    # data_moses1, data_moses2 = split_data(data_moses, N80_PERCENT)
     # data_moses2 = reduce_tags_preserved(data_moses2)
     # data_moses2 = reduce_tags_unaligned(data_moses2)
     # data_moses2 = reduce_tags_wa(data_moses2)
@@ -290,11 +292,11 @@ class ReadData
 
     # # CHECK DATA ============
     # # tags = ["exact", "stem", "syn", "para", "unaligned"]
-    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo", "spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
     puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
-    puts "Tag count Manli: #{count_tags(data_manli, tags)}\n\n"
-    puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_manli)}\n"
-    puts "compare_data --> #{compare_data(data_SWA, data_manli, tags)}"
+    puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
+    puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
+    puts "compare_data --> #{compare_data(data_SWA, data_meteor_1_5, tags)}"
 
     # # print_data(data_SWA)
     # # print_data(data_meteor_1_5)
@@ -310,7 +312,8 @@ class ReadData
     # tmp = tmp.uniq
     # puts "#{tmp}"
 
-    # a, b, c = compare_data_on_tag(data_SWA, data_manli, "unaligned")
+    # a, b, c = compare_data_on_tag(data_SWA, data_meteor_1_5, "bigrammar-vtense")
+    # puts "\n In SWA not in meteor \n #{b}"
     # print_data(c)
 
     # So sánh chỉ dựa trên alignment, ko dựa vào tag name 
@@ -320,9 +323,9 @@ class ReadData
 
     # puts "#{data_SWA.length} , #{data_meteor_blast.length}, #{data_meteor_1_5.length}"
 
-    # data1.each_with_index do |line, index|
-    #   puts "#{line}\n\n" #if line.source.include? "This paper analyzes the effects"
-    #   #break if line.source.include? "This paper analyzes the effects"
+    # data_meteor_1_5.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if line.source.include? "We examined the performances of both shallow and deep parsers"
+    #   break if line.source.include? "We examined the performances of both shallow and deep parsers"
     # end 
     # data_meteor_blast.each_with_index do |line, index|
     #   puts "#{line}\n\n" if line.source.include? "The conditional probability of a label sequence"
@@ -337,14 +340,14 @@ class ReadData
     #   puts "#{line}\n\n" if index == 2784
     #   break if index == 2784
     # end
-    data_manli.each_with_index do |line, index|
-      line.Alignment.each do |aln|
-        if aln.tag_name.empty? or aln.tag_name == "" or aln.tag_name.nil?
-          puts "#{line.source}\n"
-          puts "#{aln}"
-        end
-      end
-    end
+    # data_manli.each_with_index do |line, index|
+    #   line.Alignment.each do |aln|
+    #     if aln.tag_name.empty? or aln.tag_name == "" or aln.tag_name.nil?
+    #       puts "#{line.source}\n"
+    #       puts "#{aln}"
+    #     end
+    #   end
+    # end
 
     # # Kiem tra rieng thuoc tinh source thi data 1 khac data 2 nhung gi
     # puts "#{data_meteor_1_5.collect{|e| e.source} - data_SWA.collect{|e| e.source}}"
@@ -829,15 +832,15 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
-          break if count >= 12484
+          break if count >= 11562
         end
-        break if count >= 12484
+        break if count >= 11562
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 12484 
-      #57082 SWA 80
-      #12484 SWA 20
+      break if count >= 11562 
+      # 58004 SWA 80
+      # 11562 SWA 20
       #12246 meteor 20
       # 9959 manli 20
       # 12087 moses 20
@@ -854,15 +857,15 @@ class ReadData
         if (aln.tag_name == "paraphrase")
           aln_delete << i
           count = count + 1
-          break if count >= 60
+          break if count >= 48
         end
-        break if count >= 60
+        break if count >= 48
       end
       # delete paraphrase alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 60
-      # 300 SWA 80
-      # 60 SWA 20
+      break if count >= 48
+      # 312 SWA 80
+      # 48 SWA 20
     end
     return data
   end
@@ -1150,6 +1153,17 @@ class ReadData
           else
             aln.tag_name = "para"
           end
+        end
+      end
+    end
+    return data
+  end
+
+  def convert_typo_spelling(data)
+    data.each do |line|
+      line.Alignment.each do |aln|
+        if aln.tag_name == "typo" or aln.tag_name == "spelling"
+          aln.tag_name = "typo-spelling"
         end
       end
     end
