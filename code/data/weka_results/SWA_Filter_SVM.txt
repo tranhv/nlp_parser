@@ -1,0 +1,77 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/me865/Documents/Learning/Master/NLP/Tools/weka/weka-3-8-0 -seed 1
+Relation:     csv-weka.filters.unsupervised.attribute.NumericToBinary-Rfirst-last
+Instances:    3963
+Attributes:   11
+              s_str
+              t_str
+              st_samestr_binarized
+              s_stem
+              t_stem
+              st_samestem_binarized
+              s_pos
+              t_pos
+              st_precede_binarized
+              st_follow_binarized
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+
+Time taken to build model: 3.84 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.8 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        1093               79.7228 %
+Incorrectly Classified Instances       278               20.2772 %
+Kappa statistic                          0.7615
+Mean absolute error                      0.029 
+Root mean squared error                  0.1702
+Relative absolute error                 23.3393 %
+Root relative squared error             68.2573 %
+Total Number of Instances             1371     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.985    0.001    0.996      0.985    0.990      0.988    0.992     0.984     preserved
+                 0.782    0.011    0.741      0.782    0.761      0.751    0.885     0.588     bigrammar-vtense
+                 0.400    0.003    0.800      0.400    0.533      0.557    0.698     0.338     bigrammar-wform
+                 0.000    0.001    0.000      0.000    0.000      -0.001   0.500     0.002     bigrammar-inter
+                 0.869    0.178    0.532      0.869    0.660      0.585    0.845     0.487     paraphrase
+                 0.688    0.007    0.550      0.688    0.611      0.610    0.840     0.382     unaligned
+                 0.974    0.003    0.905      0.974    0.938      0.937    0.986     0.882     mogrammar-prep
+                 0.981    0.004    0.984      0.981    0.983      0.979    0.989     0.969     mogrammar-det
+                 0.983    0.012    0.886      0.983    0.932      0.927    0.986     0.873     bigrammar-prep
+                 0.632    0.003    0.857      0.632    0.727      0.730    0.814     0.552     bigrammar-det
+                 0.864    0.010    0.854      0.864    0.859      0.849    0.927     0.746     bigrammar-others
+                 0.175    0.008    0.773      0.175    0.286      0.330    0.583     0.252     typo-spelling
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.500     0.001     duplicate
+                 0.000    0.000    0.000      0.000    0.000      0.000    ?         ?         wa
+Weighted Avg.    0.797    0.038    0.825      0.797    0.774      0.764    0.880     0.699     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   k   l   m   n   <-- classified as
+ 255   1   0   0   0   0   0   0   2   0   0   1   0   0 |   a = preserved
+   0  43   2   0   9   0   0   0   0   0   1   0   0   0 |   b = bigrammar-vtense
+   0   4  16   0  18   0   0   0   0   0   2   0   0   0 |   c = bigrammar-wform
+   0   1   0   0   2   0   0   0   0   0   0   0   0   0 |   d = bigrammar-inter
+   0   7   1   0 225   0   0   0   8   4   8   6   0   0 |   e = paraphrase
+   0   0   0   0   0  11   4   1   0   0   0   0   0   0 |   f = unaligned
+   0   0   0   0   0   0  38   1   0   0   0   0   0   0 |   g = mogrammar-prep
+   0   0   0   0   0   5   0 254   0   0   0   0   0   0 |   h = mogrammar-det
+   0   0   0   0   2   0   0   0 117   0   0   0   0   0 |   i = bigrammar-prep
+   0   1   0   0   2   4   0   2   4  24   1   0   0   0 |   j = bigrammar-det
+   0   0   1   1   6   0   0   0   1   0  76   3   0   0 |   k = bigrammar-others
+   0   1   0   0 158   0   0   0   0   0   1  34   0   0 |   l = typo-spelling
+   1   0   0   0   1   0   0   0   0   0   0   0   0   0 |   m = duplicate
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   n = wa
+

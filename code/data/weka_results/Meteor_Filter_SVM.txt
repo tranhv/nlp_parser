@@ -1,0 +1,95 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.functions.LibSVM -- -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/me865/Documents/Learning/Master/NLP/Tools/weka/weka-3-8-0 -seed 1
+Relation:     csv-weka.filters.unsupervised.attribute.NumericToBinary-Rfirst-last
+Instances:    3963
+Attributes:   11
+              s_str
+              t_str
+              st_samestr_binarized
+              s_stem
+              t_stem
+              st_samestem_binarized
+              s_pos
+              t_pos
+              st_precede_binarized
+              st_follow_binarized
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+LibSVM wrapper, original code by Yasser EL-Manzalawy (= WLSVM)
+Attribute mappings:
+
+Model attributes                 	    Incoming attributes
+---------------------------------	    ----------------
+(nominal) s_str                  	--> 1 (nominal) s_str
+(nominal) t_str                  	--> 2 (nominal) t_str
+(nominal) st_samestr_binarized   	--> 3 (nominal) st_samestr_binarized
+(nominal) s_stem                 	--> 4 (nominal) s_stem
+(nominal) t_stem                 	--> 5 (nominal) t_stem
+(nominal) st_samestem_binarized  	--> 6 (nominal) st_samestem_binarized
+(nominal) s_pos                  	--> 7 (nominal) s_pos
+(nominal) t_pos                  	--> 8 (nominal) t_pos
+(nominal) st_precede_binarized   	--> 9 (nominal) st_precede_binarized
+(nominal) st_follow_binarized    	--> 10 (nominal) st_follow_binarized
+(nominal) class                  	--> 11 (nominal) class
+
+
+Time taken to build model: 2.32 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.37 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         585               67.9443 %
+Incorrectly Classified Instances       276               32.0557 %
+Kappa statistic                          0.6208
+Mean absolute error                      0.0458
+Root mean squared error                  0.214 
+Relative absolute error                 36.2333 %
+Root relative squared error             84.2954 %
+Total Number of Instances              861     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.986    0.034    0.908      0.986    0.946      0.927    0.976     0.899     preserved
+                 0.875    0.013    0.718      0.875    0.789      0.784    0.931     0.633     bigrammar-vtense
+                 0.441    0.005    0.789      0.441    0.566      0.578    0.718     0.370     bigrammar-wform
+                 0.000    0.001    0.000      0.000    0.000      0.000    ?         ?         bigrammar-inter
+                 0.821    0.030    0.479      0.821    0.605      0.612    0.896     0.399     paraphrase
+                 0.400    0.158    0.015      0.400    0.028      0.050    0.621     0.009     unaligned
+                 0.971    0.036    0.524      0.971    0.680      0.699    0.967     0.510     mogrammar-prep
+                 0.977    0.041    0.892      0.977    0.933      0.910    0.968     0.878     mogrammar-det
+                 1.000    0.002    0.333      1.000    0.500      0.577    0.999     0.333     bigrammar-prep
+                 0.000    0.008    0.000      0.000    0.000      0.000    ?         ?         bigrammar-det
+                 0.870    0.009    0.870      0.870    0.870      0.862    0.931     0.766     bigrammar-others
+                 0.308    0.007    0.400      0.308    0.348      0.342    0.650     0.134     typo-spelling
+                 0.000    0.000    0.000      0.000    0.000      0.000    ?         ?         duplicate
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.500     0.256     wa
+Weighted Avg.    0.679    0.024    0.615      0.679    0.639      0.629    0.828     0.641     
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   k   l   m   n   <-- classified as
+ 217   1   0   0   0   0   0   0   2   0   0   0   0   0 |   a = preserved
+   0  28   2   0   1   0   0   0   0   0   1   0   0   0 |   b = bigrammar-vtense
+   0   4  15   0  13   0   0   0   0   0   2   0   0   0 |   c = bigrammar-wform
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   d = bigrammar-inter
+   0   0   1   0  23   1   0   0   0   0   0   3   0   0 |   e = paraphrase
+   0   0   0   0   0   2   3   0   0   0   0   0   0   0 |   f = unaligned
+   0   0   0   0   0   0  33   1   0   0   0   0   0   0 |   g = mogrammar-prep
+   0   0   0   0   0   5   0 215   0   0   0   0   0   0 |   h = mogrammar-det
+   0   0   0   0   0   0   0   0   1   0   0   0   0   0 |   i = bigrammar-prep
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   j = bigrammar-det
+   0   0   1   1   2   0   0   0   0   0  47   3   0   0 |   k = bigrammar-others
+   0   1   0   0   8   0   0   0   0   0   0   4   0   0 |   l = typo-spelling
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0 |   m = duplicate
+  22   5   0   0   1 129  27  25   0   7   4   0   0   0 |   n = wa
+
