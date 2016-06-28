@@ -211,7 +211,7 @@ class ReadData
     end
   end  
 
-  def main_em
+  def main
     # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
     # merged_aln_crp.write("")
@@ -222,79 +222,101 @@ class ReadData
     # SWA ====================
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
     data_SWA = refine_tag_preserved(data_SWA)
-    data_SWA = convert_typo_spelling(data_SWA)
-    data_SWA = remove_tags_misc(data_SWA)
-    data_SWA = convert_to_Meteor_tag(data_SWA)
-    puts "SWA: #{count_alignment(data_SWA)}\n"
+    # # data_SWA = convert_typo_spelling(data_SWA)
+    # data_SWA = remove_tags_misc(data_SWA)
+    # data_SWA = convert_to_Meteor_tag(data_SWA)
+    # puts "SWA: #{count_alignment(data_SWA)}\n"
 
     # data_SWA1, data_SWA2 = split_data(data_SWA, N80_PERCENT)
 
     # data_SWA = reduce_tags_preserved(data_SWA)
     # data_SWA = reduce_tags_paraphrase(data_SWA)
+    # data_SWA = reduce_tags_exact(data_SWA)
+    # data_SWA = reduce_tags_unaligned(data_SWA)
 
-    #print_csv(data_SWA)
+    # print_csv(data_SWA)
     # END SWA ================
 
     # METEOR ================
     # data_meteor_blast = get_data_meteor_blast(DATA_PATH + "/Annotation-5-with-preprocess.txt")
     
-    data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
-    data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
+    # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/result_meteor_1.5.txt")
+    # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
     # data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
 
-    puts "Meteor: #{count_alignment(data_meteor_1_5)}\n\n"
+    # # # puts "Meteor: #{count_alignment(data_meteor_1_5)}\n\n"
 
     # data_meteor_1_5 = assign_tags(data_SWA, data_meteor_1_5)
     # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
     # data_meteor_1_5 = remove_tags_misc(data_meteor_1_5)
 
-    # # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, N80_PERCENT)
+    # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, N80_PERCENT)
     # data_meteor_1_5 = reduce_tags_preserved(data_meteor_1_5)
     # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
+    # data_meteor_1_5 = reduce_tags_exact(data_meteor_1_5)
+    # data_meteor_1_5 = reduce_tags_unaligned(data_meteor_1_5)
+    # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
 
-    # print_csv(data_meteor2)
+    # print_csv(data_meteor_1_5)
     # END METEOR ============
 
     # MANLI =================
     # data_manli = get_data_json(DATA_PATH + "/output.json")
     # data_manli = insert_unaligned(data_manli)
+    # data_manli = remove_all_tags(data_manli)
 
-    # puts "Manli: #{count_alignment(data_manli)}\n\n"    
+    # # # puts "Manli: #{count_alignment(data_manli)}\n\n"    
 
     # data_manli = assign_tags(data_SWA, data_manli)
     # data_manli = assign_tags_wa(data_manli)
-    # data_manli = remove_tags_misc(data_manli)
+    # # data_manli = remove_tags_misc(data_manli)
 
-    # # data_manli1, data_manli2 = split_data(data_manli, N80_PERCENT)
+    # data_manli1, data_manli2 = split_data(data_manli, N80_PERCENT)
     # data_manli = reduce_tags_preserved(data_manli)
     # data_manli = reduce_tags_wa(data_manli)
+    # data_manli = reduce_tags_exact(data_manli)
+    # data_manli = reduce_tags_unaligned(data_manli)
+    # data_manli = reduce_tags_wa(data_manli)
 
-    # print_csv(data_manli2)
+    # print_csv(data_manli)
     # # END MANLI =============
 
     # GIZA ====================
     # data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
     # data_moses = insert_unaligned(data_moses)
-    # puts "#{count_alignment(data_moses)}\n"
+    # data_moses = remove_all_tags(data_moses)
+    # # # puts "#{count_alignment(data_moses)}\n"
 
     # data_moses = assign_tags(data_SWA, data_moses)
     # data_moses = assign_tags_wa(data_moses)
-    # data_moses = remove_tags_misc(data_moses)
+    # # # data_moses = remove_tags_misc(data_moses)
 
-    # # data_moses1, data_moses2 = split_data(data_moses, N80_PERCENT)
-    # data_moses = reduce_tags_preserved(data_moses)
+    # data_moses1, data_moses2 = split_data(data_moses, N80_PERCENT)
+    # # # data_moses = reduce_tags_preserved(data_moses)
+    # # # data_moses = reduce_tags_wa(data_moses)
+    # data_moses = reduce_tags_exact(data_moses)
+    # data_moses = reduce_tags_unaligned(data_moses)
     # data_moses = reduce_tags_wa(data_moses)
 
-    # print_csv(data_moses2)
+    # print_csv(data_moses)
+    # --------------------------
+    data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    data_moses = insert_unaligned(data_moses)
+    data_moses = remove_all_tags(data_moses)
+    data_moses = assign_tags(data_SWA, data_moses)
+    puts "#{count_alignment(data_moses)}\n"
+    print_data(data_moses)
     # END GIZA ================
 
     # # CHECK DATA ============
-    tags = ["exact", "stem", "syn", "para", "unaligned"]
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
-    puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
-    puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
-    puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
-    puts "compare_data --> #{compare_data(data_SWA, data_meteor_1_5, tags)}"
+    # tags = ["exact", "stem", "syn", "para", "unaligned", "wa"]
+    # # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
+    # puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
+    # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
+    # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
+    # puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
+    # puts "compare_data --> #{compare_data(data_SWA, data_meteor_1_5, tags)}"
 
     # # print_data(data_SWA)
     # # print_data(data_meteor_1_5)
@@ -354,14 +376,46 @@ class ReadData
     
   end
 
-  def main
+  def main_suongnhonhoinhoi
     # GIZA ====================
     data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
     data_moses = insert_unaligned(data_moses)
     puts "#{count_alignment(data_moses)}\n"
+    print_data(data_moses)
   end
 
   def get_data_moses(source_path, target_path, align_path)
+    #source --> file: source
+    #target --> file: target
+    #align --> file: aligned.grow-diag-final
+
+    data = []
+    sources = []
+    targets = []
+    File.open(source_path, 'r').each do |line|
+      sources << line
+    end
+
+    File.open(target_path, 'r').each do |line|
+      targets << line
+    end
+    if sources.length != targets.length
+      return data
+    end
+
+
+    sentence_pair = Sentence_Pair.new
+    File.open(align_path, 'r').each_with_index do |line, index|
+      sentence_pair = Sentence_Pair.new
+      sentence_pair.source = sources[index]
+      sentence_pair.target = targets[index]
+      sentence_pair.Alignment = parse_align_moses(line)#refine_line_moses(parse_align_moses(line), sources[index], targets[index])
+      data << sentence_pair 
+    end
+    return data
+  end
+
+  def get_data_moses_new(source_path, target_path, align_path)
     #source --> file: source
     #target --> file: target
     #align --> file: aligned.grow-diag-final
@@ -397,7 +451,7 @@ class ReadData
     aligns.each_with_index do |alg, index|
       hash_source = {}
       hash_target = {}
-      next if (alg.source_numbers.include?(",") || alg.target_numbers.include?(","))
+      next if (!alg.source_numbers.include?(",") && !alg.target_numbers.include?(","))
       alg.source_numbers.split(",").each_with_index do |num|
         hash_source[source.split(" ")[num.to_i]] = num
       end
@@ -848,7 +902,10 @@ class ReadData
       aln_arrs = []
       aln_delete = []
       line.Alignment.each_with_index do |aln,i|
-        if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
+        #if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
+        if (aln.tag_name == "preserved") and (aln.source_numbers.scan(/,/).count != aln.target_numbers.scan(/,/).count)
+          puts ("#{line}\n\n")
+          #puts ("#{aln}\n\n")
           aln_arrs << break_alignment(aln)
           aln_delete << i
         end
@@ -861,6 +918,55 @@ class ReadData
       line.Alignment << aln_arrs.flatten
       line.Alignment.flatten!
     end 
+    return data
+  end
+
+  def reduce_tags_exact(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "exact")
+          aln_delete << i
+          count = count + 1
+          break if count >= 67782
+        end
+        break if count >= 67782
+      end
+      # delete preserved alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 67782 
+      # 69683 SWA 100
+      # 69000 Meteor 100
+      # 68322 Manli 100
+      # 67782 moses 100
+    end
+    return data
+  end
+
+  def reduce_tags_unaligned(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "unaligned")
+          aln_delete << i
+          count = count + 1
+          break if count >= 1601
+        end
+        break if count >= 1601
+      end
+      # delete unaligned alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 1601
+      # 1839 SWA 100
+      # 1114 Meteor 100
+      # 1629 manli 100
+      # 1601 moses 100
+
+      # 1579 manli 20 
+      # 224 moses 20
+    end
     return data
   end
 
@@ -922,40 +1028,23 @@ class ReadData
         if (aln.tag_name == "wa")
           aln_delete << i
           count = count + 1
-          break if count >= 6358
+          break if count >= 6728
         end
-        break if count >= 6358
+        break if count >= 6728
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 6358 
+      break if count >= 6728 
+      # 12456 meteor 100
+      # 13012 manli 100
+      # 6728 moses 100 
+
       # 2643 meteor 20
       # 11945 meteor 100
       # 2325 manli 20
       # 12505 manli 100
       # 1100 moses 20
       # 6358 moses 100
-    end
-    return data
-  end
-
-  def reduce_tags_unaligned(data)
-    count = 0
-    data.each do |line|
-      aln_delete = []
-      line.Alignment.each_with_index do |aln, i|
-        if (aln.tag_name == "unaligned")
-          aln_delete << i
-          count = count + 1
-          break if count >= 224
-        end
-        break if count >= 224
-      end
-      # delete unaligned alignments in the original array
-      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 224
-      # 1579 manli 20 
-      # 224 moses 20
     end
     return data
   end
