@@ -386,6 +386,20 @@ class ReadData
     return data
   end
 
+  def refine_line_moses(aligns, source, target)
+    aligns.each_with_index do |alg, index|
+      arr_string_source = source.split(" ").map.with_index{|e,i| e if alg.source_numbers.split(",").include?(i)}.compact
+      arr_string_target = target.split(" ").map.with_index{|e,i| e if alg.target_numbers.split(",").include?(i)}.compact
+
+      array_intersect = arr_string_source & arr_string_target
+      if array_intersect
+        array_intersect.each do |e|
+          
+        end
+      end
+    end
+  end
+
   def parse_align_moses(line)
     aligns = []
     align_1_1_array = line.split(" ")
