@@ -211,7 +211,7 @@ class ReadData
     end
   end  
 
-  def main
+  def main_em
     # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
     # merged_aln_crp.write("")
@@ -354,6 +354,12 @@ class ReadData
     
   end
 
+  def main
+    # GIZA ====================
+    data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    data_moses = insert_unaligned(data_moses)
+    puts "#{count_alignment(data_moses)}\n"
+  end
 
   def get_data_moses(source_path, target_path, align_path)
     #source --> file: source
@@ -380,24 +386,45 @@ class ReadData
       sentence_pair = Sentence_Pair.new
       sentence_pair.source = sources[index]
       sentence_pair.target = targets[index]
-      sentence_pair.Alignment = parse_align_moses(line)
+      sentence_pair.Alignment = refine_line_moses(parse_align_moses(line), sources[index], targets[index])
       data << sentence_pair 
     end
     return data
   end
 
   def refine_line_moses(aligns, source, target)
+    add_aligns = []
     aligns.each_with_index do |alg, index|
-      arr_string_source = source.split(" ").map.with_index{|e,i| e if alg.source_numbers.split(",").include?(i)}.compact
-      arr_string_target = target.split(" ").map.with_index{|e,i| e if alg.target_numbers.split(",").include?(i)}.compact
+      hash_source = {}
+      hash_target = {}
+      next if (alg.source_numbers.include?(",") || alg.target_numbers.include?(","))
+      alg.source_numbers.split(",").each_with_index do |num|
+        hash_source[source.split(" ")[num.to_i]] = num
+      end
 
-      array_intersect = arr_string_source & arr_string_target
+      alg.target_numbers.split(",").each_with_index do |num|
+        hash_target[target.split(" ")[num.to_i]] = num
+      end
+
+
+      array_intersect = hash_source.keys & hash_target.keys
       if array_intersect
-        array_intersect.each do |e|
-          
+        align = Alignment.new
+        array_intersect.each do |str|
+          align = Alignment.new
+          align.target_numbers = hash_target[str]
+          align.source_numbers = hash_source[str]
+          add_aligns << align
+          alg.source_numbers.gsub!(str,"")
+          alg.target_numbers.gsub!(str,"")
         end
       end
     end
+
+    aligns << add_aligns
+
+    aligns.flatten!
+
   end
 
   def parse_align_moses(line)
