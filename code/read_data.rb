@@ -300,7 +300,7 @@ class ReadData
 
     # print_csv(data_moses)
     # --------------------------
-    data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    data_moses = get_data_moses_new(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
     data_moses = insert_unaligned(data_moses)
     data_moses = remove_all_tags(data_moses)
     data_moses = assign_tags(data_SWA, data_moses)
@@ -497,7 +497,7 @@ class ReadData
       end
     end
 
-    laligns.delete_if.with_index { |_, index| alg_need_to_delete.include? index }
+    aligns.delete_if.with_index { |_, index| alg_need_to_delete.include? index }
 
     aligns << add_aligns
 
@@ -928,7 +928,7 @@ class ReadData
       line.Alignment.each_with_index do |aln,i|
         #if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
         if (aln.tag_name == "preserved") and (aln.source_numbers.scan(/,/).count != aln.target_numbers.scan(/,/).count)
-          puts ("#{line}\n\n")
+          #puts ("#{line}\n\n")
           #puts ("#{aln}\n\n")
           aln_arrs << break_alignment(aln)
           aln_delete << i
