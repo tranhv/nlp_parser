@@ -448,6 +448,8 @@ class ReadData
 
   def refine_line_moses(aligns, source, target)
     add_aligns = []
+
+    alg_need_to_delete = []
     aligns.each_with_index do |alg, index|
       hash_source = {}
       hash_target = {}
@@ -468,12 +470,34 @@ class ReadData
           align = Alignment.new
           align.target_numbers = hash_target[str]
           align.source_numbers = hash_source[str]
+          align.tag_name = ""
           add_aligns << align
           alg.source_numbers.gsub!(str,"")
           alg.target_numbers.gsub!(str,"")
         end
+
+        align_source = Alignment.new
+        alg.source_numbers.split(",").each do |source|
+          align_source = Alignment.new
+          align_source.target_numbers = ""
+          align_source.source_numbers = source
+          align_source.tag_name = ""
+          add_aligns << align_source
+        end
+
+        alg.target_numbers.split(",").each do |target|
+          align_target = Alignment.new
+          align_target.target_numbers = target
+          align_target.source_numbers = ""
+          align_target.tag_name = ""
+          add_aligns << align_target
+        end
+
+        alg_need_to_delete << index
       end
     end
+
+    laligns.delete_if.with_index { |_, index| alg_need_to_delete.include? index }
 
     aligns << add_aligns
 
