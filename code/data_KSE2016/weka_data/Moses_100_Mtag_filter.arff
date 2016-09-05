@@ -1,0 +1,2051 @@
+@relation csv-weka.filters.unsupervised.attribute.NumericToBinary-Rfirst-last
+
+@attribute s_str {examined,'will illustrate',various,Behind,some,change,ways,gained,'are claimed',work,assume,is,use,While,Because,represents,they,are,when,shown,additionally,'will show',shows,while,changing,'after that',corpus,would,seem,Especially,still,'could find',major,such,Firstly,begin,Secondly,take,forms,'did decrease','were left','would not',usage,might,represented,draw,full,'could give',points,outline,show,regarded,marks,kind,gave,conversation,imperatives,and,questions,'would be confused','complement for','would hardly',only,portable,give,'such functions',With,contain,'and gives',present,'should include','has achieved',like,Therefore,find,from,Though,about,compare,labeling,keep,as,One,puts,rest,get,divide,Thirdly,'have sampled',extract,'have obtained',showed,'were ranged',were,It,worst,remarkable,investigation,'not sufficient',affects,'After all',suggested,Particularly,Also,even,with,fine-grainedness,explored,increase,perspectives,appropriateness,describe,far,problem,offering,this,'superiority of',incorporating,problems,to,'not appropriate',receiving,exist,much,given,considerable,poorer,However,smaller,'not adequate',strongly,by,saw,being,'are included',consumes,decrease,decomposes,it,employ,skewness,decomposed,'system NII-2',since,fewer,simple,'speeds up','list,',direction,very,high,unmatured,leading,outperforms,growing,'available easier',mentioned,chosen,relevant,'can provide',outliers,'face retrieval based',doing,consists,persons,retrieved,PCA,popularly,indicates,performs,produces,rank,select,'is constructed',propose,attracts,'without costly',fast,includes,containing,yet,case,quantities,motion,low,deformable,none,considered,learn,having,graph,'good point','can form','do clustering',contains,'are stopped',balance,'existing approaches',makes,popular,adopted,decomposing,remaining,neighbor,Specifically,length,testing,superimpose,divided,employed,'have shown',regards,each,lower,',',well,efficiently,'will make',comparable,seriously,automatically,'according to',affect,varies,has,employs,result,employing,presented,resulted,hard,significant,predict,idea,equal,distinguished,reduce,have,features,huge,or,turning,classifying,reuse,previously,Actually,quick,that,incorrect,'have implemented',fully,correspondent,run,approximate,If,rejects,runs,process,paper,relevancy,resulting,'compared with',requires,follow,can,detect,group,collect,person,know,firstly,needed,learns,'for example',car,flag,'generic classifier based',extend,means,return,Meanwhile,'can not',proposed,'distance based',persons;,'e .g',7,3,picked,does,knows,represent,'facial feature',4,models,uses,speedup,train,helps,requirements,semantics,Relations,could,mathematical,works,include,Evaluate,provides,existing,adopt,achieves,introduce,analyze,disambiguate,choose,used,'hand written',prepare,apply,'set up',confirm,over,providing,'less error rate',introduced,separated,displaying,encoded,removed,called,applied,frequent,got,preprocess,'could not',belong,using,call,depict,substituting,inserting,deleting,SnuggleTeX,'find out',conform,consider,sub-part,Recent,'i .e',indicating,which,'shown again',one,remained,of,succession,Thus,referred,agree,higher,gives,completely,exploit,violating,scheme,right,'was failed',thought,indeed,so,performance,for,be,happen,cases,'can be',Besides,'VTB treebank',lie,selected,study,top,whole,'in particular',fruitful,amount,best,cope,grouping,match,demonstrate,important,Since,human,detected,ones,In,cluster,expensive,create,was,evaluating,reasons,A,demonstrated,But,liminations,make,failed,appear,together,appeared,loss,regarding,face-track,prevent,through,the,face-tracks,achive,on,limits,motivate,an,'compare to',facetrack,By,require,imposes,dimension,wait,a,these,flash-frames,at,occurences,'information based',reported,character,property,face,From,trade-o_,'millions frames',millions,ten,'well known',facetracks,number,ours,transform,approaches,'pair-wise based',denote,better,separatable,selecting,query,following:,gap,those,during,themself,variation,dataset,And,their,more,About,'to perform','high dimensional',On,theirs,costs,'According to',suggest,hundred,achieve,concern,perform,in,archiving,contributions,3-fold,retreival,faciliate,database,introduces,matched,intial,opmization,promissing,needs,because,expected,clarify,supports,but,'scale changes',other,reduces,sets,region,.,all,sufficient,'insights an',boost,another,Works,respect,user,interest,'limited an',aim,'figuring out',recommendations,'by doing',', arise',accordingly,'Recommend-Me query suggestion','proposed by Zha',simultanously,'our Recommend-Me',suggestion,formulation,facilitating,searching,'query ambiguity','existence their',attempt,towards,its,technical,'differentiated in',way,set,may,suffer,doubled,'ours ESS','ESR do not share common approach',construct,compute,'Details proposed approaches our for',finding,'concludes our','Recommend-Me towards','consists formulating','4 final','main recommendations','steps users',Candidate,item,selection,further,'importantly human','get attracted',oversegmenting,greedy,iteratively,merges,algorithm,two,most,similar,regions,until,image,becomes,single,Finding,pool,our,'top pool',Grouping,'now enumerate',overlap,highly,merging,They,'are perceived human',maximal,'clique technique',consistent,Formulating,'then introduce','our recommendations',Representative,'proposed approach',branch-and-bound,processs,spaces,eliminated,known,bounding,assigned,upper,bound,value,quality,function,any,members,part,Parts,So,Adapting,repsented,histgoram,constrainted,following,'And ,',denotes,Given,paring,nodes,Dividing,covered,straightforward,utilizing,Selecting,'select be divided',An,'illustration branching',essential,'requirement evaluate necessary',how,Assuming,'now evaluating',Intersection,', Histogram',stick,types,similarity,NHI,rely,clearly,observed,relied,Inspired,form,best-first,manner,examines,next,continue,reached,'have been','There organization','we have constraint',satisfied,'branch-and-bound based',attach,orginal,'satisfy b )','constraints ( ) (',X,At,'we presented',returned,divisive,splits,peformed,hierarcy,splitted,'$k$-means algorithm',hierchical,'then compute',hitogram,sastified,'last unifying',both,'show an illustration',recommendation,generation,hierarchical,'locates exists','recommendations as such','hit hit','recommendations introduced',evaluate,introducing,annotation,'existed precisely introduce','is determined',VOC,challenge,'facilitate procedure','performance simply',evaluation,size,possible,pairs,formed,BoF,dense,Different-of-Gaussian(,DoG,),'of of','a the','portion sky',etc,channel,'are RGB','.72\%',created,do,build,Bron-Kerbosch,'reported numbers','well perform','averaged as',we,successfully,'80 .27\%','a hit',takes,'We there',false,'on places',list,The,first,type,background,(,e.g.,trees,buildings,roads,easily,found,many,images,second,items,'lacking of',manual,windows,cars,humans,not,counted,hit,if,users,interested,them,hints,explore,'much helpful',Clearly,realize,Recommend-Me,under,'influence of','\\MATH',increasing,obtain,hight,scores,'It brings',chances,annotated,thus,improves,precision,trade-off,'unexpected also',This,results,drop,average,Figure,5(,demonstrates,circumstance,When,increases,2000,10000,'also increases',74,'.67\%',81,'.97\%',;,meanwhile,drops,2,.27,1,.78,worth,noting,keeping,inreasing,always,relies,also,robustness,comparision,techniques,cannot,provide,around,'20\%',initial,due,fact,technique,deal,variations,b,decline,efficiency,improvement,visit,parts,total,search,space,order,extra,local,optimals,evaluations,times,faster,than,exhaustive,'Its is',superiority,practical,applications,'\\REF',presents,examples,'by our Recommend-Me','paper introduced new system',', ,','we named',visual,Such,support,rapidly,refine,efficient,solution,To,knowledge,toward,targeted}
+@attribute t_str {examine,illustrates,different,Underlying,certain,changes,manners,received,claim,study,assumed,was,used,Although,As,denotes,these,were,as,are,given,also,show,gives,but,varying,thereafter,data,does,appear,'In particular',remain,found,main,First,begins,whereas,Second,takes,form,arises,has,although,decreased,remained,cannot,use,other,may,plots,denoted,plot,complete,achieved,percent,could,overview,give,mistook,punctuation,type,assigned,colloquial,imperative,or,question,confused,complementing,merely,ported,provide,functions,Using,contains,with,this,includes,including,Thus,determine,'in comparing',However,whether,comparing,'labeling problem',retains,since,'One method',places,remaining,acquire,divided,Next,Then,sampled,extracted,obtained,indicated,ranged,performed,This,lowest,substantial,investigations,insufficient,affected,Nevertheless,'have suggested',Furthermore,display,'by using','fine-grained nature','have explored',increasing,viewpoint,validity,WordNet,'will describe',indicates,very,issue,'that offers',such,shows,'improvement over','that incorporates',issues,'in achieving',inappropriate,'has received',many,provided,'have used',worse,Nonetheless,less,inadequate,well,because,observed,'In addition','to be',using,included,'would be','would consume','would decrease','breaks down',so,assuming,they,skew,'broken down',presents,NII-2system,simpler,increases,present,'table,',end,highest,immature,outperforming,growth,'more available',above-mentioned,specified,relevancy,outlier,face-based,performing,consisted,individuals,retrieved,'principle component analysis',commonly,outperformed,at,produced,presented,ranking,selected,'we constructed',obtain,proposed,showed,'has attracted',cheaply,faster,contain,situation,'a quantity',motions,lower,view,deformed,neither,'is learned',one,advantage,forms,cluster,contained,stop,balancing,ones,ranks,common,'have proven','breaking down',containing,'have received',remainder,neighboring,its,long,test,list,compared,superimposed,divide,regard,a,smaller,lengthen,and,accurately,efficient,formed,makes,similar,dramatically,'used in',automatic,'by considering',damage,These,varied,uses,fewer,resulting,described,resultant,difficulty,important,predictive,goal,finding,equally,distinguishing,reducinge,'doing thisit',They,hadve,'this area',vast,while,quickly,enabling,classify,'have reused',already,enable,to,incorrectly,implemented,full,corresponding,ran,shorter,yielded,approximately,When,rejected,achieving,processed,of,research,demonstrated,relevance,'resulting in',poor,'much greater',than,involves,pursued,detected,grouped,collected,'people\'s',knew,first,'that need',made,learned,e.g.,cars,flags,generic-classifier-based,extended,ways,returned,Further,propose,distance-based,collecting,people,seen,is,seven,three,did,represented,facial-feature,four,had,modeled,comparably,indicate,demonstrate,'speed up',trained,helped,revealed,Moreover,needs,semantic,'The relationship',can,mathematics,follows,Evaluating,previous,describe,analyzing,disambiguating,chose,hand-written,prepared,applied,'cropping up',assess,making,'fewer errors',devised,separate,'despite that',encodes,remove,call,frequency,Once,get,each,preprocessed,belonging,lists,called,depicted,substitute,insert,delete,it,investigate,conformed,considered,'limited range',Current,'that indicates',/,difficult,'noun phrase',concerning,'refers to','to using',successive,Therefore,enables,referenced,'and increasing','in agreement',surpasses,'higher performance',provides,solely,develop,'that violate',schemes,correct,failed,regarded,'in actuality',thus,score,'to explain',occurs,occur,instances,'divided up',include,gave,VTB,selecting,understand,most,overall,particularly,successful,number,methods,best-performing,deal,group,matching,'to achieve',relevant,Because,appearances,Whereas,approaches,clustered,high,created,evaluate,'In view',considerations,Each,shown,restrictions,causes,'to fail',simultaneously,'that appear',lost,indicating,'according to','face track',cases,into,that,prevents,over,processes,'face tracks','have shown',in,limit,motivates,the,In,required,representing,dimensions,'spend waiting','flash frames',problems,occurrences,information-based,featured,characteristic,faces,'Based on',trade-off,extracts,million,10,well-known,numbers,characters,'our datasets',on,from,The,transforms,those,pair-wise-based,'refer to',more,separable,choosing,queries,follows:,difference,themselves,reflect,variations,datasets,'a greater',Regarding,high-dimensional,cost,'As shown in',suggests,hundreds,contribution,threefold,Third,retrieval,facilitate,databases,initial,optimization,promising,need,envisioned,'show in',larger,helps,besides,an,'would incur',scale,reduce,sets,region,.,sufficiently,insight,boost,again,describing,Work,On,'the topic','user particular','\'s interest',inthe,aims,'solve identifying the','make recommendations',doing,'incurs , not',studies,'ours that',Zha,',',Recommend-Me,formulating,suggestion,helping,'search for',their,'their tendency formulate','ambiguous queries',existence,'attempt at this',sort,'a technical',work,'differentiated from other studies in','In contrast','in may','context suffer',doubles,'ESS Recommend-Me','ESR differ in that they have different approaches',constructing,computing,'The details how we',find,'concludes the',consists,steps,Select,candidate,items,subsequent,importantly,attracted,over-segmenting,'greedy ?>','search iteratively','< ? merges',algorithm,two,regions,together,until,whole,image,becomes,single,be,Find,will,'be pool','top pool',Group,enumerate,'likely overlap','merging done','regions would be perceived',users,'maximal will',clique,'that consistent',Formulate,recommendations,'A representative',approach,By,'hence propose','branch-and-bound solve',process,space,'have been eliminated',;,'this is','bounding \" ?>','is is are','assigned grammatical these members','upper but don know Inparticular can','bound I \'t what what they','for \" be',which,'the the','quality quality computed','function function function','could could','take take','any any','of on of of','members //<The members','part rewrite part','. .','Those parts',histogram,constrained,'smaller than',what,'can be used','And let',denote,being,Letting,'pairing //<the guess','nodes rewrite .>','Dividing up','covered can be done','straightforwardly better if it correct','utilizing //<The rewrite .>',branching,illustrated,'essential determine //<Or determine ?','requirement whether \" extent \" ?>','branch-and-bound algorithm','Let us assume that',evaluating,'formulas similarity Intersection',', Histogram','will use','will NHI',rely,'clearly //<I not what means context you \" derived','observed \'m sure observed this Do mean ?',relies,'Inspired write','the the the the the','algorithm algorithm rewrite algorithm','work best-first //<The describes you In describes works','manner original way decided contrast way .>','algorithm \" The rewrite','examines //<\" unclear guess .>',next,repeat,'is reached',reached,There,constraint,'is satisfied',branch-and-bound,node,'is attached',original,satisfies,constraints,'X this organization',organization,If,by,'divisive //<the rewrite guess .>',we,perform,splits,hierarchy,split,$k$-means,hierarchical,compute,Finally,unifying,'the both','illustratie this',become,locates,'recommendations\"','hit \"',them,evaluated,pesenting,annotations,'existin a','will provide',recommendation,'VOC or','challenge not',simply,computed,evaluations,'divided \" me \"','the the the the','size size average size sizes','of of of of','all all all all','possible possible possible possible','region region region region','pairs //< pairs pairs pairs','formed \" Do you mean \" \" or \"','regions unclear ?>',taken,employed,'a BoF','using dense','a Different-of-Gaussian (',DoG,),'of of',sky,'etc. from','first introduced',channels,RGB,'.72\% of',built,nearly,overlapped,'The Bron-Kerbosch',reported,'and of',averages,make,'80 .27\%',hit,take,types,false,'in places',top,background,(,trees,buildings,roads,easily,images,second,lacking,manual,windows,humans,about,not,counted,if,interested,hints,explore,database,still,helpful,Clearly,realize,performance,influenced,'\\MATH','can obtain',pairs,similarity,scores,Thisgives,chances,annotated,item,improving,precision,unexpected,results,drop,average,rank,Figure,5(,demonstrates,circumstance,2000,10000,74,'.67\%',81,'.97\%',meanwhile,drops,2,.27,1,.78,It,worth,noting,keeping,always,better,only,robustness,comparison,techniques,any,for,around,'20\%',query,due,fact,our,technique,significant,b,another,when,increase,decline,efficiency,improvement,visit,parts,total,search,order,extra,local,opitimals,all,times,exhaustive,'This will be',practical,applications,'\\REF',examples,byRecommend-Me,We,'oursystem making',named,visual,suggestions,Given,'impose conditions on',how,frequent,Such,help,select,rapidly,refine,An,solution,'also presented',To,best,knowledge,'attempt at',developing,targeted,scheme}
+@attribute st_samestr_binarized {0,1}
+@attribute s_stem {examine,'will illustrate',various,Behind,some,change,ways,gain,'be claim',work,assume,be,use,While,Because,represent,they,when,show,additionally,'will show',while,'after that',corpus,would,seem,Especially,still,'could find',major,such,Firstly,begin,Secondly,take,form,'do decrease','be leave','would not',usage,may,draw,full,'could give',point,outline,regard,mark,kind,give,conversation,imperative,and,question,'would be confuse','complement for','would hardly',only,portable,'such function',With,contain,'and give',present,'should include','have achieve',like,Therefore,find,from,Though,about,compare,label,keep,as,One,put,rest,get,divide,Thirdly,'have sample',extract,'have obtain','be range',It,bad,remarkable,investigation,'not sufficient',affect,'After all',suggest,Particularly,Also,even,with,fine-grainedness,explore,increase,perspective,appropriateness,describe,far,problem,offer,this,'superiority of',incorporate,to,'not appropriate',receive,exist,much,considerable,poor,However,smaller,'not adequate',strongly,by,see,'be include',consume,decrease,decompose,it,employ,skewness,'system NII-2',since,fewer,simple,'speed up','list,',direction,very,high,unmatured,lead,outperform,grow,'available easy',mention,choose,relevant,'can provide',outlier,'face retrieval base',do,consist,person,retrieve,PCA,popularly,indicate,perform,produce,rank,select,'be construct',propose,attract,'without costly',fast,include,yet,case,quantity,motion,low,deformable,none,consider,learn,have,graph,'good point','can form','do cluster','be stop',balance,'exist approach',make,popular,adopt,remain,neighbor,Specifically,length,test,superimpose,'have show',each,',',well,efficiently,'will make',comparable,seriously,automatically,'accord to',vary,result,hard,significant,predict,idea,equal,distinguish,reduce,feature,huge,or,turn,classify,reuse,previously,Actually,quick,that,incorrect,'have implement',fully,correspondent,run,approximate,If,reject,process,paper,relevancy,'compare with',require,follow,can,detect,group,collect,know,firstly,need,'for example',car,flag,'generic classifier base',extend,mean,return,Meanwhile,'can not','distance base',persons;,'e .g',7,3,pick,'facial feature',4,model,speedup,train,help,requirement,semantics,Relations,could,mathematical,Evaluate,provide,achieve,introduce,analyze,disambiguate,'hand write',prepare,apply,'set up',confirm,over,'le error rate',separate,display,encode,remove,call,frequent,preprocess,'could not',belong,depict,substitute,insert,delete,SnuggleTeX,'find out',conform,sub-part,Recent,'i .e',which,'show again',one,of,succession,Thus,refer,agree,higher,completely,exploit,violate,scheme,right,'be fail',think,indeed,so,performance,for,happen,'can be',Besides,'VTB treebank',lie,study,top,whole,'in particular',fruitful,amount,good,cope,match,demonstrate,important,Since,human,In,cluster,expensive,create,evaluate,reason,A,But,liminations,fail,appear,together,loss,face-track,prevent,through,the,face-tracks,achive,on,limit,motivate,an,'compare to',facetrack,By,impose,dimension,wait,a,these,flash-frames,at,occurences,'information base',report,character,property,face,From,trade-o_,'million frame',million,ten,'well know',facetracks,number,ours,transform,approach,'pair-wise base',denote,separatable,query,following:,gap,those,during,themself,variation,dataset,And,their,more,About,'to perform','high dimensional',On,theirs,cost,'According to',hundred,concern,in,archive,contribution,3-fold,retreival,faciliate,database,intial,opmization,promissing,because,expect,clarify,support,but,'scale change',other,set,region,.,all,sufficient,'insight an',boost,another,Works,respect,user,interest,'limit an',aim,'figure out',recommendation,'by do',', arise',accordingly,'Recommend-Me query suggestion','propose by Zha',simultanously,'our Recommend-Me',suggestion,formulation,facilitate,search,'query ambiguity','existence their',attempt,towards,technical,'differentiate in',way,suffer,double,'ours ESS','ESR do not share common approach',construct,compute,'Details propose approach our for','conclude our','Recommend-Me towards','consist formulate','4 final','main recommendation','step user',Candidate,item,selection,'importantly human','get attract',oversegmenting,greedy,iteratively,merge,algorithm,two,most,similar,until,image,become,single,Finding,pool,our,'top pool',Grouping,'now enumerate',overlap,highly,They,'be perceive human',maximal,'clique technique',consistent,Formulating,'then introduce','our recommendation',Representative,'propose approach',branch-and-bound,space,eliminate,bound,assign,upper,bind,value,quality,function,any,member,part,Parts,So,Adapting,repsented,histgoram,constrainted,'And ,',Given,pare,nod,Dividing,cover,straightforward,utilize,Selecting,'select be divide',An,'illustration branch',essential,'requirement evaluate necessary',how,Assuming,'now evaluate',Intersection,', Histogram',stick,type,similarity,NHI,rely,clearly,observe,Inspired,best-first,manner,next,continue,reach,'have be','There organization','we have constraint',satisfy,'branch-and-bound base',attach,orginal,'satisfy b )','constraint ( ) (',X,At,'we present',divisive,split,peformed,hierarcy,splitted,'$k$-means algorithm',hierchical,'then compute',hitogram,sastified,'last unify',both,'show an illustration',generation,hierarchical,'locate exist','recommendation as such','hit hit','recommendation introduce',annotation,'exist precisely introduce','be determine',VOC,challenge,'facilitate procedure','performance simply',evaluation,size,possible,pair,BoF,dense,Different-of-Gaussian(,DoG,),'of of','a the','portion sky',etc,channel,'be RGB','.72\%',build,Bron-Kerbosch,'report number','well perform','average as',we,successfully,'80 .27\%','a hit','We there',false,'on place',list,The,first,background,(,e.g.,tree,roads,easily,many,second,'lack of',manual,windows,humans,not,count,hit,if,them,hint,'much helpful',Clearly,realize,Recommend-Me,under,'influence of','\\MATH',obtain,hight,score,'It bring',chance,annotate,thus,improve,precision,trade-off,'unexpected also',This,drop,average,Figure,5(,circumstance,When,2000,10000,'also increase',74,'.67\%',81,'.97\%',;,meanwhile,2,.27,1,.78,worth,note,inreasing,always,also,robustness,comparision,technique,cannot,around,'20\%',initial,due,fact,deal,b,decline,efficiency,improvement,visit,total,order,extra,local,optimals,time,than,exhaustive,'Its be',superiority,practical,application,'\\REF',example,'by our Recommend-Me','paper introduce new system',', ,','we name',visual,Such,rapidly,refine,efficient,solution,To,knowledge,toward,target}
+@attribute t_stem {examine,illustrate,different,Underlying,certain,change,manners,receive,claim,study,assume,be,use,Although,As,denote,these,as,give,also,show,but,vary,thereafter,datum,do,appear,'In particular',remain,find,main,First,begin,whereas,Second,take,form,arise,have,although,decrease,cannot,other,may,plot,complete,achieve,percent,could,overview,mistake,punctuation,type,assign,colloquial,imperative,or,question,confuse,complement,merely,port,provide,function,Using,contain,with,this,include,Thus,determine,'in compare',However,whether,compare,'label problem',retain,since,'One method',place,acquire,divide,Next,Then,sample,extract,obtain,indicate,range,perform,This,lowest,substantial,investigation,insufficient,affect,Nevertheless,'have suggest',Furthermore,display,'by use','fine-grained nature','have explore',increase,viewpoint,validity,WordNet,'will describe',very,issue,'that offer',such,'improvement over','that incorporate','in achieve',inappropriate,'have receive',many,'have use',bad,Nonetheless,le,inadequate,well,because,observe,'In addition','to be','would be','would consume','would decrease','break down',so,they,skew,present,NII-2system,simple,'table,',end,high,immature,outperform,growth,'more available',above-mentioned,specify,relevancy,outlier,face-based,consist,individual,retrieve,'principle component analysis',commonly,at,produce,rank,select,'we construct',propose,'have attract',cheaply,fast,situation,'a quantity',motion,low,view,deform,neither,'be learn',one,advantage,cluster,stop,balance,common,'have prove',remainder,neighbor,it,long,test,list,superimpose,regard,a,smaller,lengthen,and,accurately,efficient,make,similar,dramatically,'use in',automatic,'by consider',damage,These,fewer,result,describe,resultant,difficulty,important,predictive,goal,equally,distinguish,reducinge,'do thisit',They,hadve,'this area',vast,while,quickly,enable,classify,'have reuse',already,to,incorrectly,implement,full,correspond,run,short,yield,approximately,When,reject,process,of,research,demonstrate,relevance,'result in',poor,'much greater',than,involve,pursue,detect,group,collect,'people\\s',know,first,'that need',learn,e.g.,car,flag,generic-classifier-based,extend,ways,return,Further,distance-based,people,see,seven,three,represent,facial-feature,four,model,comparably,'speed up',train,help,reveal,Moreover,need,semantic,'The relationship',can,mathematics,follow,Evaluating,previous,analyze,disambiguate,choose,hand-written,prepare,apply,'crop up',ass,'fewer error',devise,separate,'despite that',encode,remove,call,frequency,Once,get,each,preprocessed,belong,depict,substitute,insert,delete,investigate,conform,consider,'limit range',Current,'that indicate',/,difficult,'noun phrase',concern,'refer to','to use',successive,Therefore,reference,'and increase','in agreement',surpass,'higher performance',solely,develop,'that violate',scheme,correct,fail,'in actuality',thus,score,'to explain',occur,instance,'divide up',VTB,understand,most,overall,particularly,successful,number,method,best-performing,deal,match,'to achieve',relevant,Because,appearance,Whereas,approach,create,evaluate,'In view',consideration,Each,restriction,cause,'to fail',simultaneously,'that appear',lose,'accord to','face track',case,into,that,prevent,over,'have show',in,limit,motivate,the,In,require,dimension,'spend wait','flash frame',problem,occurrence,information-based,feature,characteristic,face,'Based on',trade-off,million,10,well-known,character,'our datasets',on,from,The,transform,those,pair-wise-based,more,separable,query,follows:,difference,themselves,reflect,variation,datasets,'a greater',Regarding,high-dimensional,cost,'As show in',suggest,hundred,contribution,threefold,Third,retrieval,facilitate,database,initial,optimization,promise,envision,'show in',larger,besides,an,'would incur',scale,reduce,set,region,.,sufficiently,insight,boost,again,Work,On,'the topic','user particular','s interest',inthe,aim,'solve identify the','make recommendation','incur , not','ours that',Zha,',',Recommend-Me,formulate,suggestion,'search for',their,'their tendency formulate','ambiguous query',existence,'attempt at this',sort,'a technical',work,'differentiate from other study in','In contrast','in may','context suffer',double,'ESS Recommend-Me','ESR differ in that they have different approach',construct,compute,'The detail how we','conclude the',step,Select,candidate,item,subsequent,importantly,attract,over-segmenting,'greedy ?>','search iteratively','< ? merge',algorithm,two,together,until,whole,image,become,single,Find,will,'be pool','top pool',Group,enumerate,'likely overlap','merge do','region would be perceive',user,'maximal will',clique,'that consistent',Formulate,recommendation,'A representative',By,'hence propose','branch-and-bound solve',space,'have be eliminate',;,'this be','bound \" ?>','be be be','assign grammatical these member','upper but don know Inparticular can','bind I \t what what they','for \" be',which,'the the','quality quality compute','function function function','could could','take take','any any','of on of of','member //<The member','part rewrite part','. .','Those part',histogram,constrain,'smaller than',what,'can be use','And let',Letting,'pair //<the guess','nod rewrite .>','Dividing up','cover can be do','straightforwardly good if it correct','utilize //<The rewrite .>',branch,'essential determine //<Or determine ?','requirement whether \" extent \" ?>','branch-and-bound algorithm','Let us assume that','formula similarity Intersection',', Histogram','will use','will NHI',rely,'clearly //<I not what mean context you \" derive','observe m sure observe this Do mean ?','Inspired write','the the the the the','algorithm algorithm rewrite algorithm','work best-first //<The describe you In describe work','manner original way decide contrast way .>','algorithm \" The rewrite','examine //<\" unclear guess .>',next,repeat,'be reach',reach,There,constraint,'be satisfy',branch-and-bound,node,'be attach',original,satisfy,'X this organization',organization,If,by,'divisive //<the rewrite guess .>',we,split,hierarchy,$k$-means,hierarchical,Finally,unify,'the both','illustratie this',locate,'recommendations\"','hit \"',them,pesenting,annotation,'existin a','will provide','VOC or','challenge not',simply,evaluation,'divide \" me \"','the the the the','size size average size size','of of of of','all all all all','possible possible possible possible','region region region region','pair //< pair pair pair','form \" Do you mean \" \" or \"','region unclear ?>',employ,'a BoF','use dense','a Different-of-Gaussian (',DoG,),'of of',sky,'etc. from','first introduce',channel,RGB,'.72\% of',build,nearly,overlap,'The Bron-Kerbosch',report,'and of',average,'80 .27\%',hit,false,'in place',top,background,(,tree,roads,easily,second,lack,manual,windows,humans,about,not,count,if,interest,hint,explore,still,helpful,Clearly,realize,performance,influence,'\\MATH','can obtain',pair,similarity,Thisgives,chance,annotate,improve,precision,unexpected,drop,Figure,5(,circumstance,2000,10000,74,'.67\%',81,'.97\%',meanwhile,2,.27,1,.78,It,worth,note,keep,always,good,only,robustness,comparison,technique,any,for,around,'20\%',due,fact,our,significant,b,another,when,decline,efficiency,improvement,visit,part,total,search,order,extra,local,opitimals,all,time,exhaustive,'This will be',practical,application,'\\REF',example,byRecommend-Me,We,'oursystem make',name,visual,Given,'impose condition on',how,frequent,Such,rapidly,refine,An,solution,'also present',To,knowledge,'attempt at',target}
+@attribute st_samestem_binarized {0,1}
+@attribute s_pos {VBN,'MD PPR',JJ,IN,DET,NN,NNS,'VBP PPR',VB,VBZ,PRP,VBP,WRB,RB,'MD POS',VBG,'IN POS',MD,NNP,'VBD POS','VBD PPR',VBD,CC,'MD VB PPR','VB POS','JJ POS','CC PPR','VBZ PPR',CD,'VB PPR',JJS,'RB PPR','NN POS',TO,JJR,'NNS POS',PPR,'JJ PPR','NN NN PPR','IN PPR','VBG PPR','VBN POS','JJ NN PPR','NN PPR',PPS,'JJR NN POS','FW POS',WDT,'VBN PPR','NNP POS',PRPS,'TO PPR',PP,'VBG POS','PPC PPR','JJ NN POS','JJ IN POS','PRPS PPR','NN PPS','PRP POS','NNP VB RB NN JJ POS','NNS JJ NNS PRPS POS','VBZ PPS','CD PPR','RB POS','VBP VBN PPR','PRPS POS','JJ VB PPR','NN VB PPR','PPC POS','EX POS','PRP VB POS','VB NN PPS','NNS LRB RRB NN','PRP PPR','NN DET POS','NNS PPR','NNS IN PPR','VBD RB PPR',LRB,RRB,'DET POS','VBP POS',POS,'CD POS',RBR,'IN PRPS PPR','NN VBN JJ POS'}
+@attribute t_pos {VB,VBZ,JJ,VBG,NNS,VBN,NN,VBD,IN,DET,VBP,RB,CC,'IN PPR',NNP,MD,'VBG POS','CD POS',JJS,'VB PPR','JJ POS','VB POS','MD PPR','IN POS','NN POS','VBZ PPR',JJR,'TO PPR','MD POS','NNS PPR',PRP,'JJ PPR',PPR,'JJR PPR','NN NN POS','PRP PPR',RBR,'DET POS',CD,'NN PPR',PRPS,'VBN POS',TO,WRB,POS,PP,'JJR POS',SYM,'CC PPR','VBG PPR','PRPS POS',PPS,'DET PPR','IN VBN POS','VBZ POS','VB VBG POS','NNS PPC PPR','PRP POS','PRPS NN PPR','NN IN POS','JJ IN JJ NNS POS','NNP PPR','NNP VB IN IN PRP VB JJ POS','DET NNS WRB POS','JJ SYM','sym> PP POS','NNS MD VB PPR','RB PPR','VB VBN PPR','VBG PPR SYM','VBZ VBZ POS','JJ JJ DET POS','JJ CC VB VB NNP PPR','JJ PRP NN WP WP POS','IN PPR PPR',WDT,'IN IN IN POS','NNS nnp> POS','NN VB POS','SYM SYM',WP,'MD VB PPR','JJ nnp> POS','NNS VB SYM','VBN MD VB PPR','RB RB IN PRP PPR','JJ nnp> VB SYM','JJ VB nnp> VB PPR','NN IN PPR NN PPR SYM','VB PRP VB POS','NNS NN POS','PPC POS','RB nnp> RB WP NNS NN PRP PPR PPR','JJ NN JJ JJ DET NNP JJ PPR','VBN PPR','DET DET DET DET POS','NN NN VB POS','NN JJ nnp> VBZ PRP IN VBZ POS','NN JJ NN VBN NN NN SYM','NN PPR DET PPR','VBZ NN JJ NN SYM',EX,'NNP DET POS','JJ nnp> VB NN SYM','NNP PPS','VBN PPR PRP PPR','DET DET DET POS','NN NN JJ NN POS','JJ JJ JJ PPR','NN NN NN POS','NNS sym> NNS NNS POS','VBN PPR NNP PRP JJ PPR PPR CC PPR','NNS JJ SYM','DET JJ NN',RRB,'PP POS','CC POS',LRB,'DET MD PPR','VB NNS POS'}
+@attribute st_precede_binarized {0,1}
+@attribute st_follow_binarized {0,1}
+@attribute class {stem,syn,para,unaligned,wa,exact}
+
+@data
+examined,examine,0,examine,examine,1,VBN,VB,1,1,stem
+'will illustrate',illustrates,0,'will illustrate',illustrate,0,'MD PPR',VBZ,1,1,stem
+various,different,0,various,different,0,JJ,JJ,0,1,syn
+Behind,Underlying,0,Behind,Underlying,0,IN,VBG,1,0,syn
+some,certain,0,some,certain,0,DET,JJ,1,1,syn
+change,changes,0,change,change,1,NN,NNS,1,1,stem
+ways,manners,0,ways,manners,0,NNS,NNS,1,1,syn
+gained,received,0,gain,receive,0,VBN,VBN,1,1,syn
+'are claimed',claim,0,'be claim',claim,0,'VBP PPR',NN,1,1,para
+work,study,0,work,study,0,NN,NN,1,1,syn
+assume,assumed,0,assume,assume,1,VB,VBN,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+use,used,0,use,use,1,NN,VBN,1,0,stem
+While,Although,0,While,Although,0,IN,IN,1,1,syn
+use,used,0,use,use,1,NN,VBN,1,1,stem
+Because,As,0,Because,As,0,IN,IN,1,1,syn
+represents,denotes,0,represent,denote,0,VBZ,NNS,1,1,syn
+they,these,0,they,these,0,PRP,DET,0,0,syn
+are,were,0,be,be,1,VBP,VBD,0,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+when,as,0,when,as,0,WRB,IN,1,1,syn
+is,are,0,be,be,1,VBZ,VBP,1,0,stem
+shown,given,0,show,give,0,VBN,VBN,0,1,syn
+additionally,also,0,additionally,also,0,RB,RB,1,0,syn
+use,used,0,use,use,1,NN,VBN,0,1,stem
+'will show',show,0,'will show',show,0,'MD POS',NN,1,1,stem
+shows,gives,0,show,give,0,NNS,VBZ,1,1,syn
+while,but,0,while,but,0,IN,CC,1,0,syn
+changing,varying,0,change,vary,0,VBG,VBG,0,0,syn
+'after that',thereafter,0,'after that',thereafter,0,'IN POS',RB,0,1,para
+corpus,data,0,corpus,datum,0,NNS,NNS,1,1,syn
+would,does,0,would,do,0,MD,VBZ,0,1,syn
+seem,appear,0,seem,appear,0,VB,VB,1,1,syn
+Especially,'In particular',0,Especially,'In particular',0,RB,'IN PPR',1,1,para
+still,remain,0,still,remain,0,RB,VB,1,1,syn
+'could find',found,0,'could find',find,0,'MD PPR',VBN,1,1,para
+major,main,0,major,main,0,JJ,JJ,1,1,syn
+such,these,0,such,these,0,JJ,DET,1,1,syn
+major,main,0,major,main,0,JJ,JJ,1,1,syn
+Firstly,First,0,Firstly,First,0,NNP,NNP,1,1,syn
+begin,begins,0,begin,begin,1,VB,VBZ,1,1,stem
+while,whereas,0,while,whereas,0,IN,IN,0,0,syn
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,syn
+take,takes,0,take,take,1,VB,VBZ,0,0,stem
+while,whereas,0,while,whereas,0,IN,IN,0,0,syn
+take,takes,0,take,take,1,VB,VBZ,0,0,stem
+forms,form,0,form,form,1,NNS,NN,0,0,stem
+is,arises,0,be,arise,0,VBZ,VBZ,1,0,syn
+take,has,0,take,have,0,VB,VBZ,1,1,syn
+while,although,0,while,although,0,IN,IN,1,1,syn
+'did decrease',decreased,0,'do decrease',decrease,0,'VBD POS',VBN,1,1,para
+'were left',remained,0,'be leave',remain,0,'VBD PPR',VBN,0,0,para
+while,whereas,0,while,whereas,0,IN,IN,1,1,syn
+'would not',cannot,0,'would not',cannot,0,'MD PPR',NN,0,0,para
+usage,use,0,usage,use,0,NN,NN,1,1,syn
+some,other,0,some,other,0,DET,JJ,0,1,syn
+might,may,0,may,may,1,MD,MD,1,1,syn
+shows,gives,0,show,give,0,NNS,VBZ,1,1,syn
+shows,plots,0,show,plot,0,NNS,NNS,1,1,syn
+represented,denoted,0,represent,denote,0,VBN,NN,1,1,syn
+draw,plot,0,draw,plot,0,NN,NN,1,0,syn
+full,complete,0,full,complete,0,JJ,JJ,0,1,syn
+'could give',achieved,0,'could give',achieve,0,'MD PPR',VBN,1,1,para
+points,percent,0,point,percent,0,NNS,NN,1,1,syn
+points,percent,0,point,percent,0,NNS,NN,1,0,syn
+would,does,0,would,do,0,MD,VBZ,0,1,syn
+would,could,0,would,could,0,MD,MD,1,0,syn
+outline,overview,0,outline,overview,0,NN,NN,0,1,syn
+show,give,0,show,give,0,NN,VB,1,1,syn
+'could find',found,0,'could find',find,0,'MD PPR',VBN,1,1,para
+regarded,mistook,0,regard,mistake,0,JJ,NN,1,1,syn
+marks,punctuation,0,mark,punctuation,0,NNS,NN,1,1,syn
+kind,type,0,kind,type,0,NN,NN,1,1,syn
+gave,assigned,0,give,assign,0,VBD,VBN,1,1,syn
+conversation,colloquial,0,conversation,colloquial,0,NN,NN,1,1,syn
+imperatives,imperative,0,imperative,imperative,1,NNS,JJ,0,0,stem
+and,or,0,and,or,0,CC,CC,0,0,syn
+questions,question,0,question,question,1,NNS,NN,0,1,stem
+'would be confused',confused,0,'would be confuse',confuse,0,'MD VB PPR',JJ,0,0,para
+'complement for',complementing,0,'complement for',complement,0,'VB POS',VBG,1,0,para
+'would hardly',cannot,0,'would hardly',cannot,0,'MD PPR',NN,0,1,para
+only,merely,0,only,merely,0,RB,RB,1,1,syn
+examined,examine,0,examine,examine,1,VBN,VB,1,1,stem
+would,could,0,would,could,0,MD,MD,1,1,syn
+portable,ported,0,portable,port,0,JJ,NN,1,1,stem
+give,provide,0,give,provide,0,VB,VB,1,1,syn
+give,provide,0,give,provide,0,VB,VB,1,1,syn
+'such functions',functions,0,'such function',function,0,'JJ POS',NNS,1,1,para
+shows,gives,0,show,give,0,NNS,VBZ,1,1,syn
+With,Using,0,With,Using,0,IN,VBG,1,1,syn
+contain,contains,0,contain,contain,1,VB,VBZ,1,0,stem
+'and gives',with,0,'and give',with,0,'CC PPR',IN,1,1,para
+present,this,0,present,this,0,JJ,DET,0,0,syn
+work,study,0,work,study,0,NN,NN,0,1,syn
+'should include',includes,0,'should include',include,0,'MD PPR',VBZ,1,1,stem
+various,different,0,various,different,0,JJ,JJ,1,1,syn
+'has achieved',achieved,0,'have achieve',achieve,0,'VBZ PPR',VBN,1,1,stem
+like,including,0,like,include,0,IN,VBG,0,1,syn
+Therefore,Thus,0,Therefore,Thus,0,RB,RB,1,1,syn
+find,determine,0,find,determine,0,VB,VB,1,1,syn
+from,'in comparing',0,from,'in compare',0,IN,'IN PPR',1,1,para
+Though,However,0,Though,However,0,IN,RB,1,1,syn
+about,whether,0,about,whether,0,IN,IN,1,1,syn
+compare,comparing,0,compare,compare,1,VB,VBG,1,1,syn
+labeling,'labeling problem',0,label,'label problem',0,VBG,'VBG POS',1,1,para
+keep,retains,0,keep,retain,0,VB,VBZ,1,1,syn
+as,since,0,as,since,0,IN,IN,1,1,syn
+One,'One method',0,One,'One method',0,CD,'CD POS',1,1,para
+puts,places,0,put,place,0,NNS,NNS,1,1,syn
+rest,remaining,0,rest,remain,0,NN,VBG,1,1,syn
+get,acquire,0,get,acquire,0,VB,VB,1,1,syn
+divide,divided,0,divide,divide,1,NN,VBN,1,0,stem
+Secondly,Next,0,Secondly,Next,0,RB,NNP,1,1,syn
+Thirdly,Then,0,Thirdly,Then,0,NNP,RB,1,1,syn
+'have sampled',sampled,0,'have sample',sample,0,'VB PPR',VBN,1,1,stem
+extract,extracted,0,extract,extract,1,NN,VBN,1,1,stem
+'have obtained',obtained,0,'have obtain',obtain,0,'VB PPR',VBN,1,1,stem
+showed,indicated,0,show,indicate,0,VBD,JJ,1,1,syn
+use,used,0,use,use,1,NN,VBN,1,1,stem
+use,used,0,use,use,1,NN,VBN,1,1,stem
+'were ranged',ranged,0,'be range',range,0,'VBD PPR',VBN,1,1,para
+were,performed,0,be,perform,0,VBD,VBN,0,1,syn
+are,were,0,be,be,1,VBP,VBD,1,0,stem
+It,This,0,It,This,0,PRP,DET,1,1,syn
+were,performed,0,be,perform,0,VBD,VBN,1,1,syn
+worst,lowest,0,bad,lowest,0,JJS,JJS,1,1,syn
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+remarkable,substantial,0,remarkable,substantial,0,JJ,JJ,1,1,syn
+investigation,investigations,0,investigation,investigation,1,NN,NNS,1,1,stem
+'not sufficient',insufficient,0,'not sufficient',insufficient,0,'RB PPR',JJ,1,1,para
+affects,affected,0,affect,affect,1,VBZ,JJ,1,1,stem
+'After all',Nevertheless,0,'After all',Nevertheless,0,'IN POS',RB,1,1,para
+'not sufficient',insufficient,0,'not sufficient',insufficient,0,'RB PPR',JJ,0,0,para
+suggested,'have suggested',0,suggest,'have suggest',0,VBN,'VB PPR',0,0,stem
+Particularly,'In particular',0,Particularly,'In particular',0,RB,'IN PPR',1,1,para
+Also,Furthermore,0,Also,Furthermore,0,RB,RB,1,1,syn
+even,also,0,even,also,0,RB,RB,1,1,syn
+show,display,0,show,display,0,NN,NN,1,1,syn
+with,'by using',0,with,'by use',0,IN,'IN PPR',1,1,para
+fine-grainedness,'fine-grained nature',0,fine-grainedness,'fine-grained nature',0,JJ,'JJ POS',1,1,para
+explored,'have explored',0,explore,'have explore',0,NN,'VB POS',1,1,stem
+increase,increasing,0,increase,increase,1,NN,VBG,1,1,stem
+perspectives,viewpoint,0,perspective,viewpoint,0,NNS,NN,1,1,syn
+appropriateness,validity,0,appropriateness,validity,0,NN,NN,1,1,syn
+It,WordNet,0,It,WordNet,0,PRP,NNP,1,1,syn
+describe,'will describe',0,describe,'will describe',0,VB,'MD PPR',1,1,stem
+shows,indicates,0,show,indicate,0,NNS,VBZ,1,1,syn
+far,very,0,far,very,0,RB,RB,1,1,syn
+problem,issue,0,problem,issue,0,NN,NN,1,1,syn
+offering,'that offers',0,offer,'that offer',0,NN,'IN POS',1,1,para
+this,such,0,this,such,0,DET,JJ,1,0,syn
+showed,shows,0,show,show,1,VBD,NNS,1,1,stem
+'superiority of','improvement over',0,'superiority of','improvement over',0,'NN POS','NN POS',1,1,para
+incorporating,'that incorporates',0,incorporate,'that incorporate',0,VBG,'IN PPR',1,1,para
+Also,Furthermore,0,Also,Furthermore,0,RB,RB,1,1,syn
+problems,issues,0,problem,issue,0,NNS,NNS,1,1,syn
+to,'in achieving',0,to,'in achieve',0,TO,'IN PPR',1,0,para
+fine-grainedness,'fine-grained nature',0,fine-grainedness,'fine-grained nature',0,JJ,'JJ POS',1,1,para
+'not appropriate',inappropriate,0,'not appropriate',inappropriate,0,'RB PPR',JJ,1,1,para
+Especially,'In particular',0,Especially,'In particular',0,RB,'IN PPR',1,1,para
+receiving,'has received',0,receive,'have receive',0,VBG,'VBZ PPR',1,1,para
+Particularly,'In particular',0,Particularly,'In particular',0,RB,'IN PPR',1,1,para
+exist,are,0,exist,be,0,VB,VBP,1,1,syn
+much,many,0,much,many,0,RB,JJ,1,1,syn
+exist,are,0,exist,be,0,VB,VBP,1,1,syn
+given,provided,0,give,provide,0,VBN,VBN,1,1,syn
+use,'have used',0,use,'have use',0,NN,'VB PPR',1,1,stem
+considerable,substantial,0,considerable,substantial,0,JJ,JJ,1,0,syn
+poorer,worse,0,poor,bad,0,JJR,JJR,1,1,syn
+However,Nonetheless,0,However,Nonetheless,0,RB,RB,1,1,syn
+are,was,0,be,be,1,VBP,VBD,1,1,stem
+smaller,less,0,smaller,le,0,JJR,CC,1,1,syn
+'not adequate',inadequate,0,'not adequate',inadequate,0,'RB PPR',JJ,1,1,para
+strongly,well,0,strongly,well,0,RB,RB,1,1,syn
+by,because,0,by,because,0,IN,IN,1,1,syn
+saw,observed,0,see,observe,0,NN,JJ,1,1,syn
+Also,'In addition',0,Also,'In addition',0,RB,'IN POS',1,1,para
+being,'to be',0,be,'to be',0,VBG,'TO PPR',1,1,para
+with,using,0,with,use,0,IN,VBG,1,0,syn
+being,'to be',0,be,'to be',0,VBG,'TO PPR',1,1,stem
+'are included',included,0,'be include',include,0,'VBP PPR',VBN,1,1,para
+is,'would be',0,be,'would be',0,VBZ,'MD PPR',1,1,stem
+consumes,'would consume',0,consume,'would consume',0,NNS,'MD PPR',1,1,stem
+decrease,'would decrease',0,decrease,'would decrease',0,NN,'MD POS',0,1,stem
+decomposes,'breaks down',0,decompose,'break down',0,NNS,'NNS PPR',1,1,para
+such,so,0,such,so,0,JJ,RB,1,1,syn
+assume,assuming,0,assume,assume,1,VB,VBG,1,1,stem
+such,so,0,such,so,0,JJ,RB,0,1,syn
+it,they,0,it,they,0,PRP,PRP,1,1,syn
+employ,use,0,employ,use,0,VB,NN,1,0,syn
+employ,used,0,employ,use,0,VB,VBN,1,1,syn
+skewness,skew,0,skewness,skew,0,NNS,NN,1,1,stem
+decomposed,'broken down',0,decompose,'break down',0,NN,'JJ PPR',1,1,para
+decomposed,'broken down',0,decompose,'break down',0,NN,'JJ PPR',1,1,para
+by,using,0,by,use,0,IN,VBG,1,1,syn
+employ,use,0,employ,use,0,VB,NN,1,0,syn
+shows,presents,0,show,present,0,NNS,NNS,1,1,syn
+'system NII-2',NII-2system,0,'system NII-2',NII-2system,0,'NN POS',JJ,1,1,para
+since,because,0,since,because,0,IN,IN,0,1,syn
+fewer,less,0,fewer,le,0,JJR,CC,1,0,syn
+simple,simpler,0,simple,simple,1,JJ,JJR,1,1,stem
+'speeds up',increases,0,'speed up',increase,0,'NNS POS',NNS,1,1,para
+show,present,0,show,present,0,NN,JJ,1,0,syn
+'list,','table,',0,'list,','table,',0,PPR,PPR,1,1,syn
+'system NII-2',NII-2system,0,'system NII-2',NII-2system,0,'NN POS',JJ,1,1,para
+direction,end,0,direction,end,0,NN,NN,1,1,syn
+very,as,0,very,as,0,RB,IN,1,1,syn
+high,highest,0,high,high,1,JJ,JJS,0,1,stem
+unmatured,immature,0,unmatured,immature,0,NN,NN,1,1,stem
+leading,with,0,lead,with,0,VBG,IN,1,1,syn
+outperforms,outperforming,0,outperform,outperform,1,VBZ,VBG,1,1,stem
+growing,growth,0,grow,growth,0,VBG,NN,1,1,stem
+'available easier','more available',0,'available easy','more available',0,'JJ PPR','JJR PPR',1,1,para
+mentioned,above-mentioned,0,mention,above-mentioned,0,VBN,JJ,1,1,syn
+chosen,specified,0,choose,specify,0,VBN,JJ,1,1,syn
+relevant,relevancy,0,relevant,relevancy,0,JJ,NN,1,1,stem
+employ,use,0,employ,use,0,VB,NN,1,1,syn
+'can provide',provide,0,'can provide',provide,0,'MD PPR',VB,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+'face retrieval based',face-based,0,'face retrieval base',face-based,0,'NN NN PPR',JJ,1,1,para
+doing,performing,0,do,perform,0,VBG,VBG,1,1,syn
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+use,used,0,use,use,1,NN,VBN,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,0,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,0,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+consists,consisted,0,consist,consist,1,VBZ,VBN,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+persons,individuals,0,person,individual,0,NNS,NNS,1,1,syn
+retrieved,retrieved,1,retrieve,retrieve,1,VBN,VBN,0,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+PCA,'principle component analysis',0,PCA,'principle component analysis',0,NNP,'NN NN POS',1,1,para
+popularly,commonly,0,popularly,commonly,0,RB,RB,1,1,syn
+indicates,indicated,0,indicate,indicate,1,VBZ,JJ,1,1,stem
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,1,stem
+performs,performed,0,perform,perform,1,VBZ,VBN,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+being,at,0,be,at,0,VBG,IN,1,0,syn
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,1,stem
+produces,produced,0,produce,produce,1,VBZ,VBN,1,1,stem
+present,presented,0,present,present,1,JJ,VBN,1,1,stem
+rank,ranking,0,rank,rank,1,NN,JJ,1,1,syn
+by,using,0,by,use,0,IN,VBG,1,1,syn
+select,selected,0,select,select,1,JJ,JJ,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+'is constructed','we constructed',0,'be construct','we construct',0,'VBZ PPR','PRP PPR',0,0,para
+get,obtain,0,get,obtain,0,VB,VB,1,0,syn
+propose,proposed,0,propose,propose,1,VB,JJ,1,0,stem
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+show,showed,0,show,show,1,NN,VBD,1,0,stem
+attracts,'has attracted',0,attract,'have attract',0,VBZ,'VBZ PPR',1,0,stem
+'without costly',cheaply,0,'without costly',cheaply,0,'IN PPR',RB,1,1,para
+fast,faster,0,fast,fast,1,RB,RBR,1,1,stem
+includes,takes,0,include,take,0,VBZ,VBZ,1,1,syn
+containing,contain,0,contain,contain,1,VBG,VB,1,0,stem
+since,because,0,since,because,0,IN,IN,1,1,syn
+yet,but,0,yet,but,0,RB,CC,1,1,syn
+case,situation,0,case,situation,0,NN,NN,1,1,syn
+since,because,0,since,because,0,IN,IN,1,0,syn
+quantities,'a quantity',0,quantity,'a quantity',0,NNS,'DET POS',1,1,stem
+motion,motions,0,motion,motion,1,NN,NNS,1,1,stem
+low,lower,0,low,low,1,JJ,JJR,1,1,stem
+employ,use,0,employ,use,0,VB,NN,1,1,syn
+assume,view,0,assume,view,0,VB,NN,1,0,syn
+deformable,deformed,0,deformable,deform,0,NN,VBN,1,0,stem
+none,neither,0,none,neither,0,NN,DET,1,1,syn
+considered,assumed,0,consider,assume,0,VBN,VBN,1,1,syn
+learn,'is learned',0,learn,'be learn',0,VB,'VBZ PPR',0,0,para
+having,with,0,have,with,0,VBG,IN,1,0,syn
+get,obtain,0,get,obtain,0,VB,VB,1,1,syn
+by,using,0,by,use,0,IN,VBG,1,1,syn
+graph,one,0,graph,one,0,NN,CD,1,1,syn
+'good point',advantage,0,'good point',advantage,0,'JJ POS',NN,0,1,para
+by,using,0,by,use,0,IN,VBG,1,0,syn
+'can form',forms,0,'can form',form,0,'MD POS',NNS,1,1,stem
+'do clustering',cluster,0,'do cluster',cluster,0,'VB PPR',NN,1,1,para
+get,obtain,0,get,obtain,0,VB,VB,1,1,syn
+contains,contained,0,contain,contain,1,VBZ,JJ,1,1,stem
+by,using,0,by,use,0,IN,VBG,1,1,syn
+'are stopped',stop,0,'be stop',stop,0,'VBP PPR',NN,1,1,para
+balance,balancing,0,balance,balance,1,NN,NN,1,1,stem
+'existing approaches',ones,0,'exist approach',one,0,'JJ POS',NNS,1,1,para
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,stem
+makes,ranks,0,make,rank,0,VBZ,NNS,1,1,syn
+as,using,0,as,use,0,IN,VBG,1,1,syn
+popular,common,0,popular,common,0,JJ,JJ,1,1,syn
+by,using,0,by,use,0,IN,VBG,1,1,syn
+adopted,used,0,adopt,use,0,VBN,VBN,1,1,syn
+show,'have proven',0,show,'have prove',0,NN,'VB PPR',1,1,para
+decomposing,'breaking down',0,decompose,'break down',0,VBG,'NN PPR',1,1,para
+with,containing,0,with,contain,0,IN,VBG,1,1,syn
+show,'have received',0,show,'have receive',0,NN,'VB PPR',1,1,para
+remaining,remainder,0,remain,remainder,0,VBG,NN,1,1,syn
+neighbor,neighboring,0,neighbor,neighbor,1,NN,JJ,1,1,stem
+neighbor,neighboring,0,neighbor,neighbor,1,NN,JJ,1,1,stem
+Specifically,'In particular',0,Specifically,'In particular',0,RB,'IN PPR',1,1,para
+it,its,0,it,it,1,PRP,PRPS,1,0,stem
+neighbor,neighboring,0,neighbor,neighbor,1,NN,JJ,0,1,stem
+neighbor,neighboring,0,neighbor,neighbor,1,NN,JJ,1,1,stem
+by,using,0,by,use,0,IN,VBG,1,1,syn
+being,as,0,be,as,0,VBG,IN,1,1,syn
+being,as,0,be,as,0,VBG,IN,1,0,syn
+length,long,0,length,long,0,NN,RB,1,1,stem
+testing,test,0,test,test,1,NN,NN,0,1,syn
+neighbor,neighboring,0,neighbor,neighbor,1,NN,JJ,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+show,list,0,show,list,0,NN,NN,1,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+compare,compared,0,compare,compare,1,VB,VBN,1,1,stem
+superimpose,superimposed,0,superimpose,superimpose,1,NN,VBN,1,1,stem
+divided,divide,0,divide,divide,1,VBN,NN,1,1,stem
+employed,used,0,employ,use,0,VBN,VBN,1,1,syn
+'have shown',showed,0,'have show',show,0,'VB PPR',VBD,1,1,stem
+regards,regard,0,regard,regard,1,VBZ,NN,1,1,stem
+each,a,0,each,a,0,DET,DET,1,1,syn
+lower,smaller,0,low,smaller,0,JJR,JJR,1,1,syn
+increase,lengthen,0,increase,lengthen,0,NN,VB,1,1,syn
+',',and,0,',',and,0,PPR,CC,1,1,syn
+well,accurately,0,well,accurately,0,RB,RB,1,1,syn
+efficiently,efficient,0,efficiently,efficient,0,RB,JJ,1,0,stem
+forms,formed,0,form,form,1,NNS,VBN,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,0,1,stem
+'will make',makes,0,'will make',make,0,'MD PPR',VBZ,1,1,stem
+comparable,similar,0,comparable,similar,0,JJ,JJ,1,0,syn
+seriously,dramatically,0,seriously,dramatically,0,RB,RB,1,1,syn
+like,'used in',0,like,'use in',0,IN,'VBN POS',1,1,para
+automatically,automatic,0,automatically,automatic,0,RB,JJ,1,0,stem
+'according to','by considering',0,'accord to','by consider',0,'VBG PPR','IN PPR',1,1,para
+affect,damage,0,affect,damage,0,VB,NN,1,1,syn
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+It,These,0,It,These,0,PRP,DET,1,0,syn
+consists,consisted,0,consist,consist,1,VBZ,VBN,0,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+varies,varied,0,vary,vary,1,VBZ,JJ,1,1,stem
+has,produced,0,have,produce,0,VBZ,VBN,1,1,syn
+employs,uses,0,employ,use,0,VBZ,NNS,1,1,syn
+smaller,fewer,0,smaller,fewer,0,JJR,JJR,1,1,syn
+result,resulting,0,result,result,1,NN,VBG,1,1,stem
+employing,using,0,employ,use,0,VBG,VBG,1,1,stem
+presented,described,0,present,describe,0,VBN,VBN,1,1,syn
+resulted,resultant,0,result,resultant,0,VBN,NN,1,1,stem
+hard,difficulty,0,hard,difficulty,0,JJ,NN,1,0,syn
+significant,important,0,significant,important,0,JJ,JJ,1,1,syn
+predict,predictive,0,predict,predictive,0,VB,JJ,1,1,stem
+idea,goal,0,idea,goal,0,NN,NN,1,1,syn
+find,finding,0,find,find,1,VB,NN,1,1,stem
+equal,equally,0,equal,equally,0,JJ,RB,1,1,stem
+distinguished,distinguishing,0,distinguish,distinguish,1,JJ,VBG,1,1,stem
+reduce,reducinge,0,reduce,reducinge,0,VB,NN,1,1,stem
+it,'doing thisit',0,it,'do thisit',0,PRP,'VBG POS',1,1,para
+It,They,0,It,They,0,PRP,PRP,0,1,syn
+have,hadve,0,have,hadve,0,VB,NN,1,1,stem
+it,'this area',0,it,'this area',0,PRP,'DET POS',1,1,para
+features,ones,0,feature,one,0,NNS,NNS,1,1,syn
+huge,vast,0,huge,vast,0,JJ,JJ,1,1,syn
+or,while,0,or,while,0,CC,IN,1,1,syn
+fast,quickly,0,fast,quickly,0,RB,RB,1,1,syn
+turning,enabling,0,turn,enable,0,VBG,VBG,1,1,syn
+classifying,classify,0,classify,classify,1,VBG,VB,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+reuse,'have reused',0,reuse,'have reuse',0,NN,'VB POS',1,1,stem
+previously,already,0,previously,already,0,RB,RB,0,0,syn
+'will show',showed,0,'will show',show,0,'MD POS',VBD,1,1,stem
+propose,proposed,0,propose,propose,1,VB,JJ,1,1,stem
+propose,proposed,0,propose,propose,1,VB,JJ,1,0,stem
+well,accurately,0,well,accurately,0,RB,RB,1,1,syn
+Actually,However,0,Actually,However,0,RB,RB,1,1,syn
+quick,quickly,0,quick,quickly,0,JJ,RB,1,1,stem
+are,enable,0,be,enable,0,VBP,VB,1,1,syn
+that,to,0,that,to,0,IN,TO,1,0,syn
+incorrect,incorrectly,0,incorrect,incorrectly,0,JJ,RB,1,1,stem
+'have implemented',implemented,0,'have implement',implement,0,'VB PPR',VBN,1,1,stem
+fully,full,0,fully,full,0,RB,JJ,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+correspondent,corresponding,0,correspondent,correspond,0,NN,JJ,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+that,one,0,that,one,0,IN,CD,1,1,syn
+while,and,0,while,and,0,IN,CC,1,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+run,ran,0,run,run,1,NN,VBD,1,0,stem
+run,was,0,run,be,0,NN,VBD,1,0,syn
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+smaller,shorter,0,smaller,short,0,JJR,JJR,1,1,syn
+resulted,yielded,0,result,yield,0,VBN,VBN,1,1,syn
+approximate,approximately,0,approximate,approximately,0,JJ,RB,1,1,stem
+If,When,0,If,When,0,IN,WRB,1,1,syn
+rejects,rejected,0,reject,reject,1,VBZ,VBN,1,1,stem
+runs,ran,0,run,run,1,NNS,VBD,1,1,stem
+are,achieving,0,be,achieve,0,VBP,VBG,0,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+rejects,rejected,0,reject,reject,1,VBZ,VBN,1,0,stem
+fast,quickly,0,fast,quickly,0,RB,RB,1,0,syn
+process,processed,0,process,process,1,NN,JJ,1,1,stem
+is,of,0,be,of,0,VBZ,IN,1,1,syn
+runs,ran,0,run,run,1,NNS,VBD,1,1,stem
+paper,research,0,paper,research,0,NN,NN,1,1,syn
+show,demonstrated,0,show,demonstrate,0,NN,VBN,1,1,syn
+relevancy,relevance,0,relevancy,relevance,0,NN,NN,0,1,syn
+resulting,'resulting in',0,result,'result in',0,VBG,'VBG POS',1,0,para
+low,poor,0,low,poor,0,JJ,JJ,0,1,syn
+huge,'much greater',0,huge,'much greater',0,JJ,'JJ PPR',1,1,para
+'compared with',than,0,'compare with',than,0,'VBN POS',IN,1,1,para
+requires,involves,0,require,involve,0,VBZ,VBZ,1,1,syn
+follow,pursued,0,follow,pursue,0,VB,JJ,1,1,syn
+show,demonstrated,0,show,demonstrate,0,NN,VBN,1,1,syn
+can,could,0,can,could,0,MD,MD,1,1,stem
+detect,detected,0,detect,detect,1,VB,VBN,0,1,stem
+group,grouped,0,group,group,1,NN,VBN,1,1,stem
+assume,assumed,0,assume,assume,1,VB,VBN,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+collect,collected,0,collect,collect,1,JJ,VBN,1,0,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+can,could,0,can,could,0,MD,MD,1,1,stem
+person,'people\'s',0,person,'people\\s',0,NN,POS,1,1,syn
+know,knew,0,know,know,1,VB,VBD,1,1,stem
+can,could,0,can,could,0,MD,MD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+firstly,first,0,firstly,first,0,RB,JJ,0,1,stem
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,stem
+needed,'that need',0,need,'that need',0,VBN,'IN POS',1,1,para
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+makes,made,0,make,make,1,VBZ,VBN,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+learns,learned,0,learn,learn,1,VBZ,VBN,1,0,stem
+relevancy,relevance,0,relevancy,relevance,0,NN,NN,0,1,syn
+'for example',e.g.,0,'for example',e.g.,0,'IN POS',PP,1,1,para
+car,cars,0,car,car,1,NN,NNS,1,0,stem
+flag,flags,0,flag,flag,1,NN,NNS,0,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+'generic classifier based',generic-classifier-based,0,'generic classifier base',generic-classifier-based,0,'JJ NN PPR',JJ,1,1,para
+extend,extended,0,extend,extend,1,VB,JJ,1,1,stem
+means,ways,0,mean,ways,0,NNS,NNS,1,1,syn
+return,returned,0,return,return,1,NN,VBN,1,1,stem
+Meanwhile,Further,0,Meanwhile,Further,0,RB,RB,1,1,syn
+relevancy,relevance,0,relevancy,relevance,0,NN,NN,1,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+'for example',e.g.,0,'for example',e.g.,0,'IN POS',PP,1,1,para
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,1,1,para
+proposed,propose,0,propose,propose,1,JJ,VB,1,1,stem
+assume,assumed,0,assume,assume,1,VB,VBN,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+'distance based',distance-based,0,'distance base',distance-based,0,'NN PPR',JJ,1,0,para
+it,this,0,it,this,0,PRP,DET,1,1,syn
+It,This,0,It,This,0,PRP,DET,1,1,syn
+requires,involves,0,require,involve,0,VBZ,VBZ,1,0,syn
+collect,collecting,0,collect,collect,1,JJ,VBG,1,1,stem
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+persons;,people,0,persons;,people,0,PPS,NNS,1,0,syn
+shown,seen,0,show,see,0,VBN,VBN,1,1,stem
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+are,is,0,be,be,1,VBP,VBZ,1,1,stem
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+'e .g',e.g.,0,'e .g',e.g.,0,'NN POS',PP,1,0,para
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+7,seven,0,7,seven,0,CD,CD,1,1,syn
+3,three,0,3,three,0,CD,CD,1,1,syn
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+picked,selected,0,pick,select,0,VBN,JJ,1,1,syn
+7,seven,0,7,seven,0,CD,CD,1,1,syn
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+does,did,0,do,do,1,VBZ,VBD,1,1,stem
+knows,knew,0,know,know,1,VBZ,VBD,1,1,stem
+represent,represented,0,represent,represent,1,VB,VBN,1,1,stem
+persons,people,0,person,people,0,NNS,NNS,1,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+'facial feature',facial-feature,0,'facial feature',facial-feature,0,'JJ POS',JJ,0,1,para
+4,four,0,4,four,0,CD,CD,1,1,syn
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+has,had,0,have,have,1,VBZ,VBD,1,1,stem
+compare,compared,0,compare,compare,1,VB,VBN,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,0,stem
+'facial feature',facial-feature,0,'facial feature',facial-feature,0,'JJ POS',JJ,1,1,para
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+models,modeled,0,model,model,1,NNS,VBN,1,1,stem
+uses,used,0,use,use,1,NNS,VBN,1,1,stem
+uses,used,0,use,use,1,NNS,VBN,1,1,stem
+are,was,0,be,be,1,VBP,VBD,1,1,stem
+can,could,0,can,could,0,MD,MD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+comparable,comparably,0,comparable,comparably,0,JJ,RB,0,0,stem
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,1,stem
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,1,stem
+shown,seen,0,show,see,0,VBN,VBN,1,1,stem
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,0,stem
+indicates,indicate,0,indicate,indicate,1,VBZ,VB,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+shows,demonstrate,0,show,demonstrate,0,NNS,VB,1,1,syn
+outperforms,outperformed,0,outperform,outperform,1,VBZ,VBN,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+speedup,'speed up',0,speedup,'speed up',0,NN,'NN POS',1,1,para
+train,trained,0,train,train,1,NN,JJ,0,0,stem
+use,used,0,use,use,1,NN,VBN,1,1,stem
+helps,helped,0,help,help,1,VBZ,VBN,1,0,stem
+shown,revealed,0,show,reveal,0,VBN,VBN,1,1,syn
+learns,learned,0,learn,learn,1,VBZ,VBN,1,1,stem
+shown,demonstrated,0,show,demonstrate,0,VBN,VBN,1,1,syn
+Therefore,Moreover,0,Therefore,Moreover,0,RB,RB,1,1,syn
+requirements,needs,0,requirement,need,0,NNS,NNS,1,1,syn
+exist,are,0,exist,be,0,VB,VBP,1,1,syn
+semantics,semantic,0,semantics,semantic,0,NNS,NN,1,1,stem
+Relations,'The relationship',0,Relations,'The relationship',0,NNP,'DET POS',1,1,para
+could,can,0,could,can,0,MD,MD,0,1,stem
+mathematical,mathematics,0,mathematical,mathematics,0,JJ,NN,1,1,stem
+follow,follows,0,follow,follow,1,VB,VBZ,1,1,stem
+works,study,0,work,study,0,NNS,NN,1,1,syn
+use,used,0,use,use,1,NN,VBN,1,1,stem
+use,used,0,use,use,1,NN,VBN,0,0,stem
+extract,extracted,0,extract,extract,1,NN,VBN,1,1,stem
+include,included,0,include,include,1,VB,VBN,1,1,stem
+'for example',e.g.,0,'for example',e.g.,0,'IN POS',PP,1,0,para
+Evaluate,Evaluating,0,Evaluate,Evaluating,0,VB,VBG,1,1,stem
+'have shown',showed,0,'have show',show,0,'VB PPR',VBD,1,1,stem
+provides,is,0,provide,be,0,VBZ,VBZ,1,1,syn
+some,many,0,some,many,0,DET,JJ,0,1,syn
+existing,previous,0,exist,previous,0,VBG,JJ,1,0,syn
+adopt,use,0,adopt,use,0,VB,NN,1,1,syn
+achieves,is,0,achieve,be,0,VBZ,VBZ,1,1,syn
+introduce,describe,0,introduce,describe,0,VB,VB,1,1,syn
+analyze,analyzing,0,analyze,analyze,1,VB,NN,1,1,stem
+disambiguate,disambiguating,0,disambiguate,disambiguate,1,NN,VBG,1,1,stem
+choose,chose,0,choose,choose,1,VB,VBD,1,1,stem
+used,uses,0,use,use,1,VBN,NNS,1,1,stem
+'hand written',hand-written,0,'hand write',hand-written,0,'NN PPR',JJ,1,1,para
+prepare,prepared,0,prepare,prepare,1,VB,JJ,1,0,stem
+apply,applied,0,apply,apply,1,VB,VBN,1,0,stem
+given,with,0,give,with,0,VBN,IN,0,1,syn
+growing,'cropping up',0,grow,'crop up',0,VBG,'VBG POS',1,1,para
+quick,quickly,0,quick,quickly,0,JJ,RB,1,1,stem
+'set up',performed,0,'set up',perform,0,'NN POS',VBN,1,1,para
+confirm,assess,0,confirm,ass,0,VB,VB,1,1,syn
+saw,found,0,see,find,0,NN,VBN,1,1,syn
+over,using,0,over,use,0,IN,VBG,1,1,syn
+providing,making,0,provide,make,0,VBG,VBG,1,1,syn
+'less error rate','fewer errors',0,'le error rate','fewer error',0,'JJR NN POS','JJR POS',1,1,para
+propose,devised,0,propose,devise,0,VB,VBN,1,1,syn
+introduced,made,0,introduce,make,0,VBN,VBN,1,1,syn
+separated,separate,0,separate,separate,1,JJ,JJ,1,0,stem
+displaying,display,0,display,display,1,VBG,NN,1,0,stem
+while,'despite that',0,while,'despite that',0,IN,'IN POS',1,0,para
+encoded,encodes,0,encode,encode,1,NN,NNS,1,1,stem
+removed,remove,0,remove,remove,1,VBN,VB,1,1,stem
+called,call,0,call,call,1,VBN,NN,1,1,stem
+applied,used,0,apply,use,0,VBN,VBN,1,1,syn
+frequent,frequency,0,frequent,frequency,0,JJ,NN,1,0,stem
+If,Once,0,If,Once,0,IN,RB,1,1,syn
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,1,1,para
+called,call,0,call,call,1,VBN,NN,1,1,stem
+got,get,0,get,get,1,VBN,VB,1,1,stem
+that,each,0,that,each,0,IN,DET,0,1,syn
+preprocess,preprocessed,0,preprocess,preprocessed,0,NNS,NN,1,1,stem
+'could not',cannot,0,'could not',cannot,0,'MD PPR',NN,1,1,stem
+belong,belonging,0,belong,belong,1,VB,VBG,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+while,but,0,while,but,0,IN,CC,1,1,syn
+contains,lists,0,contain,list,0,VBZ,NNS,1,1,syn
+using,of,0,use,of,0,VBG,IN,1,1,syn
+extend,extended,0,extend,extend,1,VB,JJ,1,1,stem
+use,used,0,use,use,1,NN,VBN,1,1,stem
+call,called,0,call,call,1,NN,VBN,1,1,stem
+depict,depicted,0,depict,depict,1,VB,VBN,1,1,stem
+substituting,substitute,0,substitute,substitute,1,VBG,NN,1,1,stem
+inserting,insert,0,insert,insert,1,VBG,NN,1,1,stem
+deleting,delete,0,delete,delete,1,VBG,VB,1,1,stem
+SnuggleTeX,it,0,SnuggleTeX,it,0,NNP,PRP,1,0,syn
+while,but,0,while,but,0,IN,CC,1,1,syn
+'find out',investigate,0,'find out',investigate,0,'VB POS',VB,1,1,para
+conform,conformed,0,conform,conform,1,VB,NN,1,1,stem
+has,is,0,have,be,0,VBZ,VBZ,0,0,syn
+consider,considered,0,consider,consider,1,VB,VBN,1,1,stem
+sub-part,'limited range',0,sub-part,'limit range',0,JJ,'JJ POS',1,1,para
+Recent,Current,0,Recent,Current,0,JJ,NNP,1,1,syn
+showed,indicated,0,show,indicate,0,VBD,JJ,1,1,syn
+'i .e',including,0,'i .e',include,0,'FW POS',VBG,1,1,para
+indicating,'that indicates',0,indicate,'that indicate',0,VBG,'IN PPR',1,1,para
+showed,revealed,0,show,reveal,0,VBD,VBN,1,1,syn
+or,/,0,or,/,0,CC,SYM,1,1,syn
+hard,difficult,0,hard,difficult,0,JJ,JJ,1,1,syn
+which,and,0,which,and,0,WDT,CC,1,1,syn
+are,was,0,be,be,1,VBP,VBD,1,1,stem
+'shown again',presented,0,'show again',present,0,'VBN PPR',VBN,1,1,para
+one,'noun phrase',0,one,'noun phrase',0,CD,'NN POS',1,0,para
+much,many,0,much,many,0,RB,JJ,1,1,syn
+about,concerning,0,about,concern,0,IN,VBG,1,1,syn
+means,'refers to',0,mean,'refer to',0,NNS,'VBZ PPR',1,1,para
+remained,remaining,0,remain,remain,1,VBN,VBG,1,1,stem
+of,'to using',0,of,'to use',0,IN,'TO PPR',1,1,para
+succession,successive,0,succession,successive,0,NN,JJ,1,1,stem
+Thus,Therefore,0,Thus,Therefore,0,RB,RB,1,1,syn
+helps,enables,0,help,enable,0,VBZ,VBZ,1,1,syn
+referred,referenced,0,refer,reference,0,VBN,NN,1,1,syn
+or,'and increasing',0,or,'and increase',0,CC,'CC PPR',0,1,para
+agree,'in agreement',0,agree,'in agreement',0,VB,'IN POS',1,1,para
+outperforms,surpasses,0,outperform,surpass,0,VBZ,NNS,1,1,syn
+higher,'higher performance',0,higher,'higher performance',0,JJR,'JJR POS',1,1,para
+gives,provides,0,give,provide,0,VBZ,VBZ,1,1,syn
+completely,solely,0,completely,solely,0,RB,RB,1,1,syn
+given,provided,0,give,provide,0,VBN,VBN,1,1,syn
+exploit,develop,0,exploit,develop,0,VB,VB,1,1,syn
+violating,'that violate',0,violate,'that violate',0,VBG,'IN PPR',1,1,para
+scheme,schemes,0,scheme,scheme,1,NN,NNS,1,0,stem
+right,correct,0,right,correct,0,NN,JJ,1,1,syn
+'was failed',failed,0,'be fail',fail,0,'VBD PPR',VBN,1,1,para
+thought,regarded,0,think,regard,0,NN,JJ,1,1,syn
+indeed,'in actuality',0,indeed,'in actuality',0,RB,'IN POS',1,0,para
+so,thus,0,so,thus,0,RB,RB,1,1,syn
+performance,score,0,performance,score,0,NN,NN,1,1,syn
+for,'to explain',0,for,'to explain',0,IN,'TO PPR',1,1,para
+is,occurs,0,be,occur,0,VBZ,VBZ,1,1,syn
+be,provide,0,be,provide,0,VB,VB,1,1,syn
+happen,occur,0,happen,occur,0,VB,VB,1,1,syn
+given,provided,0,give,provide,0,VBN,VBN,1,1,syn
+cases,instances,0,case,instance,0,NNS,NNS,1,1,syn
+divided,'divided up',0,divide,'divide up',0,VBN,'VBN POS',1,1,para
+'can be',include,0,'can be',include,0,'MD PPR',VB,1,1,para
+given,provided,0,give,provide,0,VBN,VBN,1,1,syn
+Besides,Furthermore,0,Besides,Furthermore,0,IN,RB,1,1,syn
+give,gave,0,give,give,1,VB,VBD,1,1,stem
+know,determine,0,know,determine,0,VB,VB,1,1,syn
+'VTB treebank',VTB,0,'VTB treebank',VTB,0,'NNP POS',NNP,0,1,para
+lie,occur,0,lie,occur,0,NN,VB,1,1,syn
+selected,selecting,0,select,select,1,JJ,NN,1,1,stem
+study,provide,0,study,provide,0,NN,VB,1,0,syn
+know,understand,0,know,understand,0,VB,VB,1,1,syn
+top,most,0,top,most,0,JJ,JJS,1,0,syn
+shown,depicted,0,show,depict,0,VBN,VBN,1,1,syn
+whole,overall,0,whole,overall,0,JJ,JJ,1,1,syn
+given,provided,0,give,provide,0,VBN,VBN,1,1,syn
+'in particular',particularly,0,'in particular',particularly,0,'IN PPR',RB,1,1,para
+fruitful,successful,0,fruitful,successful,0,JJ,JJ,1,1,syn
+amount,number,0,amount,number,0,NN,NN,1,1,syn
+ways,methods,0,ways,method,0,NNS,NNS,1,1,syn
+means,'refers to',0,mean,'refer to',0,NNS,'VBZ PPR',1,1,para
+best,best-performing,0,good,best-performing,0,RB,JJ,1,1,syn
+have,achieved,0,have,achieve,0,VB,VBN,1,1,syn
+are,performed,0,be,perform,0,VBP,VBN,1,1,syn
+shown,provided,0,show,provide,0,VBN,VBN,1,1,syn
+cope,deal,0,cope,deal,0,VB,NN,1,1,syn
+grouping,group,0,group,group,1,VBG,NN,1,1,stem
+match,matching,0,match,match,1,NN,JJ,1,0,stem
+for,'to achieve',0,for,'to achieve',0,IN,'TO PPR',0,1,para
+demonstrate,show,0,demonstrate,show,0,VB,NN,1,1,syn
+important,relevant,0,important,relevant,0,JJ,JJ,1,1,syn
+it,this,0,it,this,0,PRP,DET,1,1,syn
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+human,people,0,human,people,0,JJ,NNS,1,1,syn
+detected,found,0,detect,find,0,VBN,VBN,1,1,syn
+since,because,0,since,because,0,IN,IN,0,0,syn
+ones,appearances,0,one,appearance,0,NNS,NNS,1,1,syn
+While,Whereas,0,While,Whereas,0,IN,IN,1,1,syn
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+In,Using,0,In,Using,0,IN,VBG,1,1,syn
+works,approaches,0,work,approach,0,NNS,NNS,1,1,syn
+employ,use,0,employ,use,0,VB,NN,1,1,syn
+compare,compared,0,compare,compare,1,VB,VBN,1,0,stem
+which,and,0,which,and,0,WDT,CC,1,1,syn
+remaining,remainder,0,remain,remainder,0,VBG,NN,1,1,stem
+employed,used,0,employ,use,0,VBN,VBN,1,1,syn
+represents,represented,0,represent,represent,1,VBZ,VBN,0,1,stem
+cluster,clustered,0,cluster,cluster,1,NN,VBN,1,1,stem
+expensive,high,0,expensive,high,0,JJ,JJ,0,1,syn
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+since,because,0,since,because,0,IN,IN,1,1,syn
+use,used,0,use,use,1,NN,VBN,0,1,stem
+use,used,0,use,use,1,NN,VBN,1,1,stem
+create,created,0,create,create,1,VB,VBN,1,1,stem
+was,is,0,be,be,1,VBD,VBZ,1,1,stem
+one,each,0,one,each,0,CD,DET,1,1,syn
+evaluating,evaluate,0,evaluate,evaluate,1,VBG,VB,1,1,syn
+Because,'In view',0,Because,'In view',0,IN,'IN POS',1,1,para
+reasons,considerations,0,reason,consideration,0,NNS,NNS,0,1,syn
+One,Each,0,One,Each,0,CD,DET,1,1,syn
+A,Each,0,A,Each,0,DET,DET,1,1,syn
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+propose,proposed,0,propose,propose,1,VB,JJ,1,0,stem
+demonstrated,shown,0,demonstrate,show,0,VBN,VBN,1,1,syn
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+But,However,0,But,However,0,CC,RB,1,1,syn
+liminations,restrictions,0,liminations,restriction,0,NNS,NNS,1,1,syn
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,stem
+make,causes,0,make,cause,0,VB,NNS,1,1,syn
+failed,'to fail',0,fail,'to fail',0,VBN,'TO PPR',1,1,para
+appear,occur,0,appear,occur,0,VB,VB,1,0,syn
+together,simultaneously,0,together,simultaneously,0,RB,RB,0,1,syn
+appeared,'that appear',0,appear,'that appear',0,VBD,'IN PPR',1,1,para
+since,because,0,since,because,0,IN,IN,1,1,syn
+loss,lost,0,loss,lose,0,NN,VBN,1,1,stem
+contain,containing,0,contain,contain,1,VB,VBG,1,1,stem
+indicates,indicating,0,indicate,indicate,1,VBZ,VBG,1,1,stem
+regarding,'according to',0,regard,'accord to',0,VBG,'VBG PPR',0,1,para
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,para
+case,cases,0,case,case,1,NN,NNS,1,1,unaligned
+to,into,0,to,into,0,TO,IN,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+which,that,0,which,that,0,WDT,IN,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+prevent,prevents,0,prevent,prevent,1,VB,VBZ,1,1,unaligned
+which,that,0,which,that,0,WDT,IN,1,1,unaligned
+that,so,0,that,so,0,IN,RB,1,1,syn
+through,over,0,through,over,0,IN,IN,1,1,unaligned
+are,is,0,be,be,1,VBP,VBZ,1,1,unaligned
+process,processes,0,process,process,1,NN,NNS,1,1,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+for,to,0,for,to,0,IN,TO,0,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,unaligned
+achive,'have shown',0,achive,'have show',0,NN,'VB PPR',1,1,para
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,syn
+limits,limit,0,limit,limit,1,NNS,NN,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+motivate,motivates,0,motivate,motivate,1,VB,NNS,1,1,unaligned
+an,a,0,an,a,0,DET,DET,1,1,unaligned
+which,that,0,which,that,0,WDT,IN,1,0,unaligned
+'compare to',with,0,'compare to',with,0,'VB PPR',IN,1,1,para
+employ,use,0,employ,use,0,VB,NN,1,0,syn
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+By,In,0,By,In,0,IN,IN,1,1,unaligned
+that,so,0,that,so,0,IN,RB,1,1,syn
+require,required,0,require,require,1,VB,VBN,1,1,stem
+called,call,0,call,call,1,VBN,NN,1,1,stem
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+for,?,0,for,?,0,IN,?,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face tracks',0,face-track,'face track',0,JJ,'NN POS',0,1,unaligned
+imposes,representing,0,impose,represent,0,VBZ,VBG,1,1,syn
+dimension,dimensions,0,dimension,dimension,1,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+employ,use,0,employ,use,0,VB,NN,1,1,syn
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+wait,'spend waiting',0,wait,'spend wait',0,NN,'VB PPR',1,1,para
+?,the,0,?,the,0,?,DET,0,0,unaligned
+since,because,0,since,because,0,IN,IN,1,1,syn
+a,the,0,a,the,0,DET,DET,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+outliers,outlier,0,outlier,outlier,1,NNS,NN,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+for,in,0,for,in,0,IN,IN,1,1,unaligned
+for,to,0,for,to,0,IN,TO,1,1,unaligned
+these,the,0,these,the,0,DET,DET,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+A,Each,0,A,Each,0,DET,DET,1,0,syn
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',0,1,unaligned
+one,a,0,one,a,0,CD,DET,1,1,syn
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+one,that,0,one,that,0,CD,IN,1,1,syn
+flash-frames,'flash frames',0,flash-frames,'flash frame',0,JJ,'NN POS',1,1,unaligned
+shows,show,0,show,show,1,NNS,NN,1,1,unaligned
+by,of,0,by,of,0,IN,IN,0,1,unaligned
+problem,problems,0,problem,problem,1,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,unaligned
+which,that,0,which,that,0,WDT,IN,0,1,unaligned
+at,in,0,at,in,0,IN,IN,1,1,unaligned
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+'information based',information-based,0,'information base',information-based,0,'NN PPR',JJ,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+However,Nevertheless,0,However,Nevertheless,0,RB,RB,1,1,syn
+fully,full,0,fully,full,0,RB,JJ,1,1,stem
+since,because,0,since,because,0,IN,IN,1,0,syn
+reported,featured,0,report,feature,0,VBN,JJ,1,1,syn
+character,ones,0,character,one,0,NN,NNS,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+property,characteristic,0,property,characteristic,0,NN,JJ,1,1,syn
+face,faces,0,face,face,1,NN,NNS,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,0,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+this,the,0,this,the,0,DET,DET,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+for,to,0,for,to,0,IN,TO,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+From,'Based on',0,From,'Based on',0,IN,'VBN POS',1,1,para
+a,the,0,a,the,0,DET,DET,1,0,unaligned
+trade-o_,trade-off,0,trade-o_,trade-off,0,JJ,NN,0,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+prepare,prepared,0,prepare,prepare,1,VB,JJ,1,1,stem
+?,the,0,?,the,0,?,DET,0,0,unaligned
+for,to,0,for,to,0,IN,TO,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+extract,extracts,0,extract,extract,1,NN,NNS,1,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,unaligned
+for,of,0,for,of,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+'millions frames',million,0,'million frame',million,0,'NNS POS',CD,1,1,para
+millions,million,0,million,million,1,NNS,CD,1,1,unaligned
+ten,10,0,ten,10,0,NN,CD,1,1,unaligned
+'well known',well-known,0,'well know',well-known,0,'RB PPR',JJ,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+with,and,0,with,and,0,IN,CC,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+number,numbers,0,number,number,1,NN,NNS,0,1,unaligned
+character,characters,0,character,character,1,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+ours,'our datasets',0,ours,'our datasets',0,PRP,'PRPS POS',1,1,para
+for,in,0,for,in,0,IN,IN,1,1,unaligned
+of,on,0,of,on,0,IN,IN,1,1,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+at,from,0,at,from,0,IN,IN,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,unaligned
+'can not',cannot,0,'can not',cannot,0,'MD PPR',NN,0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+A,The,0,A,The,0,DET,DET,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+transform,transforms,0,transform,transform,1,VB,VBZ,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+compare,compared,0,compare,compare,1,VB,VBN,1,1,stem
+approaches,those,0,approach,those,0,NNS,DET,1,1,syn
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+'pair-wise based',pair-wise-based,0,'pair-wise base',pair-wise-based,0,'JJ PPR',JJ,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+denote,'refer to',0,denote,'refer to',0,NN,'VB PPR',1,1,para
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'pair-wise based',pair-wise-based,0,'pair-wise base',pair-wise-based,0,'JJ PPR',JJ,1,1,unaligned
+for,of,0,for,of,0,IN,IN,1,1,unaligned
+to,?,0,to,?,0,TO,?,0,0,unaligned
+By,In,0,By,In,0,IN,IN,1,1,unaligned
+that,so,0,that,so,0,IN,RB,1,1,syn
+better,more,0,good,more,0,RB,JJR,1,0,syn
+separatable,separable,0,separatable,separable,0,NN,NN,0,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,0,unaligned
+selecting,choosing,0,select,choose,0,NN,VBG,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+on,of,0,on,of,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+for,in,0,for,in,0,IN,IN,1,1,unaligned
+each,a,0,each,a,0,DET,DET,1,0,syn
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',0,1,unaligned
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+query,queries,0,query,query,1,NN,NNS,1,1,unaligned
+on,with,0,on,with,0,IN,IN,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+following:,follows:,0,following:,follows:,0,PPS,PPS,1,1,syn
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+gap,difference,0,gap,difference,0,NN,NN,1,0,syn
+of,in,0,of,in,0,IN,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Firstly,First,0,Firstly,First,0,NNP,NNP,1,1,stem
+those,that,0,those,that,0,DET,IN,1,1,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,para
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,stem
+during,over,0,during,over,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,unaligned
+a,the,0,a,the,0,DET,DET,1,1,unaligned
+themself,themselves,0,themself,themselves,0,NN,PRP,1,1,unaligned
+contain,reflect,0,contain,reflect,0,VB,VB,1,0,syn
+variation,variations,0,variation,variation,1,NN,NNS,1,1,unaligned
+during,over,0,during,over,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+dataset,datasets,0,dataset,datasets,0,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+And,'In addition',0,And,'In addition',0,CC,'IN POS',1,1,para
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+their,the,0,their,the,0,PRPS,DET,1,1,unaligned
+one,that,0,one,that,0,CD,IN,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+It,This,0,It,This,0,PRP,DET,1,1,syn
+on,in,0,on,in,0,IN,IN,0,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+more,'a greater',0,more,'a greater',0,JJR,'DET PPR',1,1,para
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+About,Regarding,0,About,Regarding,0,IN,VBG,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Since,Because,0,Since,Because,0,IN,IN,1,1,syn
+use,uses,0,use,use,1,NN,NNS,1,1,unaligned
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+facetrack,'face track',0,facetrack,'face track',0,NN,'NN POS',1,1,unaligned
+Meanwhile,However,0,Meanwhile,However,0,RB,RB,1,1,syn
+expensive,high,0,expensive,high,0,JJ,JJ,1,1,syn
+'to perform',of,0,'to perform',of,0,'TO PPR',IN,1,1,para
+'high dimensional',high-dimensional,0,'high dimensional',high-dimensional,0,'JJ POS',JJ,1,1,unaligned
+On,In,0,On,In,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+theirs,the,0,theirs,the,0,PRP,DET,1,1,unaligned
+Since,Because,0,Since,Because,0,IN,IN,1,0,syn
+costs,cost,0,cost,cost,1,NNS,NN,1,1,unaligned
+separated,divided,0,separate,divide,0,JJ,VBN,1,1,syn
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+With,In,0,With,In,0,IN,IN,1,1,unaligned
+facetracks,'face tracks',0,facetracks,'face track',0,NNS,'NN POS',0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+'According to','As shown in',0,'According to','As show in',0,'VBG PPR','IN VBN POS',1,1,para
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+suggest,suggests,0,suggest,suggest,1,VB,VBZ,1,1,unaligned
+hundred,hundreds,0,hundred,hundred,1,CD,NNS,1,0,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+take,takes,0,take,take,1,VB,VBZ,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+achieve,achieved,0,achieve,achieve,1,VB,VBN,1,1,stem
+On,In,0,On,In,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+concern,question,0,concern,question,0,NN,NN,1,0,syn
+perform,performed,0,perform,perform,1,VB,VBN,1,1,stem
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,0,1,stem
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',0,0,unaligned
+on,in,0,on,in,0,IN,IN,0,0,unaligned
+is,are,0,be,be,1,VBZ,VBP,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+face-track,'face track',0,face-track,'face track',0,JJ,'NN POS',1,1,unaligned
+in,of,0,in,of,0,IN,IN,1,1,unaligned
+demonstrate,show,0,demonstrate,show,0,VB,NN,1,1,syn
+archiving,achieving,0,archive,achieve,0,VBG,VBG,1,1,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+contributions,contribution,0,contribution,contribution,1,NNS,NN,1,1,stem
+3-fold,threefold,0,3-fold,threefold,0,JJ,RB,1,1,unaligned
+Firstly,First,0,Firstly,First,0,NNP,NNP,1,1,stem
+presented,present,0,present,present,1,VBN,JJ,1,0,stem
+face-tracks,'face tracks',0,face-tracks,'face track',0,JJ,'NN POS',1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+that,these,0,that,these,0,IN,DET,1,1,syn
+for,'to achieve',0,for,'to achieve',0,IN,'TO PPR',1,1,para
+Secondly,Second,0,Secondly,Second,0,RB,NNP,1,1,stem
+which,that,0,which,that,0,WDT,IN,1,1,unaligned
+to,with,0,to,with,0,TO,IN,1,1,unaligned
+Thirdly,Third,0,Thirdly,Third,0,NNP,NNP,0,1,stem
+retreival,retrieval,0,retreival,retrieval,0,NN,NN,1,1,unaligned
+faciliate,facilitate,0,faciliate,facilitate,0,NN,VB,1,1,unaligned
+of,in,0,of,in,0,IN,IN,1,0,unaligned
+database,databases,0,database,database,1,NN,NNS,1,1,unaligned
+introduces,shows,0,introduce,show,0,VBZ,NNS,1,1,syn
+matched,matching,0,match,match,1,VBN,JJ,1,1,stem
+introduce,describe,0,introduce,describe,0,VB,VB,1,1,syn
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,unaligned
+over,in,0,over,in,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,unaligned
+intial,initial,0,intial,initial,0,NN,JJ,1,1,unaligned
+opmization,optimization,0,opmization,optimization,0,NN,NN,1,1,unaligned
+promissing,promising,0,promissing,promise,0,VBG,JJ,0,1,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+a,?,0,a,?,0,DET,?,0,0,unaligned
+needs,need,0,need,need,1,NNS,NN,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+because,that,0,because,that,0,IN,IN,1,1,syn
+the,a,0,the,a,0,DET,DET,1,0,unaligned
+of,in,0,of,in,0,IN,IN,1,0,unaligned
+database,databases,0,database,database,1,NN,NNS,1,1,unaligned
+expected,envisioned,0,expect,envision,0,VBN,VBN,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+clarify,'show in',0,clarify,'show in',0,VB,'NN POS',1,1,para
+higher,larger,0,higher,larger,0,JJR,JJR,1,1,syn
+supports,helps,0,support,help,0,NNS,VBZ,1,1,syn
+but,besides,0,but,besides,0,CC,IN,1,1,syn
+?,an,0,?,an,0,?,DET,0,0,unaligned
+requires,'would incur',0,require,'would incur',0,VBZ,'MD PPR',1,0,para
+'scale changes',scale,0,'scale change',scale,0,'NN POS',NN,0,1,para
+in,of,0,in,of,0,IN,IN,1,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+over,in,0,over,in,0,IN,IN,1,1,unaligned
+an,the,0,an,the,0,DET,DET,1,1,unaligned
+the,this,0,the,this,0,DET,DET,1,1,unaligned
+other,a,0,other,a,0,JJ,DET,1,1,unaligned
+reduces,reduce,0,reduce,reduce,1,VBZ,VB,1,0,unaligned
+contains,containing,0,contain,contain,1,VBZ,VBG,1,1,stem
+the,the,1,the,the,1,DET,DET,1,1,wa
+sets,sets,1,set,set,1,NNS,NNS,1,1,wa
+with,with,1,with,with,1,IN,IN,1,1,wa
+a,a,1,a,a,1,DET,DET,1,1,wa
+region,region,1,region,region,1,NN,NN,1,1,wa
+in,in,1,in,in,1,IN,IN,1,1,wa
+the,the,1,the,the,1,DET,DET,1,1,wa
+other,other,1,other,other,1,JJ,JJ,1,1,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+of,?,0,of,?,0,IN,?,0,0,wa
+all,?,0,all,?,0,DET,?,0,0,wa
+in,?,0,in,?,0,IN,?,0,0,wa
+the,?,0,the,?,0,DET,?,0,0,wa
+?,that,0,?,that,0,?,IN,0,0,wa
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,1,stem
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+these,this,0,these,this,0,DET,DET,1,0,wa
+'insights an',insight,0,'insight an',insight,0,'NNS POS',NN,0,0,wa
+make,can,0,make,can,0,VB,MD,1,0,wa
+boost,boost,1,boost,boost,1,NN,NN,0,0,wa
+another,again,0,another,again,0,DET,RB,1,0,syn
+which,that,0,which,that,0,WDT,IN,1,1,unaligned
+describe,describing,0,describe,describe,1,VB,VBG,0,1,wa
+to,?,0,to,?,0,TO,?,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+Works,Work,0,Works,Work,0,NNP,NNP,1,1,wa
+With,On,0,With,On,0,IN,IN,1,0,wa
+respect,'the topic',0,respect,'the topic',0,NN,'DET POS',0,0,wa
+to,of,0,to,of,0,TO,IN,0,1,wa
+user,'user particular',0,user,'user particular',0,NN,'NN PPR',0,1,wa
+interest,'\'s interest',0,interest,'s interest',0,NN,'VBZ POS',1,0,wa
+'limited an',inthe,0,'limit an',inthe,0,'JJ POS',NN,1,1,wa
+in,?,0,in,?,0,IN,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+aim,aims,0,aim,aim,1,NN,NNS,1,1,unaligned
+'figuring out','solve identifying the',0,'figure out','solve identify the',0,'VBG POS','VB VBG POS',0,0,wa
+firstly,first,0,firstly,first,0,RB,JJ,1,0,stem
+for,to,0,for,to,0,IN,TO,1,0,wa
+recommendations,'make recommendations',0,recommendation,'make recommendation',0,NNS,'VB POS',0,1,wa
+'by doing',doing,0,'by do',do,0,'IN PPR',VBG,1,1,wa
+', arise','incurs , not',0,', arise','incur , not',0,'PPC PPR','NNS PPC PPR',1,0,wa
+costs,cost,0,cost,cost,1,NNS,NN,1,0,unaligned
+for,of,0,for,of,0,IN,IN,0,1,unaligned
+which,that,0,which,that,0,WDT,IN,0,1,unaligned
+accordingly,in,0,accordingly,in,0,RB,IN,0,0,wa
+',',?,0,',',?,0,PPR,?,0,0,wa
+',',?,0,',',?,0,PPR,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+works,studies,0,work,study,0,NNS,NNS,1,1,syn
+'Recommend-Me query suggestion','ours that',0,'Recommend-Me query suggestion','ours that',0,'JJ NN POS','PRP POS',1,0,wa
+for,of,0,for,of,0,IN,IN,0,0,wa
+'proposed by Zha',Zha,0,'propose by Zha',Zha,0,'JJ IN POS',NNP,0,1,wa
+which,that,0,which,that,0,WDT,IN,0,0,unaligned
+simultanously,simultaneously,0,simultanously,simultaneously,0,RB,RB,0,1,unaligned
+for,to,0,for,to,0,IN,TO,1,1,unaligned
+?,',',0,?,',',0,?,PPR,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+'our Recommend-Me',Recommend-Me,0,'our Recommend-Me',Recommend-Me,0,'PRPS PPR',JJ,1,1,wa
+suggestion,formulating,0,suggestion,formulate,0,NN,VBG,1,0,wa
+formulation,suggestion,0,formulation,suggestion,0,NN,NN,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+facilitating,helping,0,facilitate,help,0,VBG,VBG,1,1,wa
+searching,'search for',0,search,'search for',0,VBG,'NN POS',0,1,wa
+the,their,0,the,their,0,DET,PRPS,1,1,unaligned
+in,?,0,in,?,0,IN,?,0,0,wa
+'query ambiguity','their tendency formulate',0,'query ambiguity','their tendency formulate',0,'NN POS','PRPS NN PPR',1,0,wa
+formulation,'ambiguous queries',0,formulation,'ambiguous query',0,NN,'JJ POS',0,1,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+supports,helps,0,support,help,0,NNS,VBZ,1,1,syn
+'existence their',existence,0,'existence their',existence,0,'NN PPS',NN,1,0,wa
+attempt,'attempt at this',0,attempt,'attempt at this',0,NN,'NN IN POS',1,0,wa
+towards,sort,0,towards,sort,0,IN,NN,0,0,wa
+its,of,0,it,of,0,PRPS,IN,0,1,wa
+technical,'a technical',0,technical,'a technical',0,JJ,'DET PPR',1,1,wa
+works,work,0,work,work,1,NNS,NN,1,0,unaligned
+for,on,0,for,on,0,IN,IN,0,1,unaligned
+'differentiated in','differentiated from other studies in',0,'differentiate in','differentiate from other study in',0,'JJ POS','JJ IN JJ NNS POS',1,0,wa
+the,the,1,the,the,1,DET,DET,0,0,wa
+way,that,0,way,that,0,NN,IN,0,1,wa
+Meanwhile,'In contrast',0,Meanwhile,'In contrast',0,RB,'IN POS',1,1,para
+set,sets,0,set,set,1,NN,NNS,1,1,unaligned
+may,'in may',0,may,'in may',0,MD,'IN PPR',1,1,wa
+suffer,'context suffer',0,suffer,'context suffer',0,VB,'NN PPR',0,0,wa
+doubled,doubles,0,double,double,1,VBN,VBZ,1,1,stem
+.,.,1,.,.,1,PP,PP,0,1,wa
+is,?,0,be,?,0,VBZ,?,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'ours ESS','ESS Recommend-Me',0,'ours ESS','ESS Recommend-Me',0,'PRP POS','NNP PPR',1,0,wa
+'ESR do not share common approach','ESR differ in that they have different approaches',0,'ESR do not share common approach','ESR differ in that they have different approach',0,'NNP VB RB NN JJ POS','NNP VB IN IN PRP VB JJ POS',1,1,wa
+construct,constructing,0,construct,construct,1,VB,VBG,1,0,stem
+compute,computing,0,compute,compute,1,VB,NN,1,1,stem
+?,a,0,?,a,0,?,DET,0,0,unaligned
+'Details proposed approaches our for','The details how we',0,'Details propose approach our for','The detail how we',0,'NNS JJ NNS PRPS POS','DET NNS WRB POS',1,0,wa
+finding,find,0,find,find,1,NN,VB,0,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'concludes our','concludes the',0,'conclude our','conclude the',0,'VBZ PPS','VBZ POS',1,1,wa
+'Recommend-Me towards',Recommend-Me,0,'Recommend-Me towards',Recommend-Me,0,'JJ POS',JJ,1,0,wa
+'consists formulating',consists,0,'consist formulate',consist,0,'VBZ PPR',VBZ,1,0,wa
+'4 final',four,0,'4 final',four,0,'CD PPR',CD,1,0,wa
+'main recommendations',main,0,'main recommendation',main,0,'JJ POS',JJ,0,0,wa
+'steps users',steps,0,'step user',step,0,'NNS POS',NNS,1,1,wa
+.,.,1,.,.,1,PP,PP,0,1,wa
+for,?,0,for,?,0,IN,?,0,0,wa
+Candidate,Select,0,Candidate,Select,0,NN,NNP,1,0,wa
+item,candidate,0,item,candidate,0,NN,NN,0,0,wa
+selection,items,0,selection,item,0,NN,NNS,0,1,wa
+for,in,0,for,in,0,IN,IN,1,0,unaligned
+further,subsequent,0,far,subsequent,0,JJ,JJ,0,1,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+'importantly human',importantly,0,'importantly human',importantly,0,'RB PPR',RB,1,0,wa
+'get attracted',attracted,0,'get attract',attract,0,'VB PPR',VBN,1,1,para
+oversegmenting,over-segmenting,0,oversegmenting,over-segmenting,0,VBG,JJ,1,1,unaligned
+greedy,'greedy ?>',0,greedy,'greedy ?>',0,JJ,'JJ SYM',1,1,wa
+iteratively,'search iteratively',0,iteratively,'search iteratively',0,RB,'NN PPR',0,1,wa
+merges,'< ? merges',0,merge,'< ? merge',0,NNS,'sym> PP POS',0,1,wa
+algorithm,algorithm,1,algorithm,algorithm,1,NN,NN,0,0,wa
+which,that,0,which,that,0,WDT,IN,1,1,wa
+the,the,1,the,the,1,DET,DET,1,1,wa
+two,two,1,two,two,1,CD,CD,1,1,wa
+most,most,1,most,most,1,JJS,JJS,1,1,wa
+similar,similar,1,similar,similar,1,JJ,JJ,1,1,wa
+regions,regions,1,region,region,1,NNS,NNS,1,1,wa
+together,together,1,together,together,1,RB,RB,1,1,wa
+until,until,1,until,until,1,IN,IN,1,1,wa
+the,the,1,the,the,1,DET,DET,1,1,wa
+whole,whole,1,whole,whole,1,JJ,JJ,1,1,wa
+image,image,1,image,image,1,NN,NN,1,1,wa
+becomes,becomes,1,become,become,1,VBZ,VBZ,1,1,wa
+a,a,1,a,a,1,DET,DET,1,1,wa
+single,single,1,single,single,1,JJ,JJ,1,1,wa
+region,region,1,region,region,1,NN,NN,1,1,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+region,regions,0,region,region,1,NN,NNS,1,1,unaligned
+is,are,0,be,be,1,VBZ,VBP,1,1,wa
+considered,considered,1,consider,consider,1,VBN,VBN,0,0,wa
+as,be,0,as,be,0,IN,VB,0,1,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+Finding,Find,0,Finding,Find,0,NNP,VBP,1,1,stem
+?,the,0,?,the,0,?,DET,0,0,unaligned
+is,will,0,be,will,0,VBZ,MD,1,0,wa
+pool,'be pool',0,pool,'be pool',0,NN,'VB POS',0,1,wa
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,1,stem
+perform,use,0,perform,use,0,VB,NN,1,0,syn
+our,the,0,our,the,0,PRPS,DET,0,0,unaligned
+'top pool','top pool',1,'top pool','top pool',1,'JJ POS','JJ POS',0,1,wa
+an,the,0,an,the,0,DET,DET,1,1,wa
+proposed,?,0,propose,?,0,JJ,?,0,0,wa
+',',?,0,',',?,0,PPR,?,0,0,wa
+',',?,0,',',?,0,PPR,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Grouping,Group,0,Grouping,Group,0,NNP,NNP,1,1,stem
+'now enumerate',enumerate,0,'now enumerate',enumerate,0,'RB POS',NN,0,1,wa
+occurences,occurrences,0,occurences,occurrence,0,NNS,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+overlap,'likely overlap',0,overlap,'likely overlap',0,VB,'JJ PPR',0,1,wa
+highly,that,0,highly,that,0,RB,IN,1,1,wa
+merging,'merging done',0,merge,'merge do',0,VBG,'VBG PPR',0,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+They,These,0,They,These,0,PRP,DET,1,0,wa
+'are perceived human','regions would be perceived',0,'be perceive human','region would be perceive',0,'VBP VBN PPR','NNS MD VB PPR',0,0,wa
+being,users,0,be,user,0,VBG,NNS,0,1,wa
+maximal,'maximal will',0,maximal,'maximal will',0,NN,'NN PPR',1,0,wa
+'clique technique',clique,0,'clique technique',clique,0,'NN POS',NN,1,0,wa
+for,so,0,for,so,0,IN,RB,1,0,wa
+consistent,'that consistent',0,consistent,'that consistent',0,JJ,'IN PPR',0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,be,0,?,be,0,?,VB,0,0,wa
+Formulating,Formulate,0,Formulating,Formulate,0,VBG,VB,1,1,stem
+'then introduce',show,0,'then introduce',show,0,'RB PPR',NN,1,1,wa
+'our recommendations',recommendations,0,'our recommendation',recommendation,0,'PRPS POS',NNS,1,0,wa
+Representative,'A representative',0,Representative,'A representative',0,NNP,'DET POS',1,1,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+introduce,describe,0,introduce,describe,0,VB,VB,1,1,syn
+'proposed approach',approach,0,'propose approach',approach,0,'JJ POS',NN,1,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+With,By,0,With,By,0,IN,IN,1,0,wa
+a,using,0,a,use,0,DET,VBG,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+propose,'hence propose',0,propose,'hence propose',0,VB,'RB PPR',1,1,wa
+branch-and-bound,'branch-and-bound solve',0,branch-and-bound,'branch-and-bound solve',0,JJ,'JJ PPR',1,0,wa
+for,to,0,for,to,0,IN,TO,1,0,wa
+processs,process,0,process,process,1,NNS,NN,1,1,unaligned
+spaces,space,0,space,space,1,NNS,NN,1,1,unaligned
+eliminated,'have been eliminated',0,eliminate,'have be eliminate',0,VBN,'VB VBN PPR',1,1,stem
+?,the,0,?,the,0,?,DET,0,0,unaligned
+',',;,0,',',;,0,PPR,PPS,1,0,wa
+known,'this is',0,know,'this be',0,VBN,'DET PPR',0,0,wa
+as,called,0,as,call,0,IN,VBN,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+bounding,'bounding \" ?>',0,bound,'bound \" ?>',0,VBG,'VBG PPR SYM',1,0,wa
+is,'is is are',0,be,'be be be',0,VBZ,'VBZ VBZ POS',1,0,wa
+assigned,'assigned grammatical these members',0,assign,'assign grammatical these member',0,VBN,'JJ JJ DET POS',1,0,wa
+upper,'upper but don know Inparticular can',0,upper,'upper but don know Inparticular can',0,JJ,'JJ CC VB VB NNP PPR',1,0,wa
+bound,'bound I \'t what what they',0,bind,'bind I \t what what they',0,JJ,'JJ PRP NN WP WP POS',1,0,wa
+value,'for \" be',0,value,'for \" be',0,NN,'IN PPR PPR',1,0,wa
+that,which,0,that,which,0,IN,WDT,0,1,wa
+the,'the the',0,the,'the the',0,DET,'DET POS',0,1,wa
+quality,'quality quality computed',0,quality,'quality quality compute',0,NN,'NN NN POS',1,0,wa
+function,'function function function',0,function,'function function function',0,NN,'NN NN POS',1,0,wa
+could,'could could',0,could,'could could',0,MD,'MD PPR',1,1,wa
+take,'take take',0,take,'take take',0,VB,'VB PPR',1,1,wa
+any,'any any',0,any,'any any',0,DET,'DET POS',1,1,wa
+of,'of on of of',0,of,'of on of of',0,IN,'IN IN IN POS',1,1,wa
+members,'members //<The members',0,member,'member //<The member',0,NNS,'NNS nnp> POS',1,1,wa
+part,'part rewrite part',0,part,'part rewrite part',0,NN,'NN VB POS',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,wa
+?,and,0,?,and,0,?,CC,0,0,wa
+?,in,0,?,in,0,?,IN,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,wa
+Parts,'Those parts',0,Parts,'Those part',0,NNP,'DET POS',1,1,wa
+So,Thus,0,So,Thus,0,IN,RB,1,1,syn
+Adapting,In,0,Adapting,In,0,NN,IN,1,0,wa
+to,?,0,to,?,0,TO,?,0,0,wa
+repsented,represented,0,repsented,represent,0,NN,VBN,1,1,unaligned
+histgoram,histogram,0,histgoram,histogram,0,NN,NN,1,1,unaligned
+at,in,0,at,in,0,IN,IN,1,1,unaligned
+constrainted,constrained,0,constrainted,constrain,0,NN,VBN,1,1,unaligned
+smaller,'smaller than',0,smaller,'smaller than',0,JJR,'JJR POS',1,1,wa
+at,in,0,at,in,0,IN,IN,1,1,unaligned
+the,what,0,the,what,0,DET,WP,1,0,wa
+following,follows,0,follow,follow,1,VBG,VBZ,0,1,wa
+a,the,0,a,the,0,DET,DET,1,1,unaligned
+branch-and-bound,'branch-and-bound solve',0,branch-and-bound,'branch-and-bound solve',0,JJ,'JJ PPR',0,0,wa
+applied,'can be used',0,apply,'can be use',0,VBN,'MD VB PPR',1,1,wa
+to,to,1,to,to,1,TO,TO,0,0,wa
+'And ,','And let',0,'And ,','And let',0,'CC PPR','CC PPR',1,1,wa
+denotes,denote,0,denote,denote,1,NNS,NN,1,1,unaligned
+are,being,0,be,be,1,VBP,VBG,1,1,stem
+Given,Letting,0,Given,Letting,0,VBN,VBG,0,1,syn
+indicates,indicate,0,indicate,indicate,1,VBZ,VB,1,1,stem
+paring,'pairing //<the guess',0,pare,'pair //<the guess',0,VBG,'JJ nnp> POS',1,0,wa
+nodes,'nodes rewrite .>',0,nod,'nod rewrite .>',0,NNS,'NNS VB SYM',0,0,wa
+have,get,0,have,get,0,VB,VB,1,1,syn
+?,.,0,?,.,0,?,PP,0,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,wa
+So,Thus,0,So,Thus,0,IN,RB,1,1,syn
+Dividing,'Dividing up',0,Dividing,'Dividing up',0,VBG,'VBG POS',0,1,wa
+covered,'covered can be done',0,cover,'cover can be do',0,VBN,'VBN MD VB PPR',1,0,wa
+straightforward,'straightforwardly better if it correct',0,straightforward,'straightforwardly good if it correct',0,JJ,'RB RB IN PRP PPR',0,0,wa
+utilizing,'utilizing //<The rewrite .>',0,utilize,'utilize //<The rewrite .>',0,VBG,'JJ nnp> VB SYM',1,0,wa
+is,is,1,be,be,1,VBZ,VBZ,0,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,wa
+to,?,0,to,?,0,TO,?,0,0,unaligned
+Selecting,The,0,Selecting,The,0,NN,DET,1,0,wa
+which,?,0,which,?,0,WDT,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'select be divided',divide,0,'select be divide',divide,0,'JJ VB PPR',NN,1,0,wa
+to,?,0,to,?,0,TO,?,0,0,wa
+An,The,0,An,The,0,DET,DET,1,0,wa
+'illustration branching',branching,0,'illustration branch',branch,0,'NN PPR',VBG,0,1,wa
+is,is,1,be,be,1,VBZ,VBZ,1,0,wa
+given,illustrated,0,give,illustrate,0,VBN,VBN,1,1,wa
+of,?,0,of,?,0,IN,?,0,0,wa
+a,?,0,a,?,0,DET,?,0,0,unaligned
+essential,'essential determine //<Or determine ?',0,essential,'essential determine //<Or determine ?',0,JJ,'JJ VB nnp> VB PPR',1,0,wa
+'requirement evaluate necessary','requirement whether \" extent \" ?>',0,'requirement evaluate necessary','requirement whether \" extent \" ?>',0,'NN VB PPR','NN IN PPR NN PPR SYM',1,0,wa
+branch-and-bound,'branch-and-bound algorithm',0,branch-and-bound,'branch-and-bound algorithm',0,JJ,'JJ POS',0,1,wa
+how,the,0,how,the,0,WRB,DET,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,that,0,?,that,0,?,IN,0,0,wa
+Particularly,'In particular',0,Particularly,'In particular',0,RB,'IN PPR',1,1,wa
+Assuming,'Let us assume that',0,Assuming,'Let us assume that',0,VBG,'VB PRP VB POS',1,1,para
+'now evaluating',evaluating,0,'now evaluate',evaluate,0,'RB PPR',VBG,1,1,wa
+Intersection,'formulas similarity Intersection',0,Intersection,'formula similarity Intersection',0,NN,'NNS NN POS',0,1,wa
+', Histogram',', Histogram',1,', Histogram',', Histogram',1,'PPC POS','PPC POS',1,1,wa
+stick,'will use',0,stick,'will use',0,NN,'MD POS',1,0,wa
+to,the,0,to,the,0,TO,DET,0,1,wa
+types,?,0,type,?,0,NNS,?,0,0,wa
+of,?,0,of,?,0,IN,?,0,0,wa
+similarity,?,0,similarity,?,0,NN,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+NHI,'will NHI',0,NHI,'will NHI',0,NNP,'MD POS',0,1,wa
+rely,rely,1,rely,rely,1,VB,VB,1,1,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+bounding,'bounding \" ?>',0,bound,'bound \" ?>',0,VBG,'VBG PPR SYM',1,0,wa
+clearly,'clearly //<I not what means context you \" derived',0,clearly,'clearly //<I not what mean context you \" derive',0,RB,'RB nnp> RB WP NNS NN PRP PPR PPR',1,0,wa
+observed,'observed \'m sure observed this Do mean ?',0,observe,'observe m sure observe this Do mean ?',0,JJ,'JJ NN JJ JJ DET NNP JJ PPR',1,0,wa
+?,.,0,?,.,0,?,PP,0,0,wa
+?,in,0,?,in,0,?,IN,0,0,wa
+?,.,0,?,.,0,?,PP,0,0,wa
+?,can,0,?,can,0,?,MD,0,0,wa
+?,be,0,?,be,0,?,VB,0,0,wa
+?,as,0,?,as,0,?,IN,0,0,wa
+relied,relies,0,rely,rely,1,VBN,VBZ,0,1,wa
+is,?,0,be,?,0,VBZ,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+And,Moreover,0,And,Moreover,0,CC,RB,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Inspired,'Inspired write',0,Inspired,'Inspired write',0,VBN,'VBN PPR',0,0,wa
+form,devised,0,form,devise,0,NN,VBN,1,1,syn
+the,'the the the the the',0,the,'the the the the the',0,DET,'DET DET DET DET POS',0,1,wa
+algorithm,'algorithm algorithm rewrite algorithm',0,algorithm,'algorithm algorithm rewrite algorithm',0,NN,'NN NN VB POS',1,0,wa
+best-first,'work best-first //<The describes you In describes works',0,best-first,'work best-first //<The describe you In describe work',0,JJ,'NN JJ nnp> VBZ PRP IN VBZ POS',0,0,wa
+manner,'manner original way decided contrast way .>',0,manner,'manner original way decide contrast way .>',0,NN,'NN JJ NN VBN NN NN SYM',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+algorithm,'algorithm \" The rewrite',0,algorithm,'algorithm \" The rewrite',0,NN,'NN PPR DET PPR',1,0,wa
+examines,'examines //<\" unclear guess .>',0,examine,'examine //<\" unclear guess .>',0,VBZ,'VBZ NN JJ NN SYM',1,0,wa
+.,'. .',0,.,'. .',0,PP,'SYM SYM',1,0,wa
+next,next,1,next,next,1,JJ,JJ,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,wa
+continue,repeat,0,continue,repeat,0,VB,NN,1,1,syn
+the,the,1,the,the,1,DET,DET,1,1,wa
+reached,'is reached',0,reach,'be reach',0,VBN,'VBZ PPR',0,1,wa
+'have been',reached,0,'have be',reach,0,'VB PPR',VBN,0,0,wa
+the,?,0,the,?,0,DET,?,0,0,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+the,?,0,the,?,0,DET,?,0,0,unaligned
+'There organization',There,0,'There organization',There,0,'EX POS',EX,1,0,wa
+for,?,0,for,?,0,IN,?,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+?,a,0,?,a,0,?,DET,0,0,unaligned
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'we have constraint',constraint,0,'we have constraint',constraint,0,'PRP VB POS',NN,1,1,wa
+satisfied,'is satisfied',0,satisfy,'be satisfy',0,JJ,'VBZ PPR',1,1,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+'branch-and-bound based',branch-and-bound,0,'branch-and-bound base',branch-and-bound,0,'JJ PPR',JJ,1,1,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+nodes,node,0,nod,node,0,NNS,NN,1,1,unaligned
+attach,'is attached',0,attach,'be attach',0,VB,'VBZ PPR',1,1,para
+orginal,original,0,orginal,original,0,NN,JJ,1,1,unaligned
+And,Moreover,0,And,Moreover,0,CC,RB,1,1,syn
+'satisfy b )',satisfies,0,'satisfy b )',satisfy,0,'VB NN PPS',NNS,1,0,wa
+'constraints ( ) (',constraints,0,'constraint ( ) (',constraint,0,'NNS LRB RRB NN',NNS,0,0,wa
+.,.,1,.,.,1,PP,PP,0,1,wa
+the,?,0,the,?,0,DET,?,0,0,unaligned
+a,?,0,a,?,0,DET,?,0,0,wa
+and,?,0,and,?,0,CC,?,0,0,wa
+X,'X this organization',0,X,'X this organization',0,NNP,'NNP DET POS',1,1,wa
+in,of,0,in,of,0,IN,IN,0,0,wa
+presented,organization,0,present,organization,0,VBN,NN,0,0,wa
+of,from,0,of,from,0,IN,IN,1,1,unaligned
+At,In,0,At,In,0,IN,IN,1,1,unaligned
+'we presented',presented,0,'we present',present,0,'PRP PPR',VBN,1,1,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+Given,If,0,Given,If,0,VBN,IN,0,1,syn
+returned,returned,1,return,return,1,VBN,VBN,0,0,wa
+from,by,0,from,by,0,IN,IN,1,1,unaligned
+divisive,'divisive //<the rewrite guess .>',0,divisive,'divisive //<the rewrite guess .>',0,JJ,'JJ nnp> VB NN SYM',1,0,wa
+?,are,0,?,be,0,?,VBP,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,is,0,?,be,0,?,VBZ,0,0,wa
+?,a,0,?,a,0,?,DET,0,0,wa
+splits,we,0,split,we,0,VBZ,PRP,1,0,wa
+are,perform,0,be,perform,0,VBP,VB,0,0,wa
+peformed,splits,0,peformed,split,0,NN,VBZ,0,1,wa
+hierarcy,hierarchy,0,hierarcy,hierarchy,0,NN,NN,1,1,unaligned
+splitted,split,0,splitted,split,0,NN,NN,1,1,unaligned
+'$k$-means algorithm',$k$-means,0,'$k$-means algorithm',$k$-means,0,'NN POS',NN,1,0,wa
+hierchical,hierarchical,0,hierchical,hierarchical,0,NN,JJ,1,1,unaligned
+'then compute',compute,0,'then compute',compute,0,'RB PPR',VB,1,0,wa
+?,a,0,?,a,0,?,DET,0,0,unaligned
+hitogram,histogram,0,hitogram,histogram,0,NN,NN,1,1,unaligned
+nodes,node,0,nod,node,0,NNS,NN,1,1,unaligned
+at,in,0,at,in,0,IN,IN,1,1,unaligned
+sastified,'is satisfied',0,sastified,'be satisfy',0,NN,'VBZ PPR',1,1,para
+the,?,0,the,?,0,DET,?,0,0,unaligned
+At,Finally,0,At,Finally,0,IN,RB,1,0,wa
+'last unifying',unifying,0,'last unify',unify,0,'JJ PPR',JJ,0,0,wa
+the,'the both',0,the,'the both',0,DET,'DET POS',0,0,wa
+both,?,0,both,?,0,DET,?,0,0,wa
+'show an illustration','illustratie this',0,'show an illustration','illustratie this',0,'NN DET POS','NN POS',1,1,para
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+becomes,become,0,become,become,1,VBZ,VBN,1,0,wa
+'proposed approach',approach,0,'propose approach',approach,0,'JJ POS',NN,1,1,wa
+recommendation,making,0,recommendation,make,0,NN,VBG,1,0,wa
+generation,recommendations,0,generation,recommendation,0,NN,NNS,0,1,wa
+are,?,0,be,?,0,VBP,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+hierarchical,hierarchy,0,hierarchical,hierarchy,0,JJ,NN,1,0,stem
+for,of,0,for,of,0,IN,IN,0,0,unaligned
+',',?,0,',',?,0,PPR,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'locates exists',locates,0,'locate exist',locate,0,'NNS PPR',NNS,1,0,wa
+which,?,0,which,?,0,WDT,?,0,0,wa
+'recommendations as such','recommendations\"',0,'recommendation as such','recommendations\"',0,'NNS IN PPR',PPR,1,1,wa
+'hit hit','hit \"',0,'hit hit','hit \"',0,'NN POS','NN PPR',0,0,wa
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,0,wa
+recommendation,them,0,recommendation,them,0,NN,PRP,0,1,wa
+.,?,0,.,?,0,PP,?,0,0,wa
+Thus,?,0,Thus,?,0,RB,?,0,0,wa
+?,and,0,?,and,0,?,CC,0,0,wa
+some,number,0,some,number,0,DET,NN,0,1,wa
+all,the,0,all,the,0,DET,DET,1,1,wa
+'recommendations introduced',recommendations,0,'recommendation introduce',recommendation,0,'NNS PPR',NNS,0,1,wa
+?,a,0,?,a,0,?,DET,0,0,wa
+those,these,0,those,these,0,DET,DET,1,1,unaligned
+evaluate,evaluated,0,evaluate,evaluate,1,VB,VBN,1,0,stem
+on,in,0,on,in,0,IN,IN,1,0,unaligned
+introducing,pesenting,0,introduce,pesenting,0,VBG,VBG,0,0,syn
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,0,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+annotation,annotations,0,annotation,annotation,1,NN,NNS,1,0,unaligned
+indicates,indicating,0,indicate,indicate,1,VBZ,VBG,0,0,stem
+to,to,1,to,to,1,TO,TO,0,0,wa
+'existed precisely introduce','existin a',0,'exist precisely introduce','existin a',0,'VBD RB PPR','NN POS',0,1,wa
+'is determined','will provide',0,'be determine','will provide',0,'VBZ PPR','MD PPR',1,0,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,1,1,wa
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,wa
+in,?,0,in,?,0,IN,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+apply,used,0,apply,use,0,VB,VBN,1,1,syn
+used,from,0,use,from,0,VBN,IN,1,0,wa
+VOC,'VOC or',0,VOC,'VOC or',0,NNP,'NNP PPS',1,0,wa
+challenge,'challenge not',0,challenge,'challenge not',0,NN,'NN PPR',1,0,wa
+in,?,0,in,?,0,IN,?,0,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+of,?,0,of,?,0,IN,?,0,0,unaligned
+'facilitate procedure',facilitate,0,'facilitate procedure',facilitate,0,'VB POS',VB,1,0,wa
+'performance simply',simply,0,'performance simply',simply,0,'NN PPR',RB,1,1,wa
+take,use,0,take,use,0,VB,NN,1,1,syn
+?,the,0,?,the,0,?,DET,0,0,unaligned
+on,in,0,on,in,0,IN,IN,1,1,unaligned
+compute,computed,0,compute,compute,1,VB,NN,1,1,stem
+evaluation,evaluations,0,evaluation,evaluation,1,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+divided,'divided \" me \"',0,divide,'divide \" me \"',0,VBN,'VBN PPR PRP PPR',1,0,wa
+the,'the the the the',0,the,'the the the the',0,DET,'DET DET DET POS',1,0,wa
+size,'size size average size sizes',0,size,'size size average size size',0,NN,'NN NN JJ NN POS',1,1,wa
+of,'of of of of',0,of,'of of of of',0,IN,'IN IN IN POS',1,1,wa
+all,'all all all all',0,all,'all all all all',0,DET,'DET DET DET POS',1,1,wa
+possible,'possible possible possible possible',0,possible,'possible possible possible possible',0,JJ,'JJ JJ JJ PPR',1,1,wa
+region,'region region region region',0,region,'region region region region',0,NN,'NN NN NN POS',1,1,wa
+pairs,'pairs //< pairs pairs pairs',0,pair,'pair //< pair pair pair',0,NNS,'NNS sym> NNS NNS POS',1,0,wa
+formed,'formed \" Do you mean \" \" or \"',0,form,'form \" Do you mean \" \" or \"',0,VBN,'VBN PPR NNP PRP JJ PPR PPR CC PPR',1,0,wa
+regions,'regions unclear ?>',0,region,'region unclear ?>',0,NNS,'NNS JJ SYM',1,0,wa
+?,is,0,?,be,0,?,VBZ,0,0,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+?,.,0,?,.,0,?,PP,0,0,wa
+is,was,0,be,be,1,VBZ,VBD,1,0,wa
+reported,taken,0,report,take,0,VBN,VBN,0,0,wa
+as,be,0,as,be,0,IN,VB,0,1,wa
+?,to,0,?,to,0,?,TO,0,0,wa
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+',',?,0,',',?,0,PPR,?,0,0,wa
+employ,employed,0,employ,employ,1,VB,VBN,1,0,stem
+BoF,'a BoF',0,BoF,'a BoF',0,NNP,'DET POS',0,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+dense,'using dense',0,dense,'use dense',0,JJ,'VBG PPR',1,1,wa
+Different-of-Gaussian(,'a Different-of-Gaussian (',0,Different-of-Gaussian(,'a Different-of-Gaussian (',0,LRB,'DET JJ NN',1,1,wa
+DoG,DoG,1,DoG,DoG,1,NNP,NNP,0,1,wa
+),),1,),),1,RRB,RRB,1,1,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+?,the,0,?,the,0,?,DET,0,0,unaligned
+'of of','of of',1,'of of','of of',1,'IN POS','IN POS',1,0,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+used,used,1,use,use,1,VBN,VBN,0,1,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+helps,helped,0,help,help,1,VBZ,VBN,1,1,stem
+'a the','the the',0,'a the','the the',0,'DET POS','DET POS',1,0,wa
+'portion sky',sky,0,'portion sky',sky,0,'NN POS',NN,0,1,wa
+etc,'etc. from',0,etc,'etc. from',0,NN,'PP POS',1,0,wa
+of,from,0,of,from,0,IN,IN,0,1,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,0,1,wa
+for,?,0,for,?,0,IN,?,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+use,used,0,use,use,1,NN,VBN,1,1,stem
+introduced,'first introduced',0,introduce,'first introduce',0,VBN,'JJ PPR',1,1,wa
+channel,channels,0,channel,channel,1,NN,NNS,1,1,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+which,',',0,which,',',0,WDT,PPR,1,0,wa
+'are RGB',RGB,0,'be RGB',RGB,0,'VBP POS',NNP,0,1,wa
+'.72\%','.72\% of',0,'.72\%','.72\% of',0,POS,'NN POS',1,0,wa
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+created,created,1,create,create,1,VBN,VBN,0,1,wa
+do,did,0,do,do,1,VB,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+?,the,0,?,the,0,?,DET,0,0,unaligned
+build,built,0,build,build,1,VB,VBN,1,1,unaligned
+are,were,0,be,be,1,VBP,VBD,1,1,stem
+highly,nearly,0,highly,nearly,0,RB,RB,1,0,syn
+overlap,overlapped,0,overlap,overlap,1,VB,NN,0,1,stem
+?,a,0,?,a,0,?,DET,0,0,unaligned
+Bron-Kerbosch,'The Bron-Kerbosch',0,Bron-Kerbosch,'The Bron-Kerbosch',0,JJ,'DET PPR',1,1,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,wa
+applied,applied,1,apply,apply,1,VBN,VBN,1,1,wa
+is,was,0,be,be,1,VBZ,VBD,1,1,stem
+our,the,0,our,the,0,PRPS,DET,1,0,wa
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,wa
+'reported numbers',reported,0,'report number',report,0,'VBD POS',VBN,1,0,wa
+'well perform','and of',0,'well perform','and of',0,'RB PPR','CC POS',0,1,wa
+'averaged as',averages,0,'average as',average,0,'VBD POS',NNS,1,0,wa
+.,.,1,.,.,1,PP,PP,1,1,wa
+of,?,0,of,?,0,IN,?,0,0,unaligned
+as,?,0,as,?,0,IN,?,0,0,wa
+as,?,0,as,?,0,IN,?,0,0,wa
+we,?,0,we,?,0,PRP,?,0,0,wa
+?,',',0,?,',',0,?,PPR,0,0,wa
+successfully,make,0,successfully,make,0,RB,VB,1,0,wa
+'80 .27\%','80 .27\%',1,'80 .27\%','80 .27\%',1,'CD POS','CD POS',1,1,wa
+introduce,?,0,introduce,?,0,VB,?,0,0,wa
+'a hit',hit,0,'a hit',hit,0,'DET POS',NN,1,0,wa
+recommendation,recommendations,0,recommendation,recommendation,1,NN,NNS,1,1,wa
+takes,take,0,take,take,1,VBZ,VB,1,1,wa
+'We there',There,0,'We there',There,0,'PRP PPR',EX,1,0,wa
+are,were,0,be,be,1,VBP,VBD,0,1,stem
+types,types,1,type,type,1,NNS,NNS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+false,false,1,false,false,1,JJ,JJ,1,0,exact
+recommendations,recommendation,0,recommendation,recommendation,1,NNS,NN,1,0,unaligned
+'on places','in places',0,'on place','in place',0,'IN POS','IN POS',0,1,wa
+the,the,1,the,the,1,DET,DET,0,1,exact
+top,top,1,top,top,1,JJ,JJ,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+list,list,1,list,list,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+observed,?,0,observe,?,0,JJ,?,0,0,wa
+that,?,0,that,?,0,IN,?,0,0,wa
+The,The,1,The,The,1,DET,DET,1,1,exact
+first,first,1,first,first,1,JJ,JJ,1,1,exact
+type,type,1,type,type,1,NN,NN,1,0,exact
+consists,consisted,0,consist,consist,1,VBZ,VBN,1,0,stem
+background,background,1,background,background,1,NN,NN,0,1,exact
+regions,regions,1,region,region,1,NNS,NNS,1,1,exact
+(,(,1,(,(,1,LRB,LRB,1,1,exact
+e.g.,e.g.,1,e.g.,e.g.,1,PP,PP,1,1,exact
+trees,trees,1,tree,tree,1,NNS,NNS,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+buildings,buildings,1,build,build,1,NNS,NNS,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+roads,roads,1,roads,roads,1,NNS,NNS,1,1,exact
+),),1,),),1,RRB,RRB,1,0,exact
+which,which,1,which,which,1,WDT,WDT,0,1,exact
+are,are,1,be,be,1,VBP,VBP,1,1,exact
+easily,easily,1,easily,easily,1,RB,RB,1,1,exact
+found,found,1,find,find,1,VBN,VBN,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+many,many,1,many,many,1,JJ,JJ,1,1,exact
+images,images,1,image,image,1,NNS,NNS,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,of,0,?,of,0,?,IN,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,wa
+The,The,1,The,The,1,DET,DET,1,1,exact
+second,second,1,second,second,1,JJ,JJ,1,1,exact
+type,type,1,type,type,1,NN,NN,1,0,exact
+is,was,0,be,be,1,VBZ,VBD,1,0,stem
+items,items,1,item,item,1,NNS,NNS,0,1,exact
+'lacking of',lacking,0,'lack of',lack,0,'VBG POS',VBG,1,1,wa
+manual,manual,1,manual,manual,1,JJ,JJ,0,0,exact
+annotation,annotations,0,annotation,annotation,1,NN,NNS,1,1,unaligned
+such,such,1,such,such,1,JJ,JJ,0,1,exact
+as,as,1,as,as,1,IN,IN,1,1,exact
+windows,windows,1,windows,windows,1,NNS,NNS,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+cars,cars,1,car,car,1,NNS,NNS,1,0,exact
+and,and,1,and,and,1,CC,CC,0,1,exact
+humans,humans,1,humans,humans,1,NNS,NNS,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+the,?,0,the,?,0,DET,?,0,0,unaligned
+?,',',0,?,',',0,?,PPR,0,0,wa
+Thus,Thus,1,Thus,Thus,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,1,exact
+about,about,1,about,about,1,IN,IN,1,1,exact
+those,those,1,those,those,1,DET,DET,1,1,exact
+items,items,1,item,item,1,NNS,NNS,1,1,exact
+are,are,1,be,be,1,VBP,VBP,1,1,exact
+not,not,1,not,not,1,RB,RB,1,1,exact
+counted,counted,1,count,count,1,VBN,VBN,1,1,exact
+as,as,1,as,as,1,IN,IN,1,1,exact
+hit,hit,1,hit,hit,1,NN,NN,1,1,exact
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+However,However,1,However,However,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+if,if,1,if,if,1,IN,IN,1,1,exact
+users,users,1,user,user,1,NNS,NNS,1,1,exact
+are,are,1,be,be,1,VBP,VBP,1,1,exact
+interested,interested,1,interest,interest,1,JJ,JJ,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+using,using,1,use,use,1,VBG,VBG,1,1,exact
+them,them,1,them,them,1,PRP,PRP,1,1,exact
+as,as,1,as,as,1,IN,IN,1,1,exact
+hints,hints,1,hint,hint,1,NNS,NNS,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+explore,explore,1,explore,explore,1,VB,VB,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+database,database,1,database,database,1,NN,NN,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+they,they,1,they,they,1,PRP,PRP,1,0,exact
+are,may,0,be,may,0,VBP,MD,1,1,wa
+still,still,1,still,still,1,RB,RB,0,0,exact
+very,very,1,very,very,1,RB,RB,0,0,exact
+'much helpful',helpful,0,'much helpful',helpful,0,'JJ PPR',JJ,1,1,wa
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,be,0,?,be,0,?,VB,0,0,wa
+Clearly,Clearly,1,Clearly,Clearly,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+one,one,1,one,one,1,CD,CD,1,1,exact
+can,can,1,can,can,1,MD,MD,1,1,exact
+realize,realize,1,realize,realize,1,VB,VB,1,1,exact
+that,that,1,that,that,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+performance,performance,1,performance,performance,1,NN,NN,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,0,exact
+under,influenced,0,under,influence,0,IN,VBN,1,0,wa
+'influence of',by,0,'influence of',by,0,'NN POS',IN,0,1,wa
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,0,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+the,?,0,the,?,0,DET,?,0,0,wa
+By,By,1,By,By,1,IN,IN,1,1,exact
+increasing,increasing,1,increase,increase,1,VBG,VBG,1,1,exact
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+we,we,1,we,we,1,PRP,PRP,1,0,exact
+obtain,'can obtain',0,obtain,'can obtain',0,VB,'MD PPR',1,1,stem
+more,more,1,more,more,1,JJR,JJR,1,1,exact
+region,region,1,region,region,1,NN,NN,1,1,exact
+pairs,pairs,1,pair,pair,1,NNS,NNS,1,1,exact
+with,with,1,with,with,1,IN,IN,1,0,exact
+sufficient,sufficiently,0,sufficient,sufficiently,0,JJ,RB,1,0,stem
+hight,high,0,hight,high,0,NN,JJ,0,1,unaligned
+similarity,similarity,1,similarity,similarity,1,NN,NN,0,1,exact
+scores,scores,1,score,score,1,NNS,NNS,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+'It brings',Thisgives,0,'It bring',Thisgives,0,'PRP PPR',NNP,1,1,para
+more,more,1,more,more,1,JJR,JJR,0,1,exact
+chances,chances,1,chance,chance,1,NNS,NNS,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+get,get,1,get,get,1,VB,VB,1,1,exact
+region,region,1,region,region,1,NN,NN,1,1,exact
+pairs,pairs,1,pair,pair,1,NNS,NNS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+annotated,annotated,1,annotate,annotate,1,NN,NN,1,1,exact
+item,item,1,item,item,1,NN,NN,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+thus,thus,1,thus,thus,1,RB,RB,1,0,exact
+improves,improving,0,improve,improve,1,VBZ,VBG,1,0,stem
+precision,precision,1,precision,precision,1,NN,NN,0,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+the,?,0,the,?,0,DET,?,0,0,unaligned
+However,However,1,However,However,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+trade-off,trade-off,1,trade-off,trade-off,1,NN,NN,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,1,exact
+that,that,1,that,that,1,IN,IN,1,1,exact
+more,more,1,more,more,1,JJR,JJR,1,1,exact
+'unexpected also',unexpected,0,'unexpected also',unexpected,0,'JJ PPR',JJ,1,0,wa
+items,items,1,item,item,1,NNS,NNS,1,1,exact
+are,are,1,be,be,1,VBP,VBP,1,0,exact
+returned,returned,1,return,return,1,VBN,VBN,0,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+This,This,1,This,This,1,DET,DET,1,1,exact
+results,results,1,result,result,1,NNS,NNS,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+a,a,1,a,a,1,DET,DET,1,1,exact
+drop,drop,1,drop,drop,1,NN,NN,1,0,exact
+of,in,0,of,in,0,IN,IN,1,0,unaligned
+average,average,1,average,average,1,JJ,JJ,0,1,exact
+rank,rank,1,rank,rank,1,NN,NN,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+first,first,1,first,first,1,JJ,JJ,1,1,exact
+hit,hit,1,hit,hit,1,NN,NN,1,1,exact
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Figure,Figure,1,Figure,Figure,1,NNP,NNP,1,1,exact
+5(,5(,1,5(,5(,1,LRB,LRB,1,1,exact
+a,a,1,a,a,1,DET,DET,1,1,exact
+),),1,),),1,RRB,RRB,1,1,exact
+demonstrates,demonstrates,1,demonstrate,demonstrate,1,VBZ,VBZ,1,1,exact
+this,this,1,this,this,1,DET,DET,1,1,exact
+circumstance,circumstance,1,circumstance,circumstance,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+When,When,1,When,When,1,WRB,WRB,1,1,exact
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,exact
+increases,increases,1,increase,increase,1,NNS,NNS,1,1,exact
+from,from,1,from,from,1,IN,IN,1,1,exact
+2000,2000,1,2000,2000,1,CD,CD,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+10000,10000,1,10000,10000,1,CD,CD,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+precision,precision,1,precision,precision,1,NN,NN,1,0,exact
+'also increases',increases,0,'also increase',increase,0,'RB POS',NNS,1,1,wa
+from,from,1,from,from,1,IN,IN,1,1,exact
+74,74,1,74,74,1,CD,CD,1,1,exact
+'.67\%','.67\%',1,'.67\%','.67\%',1,POS,POS,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+81,81,1,81,81,1,CD,CD,1,1,exact
+'.97\%','.97\%',1,'.97\%','.97\%',1,POS,POS,1,1,exact
+;,;,1,;,;,1,PPS,PPS,1,1,exact
+meanwhile,meanwhile,1,meanwhile,meanwhile,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+average,average,1,average,average,1,JJ,JJ,1,1,exact
+rank,rank,1,rank,rank,1,NN,NN,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+first,first,1,first,first,1,JJ,JJ,1,1,exact
+hit,hit,1,hit,hit,1,NN,NN,1,1,exact
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,exact
+drops,drops,1,drop,drop,1,NNS,NNS,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+2,2,1,2,2,1,CD,CD,1,1,exact
+.27,.27,1,.27,.27,1,CD,CD,1,1,exact
+from,from,1,from,from,1,IN,IN,1,1,exact
+1,1,1,1,1,1,CD,CD,1,1,exact
+.78,.78,1,.78,.78,1,CD,CD,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+It,It,1,It,It,1,PRP,PRP,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,1,exact
+worth,worth,1,worth,worth,1,JJ,JJ,1,1,exact
+noting,noting,1,note,note,1,VBG,VBG,1,1,exact
+that,that,1,that,that,1,IN,IN,1,1,exact
+keeping,keeping,1,keep,keep,1,VBG,VBG,1,0,exact
+inreasing,increasing,0,inreasing,increase,0,VBG,VBG,1,1,unaligned
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,0,1,exact
+may,may,1,may,may,1,MD,MD,1,1,exact
+not,not,1,not,not,1,RB,RB,1,1,exact
+always,always,1,always,always,1,RB,RB,1,1,exact
+give,give,1,give,give,1,VB,VB,1,1,exact
+better,better,1,good,good,1,RB,RB,1,1,exact
+precision,precision,1,precision,precision,1,NN,NN,1,0,exact
+since,since,1,since,since,1,IN,IN,0,1,exact
+precision,precision,1,precision,precision,1,NN,NN,1,1,exact
+relies,relies,1,rely,rely,1,VBZ,VBZ,1,1,exact
+on,on,1,on,on,1,IN,IN,1,1,exact
+not,not,1,not,not,1,RB,RB,1,1,exact
+only,only,1,only,only,1,RB,RB,1,1,exact
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,exact
+but,but,1,but,but,1,CC,CC,1,1,exact
+also,also,1,also,also,1,RB,RB,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+robustness,robustness,1,robustness,robustness,1,NNS,NNS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+region,region,1,region,region,1,NN,NN,1,0,exact
+comparision,comparison,0,comparision,comparison,0,NN,NN,1,1,unaligned
+techniques,techniques,1,technique,technique,1,NNS,NNS,0,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,',',0,?,',',0,?,PPR,0,0,wa
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+cannot,cannot,1,cannot,cannot,1,NN,NN,1,1,exact
+provide,provide,1,provide,provide,1,VB,VB,1,1,exact
+any,any,1,any,any,1,DET,DET,1,1,exact
+hit,hit,1,hit,hit,1,NN,NN,1,1,exact
+recommendation,recommendation,1,recommendation,recommendation,1,NN,NN,1,1,exact
+for,for,1,for,for,1,IN,IN,1,1,exact
+around,around,1,around,around,1,IN,IN,1,1,exact
+'20\%','20\%',1,'20\%','20\%',1,POS,POS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,0,exact
+initial,initial,1,initial,initial,1,JJ,JJ,0,1,exact
+query,query,1,query,query,1,NN,NN,1,1,exact
+images,images,1,image,image,1,NNS,NNS,1,1,exact
+due,due,1,due,due,1,JJ,JJ,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+fact,fact,1,fact,fact,1,NN,NN,1,1,exact
+that,that,1,that,that,1,IN,IN,1,1,exact
+our,our,1,our,our,1,PRPS,PRPS,1,1,exact
+region,region,1,region,region,1,NN,NN,1,0,exact
+comparision,comparison,0,comparision,comparison,0,NN,NN,1,1,unaligned
+technique,technique,1,technique,technique,1,NN,NN,0,1,exact
+cannot,cannot,1,cannot,cannot,1,NN,NN,1,1,exact
+deal,deal,1,deal,deal,1,NN,NN,1,1,exact
+with,with,1,with,with,1,IN,IN,1,1,exact
+significant,significant,1,significant,significant,1,JJ,JJ,1,1,exact
+variations,variations,1,variation,variation,1,NNS,NNS,1,0,exact
+of,in,0,of,in,0,IN,IN,1,0,unaligned
+items,items,1,item,item,1,NNS,NNS,0,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,the,0,?,the,0,?,DET,0,0,unaligned
+?,the,0,?,the,0,?,DET,0,0,unaligned
+Figure,Figure,1,Figure,Figure,1,NNP,NNP,1,1,exact
+5(,5(,1,5(,5(,1,LRB,LRB,1,1,exact
+b,b,1,b,b,1,NN,NN,1,1,exact
+),),1,),),1,RRB,RRB,1,1,exact
+shows,shows,1,show,show,1,NNS,NNS,1,1,exact
+another,another,1,another,another,1,DET,DET,1,1,exact
+circumstance,circumstance,1,circumstance,circumstance,1,NN,NN,1,1,exact
+when,when,1,when,when,1,WRB,WRB,1,1,exact
+we,we,1,we,we,1,PRP,PRP,1,1,exact
+increase,increase,1,increase,increase,1,NN,NN,1,1,exact
+'\\MATH','\\MATH',1,'\\MATH','\\MATH',1,NNP,NNP,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+It,It,1,It,It,1,PRP,PRP,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+decline,decline,1,decline,decline,1,NN,NN,1,0,exact
+of,in,0,of,in,0,IN,IN,1,0,unaligned
+efficiency,efficiency,1,efficiency,efficiency,1,NN,NN,0,1,exact
+improvement,improvement,1,improvement,improvement,1,NN,NN,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,the,0,?,the,0,?,DET,0,0,unaligned
+This,This,1,This,This,1,DET,DET,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,1,exact
+because,because,1,because,because,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+branch-and-bound,branch-and-bound,1,branch-and-bound,branch-and-bound,1,JJ,JJ,1,1,exact
+algorithm,algorithm,1,algorithm,algorithm,1,NN,NN,1,1,exact
+has,has,1,have,have,1,VBZ,VBZ,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+visit,visit,1,visit,visit,1,NN,NN,1,1,exact
+more,more,1,more,more,1,JJR,JJR,1,1,exact
+parts,parts,1,part,part,1,NNS,NNS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+total,total,1,total,total,1,JJ,JJ,1,1,exact
+search,search,1,search,search,1,NN,NN,1,1,exact
+space,space,1,space,space,1,NN,NN,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+order,order,1,order,order,1,NN,NN,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+find,find,1,find,find,1,VB,VB,1,1,exact
+extra,extra,1,extra,extra,1,JJ,JJ,1,1,exact
+local,local,1,local,local,1,JJ,JJ,1,0,exact
+optimals,opitimals,0,optimals,opitimals,0,NNS,NNS,1,1,wa
+.,.,1,.,.,1,PP,PP,0,1,exact
+However,However,1,However,However,1,RB,RB,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+all,all,1,all,all,1,DET,DET,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+our,our,1,our,our,1,PRPS,PRPS,1,1,exact
+evaluations,evaluations,1,evaluation,evaluation,1,NNS,NNS,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+still,still,1,still,still,1,RB,RB,1,0,exact
+performs,performed,0,perform,perform,1,VBZ,VBN,1,1,stem
+around,around,1,around,around,1,IN,IN,0,0,exact
+3,three,0,3,three,0,CD,CD,1,1,unaligned
+times,times,1,time,time,1,NNS,NNS,0,1,exact
+faster,faster,1,fast,fast,1,RBR,RBR,1,1,exact
+than,than,1,than,than,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+exhaustive,exhaustive,1,exhaustive,exhaustive,1,JJ,JJ,1,1,exact
+search,search,1,search,search,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+'Its is','This will be',0,'Its be','This will be',0,'PRPS PPR','DET MD PPR',1,1,wa
+superiority,advantage,0,superiority,advantage,0,NN,NN,0,0,syn
+important,important,1,important,important,1,JJ,JJ,0,1,exact
+for,for,1,for,for,1,IN,IN,1,1,exact
+practical,practical,1,practical,practical,1,JJ,JJ,1,1,exact
+applications,applications,1,application,application,1,NNS,NNS,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+Figure,Figure,1,Figure,Figure,1,NNP,NNP,1,1,exact
+'\\REF','\\REF',1,'\\REF','\\REF',1,NNP,NNP,1,1,exact
+presents,presents,1,present,present,1,NNS,NNS,1,1,exact
+examples,examples,1,example,example,1,NNS,NNS,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+hit,hit,1,hit,hit,1,NN,NN,1,1,exact
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,1,exact
+returned,returned,1,return,return,1,VBN,VBN,1,0,exact
+'by our Recommend-Me',byRecommend-Me,0,'by our Recommend-Me',byRecommend-Me,0,'IN PRPS PPR',JJ,1,1,wa
+.,.,1,.,.,1,PP,PP,0,1,exact
+In,We,0,In,We,0,IN,PRP,1,0,wa
+this,described,0,this,describe,0,DET,VBN,0,0,wa
+'paper introduced new system','oursystem making',0,'paper introduce new system','oursystem make',0,'NN VBN JJ POS','NN PPR',0,0,wa
+', ,',',',0,', ,',',',0,'PPC PPR',PPR,0,1,wa
+'we named',named,0,'we name',name,0,'PRP PPR',VBN,1,1,wa
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,wa
+for,for,1,for,for,1,IN,IN,1,0,exact
+a,making,0,a,make,0,DET,VBG,0,0,wa
+visual,visual,1,visual,visual,1,JJ,JJ,0,1,exact
+query,query,1,query,query,1,NN,NN,1,0,exact
+suggestion,suggestions,0,suggestion,suggestion,1,NN,NNS,1,1,unaligned
+.,.,1,.,.,1,PP,PP,0,1,wa
+Given,Given,1,Given,Given,1,VBN,VBN,1,1,exact
+an,an,1,an,an,1,DET,DET,1,1,exact
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,exact
+query,query,1,query,query,1,NN,NN,1,1,exact
+image,image,1,image,image,1,NN,NN,1,1,exact
+and,and,1,and,and,1,CC,CC,1,1,exact
+a,a,1,a,a,1,DET,DET,1,1,exact
+retrieved,retrieved,1,retrieve,retrieve,1,VBN,VBN,1,1,exact
+database,database,1,database,database,1,NN,NN,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,0,exact
+introduces,gives,0,introduce,give,0,VBZ,VBZ,1,1,syn
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,0,1,exact
+that,that,1,that,that,1,IN,IN,1,0,exact
+imposes,'impose conditions on',0,impose,'impose condition on',0,VBZ,'VB NNS POS',1,1,wa
+which,which,1,which,which,1,WDT,WDT,0,1,exact
+and,and,1,and,and,1,CC,CC,1,1,exact
+how,how,1,how,how,1,WRB,WRB,1,1,exact
+frequent,frequent,1,frequent,frequent,1,JJ,JJ,1,1,exact
+items,items,1,item,item,1,NNS,NNS,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,exact
+query,query,1,query,query,1,NN,NN,1,1,exact
+image,image,1,image,image,1,NN,NN,1,1,exact
+appear,appear,1,appear,appear,1,VB,VB,1,1,exact
+in,in,1,in,in,1,IN,IN,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+database,database,1,database,database,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+Such,Such,1,Such,Such,1,JJ,JJ,1,1,exact
+recommendations,recommendations,1,recommendation,recommendation,1,NNS,NNS,1,0,exact
+support,help,0,support,help,0,NN,NN,1,1,syn
+users,users,1,user,user,1,NNS,NNS,0,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+select,select,1,select,select,1,JJ,JJ,1,0,exact
+search,search,1,search,search,1,NN,NN,0,1,exact
+query,query,1,query,query,1,NN,NN,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+rapidly,rapidly,1,rapidly,rapidly,1,RB,RB,1,1,exact
+refine,refine,1,refine,refine,1,VB,VB,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+initial,initial,1,initial,initial,1,JJ,JJ,1,1,exact
+query,query,1,query,query,1,NN,NN,1,1,exact
+image,image,1,image,image,1,NN,NN,1,1,exact
+or,or,1,or,or,1,CC,CC,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+explore,explore,1,explore,explore,1,VB,VB,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+database,database,1,database,database,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact
+?,the,0,?,the,0,?,DET,0,0,unaligned
+An,An,1,An,An,1,DET,DET,1,1,exact
+efficient,efficient,1,efficient,efficient,1,JJ,JJ,1,1,exact
+solution,solution,1,solution,solution,1,NN,NN,1,1,exact
+to,to,1,to,to,1,TO,TO,1,1,exact
+make,make,1,make,make,1,VB,VB,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+practical,practical,1,practical,practical,1,JJ,JJ,1,0,exact
+is,was,0,be,be,1,VBZ,VBD,1,0,stem
+presented,'also presented',0,present,'also present',0,VBN,'RB PPR',0,1,wa
+.,.,1,.,.,1,PP,PP,1,1,exact
+To,To,1,To,To,1,TO,TO,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+best,best,1,good,good,1,RB,RB,1,1,exact
+of,of,1,of,of,1,IN,IN,1,1,exact
+our,our,1,our,our,1,PRPS,PRPS,1,1,exact
+knowledge,knowledge,1,knowledge,knowledge,1,NN,NN,1,1,exact
+',',',',1,',',',',1,PPR,PPR,1,1,exact
+Recommend-Me,Recommend-Me,1,Recommend-Me,Recommend-Me,1,JJ,JJ,1,1,exact
+is,is,1,be,be,1,VBZ,VBZ,1,1,exact
+the,the,1,the,the,1,DET,DET,1,1,exact
+first,first,1,first,first,1,JJ,JJ,1,1,exact
+attempt,'attempt at',0,attempt,'attempt at',0,NN,'NN POS',1,0,wa
+toward,developing,0,toward,develop,0,IN,VBG,0,0,syn
+its,a,0,it,a,0,PRPS,DET,0,1,unaligned
+targeted,targeted,1,target,target,1,JJ,JJ,0,1,exact
+suggestion,suggestion,1,suggestion,suggestion,1,NN,NN,1,1,exact
+scheme,scheme,1,scheme,scheme,1,NN,NN,1,1,exact
+.,.,1,.,.,1,PP,PP,1,1,exact

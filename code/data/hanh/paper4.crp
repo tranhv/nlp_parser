@@ -1,0 +1,762 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Two-stage Incremental Working Set Selection for Fast Support Vector Training on Large Datasets
+Two-stage Incremental Working Set Selection for Fast Support Vector Training on Large Datasets
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+We propose iSVM - an incremental algorithm that achieves high speed in training support vector machines ( SVMs ) on large datasets . 
+We propose iSVM - an incremental algorithm that achieves high speed in training support vector machines ( SVMs ) on large datasets . 
+7
+In the common decomposition framework , iSVM starts with a minimum working set ( WS ) , and then iteratively selects one training example to update the WS in each optimization loop .
+In the common decomposition framework , iSVM starts with a minimum working set ( WS ) , and then iteratively selects one training example to update the WS in each optimization loop .
+8
+iSVM employs a two-stage strategy in processing the training data . 
+iSVM employs a two-stage strategy in processing the training data . 
+9
+In the first stage , the most prominent vector among randomly sampled data is added to the WS . 
+In the first stage , the most prominent vector among randomly sampled data is added to the WS . 
+10
+This stage results in an approximate SVM solution . 
+This stage results in an approximate SVM solution . 
+11
+The second stage uses temporal solutions to scan through the whole training data once again to find the remaining support vectors ( SVs ) . 
+The second stage uses temporal solutions to scan through the whole training data once again to find the remaining support vectors ( SVs ) . 
+12
+We show that iSVM is especially efficient for training SVMs on applications where data size is much larger than number of SVs . 
+We show that iSVM is especially efficient for training SVMs on applications where data size is much larger than number of SVs . 
+13
+On the KDD-CUP 1999 network intrusion detection dataset with nearly five millions training examples , iSVM takes less than one hour to train an SVM with 94% testing accuracy , compared to seven hours with LibSVM – one of the state-of-the-art SVM implementations . 
+On the KDD-CUP 1999 network intrusion detection dataset with nearly five millions training examples , iSVM takes less than one hour to train an SVM with 94% testing accuracy , compared to seven hours with LibSVM – one of the state-of-the-art SVM implementations . 
+14
+We also provide analysis and experimental comparisons between iSVM and the related algorithms .
+We also provide analysis and experimental comparisons between iSVM and the related algorithms .
+15
+</p>
+</p>
+16
+</abstract>
+</abstract>
+17
+<section label="  INTRODUCTION" >
+<section label="  INTRODUCTION" >
+18
+</p>
+</p>
+19
+In recent years support vector machine ( SVM ) \CITE has been successfully applied in various machine learning applications .
+In recent years support vector machine ( SVM ) \CITE has been successfully applied in various machine learning applications .
+20
+However , scalability still remains one of biggest challenges for SVM in particular and kernel-based methods in general . 
+However , scalability still remains one of biggest challenges for SVM in particular and kernel-based methods in general . 
+21
+It is due to the fact that training an SVM requires solving a quadratic programming ( QP ) problem in which , for the worst case , the complexity becomes </Eq> for time and </Eq> for memory requirement , where l is the number of training examples \CITE .
+It is due to the fact that training an SVM requires solving a quadratic programming ( QP ) problem in which , for the worst case , the complexity becomes </Eq> for time and </Eq> for memory requirement , where l is the number of training examples \CITE .
+22
+There have been number of approaches to scalability problem of SVM training . 
+There have been a number of approaches to scalability problem of SVM training . 
+23
+Among them decomposition is the most widely implemented method in various SVM software and libraries , e.g. LibSVM \CITE , SVM light \CITE , CoreSVM \CITE , HeroSVM \CITE , and SimpleSVM \CITE . 
+Among them , decomposition is the most widely implemented method in various SVM software and libraries , e.g. LibSVM \CITE , SVM light \CITE , CoreSVM \CITE , HeroSVM \CITE , and SimpleSVM \CITE . 
+24
+The main idea of decomposition algorithms is to divide training data into two sets : an active working set ( WS ) whose coefficients can be updated , and an inactive set whose coefficients are temporally fixed \CITE . 
+The main idea of decomposition algorithms is to divide training data into two sets : an active working set ( WS ) whose coefficients can be updated , and an inactive set whose coefficients are temporally fixed \CITE . 
+25
+The extreme case of this decomposition approach is the Sequential Minimal Optimization ( SMO ) algorithm \CITE that does optimization on a set of only two examples . 
+The extreme case of this decomposition approach is the Sequential Minimal Optimization ( SMO ) algorithm \CITE that does optimization on a set of only two examples . 
+26
+For each optimization loop , SMO scans through the whole training data to find a good pair of vectors , and then updates coefficients of the two selected vectors analytically . 
+For each optimization loop , SMO scans through the whole training data to find a good pair of vectors , and then updates coefficients of the two selected vectors analytically . 
+27
+In order to find a good pair in the next iteration , it is required to update the violation of optimality criteria of all training vectors . 
+In order to find a good pair in the next iteration , it is required to update the violation of optimality criteria of all training vectors . 
+28
+It is very expensive for applications where the number of updates ( training data ) is huge .
+It is very expensive for applications where the number of updates ( training data ) is huge .
+29
+In this paper , we introduce a two-stage incremental WS selection method in training SVMs . 
+In this paper , we introduce a two-stage incremental WS selection method in training SVMs . 
+30
+The proposed algorithm starts from finding an initial SVM solution on a minimum WS ( two vectors from opposite classes in a two-class classification task ) . 
+The proposed algorithm starts from finding an initial SVM solution on a minimum WS ( two vectors from opposite classes in a two-class classification task ) . 
+31
+It then iteratively selects one training vector to update the WS . 
+It then iteratively selects one training vector to update the WS . 
+32
+The selection of new vectors is divided into two stages . 
+The selection of new vectors is divided into two stages . 
+33
+In the first stage , only the most prominent vector among a fixed number of sampling data is added to the WS while all others remain in the training data . 
+In the first stage , only the most prominent vector among a fixed number of sampling data is added to the WS while all others remain in the training data . 
+34
+From the second stage , all training examples are checked once again . 
+From the second stage , all training examples are checked once again . 
+35
+For both stages , each optimality violated vector is used to update the WS and find a new SVM solution . 
+For both stages , each optimality violated vector is used to update the WS and find a new SVM solution . 
+36
+We show that with this two-stage WS selection strategy the proposed iSVM has a linear time complexity in number of training examples and cubic in number of SVs . 
+We show that with this two-stage WS selection strategy , the proposed iSVM has a linear time complexity in number of training examples and cubic in number of SVs . 
+37
+Experiments on large benchmark datasets show that iSVM is very fast when working on applications where number of SVs is much smaller than number of training data . 
+Experiments on large benchmark datasets show that iSVM is very fast when working on applications where number of SVs is much smaller than number of training data . 
+38
+On the KDD-CUP 1999 network intrusion detection dataset with nearly five millions training examples iSVM takes less than one hour to train a SVM with 94% testing accuracy .
+On the KDD-CUP 1999 network intrusion detection dataset with nearly five millions training examples , iSVM takes less than one hour to train a SVM with 94% testing accuracy .
+39
+With LibSVM \CITE – one of the state-of-the-art SMO implementations , it takes seven hours .
+With LibSVM \CITE – one of the state-of-the-art SMO implementations , it takes seven hours .
+40
+The rest part of this paper is organized as follows . 
+The rest of this paper is organized as follows . 
+41
+In Section II we briefly describe SVM training problem and decomposition algorithms for solving it . 
+In Section II , we briefly describe SVM training problems and decomposition algorithms for solving them . 
+42
+We introduce iSVM and its complexity analysis in section III . 
+We introduce iSVM and its complexity analysis in section III . 
+43
+In section IV we discuss relations between iSVM and related SVM training algorithms . 
+In section IV , we discuss the relations between iSVM and related SVM training algorithms . 
+44
+Experiments for evaluating iSVM and comparison with other algorithms are reported in section V . 
+Experiments for evaluating iSVM and comparison with other algorithms are reported in section V . 
+45
+Section VI is for conclusion .
+Section VI is for conclusion .
+46
+</p>
+</p>
+47
+</section>
+</section>
+48
+<section label="  SVM AND DECOMPOSITION ALGORITHMS " >
+<section label="  SVM AND DECOMPOSITION ALGORITHMS " >
+49
+<subsection label=" Support Vector Training" >
+<subsection label=" Support Vector Training" >
+50
+<p>
+<p>
+51
+In support vector learning \CITE , we are given a set of l training examples </Eq> with labels </Eq> . 
+In support vector learning \CITE , we are given a set of l training examples </Eq> with labels </Eq> . 
+52
+The main task of training an SVM is to solve the following optimization problem :
+The main task of training an SVM is to solve the following optimization problem :
+53
+( 1 ) where </Eq> is a kernel function calculating dot product between two vector </Eq> and </Eq> in some feature space ; C is a parameter penalizing each "  noisy "  example in the given training data . 
+( 1 ) where </Eq> is a kernel function calculating dot product between two vector </Eq> and </Eq> in some feature space ; C is a parameter penalizing each "  noisy "  example in the given training data . 
+54
+The optimal coefficients </Eq> will form a decision function :
+The optimal coefficients </Eq> will form a decision function :
+55
+( 2 ) Problem ( 1 ) involves l variables </Eq> and </Eq> parameters </Eq> . 
+( 2 ) Problem ( 1 ) involves l variables </Eq> and </Eq> parameters </Eq> . 
+56
+The </Eq> number of parameters </Eq> quickly exceeds memory capacity of a normal computer when the number of training examples gets larger than , say , 100 ,000 .
+The </Eq> number of parameters </Eq> quickly exceeds memory capacity of a normal computer when the number of training examples gets larger than , say , 100 ,000 .
+57
+This over demanding in memory requirement causes the main difficulty in training SVMs .
+This over demanding in memory requirement causes the main difficulty in training SVMs .
+58
+</p>
+</p>
+59
+</subsection>
+</subsection>
+60
+<subsection label="  SMO and Decomposition Algorithms" >
+<subsection label="  SMO and Decomposition Algorithms" >
+61
+<p>
+<p>
+62
+The main idea of decomposition algorithms , e.g. \CITE , is to break down the QP problem ( 1 ) of size l into a series of much smaller QPs , and iteratively perform optimization on these sub-problems . 
+The main idea of decomposition algorithms , e.g. \CITE , is to break down the QP problem ( 1 ) of size l into a series of much smaller QPs , and iteratively perform optimization on these sub-problems . 
+63
+In each iteration decomposition algorithms divide l training examples into two categories : a set of active vectors W that corresponding coefficients </Eq> can be updated and a set of inactive vectors that corresponding coefficients are temporally fixed . 
+In each iteration , decomposition algorithms divide l training examples into two categories : a set of active vectors W corresponding coefficients </Eq> can be updated , and a set of inactive vectors corresponding coefficients are temporally fixed . 
+64
+Active vectors are updated by some optimization method to minimize objective function L on W .
+Active vectors are updated by some optimization method to minimize objective function L on W .
+65
+After that fixed vectors are checked and used for updating the working set W . Optimization loop will stop when all optimality conditions are satisfied . 
+After that fixed vectors are checked and used for updating the working set W . Optimization loop will stop when all optimality conditions are satisfied . 
+66
+The extreme case of the decomposition method is the Sequential Minimal Optimization ( SMO ) algorithm \CITE that optimizes a set of only two vectors . 
+The extreme case of the decomposition method is the Sequential Minimal Optimization ( SMO ) algorithm \CITE that optimizes a set of only two vectors . 
+67
+The power of SMO resides in the fact that updating scheme could be done analytically . Call </Eq> and </Eq> be chosen vectors , then the best new values of </Eq> and </Eq> in terms of reducing best the objective function L in ( 1 ) are ( ignoring the box constraint </Eq> ) :
+The power of SMO resides in the fact that updating scheme could be done analytically . Call </Eq> and </Eq> be chosen vectors , then the best new values of </Eq> and </Eq> in terms of reducing best the objective function L in ( 1 ) are ( ignoring the box constraint </Eq> ) :
+68
+Input : Training data </Eq> Initialize a feasible solution 
+Input : Training data </Eq> Initialize a feasible solution 
+69
+Set iteration t = 0
+Set iteration t = 0
+70
+While StoppingCondition is not satisfied
+While StoppingCondition is not satisfied
+71
+Select a pair of vectors </Eq>
+Select a pair of vectors </Eq>
+72
+Update </Eq> analytically
+Update </Eq> analytically
+73
+Update violation states </Eq>
+Update violation states </Eq>
+74
+Set t = t + 1
+Set t = t + 1
+75
+Endwhile
+Endwhile
+76
+Output : Coefficients ( 3 ) </Eq> . 
+Output : Coefficients ( 3 ) </Eq> . 
+77
+This updating scheme leads to the reduction of objective function L an amount of ( 4 )
+This updating scheme leads to the reduction of objective function L an amount of ( 4 )
+78
+Based on this reduction rate different heuristics have been proposed to select the best pair of vectors </Eq> with a reasonable cost </Eq> .
+Based on this reduction rate , different heuristics have been proposed to select the best pair of vectors </Eq> with a reasonable cost </Eq> .
+79
+The analytical solution property of SMO makes it become a core optimizer for many SVM implementations . 
+The analytical solution property of SMO makes it become a core optimizer for many SVM implementations . 
+80
+In TABLE I we describe main procedures in an SMO implementation .
+In TABLE I we describe main procedures in an SMO implementation .
+81
+</p>
+</p>
+82
+</subsection>
+</subsection>
+83
+</section>
+</section>
+84
+<section label="  ISVM - AN INCREMENTAL SVM TRAINING ALGORITHM" >
+<section label="  ISVM - AN INCREMENTAL SVM TRAINING ALGORITHM" >
+85
+<p>
+<p>
+86
+The most expensive procedure of the SMO is updating violation of optimality criteria </Eq> of all training vectors in step 5 . 
+The most expensive procedure of the SMO is updating violation of optimality criteria </Eq> of all training vectors in step 5 . 
+87
+This calculation is used to select the best pair of vectors in the next iteration; and it is required for every training example .
+This calculation is used to select the best pair of vectors in the next iteration , and it is required for every training example .
+88
+Step 5 becomes very expensive when the number of updates ( or training data ) is huge . Moreover , as only SVs ( training vectors </Eq> with corresponding coefficients </Eq> will contribute to form the final decision function ( 2 ) , step 5 of SMO can be very inefficient when many training examples are not SVs . 
+Step 5 becomes very expensive when the number of updates ( or training data ) is huge . Moreover , as only SVs ( training vectors </Eq> with corresponding coefficients </Eq> will contribute to form the final decision function ( 2 ) , step 5 of SMO can be very inefficient when many training examples are not SVs . 
+89
+To improve the efficiency shrinking technique \CITE can be applied to remove non-support vectors . 
+To improve the efficiency , shrinking technique \CITE can be applied to remove non-support vectors . 
+90
+However , there has been no way to determine whether a training example is a SV or not from the beginning .
+However , there has been no way to determine whether a training example is a SV or not from the beginning .
+91
+In this section we introduce an incremental strategy for selecting SVs . 
+In this section , we introduce an incremental strategy for selecting SVs . 
+92
+The main idea is using temporal SVM solutions to determine good candidates of SVs and optimization process is performed only on a small set of selected candidates . 
+The main idea is temporal SVM solutions can be used to determine good candidates of SVs , and optimization process is performed only on a small set of selected candidates . 
+93
+The following subsections describe in detailed the main steps of our proposed algorithm iSVM in TABLE II .
+The following subsections describe in detail the main steps of our proposed algorithm iSVM in TABLE II .
+94
+Input : Training data </Eq>
+Input : Training data </Eq>
+95
+Select the first working set </Eq> . 
+Select the first working set </Eq> . 
+96
+Find the first temporal solution </Eq> . 
+Find the first temporal solution </Eq> . 
+97
+Set </Eq>
+Set </Eq>
+98
+Set iteration t = 0
+Set iteration t = 0
+99
+While StoppingCondition is not satisfied
+While StoppingCondition is not satisfied
+100
+Select one vector </Eq> in T
+Select one vector </Eq> in T
+101
+Update </Eq>
+Update </Eq>
+102
+Find new solution </Eq> on </Eq>
+Find new solution </Eq> on </Eq>
+103
+Set t = t + 1
+Set t = t + 1
+104
+Endwhile
+Endwhile
+105
+Output : Coefficients </Eq>
+Output : Coefficients </Eq>
+106
+</p>
+</p>
+107
+<subsection label ="  Initialization" >
+<subsection label ="  Initialization" >
+108
+<p>
+<p>
+109
+As SMO is used for optimization on the selected working set </Eq> in step 0 and step 5 , a minimum set of two vectors are selected to build the first working set </Eq> . For a two-class classification task , this is simply selecting any two training vectors from two opposite classes ( in our implementation they are first vectors belonging to the positive and negative classes in the given training data ) . 
+As SMO is used for optimization on the selected working set </Eq> in step 0 and step 5 , a minimum set of two vectors are selected to build the first working set </Eq> . For a two-class classification task , this is simply selecting any two training vectors from two opposite classes ( in our implementation they are first vectors belonging to the positive and negative classes in the given training data ) . 
+110
+Compared with previously proposed methods , this initialization step is simpler . 
+Compared with previously proposed methods , this initialization step is simpler . 
+111
+In \CITE the authors suggested to select randomly a set of p training instances , where p is a training parameter . 
+In \CITE the authors suggested to select randomly a set of p training instances , where p is a training parameter . 
+112
+In \CITE , two closest vectors were recommended to form the first working set ( for the best reduction rate in ( 4 ) ) . 
+In \CITE , two closest vectors were recommended to form the first working set ( for the best reduction rate in ( 4 ) ) . 
+113
+However , our preliminary experiments indicated that the result of iSVM does not depend much on this initialization scheme .
+However , our preliminary experiments indicated that the result of iSVM does not depend much on this initialization scheme .
+114
+</p>
+</p>
+115
+</subsection>
+</subsection>
+116
+</subsection label="  Updating the Working Set" >
+</subsection label="  Updating the Working Set" >
+117
+<p>
+<p>
+118
+There have been different schemes proposed to update the WS in the common decomposition frame work . 
+There have been different schemes proposed to update the WS in the common decomposition frame work . 
+119
+In fact , this is a distinctive step for each algorithm . 
+In fact , this is a distinctive step for each algorithm . 
+120
+Different updating strategies will produce different results in terms of convergence speed and final solution . 
+Different updating strategies will produce different results in terms of convergence speed and final solution . 
+121
+In iSVM we propose a two-stage process for expanding and updating the WS . 
+In iSVM we propose a two-stage process for expanding and updating the WS . 
+122
+In the first stage , iSVM tries to find a good approximation of SVM solution as quickly as possible . 
+In the first stage , iSVM tries to find a good approximation of SVM solution as quickly as possible . 
+123
+It then scans through the whole training data once again to examine all remaining vectors one-by-one .
+It then scans through the whole training data once again to examine all the remaining vectors one-by-one .
+124
+Potential SVs will be used to update the WS and find a new and better SVM .
+Potential SVs will be used to update the WS and find a new and better SVM .
+125
+1 ) Re-sampling Selection : In support vector learning , if we know in advance which training example will be SV , we can remove all non-support vectors without changing the optimal solution . 
+1 ) Re-sampling Selection : In support vector learning , if we know in advance which training example will be SV , we can remove all non-support vectors without changing the optimal solution . 
+126
+An effective non-support vector removal strategy will guarantee an efficient algorithm . 
+An effective non-support vector removal strategy will guarantee an efficient algorithm . 
+127
+We do this by a twostage data processing procedure .
+We do this by a twostage data processing procedure .
+128
+In the first stage , step 3 of iSVM examines only a small number training examples and selects the most prominent vector to add to the WS . 
+In the first stage , step 3 of iSVM examines only a small number training examples and selects the most prominent vector to add to the WS . 
+129
+The selection is based on violation of optimality criteria of a training vector with respect to a temporal solution found in previous iteration . 
+The selection is based on violation of optimality criteria of a training vector with respect to a temporal solution found in previous iteration . 
+130
+At iteration t , </Eq> is selected based on the following criterion : ( 6 ) is the temporal solution </Eq> at iteration t . 
+At iteration t , </Eq> is selected based on the following criterion : ( 6 ) is the temporal solution </Eq> at iteration t . 
+131
+The selection heuristic ( 5 ) is exactly the maximal violating heuristic that has been used by SMO \CITE and other early decomposition implementations .
+The selection heuristic ( 5 ) is exactly the maximal violating heuristic that has been used by SMO \CITE and other early decomposition implementations .
+132
+The difference is that SMO updates all </Eq> and then scans through all of them to select the best pair . 
+The difference is that SMO updates all </Eq> and then scans through all of them to select the best pair . 
+133
+iSVM uses temporal solutions St to examine a fixed number of training examples . 
+iSVM uses temporal solutions St to examine a fixed number of training examples . 
+134
+Difference in complexity between the two strategies will be analyzed in more detail in subsection D .
+Difference in complexity between the two strategies will be analyzed in more detail in subsection D .
+135
+In the first stage , only the most prominent ( in terms of optimality violation ) vector is removed from T , all other vectors remain in the training data . 
+In the first stage , only the most prominent ( in terms of optimality violation ) vector is removed from T while all other vectors remain in the training data . 
+136
+They can be re-examined in the next iterations and/or in the second phase . 
+They can be re-examined in the next iterations and/or in the second phase . 
+137
+There are two reasons for the re-examination . 
+There are two reasons for the re-examination . 
+138
+Firstly , only the best vector is added to the WS , not every temporally violated vector . 
+Firstly , only the best vector is added to the WS , not every temporally violated vector . 
+139
+The second reason is that temporal solutions are still not close enough to the optimal solution ( as only a small number of vectors are examined ) . 
+Secondly , temporal solutions are still not close enough to the optimal solution ( as only a small number of vectors are examined ) . 
+140
+Removing training examples from very beginning might mistakenly remove the true SVs .
+Removing training examples from the very beginning might result in the mistaken removal of the true SVs .
+141
+The first stage will finish when we are sure at some extend that </Eq> is a good approximation . 
+The first stage will finish when we are sure to some extent that </Eq> is a good approximation . 
+142
+In iSVM , we use the following heuristics for ending the first stage : i ) None of N randomly selected vectors violates optimality criteria , or ii ) Size of </Eq> is bigger than a predefined number ( 1 ,000 in our experiments ) , or iii ) All training vectors are examined once in average .
+In iSVM , we use the following heuristics for ending the first stage : i ) None of N randomly selected vectors violates optimality criteria , or ii ) Size of </Eq> is bigger than a predefined number ( 1 ,000 in our experiments ) , or iii ) All training vectors are examined once in average .
+143
+The first condition has been used in various situations including kernel matrix approximation \CITE and CoreSVM \CITE . 
+The first condition has been used in various situations , including kernel matrix approximation \CITE and CoreSVM \CITE . 
+144
+This heuristic is based on the fact that with a sample size of N = 59 , we still can catch one among 5% most violating vectors \CITE . 
+This heuristic is based on the fact that with a sample size of N = 59 , we still can catch one among 5% most violating vectors \CITE . 
+145
+The second and third conditions mean that the temporal solution will be considered stable and close enough to the optimal solution when a big number of training examples are examined .
+The second and third conditions mean that the temporal solution will be considered stable and close enough to the optimal solution when a big number of training examples are examined .
+146
+After a good approximation has been achieved we can switch to the second stage to remove non-support vectors without much affect to the final solution .
+After a good approximation has been achieved , we can switch to the second stage to remove non-support vectors without affecting much the final solution .
+147
+2 ) Final Scanning : Based on the assumption that phase one produces a good approximate solution , phase two examines all training examples remaining in T one-by-one . 
+2 ) Final Scanning : Based on the assumption that phase one produces a good approximate solution , phase two examines all the training examples remaining in T one-by-one . 
+148
+If vector </Eq> violates optimality criteria with respect to temporal solution </Eq> then it is immediately used to update </Eq> to form a new solution . 
+If vector </Eq> violates optimality criteria with respect to temporal solution </Eq> , then it is immediately used to update </Eq> to form a new solution . 
+149
+Otherwise , it is removed from training data T .
+Otherwise , it is removed from training data T .
+150
+The algorithm will stop when all training examples in T are examined .
+The algorithm will stop when all training examples in T are examined .
+151
+</p>
+</p>
+152
+</subsection>
+</subsection>
+153
+<subsection label="  Optimization" >
+<subsection label="  Optimization" >
+154
+<p>
+<p>
+155
+The SMO is used to minimize the objective function L on the selected set of vectors </Eq> . 
+The SMO is used to minimize the objective function L on the selected set of vectors </Eq> . 
+156
+It is very efficient because </Eq> is usually much smaller than the whole training data . 
+It is very efficient because </Eq> is usually much smaller than the whole training data . 
+157
+Moreover , SMO can start optimization on Wt from </Eq> - the optimal solution on </Eq> in previous iteration . 
+Moreover , SMO can start optimization on Wt from </Eq> - the optimal solution on </Eq> in previous iteration . 
+158
+The difference is only about one newly added vector . 
+The difference is only about one newly added vector . 
+159
+This makes SMO converge very fast .
+This makes SMO converge very fast .
+160
+</p>
+</p>
+161
+</subsection>
+</subsection>
+162
+<subsection label="  Complexity Analysis" >
+<subsection label="  Complexity Analysis" >
+163
+<p>
+<p>
+164
+In this section we analyze the computational complexity of the proposed iSVM algorithm . 
+In this section we analyze the computational complexity of the proposed iSVM algorithm . 
+165
+At each iteration t , step 3 takes time </Eq> to examine one training example . 
+At each iteration t , step 3 takes time </Eq> to examine one training example . 
+166
+In the first phase , each training example is examined at most once ( when the stopping condition iii ) is applied ) . 
+In the first phase , each training example is examined at most once ( when the stopping condition iii ) is applied ) . 
+167
+The second phase scans training data once more . 
+The second phase scans the training data once more . 
+168
+Thus , each training example is examined at most twice . 
+Thus , each training example is examined at most twice . 
+169
+Totally step 3 takes time </Eq> .
+Totally step 3 takes time </Eq> .
+170
+Theoretically solving a QP problem of size </Eq> in step 3 takes time </Eq> . 
+Theoretically solving a QP problem of size </Eq> in step 3 takes time </Eq> . 
+171
+However , solution </Eq> at iteration t – 1 is used as an initial point , then step 5 requires only time </Eq> per iteration ( in fact it can be done in </Eq> by an efficient updating procedure \CITE ) . 
+However , solution </Eq> at iteration t – 1 is used as an initial point , then step 5 requires only time </Eq> per iteration ( in fact , it can be done in </Eq> by an efficient updating procedure \CITE ) . 
+172
+Totally step 5 takes time </Eq> .
+Totally , step 5 takes time </Eq> .
+173
+From the second phase the shrinking technique is applied ( a non support vector in </Eq> is replaced by a new vector found by step 3 ) , then size of the final working set approximates the number of final support vectors . 
+From the second phase , the shrinking technique is applied ( a non support vector in </Eq> is replaced by a new vector found by step 3 ) , then size of the final working set approximates the number of final support vectors . 
+174
+In total , the time complexity of iSVM is </Eq> , which is linear with number of training examples l and cubic with number of support vectors .
+In total , the time complexity of iSVM is </Eq> , which is linear with number of training examples l and cubic with number of support vectors .
+175
+Time complexity of the SMO algorithm described in TABLE I is </Eq> where </Eq> is the number of SMO iterations . 
+Time complexity of the SMO algorithm described in TABLE I is </Eq> where </Eq> is the number of SMO iterations . 
+176
+In iSVM , SMO is used to solve the QP on a small set of selective training examples . 
+In iSVM , SMO is used to solve the QP on a small set of selective training examples . 
+177
+From the complexity analysis above we can see that iSVM has advantage over the traditional SMO implementation when number of final SVs is much smaller than data size .
+From the complexity analysis above , we can see that iSVM has an advantage over the traditional SMO implementation when the number of the SVs is much smaller than the data size .
+178
+</p>
+</p>
+179
+</subsection>
+</subsection>
+180
+</section>
+</section>
+181
+<section label="  RELATED WORK" >
+<section label="  RELATED WORK" >
+182
+<p>
+<p>
+183
+iSVM belongs to the decomposition family of SVM training algorithms . 
+iSVM belongs to the decomposition family of SVM training algorithms . 
+184
+In this section we discuss properties of iSVM and its relation to conventional methods .
+In this section , we discuss properties of iSVM and its relation to conventional methods .
+185
+In the initialization step , iSVM selects any two vectors from opposite classes ( for a two-class classification task ) .
+In the initialization step , iSVM selects any two vectors from opposite classes ( for a two-class classification task ) .
+186
+Based on calculation ( 2 ) , a closer pair of vectors will produce a better reduction in objective function L . 
+Based on calculation ( 2 ) , a closer pair of vectors will produce a better reduction in objective function L . 
+187
+However , our preliminary experiments indicate that final solutions are not affected much by this initialization scheme which has been used by CoreSVM \CITE or SimpleSVM \CITE . 
+However , our preliminary experiments indicate that final solutions are not affected much by this initialization scheme which has been used by CoreSVM \CITE or SimpleSVM \CITE . 
+188
+Other initialization strategies include selecting randomly a set of p vectors \CITE , or using all training data from the beginning \CITE .
+Other initialization strategies include selecting randomly a set of p vectors \CITE , or using all training data from the beginning \CITE .
+189
+For updating the working set , several algorithms share the same way of adding only one vector to the WS in each optimization loop , e.g. SimpleSVM \CITE , CoreSVM \CITE .
+For updating the working set , several algorithms share the same way of adding only one vector to the WS in each optimization loop , e.g. SimpleSVM \CITE , CoreSVM \CITE .
+190
+Different selection criteria have been proposed , including optimality violation \CITE , probabilistic estimation \CITE . 
+Different selection criteria have been proposed , including optimality violation \CITE , probabilistic estimation \CITE . 
+191
+iSVM differs from others in its two-stage strategy . 
+iSVM differs from others in its two-stage strategy . 
+192
+In the first stage , temporal solutions are not good enough to justify which training example is surely an SV or not , so iSVM re examines them in the second phase . 
+In the first stage , temporal solutions are not good enough to justify which training example is surely an SV or not , so iSVM re examines them in the second phase . 
+193
+Note that the working set grows from a minimum size , thus the first phase runs very fast because size of the working set </Eq> is small and only the best among N examined vectors is added to the working set . 
+Note that the working set grows from a minimum size ; thus , the first phase runs very fast because the size of the working set </Eq> is small and only the best among N examined vectors is added to the working set . 
+194
+It is not clearly described in \CITE and \CITE that training examples are re-examined or not . 
+It is not clearly described in \CITE and \CITE that training examples are re-examined or not . 
+195
+If they are removed from T too early from beginning then it is with high probability that many good training examples ( or SVs ) might be removed . 
+If they are removed from T too early from beginning , then it is highly likely many good training examples ( or SVs ) might be removed . 
+196
+In contrast , if they are remaining in T all the time and re-examined many times then the computation is not efficient .
+In contrast , if they remain in T all the time and re-examined many times , then the computation is not efficient .
+197
+Comparing with other approximation methods , iSVM uses a rather simple stopping condition . 
+Comparing with other approximation methods , iSVM uses a rather simple stopping condition . 
+198
+In our point of view , CoreSVM uses a looser condition : none of N sampled training data violates the optimality condition with respect to temporal solution at iteration </Eq> . 
+In our point of view , CoreSVM uses a looser condition : none of N sampled training data violates the optimality condition with respect to temporal solution at iteration </Eq> . 
+199
+In the experiment section we will show that using this stopping condition will lead to trained SVMs with smaller number of SVs , faster training time , but bigger variation in predictive performance .
+In the experiment section , we will show that using this stopping condition will lead to trained SVMs with smaller number of SVs , faster training time , but bigger variation in predictive performance .
+200
+</p>
+</p>
+201
+</section>
+</section>
+202
+<section label = "  EXPERIMENT " >
+<section label = "  EXPERIMENT " >
+203
+<p>
+<p>
+204
+In this section we describe our experiments to evaluate iSVM and comparisons with other SVM training algorithms .
+In this section , we describe our experiments to evaluate iSVM and comparisons with other SVM training algorithms .
+205
+We select four datasets from different domains : web page categorization from UCI machine learning repository ( " Web " ) , text-decoding used in IJCNN 2001 conference competition ( " IJCNN"  ) , extended USPS hand written digit recognition data for discriminating '0' and '1' ( " zero-one"  ) , and KDD-CUP 1999 network intrusion detection datasets used in the KDD 1999 conference competition ( " KDD-CUP99"  ) .
+We select four datasets from different domains : web page categorization from UCI machine learning repository ( " Web " ) , text-decoding used in IJCNN 2001 conference competition ( " IJCNN"  ) , extended USPS hand written digit recognition data for discriminating '0' and '1' ( " zero-one"  ) , and KDD-CUP 1999 network intrusion detection datasets used in the KDD 1999 conference competition ( " KDD-CUP99"  ) .
+206
+All of the datasets summarized in TABLE III have nearly or more than 50 ,000 training examples . 
+All of the datasets summarized in TABLE III have nearly or more than 50 ,000 training examples . 
+207
+All of our experiments were conducted on a PC Windows machine with a 3GHz CPU and 2GB RAM memory .
+All of our experiments were conducted on a PC Windows machine with a 3GHz CPU and 2GB RAM memory .
+208
+</p>
+</p>
+209
+<subsection label = " How Fast the iSVM Is?" >
+<subsection label = " How Fast the iSVM Is?" >
+210
+<p>
+<p>
+211
+In the first experiment , we compare training performance of iSVM with LibSVM \CITE – one of the best SMO implementation , CoreSVM \CITE – a recent proposed algorithm that has achieved a remarkable performance on the KDD-CUP 1999 dataset . 
+In the first experiment , we compare training performance of iSVM with LibSVM \CITE – one of the best SMO implementation , CoreSVM \CITE – a recent proposed algorithm that has achieved a remarkable performance on the KDD-CUP 1999 dataset . 
+212
+Comparison criteria include training time , number of support vector , testing accuracy . 
+Comparison criteria include training time , number of support vector , and testing accuracy . 
+213
+Parameters were chosen for achieving good accuracy on testing data : Gaussian kernel </Eq> with </Eq> for " Web " , </Eq> for " IJCNN " , </Eq> for " USPS zero-one " , </Eq> for " KDD-CUP"  . 
+Parameters were chosen for achieving good accuracy on testing data : Gaussian kernel </Eq> with </Eq> for " Web " , </Eq> for " IJCNN " , </Eq> for " USPS zero-one " , </Eq> for " KDD-CUP"  . 
+214
+As both iSVM and CoreSVM \CITE use probabilistic trick to speedup training process in step 3 training results are random variables .
+As both iSVM and CoreSVM \CITE use probabilistic trick to speedup in step 3 training results are random variables .
+215
+We conduct this experiment ten times and estimate statistics of these variables ( for CoreSVM we randomly mix the original data ten times and run training program on these mixed data ) .
+We conduct this experiment ten times and estimate statistics of these variables ( for CoreSVM we randomly mix the original data ten times and run training program on these mixed data ) .
+216
+From experimental data reported in TABLE IV we can see that iSVM runs much faster than LibSVM on the " zero-one " and " KDD-CUP99 " where the number of SVs is much smaller than number of training data ( 0.45% and 0.01% correspondingly ) . 
+From experimental data reported in TABLE IV we can see that iSVM runs much faster than LibSVM on the " zero-one " and " KDD-CUP99 " where the number of SVs is much smaller than number of training data ( 0.45% and 0.01% correspondingly ) . 
+217
+This shows the advantage of the two-stage incremental WS selection strategy . 
+This shows the advantage of the two-stage incremental WS selection strategy . 
+218
+On the KDD-CUP 1999 data CoreSVM has an incredible training time : two seconds in average for training on a nearly five millions training examples . 
+On the KDD-CUP 1999 data , CoreSVM has an incredible training time : two seconds in average for training on a nearly five millions training examples . 
+219
+In the next experiment we investigate and analyze more to show that iSVM with an early stopping condition can also achieve this training time performance . 
+In the next experiment , we investigate and analyze more to show that iSVM with an early stopping condition can also achieve this training time performance . 
+220
+However the cost is big variation of trained machines .
+However , the cost is the huge variation of trained machines .
+221
+</p>
+</p>
+222
+</subsection>
+</subsection>
+223
+<subsection label = " iSVM With Early Stopping Conditions"  >
+<subsection label = " iSVM With Early Stopping Conditions"  >
+224
+<p>
+<p>
+225
+In the second experiment we try iSVM with different stopping conditions on the KDD-CUP 1999 dataset . 
+In the second experiment , we try iSVM with different stopping conditions on the KDD-CUP 1999 dataset . 
+226
+The first one is right after the first stage finished , or when there is no vector out of 59 randomly selected training data violates temporal optimality conditions . 
+The first one is right after the first stage finished , or when there is no vector out of 59 randomly selected training data violates the temporal optimality conditions . 
+227
+Other stopping conditions are based on the total number of examined examples ( by the second stage ) : 10% , 20% , 40% and 80% of the whole data .
+Other stopping conditions are based on the total number of examined examples ( by the second stage ) : 10% , 20% , 40% and 80% of the whole data .
+228
+This experiment is also conducted ten times to have estimation of training times and testing accuracies . 
+This experiment is also conducted ten times to have estimation of training times and testing accuracies . 
+229
+As we can see in Figure 2 , with an early stopping condition iSVM runs faster but produces SVMs with higher variation in predictive accuracy ) .
+As we can see in Figure 2 , with an early stopping condition , iSVM runs faster but produces SVMs with higher variation in predictive accuracy ) .
+230
+Especially , the first stage finishes after a very small number of iterations ( 32 in average ) . 
+Especially , the first stage finishes after a very small number of iterations ( 32 in average ) . 
+231
+It means that the trained machines are determined by a maximum of only 1900 training examples , corresponding to 0.04% of the whole data . 
+It means that the trained machines are determined by a maximum of only 1900 training examples , corresponding to 0.04% of the whole data . 
+232
+This number explains why iSVM takes only 2.8 seconds to train on the KDD-CUP 1999 data with nearly five million records .
+This number explains why iSVM takes only 2.8 seconds to train on the KDD-CUP 1999 data with nearly five million records .
+233
+In our point of view the same phenomenon happens for CoreSVM . 
+From our point of view , the same phenomenon happens for CoreSVM . 
+234
+The big variation of the trained machine indicates that i ) is a too loose stopping condition for the KDD-CUP 1999 data case . 
+The huge variation of the trained machine indicates that i ) is a too loose stopping condition for the KDD-CUP 1999 data case . 
+235
+We draw variations in predictive accuracy and average training time of iSVM and CoreSVM in Figure 2 for a comparison .
+We draw variations in predictive accuracy and average training time of iSVM and CoreSVM in Figure 2 for comparison .
+236
+</Fig>
+</Fig>
+237
+Note that there has been different approaches tackling the KDD-CUP 1999 problem . 
+Note that there has been different approaches tackling the KDD-CUP 1999 problem . 
+238
+In TABLE V we describe performances produced by different methods , including data random sampling , active SVM learning \CITE , clustering-based \CITE , CoreSVM \CITE , LibSVM \CITE , and iSVM . 
+In TABLE V we describe performances produced by different methods , including data random sampling , active SVM learning \CITE , clustering-based \CITE , CoreSVM \CITE , LibSVM \CITE , and iSVM . 
+239
+iSVM achieves superior generalization performance and faster than SMO , random selection , cluster-based , and active learning .
+iSVM achieves superior generalization performance and faster than SMO , random selection , cluster-based , and active learning .
+240
+</p>
+</p>
+241
+</subsection>
+</subsection>
+242
+</section>
+</section>
+243
+<section label = " CONCLUSION" >
+<section label = " CONCLUSION" >
+244
+<p>
+<p>
+245
+We have introduced a new incremental algorithm for training SVMs . 
+We have introduced a new incremental algorithm for training SVMs . 
+246
+iSVM differs from other methods in its twostage strategy to process training data . The first phase aims at finding a good approximate SVM solution as quickly as possible . 
+iSVM differs from other methods in its twostage strategy to process training data . The first phase aims at finding a good approximate SVM solution as quickly as possible . 
+247
+The second phase uses temporal solutions to find out the remaining SVs . 
+The second phase uses temporal solutions to find out the remaining SVs . 
+248
+Analysis and experimental result indicate that iSVM has advantage over conventional SMO implementation on applications where number of training examples is much larger than number of SVs . 
+The analysis and the experimental result indicate that iSVM has advantage over conventional SMO implementation on applications where number of training examples is much larger than number of SVs . 
+249
+Training SVMs with large number of SVs is our research issue in the future .
+Training SVMs with large number of SVs is our research issue in the future .
+250
+</Eq> 
+</Eq> 
+251
+</p>
+</p>
+252
+</section>
+</section>
+253
+</document>
+</document>

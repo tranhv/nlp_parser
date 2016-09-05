@@ -222,7 +222,7 @@ class ReadData
     # SWA ====================
     data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
     data_SWA = refine_tag_preserved(data_SWA)
-    # # data_SWA = convert_typo_spelling(data_SWA)
+    data_SWA = convert_typo_spelling(data_SWA)
     # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
     # puts "SWA: #{count_alignment(data_SWA)}\n"
@@ -282,13 +282,13 @@ class ReadData
     # # END MANLI =============
 
     # GIZA ====================
-    # data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
-    # data_moses = insert_unaligned(data_moses)
-    # data_moses = remove_all_tags(data_moses)
+    data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    data_moses = insert_unaligned(data_moses)
+    data_moses = remove_all_tags(data_moses)
     # # # puts "#{count_alignment(data_moses)}\n"
 
-    # data_moses = assign_tags(data_SWA, data_moses)
-    # data_moses = assign_tags_wa(data_moses)
+    data_moses = assign_tags(data_SWA, data_moses)
+    data_moses = assign_tags_wa(data_moses)
     # # # data_moses = remove_tags_misc(data_moses)
 
     # data_moses1, data_moses2 = split_data(data_moses, N80_PERCENT)
@@ -300,28 +300,41 @@ class ReadData
 
     # print_csv(data_moses)
     # --------------------------
-    data_moses = get_data_moses_new(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
-    data_moses = insert_unaligned(data_moses)
-    data_moses = remove_all_tags(data_moses)
-    data_moses = assign_tags(data_SWA, data_moses)
-    puts "#{count_alignment(data_moses)}\n"
-    print_data(data_moses)
+    # data_moses = get_data_moses_new(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    # data_moses = insert_unaligned(data_moses)
+    # data_moses = remove_all_tags(data_moses)
+    
+    # data_moses = assign_tags(data_SWA, data_moses)
+    # data_moses = assign_tags_wa(data_moses)
+    # data_moses = remove_tags_misc(data_moses)
+
+    # data_moses = reduce_tags_preserved(data_moses)
+    # data_moses = reduce_tags_wa(data_moses)
+
+    # puts "#{count_alignment(data_moses)}\n"
+
+    # print_csv(data_moses)
+    # print_data(data_moses)
     # END GIZA ================
 
     # # CHECK DATA ============
     # tags = ["exact", "stem", "syn", "para", "unaligned", "wa"]
-    # # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
     # puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
     # puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
     # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
-    # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
-    # puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_meteor_1_5)}\n"
-    # puts "compare_data --> #{compare_data(data_SWA, data_meteor_1_5, tags)}"
+    puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
+    # puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_moses)}\n"
+    # puts "compare_data --> #{compare_data(data_SWA, data_moses, tags)}"
+
+    # data_meteor_1_5 = remove_all_but_wa(data_meteor_1_5)
+    # data_manli = remove_all_but_wa(data_manli)
+    data_moses = remove_all_but_wa(data_moses)
 
     # # print_data(data_SWA)
-    # # print_data(data_meteor_1_5)
-    # print_csv(data_SWA2)
-    # print_csv(data_moses)
+    # print_data(data_meteor_1_5)
+    # print_data_manli(data_manli)
+    print_data(data_moses)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -357,15 +370,26 @@ class ReadData
     #   break if line.source.include? "This paper analyzes the"
     # end   
 
-    # data_SWA.each_with_index do |line, index|
+    # data_meteor_1_5.each_with_index do |line, index|
     #   puts "#{line}\n\n" if index == 2784
     #   break if index == 2784
     # end
+
     # data_manli.each_with_index do |line, index|
     #   line.Alignment.each do |aln|
     #     if aln.tag_name.empty? or aln.tag_name == "" or aln.tag_name.nil?
     #       puts "#{line.source}\n"
     #       puts "#{aln}"
+    #     end
+    #   end
+    # end
+
+    # data_meteor_1_5.each_with_index do |line, index|
+    #   line.Alignment.each do |aln|
+    #     if aln.tag_name == "wa"
+    #       puts "#{line.source}"
+    #       puts "#{line.target}"
+    #       puts "#{aln}\n"
     #     end
     #   end
     # end
@@ -448,23 +472,21 @@ class ReadData
 
   def refine_line_moses(aligns, source, target)
     add_aligns = []
-
     alg_need_to_delete = []
     aligns.each_with_index do |alg, index|
       hash_source = {}
       hash_target = {}
       next if (!alg.source_numbers.include?(",") && !alg.target_numbers.include?(","))
       alg.source_numbers.split(",").each_with_index do |num|
-        hash_source[source.split(" ")[num.to_i]] = num
+        hash_source[source.split(" ")[num.to_i].downcase] = num
       end
 
       alg.target_numbers.split(",").each_with_index do |num|
-        hash_target[target.split(" ")[num.to_i]] = num
+        hash_target[target.split(" ")[num.to_i].downcase] = num
       end
 
-
       array_intersect = hash_source.keys & hash_target.keys
-      if array_intersect
+      if array_intersect.count > 0
         align = Alignment.new
         array_intersect.each do |str|
           align = Alignment.new
@@ -472,8 +494,8 @@ class ReadData
           align.source_numbers = hash_source[str]
           align.tag_name = ""
           add_aligns << align
-          alg.source_numbers.gsub!(str,"")
-          alg.target_numbers.gsub!(str,"")
+          alg.source_numbers.gsub!(hash_source[str],"")
+          alg.target_numbers.gsub!(hash_target[str],"")
         end
 
         align_source = Alignment.new
@@ -482,27 +504,26 @@ class ReadData
           align_source.target_numbers = ""
           align_source.source_numbers = source
           align_source.tag_name = ""
-          add_aligns << align_source
+          add_aligns << align_source unless source.empty?
         end
 
+        align_target = Alignment.new
         alg.target_numbers.split(",").each do |target|
           align_target = Alignment.new
           align_target.target_numbers = target
           align_target.source_numbers = ""
           align_target.tag_name = ""
-          add_aligns << align_target
+          add_aligns << align_target unless target.empty?
         end
 
         alg_need_to_delete << index
       end
     end
-
     aligns.delete_if.with_index { |_, index| alg_need_to_delete.include? index }
-
     aligns << add_aligns
 
     aligns.flatten!
-
+    return aligns
   end
 
   def parse_align_moses(line)
@@ -839,6 +860,27 @@ class ReadData
     output_aln.close
   end
 
+  def print_data_manli(data)
+    output_crp = File.open(DATA_PATH + "/output.crp", "w")
+    output_crp.write("")
+    output_aln = File.open(DATA_PATH + "/output.aln", "w")
+    output_aln.write("")
+
+    data.each_with_index do |line, index|
+      output_crp.write(index.to_s + "\n")
+      output_crp.write(line.source + "\n")
+      output_crp.write(line.target + "\n")
+
+      output_aln.write(index.to_s + " ")
+      line.Alignment.each do |aln|
+        output_aln.write(aln.source_numbers + ":" + aln.target_numbers + ":" + aln.tag_name + " ")
+      end
+      output_aln.write("\n")
+    end
+    output_crp.close
+    output_aln.close
+  end
+
   def print_arff(data)
     data_features = get_list_of_features(data) 
     file_arff = File.open(DATA_PATH + "/arff.arff", "w")
@@ -926,8 +968,8 @@ class ReadData
       aln_arrs = []
       aln_delete = []
       line.Alignment.each_with_index do |aln,i|
-        #if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
-        if (aln.tag_name == "preserved") and (aln.source_numbers.scan(/,/).count != aln.target_numbers.scan(/,/).count)
+        if (aln.tag_name == "preserved") and (aln.source_numbers.include? ",") and (aln.target_numbers.include? ",") and (aln.source_numbers.scan(/,/).count == aln.target_numbers.scan(/,/).count)
+        #if (aln.tag_name == "preserved") and (aln.source_numbers.scan(/,/).count != aln.target_numbers.scan(/,/).count)
           #puts ("#{line}\n\n")
           #puts ("#{aln}\n\n")
           aln_arrs << break_alignment(aln)
@@ -1002,13 +1044,13 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
-          break if count >= 67416
+          break if count >= 68935
         end
-        break if count >= 67416
+        break if count >= 68935
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 67416 
+      break if count >= 68935 
       # 58004 SWA 80
       # 11562 SWA 20
       # 69566 SWA 100
@@ -1018,6 +1060,7 @@ class ReadData
       # 67825 manli 100
       # 11185 moses 20
       # 67416 moses 100
+      # 68935 moses improved 100
     end
     return data
   end
@@ -1052,13 +1095,13 @@ class ReadData
         if (aln.tag_name == "wa")
           aln_delete << i
           count = count + 1
-          break if count >= 6728
+          break if count >= 8033
         end
-        break if count >= 6728
+        break if count >= 8033
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 6728 
+      break if count >= 8033 
       # 12456 meteor 100
       # 13012 manli 100
       # 6728 moses 100 
@@ -1069,6 +1112,7 @@ class ReadData
       # 12505 manli 100
       # 1100 moses 20
       # 6358 moses 100
+      # 8033 moses improved 100
     end
     return data
   end
@@ -1082,6 +1126,20 @@ class ReadData
         end
       end
       
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+    end
+    return data
+  end
+
+  def remove_all_but_wa(data)
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name != "wa")
+          aln_delete << i
+        end
+      end
+
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
     end
     return data
@@ -1127,15 +1185,17 @@ class ReadData
   end
 
   def assign_tags(data1, data2)
+    puts "============================"
     data1.each_with_index do |alignment1, index|
       # if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
         # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
         alignment1_arr = data1[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
         alignment2_arr = data2[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
-        
+
         # So sánh tìm ra phần chung
         # này là mảng 2 phần tử [["","1"], ["2,3","2,3"], ["4","4"]]
         alignment_inter = (alignment1_arr & alignment2_arr)
+
         # puts "alignment_inter --> #{alignment_inter.inspect}"
         # puts data1[index].Alignment
         # puts data2[index].Alignment
@@ -1148,6 +1208,7 @@ class ReadData
             algn2 = data2[index].Alignment.select{|al| al.source_numbers.split(",").sort.join(",") == align[0] && al.target_numbers.split(",").sort.join(",") == align[1]}.first
             # puts "algn1 --> #{algn1.inspect}"
             # puts "algn2 --> #{algn2.inspect}"
+
             algn2.tag_name = algn1.tag_name
           end
         end

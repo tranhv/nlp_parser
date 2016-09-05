@@ -1,0 +1,88 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     csv-weka.filters.unsupervised.attribute.NumericToBinary-Rfirst-last
+Instances:    69214
+Attributes:   11
+              s_str
+              t_str
+              st_samestr_binarized
+              s_stem
+              t_stem
+              st_samestem_binarized
+              s_pos
+              t_pos
+              st_precede_binarized
+              st_follow_binarized
+              class
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+J48 pruned tree
+------------------
+
+st_samestr_binarized = 0: unaligned (9900.0/1349.0)
+st_samestr_binarized = 1: exact (59314.0)
+
+Number of Leaves  : 	2
+
+Size of the tree : 	3
+
+Attribute mappings:
+
+Model attributes                 	    Incoming attributes
+---------------------------------	    ----------------
+(nominal) s_str                  	--> 1 (nominal) s_str
+(nominal) t_str                  	--> 2 (nominal) t_str
+(nominal) st_samestr_binarized   	--> 3 (nominal) st_samestr_binarized
+(nominal) s_stem                 	--> 4 (nominal) s_stem
+(nominal) t_stem                 	--> 5 (nominal) t_stem
+(nominal) st_samestem_binarized  	--> 6 (nominal) st_samestem_binarized
+(nominal) s_pos                  	--> 7 (nominal) s_pos
+(nominal) t_pos                  	--> 8 (nominal) t_pos
+(nominal) st_precede_binarized   	--> 9 (nominal) st_precede_binarized
+(nominal) st_follow_binarized    	--> 10 (nominal) st_follow_binarized
+(nominal) class                  	--> 11 (nominal) class
+
+
+Time taken to build model: 4.55 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.81 seconds
+
+=== Summary ===
+
+Correctly Classified Instances       12488               96.2021 %
+Incorrectly Classified Instances       493                3.7979 %
+Kappa statistic                          0.7781
+Mean absolute error                      0.0148
+Root mean squared error                  0.1042
+Relative absolute error                 20.9165 %
+Root relative squared error             61.1241 %
+Total Number of Instances            12981     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.993    0.001    1.000      0.993    0.996      0.960    0.996     0.999     exact
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.955     0.079     stem
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.956     0.091     syn
+                 0.000    0.000    0.000      0.000    0.000      0.000    0.959     0.155     para
+                 0.999    0.040    0.605      0.999    0.754      0.762    0.979     0.604     unaligned
+                 0.000    0.000    0.000      0.000    0.000      0.000    ?         ?         wa
+Weighted Avg.    0.962    0.003    0.946      0.962    0.951      0.919    0.994     0.949     
+
+=== Confusion Matrix ===
+
+     a     b     c     d     e     f   <-- classified as
+ 11734     0     0     0    87     0 |     a = exact
+     0     0     0     0    98     0 |     b = stem
+     0     0     0     0   114     0 |     c = syn
+     0     0     0     0   193     0 |     d = para
+     1     0     0     0   754     0 |     e = unaligned
+     0     0     0     0     0     0 |     f = wa
+

@@ -1,0 +1,609 @@
+0
+﻿<document>
+﻿<document>
+1
+<title>
+<title>
+2
+Incorporating Statistical Background Model and Joint Probabilistic Data Association Filter into Motorcycle Tracking
+Incorporating Statistical Background Model and Joint Probabilistic Data Association Filter into Motorcycle Tracking
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+Multi - target tracking is an attractive research field due to its widespread application areas and challenges .
+Multi - target tracking is an attractive research field due to its widespread application areas and challenges .
+7
+Every point tracking method includes two mechanisms : object detection and data association .
+Every point tracking method includes two mechanisms : object detection and data association .
+8
+This paper is a combination between a statistical background modeling method for foreground object detection and Joint Probabilistic Data Association filter ( JPDAF ) in the context of motorcycle tracking .
+This paper is a combination between a statistical background modeling method for foreground object detection and Joint Probabilistic Data Association filter ( JPDAF ) in the context of motorcycle tracking .
+9
+A major limitation of JPDAF is its inability to adapt to changes in the number of targets , but in this work , it is modified so that we can successfully apply JPDAF with known number of targets at each time instant .
+A major limitation of JPDAF is its inability to adapt to changes in the number of targets , but in this work , it is modified so that we can successfully apply JPDAF with known number of targets at each time instant .
+10
+The experimental system works well with the number of targets less than 10 / frame and be able to self-evolve with gradual and " once-off " background changes .
+The experimental system works well with the number of targets less than 10 / frame and be able to self-evolve with gradual and " once-off " background changes .
+11
+</p>
+</p>
+12
+</abstract>
+</abstract>
+13
+<section label= " Introduction " >
+<section label= " Introduction " >
+14
+<p>
+<p>
+15
+Motion understanding is an essential function of human vision . 
+Motion understanding is an essential function of human vision . 
+16
+Consequently , object tracking takes the crucial role in computer vision .
+Consequently , object tracking takes the crucial role in computer vision .
+17
+Multi - target tracking has widespread applications in both military ( air defense , air traffic control , ocean surveillance ) and civilian areas (  for automatical surveillance demands in public or secret places ) , especially when human labour becomes more and more expensive .
+Multi - target tracking has widespread applications in both military ( air defense , air traffic control , ocean surveillance ) and civilian areas (  for automatical surveillance demands in public or secret places ) , especially when human labour becomes more and more expensive .
+18
+Object tracking , in general , is a challenging problem .
+Object tracking , in general , is a challenging problem .
+19
+Its complexities arise due to the following factors : loss of information caused by projection from 3D to 2D space , complex object motions , complex object shapes , partial and full object occlusions , scene illumination changes , and realtime processing requirements .
+Its complexities arise due to the following factors : loss of information caused by projection from 3D to 2D space , complex object motions , complex object shapes , partial and full object occlusions , scene illumination changes , and realtime processing requirements .
+20
+There are three main categories of object tracking </CITE> : point tracking , kernel tracking , and silhouette tracking .
+There are three main categories of object tracking </CITE> : point tracking , kernel tracking , and silhouette tracking .
+21
+While kernel and silhouette tracking concern object shapes , point tracking considers an object as a
+While kernel and silhouette tracking concern object shapes , point tracking considers an object as a
+22
+point and just focuses on its position and motion , which can be represented by state vector .
+point and just focuses on its position and motion , which can be represented by state vector .
+23
+Filtering is a class of methods that is suited for solving the dynamic state estimation problems of point tracking .
+Filtering is a class of methods that is suited for solving the dynamic state estimation problems of point tracking .
+24
+In multi-target tracking , we have a task of finding a correspondence between the current targets and measurements , named data association .
+In multi-target tracking , we have a task of finding a correspondence between the current targets and measurements , named data association .
+25
+Data association is a complicated problem especially in the presence of occlusions , misdetections , entries , and exits of objects .
+Data association is a complicated problem especially in the presence of occlusions , misdetections , entries , and exits of objects .
+26
+There are many statistical techniques for data association </CITE> , among them , Joint Probabilistic Data Association ( JPDA) is the method that aims to find a correspondence between measurements and objects at the current time step based on enumerating all possible associations and computing the association probabilities , it is a widely used technique for data association (  </CITE> , </CITE> ) .
+There are many statistical techniques for data association </CITE> , among them , Joint Probabilistic Data Association ( JPDA) is the method that aims to find a correspondence between measurements and objects at the current time step based on enumerating all possible associations and computing the association probabilities . It is a widely used technique for data association (  </CITE> , </CITE> ) .
+27
+However , to have a good JPDA filter ( JPDAF ) , it is required to have accurate measurements , that means we need to have good object detection results .
+However , to have a good JPDA filter ( JPDAF ) , it is required to have accurate measurements . That means we need to have good object detection results .
+28
+Every tracking method requires an object detection mechanism , there are those which just need the detection at the first time objects appear , while the others need it in every frame , point tracking belongs to this type .
+Every tracking method requires an object detection mechanism . There are those which just need the detection at the first time objects appear , while the others need it in every frame . Point tracking belongs to this type .
+29
+One effective way for foreground object detection is to give an accurate background model .
+One effective way for foreground object detection is to give an accurate background model .
+30
+Recently , L . Li et al proposed a foreground object detection method by statistical modeling of complex backgrounds </CITE> .
+Recently , L . Li et al proposed a foreground object detection method by statistical modeling of complex backgrounds </CITE> .
+31
+This work used a Bayesian framework for incorporating three type of features : spectral , spatial and temporal features into a representation of complex background containing both stationary and nonstationary objects .
+This work used a Bayesian framework for incorporating three types of features , i.e. , spatial and temporal features into a representation of complex background containing both stationary and nonstationary objects .
+32
+With the statistics of background features , the method is able to : represent the appearances of both static and dynamic background pixels , self-evolve to gradual as well as sudden " once - off " background changes .
+With the statistics of background features , the method is able to represent the appearances of both static and dynamic background pixels and self - evolve to gradual as well as sudden " once - off " background changes .
+33
+Taking advantage of the excellent object detection results from this method , this paper employs JPDAF for vehicle tracking in the motorcycle lane .
+Taking advantage of the excellent object detection results from this method , this paper employs JPDAF for vehicle tracking in the motorcycle lane .
+34
+A major limitation of JPDAF is its inability to adapt to changes in the number of targets , because it is confused between a measurement originated from a new object appearance and a false alarm .
+A major limitation of JPDAF is its inability to adapt to changes in the number of targets , because it is confused between a measurement originated from a new object appearance and a false alarm .
+35
+However , in the context of motorcycle surveillance , we has proposed a strategy to detect new objects entering and objects leaving the observation area , so that we can successfully apply JPDAF with known number of targets at each time instant . 
+However , in the context of motorcycle surveillance , we has proposed a strategy to detect new objects entering and objects leaving the observation area , so that we can successfully apply JPDAF with known number of targets at each time instant . 
+36
+The experimental system has good results with the number of targets less than 10 / frame , including of detecting and tracking the wrong-wayed motorcycles .
+The experimental system has good results with the number of targets less than 10 / frame , including results detecting and tracking the wrong-wayed motorcycles .
+37
+Motorcycle tracking in particular and traffic tracking in generral , is an interesting but challenging application .
+Motorcycle tracking in particular and traffic tracking in generral is an interesting but challenging application .
+38
+Its main difficulties can be enumerated as: the severely occlusions when traffic density is high ( especially in rush hours ) , the shadows of big vehicles , and the real-time processing demand of a traffic surveillance system .
+Its main difficulties can be enumerated as the severely occlusions when traffic density is high ( especially in rush hours ) , the shadows of big vehicles , and the real-time processing demand of a traffic surveillance system .
+39
+This paper is the next step ( after </CITE> ) of the effort finding the most satisfied approach for automatical traffic surveillance in big cities of Vietnam .
+This paper is the next step ( after </CITE> ) to find the most satisfying approach for automatical traffic surveillance in big cities of Vietnam .
+40
+The remains of this paper is organized as follow : section II is the main ideas for statistical modeling of complex background proposed in </CITE> , section III reviews the background of JPDAF , a complete algorithm and experimented results on simulated data of JPDAF are presented at the end of this section , section IV is the combination of statistical background model and the modified JPDAF so that they can be applied in the motorcycle tracking situation , the experimental results of this combination are submitted in section V , and the conclusion is after all others .
+The rest of this paper is organized as Section II is the main ideas for statistical modeling of complex background proposed in </CITE> . Section III reviews the background of JPDAF , a complete algorithm and experimented results on simulated data of JPDAF are presented at the end of this section , section IV is the combination of statistical background model and the modified JPDAF so that they can be applied in the motorcycle tracking situation . The experimental results of this combination are submitted in section V , and section VI presents our conclusion .
+41
+</p>
+</p>
+42
+</section>
+</section>
+43
+<section label= " Statistical background modeling for foreground object detection ">
+<section label= " Statistical background modeling for foreground object detection ">
+44
+<subsection label= " Bayesian framework for classifying background and foreground points ">
+<subsection label= " Bayesian framework for classifying background and foreground points ">
+45
+<p>
+<p>
+46
+Let </Eq> be a pixel in a video frame at time </Eq> with its Decartes co-ordinate , </Eq> be the feature vector extracted at </Eq> .
+Let </Eq> be a pixel in a video frame at time </Eq> with its Decartes co-ordinate , </Eq> be the feature vector extracted at </Eq> .
+47
+Then using Bayes formula we can determine the probability that </Eq> belongs to background given </Eq> as follow : </Eq> ( 1 ) where </Eq> implies that </Eq> belongs to background .
+Then using the Bayes formula , we can determine the probability that </Eq> belongs to a background given </Eq> as follow : </Eq> ( 1 ) where </Eq> implies that </Eq> belongs to the background .
+48
+Similarly , the probability that </Eq> belongs to a foreground object given </Eq> is : </Eq> ( 2 ) where </Eq> refers that </Eq> is a foreground point .
+Similarly , the probability that </Eq> belongs to a foreground object given </Eq> is : </Eq> ( 2 ) where </Eq> refers that </Eq> is a foreground point .
+49
+According to Bayesian decision rule , </Eq> will be classified as background point if : </Eq> ( 3 )
+According to Bayesian decision rule , </Eq> will be classified as a background point if : </Eq> ( 3 )
+50
+Undergoing some transformations , ( 3 ) is equivalent to : </Eq> ( 4 ) where </Eq> is the probability that </Eq> is classified as background , </Eq> is the probability that </Eq> is observed at </Eq> , and </Eq> is the probability that </Eq> is observed when </Eq> has already been classified as background .
+Undergoing some transformations , ( 3 ) is equivalent to : </Eq> ( 4 ) where </Eq> is the probability that </Eq> is classified as the background , </Eq> is the probability that </Eq> is observed at </Eq> , and </Eq> is the probability that </Eq> is observed when </Eq> has already been classified as the background .
+51
+Thus , we can use </Eq> , </Eq> and </Eq> , which will be modeled and estimated based on statistics in subsection B and C , to judge whether a point comes from background or foreground .
+Thus , we can use </Eq> , </Eq> and </Eq> , which will be modeled and estimated based on statistics in subsection B and C , to judge whether a point comes from a background or a foreground .
+52
+</p>
+</p>
+53
+</subsection>
+</subsection>
+54
+<subsection label= " Statistics for background features and feature selection ">
+<subsection label= " Statistics for background features and feature selection ">
+55
+<p> 
+<p> 
+56
+To estimate </Eq> , </Eq> and </Eq> , we need a data structure to take into account the statistical information relevant to feature vector </Eq> at </Eq> over a sequence of frames .
+To estimate </Eq> , </Eq> and </Eq> , we need a data structure to take into account the statistical information relevant to feature vector </Eq> at </Eq> over a sequence of frames .
+57
+Each feature type at </Eq> has a table of statistics defined as : </Eq> ( 5 ) where </Eq> grasps the </Eq> at time </Eq> based on the classification results at </Eq> up to time </Eq> , and </Eq> takes note the statistics of the </Eq> feature vectors which have the highest frequencies at </Eq> , each </Eq> contains : </Eq> ( 6 ) where </Eq> is the dimension of </Eq> .
+Each feature type at </Eq> has a table of statistics defined as : </Eq> ( 5 ) where </Eq> grasps the </Eq> at time </Eq> based on the classification results at </Eq> up to time </Eq> , and </Eq> takes note the statistics of the </Eq> feature vectors which have the highest frequencies at </Eq> , each </Eq> contains : </Eq> ( 6 ) where </Eq> is the dimension of </Eq> .
+58
+In table </Eq> , the </Eq> are kept sorting in descending order with respect to </Eq> , the frequence of </Eq> .
+In table </Eq> , the </Eq> are kept sorting in descending order with respect to </Eq> , the frequence of </Eq> .
+59
+Then , the first </Eq> members in </Eq> will be used to estimate </Eq> , </Eq> and </Eq> in subsection C .
+Then , the first </Eq> members in </Eq> will be used to estimate </Eq> , </Eq> and </Eq> in subsection C .
+60
+Another important issue in background modeling is feature selection .
+Another important issue in background modeling is feature selection .
+61
+Herein , three types of features : spectral , spatial and temporal features are combined for complex background modeling .
+Three types of features (namely spectral, spatial and temporal features) are combined for complex background modeling. 
+62
+1 ) Feature selection for static background pixels : due to the constancy in shape and appearance of a pixel comes from a static background object , spectral and spatial features , in this case are its color and gradient , are exploited .
+1 ) Feature selection for static background pixels : due to the constancy in shape and appearance of a pixel coming from a static background object , spectral and spatial features , in this case being its color and gradient , are exploited .
+63
+Let </Eq> be the color vector and </Eq> be the gradient vector of a pixel </Eq> , then we respectively need two tables </Eq> and </Eq> to make them learned .
+Let </Eq> be the color vector and </Eq> be the gradient vector of a pixel </Eq> , then we respectively need two tables </Eq> and </Eq> to make them learned .
+64
+Because two types of features are used , the decision rule in ( 4 ) must be modified with the assumption that color and gradient vectors are independent : </Eq> ( 7 )
+Because two types of features are used , the decision rule in ( 4 ) must be modified with the assumption that color and gradient vectors are independent : </Eq> ( 7 )
+65
+With color and gradient features , we need a quantization measure that is less sensitive to illumination changes , so a normalized distance measure based on the inner product of two vectors is adopted </CITE> : </Eq> ( 8 ) where </Eq> , </Eq> and </Eq> are identified with each other if </Eq> .
+With color and gradient features , we need a quantization measure that is less sensitive to illumination changes , so a normalized distance measure based on the inner product of two vectors is adopted </CITE> : </Eq> ( 8 ) where </Eq> , </Eq> and </Eq> are identified with each other if </Eq> .
+66
+2 ) Feature selection for dynamic background pixels : as for a dynamic background object , its motion is usually in a small range ( so that it is still referred to background ) and has a period : waving tree branches and their shadows for example .
+2 ) Feature selection for dynamic background pixels : as for a dynamic background object , its motion is usually in a small range ( so that it is still referred as a background ) and has a period, for example, waving tree branches and their shadows .
+67
+Hence , the color co-occurrence feature is used to take advantage of these properties .
+Hence , the color co-occurrence feature is used to take advantage of these properties .
+68
+Let </Eq> and </Eq> be the color features at time </Eq> and </Eq> at pixel </Eq> , then the color co-occurrence vector at time </Eq> and pixel </Eq> is
+Let </Eq> and </Eq> be the color features at time </Eq> and </Eq> at pixel </Eq> , then the color co-occurrence vector at time </Eq> and pixel </Eq> is
+69
+defined as </Eq> .
+defined as </Eq> .
+70
+In this case , another distance measure is used : </Eq> ( 9 )
+In this case , another distance measure is used : </Eq> ( 9 )
+71
+</p>
+</p>
+72
+</subsection>
+</subsection>
+73
+<subsection label= " Learning the statistics of background features " >
+<subsection label= " Learning the statistics of background features " >
+74
+<p> 
+<p> 
+75
+So far , we have already had a data structure for statistics , now for the procedure of feature learning .
+So far , we have already had a data structure for statistics , now for the procedure of feature learning .
+76
+There are two kinds of background changes , so we will have different learning strategy for each one .
+There are two kinds of background changes , so we will have different learning strategy for each one .
+77
+1 ) Gradual background changes : once we have the classification result at pixel </Eq> ( subsection D ) and time </Eq> , its statistics at the next time instant will be updated as follow : </Eq> ( 10 ) where </Eq> , </Eq> is the learning rate .
+1 ) Gradual background changes : once we have the classification result at pixel </Eq> ( subsection D ) and time </Eq> , its statistics at the next time instant will be updated as follows : </Eq> ( 10 ) where </Eq> , </Eq> is the learning rate .
+78
+If </Eq> is classified as background point at time </Eq> , then </Eq> , else </Eq> .
+If </Eq> is classified as background point at time </Eq> , then </Eq> , else </Eq> .
+79
+If the input feature vector </Eq> is identified with </Eq> then </Eq> , otherwise , </Eq> .
+If the input feature vector </Eq> is identified with </Eq> then </Eq> , otherwise , </Eq> .
+80
+Besides , if there is no </Eq> in table </Eq> identified with </Eq> , the last component in </Eq> will be replaced by new one : </Eq> ( 11 )
+Besides , if there is no </Eq> in table </Eq> identified with </Eq> , the last component in </Eq> will be replaced by new one : </Eq> ( 11 )
+81
+2 ) " Once - off " background changes : an " once - off " background change occurs when there is a suddenly change in illumination , or a moving foreground object stopping and becoming a background instance , that means when background becomes foreground suddenly or vice versa .
+2 ) " Once - off " background changes : an " once - off " background change occurs when there is a suddenly change in illumination , or when a moving foreground object stops and becomes a background instance, or when a background becomes a foreground suddenly .
+82
+When this happens , we have : </Eq> ( 12 )
+When this happens , we have : </Eq> ( 12 )
+83
+Or </Eq> ( 13 ) where M is a high percentage threshold ( 80 % ~ 90 % ) .
+Or </Eq> ( 13 ) where M is a high percentage threshold ( 80 % ~ 90 % ) .
+84
+Thus , ( 13 ) can be considered as a condition to check if an " once - off " background change is happening .
+Thus , ( 13 ) can be considered as a condition to check if an " once - off " background change is happening .
+85
+In that case , the statistics of foreground should be turned to background statistics : </Eq> ( 14 ) for </Eq> .
+In that case , the statistics of the foreground should be turned to background statistics : </Eq> ( 14 ) for </Eq> .
+86
+This learning process is also proved that </Eq> will converge to 1 as long as the background features are observed frequently </CITE> .
+This learning process is also proved that </Eq> will converge to 1 as long as the background features are observed frequently </CITE> .
+87
+</p>
+</p>
+88
+</subsection>
+</subsection>
+89
+<subsection label= " Foreground object detection " >
+<subsection label= " Foreground object detection " >
+90
+<p>
+<p>
+91
+1 ) Change detection : In order to have a proper feature selection as mentioned in C , we need to know whether a pixel is static or dynamic .
+1 ) Change detection : In order to have a proper feature selection as mentioned in C , we need to know whether a pixel is static or dynamic .
+92
+Therefore , color - based background differencing and interframe differencing methods are applied to detect changes .
+Therefore , color - based background differencing and interframe differencing methods are applied to detect changes .
+93
+Background differencing calculates the difference between background </Eq> and input frame , while interframe differencing performs the same work on consecutive frames .
+Background differencing calculates the difference between background </Eq> and input frame , while interframe differencing performs the same work on consecutive frames .
+94
+Let </Eq> and </Eq> be the background difference and interframe difference respectively .
+Let </Eq> and </Eq> be the background difference and interframe difference respectively .
+95
+If </Eq> and </Eq> , pixel </Eq> is referred to nonchange background point .
+If </Eq> and </Eq> , pixel </Eq> is referred to nonchange background point .
+96
+If </Eq> , </Eq> is classified as dynamic point , then color co - occurrence features are used for background / foreground classification , otherwise , </Eq> is a static point , so color and gradient features are used in the next step .
+If </Eq> , </Eq> is classified as dynamic point , then color co - occurrence features are used for background / foreground classification , otherwise , </Eq> is a static point , so color and gradient features are used in the next step .
+97
+2 ) Background / Foreground classification : Let </Eq> be the input feature at pixel </Eq> and time </Eq> .
+2 ) Background / Foreground classification : Let </Eq> be the input feature at pixel </Eq> and time </Eq> .
+98
+The probabilities are estimated as follow : </Eq> ( 15 ) where </Eq> , </Eq> is the set of </Eq> that are identified with </Eq> : </Eq> ( 16 )
+The probabilities are estimated as follow : </Eq> ( 15 ) where </Eq> , </Eq> is the set of </Eq> that are identified with </Eq> : </Eq> ( 16 )
+99
+If there is no </Eq> identified with </Eq> , </Eq> and </Eq> .
+If there is no </Eq> identified with </Eq> , </Eq> and </Eq> .
+100
+As saying above , if </Eq> is a static pixel , we will have </Eq> and </Eq> , thus , </Eq> and </Eq> are used as their tables of statistics .
+As saying above , if </Eq> is a static pixel , we will have </Eq> and </Eq> , thus , </Eq> and </Eq> are used as their tables of statistics .
+101
+After calculating the probabilities as ( 15 ) , ( 7 ) is used to classified </Eq> as background or foreground .
+After calculating the probabilities as ( 15 ) , ( 7 ) is used to classified </Eq> as background or foreground .
+102
+Note that in this case : </Eq> .
+Note that in this case : </Eq> .
+103
+Similarly , if </Eq> is a dynamic pixel , </Eq> and ( 4 ) is used as the classification criterion .
+Similarly , if </Eq> is a dynamic pixel , </Eq> and ( 4 ) is used as the classification criterion .
+104
+3 ) Foreground object segmentation : after finishing background / foreground classification for all pixels , an " oil spreading " algorithm is applied to find connected regions of foreground pixels .
+3 ) Foreground object segmentation : after finishing the background / foreground classification for all pixels , an " oil spreading " algorithm is applied to find connected regions of foreground pixels .
+105
+Then some Heuristic technologies are used to separate objects sticking each other due to shades .
+Then some Heuristic technologies are used to separate objects sticking to each other due to shades .
+106
+</p>
+</p>
+107
+</subsection>
+</subsection>
+108
+<subsection= " Background maintenance " >
+<subsection= " Background maintenance " >
+109
+<p>
+<p>
+110
+To make the background differencing in change detection step more accurate , the background image should be regularly updated .
+To make the background differencing in the change detection step more accurate , the background image should be regularly updated .
+111
+Let </Eq> and </Eq> be the background and input frame at </Eq> and time </Eq> .
+Let </Eq> and </Eq> be the background and input frame at </Eq> and time </Eq> .
+112
+If </Eq> is referred to a nonchange background point , the background at </Eq> is updated as : </Eq> ( 17 ) where </Eq> .
+If </Eq> is referred to a nonchange background point , the background at </Eq> is updated as : </Eq> ( 17 ) where </Eq> .
+113
+Otherwise , if </Eq> classified as a background point ( static or dynamic ) , the background at </Eq> is replaced by the new one : </Eq> ( 18 )
+Otherwise , if </Eq> classified as a background point ( static or dynamic ) , the background at </Eq> is replaced by the new one : </Eq> ( 18 )
+114
+Figure 1 presents the complete algorithm of foreground object detection .
+Figure 1 presents the complete algorithm of foreground object detection .
+115
+</Fig>
+</Fig>
+116
+</p>
+</p>
+117
+</subsection>
+</subsection>
+118
+</section>
+</section>
+119
+<section label= " Joint probabilistic data association filter " >
+<section label= " Joint probabilistic data association filter " >
+120
+<p>
+<p>
+121
+Let </Eq> be the number of objects at time </Eq> , and </Eq> be the number of measurements received .
+Let </Eq> be the number of objects at time </Eq> , and </Eq> be the number of measurements received .
+122
+The set of objects and measurements at time t can be respectively denoted as : </Eq> ( 19 ) </Eq> ( 20 )
+The set of objects and measurements at time t can be respectively denoted as : </Eq> ( 19 ) </Eq> ( 20 )
+123
+Let </Eq> , </Eq> denote the joint association event between objects and measurements , where </Eq> is the particular event which assigns measurement </Eq> to object </Eq> .
+Let </Eq> , </Eq> denote the joint association event between objects and measurements , where </Eq> is the particular event which assigns measurement </Eq> to object </Eq> .
+124
+The joint association event probability is : </Eq> ( 21 ) where </Eq> is the sequence of measurements up to time </Eq> , </Eq> is the normalization constant .
+The joint association event probability is : </Eq> ( 21 ) where </Eq> is the sequence of measurements up to time </Eq> , </Eq> is the normalization constant .
+125
+The first term </Eq> is the likelihood function of the measurements , given by : </Eq> ( 22 ) where </Eq> is the number of false alarms , </Eq> is the probability of number of false alarms , which is usually Poisson distributed , </Eq> is the likelihood that measurement </Eq> is originated from target </Eq> .
+The first term </Eq> is the likelihood function of the measurements , given by : </Eq> ( 22 ) where </Eq> is the number of false alarms , </Eq> is the probability of number of false alarms , which is usually Poisson distributed , </Eq> is the likelihood that measurement </Eq> is originated from target </Eq> .
+126
+The second term </Eq> is the prior probability of a joint association event , given by : </Eq> ( 23 ) where </Eq> is the probability of detection of an object with the assumption that target detection occurs independently over time with known probability .
+The second term </Eq> is the prior probability of a joint association event , given by : </Eq> ( 23 ) where </Eq> is the probability of detection of an object with the assumption that target detection occurs independently over time with known probability .
+127
+Thus , the probability of a joint association event is : </Eq> ( 24 )
+Thus , the probability of a joint association event is : </Eq> ( 24 )
+128
+The state estimation of object </Eq> is : </Eq> ( 25 )
+The state estimation of object </Eq> is : </Eq> ( 25 )
+129
+Let the association probability for a particular association between measurement </Eq> and object </Eq> be defined by : </Eq> ( 26 )
+Let the association probability for a particular association between measurement </Eq> and object </Eq> be defined by : </Eq> ( 26 )
+130
+Hence , ( 25 ) becomes : </Eq> ( 27 ) where </Eq> is the state estimation from Kalman filter </CITE> with the assumption on association between measurement </Eq> and object </Eq> .
+Hence , ( 25 ) becomes : </Eq> ( 27 ) where </Eq> is the state estimation from Kalman filter </CITE> with the assumption on association between measurement </Eq> and object </Eq> .
+131
+Note that : </Eq> , and in fact , it is difficult to propose a model for exactly estimating </Eq> in ( 26 ) as the theory , so we want to normalize </Eq> so that </Eq> before using in ( 27 ) . 
+Note that : </Eq> , and in fact , it is difficult to propose a model for exactly estimating </Eq> in ( 26 ) as the theory , so we want to normalize </Eq> so that </Eq> before using in ( 27 ) . 
+132
+Hence : </Eq> ( 28 ) and ( 27 ) becomes : </Eq> ( 29 )
+Hence : </Eq> ( 28 ) and ( 27 ) becomes : </Eq> ( 29 )
+133
+Figure 2 below is the complete algorithm of JPDAF at each time instant </Eq> .
+Figure 2 below is the complete algorithm of JPDAF at each time instant </Eq> .
+134
+</Fig>
+</Fig>
+135
+Figure 3 is the experimental results of JPDAF performed on simulated data of 8 targets in 100 time steps .
+Figure 3 is the experimental results of JPDAF performed on simulated data of 8 targets in 100 time steps .
+136
+The left one of each image pair is the simulated data and the right one is the estimated track of each target .
+The left one of each image pair is the simulated data and the right one is the estimated track of each target .
+137
+Targets ’ positions are initialized in the area of [ 0 . . 500 ] x [ 0 . .50 ] , false alarms are taken randomly in the area of [ 0 . . 200 ] x [ 0 . .200 ] , </Eq> = 0 . 98 , </Eq> .
+Targets ’ positions are initialized in the area of [ 0 . . 500 ] x [ 0 . .50 ] , false alarms are taken randomly in the area of [ 0 . . 200 ] x [ 0 . .200 ] , </Eq> = 0 . 98 , </Eq> .
+138
+</Fig>
+</Fig>
+139
+</p>
+</p>
+140
+</section>
+</section>
+141
+<section label= " Combining statistical background model and jpda filter for motorcycle tracking " >
+<section label= " Combining statistical background model and jpda filter for motorcycle tracking " >
+142
+<subsection label= " Moving object detection " > 
+<subsection label= " Moving object detection " > 
+143
+<p>
+<p>
+144
+Statistical background model is applied to detect moving objects in the motorcycle lane with the parameters in Table 1 .
+Statistical background model is applied to detect moving objects in the motorcycle lane with the parameters in Table 1 .
+145
+</Fig>
+</Fig>
+146
+The color and gradient vectors are obtained by quantizing their domains to 256 resolution levels , while for color cooccurrence vectors , the number of quantized levels is 32 , </Eq> = 0 . 005 is used for the distance measure in ( 8 ) while </Eq> = 2 is used for ( 9 ) .
+The color and gradient vectors are obtained by quantizing their domains to 256 resolution levels , while for color cooccurrence vectors , the number of quantized levels is 32 , </Eq> = 0 . 005 is used for the distance measure in ( 8 ) while </Eq> = 2 is used for ( 9 ) .
+147
+</p>
+</p>
+148
+</subsection>
+</subsection>
+149
+<subsection label= " Multi - target tracking " >
+<subsection label= " Multi - target tracking " >
+150
+<p> 
+<p> 
+151
+Using the measurements achieved from detection stage , JPDAF performs data association between the current measurements and targets .
+Using the measurements achieved from the detection stage , JPDAF performs data association between the current measurements and targets .
+152
+At each time </Eq> , basing on the accuracy of detection results , we can propose a strategy to detect new objects entering the observation area .
+At each time </Eq> , based on the accuracy of detection results , we can propose a strategy to detect new objects entering the observation area .
+153
+If : </Eq> so that </Eq> ( 30 ) where </Eq> and </Eq> are respectively the Decartes coordinates of object </Eq> at time </Eq> and measurement </Eq> at time </Eq> is a small positive number .
+If : </Eq> so that </Eq> ( 30 ) where </Eq> and </Eq> are respectively the Decartes coordinates of object </Eq> at time </Eq> and measurement </Eq> at time </Eq> is a small positive number .
+154
+Then </Eq> is considered as a measurement originated from a new object .
+Then </Eq> is considered as a measurement originated from a new object .
+155
+That means if a measurement is not " too close " with any target at the last time instant , it is implied that a new target has occurred .
+That means if a measurement is not " too close " with any target at the last time instant , it is implied that a new target has occurred .
+156
+Besides , if an object is at the end of the observation area and it is not a new object or it is misdetected more than 3 time instant , it will be removed .
+Besides , if an object is at the end of the observation area and it is not a new object or it is misdetected more than 3 time instant , it will be removed .
+157
+To increase the accuracy of JPDAF , beside the spatial distance , the information of color histogram should be incorporated into the likelihood </Eq> in ( 22 ) .
+To increase the accuracy of JPDAF , beside the spatial distance , the information of color histogram should be incorporated into the likelihood </Eq> in ( 22 ) .
+158
+Hence , Bhattachayya distance is employed to calculate the " distance " between the reference color model </Eq> and the candidate color model </Eq> of each target , ( details in </CITE> ) : </Eq> ( 31 ) where reference color model of a target is chosen as its last state and the candidate color model is its current measurement .
+Hence , Bhattachayya distance is employed to calculate the " distance " between the reference color model </Eq> and the candidate color model </Eq> of each target , ( details in </CITE> ) : </Eq> ( 31 ) where reference color model of a target is chosen as its last state and the candidate color model is its current measurement .
+159
+Moreover , for increasing the accuracy , the reference and candidate model are divided into two sub - regions ( Figure 4 ) , then the color likelihood of a candidate model is produced : </Eq> ( 32 )
+Moreover , for increasing the accuracy , the reference and candidate model are divided into two sub - regions ( Figure 4 ) , then the color likelihood of a candidate model is produced : </Eq> ( 32 )
+160
+</Fig>
+</Fig>
+161
+Let </Eq> be the spatial distance likelihood </Eq> which attained by Kalman filter between measurement </Eq> and target </Eq> </CITE> , then the likelihood </Eq> in ( 24 ) is defined as : </Eq> ( 33 ) where </Eq> because spatial distance information has a higher priority than color in this context .
+Let </Eq> be the spatial distance likelihood </Eq> which attained by Kalman filter between measurement </Eq> and target </Eq> </CITE> , then the likelihood </Eq> in ( 24 ) is defined as : </Eq> ( 33 ) where </Eq> because spatial distance information has a higher priority than color in this context .
+162
+In our application , we chose </Eq> .
+In our application , we chose </Eq> .
+163
+</p>
+</p>
+164
+</subsection>
+</subsection>
+165
+</section>
+</section>
+166
+<section label= " Experimental results " >
+<section label= " Experimental results " >
+167
+<subsection label= " Object detection results " >
+<subsection label= " Object detection results " >
+168
+<p>
+<p>
+169
+The below is some results of object detection ( Figure 5 ( a ) ) , the left image of each pair is the input frame and the right one is the detection result .
+The below is some results of object detection ( Figure 5 ( a ) ) . The left image of each pair is the input frame and the right one is the detection result .
+170
+The experimental sequences are taken from the motorcycle lane in a cloudy weather and the illumination changes are easily seen , but the detection algorithm still works very well .
+The experimental sequences are taken from the motorcycle lane in a cloudy weather and the illumination changes are easily seen , but the detection algorithm still works very well .
+171
+The background is learned rapidly , figure 5 ( b ) is a learned background after 60 frames , together with the statistics of background features , the results of background / foreground classification step is very accurate , there are almost no misclassified background point .
+The background is learned rapidly . Figure 5 ( b ) is a learned background after 60 frames . Together with the statistics of background features , the results of background / foreground classification step is very accurate , and there are almost no misclassified background point .
+172
+But the difficulty is in the segmentation step , when the object density at the end of the observation area is high , many occlusions usually occurs and the segmentation step will usually make mistakes ( Figure 6 ) .
+But the difficulty is in the segmentation step , when the object density at the end of the observation area is high , many occlusions usually occurs and the segmentation step will usually make mistakes ( Figure 6 ) .
+173
+Figure 5 ( c ) is an example of " once - off " background change , there was a motorbike stopping close to the pavement for a while and it became background soon after that .
+Figure 5 ( c ) is an example of " once - off " background change during which there was a motorbike stopping close to the pavement for a while and it became background soon after that .
+174
+</Fig>
+</Fig>
+175
+Table II is the quantitative results of object detection .
+Table II is the quantitative results of object detection .
+176
+The system was tested on ten sequences which has the object density < 10 objects / frame , each sequence has an average length of 10 seconds and uses the first 30 frames ( 1 second ) for initial background learning ( " + 30 " in Length column ) .
+The system was tested on ten sequences which has the object density < 10 objects / frame , each sequence has an average length of 10 seconds and uses the first 30 frames ( 1 second ) for initial background learning ( " + 30 " in Length column ) .
+177
+The precision rate = 100 % demonstrated that there is no background object which is classified as foreground , and the mistake percentages in the recall rate is caused by the incorrect segmentation .
+The precision rate = 100 % demonstrated that there is no background object which is classified as foreground , and the mistake percentages in the recall rate is caused by the incorrect segmentation .
+178
+</Fig>
+</Fig>
+179
+</p>
+</p>
+180
+</subsection>
+</subsection>
+181
+<subsection label= " Tracking results " >
+<subsection label= " Tracking results " >
+182
+<p>
+<p>
+183
+The results of JPDAF depends on the object detection results , if objects are correctly detected , the tracking algorithm will works very well .
+The results of JPDAF depends on the object detection results : if objects are correctly detected , the tracking algorithm will works very well .
+184
+In general , this system works well with a reasonable number of targets / frame ( < 10 targets / frame) .
+In general , this system works well with a reasonable number of targets / frame ( < 10 targets / frame) .
+185
+With the strategy for detecting objects entering and exiting the observation area , the JPDAF can also detect and track the motorcycles driven in wrong direction .
+With the strategy for detecting objects entering and exiting the observation area , the JPDAF can also detect and track the motorcycles driven in wrong direction .
+186
+Figure 7 shows some tracking results , including of the tracking of wrong - wayed motorcycle ( Figure 7 ( d ) , object 10 ) .
+Figure 7 shows some tracking results , including of the tracking of wrong - wayed motorcycle ( Figure 7 ( d ) , object 10 ) .
+187
+Table III shows the statistics of full correct tracks in the ten sequences above ( the mis - tracked objects in any frame are not counted) .
+Table III shows the statistics of full correct tracks in the ten sequences above ( the mis - tracked objects in any frame are not counted) .
+188
+Since JPDAF is an NP-hard problem ( the number of possible joint association events at each time instant </Eq> is </Eq> , the computation cost of JPDAF is one of its major weak points .
+Since JPDAF is an NP-hard problem ( the number of possible joint association events at each time instant </Eq> is </Eq> , the computation cost of JPDAF is one of its major weak points .
+189
+All of these experiments are deployed on a Pentium IV 2 . 4 Ghz , 512 MB RAM , due to the high cost of object detection and tracking algorithm , the processing rate is 2s / frame with the frame size is 360 x 240 and the sequence rate is 30 frames / s .
+All of these experiments are deployed on a Pentium IV 2 . 4 Ghz , 512 MB RAM , and due to the high cost of object detection and tracking algorithm , the processing rate is 2s / frame with the frame size is 360 x 240 and the sequence rate is 30 frames / s .
+190
+</Fig>
+</Fig>
+191
+</p>
+</p>
+192
+</subsection>
+</subsection>
+193
+</section>
+</section>
+194
+<section label= " Conclusion " >
+<section label= " Conclusion " >
+195
+<p> 
+<p> 
+196
+This paper is a next step on the way searching an efficient approach for a motorcycle surveillance system after using Particle filter in </CITE> .
+This paper is a next step on the way searching an efficient approach for a motorcycle surveillance system after using Particle filter in </CITE> .
+197
+Some improvements have been achieved in object detection step which has more accurate results in the whole observation area and the ability to efficiently adapt to illumination changes and " once - off " changes .
+Some improvements have been achieved in object detection step which has more accurate results in the whole observation area and the ability to efficiently adapt to illumination changes and " once - off " changes .
+198
+However , occlusions have not been strictly handled and the computation cost is one of the major limitations .
+However , occlusions have not been strictly handled and the computation cost is one of the major limitations .
+199
+In the future , we hope thatmany new multi - target tracking methods will be applied in this context and the best selection will be produced .
+In the future , we hope thatmany new multi - target tracking methods will be applied in this context, and the best selection will be produced .
+200
+</p>
+</p>
+201
+</section>
+</section>
+202
+</document>
+</document>

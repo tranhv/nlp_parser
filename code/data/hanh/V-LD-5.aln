@@ -1,0 +1,254 @@
+
+0 0:0:preserved
+1 0:0:preserved
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-others
+3 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved
+4 0:0:preserved
+5 0:0:preserved
+6 0:0:preserved
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3,4:bigrammar-vtense 4:5,6,7:paraphrase 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:bigrammar-prep 19:21:preserved 20:22:preserved
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+10 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-others 22:22:preserved 23:23:preserved 24:24:spelling 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:bigrammar-others 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved
+11 0:0:preserved
+12 0:0:preserved
+13 15,0,1,2:0,1,2:paraphrase 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 16:3:preserved 17:16:preserved
+14 0::mogrammar-det 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:6:preserved 14:13:preserved 15:14:preserved 17:15:preserved
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:paraphrase 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved
+16 0:0:preserved 1,2:1:bigrammar-vtense 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 14:12:preserved 15,16,17,18:13,14,15:paraphrase 19:16:preserved
+17 0:1:preserved 1:2:bigrammar-prep 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7,8,9:8,9,10,11,12,13,14,15,16:paraphrase :0:mogrammar-det
+18 0:0:preserved
+19 0:0:preserved
+20 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+21 0:0:preserved
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+23 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-others 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+24 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9,10,11:6,7:preserved 13,12,14:9,8,10:preserved 15,16,17,18:12,11:bigrammar-inter 19,20,21,22:13,14,15,16:preserved 23:17:bigrammar-det 24,25:19,18:preserved
+25 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,19,20,21,22:20:spelling 14:13:preserved 15,16:14,15,16,18:preserved 17:19:paraphrase 18::mogrammar-det 23:21:preserved 24:22:preserved 25:23:bigrammar-prep 26:24:preserved 28:25:preserved 29:26:preserved 30:27:preserved 31:28:preserved 32:29:preserved
+26 0:0:preserved
+27 0:0:preserved
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+29 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved :18:mogrammar-det
+30 0:1:preserved 1:2:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11::mogrammar-det 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved :0:mogrammar-det :3:mogrammar-det :13:mogrammar-det
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10,11:9:paraphrase 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved
+32 0:0:preserved
+33 0:0:preserved
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-others 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15,16:15,16:bigrammar-others 17:18:preserved 18:19:preserved 19:20:paraphrase 20:21:preserved 21:22:bigrammar-det 22:23:preserved 23:24:preserved 24:25:preserved 25:26:bigrammar-others 26:27:preserved :17:moproblematic
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5,6,7:5,7,4,6,8,9:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+37 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-others 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-det 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+38 0:0:preserved
+39 0:0:preserved
+40 0,1:3:paraphrase 2:0:preserved 3:1:preserved 4:2:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15,16:15:paraphrase 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-others 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28,29:spelling 29:30:preserved 30:31:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:bigrammar-others 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved 39:41:preserved 40:42:preserved 41:43:preserved 42:44:preserved 43:45:preserved
+43 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+44 0:0:preserved
+45 0:0:preserved
+46 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10::mogrammar-det 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:bigrammar-wform 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20::mogrammar-det 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9:7,6,8,9,11,10,12,13:preserved 10,11,12,13,14,15,16,17,18:14,15,16,17,18,19,20,21,22:preserved 19:24:preserved 20:26,27:paraphrase 22,21:29,28:preserved 24,23:32,31:preserved :23:mogrammar-prep :30:mogrammar-det
+53 0:0:preserved
+54 0:0:preserved
+55 0:2,3,0,1:paraphrase 1:4:preserved 2:5:preserved 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved
+56 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9:9,7,8:paraphrase 10,11,12:10,12,11,13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8,7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:bigrammar-others 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved
+58 0:0:preserved
+59 0:0:preserved
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+61 0:0:preserved 1:2:preserved 2:3:preserved 3:4:paraphrase 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:paraphrase 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved
+62 0:7:paraphrase 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:9:preserved 8:10:preserved 9:11:paraphrase 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 20:21,22:bigrammar-vtense 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved :23:mogrammar-det
+63 0:0:preserved
+64 0:0:preserved
+65 0,1,3,4,5:3,5:paraphrase 2:4:preserved 6,7,8:0,1,2:preserved 9:6:preserved 10:10:preserved 11:11:bigrammar-det 12:12:preserved 13:13:preserved 14:14:preserved 15,16,17:7,8,9:preserved 18:15:preserved
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:bigrammar-wform 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved
+68 0:0:preserved
+69 0:0:preserved
+70 0:0:preserved 1,2:1:spelling 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved
+71 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-others 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:bigrammar-prep 25:25:preserved 26:26:bigrammar-others 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5,6:4,5:paraphrase 7:6:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved :7:mogrammar-det
+73 0:0:preserved
+74 0:0:preserved
+75 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:15:preserved 14:16:bigrammar-others 15:13:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :14:mogrammar-prep
+76 0:0,1,2,3,4:paraphrase 1:5:preserved 3,4,5,6,7,8,9,10,11,12:7,8,9,10,11,12,13,14,15,16:preserved 13,14,15,16:17,18,19,20:preserved 17,18,19,20,21,22,23,24,25:21,22,23,24,25,26,27,28,29:preserved
+77 0:0:preserved
+78 0:0:preserved
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:bigrammar-vtense 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :3:mogrammar-det
+80 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved :9:mogrammar-det
+81 0:0:preserved
+82 0:0:preserved
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+84 0:0:preserved
+85 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:12:bigrammar-vtense 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:21,20:paraphrase 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved
+86 0:0:preserved
+87 0:0:preserved
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+89 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+90 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:9,7,8,6:preserved 8::unaligned 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:bigrammar-prep 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :19:mogrammar-det
+92 0:0:preserved
+93 0:0:preserved
+94 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27,28:28:spelling 29:29:preserved 30:30:preserved :1:mogrammar-det
+95 0:0:preserved
+96 0:0:preserved
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 28:26:preserved 29:27:preserved 30:29:preserved 31:30:preserved :28:mogrammar-prep
+98 15:14:preserved
+99 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,9,10,11:8:spelling 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16,17:16,14,15:preserved 18:17:preserved
+100 0:0:preserved
+101 0:0:preserved
+102 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+104 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+105 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-others 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+106 0:0:preserved
+107 0:0:preserved
+108 0:0:preserved 1:1:preserved 2:2:spelling 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37,38:paraphrase 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+110 0:0:preserved
+111 0:0:preserved
+112 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 7:7:paraphrase 8:6:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved
+113 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:9:preserved 10:10:preserved
+114 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9:9:preserved 10:10:preserved 11:11:preserved 14:14:preserved 19:19:preserved
+115 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8,9:6:bigrammar-vtense 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved
+116 0:0:preserved 1:1:preserved 2:2,3:paraphrase 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10,12:12,14:paraphrase 11:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved
+117 0:0:preserved
+118 0:0:preserved
+119 0:2:preserved 1:3:preserved 3:0:preserved 5:1:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:19:preserved 18:18:preserved 19:16:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 29:31:preserved 30:28:preserved 31:29:preserved
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-prep 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+122 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:19:bigrammar-wform 19:20:preserved 20:21:paraphrase 21:22:bigrammar-others 22:23:preserved :17:mogrammar-det
+123 0:0:preserved 1:1:preserved 3,4,5,2,6:5,6,2:paraphrase 7,8:3,4:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:paraphrase 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved
+124 0:0:preserved
+125 0:0:preserved
+126 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+127 0:0:preserved
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved
+129 0:0:preserved
+130 0:0:preserved
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14::mogrammar-det 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:22:preserved 21:23:preserved 22:24:preserved
+132 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9,10:paraphrase 9:11:preserved 10:12:preserved 11:13:preserved 12:15,14:preserved 13:16:preserved 14,15,16,17:17,18,19,20,21:paraphrase 18,19,20,21,22,23,24:22,23,24,25,26,27,28:preserved 26,27:30,31:preserved 28,29,30,31,32,33,34,35,36,37,38,39:33,34,35,36,37,38,39,40,41,42,43,44:preserved :5:mogrammar-det :32:mogrammar-det
+133 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:13:preserved 14:14:preserved 15,16:15,16:bigrammar-others 17::mogrammar-prep 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved :12:mogrammar-det
+134 0:0:preserved
+135 0:0:preserved
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved
+137 0:0:preserved
+138 0:0:preserved
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved
+140 0:0:preserved
+141 0:0:preserved
+142 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :9:mogrammar-det
+145 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:bigrammar-others 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved
+146 0:0:preserved
+147 0:0:preserved
+148 0:0:preserved 1:1:preserved 2:2:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved
+149 0:0:preserved
+150 0:0:preserved 1:1:preserved 2,3,4,5,6:2,3:paraphrase 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved
+151 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved
+152 0:0:preserved
+153 0:0:preserved
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+155 0:0:preserved
+156 0:0:preserved
+157 0:0:preserved 1:1:preserved 2:2:preserved 3:3:typo 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+158 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+159 0:0:preserved
+160 0:0:preserved
+161 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:11:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+162 0:0:preserved
+163 0:0:preserved
+164 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+165 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:6,7:paraphrase 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+166 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:paraphrase 20:20:preserved 21:21:preserved 23:22:preserved :5,6:moproblematic
+167 0:0:preserved
+168 0:0:preserved 1:1:preserved 2:2:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved
+169 0:0:preserved
+170 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+171 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+172 0:0:preserved
+173 0:0:preserved
+174 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved
+175 0:0:preserved
+176 0:0:preserved
+177 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved
+178 0:0:preserved
+179 0:0:preserved
+180 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+181 0:0:preserved
+182 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:8:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+183 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+184 0:0:preserved
+185 0:0:preserved
+186 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+187 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+188 0:0:preserved
+189 0:0:preserved
+190 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+191 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+192 0:0:preserved
+193 0:0:preserved
+194 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+197 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5,6,7:paraphrase 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved :8:mogrammar-det
+198 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21,22:22,21,23:paraphrase 23:24:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34,35:36,37,38:paraphrase 36:39:preserved 37:41:preserved :25:mogrammar-det :40:mogrammar-det
+199 0:0:preserved
+200 0:0:preserved
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+202 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved :32:mogrammar-det
+203 0:0:preserved
+204 0:0:preserved
+205 0:0:preserved
+206 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+207 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+208 0:0:preserved
+209 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:bigrammar-vtense 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved :1:mogrammar-det
+210 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+211 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved
+212 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8:7,8:bigrammar-vtense 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+213 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+214 0:0:preserved
+215 0:0:preserved
+216 0:0:preserved 1:1:preserved 3,4,2,5,7:4,5,2,6,7:paraphrase 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14,15:15,14,16,17:preserved 16,17:19,20:bigrammar-vtense 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved
+217 0:0:paraphrase 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+218 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3,4:bigrammar-vtense 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 17:20:preserved 18:17:preserved 19:18:preserved 20:19:preserved :9:mogrammar-det
+219 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+220 0:0:preserved
+221 0:0:preserved
+222 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+223 0:0:preserved
+224 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:25:preserved 24:26:preserved 25:27:preserved :6:mogrammar-det :13:mogrammar-det
+225 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:17:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+226 0,1:0:bigrammar-prep 2:1:preserved 3:2:preserved 4:3:preserved 5::mogrammar-det 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11,12:9:spelling 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved 28:25:preserved
+227 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-vtense 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-vtense 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-others 14:14:preserved 15:15:preserved 16:16:preserved
+229 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+230 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:6:spelling 8:7:preserved 9:8:preserved 10:9:paraphrase 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:paraphrase 20:20:preserved 21,22:21,22,23,24:paraphrase 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved
+231 0:0:preserved
+232 0:0:preserved
+233 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+234 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:13:preserved 12:14:preserved
+235 0:0:preserved
+236 0:0:preserved
+237 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+238 0:1:preserved 1:2:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7,8:10:spelling 9:11:preserved 10:12:preserved 11:13:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 20,21:19:bigrammar-vtense 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:31:preserved :0:mogrammar-det :3:mogrammar-det :9:mogrammar-det :14:mogrammar-det
+239 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+240 0:0:preserved
+241 0:0:preserved
+242 0:0:preserved
+243 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+244 0:0:preserved
+245 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-others 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+246 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved
+247 0:0:preserved 1:1:preserved 2:2,3,4,5:paraphrase 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10,11,15,16,17,18,19,20,21,22,23:14,15,19,20,21,22,23,24,25,26,27:preserved 12:16:paraphrase 13,14:17,18:paraphrase
+248 1,0:0,1,2:paraphrase 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23,24:25,26:paraphrase 25:27:preserved 26:28:preserved 27:29:preserved :14:mogrammar-det
+249 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved :8:mogrammar-det :10:mogrammar-prep
+250 0:0:preserved
+251 0:0:preserved
+252 0:0:preserved

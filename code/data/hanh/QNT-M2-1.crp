@@ -1,0 +1,741 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Comparing Diﬀerent Criteria for Vietnamese Word Segmentation
+Comparing Diﬀerent Criteria for Vietnamese Word Segmentation
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+The success of corpus based methods has made syntactically annotated corpora important resources for natural language processing . 
+Syntactically annotated corpora have become important resources for natural language processing , due in part to the success of corpus-based methods . 
+7
+Since words are often considered as the primitive units of language structures , the annotation of word segmentation forms the basis of these corpora . 
+Since words are often considered as primitive units of language structures , the annotation of word segmentation forms the basis of these corpora . 
+8
+This is also a concern of Vietnamese Treebank ( VTB ) , the first and the only publicly available syntactically annotated corpus so far for the Vietnamese language . 
+This is also a concern for the Vietnamese Treebank ( VTB ) , which is the first and only publicly available syntactically annotated corpus thus far for the Vietnamese language . 
+9
+Although word segmentation is straight-forward for space-delimited languages like English , this is not true for languages like Vietnamese of which no standard criterion for word segmentation exists . 
+Although word segmentation is straight-forward for space-delimited languages like English , this is not the case for languages like Vietnamese for which a standard criterion for word segmentation does not exist . 
+10
+This work explores the challenges of Vietnamese word segmentation through the detection and correction of inconsistency for VTB . 
+This work explores the challenges of Vietnamese word segmentation through the detection and correction of inconsistency for VTB . 
+11
+Then , by combining and splitting the inconsistent annotations detected , we could observe the influence of different word segmentation criteria on automatic word segmentation , and the applications of word segmentation , including text classification and English-Vietnamese statistical machine translation . 
+Then , by combining and splitting the inconsistent annotations that were detected , we are able to observe the influence of different word segmentation criteria on automatic word segmentation , and the applications of word segmentation , including text classification and English-Vietnamese statistical machine translation . 
+12
+The analysis and experimental results showed that our methods improved the quality of VTB , which positively affected the performance of its applications .
+The analysis and experimental results showed that our methods improved the quality of VTB , which positively affected the performance of its applications .
+13
+</p>
+</p>
+14
+</abstract>
+</abstract>
+15
+<section label= "  Introduction "  >
+<section label= "  Introduction "  >
+16
+<p>
+<p>
+17
+Treebanks , corpora annotated with syntactic structures , have become more and more important for language processing . 
+Treebanks , which are corpora annotated with syntactic structures , have become more and more important for language processing . 
+18
+To strengthen the automatic processing of the Vietnamese language , the Vietnamese treebank ( VTB ) has been built as a part of the national project , " Vietnamese language and speech processing ( VLSP ) " ( Nguyen et al. ,  2009b ) .
+In order to strengthen the automatic processing of the Vietnamese language , the Vietnamese Treebank ( VTB ) has been built as a part of the national project , " Vietnamese language and speech processing ( VLSP ) " ( Nguyen et al. ,  2009b ) .
+19
+However , in our preliminary experiment with VTB , when we trained the Berkeley parser  ( Petrov et al. ,  2006 ) and evaluated it using the corpus , the parser achieved only 65.8% in F-score . 
+However , in our preliminary experiment with VTB , when we trained the Berkeley parser  ( Petrov et al. ,  2006 ) and evaluated it by using the corpus , the parser achieved only 65.8% in F-score . 
+20
+This performance is far lower than the state-of-the-art performance reported for Berkeley Parser on English Penn Treebank , 90.3% in F-score ( Petrov et al. ,  2006 ) . 
+This score is far lower than the state-of-the-art performance reported for the Berkeley Parser on the English Penn Treebank , which reported 90.3% in F-score ( Petrov et al. ,  2006 ) . 
+21
+There are two possible reasons for this . 
+There are two possible reasons to explain this outcome . 
+22
+First , the quality of VTB is not good enough to build a good a parser , including the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+One reason for this outcome is the quality of VTB , including the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+23
+Second , parsing Vietnamese is a difficult problem by its own ; and we need to seek new solutions to the problem .
+The second reason is the difficulty of parsing Vietnamese; we need to seek new solutions to address this problem .
+24
+VTB is annotated with three layers : word segmentation , POS tagging , and bracketing .
+VTB is annotated with three layers : word segmentation , POS tagging , and bracketing .
+25
+This paper focuses on the word segmentation issues  since the most basic unit of a Treebank is word ( Di Sciullo and Edwin ,  1987 ) , and defining “ What are words ? “ is the first problem that a treebank has to solve ( Xia , 2000b ,a; Sornlertlamvanich et al. ,  1997 , 1999 ) . 
+This paper focuses on the word segmentation , since the most basic unit of a treebank are words ( Di Sciullo and Edwin ,  1987 ) , and defining " words " is the first step ( Xia , 2000b ,a; Sornlertlamvanich et al. ,  1997 , 1999 ) . 
+26
+For languages like English , answering this question is almost trivial , because the blank spaces denote word delimiters . 
+For languages like English , defining " words " is almost trivial , because the blank spaces denote word delimiters . 
+27
+However , for an isolating language like Vietnamese , where blank spaces play a role of syllable delimiters , " What are words? " is not a trivial question . 
+However , for an isolating language like Vietnamese , for which blank spaces play a role of syllable delimiters , " What are words? " is not a trivial question . 
+28
+For example , the sentence " Học sinh học sinh học ( students learn biology ) </CITE> " is composed of three words , " học sinh ( student ) " , " học ( learn ) , " and " sinh học ( biology ) " . 
+For example , the sentence " Học sinh học sinh học ( students learn biology ) </CITE> " is composed of three words , " học sinh ( student ) " , " học ( learn ) , " and " sinh học ( biology ) " . 
+29
+Word segmentation is expected to break down the sentence at the boundaries of these words , not to split " học sinh ( student ) " and " sinh học ( biology ) . " 
+Word segmentation is expected to break down the sentence at the boundaries of these words , instead of splitting " học sinh ( student ) " and " sinh học ( biology ) . " 
+30
+Note that the terminology " word segmentation " also refers to the task of extracting words statistically without concerning a gold-standard for segmentation , as in  ( Ha , 2003; Le et al. ,  2010 ) . 
+Note that the terminology " word segmentation " also refers to the task of extracting words statistically without concerning a gold-standard for segmentation , as in  ( Ha , 2003; Le et al. ,  2010 ) . 
+31
+In such context , the extracted words are more appropriate for building a dictionary than for corpus-based language processing , which are out of the focus of this paper . 
+In such a context , the extracted words are more appropriate for building a dictionary , rather than for corpus-based language processing , which are outside of the scope of this paper . 
+32
+Establishing a gold standard for Vietnamese word segmentation faces some difficulties coming from the characteristics of the language .
+Because of the discussed characteristics of the language , there are challenges in establishing a gold standard for Vietnamese word segmentation .
+33
+The difficulties of Vietnamese word segmentation have been recognized by many researchers  ( Ha , 2003; Nguyen et al. ,  2004 , 2006; Le et al. ,  2010 ) . 
+The difficulties in Vietnamese word segmentation have been recognized by many researchers  ( Ha , 2003; Nguyen et al. ,  2004 , 2006; Le et al. ,  2010 ) . 
+34
+Although most people agree that the Vietnamese language has two types of words : single and compound , there is little consensus on how to segment a sentence into words . 
+Although most people agree that the Vietnamese language has two types of words : single and compound , there is little consensus as to the methodology for segmenting a sentence into words . 
+35
+The disagreement is not only because of the different functions of blank spaces as mentioned above but also because Vietnamese is not an inflectional language like English or Japanese where morphological forms can be useful clues for word segmentation . 
+The disagreement occurs not only because of the different functions of blank spaces ( as mentioned above ) , but also because Vietnamese is not an inflectional language , as is the case for English or Japanese , for which morphological forms can provide useful clues for word segmentation . 
+36
+While the similar problems also happen with Chinese word segmentation  ( Xia , 2000b ) , Vietnamese word segmentation may be more difficult because the modern Vietnamese writing system is based on Latin characters , which represents the pronunciation , but not the meaning of words . 
+While similar problems also occur with Chinese word segmentation  ( Xia , 2000b ) , Vietnamese word segmentation may be more difficult , because the modern Vietnamese writing system is based on Latin characters , which represent the pronunciation , but not the meaning of words . 
+37
+All these characteristics make it diﬃcult to perform word segmentation for Vietnamese both manually and automatically , and have resulted in different criteria for word segmenation . 
+All of these characteristics make it diﬃcult to perform word segmentation for Vietnamese , both manually and automatically , and have thus resulted in different criteria for word segmentation . 
+38
+However , so far , there have been few studies on the challenges in word segmentation , and the comparison of different word segmentation criteria .
+However , so far , there have been few studies on the challenges in word segmentation , and the comparison of different word segmentation criteria .
+39
+In this paper , a brief introduction of the Vietnamese treebank VTB and its annotation scheme are given in Section 2 . 
+In this paper , a brief introduction of the Vietnamese Treebank VTB and its annotation scheme are provided in Section 2 . 
+40
+Then , we described our methods for the detection and correction of the problematic annotations in the VTB corpus ( Section  4.2 ) . 
+Then , we described our methods for the detection and correction of the problematic annotations in the VTB corpus ( Section  4.2 ) . 
+41
+We classified the problematic annotations into several patterns of inconsistency , part of which were manually fixed to improve the quality of the corpus . 
+We classified the problematic annotations into several patterns of inconsistency , part of which were manually fixed to improve the quality of the corpus . 
+42
+The rest , which can be considered as the most difficult and controversial casess of word segmentation , were used to create different versions of the VTB corpus , representing different word segmentation criteria . 
+The rest , which can be considered as the most difficult and controversial instances of word segmentation , were used to create different versions of the VTB corpus , representing different word segmentation criteria . 
+43
+Finally , we evaluated these criteria in automatic word segmentation , and its application in text classification and English-Vietnamese statistical machine translation , in Section 4 .
+Finally , we evaluated these criteria in automatic word segmentation , and its application in text classification and English-Vietnamese statistical machine translation , in Section 4 .
+44
+This study is not only beneficial for the development of computational processing technologies for Vietnamese , a language spoken by over 90 million people , but also for the similar languages such as Thai , Laos , and so on . 
+This study is not only beneficial for the development of computational processing technologies for Vietnamese , a language spoken by over 90 million people , but also for similar languages such as Thai , Laos , and so on . 
+45
+This study also promotes the computational linguistic studies on how to transfer methods developed for a popular language , like English , to a language that has not yet intensively studied .
+This study also promotes the computational linguistic studies on how to transfer methods developed for a popular language , like English , to a language that has not yet been intensively studied .
+46
+</p>
+</p>
+47
+</section>
+</section>
+48
+<section label= " Word segmentation in VTB "  >
+<section label= " Word segmentation in VTB "  >
+49
+<p>
+<p>
+50
+Word segmentation in VTB aims to found a standard for word segmentation in a context of multi-level language processing . 
+Word segmentation in VTB aims at establishing a standard for word segmentation in a context of multi-level language processing . 
+51
+VTB specifies 12 types of units that should be identified as words ( Table 1 ) ( Nguyen et al. , a ) , which can be divided into three groups : single , compound , and special " words . " 
+VTB specifies 12 types of units that should be identified as words ( Table 1 ) ( Nguyen et al. , a ) , which can be divided up into three groups : single , compound , and special " words . " 
+52
+Single words contain only one token . 
+Single words contain only one token . 
+53
+The terminology tokens refers to text spans separated with each other by blank spaces . 
+The terminology tokens refers to text spans that are separated from each other by blank spaces . 
+54
+Compound words have two or more tokens , and are divided into four types : compound words composed by semantic coordination ( semantic-coordinated compound ) , compound words composed by semantic subordination ( semantic-subordinated compound ) , compound words with aﬃx , and reduplicated words . 
+Compound words have two or more tokens , and are divided into four types : compound words composed by semantic coordination ( semantic-coordinated compound ) , compound words composed by semantic subordination ( semantic-subordinated compound ) , compound words with an aﬃx , and reduplicated words . 
+55
+Special " words " can be idioms , locutions , proper names , date times , numbers , symbols , sentence marks , foreign words , or abbreviations . 
+Special " words " include idioms , locutions , proper names , date times , numbers , symbols , sentence marks , foreign words , or abbreviations . 
+56
+The segmentation of these types of words forms a basis for the POS tagging , with 18 different POS tags shown in Table 2 ( Nguyen et al. , c ) .
+The segmentation of these types of words forms a basis for the POS tagging , with 18 different POS tags , as shown in Table 2 ( Nguyen et al. , c ) .
+57
+Each unit in Table 1 goes with several example words of which English translations are given in parentheses .
+Each unit in Table 1 goes with several example words; English translations are provided in parentheses .
+58
+Besides , we added a translation for each token , when possible , so that the readers unfamiliar with Vietnamese can have an intuitive idea of how the compound words are formed . 
+Furthermore , we added a translation for each token , where possible , so that readers who are unfamiliar with Vietnamese can have an intuitive idea as to how the compound words are formed . 
+59
+The subscript of a token translation is the index of that token in the compound word . 
+The subscript of a token translation is the index of that token in the compound word . 
+60
+However , for some tokens , we could not find any appropriate English translation , so we give it an empty translation , marked with an asterisk . 
+However , for some tokens , we could not find any appropriate English translation , so we gave it an empty translation , marked with an asterisk . 
+61
+Note that a Vietnamese word or a token in context can have other meanings , in addition to the given translations .
+Note that a Vietnamese word or a token in context can have other meanings , in addition to the given translations .
+62
+A special type of words in Vietnamese is noun , denoted by the part-of-speech Nc in Table 2 .
+A classifier noun , denoted by the part-of-speech Nc in Table 2 , is a special type of word in Vietnamese .
+63
+Classifier nouns are specific to several Southeast Asian languages , like Vietnamese and Thai . 
+Classifier nouns are specific to several Southeast Asian languages , like Vietnamese and Thai . 
+64
+One of the functions of classifier nouns is to express the definiteness . 
+One of the functions of classifier nouns is to express the definiteness . 
+65
+For example , the common noun " bàn " means tables in general , while " cái bàn " means a specific table , similar to the table in English .
+For example , the common noun " bàn " generally means tables , while " cái bàn " means a specific table , similar to the table in English .
+66
+</p>
+</p>
+67
+</section>
+</section>
+68
+<section label= " Inconsistency detection for word segmentation annotation of VTB "  >
+<section label= " Inconsistency detection for word segmentation annotation of VTB "  >
+69
+<p>
+<p>
+70
+In this section , we analyzed the VTB corpus to know whether the difficulties in Vietnamese word segmentation a ff ected the quality of VTB annotations . 
+In this section , we analyzed the VTB corpus to determine whether the difficulties in Vietnamese word segmentation affected the quality of VTB annotations . 
+71
+The analysis results revealed several types of inconsistent annotations , which are also the most problematic cases of Vietnamese word segmentation . 
+The analysis revealed several types of inconsistent annotations , which are also problematic for Vietnamese word segmentation . 
+72
+Our analysis is based on two types of inconsistency : variation and structural inconsistency , whose definitions and details are given below .
+Our analysis is based on two types of inconsistencies : variation and structural inconsistency , which are defined below .
+73
+Variation inconsistency : is a sequence of tokens , which has more than one way of segmentation in the corpus . 
+Variation inconsistency : is a sequence of tokens , which has more than one way of segmentation in the corpus . 
+74
+For example , " con gái/girl " can remain as one word , or be segmented into two words , " con " and " gái " . 
+For example , " con gái/girl " can remain as one word , or be segmented into two words , " con " and " gái " . 
+75
+A variation can be an annotation inconsistency , or an ambiguity in Vietnamese . 
+A variation can be an annotation inconsistency , or an ambiguity in Vietnamese . 
+76
+While ambiguity cases reflect the difficulty of the language , annotation inconsistencies are usually caused by the confusion in the decision of annotators , which should be eliminated in annotation . 
+While ambiguity cases reflect the difficulty of the language , annotation inconsistencies are usually caused by the confusion in the decision of annotators , which should be eliminated in annotation . 
+77
+We use the term variation instance to refer a single occurrence of a variation .
+We use the term variation instance to refer to a single occurrence of a variation .
+78
+Structural inconsistency : happens when di ff erent sequences have similar structures , thus should be splitted in the same way , but are segmented in different ways in the corpus . 
+Structural inconsistency : happens when different sequences have similar structures , and thus should be split in the same way , but are segmented in different ways in the corpus . 
+79
+For example , " con gái/girl " and " con trai/boy " have similar structures : a combination of a classifier noun and a common noun , Nc + N , so when " con gái/girl " is splitted , and " con trai/boy " is not , it is considered as a structural inconsistency of Nc . 
+For example , " con gái/girl " and " con trai/boy " have similar structures : a combination of a classifier noun and a common noun , Nc + N , so when " con gái/girl " is split , and " con trai/boy " is not , it is considered as a structural inconsistency of Nc . 
+80
+It is likely that structural inconsistency in word segmentation level makes the higher levels of processing , POS tagging and bracketing , become more complicated .
+It is likely that structural inconsistency at the word segmentation level complicates the higher levels of processing , including POS tagging and bracketing .
+81
+</p>
+</p>
+82
+</section>
+</section>
+83
+<section label= " Variation inconsistency detection " >
+<section label= " Variation inconsistency detection " >
+84
+<subsection= " Detection method " >
+<subsection= " Detection method " >
+85
+<p>
+<p>
+86
+The detection method for variation inconsistency is based on N-gram sequences and the phrase structures in VTB treebank , following the definition of variation inconsistency above . 
+The detection method for variation inconsistency is based on N-gram sequences and the phrase structures in the VTB , following the definition for variation inconsistency , above . 
+87
+In details , we counted N-gram sequences of different lengths in VTB that have two or more ways of word segmentation , satisfying one of the following two conditions :
+In detail , we counted N-gram sequences of different lengths in VTB that have two or more ways of word segmentation , satisfying one of the following two conditions :
+88
+N tokens are all in the same phrase , and all have the same depth in phrase . 
+N tokens are all in the same phrase , and all have the same depth in phrase . 
+89
+For example , the 3-gram " nhà tình nghĩa ( house of gratitude ) " in this structure " ( NP ( Nc-H căn ) ( N nhà ) ( A tình nghĩa ) ) , " OR N tokens are all in the same phrase , and some tokens can appear in an embedded phrase , which contains only one word . 
+For example , the 3-gram " nhà tình nghĩa ( house of gratitude ) " in this structure " ( NP ( Nc-H căn ) ( N nhà ) ( A tình nghĩa ) ) , " OR N tokens are all in the same phrase , and some tokens can appear in an embedded phrase , which contains only one word . 
+90
+For example , " nhà tình nghĩa " in this structure " ( NP ( Nc-H căn ) ( N nhà ) ( ADJP ( A tình nghĩa ) ) ) , " where the ADJP contains only one word .
+For example , " nhà tình nghĩa " in this structure " ( NP ( Nc-H căn ) ( N nhà ) ( ADJP ( A tình nghĩa ) ) ) , " where the ADJP contains only one word .
+91
+</p>
+</p>
+92
+</subsection>
+</subsection>
+93
+<subsection label = " Evaluation and results " >
+<subsection label = " Evaluation and results " >
+94
+<p>
+<p>
+95
+Table 3 shows the overall statistics of the variation inconsistency detected by the above method . 
+Table 3 shows the overall statistics of the variation inconsistency detected by the method described above . 
+96
+Most of the diﬃcult cases of word segmentation lie in two-token variations , occupying the majority of variations ( 92.9% ) . 
+Most of the diﬃcult cases of word segmentation occur in two-token variations , occupying the majority of variations ( 92.9% ) . 
+97
+This ratio of 2-gram variations is much higher than the evarage ratio of two-token words in Vietnamese reported in ( Nguyen et al. ,  2009a ) , which is 80% percent . 
+This ratio of 2-gram variations is much higher than the average ratio of two-token words in Vietnamese , as reported in ( Nguyen et al. ,  2009a ) , which is 80% . 
+98
+Variations that have lengths of three and four tokens occupy 6.1% and 1.0% , respectively .
+Variations that have lengths of three and four tokens occupy 6.1% and 1.0% , respectively .
+99
+We estimated the precision of our method by randomly selected 130 2-gram variation instances extracted from the above method described , and manually checked whether they are true inconsistency .
+We estimated the precision of our method by randomly selecting 130 2-gram variation instances , extracted from the method described above , and manually checked whether the inconsistencies are true .
+100
+We found that 129 cases occupying 99.2% of all extracted 2-grams are true inconsistencies . 
+We found that 129 cases occupying 99.2% of all extracted 2-grams are true inconsistencies . 
+101
+Only one instance is an ambiguous sequence giá c , which is one word when it means price , and two words giá/price c /all in đàu có giá c /all have ( their own ) price . 
+Only one instance of inconsistency was an ambiguous sequence giá c , which is one word when it means price , and two words giá/price c /all in đàu có giá c /all have ( their own ) price . 
+102
+The precision of our method is high so we can use the extracted variations to study the insights of word segmentation problem .
+The precision for our method is high , so we can use the extracted variations to provide insights on the word segmentation problem .
+103
+</p>
+</p>
+104
+</subsection>
+</subsection>
+105
+<subsection label = " Analysis of 2-gram variations " >
+<subsection label = " Analysis of 2-gram variations " >
+106
+<p>
+<p>
+107
+We further analyzed the 2-gram variations to know what types of 2-grams were most confusing to annotators . 
+We further analyzed the 2-gram variations to understand what types of 2-grams were most confusing for annotators . 
+108
+The analysis results showed that compound nouns , compound verbs , and compound adjectives are the top diffcult cases of word segmentation .
+The analysis revealed that compound nouns , compound verbs , and compound adjectives are the most difficult cases of word segmentation .
+109
+We classified the 2-gram variations according to their POS sequences in case the tokens in the 2-gram are splitted . 
+We classified the 2-gram variations according to their POS sequences in case the tokens in the 2-gram are split . 
+110
+There are 54 patterns of POS sequence , of which . 
+There are a total of 54 patterns of POS sequences . 
+111
+Top 10 confusing patterns , a long with their counts of 2-gram variations , and examples are shown in Table 4 . 
+The top 10 confusing patterns , their counts of 2-gram variations , and examples are depicted in Table 4 . 
+112
+Table 5 and Table 6 show the POS patterns which a specific POS tag , appearing at the beginning or ending of the sequence .
+Table 5 and Table 6 show the POS patterns that are a specific POS tag , appearing at the beginning or ending of the sequence .
+113
+Investigating the inconsistent 2-grams extracted , we found that most of them are compound words , according to the VTB guidelines ( Section 2 ) . 
+Investigating the inconsistent 2-grams extracted , we found that most of them are compound words , according to the VTB guidelines ( Section 2 ) . 
+114
+One of the reasons why the compound words are sometimes splitted , is because the tokens in those compound words have their own meanings , which seem to contribute to the whole meaning of the compounds . 
+One of the reasons why the compound words are sometimes split , is because the tokens in those compound words have their own meanings , which seem to contribute to the overall meaning of the compounds . 
+115
+This can be seen through the examples given in Table 4 , where the meanings of tokens are given with a subscript . 
+This can be seen through the examples provided in Table 4 , where the meanings of tokens are given with a subscript . 
+116
+This problem seems to have caused a lot of trouble for the annotators of VTB .
+This scenario has proven to be problematic for the annotators of VTB .
+117
+Furthermore , observing the POS patterns in Table 5 and Table 6 , we can see the potential of structural inconsistency , in particular for closed-set POS tags . 
+Furthermore , by observing the POS patterns in Table 5 and Table 6 , we can see the potential for structural inconsistency , particularly for closed-set POS tags . 
+118
+Among them , classifier nouns ( Nc ) and affixes ( S ) are two typical cases of structural inconsistency , which will be used in several settings of our experiments . 
+Among them , classifier nouns ( Nc ) and affixes ( S ) are two typical cases of structural inconsistency , which will be used in several settings for our experiments . 
+119
+The same aﬃx or classifier noun can modify different nouns , so when they are sometimes splitted and sometimes combined in the variations , we can conclude that classifier nouns and affixes involve in-structural inconsistency . 
+The same aﬃx or classifier noun can modify different nouns , so when they are sometimes split and combined in the variations , we can conclude that classifier nouns and affixes involve in-structural inconsistencies . 
+120
+In the following section , we presents our detection method for structural inconsistency for classifier nouns and affixes .
+In the following section , we present our detection method for structural inconsistency for classifier nouns and affixes .
+121
+</p>
+</p>
+122
+</subsection>
+</subsection>
+123
+</section>
+</section>
+124
+<section label = " Structural inconsistency detection for classifier nouns and affixes " >
+<section label = " Structural inconsistency detection for classifier nouns and affixes " >
+125
+<subsection label = " Detection method "  >
+<subsection label = " Detection method "  >
+126
+<p>
+<p>
+127
+The detection method for structural inconsistency of classifier nouns and affixes is simple . 
+The detection method for structural inconsistency of classifier nouns and affixes is simple . 
+128
+First , we collected all affixes and classifier nouns in the VTB corpus . Then extracted 2-grams containing these affixes or classifier nouns , which also are the structural inconsistencies . 
+We collected all affixes and classifier nouns in the VTB corpus , and then extracted 2-grams containing these affixes or classifier nouns , which are also structural inconsistencies . 
+129
+For example , since " con " is tagged as a classifier noun in VTB , we extracted all 2-grams of " con " including both " con gái/girl " and " con trai/boy " .
+For example , since " con " is tagged as a classifier noun in VTB , we extracted all 2-grams of " con " including both " con gái/girl " and " con trai/boy " .
+130
+Note that even though the sequence , " con trai " is always splitted into two words throughout the corpus , it can still be an inconsistency , if we consider similar structures such as " con gái " . 
+Even though the sequence , " con trai " is always split into two words throughout the corpus , it can still be an inconsistency , if we consider similar structures such as " con gái " . 
+131
+In other words , by this method , we extract sequences that may be consistent at the surface level , but are not consistent , if we consider the higher analysis levels , POS tagging .
+In other words , by this method , we extract sequences that may be consistent at the surface level , but are not consistent , if we consider the higher analysis levels , POS tagging .
+132
+According to the VTB POS-tagging annotation guidelines ( Nguyen et al. , c ) , classifier nouns should be separated from the words they modify . 
+According to the VTB POS-tagging annotation guidelines ( Nguyen et al. , c ) , classifier nouns should be separated from the words that they modify . 
+133
+However , in practice it is confusing when the classifier noun can be standalone as a single word . 
+However , in practice , it is confusing when the classifier noun can be standalone as a single word . 
+134
+For example a classifier noun , e.g. , " con " in " con trai ( boy ) " , or " con gái ( girl ) " , can also be a simple word , which means " I ( first person pronoun used by a child when talking to his/her parents ) " , or part of a complex noun " con cái ( children ) " . 
+For example a classifier noun , e.g. , " con " in " con trai ( boy ) " , or " con gái ( girl ) " , can also be a simple word , which means " I ( first person pronoun used by a child when talking to his/her parents ) " , or part of a complex noun " con cái ( children ) " . 
+135
+Therefore , in our experiments , we want to evaluate the " splitting " and " combining " of these difficult cases , to see whether the solution is fruitful for applications of the corpus .
+Therefore , in our experiments , we want to evaluate the " splitting " and " combining " of these cases , in order to see whether the solution is successful for applications of the corpus .
+136
+</p>
+</p>
+137
+</subsection>
+</subsection>
+138
+</section>
+</section>
+139
+<section label = " Correction of inconsistency in annotations of special charac-ters " >
+<section label = " Correction of inconsistency in annotations of special characters " >
+140
+<p>
+<p>
+141
+Examing the variations extracted by the variation inconsistency detection , we found that there are cases when a special character like percentage % in " 30% " , is splitted or combined with " 30 " . 
+By examining the variations extracted by the variation inconsistency detection , we found that there are cases when a special character like a percentage ( % ) in " 30% " , is split or combined with " 30 " . 
+142
+Such inconsistent annotations are manually fixed based on their textual context .
+Such inconsistent annotations are manually fixed based on their textual context .
+143
+Checking structural inconsistency of these special characters , including percentage % , hyphen - , and so on , we found quite a significant amount of inconsistent annotations . 
+By checking structural inconsistencies of these special characters , including percentages ( % ) , hyphens ( - ) , and other symbols , we found quite a significant number of inconsistent annotations . 
+144
+For example , the character % in " 30% " is splitted , but is combined with the number in " 50 % " , which is considered as a structural inconsistency . 
+For example , the character , % , in " 30% " is split , but is combined with a number in " 50 % " , which is considered to be a structural inconsistency . 
+145
+Note that although it can be argued that whether " N% " can be splitted into two words or combined in one word is dependent on the blank space in between N and " % " . 
+Note that it can be argued that splitting " N% " into two words or combined in one word is dependent on the blank space in-between N and " % " . 
+146
+It does matter higher-levels of annotation such as POS tagging, because we may need one or two different POS tags for different ways of annotation . 
+Higher-levels of annotation such as POS tagging is significant , because we may need one or two different POS tags for the different methods of annotation . 
+147
+Therefore , we think it is better to carefully preprocess text and segment these special characters in a consistent way .
+Therefore , we think that it is better to carefully preprocess text and segment these special characters in a consistent way .
+148
+To improve the quality of VTB corpus , we extracted the probably problematic sequences using patterns of the special characters , and manually fixed this type of inconsistency . 
+To improve the quality of the VTB corpus , we extracted the problematic sequences using patterns of the special characters , and manually fixed this type of inconsistency . 
+149
+Automatically modification is diﬃcult , since we must check the semantics of the special characters in their contexts . 
+Automatically modification is diﬃcult , since we must check the semantics of the special characters in their contexts . 
+150
+For example , hyphens in date expressions like " 5-4-1975 " , which means the date , "April , 1975 ," are combined with the numbers . 
+For example , hyphens in date expressions like " 5-4-1975 " , which refers to the date , "the fifth of April , 1975 ," are combined with the numbers . 
+151
+However , when the hypen has a meaning of " ( from ) to " or " around ... or " , as in " 2-3 giờ sáng " , meaning " around 2 or 3 o’clock in the morning " , we decided to separate it from the surrounding numbers . 
+However , when the hyphen indicates " ( from ) to " or " around ... or " , as in " 2-3 giờ sáng " , meaning " around 2 or 3 o’clock in the morning " , we decided to separate it from the surrounding numbers . 
+152
+As a result , we have fixed 685 inconsistent annotations of 21 special characters in VTB .
+As a result , we have fixed 685 inconsistent annotations of 21 special characters in VTB .
+153
+</p>
+</p>
+154
+</section>
+</section>
+155
+<section label = " Comparing different word segmentation criteria " >
+<section label = " Comparing different word segmentation criteria " >
+156
+<p>
+<p>
+157
+The variation inconsistency and structural inconsistency found in Section 3 above can also be seen as representatives of different word segmentation criteria for Vietnamese . 
+The variation inconsistency and structural inconsistency found in Section 3 can also be seen as representatives of different word segmentation criteria for Vietnamese . 
+158
+We organized the inconsistency detected in seven configurations of the original VTB corpus . 
+We organized the inconsistency detected in seven configurations of the original VTB corpus . 
+159
+Then , by using these data sets , we could observe the influence of the different word segmentation criteria on three tasks : automatic word segmentation , text classification , and English-Vietnamese statistical machine translation .
+Then , by using these data sets , we could observe the influence of the different word segmentation criteria on three tasks : automatic word segmentation , text classification , and English-Vietnamese statistical machine translation .
+160
+</p>
+</p>
+161
+<subsection label = " Data preparation for experiments on word segmentation criteria" >
+<subsection label = " Data preparation for experiments on word segmentation criteria" >
+162
+<p>
+<p>
+163
+Seven data sets corresponding to different segmentation criteria are organized as follows .
+Seven data sets corresponding to different segmentation criteria are organized as follows .
+164
+ORG  : The original VTB corpus . 
+ORG  : The original VTB corpus . 
+165
+BASE  : The original VTB corpus + Manual modification of special characters done in Section 3.3 . 
+BASE  : The original VTB corpus + Manual modification of special characters done in Section 3.3 . 
+166
+VAR_SPLIT  : BASE + split all variations detected in Section  3.1 . 
+VAR_SPLIT  : BASE + split all variations detected in Section  3.1 . 
+167
+VAR_COMB  : BASE + combine all variations detected in Section  3.1 . 
+VAR_COMB  : BASE + combine all variations detected in Section  3.1 . 
+168
+VAR_FREQ  : BASE + select the segmentation with higher frequency among all variations detected in Section  3.1 . 
+VAR_FREQ  : BASE + select the segmentation with higher frequency among all variations detected in Section  3.1 . 
+169
+STRUCT_NC  : BASE + combine all classifier nouns detected in Section 3.2 with the words they modify .
+STRUCT_NC  : BASE + combine all classifier nouns detected in Section 3.2 with the words they modify .
+170
+STRUCT_AFFIX  : BASE + combine all suﬃxes detected in Section 3.2 with the words they modify . 
+STRUCT_AFFIX  : BASE + combine all suﬃxes detected in Section 3.2 with the words they modify . 
+171
+These data sets are used in our experiments , as illustrated in Figure 1 . 
+These data sets are used in our experiments , as illustrated in Figure 1 . 
+172
+The names of the data sets are also used to label our experimental configurations . 
+The names of the data sets are also used to label our experimental configurations . 
+173
+</p>
+</p>
+174
+</subsection>
+</subsection>
+175
+<subsection label = " Experimental settings " >
+<subsection label = " Experimental settings " >
+176
+<p>
+<p>
+177
+In this section , we briefly describe the task settings and the methods used for word segmentation ( WS ) , text classification ( TC ) , and English-Vietnamese statistical machine translation ( SMT ) .
+In this section , we briefly describe the task settings and the methods used for word segmentation ( WS ) , text classification ( TC ) , and English-Vietnamese statistical machine translation ( SMT ) .
+178
+</p>
+</p>
+179
+<subsubsection label = " Word segmentation ( WS ) " >
+<subsubsection label = " Word segmentation ( WS ) " >
+180
+<p>
+<p>
+181
+We used YamCha ( Kudo and Matsumoto ,  2003 ) , a multi-purpose chunking tool , to train our word segmentation models . 
+We used YamCha ( Kudo and Matsumoto ,  2003 ) , a multi-purpose chunking tool , to train our word segmentation models . 
+182
+The core of YamCha is the Support Vector Machine ( SVM ) machine learning method , which has been proved to be effective in NLP tasks . 
+The core of YamCha is the Support Vector Machine ( SVM ) machine learning method , which has been proven to be effective for NLP tasks . 
+183
+For the Vietnamese word segmentation problem , each token is labeled with standard B , I , or O labels , corresponding to beginning , inside , and outside positions , respectively . 
+For the Vietnamese word segmentation problem , each token is labeled with standard B , I , or O labels , corresponding to the beginning , inside , and outside positions , respectively . 
+184
+Label of each token is determined based on the lexical features of two preceding words , and two following words of that token . 
+The label of each token is determined based on the lexical features of two preceding words , and the two following words of that token . 
+185
+Since Vietnamese language is not inflectional , we cannot utilize inflection features for word segmentation .
+Since the Vietnamese language is not inflectional , we cannot utilize inflection features for word segmentation .
+186
+Each of the seven data sets is splitted into two subsets for training and testing our WS models . 
+Each of the seven data sets is split into two subsets for training and testing our WS models . 
+187
+The training set contains 8443 sentences , and the test set contains 2000 sentences .
+The training set contains 8443 sentences , and the test set contains 2000 sentences .
+188
+</p>
+</p>
+189
+</subsubsection>
+</subsubsection>
+190
+<subsubsection label = " Text classification ( TC ) " >
+<subsubsection label = " Text classification ( TC ) " >
+191
+<p>
+<p>
+192
+Text classification is defined as a task of determining for an input document the most suitable topic from the predefined topics . 
+Text classification is defined as a task of determining the most suitable topic from the predefined topics , for an input document . 
+193
+We implemented a text classification system similar to the system presented in ( Nguyen et al. ,  2012 ) . 
+We implemented a text classification system similar to the system presented in ( Nguyen et al. ,  2012 ) . 
+194
+The difference is that we performed for document level , not for sentence level .
+The difference is that we performed the task at the document level , instead of at the sentence level .
+195
+Processing of the system is summarized as follows . 
+The processing of the system is summarized as follows . 
+196
+An input document is preprocessed with word segmentation and stop-word removals . 
+An input document is preprocessed with word segmentation and stop-word removals . 
+197
+Then , the document is represented in the form of a vector of weighted words appearing in the document . 
+Then , the document is represented in the form of a vector of weighted words appearing in the document . 
+198
+The weight is calculated using standard tf-idf product . 
+The weight is calculated using standard tf-idf product . 
+199
+An SVM-based classifier predicts the most probable topic for the vector , which also is the topic of the input document . 
+An SVM-based classifier predicts the most probable topic for the vector , which also is the topic for the input document . 
+200
+In our experiment , for comparison of diﬀerent word segmentation criteria in topic classification , we only vary the word segmentation model used for this task , while fixing other configurations .
+In our experiment , for comparison of diﬀerent word segmentation criteria in topic classification , we only vary the word segmentation model used for this task , while fixing other configurations .
+201
+News articles of five topics : music , stock , entertainment , education , and fashion are used . 
+News articles of five topics : music , stock , entertainment , education , and fashion are used . 
+202
+The sizes of the training and test data sets are summarized in Table 8 .
+The sizes of the training and test data sets are summarized in Table 8 .
+203
+</p>
+</p>
+204
+</subsubsection>
+</subsubsection>
+205
+<subsubsection label = " Statistical machine translation ( SMT )  " >
+<subsubsection label = " Statistical machine translation ( SMT )  " >
+206
+<p>
+<p>
+207
+A phrase-based SMT system for English-Vietnamese translation was implemented . 
+A phrase-based SMT system for English-Vietnamese translation was implemented . 
+208
+In this system , we used SRILM  ( Stolcke , 2002 ) to build the language model , GIZA++ ( Och and  Ney , 2003 ) to train the word-aligned model , and Moses ( Holmqvist  et al. ,  2007 ) to train the phrase-based statistical translation model . 
+In this system , we used SRILM  ( Stolcke , 2002 ) to build the language model , GIZA++ ( Och and  Ney , 2003 ) to train the word-aligned model , and Moses ( Holmqvist  et al. ,  2007 ) to train the phrase-based statistical translation model . 
+209
+Translation results are evaluated using BLUE score ( Papineni  et al. ,  2002 ) . 
+Translation results are evaluated using the BLUE score ( Papineni  et al. ,  2002 ) . 
+210
+Both training and test data are word-segmented using the word segmentation models achieved . 
+Both training and test data are word-segmented using the word segmentation models achieved . 
+211
+For the experiment , we used the VCL_EVC bilingual corpus , 18000 pairs of sentences for training , and 1000 pairs for testing .
+For the experiment , we used the VCL_EVC bilingual corpus , 18000 pairs of sentences for training , and 1000 pairs for testing .
+212
+</p>
+</p>
+213
+</subsubsection>
+</subsubsection>
+214
+</subsection>
+</subsection>
+215
+<subsection label = " Experimental results and analysis " >
+<subsection label = " Experimental results and analysis " >
+216
+<p>
+<p>
+217
+According  to  the  result  in  Table  9 ,  the  VAR_SPLIT  criterion  gives  the  highest  WS performance . 
+According  to  the  result  in  Table  9 ,  the  VAR_SPLIT  criterion  gives  the  highest  WS performance . 
+218
+Except for STRUCT_NC , all the modifications to the original VTB corpus increase the performance of WS . 
+With the exception of STRUCT_NC , all of the modifications to the original VTB corpus increase the performance of WS . 
+219
+However , the word segmentation criterion with higher performance is not necessarily a better criterion , but a criterion should also be judged through applications of word segmentation . 
+However , the word segmentation criterion with higher performance is not necessarily a better criterion , but a criterion should also be judged through applications of word segmentation . 
+220
+In both SMT and TC experiments , the BASE model , which is based on the manually-modified inconsistency of special characters , achieved better results than the ORG model . 
+In both SMT and TC experiments , the BASE model , which is based on the manually-modified inconsistency of special characters , achieved better results than the ORG model . 
+221
+In particular , in the TC experiment , the BASE model achieved 0.66 point higher than ORG , which is a significant improvement . 
+In particular , in the TC experiment , the BASE model achieved 0.66 point higher than ORG , which is a significant improvement . 
+222
+The results support the conclusion that the quality of word-segmentation corpus is very important for building NLP applications .
+The results support the conclusion that the quality of the word-segmentation corpus is very important for building NLP applications .
+223
+The SMT results show that three out of six augmented models , VAR_SPLIT , VAR_FREQ and BASE , gave higher performance than the ORG configuration . 
+The SMT results show that three out of six augmented models , VAR_SPLIT , VAR_FREQ and BASE , performed better than the ORG configuration . 
+224
+Among them , the best model VAR_SPLIT achieved 36.91 BLEU score , which is 0.55 higher than ORG . 
+Among them , the best-performing model , VAR_SPLIT achieved 36.91 BLEU score , which is 0.55 higher than ORG . 
+225
+In TC results , all six augmented models have higher results than ORG . 
+In TC results , all six augmented models achieved higher results than ORG . 
+226
+In general , the augmented models are better than the ORG . 
+In general , the augmented models performed better than the ORG . 
+227
+Additionally , because our automatic methods for inconsistency detection could not cover all types of inconsistency in word segmentation annotation , further improvement of corpus quality is demanded .
+Additionally , because our automatic methods for inconsistency detection could not cover all of the types of inconsistencies in word segmentation annotation , further improvement of corpus quality is demanded .
+228
+Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining aﬃxes with their head nouns resulted in slightly better results for WS , TC , and does not change the performance of SMT . 
+Comparing the results of STRUCT_AFFIX and STRUCT_NC with BASE in WS , TC , and SMT , we can observe that combining aﬃxes with their head nouns resulted in slightly better results for WS and TC , and did not change the performance of SMT . 
+229
+However , the combination of clasifier nouns with their head nouns had negative eﬀects on WS and SMT .
+However , the combination of classifier nouns with their head nouns had negative eﬀects on WS and SMT .
+230
+Another intention of our experiment is to compare two solutions for controversial cases of word segmentation , splitting and combining . 
+Another part of the scope of our experiment is to compare two solutions for controversial cases of word segmentation , splitting and combining . 
+231
+Splitting and combining variations are reflected by VAR_COMB and VAR_SPLIT , while STRUCT_AFFIX and STRUCT_NC represent the combination of affixes or classifier nouns with the words that they modify . 
+Splitting and combining variations are reflected by VAR_COMB and VAR_SPLIT , while STRUCT_AFFIX and STRUCT_NC represent the combination of affixes or classifier nouns with the words that they modify . 
+232
+STRUCT_AFFIX and STRUCT_NC are contrasted with BASE where aﬃxes and classifier nouns remain untouched . 
+STRUCT_AFFIX and STRUCT_NC are contrasted with BASE where aﬃxes and classifier nouns remain untouched . 
+233
+Comparing VAR_COMB and VAR_SPLIT in both TC experiment and SMT experiment , we see that the VAR_SPLIT results are better in both cases . 
+Comparing VAR_COMB and VAR_SPLIT in both the TC experiment and SMT experiment , we see that the VAR_SPLIT results are better in both cases . 
+234
+Since the ratio of combined variations in the ORG corpus is 60.9% , it can be observed that splitting seems to be better than combining for WS , TC and SMT .
+Since the ratio of combined variations in the ORG corpus is 60.9% , it can be observed that splitting seems to be better than combining for WS , TC and SMT .
+235
+</p>
+</p>
+236
+</subsection>
+</subsection>
+237
+</section>
+</section>
+238
+<section label = " Conclusion " >
+<section label = " Conclusion " >
+239
+<p>
+<p>
+240
+In this paper , we have showed a quantitative analysis of the difficulties in word segmentation , through the detection of problematic cases in the Vietnamese treebank . 
+In this paper , we have provided a quantitative analysis of the difficulties in word segmentation , through the detection of problematic cases in the Vietnamese Treebank . 
+241
+Based on the analysis , we automatically created data representing the different word segmentation criteria , and evaluated the criteria indirectly through their applications .
+Based on the analysis , we automatically created data that represent the different word segmentation criteria , and evaluated the criteria indirectly through their applications .
+242
+Our experimental results showed that manual modification done for annotation of spe cial characters , and most of other word segmentation criteria , significantly improved the performances of automatic word segmentation , text classification and statistical machine translation , comparing with the use of the original VTB corpus . 
+Our experimental results showed that manual modification , done for annotation of special characters , and most other word segmentation criteria , significantly improved the performances of automatic word segmentation , text classification and statistical machine translation , in comparison with the use of the original VTB corpus . 
+243
+Since the VTB corpus is the first eﬀort in building a treebank for Vietnamese , and is the only corpus publicly available for NLP research , this study contributes to further improvement of the corpus quality , which is essential for building efficient NLP systems .
+Since the VTB corpus is the first eﬀort in building a treebank for Vietnamese , and is the only corpus that is publicly available for NLP research , this study contributes to further improvement of the corpus quality , which is essential for building efficient NLP systems .
+244
+</p>
+</p>
+245
+</section>
+</section>
+246
+</document>
+</document>

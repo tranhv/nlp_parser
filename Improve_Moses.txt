@@ -1,0 +1,33 @@
+Tách ra thành 1 preserved và một mono-alignment 
+	3 The analysis : Analysis
+	9 Wall Street Journal successful : successful, domains : ( domains
+	10 been extensively : extensively
+	17 genre : these genre
+	18 tackled task : tackled 
+	35 
+	45 treebanks which were : treebanks
+	46 
+	47 Wall WSJ ) : WSJ
+	64
+
+
+
+
+Tách ra thành 1 preserved và một single alignment 
+	13 order prepare : first prepare (khong dung)
+	16 un- / : un- or (khong dung)
+	63 an advantage : advantage however
+
+Tách ra thành 1 preserved và một m x n alignment
+	14 part-of-speech for them : part-of-speech (POS) (khong dung)
+	25 They TREC : In were TREC (khong dung)
+	26 They reported : The authors reported 
+	38 MST and Malt excluding : parsers excluding (khong dung)
+	39 HPSG : HPSG Head Phrase Structure (khong dung)
+		formalism : Driven Grammar formalism (khong dung)
+
+=================
+
+Các từ preserved trong source và target lại không nằm chung cùng một alignment
+	69	therefore : manually
+		twelve manually : twelve

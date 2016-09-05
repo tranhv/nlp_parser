@@ -1,0 +1,1038 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Automatic approach to understanding mathematical expressions using MathML Parallel Markup corpora
+Automatic approach to understanding mathematical expressions using MathML Parallel Markup corpora
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+This paper explores the use of MathML Pallel Markup Corpora for mathematical expression understanding , the task of which is formulated as a translation from Presentation to Content MathML Markups in our approach .
+This paper explores the use of MathML Pallel Markup Corpora for automatic understanding of mathematical expressions , the task of which is formulated as a translation from Presentation to Content MathML Markups . // <the use of capitals implies that these are software applications like PowerPoint or Word . I assume this is the right idea .> .
+7
+In contrast to existing researches that mainly relied on manually encoded transformation rules , we adopt a Statistical-Machine-Translation-based method to automatically extract translation rules from parallel markup corpora .
+In contrast to previous research that mainly relied on manually encoded transformation rules , we use a statistical-machine-translation-based method to automatically extract translation rules from parallel markup corpora .
+8
+Our study shows that the structural features embedded in the MathML tree can be effectively exploited in the sub-tree alignment and the translation rules extracted from the alignment give boost to the translation system .
+Our study shows that the structural features embedded in the MathML tree can be effectively exploited in the sub-tree alignment and the translation rules extracted from the alignment give a boost to the translation system .
+9
+Experimental results on the Wolfram Function Site show that our approach achieves an improvement against the prior rule-based system .
+Experimental results on the Wolfram Function Site show that our approach is an improvement over prior rule-based systems . // <Note : It seems that where were two prior systems that were compared . If not , you can go back to using a prior system .> .
+10
+</p>
+</p>
+11
+</abstract>
+</abstract>
+12
+<section label = " Introduction ">
+<section label = " Introduction ">
+13
+<subsection label = " Motivation ">
+<subsection label = " Motivation ">
+14
+<p>
+<p>
+15
+One of the most significant current discussions in the digitization of mathematical and scientific content and its applications is the semantic enrichment of mathematical documents , that is adding or associating semantic tags - usually concepts - to mathematical expressions .
+One of the most significant discussions regarding the digitization of mathematical and scientific content and its applications is about semantic enrichment of mathematical documents , that is , adding or associating semantic tags - usually concepts - with mathematical expressions .
+16
+By encoding the underlying mathematical meaning of an expression explicitly , it is possible to interchange information more precisely between systems that semantically process mathematical objects .
+By encoding the underlying mathematical meaning of an expression explicitly , it is possible to interchange information more precisely between systems that semantically process mathematical objects .
+17
+The direct application of this is enabling semantic searches for mathematical expressions by understanding the intent of the searcher and the contextual meaning of mathematical terms improve search accuracy .
+The direct application of this idea enables semantic searches for mathematical expressions whereby the system 's �eunderstanding ' of the intent of the searcher and the contextual meaning of mathematical terms improves search accuracy .
+18
+It also benefits computer algebra systems , automatic reasoning system and multi-lingual translation systems .
+It also benefits computer algebra systems , automatic reasoning systems and multi-lingual translation systems .
+19
+</p>
+</p>
+20
+<p>
+<p>
+21
+However , as is the case with natural language , the semantic enrichment of mathematical expressions is a non-trivial task .
+However , as is the case with natural language , semantic enrichment of mathematical expressions is a non-trivial task .
+22
+</p>
+</p>
+23
+<p>
+<p>
+24
+- First , mathematical notation , though more rigorous than natural language , is nonetheless at times ambiguous , context-dependent , and varies from community to community .
+- First , mathematical notation , though more rigorous than natural language , is nonetheless at times ambiguous , context-dependent , and varies from community to community .
+25
+</p>
+</p>
+26
+<p>
+<p>
+27
+- Second , the underlying mathematical meaning of an expression need to follow a semantic markup in a semantically rigorous way .
+- Second , the underlying mathematical meaning of an expression needs to follow a semantic markup in a semantically rigorous way .
+28
+Because of this , failing to follow the constraint , the computer might not be able to process that expression .
+Because of this , in failing to follow the constraint , the computer might not be able to process that expression .
+29
+</p>
+</p>
+30
+<p>
+<p>
+31
+- The third problem is that new notations tend to be introduced and used as and when needed so a mechanism is required for referring to mathematical concepts outside of the base collection , allowing them to be represented .
+- The third problem is that new notations tend to be introduced and used when needed so a mechanism is required for referring to mathematical concepts outside of the base collection .
+32
+</p>
+</p>
+33
+<p>
+<p>
+34
+The aim of this paper is to introduce a method for automatic mathematics semantic enrichment that capable of analyze and disambiguate mathematical terms .
+The aim of this paper is to describe a method of automatic semantic enrichment for mathematics that is capable of analyzing and disambiguating mathematical terms .
+35
+</p>
+</p>
+36
+<subsection label = " Problem Statement ">
+<subsection label = " Problem Statement " >
+37
+<p>
+<p>
+38
+In our research , MathML \CITE Presentation Markup is used to display mathematical expressions and MathML Content Markup is used to convey mathematical meaning .
+In our research , MathML \CITE Presentation Markup is used to display mathematical expressions and MathML Content Markup is used to convey mathematical meaning .
+39
+The semantic enrichment task then becomes generating Content MathML outputs from Presentation MathML expressions .
+The semantic enrichment task then becomes one of generating Content MathML outputs from Presentation MathML expressions .
+40
+</p>
+</p>
+41
+<p>
+<p>
+42
+There are three reasons why we choose MathML markup in our research .
+There are three reasons why we chose MathML markup in our research .
+43
+</p>
+</p>
+44
+<p>
+<p>
+45
+- First , since its first release in 1997 , MathML has grown to become a general format that enables mathematics to be served , received , and processed in a wide variety of applications .
+- First , since its first release in 1997 , MathML has grown to become a general format that enables mathematics to be served , received , and processed in a wide variety of applications .
+46
+</p>
+</p>
+47
+<p>
+<p>
+48
+- Second , MathML can be used to encode both mathematical notation and mathematical content .
+- Second , MathML can be used to encode both mathematical notations and mathematical content .
+49
+</p>
+</p>
+50
+<p>
+<p>
+51
+- Last , large collections of formulas are available in MathML and we can easily assess these collections .
+- Last , large collections of formulas are available in MathML , and we can easily assess these collections .
+52
+</p>
+</p>
+53
+<p>
+<p>
+54
+- In the scope of this paper , we only make use the information within a mathematical expression for disambiguation when translating it to content markup .
+- In the scope of this paper , we only make use the information within a mathematical expression for disambiguation when translating it into content markup .
+55
+</p>
+</p>
+56
+</subsection>
+</subsection>
+57
+<subsection label = " Limitations of Prior Work ">
+<subsection label = " Limitations of Prior Work " >
+58
+<p>
+<p>
+59
+The prior solution to this problem is SnuggleTeX \CITE , which was proposed by David McKain .
+The prior solution to this problem is SnuggleTeX \CITE , which was proposed by David McKain .
+60
+The system used rule-based methods for disambiguation and translation .
+The system uses rule-based methods for disambiguation and translation .
+61
+This solution has two main limitations :
+This solution has two main limitations :
+62
+</p>
+</p>
+63
+<p>
+<p>
+64
+- Since it is a hand written rule-based system , SnuggleTeX requires mathematical knowledge and human effort to develop
+- Since it is a hand-written rule-based system , SnuggleTeX requires mathematical knowledge and human effort to develop .
+65
+</p>
+</p>
+66
+<p>
+<p>
+67
+- Due to the diversity of mathematical expressions , SnuggleTeX is still to be considered experimental and has difficulty processing complicated mathematical symbols and expressions .
+- Due to the diversity of mathematical expressions , SnuggleTeX is still considered experimental and has difficulty processing complicated mathematical symbols and expressions .
+68
+</p>
+</p>
+69
+</subsection>
+</subsection>
+70
+<subsection label = " Our Approach and Key Contributions ">
+<subsection label = " Our Approach and Key Contributions " >
+71
+<p>
+<p>
+72
+In this paper , we propose an approach that automatically learn the semantics inference from a presentation from parallel markup data .
+In this paper , we propose an approach that automatically learns semantic inferences in a presentation from parallel markup data . // <The original has too many from to be logically clear . The rewrite is a guess . > .
+73
+The idea of this approach is based on statistical machine translation .
+This approach is based on statistical machine translation .
+74
+The underlying mathematical meaning of an expression is inferred according to the probability distribution $ p( c | p ) $ that a semantic expression $ c $ is the translation of a presentation expression $ p $ .
+The underlying mathematical meaning of an expression is inferred from the probability distribution $ p( c | p ) $ that a semantic expression $ c $ is the translation of a presentation expression $ p $ .
+75
+The probability distribution will be automatically learned from data that have both Presentation and Content MathML markup , that is the parallel markup MathML data .
+The probability distribution is automatically learned from both Presentation and Content MathML markup data , that is , parallel markup MathML data .
+76
+The data used in this study was collected from the Wolfram Function Site \CITE .
+The data used in this study was collected from the Wolfram Function Site \CITE .
+77
+We also prepare another parallel markup MathML data by annotating mathematical expressions on 20 papers from The Archives of the Association for Computational Linguistics \CITE ( ACL-ARC ) .
+We also prepared other parallel markup MathML data by annotating mathematical expressions in 20 papers from The Archives of the Association for Computational Linguistics \CITE ( ACL-ARC ) .
+78
+</p>
+</p>
+79
+<p>
+<p>
+80
+We have two main contributions in this paper
+There are two main contributions in this paper :
+81
+</p>
+</p>
+82
+- First , successfully apply the machine translation techniques to the problem of mathematic semantic enrichment .
+- First , we successfully applied machine translation techniques to solving the problem of mathematic semantic enrichment .
+83
+Experimental results show that our system significantly outperforms the current rule-based system and it can handle a lot of practical cases in the mathematics semantic enrichment problem .
+Experimental results show that our system significantly outperforms the current rule-based system and it can handle a lot of practical cases in the semantic enrichment problem .
+84
+Since both quantity and quality of mathematical expressions are continuing to grow and expand through time , we believe that our system will cover most of real life mathematical expressions .
+The quantity and quality of mathematical expressions are continuing to grow , and we believe that our system will be able to cover most mathematical expressions .
+85
+</p>
+</p>
+86
+<p>
+<p>
+87
+- Second , mathematics knowledge such as symbol 's meanings or structural relations is automatically learned while training , therefor it is not required mathematics experts nor human effort and it is also easier to update the system given more data .
+- Second , mathematics knowledge such as a symbol 's meanings or structural relations is automatically learned while training ; therefore , the system requires no human effort or expertise , and it is easier to update with more data .
+88
+Since new notations keep growing , it is important to update the system as quick as possible .
+Since new notations keep cropping up , it is important to update the system as quickly as possible .
+89
+</p>
+</p>
+90
+</subsection>
+</subsection>
+91
+<subsection label = " Summary of Experimental Results ">
+<subsection label = " Summary of Experimental Results " >
+92
+<p>
+<p>
+93
+In our experiments , we performed a 10-folds cross validation on mathematical expressions from 6 categories of the Wolfram Functions Site to evaluate the effectiveness of our proposed learning method .
+We performed a ten-fold cross validation on mathematical expressions from six categories of the Wolfram Functions Site to evaluate the effectiveness of our learning method .
+94
+We set up another experiment to confirm the correlation between system performance and training set size and saw that increasing the size of training data actually boost the system performance .
+We performed another experiment to assess the correlation between the system 's performance and training set size and found that increasing the size of the training data boosted the system 's performance .
+95
+We also performed extensive side-by-side comparison with prior work \CITE over a data set from ACL-ARC scientific papers .
+We also performed an extensive comparison with prior work \CITE using a data set collected from ACL-ARC scientific papers .
+96
+Our experimental results show that the proposed approach works well on the mathematics semantic enrichment problem and it excels the previous work by providing significantly less error rate .
+Our experimental results show that our approach works well in dealing with the mathematics semantic enrichment problem and it outperforms the previous work by making significantly fewer errors .
+97
+</p>
+</p>
+98
+<p>
+<p>
+99
+The remainder of this paper is organized as follows : In Section 2 , we give a brief overview of the background and related work for semantic enrichment of mathematical expressions , while in Section 3 we present our proposed method .
+The remainder of this paper is organized as follows : In Section 2 , we give a brief overview of the background and related work on semantic enrichment of mathematical expressions .
+100
+We then describe the experimental setup and results in Section 4 .
+We present our method in Section 3 and describe the experimental setup and results in Section 4 .
+101
+Section 5 concludes the paper and gives avenues for future work .
+Section 5 concludes the paper and gives avenues for future work .
+102
+</p>
+</p>
+103
+</subsection>
+</subsection>
+104
+</section >
+</section >
+105
+<section label = " Related work ">
+<section label = " Related work ">
+106
+<p>
+<p>
+107
+Since mathematical formulas contain both mathematical symbols and structures , a special markup is required for their representation .
+Since mathematical formulas contain both mathematical symbols and structures , a special markup is required for their representation .
+108
+Until recently , images have been used to represent mathematical formulas on the web .
+Until recently , images have been used to represent mathematical formulas on the web .
+109
+This type of display does not need any markup language to decode the formulas , but it is hard to process them .
+This type of display does not need any markup language to decode the formulas , but it is hard to process them .
+110
+A way of dealing with mathematical formulas in this format is to convert them to another text-based format , as seen in InftyReader \CITE .
+A way of dealing with mathematical formulas in this format is to convert them into another text-based format , for example , InftyReader \CITE .
+111
+</p>
+</p>
+112
+<p>
+<p>
+113
+For scientific documents , \TeX{} has been used to encode mathematical formulas .
+\TeX{} has been used to encode mathematical formulas in scientific documents .
+114
+The formula is printed in a way a person would write by hand , or typeset the equation .
+A formula is printed in a way a person would write by hand , or typeset the equation .
+115
+In some web pages , such as the Wikipedia site , a formula is displayed in both image and \TeX{} formats .
+In some web pages , such as on the Wikipedia site , formulas are displayed in both image and \TeX{} formats .
+116
+</p>
+</p>
+117
+<p>
+<p>
+118
+The best known open markup format for representing mathematical formulas for the web is MathML \CITE , which was recommended by the W3C math working group .
+The best known open markup format for representing mathematical formulas for the web is MathML \CITE , which was recommended by the W3C math working group .
+119
+It provides a standard way of representing mathematical expressions .
+It provides a standard way of representing mathematical expressions .
+120
+It is an XML application for describing mathematical notations and encoding mathematical content within a text format .
+It is an XML application for describing mathematical notations and encoding mathematical content within a text format .
+121
+MathML has two types of encoding , content-based encoding which is called Content MathML , dealing with the meaning of formulas , and presentation-based encoding which is called Presentation MathML , dealing with the display of formulas .
+MathML has two types of encoding , content-based encoding , called Content MathML , dealing with the meaning of formulas , and presentation-based encoding , called Presentation MathML , dealing with the display of formulas .
+122
+The illustration tree display of Presentation and Content Markup of the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ are depicted in Figure \REF and Figure \REF respectively .
+The illustration trees of the Presentation and Content Markup of the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ are depicted in Figure \REF and Figure \REF .
+123
+Besides MathML , there are other markups such as eqn \CITE , OpenOffice .
+Besides MathML , there are other markups such as eqn \CITE , OpenOffice .
+124
+org Math \CITE , ASCIIMathML \CITE and OpenMath \CITE , but these markup can be converted to MathML using freely available tools .
+org Math \CITE , ASCIIMathML \CITE , and OpenMath \CITE , but these markups can be converted into MathML by using freely available tools .
+125
+</p>
+</p>
+126
+<subsection label = " Systems with Semantic Enrichment Feature ">
+<subsection label = " Systems with Semantic Enrichment Feature " >
+127
+<p>
+<p>
+128
+There are not many studies on semantic enrichment problem .
+There are not many studies on the semantic enrichment problem .
+129
+In this section , we list some works that related to exploit the meaning of mathematical expressions .
+In this section , we list some of the work on exploiting the meanings of mathematical expressions .
+130
+</p>
+</p>
+131
+<p>
+<p>
+132
+For understanding mathematical expressions , Grigole et al. \CITE proposed an approach based on the surrounding text of mathematical expressions .
+Grigole et al. \CITE proposed an approach to understanding mathematical expressions based on the text surrounding the mathematical expressions .
+133
+The main idea of this approach is to use the surrounding text for disambiguation which is based on word sense disambiguation and lexical similarity .
+The main idea of this approach is to use the surrounding text for disambiguation based on word sense disambiguation and lexical similarity .
+134
+First , a local context C ( 5 nouns preceding a target mathematical expression ) is found in each sentence .
+First , a local context C ( five nouns preceding a target mathematical expression ) is found in each sentence .
+135
+For each noun , the system identifies a Term Cluster ( derived from the OpenMath Content Dictionary ) with the highest semantic similarity according to a similarity metric .
+For each noun , the system identifies a Term Cluster ( derived from the OpenMath Content Dictionary ) with the highest semantic similarity according to a similarity metric .
+136
+The similarity scores obtained were weighted , summed up , and normalized by the length of the considered context .
+The similarity scores obtained are weighted , summed up , and normalized by the length of the considered context .
+137
+The assigned interpretation is the Term Cluster with the highest similarity score .
+The Term Cluster with the highest similarity score is assigned as the interpretation .
+138
+The approach was evaluated on 451 manually annotated mathematical expressions and the best result was 68.26 $ F_{0.5} $ score .
+The approach was evaluated on 451 manually annotated mathematical expressions , and the best result was an F_{0.5} $ score of 68.26 $ .
+139
+To deal with the meanings of mathematical formulas , Nghiem et al. \CITE proposed an approach for extracting the names or descriptions of the formulas using natural language text surrounding them .
+To deal with the meanings of mathematical formulas , Nghiem et al. \CITE proposed an approach for extracting names or descriptions of formulas by using the natural language text surrounding them .
+140
+The most accurate extraction result using data from Wikipedia was $ 68.33 $ percent .
+The most accurate extraction result using data from Wikipedia was $ 68.33 $ percent .
+141
+</p>
+</p>
+142
+<p>
+<p>
+143
+There are two other projects that deal with the semantic meaning of mathematical expressions .
+There are two other projects that deal with the semantic meaning of mathematical expressions .
+144
+The first is the SnuggleTeX project \CITE , which provides a free and open-source Java library for converting fragments of LaTeX to XML including Content MathML .
+The first is the SnuggleTeX project \CITE , which provides a free and open-source Java library for converting fragments of LaTeX into XML including Content MathML .
+145
+The other project is Lamapun \CITE .
+The other project is Lamapun \CITE .
+146
+This project investigates semantic enrichment , structural semantics and ambiguity resolution in mathematical corpora .
+This project investigates semantic enrichment , structural semantics , and ambiguity resolution in mathematical corpora .
+147
+Unfortunately , there are no evaluation report on these systems .
+Unfortunately , there are no evaluations of these systems .
+148
+</p>
+</p>
+149
+</subsection>
+</subsection>
+150
+<subsection label = " Method for automatically extracting translation rules from data ">
+<subsection label = " Method for automatically extracting translation rules from data " >
+151
+<p>
+<p>
+152
+To translate mathematical expressions from the Presentation MathML to Content MathML format , a list of rules for translation is required .
+To translate mathematical expressions from the Presentation MathML into Content MathML format , a list of translation rules is required .
+153
+Building these translation rules by hand is a large undertaking .
+Building these translation rules by hand is a large undertaking .
+154
+Our task is inherently domain specific therefore we propose an approach which is based on statistical machine learning methods that automatically extract these rules from a dataset .
+Our task is inherently domain-specific ; therefore , we devised an approach based on statistical machine learning for automatically extracting rules from a dataset .
+155
+</p>
+</p>
+156
+<p>
+<p>
+157
+Nowadays , statistical machine translation ( SMT ) is by far the most widely-studied machine translation method .
+Statistical machine translation ( SMT ) is by far the most widely studied machine translation method .
+158
+SMT uses a very large data set of good translations , that is , a corpus of texts which have already been translated into other language , and then uses those texts to automatically infer a statistical model of translation .
+SMT uses a very large data set of good translations , that is , a corpus of texts which have already been translated into another language , and it uses those texts to automatically infer a statistical model of translation .
+159
+The statistical model is then applied to new texts to make a translation .
+The statistical model is then applied to new texts to make a translation of them .
+160
+Tree-based or syntax-based SMT can be used for tree-to-tree translation but it has two drawbacks when apply to the problem of translating from Presentation to Content MathML expression .
+Tree-based or syntax-based SMT can be used for tree-to-tree translation but it has two drawbacks when it is applied to the problem of translating Presentation into Content MathML .
+161
+</p>
+</p>
+162
+<p>
+<p>
+163
+- The first drawback is tree-based SMT focus on generating the surface texts rather than the tree structures .
+- The first drawback is that tree-based SMT focuses on generating surface texts rather than tree structures .
+164
+While mathematical expressions have strict structures , it fails to fulfill this requirement .
+Mathematical expressions have strict structures , and it fails to fulfill this requirement .
+165
+</p>
+</p>
+166
+<p>
+<p>
+167
+- The second drawback is there are many long mathematical expressions in real-world data and translating long and complex sentences has been a critical problem in machine translation .
+- The second drawback is there are many long mathematical expressions in real-world data and translating long and complex sentences has been a critical problem in machine translation .
+168
+</p>
+</p>
+169
+<p>
+<p>
+170
+To overcome these limitations , we introduced two separated sets of rule : fragment rules and translation rules .
+To overcome these limitations , we made two separate rule sets : fragment rules and translation rules .
+171
+The detail is described in the next section .
+The details are described in the next section .
+172
+</p>
+</p>
+173
+</subsection>
+</subsection>
+174
+</section >
+</section >
+175
+<section label = " Methodology ">
+<section label = " Methodology ">
+176
+<subsection label = " System Overview ">
+<subsection label = " System Overview " >
+177
+<p>
+<p>
+178
+The framework of the system is shown in Figure \REF .
+The framework of the system is shown in Figure \REF .
+179
+The system has three main modules .
+The system has three main modules .
+180
+</p>
+</p>
+181
+- Preprocessing : processes MathML expressions to remove error expressions or format tags with no semantic meaning .
+- Preprocessing : This module processes MathML expressions by removing error expressions or format tags with no semantic meaning .
+182
+</p>
+</p>
+183
+<p>
+<p>
+184
+- Extracting Rules : given a dataset contains MathML parallel markup expressions , extract the rules for translation .
+- Rule Extraction : This module is given a dataset containing MathML parallel markup expressions , and it extracts translation rules from it . // <The original is ungrammatical and unclear . The rewrite is a guess .> .
+185
+</p>
+</p>
+186
+<p>
+<p>
+187
+- Generating Content MathML : given a mathematical expressions in Presentation MathML markup , and a set of rules , generate Content MathML expressions to enrich the Presentation MathML expressions .
+- Content MathML Generation : This module is given mathematical expressions in Presentation MathML markup and a set of rules , and it generates Content MathML expressions to enrich the Presentation MathML expressions .
+188
+</p>
+</p>
+189
+</subsection>
+</subsection>
+190
+<subsection label = " Preprocessing ">
+<subsection label = " Preprocessing " >
+191
+<p>
+<p>
+192
+The presentation elements of Presentation MathML are divided into two classes : token elements and layout schemata .
+The presentation elements of Presentation MathML are divided into two classes : token elements and layout schemata .
+193
+Token elements represent identifier 's names , function 's names , numbers , etc.
+Token elements represent the identifier 's names , function 's names , numbers , etc. // <the identifier 's names means there is one identifier with possibly many names . If this is what you want to say , it is okay . If not , maybe you mean simply " identifier names " . ><Likewise , maybe you mean " function names " .>
+194
+Layout schemata build expressions out of parts .
+Layout schemata build expressions out of parts .
+195
+By investigating the data from the Wolfram Function Site , we noticed that there are elements that have no specific meaning , they are used for displaying purpose only and most of them are layout schemata .
+After investigating data on the Wolfram Function Site , we noticed that there are elements that have no specific meaning ; they are used for display purposes only and most of them are layout schemata .
+196
+For example , the $ <mtext> </mtext> $ or $ <mspace / > $ tags are used to insert some space between expressions .
+For example , the $ <mtext> </mtext> $ or $ <mspace / > $ tags are used to insert some space between expressions .
+197
+Another example are the pairs of parentheses , it is used to indicate that the expressions in the parentheses go together , while its structure already encoded that information .
+Another example is pairs of parentheses ; these are used to indicate that the expressions in the parentheses go together , despite that their structure already encodes that information . // <The original is unclear . The rewrite is a guess . > .
+198
+As a result , in this preprocessing step , these elements are removed .
+This preprocessing step removes these elements .
+199
+In this step , we also removed mathematical expressions with error markups such as expressions that have no Content markup .
+We also remove mathematical expressions with error markups such as expressions that have no Content markup .
+200
+For simplification , expressions with more than 200 content nodes also be removed .
+For simplification , expressions with more than 200 content nodes are also removed .
+201
+</p>
+</p>
+202
+</subsection>
+</subsection>
+203
+<subsection label = " Extracting Rules ">
+<subsection label = " Extracting Rules " >
+204
+<p>
+<p>
+205
+In the training phase , we use GIZA++ \CITE for alignment between Presentation MathML terms and Content MathML terms .
+In the training phase , we use GIZA++ \CITE for aligning Presentation MathML terms and Content MathML terms .
+206
+Based on the aligned data , we use some heuristics to extract rules which we called " fragment rules " .
+Based on the aligned data , we use heuristics to extract rules that we call " fragment rules " .
+207
+Fragment rules are rules that define the translation from Presentation MathML sub-trees to Content MathML sub-trees .
+Fragment rules are rules that define the translation from the Presentation MathML sub-trees to the Content MathML sub-trees .
+208
+These rules are applied to break the large Presentation MathML tree into smaller sub-trees while maintaining the structure of output Content MathML trees .
+These rules are used to break up a large Presentation MathML tree into smaller sub-trees while maintaining the structure of the output Content MathML trees .
+209
+These rules are extracted based on the fact that translate small tree is easier than translate large one .
+These rules are extracted based on the fact that translating a small tree is easier than translating a large one .
+210
+Each rule in fragment rule set is associated with its probability , that is the frequent that rule happened in the training data .
+Each rule in the fragment rule set is associated with a probability , that is , the frequency at which a rule occurs in the training data .
+211
+</p>
+</p>
+212
+<p>
+<p>
+213
+If the sub-trees can not be broken any longer , we extract another rules , which we called " translation rules " , at that point .
+Once the sub-trees cannot be broken down further , we start to extract other rules , which we call " translation rules " .
+214
+We then enhances the translation rule set with the translation terms extracted by GIZA++ .
+We enhance the translation rule set with translation terms extracted by GIZA++ .
+215
+The pseudo code of the algorithm for extracting fragment rules is described in Algorithm \REF .
+The pseudo code for extracting fragment rules is described in Algorithm \REF .
+216
+</p>
+</p>
+217
+</subsection>
+</subsection>
+218
+<subsection label = " Generating Content MathML ">
+<subsection label = " Generating Content MathML " >
+219
+<p>
+<p>
+220
+In the previous steps , we got two sets of rules , fragment rule set and translation rule set .
+In the previous steps , we get two sets of rules , a fragment rule set and a translation rule set .
+221
+We then use these rules for translation .
+We then use these rules for translation .
+222
+Given a mathematical expressions in Presentation MathML markup , the system will generate Content MathML markup of that expression .
+Given mathematical expressions in Presentation MathML markup , the system will generate Content MathML markup for each expression .
+223
+</p>
+</p>
+224
+<p>
+<p>
+225
+- First , the expression is preprocess to remove non semantic elements .
+- First , the expression is preprocessed to remove non-semantic elements .
+226
+</p>
+</p>
+227
+<p>
+<p>
+228
+- Second , the fragment rule is applied to the expression until it could not be divided any further .
+- Second , the fragment rule is applied to the expression until it cannot be divided any further .
+229
+</p>
+</p>
+230
+<p>
+<p>
+231
+- Third , the small sub-expressions in Presentation MathML markup will be translated into sub-expressions in Content MathML markup using translation rule set .
+- Third , the small sub-expressions in Presentation MathML markup are translated into sub-expressions in Content MathML markup by using the translation rule set .
+232
+If no translation rule is found for a sub-expression , that expression is marked as untranslated .
+If no translation rule is found for a sub-expression , that expression is marked as untranslated .
+233
+</p>
+</p>
+234
+<p>
+<p>
+235
+- Last , sub-expressions in Content MathML markup is grouped to form the complete Content MathML expression .
+- Last , sub-expressions in Content MathML markup are grouped to form the complete Content MathML expression .
+236
+</p>
+</p>
+237
+<p>
+<p>
+238
+Before the last step , we add a heuristic translation to translate numbers .
+Before the last step , we add a heuristic translation to translate numbers .
+239
+The reason for this is that there is infinite number and we could never present every number in the rule .
+The reason for this is that there is an infinite number of rules . // <The rewrite is a guess .> .
+240
+The translation algorithm is described in Algorithm \REF .
+The translation algorithm is described in Algorithm \REF .
+241
+</p>
+</p>
+242
+</subsection>
+</subsection>
+243
+</section >
+</section >
+244
+<section label = " Experimental results ">
+<section label = " Experimental results ">
+245
+<subsection label = " Evaluation Setup ">
+<subsection label = " Evaluation Setup " >
+246
+<p>
+<p>
+247
+The experiments were carried out using the datasets from the Wolfram Function site .
+The experiments were carried out using datasets from the Wolfram Function site .
+248
+This site was created as a resource for educational , mathematical , and scientific communities .
+This site was created as a resource for educational , mathematical , and scientific communities .
+249
+It contains the world 's most encyclopedic collection of information about mathematical functions .
+It contains the world 's most encyclopedic collection of information about mathematical functions .
+250
+All formulas on this site are available in both Presentation MathML and Content MathML format .
+All formulas on this site are available in both Presentation MathML and Content MathML format .
+251
+These datasets we used contain 205 , 653 mathematical expressions belong to 6 categories .
+The datasets we used contain 205 , 653 mathematical expressions belonging to six categories .
+252
+All of these expressions have both MathML Presentation and Content Markup .
+All of these expressions have both MathML Presentation and Content Markups .
+253
+</p>
+</p>
+254
+<p>
+<p>
+255
+Training and testing were performed using 10-fold cross-validation ; for each category , the original corpus is partitioned into 10 subsets .
+Training and testing were performed using ten-fold cross-validation ; for each category , the original corpus was partitioned into ten subsets .
+256
+Of the 10 subsets , a single subset is retained as the validation data for testing the model , and the remaining subsets are used as training data .
+Of the ten subsets , a single subset was retained as the validation data for testing the model , and the remaining subsets were used as training data .
+257
+The cross-validation process is then repeated 10 times , with each of the 10 subsets used exactly once as the validation data .
+The cross-validation process was repeated ten times , with each of the ten subsets used exactly once as the validation data .
+258
+The 10 results from the folds then are averaged to produce a single estimation .
+The ten results from the folds then were averaged to produce a single estimation .
+259
+</p>
+</p>
+260
+<p>
+<p>
+261
+To prove the effectiveness of our models to real data , we conducted another experiment on the mathematical expressions in scientific papers .
+To prove the effectiveness of our models with real data , we conducted another experiment on the mathematical expressions in scientific papers .
+262
+Currently we have 20 papers from ACL archive , all of the math expressions in these papers are annotated manually with both Presentation Markup and Content Markup .
+Currently , we have 20 papers from the ACL archive , and we manually annotated all of the math expressions in these papers with both Presentation Markup and Content Markup . // The original is somewhat vague . The rewrite is a guess . Use it if it is correct . > .
+263
+We called this data ACL-ARC .
+We called this data ACL-ARC .
+264
+In the first experiment , the data is not compatible with SnuggleTeX since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+In the first experiment , the data was not compatible with SnuggleTeX since SnuggleTeX uses ASCII MathML but the Wolfram Functions site does not .
+265
+In the second experiment with ACL-ARC data , we compared our model side by side with SnuggleTeX .
+In the second experiment with ACL-ARC data , we compared our model with SnuggleTeX .
+266
+Table \REF contains the various data statistics .
+Table \REF lists the various data statistics .
+267
+</p>
+</p>
+268
+</subsection>
+</subsection>
+269
+<subsection label = " Evaluation Methodology ">
+<subsection label = " Evaluation Methodology " >
+270
+<p>
+<p>
+271
+Given a Presentation MathML expression $ e $ , we assume that tree $ A $ is the correct Content MathML tree of expression $ e $ and tree $ B $ is the output using the automatic translation .
+Given a Presentation MathML expression $ e $ , we assume that tree $ A $ is the correct Content MathML tree of expression $ e $ and tree $ B $ is the output of the automatic translation .
+272
+The basic idea to evaluate the correctness of tree $ B $ is directly comparing it with tree $ A $ .
+The basic idea to evaluate the correctness of tree $ B $ is directly comparing it with tree $ A $ .
+273
+In the experiments , we extend the conventional definition of " Translation Error Rate " and use a metric which is the combined version of
+In the experiments , we extended the conventional definition of " Translation Error Rate " and used a metric which is a combined version of
+274
+</p>
+</p>
+275
+<p>
+<p>
+276
+- Tree Edit Distance \CITE : the tree edit distance is the minimal cost to transform A into B using edit operations .
+- the Tree Edit Distance \CITE : the tree edit distance is the minimal cost to transform A into B using edit operations .
+277
+There are three types of edit operations : substituting a node , inserting a node , and deleting a node .
+There are three types of edit operation : substituting a node , inserting a node , and deleting a node .
+278
+</p>
+</p>
+279
+<p>
+<p>
+280
+- Translation Error Rate \CITE : translation error rate is an error metric for machine translation that measures the number of edits required to change a system output into one of the references .
+- the Translation Error Rate \CITE : the translation error rate is an error metric for machine translation that measures the number of edits required to change a system output into one of the references .
+281
+</p>
+</p>
+282
+<p>
+<p>
+283
+We call the new metric Tree Edit Distance Rate ( TEDR ) .
+We called the new metric the Tree Edit Distance Rate ( TEDR ) .
+284
+TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B .
+TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B . // <The " rate between " is unclear to me . Do you mean , " the ratio of " >
+285
+It can be computed using Eq . \REF .
+It can be computed using Eq . \REF .
+286
+</p>
+</p>
+287
+<p>
+<p>
+288
+For example , the output tree using translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depict in Figure \REF .
+For example , the output tree using the translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depicted in Figure \REF .
+289
+Compare to the reference tree in Figure \REF , we need to substituting X node , inserting Y node , and deleting Z node , so that $ TED( A , B ) = x $ . While the maximum number of node of two trees is y .
+Compared with the reference tree in Figure \REF , we need to substitute X nodes , insert Y nodes , and delete Z nodes , so that $ TED( A , B ) = x $ , while the maximum number of nodes of the two trees is y .
+290
+Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
+Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
+291
+</p>
+</p>
+292
+</subsection>
+</subsection>
+293
+<subsection label = " Results Summary ">
+<subsection label = " Results Summary " >
+294
+<p>
+<p>
+295
+For the data in Wolfram Function site , it appeared that SnuggleTeX is not applicable to this data since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+It appeared that SnuggleTeX was not applicable to the data from the Wolfram Function site since it uses ASCII MathML but the site does not .
+296
+Therefore we could not do the side-by-side comparison on this data .
+Therefore , we could not do a comparison on this data .
+297
+Our experimental results show that our approach can archive reasonable results , that is 20 percent TEDR with large training data .
+Our experimental results show that our approach gives reasonable results , that is , a 20 percent TEDR with large training data .
+298
+For small data which has less than 3000 training samples , the results vary from 50 to 75 percent TEDR .
+For small data ( less than 3000 training samples ) , the results vary from 50 to 75 percent TEDR .
+299
+</p>
+</p>
+300
+<p>
+<p>
+301
+For ACL-ARC data , the experimental results from our side-by-side comparison show that our system significantly outperforms SnuggleTeX in terms of Tree Edit Distance Rate .
+For ACL-ARC data , the experimental results show that our system significantly outperforms SnuggleTeX in terms of the Tree Edit Distance Rate .
+302
+Our system archived 24 percent TEDR less than the output using SnuggleTeX .
+Our system had a 24 percent lower TEDR in comparison with SnuggleTeX .
+303
+</p>
+</p>
+304
+<p>
+<p>
+305
+To find out the correlation between TEDR score and training set size , we set up an experiment using mathematical expressions in Elementary Functions category .
+To investigate the correlation between the TEDR score and training set size , we set up an experiment using mathematical expressions in the Elementary Functions category .
+306
+We started with one fifth of the data , and then increase data one fifth each run .
+We started with one fifth of the data and increased the data by one fifth in each run .
+307
+Our experimental results conform with the theoretical analysis that the more training data we have , the better the results are .
+Our experimental results conformed with the theoretical analysis that the more training data we have , the better the results are .
+308
+</p>
+</p>
+309
+</subsection>
+</subsection>
+310
+<subsection label = " Results Details ">
+<subsection label = " Results Details " >
+311
+<p>
+<p>
+312
+Table \REF and Table \REF show the TEDR of our proposed method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
+Table \REF and Table \REF show the TEDR of our method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
+313
+</p>
+</p>
+314
+<p>
+<p>
+315
+Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
+Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
+316
+</p>
+</p>
+317
+</subsection>
+</subsection>
+318
+</section >
+</section >
+319
+<section label = " Conclusions ">
+<section label = " Conclusions ">
+320
+<p>
+<p>
+321
+In this paper , we discussed the problem of the semantic enrichment of mathematical expressions .
+We discussed the problem of semantic enrichment of mathematical expressions .
+322
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expression to a Content MathML expression has the significant improvement over a prior system .
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expressions to Content MathML expressions is a significant improvement over prior systems .
+323
+</p>
+</p>
+324
+<p>
+<p>
+325
+As we mentioned before , mathematical notations are context-dependent .
+As we mentioned before , mathematical notations are context-dependent .
+326
+That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
+That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
+327
+In the scope of this paper , we only consider the first context information .
+In the scope of this paper , we only considered the first sort of context information .
+328
+Since this is a first attempt to translate Presentation to Content MathML using a machine learning method , there is room for further improvement .
+Since this is a first attempt to translate from Presentation to Content MathML using a machine learning method , there is room for further improvement .
+329
+Possible improvements are
+Possible improvements are
+330
+</p>
+</p>
+331
+<p>
+<p>
+332
+- Increasing the training data so the system can cover more mathematical notations
+- Increasing the training data so the system can cover more mathematical notations
+333
+</p>
+</p>
+334
+<p>
+<p>
+335
+- Expanding the work by incorporating the surrounding information of mathematical expressions , for example definitions or other mathematical expressions .
+- Expanding the work by incorporating the surrounding information of mathematical expressions , for example , definitions or other mathematical expressions .
+336
+</p>
+</p>
+337
+<p>
+<p>
+338
+By combining the automatic extraction of fragment rules and translation rules , our approach has shown promising results .
+Our approach combining automatic extraction of fragment rules and translation rules has shown promising results .
+339
+The experimental results confirm that this approach is helpful to the understanding of mathematical expressions .
+The experimental results confirm that it would be helpful for automatic understanding of mathematical expressions .
+340
+However , this is only a first step ; many important issues remain for future studies .
+However , this is only a first step ; many important issues remain for future studies .
+341
+Currently , our system deals only with a sub-part of mathematical notations .
+Currently , our system deals with a limited range of mathematical notations .
+342
+In future work , we should also consider expanding it to cover all mathematical notations .
+In the future , we should consider expanding it to cover all mathematical notations .
+343
+</p>
+</p>
+344
+</section >
+</section >
+345
+</document>
+</document>

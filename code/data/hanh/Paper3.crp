@@ -1,0 +1,831 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Using SOM based Graph Clustering for Extracting Main Ideas from Documents
+Using SOM based Graph Clustering for Extracting Main Ideas from Documents
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+In this paper , we would like to present a graph clustering system for grouping the similar documents and extracting the main ideas in documents . 
+In this paper , we would like to present a graph clustering system for grouping the similar documents and extracting the main ideas in documents . 
+6
+To cluster the documents , we need a model for representing the documents . 
+To cluster the documents , we need a model for representing the documents . 
+7
+The traditional approaches used a word set based model or a vector based model for representing the documents . 
+The traditional approaches used a word set based model or a vector based model for representing the documents . 
+8
+These models discard the important structural information of documents such as word position , the semantic relations of words in document …
+These models discard the important structural information of documents such as word position , the semantic relations of words in document …
+9
+Recently , some research works using the graph for representing the documents have been appeared . 
+Recently , some research works using the graph for representing the documents have been appeared . 
+10
+We use the graph to becreated by analyzing the co-occurrence and position of two words in a section of document . 
+We use the graph to becreated by analyzing the co-occurrence and position of two words in a section of document . 
+11
+After representing the documents by using graph , we used self organizing map ( SOM ) with two dimensional output layer for grouping the graphs . 
+After representing the documents by using graph , we used self organizing map ( SOM ) with two dimensional output layer for grouping the graphs . 
+12
+One of the advantages of SOM is to cluster the data without specifying the number of clusters . 
+One of the advantages of SOM is to cluster the data without specifying the number of clusters . 
+13
+Besides , two-dimensional SOM output layer can be put on the computer display and it can help to access the similar documents on the computer display . 
+Besides , two-dimensional SOM output layer can be put on the computer display and it can help to access the similar documents on the computer display . 
+14
+We use the graph distance based on the maximum common sub-graph ( mcs ) which is discovered by maximal frequent sub-graph algorithm and the updated operation of neurons on SOM ouput layer based on the weighted means graphs and the genetic algorithm .
+We use the graph distance based on the maximum common sub-graph ( mcs ) which is discovered by maximal frequent sub-graph algorithm and the updated operation of neurons on SOM ouput layer based on the weighted means graphs and the genetic algorithm .
+15
+</abstract>
+</abstract>
+16
+<section label = "Introduction ”>
+<section label = "Introduction ”>
+17
+<p>
+<p>
+18
+In this paper , we would like to present the research results of a system for clustering the documents and extracting the main ideas in documents . 
+In this paper , we would like to present the research results of a system for clustering documents and extracting their main ideas . 
+19
+To cluster the documents , we need a model for representing the documents . 
+To cluster documents , we need a model for representing the documents . 
+20
+In the previous approaches , a word set based model or a vector based model were used for representing the documents . 
+In previous approaches , a word - set - based model or a vector - based model were used for representing the documents . 
+21
+These models discard the important information such as position , the semantic relation of words .
+These models , however , discard the important information such as position and the semantic relation of words .
+22
+Recently , some research works using the graph for representing the document have beeen appeared </CITE> .
+Recent studies use graphs as an alternative , and we apply this model to representing documents </CITE> .
+23
+After using the graph model for representing the documents , we need to develop a system for clustering the graphs . 
+Prevous approaches to text clustering rely on word - set - based or vector - based models to represent documents . 
+24
+We use SOM neural network for clustering the graphs and extracting the main ideas from the documents . 
+The SOM neural network clustering methodology , 
+25
+SOM neural network has been developed by T . Kohonen since 1980 and it has been used for clustering </CITE> . 
+developed by Kohonen since 1980 , is utilized to cluster the graphs </CITE> . 
+26
+One of the strong points of the SOM neural network is the capability of data clustering without defining number of clusters . 
+SOM is superior in its capability of clustering data without having to define the number of clusters . 
+27
+This capability is very important and better than the traditional clustering algorithms such as kmeans . 
+This capability is very important and better than the traditional clustering algorithms such as the kmeans . 
+28
+Besides , SOM can put the documents on a document map and help to access the content of similar documents . 
+Besides , SOM can put the documents on a document map and help to access the content of similar texts . 
+29
+We study the method for calculating the distance between two graphs based on the maximal common sub-graph . 
+We study the method for calculating the distance between two graphs based on the maximal common subgraph , 
+30
+We use the maximal frequent sub-graph discovery algorithm for discover-ing the maximal common sub-graph . 
+which is determined by the maximal frequent subgraph 
+31
+The maximal common sub-graph is calculated by using the maximal frequent subgraph with 100% support . 
+discovery algorithm with 100% support . 
+32
+The method of adjustment of the weighted graph on the nodes of SOM output layer is based on the weighted means graph and genetic algorithm . 
+The method of adjustment of the weighted graph on the nodes of SOM output layer is based on the weighted means graph and genetic algorithm . 
+33
+The remainder of this paper is organized as follows : 
+The remainder of this paper is organized as follows : 
+34
+2 ) Using graph model for representing the documents 
+2 ) Using graph model for representing the documents 
+35
+3 ) SOM neural network
+3 ) SOM neural network
+36
+4 ) Using SOM for clustering graphs and extracting main ideas from documents 
+4 ) Using SOM for clustering graphs and extracting main ideas from documents 
+37
+5 ) Experiment and discussions 
+5 ) Experiment and discussions 
+38
+6 ) Conclusion and future work
+and 6 ) Conclusion and future work
+39
+</p>
+</p>
+40
+</section>
+</section>
+41
+<section label = “ Using graph model for representing the documents“ >
+<section label = “ Using graph model for representing the documents“ >
+42
+<p>
+<p>
+43
+We introduce two approaches of using graph for document representation . 
+We introduce two approaches of using graph for document representation . 
+44
+The first one is the approach of J. Tomita et al.</CITE> . 
+The first approach , developed by Tomita et al.</CITE> 
+45
+They used subject graph for representing document . 
+uses subject graphs for representing documents . 
+46
+In this approach , the graph is created by following steps :
+In this approach , the graph is created by the following steps :
+47
+− Extracting the frequent terms in the document .
+− Extracting the frequent terms in the document .
+48
+− Calculating the significance from the co-occurrence frequency of two terms in a unit of document such as sentence , paragraph … .
+− Calculating the significance from the co-occurrence frequency of the two terms in a unit of document such as sentence , paragraph … .
+49
+If the co-occurrence frequency of two terms is greater than a threshold , we create an edge to connect these terms .
+If the co-occurrence frequency of two terms is greater than a threshold , we create an edge to connect these terms .
+50
+An example of subject graph for document representation is shown in figure 1 .
+An example of the subject graph for document representation is shown in figure 1 .
+51
+The second one is the approach of Adam Schenker and Mark Last </CITE> . 
+The second one is the approach developed by Adam Schenker and Mark Last </CITE> . 
+52
+In this approach , each term appearing in the document , except for stop words such as “ a ” , “ the ” , “ of ”  , “ and ” , “ or ” … which contain little information becomes a node in the graph representing the document . 
+In this approach , each term appearing in the document , becomes a node , except for stop words such as “ a ” , “ the ” , “ of ”  , “ and ” , and “ or ” which contain little information . 
+53
+This is accomplished by labeling each node with the term it represents . 
+This is accomplished by labeling each node with the term it represents . 
+54
+They create only a single node for each word even if a word appears more than once in the text . 
+Each word is represented by only a single node even when the word appears more than once in the text . 
+55
+Thus each node in the graph represents a unique word . 
+Thus each node in the graph represents a unique word . 
+56
+This node is labeled with an unique term .
+For example , this is labeled with an unique term .
+57
+Second , if word a immediately precedes word b , somewhere in a section s of the document , then there is a directed edge from the node corresponding to a to the node corresponding to b with the label s . 
+In the graph-based model , the authors create the graph by representing each word , except stop words, in the document as one unique node in the graph , regardless of how many times it appears in the text . The direction from one node to another corresponds to the relative positions of the words , and is illustrated by a directed edge starting from the node representing the preceding word . 
+58
+Section they have defined are as title , which contains the text related to the document ‘s title and any provided keywords; link  , which is text appearing in hyperlink on the document; and text  , which comprises any of the readable text in the document . 
+The edges are then labeled according to the section that contains the words . These sections include title , link or the clickable hyperlinks , and the remaining  called text . Nodes corresponding infrequent words are excluded from the graph .
+59
+An example of directed graph representation is given in figure 2 . 
+An example of directed graph representation is given in figure 2 . 
+60
+The oval indicates nodes and their corresponding term labels , the edges are labeled according the title ( TI ) , link ( L ) or text ( TX ) . 
+The oval indicates nodes and their corresponding term labels , the edges are labeled according the title ( TI ) , link ( L ) or text ( TX ) . 
+61
+We also use a semantic edge called TS ( text similarity ) for connecting two similar terms . 
+We also use a semantic edge called TS ( text similarity ) for connecting two similar terms . 
+62
+For example board and plank are two similar meaning terms , they mean a piece of wood . 
+For example , " board " and " plank " both means " a piece of wood " . 
+63
+We used Wordnet for measuring word similarity </CITE> .
+We used Wordnet for measuring word similarity </CITE> .
+64
+The second approach is richer than the first approach . 
+The second approach is superior to the first . 
+65
+Suppose that we have two sentences . 
+Suppose that we have two sentences : 
+66
+The first sentence is “ Cat eats mouse ” , the second one is “ Mouse eats cat ” . 
+" Cats eat mice " and " Mice eats cats " . 
+67
+In the first approach , two sentences are the same meaning because it does not care the position of words in sentence . 
+The first approach fails to distinguish the meanings of these sentences beacuse it ignores the positions of the words ,
+68
+But in second approach , these sentences are not the same meaning . 
+while according to the second approach ,
+69
+This is true , because the position of words is expressed in the representation model . 
+the word positions matter and are expressed in the representation model .
+70
+We used the second approach for representing the document in our proposed system .
+We used the second approach for representing the document in our proposed system .
+71
+</p>
+</p>
+72
+</section>
+</section>
+73
+<section label= “ Som neural network ”>
+<section label= “ Som neural network ”>
+74
+<subsection label= ” Introduction to SOM ”>
+<subsection label= ” Introduction to SOM ”>
+75
+<p>
+<p>
+76
+SOM has been developed by T Kohonen </CITE> . 
+SOM has been developed by T Kohonen </CITE> . 
+77
+After learning phase , the SOM will create a mapping between the high dimension objects of training set with a smaller dimension clusters . 
+After the learning phase , SOM will be used to create a mapping between the high dimension objects of training set with a smaller dimension clusters . 
+78
+In our system , we use the 2D SOM , because it is suitable for placing 2D SOM output layer on the computer display .
+In our system , we use the 2D SOM , because it is suitable for placing 2D SOM output layer on the computer display .
+79
+</p>
+</p>
+80
+</subsection>
+</subsection>
+81
+<subsection label= ” Traditional SOM learning algorithm ”>
+<subsection label= ” Traditional SOM learning algorithm ”>
+82
+<p>
+<p>
+83
+In SOM neural network structure , there is a weight expressing the measure of a link between the input and the output . 
+In SOM neural network structure , there is a weight expressing the measure of a link between the input and the output . 
+84
+The learning process will adjust these weights based on the training data set . 
+The learning process will adjust these weights based on the training data set . 
+85
+The result of this learning process will create the clusters of similar documents in the nodes of SOM output layer . 
+The result of this learning process will create the clusters of similar documents in the nodes of SOM output layer . 
+86
+The learning pattern will belong to the cluster with minimum distance to this cluster . 
+The learning pattern will belong to the cluster with minimum distance to this cluster . 
+87
+The traditional learning algorithm of SOM neural network is listed as follows :
+The traditional learning algorithm of SOM neural network is listed as follows :
+88
+Step 1 : Randomly initialize the weight of SOM output layer
+Step 1 : Randomly initialize the weight of SOM output layer
+89
+Initialize N c( t ) ( the radius of neighboring area ) and set time t=1
+Initialize N c( t ) ( the radius of neighboring area ) and set time t=1
+90
+Step 2 : Present an input vector v( t ) and normalize the input vector v( t )
+Step 2 : Present an input vector v( t ) and normalize the input vector v( t )
+91
+Calculate the Euclidean distance ( dE  ) from input vector v( t ) to all weight vectors of all nodes in SOM output layer and choose the neuron with the minimum distance from input vector v( t ) to the weight vector ( winner ) as follows :
+Calculate the Euclidean distance ( dE  ) from input vector v( t ) to all weight vectors of all nodes in SOM output layer and choose the neuron with the minimum distance from input vector v( t ) to the weight vector ( winner ) as follows :
+92
+</Eq>
+</Eq>
+93
+Where i , j is the valid index which is established base on the size of SOM output layer .
+Where i , j is the valid index which is established base on the size of SOM output layer .
+94
+Step 3 : Update the weight of nodes in the neighboring area of winner ( ic , jc ) by using the following formula :
+Step 3 : Update the weight of nodes in the neighboring area of winner ( ic , jc ) by using the following formula :
+95
+</Eq> ( 1 )
+</Eq> ( 1 )
+96
+Where γ is a constant determining the learning rate 0 ≤ γ ≤ 1 and </Eq>
+Where γ is a constant determining the learning rate 0 ≤ γ ≤ 1 and </Eq>
+97
+Step 4 : Update t = t + 1 , present next input vector and go back to step 2 until satisfying the convergence criteria or exceeding the maximum number of iterations .
+Step 4 : Update t = t + 1 , present next input vector and go back to step 2 until satisfying the convergence criteria or exceeding the maximum number of iterations .
+98
+</p>
+</p>
+99
+</subsection>
+</subsection>
+100
+</section>
+</section>
+101
+<section label = ”Using Som for clustering graphs and extracting main ideas from documents ”>
+<section label = ”Using Som for clustering graphs and extracting main ideas from documents ”>
+102
+<subsection label= ” Graphs and Sub-graphs ”>
+<subsection label= ” Graphs and Sub-graphs ”>
+103
+<p>
+<p>
+104
+A graph G = ( V ,E ) , consists of a set of vertices </Eq> , and a set of edges </Eq> . 
+A graph G = ( V ,E ) , consists of a set of vertices </Eq> , and a set of edges </Eq> . 
+105
+Let Lv and LE be the set of vertex and edge labels , respectively , and let V  : </Eq> be the labeling functions that assign labels to each vertex and edge . 
+Let Lv and LE be the set of vertex and edge labels , respectively , and let V  : </Eq> be the labeling functions that assign labels to each vertex and edge . 
+106
+The size of a graph G , denoted </Eq> is the cardinality of the edge set ( i.e. , </Eq> ) . 
+The size of a graph G , denoted </Eq> is the cardinality of the edge set ( i.e. , </Eq> ) . 
+107
+A graph G1 = ( V1 ,E1 ) is a sub-graph of another graph G2 = ( V2 ,E2 ) , denoted </Eq> , if there exists a 1-1 mapping </Eq> , such that </Eq> implies </Eq> . 
+A graph G1 = ( V1 ,E1 ) is a sub-graph of another graph G2 = ( V2 ,E2 ) , denoted </Eq> , if there exists a 1-1 mapping </Eq> , such that </Eq> implies </Eq> . 
+108
+Further , f preserves vertex labels , i.e. , </Eq> , and preserves edge labels , i.e. ,</Eq> . 
+Further , f preserves vertex labels , i.e. , </Eq> , and preserves edge labels , i.e. ,</Eq> . 
+109
+f is also called a sub-graph isomorphism from G1 to G2 . 
+f is also called a sub-graph isomorphism from G1 to G2 . 
+110
+If </Eq> , we also say that G2 is a super-graph of G1 . 
+If </Eq> , we also say that G2 is a super-graph of G1 . 
+111
+Note also that two graphs G1 and G2 are isomorphic </Eq> . 
+Note also that two graphs G1 and G2 are isomorphic </Eq> . 
+112
+Let D be a set of graphs , then we write </Eq> . 
+Let D be a set of graphs , then we write </Eq> . 
+113
+G is said to be a maximal common sub-graph of </Eq> , and </Eq> , such that </Eq> . 
+G is said to be a maximal common sub-graph of </Eq> , and </Eq> , such that </Eq> . 
+114
+Let D be a database ( a set ) of graphs . 
+Let D be a database ( a set ) of graphs . 
+115
+The support of a graph G in D denoted </Eq> is ratio of number of graphs of D containing graph G and </Eq> . 
+The support of a graph G in D denoted </Eq> is ratio of number of graphs of D containing graph G and </Eq> . 
+116
+Graph G is called frequent if </Eq> , where minsup is a user-specified minimum support threshold . 
+Graph G is called frequent if </Eq> , where minsup is a user-specified minimum support threshold . 
+117
+Let </Eq> be the set of frequent graphs of D for a given support minsup . 
+Let </Eq> be the set of frequent graphs of D for a given support minsup . 
+118
+A graph </Eq> is said to be maximal frequent graph if there exists no graph </Eq> such that </Eq> </CITE> .
+A graph </Eq> is said to be maximal frequent graph if there exists no graph </Eq> such that </Eq> </CITE> .
+119
+</p>
+</p>
+120
+</subsection>
+</subsection>
+121
+<subsection label= “ Initializing the neurons of the SOM output layer ”>
+<subsection label= “ Initializing the neurons of the SOM output layer ”>
+122
+<p>
+<p>
+123
+The input data of a SOM is a set of graph representing the documents . 
+The input data of a SOM is a set of graphs representing the documents . 
+124
+After training SOM , the input graphs will be grouped into nodes on the SOM output layer </CITE> .
+After the SOM is being trained , the input graphs will be grouped into nodes on the SOM output layer </CITE> .
+125
+Each neuron on the SOM layer output is a weighted graph . 
+Each neuron on the SOM layer output is a weighted graph . 
+126
+This graph is initialized based on the input value of SOM neural network .
+This graph is initialized based on the input value of SOM neural network .
+127
+C . Distance between two graphs H Bunke </CITE> proposed a formula for calculating the distance between two graphs . 
+C . Distance between two graphs H Bunke </CITE> proposed a formula for calculating the distance between two graphs . 
+128
+Given graph G1 and G2 , the distance of two graphs G1 and G2 denoted as d( G1 ,G2 ) is calculated as follows :
+Given graph G1 and G2 , the distance of two graphs G1 and G2 denoted as d( G1 ,G2 ) is calculated as follows :
+129
+</Eq>
+</Eq>
+130
+Where “ mcs ” is the maximal common graph and </Eq> is the size of graph G ( number of vertices and edges of graph G ) .
+Where “ mcs ” is the maximal common graph and </Eq> is the size of graph G ( number of vertices and edges of graph G ) .
+131
+Consider figure 3.a and 3.b as follows :
+Consider figure 3.a and 3.b as follows :
+132
+Figure ( 3.a ) is graph G1 , and figure ( 3.b ) is graph G2  , figure ( 3.c ) is the maximal common graph of graph G1 and G2 . 
+Figure ( 3.a ) is graph G1 , and figure ( 3.b ) is graph G2  , figure ( 3.c ) is the maximal common graph of graph G1 and G2 . 
+133
+The distance of graph G1 and G2 is : </Eq>
+The distance of graph G1 and G2 is : </Eq>
+134
+We compute mcs(  ) by using SPIN – an algorithm for mining the maximal frequent sub-graph in graph mining </CITE> .
+We compute mcs(  ) by using SPIN – an algorithm for mining the maximal frequent sub-graph in graph mining </CITE> .
+135
+SPIN takes two graphs as input and mines for maximal frequent sub-graphs with 100% support . 
+SPIN takes two graphs as input and mines for maximal frequent sub-graphs with 100% support . 
+136
+The maximal frequent sub-graph with maximal size is used to compute the size of the maximal common sub-graph in formula ( 2 ) .
+The maximal frequent sub-graph with maximal size is used to compute the size of the maximal common sub-graph in formula ( 2 ) .
+137
+</p>
+</p>
+138
+</subsection>
+</subsection>
+139
+<subsection label= ”Updating the weighted graphs on nodes of the SOM output layer ”>
+<subsection label= ”Updating the weighted graphs on nodes of the SOM output layer ”>
+140
+In the training process of SOM neural network , we need to adjust the weight of neurons laying in the neighboring area of winning neuron . 
+In the training process of SOM neural network , we need to adjust the weight of neurons laying in the neighboring area of the winning neurons . 
+141
+When using the SOM neural network for clustering the graph , each node in the SOM layer output is a graph , we call this kind of graph as weighted graph . 
+When using the SOM neural network for clustering the graph , each node in the SOM layer output is a graph , and we call this kind of graph as weighted graph . 
+142
+To adjust the weighted graph , H. Bunke </CITE> used the weighted means graph of a pair of weighted graphs . 
+To adjust the weighted graph , H. Bunke </CITE> used the weighted means graph of a pair of weighted graphs . 
+143
+Given two graph G1 and G2 , the graph G denotes weighted means graph of weighted graph G1 and graph G2 if there is a number </CITE> such as </Eq> , we have  :
+Given two graph G1 and G2 , the graph G denotes weighted means graph of weighted graph G1 and graph G2 if there is a number </CITE> such as </Eq> , we have  :
+144
+</Eq> ( 3 )
+</Eq> ( 3 )
+145
+And </Eq> ( 4 )
+And </Eq> ( 4 )
+146
+From formulas ( 3 ) and ( 4 ) , we have </Eq>
+From formulas ( 3 ) and ( 4 ) , we have </Eq>
+147
+To adjust the weight of nodes of SOM output layer , we use formula ( 1 ) . 
+To adjust the weight of nodes of SOM output layer , we use formula ( 1 ) . 
+148
+We can write formula ( 1 ) as follows : </Eq> ( 5 ) and </Eq> ( 6 )
+We can write formula ( 1 ) as follows : </Eq> ( 5 ) and </Eq> ( 6 )
+149
+If we replace G1 by x , G by ynew and G2 by yold , the operator  ” - ” by the distance between two graphs , the formula ( 5 ) and ( 6 ) will be formula ( 7 ) and ( 8 ) as follows : </Eq> ( 7 ) and </Eq> ( 8 )
+If we replace G1 by x , G by ynew and G2 by yold , the operator  ” - ” by the distance between two graphs , the formula ( 5 ) and ( 6 ) will be formula ( 7 ) and ( 8 ) as follows : </Eq> ( 7 ) and </Eq> ( 8 )
+150
+If </Eq> , the formulas ( 7 ) and ( 8 ) will be formula ( 3 ) , ( 4 ) and graph G is the weighted means graph of graph G1 and graph G2 </CITE> .
+If </Eq> , the formulas ( 7 ) and ( 8 ) will be formula ( 3 ) , ( 4 ) and graph G is the weighted means graph of graph G1 and graph G2 </CITE> .
+151
+From formulas ( 7 ) and ( 8 ) , we have formula ( 9 ) as follows : </Eq>
+From formulas ( 7 ) and ( 8 ) , we have formula ( 9 ) as follows : </Eq>
+152
+We used the genetic algorithm </CITE> for seeking the weighted means graph of two weight graphs G1 and G2 with the following steps  :
+We used the genetic algorithm </CITE> for seeking the weighted means graph of two weight graphs G1 and G2 with the following steps  :
+153
+1 ) Overview of the genetic algorithm Genetic Algorithms ( GA ) are programs that simulate the logic of Darwinian selection . 
+1 ) Overview of the genetic algorithm Genetic Algorithms ( GA ) are programs that simulate the logic of Darwinian selection . 
+154
+GA is a algorithm which makes it easy to search a large search space . 
+GA is a algorithm which makes it easy to search a large search space . 
+155
+The general algorithm is as follows  :
+The general algorithm is as follows  :
+156
+Generate initial population .
+Generate initial population .
+157
+Assign fitness function to all individuals of population 
+Assign fitness function to all individuals of population 
+158
+Generation = 1 
+Generation = 1 
+159
+REPEAT Select individuals from population of current generation
+REPEAT Select individuals from population of current generation
+160
+Create new off-springs with crossover operation
+Create new off-springs with crossover operation
+161
+Create new off-springs with mutation operation
+Create new off-springs with mutation operation
+162
+Compute new fitness for all individuals
+Compute new fitness for all individuals
+163
+Delete all the unfit individuals to give space to new off-springs
+Delete all the unfit individuals to give space to new off-springs
+164
+Check if best solution is found
+Check if best solution is found
+165
+generation = generation + 1
+generation = generation + 1
+166
+UNTIL best solution is found or generation >= MaxLoop
+UNTIL best solution is found or generation >= MaxLoop
+167
+The Maxloop is user defined constant and determine the maximal generation pf genetic algorithm .
+The Maxloop is user defined constant and determine the maximal generation pf genetic algorithm .
+168
+2 ) Initilalizing the population
+2 ) Initilalizing the population
+169
+The graph is represented by an adjacency matrix , the vertex set of graph is </Eq> . 
+The graph is represented by an adjacency matrix , the vertex set of graphs is </Eq> . 
+170
+The chromosome is a set of graph candidates of weighted means graphs ( set of matrices ) . 
+The chromosome is a set of graphs candidates of weighted means graphs ( set of matrices ) . 
+171
+Set of initial graphs are initialized randomly based of graph G1 and G2 .
+Set of initial graphs are initialized randomly based of graph G1 and G2 .
+172
+Crossover operation in this case will be the crossover of two matrices . 
+Crossover operation in this case will be the crossover of two matrices . 
+173
+The details of crossover operation are as follows :
+The details of crossover operation are as follows :
+174
+a ) Before crossover : </Eq>
+a ) Before crossover : </Eq>
+175
+b ) After crossover : </Eq>
+b ) After crossover : </Eq>
+176
+3 ) Mutation operation
+3 ) Mutation operation
+177
+− Select random positions i ,j in matrix representing the selected chromosome .
+− Select random positions i ,j in matrix representing the selected chromosome .
+178
+− Determine the random value of 0 or 1 ( add or delete the edge of graph )
+− Determine the random value of 0 or 1 ( add or delete the edge of graph )
+179
+− Assign this random value to aij and aji
+− Assign this random value to aij and aji
+180
+</Eq>
+</Eq>
+181
+4 ) Firness function
+4 ) Fitness function
+182
+Maximize the following function :
+Maximize the following function :
+183
+</Eq>
+</Eq>
+184
+The less value of this function gives the more fitness value of chromosome .
+The less value of this function gives the more fitness value of chromosome .
+185
+5 ) GA parameters
+5 ) GA parameters
+186
+We used the following GA parameters : GA population size .
+We used the following GA parameters : GA population size .
+187
+</Eq>
+</Eq>
+188
+</p>
+</p>
+189
+</subsection> 
+</subsection> 
+190
+<subsection label = ”Extracting the main ideas on the weight graph of SOM output layer ”>
+<subsection label = ”Extracting the main ideas on the weight graph of SOM output layer ”>
+191
+</p>
+</p>
+192
+Main ideas of documents are the sentences containing as much as the words determined by the order of occurrence on the weighted graphs . 
+Main ideas of documents are the sentences containing as many words determined by the order of occurrence on the weighted graphs . 
+193
+Main idea is created based on the weighted graph representing a group of similar documents . 
+Main idea is created based on the weighted graph representing a group of similar documents . 
+194
+A typical weighted graph of SOM output layer is shown in figure 4 .
+A typical weighted graph of SOM output layer is shown in figure 4 .
+195
+</p>
+</p>
+196
+</subsection>
+</subsection>
+197
+</section>
+</section>
+198
+<section label = ”Experiments and Discussions ”>
+<section label = ”Experiments and Discussions ”>
+199
+<subsection label= ”Evaluation methods ”>
+<subsection label= ”Evaluation methods ”>
+200
+<p>
+<p>
+201
+The Precision , Recall and F-measure are used for evaluating the result of clustering . 
+The Precision , Recall and F-measure are used for evaluating the result of clustering . 
+202
+The clustering to be created by human experts is called manual clustering . 
+The clustering to be created by human experts is called manual clustering . 
+203
+We compare the clustering result of documents to be created by our system with the result of manual clustering .
+We compare the clustering result of documents to be created by our system with the result of manual clustering .
+204
+Consider a set of n documents , Let m be the number of clusters to be created from n documents by manual clustering .
+Consider a set of n documents , Let m be the number of clusters to be created from n documents by manual clustering .
+205
+Methods Let k be the number of clusters in the clustering result to be created by our system . 
+Methods Let k be the number of clusters in the clustering result to be created by our system . 
+206
+In evaluation process , we have m ≤ k . 
+In the evaluation process , we have m ≤ k . 
+207
+To evaluate the system , we use Precision , Recall and Fmeasure and calculate them by two methods .
+To evaluate the system , we use Precision , Recall and Fmeasure and calculate them by two methods .
+208
+Let </Eq> in figure 5 , cluster mi to be created by manual clustering is A∪B; this cluster contains a+b documents , The cluster ki to be created by our system is A∪C; this cluster contains a + c documents .
+Let </Eq> in figure 5 , cluster mi to be created by manual clustering is A∪B; this cluster contains a+b documents . The cluster ki to be created by our system is A∪C; this cluster contains a + c documents .
+209
+Two above clusters have an intersection A which contains common documents of two clusters .
+Two above clusters have an intersection A which contains common documents of two clusters .
+210
+The Precision is a measure of the number of documents that match those in the manual clustering against the number of documents in the system cluster . 
+The Precision is a measure of the number of documents that match those in the manual clustering against the number of documents in the system cluster . 
+211
+If P=1 then all documents in cluster ki are in cluster mi </Eq>
+If P=1 then all documents in cluster ki are in cluster mi </Eq>
+212
+The Recall between two cluster mi and cluster ki denoted as R ( recall ) and is calculated by formula ( 11 ) . 
+The Recall between two cluster mi and cluster ki denoted as R ( recall ) and is calculated by formula ( 11 ) . 
+213
+If R =1 then all documents in cluster mi are in cluster ki </Eq>( 11 )
+If R =1 then all documents in cluster mi are in cluster ki </Eq>( 11 )
+214
+The Precision and Recall can be combined to F-Measure .
+The Precision and Recall can be combined to F-Measure .
+215
+The F-Measure is calculated by formula ( 12 ) : </Eq> ( 12 )
+The F-Measure is calculated by formula ( 12 ) : </Eq> ( 12 )
+216
+High value of α gives more influence to recall while low value gives it to precision . 
+High value of α gives more influence to recall while low value gives it to precision . 
+217
+A common value of α in formula ( 12 ) is 0.5 . 
+A common value of α in formula ( 12 ) is 0.5 . 
+218
+This formula can be written as : </Eq> ( 13 )
+This formula can be written as : </Eq> ( 13 )
+219
+Brew C. </CITE> propose a method to evaluate the clustering result as follows . 
+Brew C. </CITE> propose a method to evaluate the clustering result as follows . 
+220
+For each cluster in the clustering result to be created by system , we calculate the F-measure comparing with all clusters to be created by manual method . 
+For each cluster in the clustering result to be created by system , we calculate the F-measure comparing with all clusters to be created by manual method . 
+221
+Then we select the maximal value of F-measure for this cluster ( each column in table 1 and table 2 ) .
+Then we select the maximal value of F-measure for this cluster ( each column in table 1 and table 2 ) .
+222
+The process is repeated for the remain system clusters . 
+The process is repeated for the remain system clusters . 
+223
+High value of the total of F-measure gives the accuracy of clustering system .
+High value of the total of F-measure gives the accuracy of clustering system .
+224
+The test set contains 500 scientific documents belonging to 5 different topics such as database , data mining , computer network , web programming , artificial intelligence . 
+The test set contains 500 scientific documents belonging to 5 different topics such as database , data mining , computer network , web programming , and artificial intelligence . 
+225
+Each topic has 100 documents . 
+Each topic has 100 documents . 
+226
+The size of SOM output layer is 8x8; The repeated cycle of training algorithm is 5 ,000; The cycle of adjusting the radius of neighboring area is 50 . 
+The size of SOM output layer is 8x8; The repeated cycle of training algorithm is 5 ,000; The cycle of adjusting the radius of neighboring area is 50 . 
+227
+The directed graph is used for representing the documents .
+The directed graph is used for representing the documents .
+228
+1 ) Method of clustering the vectors
+1 ) Method of clustering the vectors
+229
+Result : Method of manual clustering has 5 clusters , each cluster has 100 documents . 
+Result : The method of manual clustering has 5 clusters , each of which has 100 documents . 
+230
+In this experiment , we used the vector model for representing the documents . 
+In this experiment , we used the vector model for representing the documents . 
+231
+Number of result clusters is 8 . 
+The number of result clusters is 8 . 
+232
+Comparing the results created by vector clustering and result created by manual clustering . 
+We comparing the results created by vector clustering and those created by manual clustering . 
+233
+We use formulas </CITE> for calculating the Precision , Recall , F-measure .
+We use formulas </CITE> for calculating the Precision , Recall , F-measure .
+234
+Table 2 provides the results of calculation .
+Table 2 provides the results of calculation .
+235
+The sum of maximal value of F-measure for vector clustering is 0.32 + 0.34 + 0.54 + 0.43 + 0.43 = 2.06
+The sum of maximal value of F-measure for vector clustering is 0.32 + 0.34 + 0.54 + 0.43 + 0.43 = 2.06
+236
+2 ) Method of clustering the graphs
+2 ) Method of clustering the graphs
+237
+In this experiment , we use graph model for representing the documents . 
+In this experiment , we use the graph model for representing the documents . 
+238
+Number of result clusters is 6 . 
+The number of result clusters is 6 . 
+239
+Comparing the results created by graph clustering and result created by manual clustering . 
+We comparing the results created by graph clustering and those created by manual clustering . 
+240
+We use formulas </CITE> for calculating the Precision , Recall , F-measure . 
+We use formulas </CITE> for calculating the Precision , Recall , F-measure . 
+241
+Table 2 provides the results of calculation .
+Table 2 provides the results of calculation .
+242
+Discussion : We test our proposed solution with many data sets and calculate the sum of max value of F-measure , we hold that the sum of max of F-Measure for graph cluster is higher PC Man than the sum of max of F-measure for vector clustering . 
+Discussion : We test our proposed solution with many data sets and calculate the sum of max value of F-measure , we hold that the sum of max of F-Measure for graph cluster is higher PC Man than the sum of max of F-measure for vector clustering . 
+243
+This result encourages us to continue developing the method of using the graph for representing the documents .
+This result encourages us to continue developing the method of using the graph for representing the documents .
+244
+The sum of maximal value of F-measure for graph clustering is 0.54+0.32+0.68+0.56+0.54=2.64
+The sum of maximal value of F-measure for graph clustering is 0.54+0.32+0.68+0.56+0.54=2.64
+245
+</p>
+</p>
+246
+</subsection>
+</subsection>
+247
+<subsection label = “ Discussion on the time complexity of two algorithms ”> 
+<subsection label = “ Discussion on the time complexity of two algorithms ”> 
+248
+Comparing to the vector based clustering algorithm , our proposed algorithm still remains the core parts of the SOM learning algorithm . 
+Comparing to the vector - based clustering algorithm , our proposed algorithm still remains the core parts of the SOM learning algorithm . 
+249
+Our proposed algorithm only changes the formula of calculation the distance between the input patterns and the weighted graphs and the adjustment way of weighted graphs .
+Our proposed algorithm only changes the formula of calculating the distance between the input patterns and the weighted graphs and the adjustment way of weighted graphs .
+250
+The time complexity of our proposed algorithm focuses on the time complexity of calculation the distance between two graphs and the calculation of weighted means graph based on the genetic algorithm . 
+The time complexity of our proposed algorithm focuses on the time complexity of calculation the distance between two graphs and the calculation of weighted means graph based on the genetic algorithm . 
+251
+Figure 6 provides the chart to compare the average processing time of two algorithms with test set containing 100 , 150 , 200 , 250 , 300 , 350 ,400 , 450 , 500 documents . 
+Figure 6 provides the chart to compare the average processing time of two algorithms with test set containing 100 , 150 , 200 , 250 , 300 , 350 ,400 , 450 , 500 documents . 
+252
+The computer to be used for testing is PC Pentium 4 , 3GB with 500 M byte RAM .
+The computer to be used for testing is PC Pentium 4 , 3GB with 500 M byte RAM .
+253
+The value in this chart in figure 6 holds that our proposed algorithm has average processing time estimated 1.7 times higher than the vector based clustering algorithm . 
+The value in this chart in figure 6 holds that our proposed algorithm has average processing time estimated 1.7 times higher than the vector based clustering algorithm . 
+254
+However , as we mentioned above the accuracy of our proposed methods is higher than the vector based clustering graph . 
+However , as we mentioned above the accuracy of our proposed methods is higher than the vector based clustering graph . 
+255
+Moreover , it also open a new way to improve the quality of document clustering by using the SOM neural network .
+Moreover , it also open a new way to improve the quality of document clustering by using the SOM neural network .
+256
+</p>
+</p>
+257
+</subsection>
+</subsection>
+258
+</section>
+</section>
+259
+<section label= ”Conclusion and future work ”>
+<section label= ”Conclusion and future work ”>
+260
+<p>
+<p>
+261
+In this paper , we would like to present the result of building a graph based clustering system by using the SOM neural networks . 
+In this paper , we present the result of building a graph - based clustering system by using the SOM neural networks . 
+262
+We use the graph model for representing the documents . 
+We use the graph model for representing the documents . 
+263
+The graph model can represent the structural information of documents such as semantic relation of words , position of words in documents , concepts implicit present in documents . 
+The graph model can represent the structural information of documents such as the semantic relation of words , the position of words in documents , and concepts implicitly present in documents . 
+264
+After clustering the document , on the SOM output layer are the weighted graph . 
+After clustering the document , on the SOM output layer are the weighted graph . 
+265
+These weighted graph contain the words which help to choose the main ideas form set of documents . 
+These weighted graph contain the words which help to choose the main ideas form a of documents . 
+266
+We choose the maximal common sub-graph to calculate the distance between graphs . 
+We choose the maximal common sub-graph to calculate the distance between graphs . 
+267
+The approach of maximal frequent sub-graph with 100% support is used to find the maximal common sub-graph . 
+The approach of maximal frequent sub-graph with 100% support is used to find the maximal common sub-graph . 
+268
+To adjust the weighted graphs on the nodes of SOM output layer , we use the weighted means graph concept and genetic algorithms . 
+To adjust the weighted graphs on the nodes of the SOM output layer , we use the weighted means graph concept and genetic algorithms . 
+269
+We test our propose methods on the corpus of Vietnamese articles and analyze the results . 
+We test our proposed methods on the corpus of Vietnamese articles and analyze the results . 
+270
+We continue to do the research in calculating the distance between graphs and the way to reduce the time complexity of our proposed algorithm . 
+We continue to do the research in calculating the distance between graphs and the way to reduce the time complexity of our proposed algorithm . 
+271
+We also study the capability of using the conceptual graph for representing documents and enhancing the richness of document representation model .
+We also study the capability of using the conceptual graph for representing documents and enhancing the richness of document representation model .
+272
+Acknowledgment
+Acknowledgment
+273
+The authors would like to express our thanks to Ministry of Science and Technology for financial support to Fundamental research project numbered 202806 and the valuable comments of reviewers .
+The authors would like to express our thanks to Ministry of Science and Technology for financial support to Fundamental research project numbered 202806 and the valuable comments of reviewers .
+274
+</p>
+</p>
+275
+</section>
+</section>
+276
+</document>
+</document>

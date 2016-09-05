@@ -1,0 +1,864 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Utilizing State - of - the - art Parsers to Diagnose Problems in Treebank Annotation for a Less Resourced Language
+Utilizing State - of - the - art Parsers to Diagnose Problems in Treebank Annotation for a Less Resourced Language
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+The recent success of statistical parsing methods has made treebanks become important resources for building good parsers . 
+The recent success of statistical parsing methods has made treebanks become important resources for building good parsers . 
+7
+However , constructing high - quality annotated treebanks is a challenging task . 
+However , constructing high - quality annotated treebanks is a challenging task . 
+8
+We utilized two publicly available parsers , Berkeley and MST parsers , for feedback on improving the quality of part - of - speech tagging for the Vietnamese Treebank . 
+We utilized two publicly available parsers , Berkeley and MST parsers , for feedback on improving the quality of part - of - speech tagging for the Vietnamese Treebank . 
+9
+Analysis of the treebank and parsing errors revealed how problems with the Vietnamese Treebank influenced the parsing results and real difficulties of Vietnamese parsing that required further improvements to existing parsing technologies .
+Analysis of the treebank and parsing errors revealed how problems with the Vietnamese Treebank influenced the parsing results and real difficulties with Vietnamese parsing that required further improvements to existing parsing technologies .
+10
+</p>
+</p>
+11
+</abstract>
+</abstract>
+12
+<section label=”Introduction”>
+<section label=”Introduction”>
+13
+<p>
+<p>
+14
+Treebanks , corpora annotated with syntactic structures , have become more and more important for language processing . 
+Treebanks , i .e . , corpora annotated with syntactic structures , have become more and more important for language processing . 
+15
+The Vietnamese Treebank ( VTB ) has been built as part of the national project ``Vietnamese language and speech processing ( VLSP )'' to strengthen automatic processing of the Vietnamese language \cite . 
+The Vietnamese Treebank ( VTB ) has been built as part of the national project for ``Vietnamese language and speech processing ( VLSP )'' to strengthen automatic processing of the Vietnamese language \cite . 
+16
+However , when we trained the Berkeley parser \cite in our preliminary experiment with VTB and evaluated it using the corpus , the parser only achieved an F - score of 72 .1\%  . 
+However , when we trained the Berkeley parser \cite in our preliminary experiment with VTB and evaluated it using the corpus , the parser only achieved an F - score of 72 .1\%  . 
+17
+This percentage was far lower than the state - of - the - art performance reported for the Berkeley parser on the English Penn Treebank of 90 .2\% \cite . 
+This percentage was far lower than the state - of - the - art performance reported for the Berkeley parser on the English Penn Treebank of 90 .2\% \cite . 
+18
+There are two possible reasons for this . 
+There are two possible reasons for this . 
+19
+First , the quality of VTB was not good enough to construct a good parser that included the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+First , the quality of VTB was not good enough to construct a good parser that included the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+20
+Second , parsing Vietnamese is a difficult problem on its own , and we need to seek new solutions to this .
+Second , parsing Vietnamese is a difficult problem on its own , and we need to seek new solutions to this .
+21
+Nguyen et al . \cite proposed methods of improving the annotations of word segmentation ( WS ) for VTB . 
+Nguyen et al . \cite proposed methods of improving the annotations of word segmentation ( WS ) for VTB . 
+22
+They also evaluated different word segmentation criteria in two applications , i .e . , machine translation and text classification . 
+They also evaluated different word segmentation criteria in two applications , i .e . , machine translation and text classification . 
+23
+This paper focuses on improving the quality of parts - of - speech ( POS ) annotations by using state - of - the - art parsers to provide feedback for this process .
+This paper focuses on improving the quality of parts - of - speech ( POS ) annotations by using state - of - the - art parsers to provide feedback for this process .
+24
+The difficulties with Vietnamese POS tagging have been recognized by many researchers \cite . 
+The difficulties with Vietnamese POS tagging have been recognized by many researchers \cite . 
+25
+There is little consensus as to the methodology for classifying words . 
+There is little consensus as to the methodology for classifying words . 
+26
+Polysemous words , i .e . , words with the same surface form but having different meanings and grammar functions , are very popular in the Vietnamese language . 
+Polysemous words , i .e . , words with the same surface form but having different meanings and grammar functions , are very popular in the Vietnamese language . 
+27
+For example , the word \textviet can be a noun that means \emph , or an adjective that means \emph depending on the context . 
+For example , the word \textviet can be a noun that means \emph , or an adjective that means \emph depending on the context . 
+28
+This characteristic makes it difficult to tag POSs for Vietnamese , either manually or automatically .
+This characteristic makes it difficult to tag POSs for Vietnamese , either manually or automatically .
+29
+The rest of this paper is organized as follows : a brief introduction to VTB and its annotation schemes are provided in Section \ref . 
+The rest of this paper is organized as follows : a brief introduction to VTB and its annotation schemes are provided in Section \ref . 
+30
+Then , previous work is summarized in Section \ref . 
+Then , previous work is summarized in Section \ref . 
+31
+Section \ref describes our methods of detecting and correcting inconsistencies in POSs in the VTB corpus . 
+Section \ref describes our methods of detecting and correcting inconsistencies in POSs in the VTB corpus . 
+32
+Evaluations of these methods are described in Section \ref . 
+Evaluations of these methods are described in Section \ref . 
+33
+Finally , Section \ref explains our evaluations of the Berkeley parser and MST parser on different versions of the VTB corpus , which were created by using detected inconsistencies . 
+Finally , Section \ref explains our evaluations of the Berkeley parser and maximum spanning tree ( MST ) parser on different versions of the VTB corpus , which were created by using detected inconsistencies . 
+34
+These results from evaluations are considered to be a way of measuring the effect of automatically detected and corrected inconsistencies . 
+These results from evaluations are considered to be a way of measuring the effect of automatically detected and corrected inconsistencies . 
+35
+We could observe difficulties with Vietnamese that affected the quality of parsers by analyzing the results from parsing .
+We could observe difficulties with Vietnamese that affected the quality of parsers by analyzing the results from parsing .
+36
+Our experiences in using state - of - the - art parsers for treebank annotation , which are presented in this paper , should not only benefit the Vietnamese language , but also other languages with similar characteristics .
+Our experiences in using state - of - the - art parsers for treebank annotation , which are presented in this paper , should not only benefit the Vietnamese language , but also other languages with similar characteristics .
+37
+</p>
+</p>
+38
+</section>
+</section>
+39
+<section label = “Brief introduction to VTB”>
+<section label = “Brief introduction to VTB”>
+40
+<p>
+<p>
+41
+The VTB corpus contains 10 .433 sentences ( 274 .266 tokens ) , semi - manually annotated with three layers of WS , POS tagging , and bracketing . 
+The VTB corpus contains 10 .433 sentences ( 274 .266 tokens ) , semi - manually annotated with three layers of WS , POS tagging , and bracketing . 
+42
+The first annotation is produced for each annotation layer by using automatic tools . Then , the annotators revise these data . 
+The first annotation is produced for each annotation layer by using automatic tools . Then , the annotators revise these data . 
+43
+The WS and POS annotation schemes were introduced by Nguyen et al . \cite . 
+The WS and POS annotation schemes were introduced by Nguyen et al . \cite . 
+44
+This section briefly introduces POS tag sets and a bracketing annotation scheme .
+This section briefly introduces POS tag sets and a bracketing annotation scheme .
+45
+VTB specifies the 18 different POS tags summarized in Table \ref \cite . 
+VTB specifies the 18 different POS tags summarized in Table \ref \cite . 
+46
+Each unit in this table goes with several example words . 
+Each unit in this table goes with several example words . 
+47
+English translations of these words are included in braces . 
+English translations of these words are included in braces . 
+48
+However , as we could not find any appropriate English translations for some words , these empty translations have been denoted by asterisks ( * ) .
+However , as we could not find any appropriate English translations for some words , these empty translations have been denoted by asterisks ( * ) .
+49
+The VTB corpus is annotated with three syntactic tag types : constituency tags , functional tags , and null - element tags . 
+The VTB corpus is annotated with three syntactic tag types : constituency tags , functional tags , and null - element tags . 
+50
+There are 18 constituency tags in VTB . The functional tags are used to enrich information for syntactic trees , such as where functional tag ``SUB'' is combined with constituency tag ``NP'' , which is presented as ``NP - SUB'' to indicate this noun phrase is a subject . 
+There are 18 constituency tags in VTB . The functional tags are used to enrich information for syntactic trees , such as where functional tag ``SUB'' is combined with constituency tag ``NP'' , which is presented as ``NP - SUB'' to indicate this noun phrase is a subject . 
+51
+There are 17 functional tags in VTB . The head word of a phrase is annotated with functional tag ``H'' .
+There are 17 functional tags in VTB . The head word of a phrase is annotated with functional tag ``H'' .
+52
+The phrase structures of Vietnamese include three positions : \emph , \emph , and \emph \cite . 
+The phrase structures of Vietnamese include three positions : \emph , \emph , and \emph \cite . 
+53
+The head word of the phrase is in the <head> position . 
+The head word of the phrase is in the <head> position . 
+54
+The words that are in the <pre - head> and <post - head> positions are modifiers of the head word .
+The words that are in the <pre - head> and <post - head> positions are modifiers of the head word .
+55
+There are special types of nouns in Vietnamese that we have called Nc - nouns in this paper . 
+There are special types of nouns in Vietnamese that we have called Nc - nouns in this paper . 
+56
+Nc - nouns can be classifier nouns ( Nc ) , or common nouns ( N ) depending on their modifiers . 
+Nc - nouns can be classifier nouns ( Nc ) , or common nouns ( N ) depending on their modifiers . 
+57
+For example , the Nc - noun \emph is a classifier noun if its modifier is the word \textviet , which means a specific fish , similar to \emph in English ) . 
+For example , the Nc - noun \emph is a classifier noun if its modifier is the word \textviet , which means a specific fish , similar to \emph in English ) . 
+58
+However , the Nc - noun \emph is a common noun if its modifier is the word \textviet , which means \emph in English ) . 
+However , the Nc - noun \emph is a common noun if its modifier is the word \textviet , which means \emph in English ) . 
+59
+We found that Nc - nouns always appeared in the head positions of noun phrases by investigating the VTB corpus . 
+We found that Nc - nouns always appeared in the head positions of noun phrases by investigating the VTB corpus . 
+60
+There is currently little consensus as to what the methodology is for annotating Nc - nouns \cite .
+There is currently little consensus as to what the methodology is for annotating Nc - nouns \cite .
+61
+</p>
+</p>
+62
+</section>
+</section>
+63
+<section label =”Summarization of previous work”>
+<section label =”Summarization of previous work”>
+64
+<p>
+<p>
+65
+Nguyen et al . \shortcite described methods of detecting and correcting WS inconsistencies in the VTB corpus . 
+Nguyen et al . \shortcite described methods of detecting and correcting WS inconsistencies in the VTB corpus . 
+66
+These methods focused on two types of WS inconsistencies in variation and structure , which are defined below .
+These methods focused on two types of WS inconsistencies in variation and structure , which are defined below .
+67
+\emph are sequences of tokens that have more than one way of being segmented in the corpus .
+\emph are sequences of tokens that have more than one way of being segmented in the corpus .
+68
+\emph occur when different sequences have similar structures , and thus should be split in the same way , but are segmented in different ways in the corpus . 
+\emph occur when different sequences have similar structures , and thus should be split in the same way , but are segmented in different ways in the corpus . 
+69
+Nguyen et al . \shortcite pointed out three typical cases of structural inconsistencies that were analyzed as classifier nouns ( Nc ) , affixes ( S ) , and special characters .
+Nguyen et al . \shortcite pointed out three typical cases of structural inconsistencies that were analyzed as classifier nouns ( Nc ) , affixes ( S ) , and special characters .
+70
+Nguyen et al .\shortcite analyzed N - gram sequences and phrase structures to detect WS inconsistencies . 
+Nguyen et al .\shortcite analyzed N - gram sequences and phrase structures to detect WS inconsistencies . 
+71
+Then , the detected WS inconsistencies were classified into several patterns of inconsistencies , parts of which were manually fixed to improve the quality of the corpus . 
+Then , the detected WS inconsistencies were classified into several patterns of inconsistencies , parts of which were manually fixed to improve the quality of the corpus . 
+72
+The rest were used to create different versions of the VTB corpus . 
+The rest were used to create different versions of the VTB corpus . 
+73
+These data sets were evaluated on automatic WS and its applications to text classification and English - Vietnamese statistical machine translations to find appropriate criteria for automatic WS and its applications .
+These data sets were evaluated on automatic WS and its applications to text classification and English - Vietnamese statistical machine translations to find appropriate criteria for automatic WS and its applications .
+74
+Their experiments revealed that the VAR\_FREQ data set achieved excellent results in these applications . 
+Their experiments revealed that the VAR\_FREQ data set achieved excellent results in these applications . 
+75
+The VAR\_FREQ data set was the original VTB corpus with manually corrected structural inconsistencies in special characters and selected segmentations with higher frequencies in all detected variations . 
+The VAR\_FREQ data set was the original VTB corpus with manually corrected structural inconsistencies in special characters and selected segmentations with higher frequencies in all detected variations . 
+76
+Therefore , we used the VAR\_FREQ data set in our experiments .
+Therefore , we used the VAR\_FREQ data set in our experiments .
+77
+</p>
+</p>
+78
+</section>
+</section>
+79
+<section label =”Methods of detecting and correcting inconsistencies in POS annotations”>
+<section label =”Methods of detecting and correcting inconsistencies in POS annotations”>
+80
+We propose two kinds of methods of detecting and correcting inconsistencies . 
+We propose two kinds of methods of detecting and correcting inconsistencies . 
+81
+They correspond to two different types of POS inconsistencies that we call multi - POS inconsistencies ( MI ) and Nc inconsistencies ( NcI ) , which are defined as follows .
+They correspond to two different types of POS inconsistencies that we call multi - POS inconsistencies ( MI ) and Nc inconsistencies ( NcI ) , which are defined as follows .
+82
+\emph are words that are not Nc - nouns and have more than one POS tag at each position in each phrase category .
+\emph are words that are not Nc - nouns and have more than one POS tag at each position in each phrase category .
+83
+\emph are sequences of Nc - nouns and modifiers , in which Nc - nouns have more than one way of being annotated as POSs in the VTB corpus .
+\emph are sequences of Nc - nouns and modifiers , in which Nc - nouns have more than one way of being annotated as POSs in the VTB corpus .
+84
+We separated the POS inconsistencies into these two types of inconsistencies because Nc - nouns are special types of words in Vietnamese . 
+We separated the inconsistencies with POSs into these two types of inconsistencies because Nc - nouns are special types of words in Vietnamese . 
+85
+The methods of detecting and correcting Nc inconsistencies were language - specific methods developed based on the characteristics of Vietnamese . 
+The methods of detecting and correcting Nc inconsistencies were language - specific methods developed based on the characteristics of Vietnamese . 
+86
+However , as the methods for MI are rather general , they can be applied to other languages .
+However , as the methods for MI are rather general , they can be applied to other languages .
+87
+</p>
+</p>
+88
+<subsection label =”General method for multi - POS inconsistencies”>
+<subsection label =”General method for multi - POS inconsistencies”>
+89
+<p>
+<p>
+90
+\emph
+\emph
+91
+Our main problem was to distinguish multi - POS inconsistencies from polysemous words , since polysemous words should not be considered inconsistent for annotations . 
+Our main problem was to distinguish multi - POS inconsistencies from polysemous words , since polysemous words should not be considered inconsistent for annotations . 
+92
+Our method was based on the position of words in phrases and phrase categories . 
+Our method was based on the position of words in phrases and phrase categories . 
+93
+This idea resulted from the observation that polysemous words have many POS tags; however , each word usually has only one true POS tag at each position in each phrase category . 
+This idea resulted from the observation that polysemous words have many POS tags; however , each word usually has only one true POS tag at each position in each phrase category . 
+94
+For example , when a phrase category is a verb phrase , the word \emph in the pre - head position of the verb phrase \emph should be a modal , but the word \emph in the head position should be a verb . 
+For example , when a phrase category is a verb phrase , the word \emph in the pre - head position of the verb phrase \emph should be a modal , but the word \emph in the head position should be a verb . 
+95
+Further , the word \emph in the head position of a noun phrase \emph should be a noun , but the word \emph in the head position of the verb phrase \emph should be a verb . 
+Further , the word \emph in the head position of a noun phrase \emph should be a noun , but the word \emph in the head position of the verb phrase \emph should be a verb . 
+96
+This may be more frequent in Vietnamese because it is not an inflectional language i .e . , the word form does not change according to tenses , word categories ( e .g . , nouns , verbs , and adjectives ) , or number ( singular and plural ) .
+This may be more frequent in Vietnamese because it is not an inflectional language i .e . , the word form does not change according to tenses , word categories ( e .g . , nouns , verbs , and adjectives ) , or number ( singular and plural ) .
+97
+The method involved three steps . 
+The method involved three steps . 
+98
+First , we extracted words in the same position for each phrase category . 
+First , we extracted words in the same position for each phrase category . 
+99
+Second , we counted the number of different POS tags of each word . 
+Second , we counted the number of different POS tags of each word . 
+100
+Words that had more than one POS tag were determined to be multi - POS inconsistencies . 
+Words that had more than one POS tag were determined to be multi - POS inconsistencies . 
+101
+For example , in the following two preposition phrases , \textviet , the words \textviet appear at the head positions of both phrases , but they are annotated with different POS tags , i .e . , preposition ( E ) and conjunction ( C ) . 
+For example , in the following two preposition phrases , \textviet , the words \textviet appear at the head positions of both phrases , but they are annotated with different POS tags , i .e . , preposition ( E ) and conjunction ( C ) . 
+102
+Therefore , they are multi - POS inconsistencies according to our method .
+Therefore , they are multi - POS inconsistencies according to our method .
+103
+It should be noted that this method was applied to words that were direct children of a phrase . Embedded phrases , such as \textviet , were considered separately .
+It should be noted that this method was applied to words that were direct children of a phrase . Embedded phrases , such as \textviet , were considered separately .
+104
+</p>
+</p>
+105
+<subsubsection label=”Correction method ( MI\_CM )”>
+<subsubsection label=”Correction method ( MI\_CM )”>
+106
+<p>
+<p>
+107
+A multi - POS inconsistency detected with the MI\_DM method is denoted by \emph , where \emph is a POS tag of word \emph , \emph is the frequency of POS tag \emph and AC involves applying the condition of \emph . 
+A multi - POS inconsistency detected with the MI\_DM method is denoted by \emph , where \emph is a POS tag of word \emph , \emph is the frequency of POS tag \emph and AC involves applying the condition of \emph . 
+108
+Our method of correcting the POS tag for POS inconsistency \emph involves two steps . 
+Our method of correcting the POS tag for POS inconsistency \emph involves two steps . 
+109
+First , we select the POS tag with the highest frequency of all POS tags of \emph ( \emph ) . Second , we replace POS tags \emph of all instances \emph satisfying condition \emph with POS tag \emph . 
+First , we select the POS tag with the highest frequency of all POS tags of \emph ( \emph ) . Second , we replace POS tags \emph of all instances \emph satisfying condition \emph with POS tag \emph . 
+110
+For multi POS inconsistencies  , AC of word \emph is its phrase category and position in the phrase .
+The AC of word \emph for multi - POS inconsistencies is its phrase category and position in the phrase .
+111
+For example , \textviet is a multi - POS inconsistency in the pre - head position of a noun phrase . 
+For example , \textviet is a multi - POS inconsistency in the pre - head position of a noun phrase . 
+112
+The frequency of POS tag ``L'' is 27 and the frequency of POS tag ``P'' is 2 . 
+The frequency of POS tag ``L'' is 27 and the frequency of POS tag ``P'' is two . 
+113
+Therefore , ``L'' is the POS tag that was selected by the MI\_CM method . 
+Therefore , ``L'' is the POS tag that was selected by the MI\_CM method . 
+114
+We replace all POS tags \emph of instances \textviet in the pre - head positions of noun phrases with POS tag ``L'' .
+We replace all POS tags \emph of instances \textviet in the pre - head positions of noun phrases with POS tag ``L'' .
+115
+</p>
+</p>
+116
+</subsubsection>
+</subsubsection>
+117
+</subsection>
+</subsection>
+118
+<subsection label =”Language - specific method for classifier nouns”
+<subsection label =”Language - specific method for classifier nouns”
+119
+<subsubsection =”Detection method”
+<subsubsection =”Detection method”
+120
+<p>
+<p>
+121
+As mentioned in Section \ref , an Nc - noun can be annotated with POS tag ``Nc'' or ``N'' depending on the modifier that follows that Nc - noun . 
+As mentioned in Section \ref , an Nc - noun can be annotated with POS tag ``Nc'' or ``N'' depending on the modifier that follows that Nc - noun . 
+122
+Analyzing the VTB corpus revealed that Nc - nouns had two characteristics . 
+Analyzing the VTB corpus revealed that Nc - nouns had two characteristics . 
+123
+First , an Nc - noun that is followed by the same word is usually annotated with the same POS tag . Second , an Nc - noun that is followed by a phrase or nothing at each occurrence is annotated with the same POS tag . 
+First , an Nc - noun that is followed by the same word is usually annotated with the same POS tag . Second , an Nc - noun that is followed by a phrase or nothing at each occurrence is annotated with the same POS tag . 
+124
+Based on these two cases , we propose two methods of detecting Nc inconsistencies , which we have called NcI\_DM1 and NcI\_DM2 . They are described below .
+Based on these two cases , we propose two methods of detecting Nc inconsistencies , which we have called NcI\_DM1 and NcI\_DM2 . They are described below .
+125
+\emph : We counted Nc - nouns in VTB that had two or more ways of POS annotation , satisfying the condition that Nc - nouns are followed by a phrase or nothing . 
+\emph : We counted Nc - nouns in VTB that had two or more ways of being annotated as POSs , satisfying the condition that Nc - nouns are followed by a phrase or nothing . 
+126
+For example , the Nc - noun \emph in \emph is followed by nothing or it is followed by a prepositional phrase as in \textviet .
+For example , the Nc - noun \emph in \emph is followed by nothing or it is followed by a prepositional phrase as in \textviet .
+127
+\emph : We counted two - gram sequences beginning with an Nc - noun in VTB that had two or more ways of POS annotation of the Nc - noun , satisfying the conditions that two tokens were all in the same phrase and they all had the same depth in a phrase . 
+\emph : We counted two - gram sequences beginning with an Nc - noun in VTB that had two or more ways of being annotated as POSs of the Nc - noun , satisfying the conditions that two tokens were all in the same phrase and they all had the same depth in a phrase . 
+128
+For example , the Nc - noun \emph in the two - gram \textviet was sometimes annotated ``Nc'' , and sometimes annotated ``N'' in VTB; in addition , as \emph and \textviet in the structure \textviet were in the same phrase and had the same depth , \emph was an Nc inconsistency .
+For example , the Nc - noun \emph in the two - gram \textviet was sometimes annotated ``Nc'' , and sometimes annotated ``N'' in VTB; in addition , as \emph and \textviet in the structure \textviet were in the same phrase and had the same depth , \emph was an Nc inconsistency .
+129
+</p>
+</p>
+130
+</subsubsection>
+</subsubsection>
+131
+<subsubsection=”Correction method”>
+<subsubsection=”Correction method”>
+132
+<p>
+<p>
+133
+We denoted Nc inconsistencies with \emph similarly to multi - POS inconsistencies . 
+We denoted Nc inconsistencies with \emph similarly to multi - POS inconsistencies . 
+134
+We also replaced the POS tag of Nc - nouns with the highest frequency tag . 
+We also replaced the POS tag of Nc - nouns with the highest frequency tag . 
+135
+The only differences were the applying conditions which varied according to the previous two cases of Nc inconsistencies .
+The only differences were the conditions of application that varied according to the previous two cases of Nc inconsistencies .
+136
+For Nc inconsistencies detected by the NcI\_DM1 method , AC is defined as follows : \emph is an Nc - noun that is followed by nothing or a phrase .
+For Nc inconsistencies detected by the NcI\_DM1 method , AC is defined as follows : \emph is an Nc - noun that is followed by nothing or a phrase .
+137
+For Nc inconsistencies detected by the NcI\_DM2 method , AC is defined as follows : \emph a Nc - noun that must be followed by a word , \emph .
+For Nc inconsistencies detected by the NcI\_DM2 method , AC is defined as follows : \emph a Nc - noun that must be followed by a word , \emph .
+138
+</p>
+</p>
+139
+</subsubsection>
+</subsubsection>
+140
+</subsection>
+</subsection>
+141
+<section label=”Results and evaluation”>
+<section label=”Results and evaluation”>
+142
+<p>
+<p>
+143
+We detected and corrected multi - POS inconsistencies and Nc inconsistencies based on the two data sets of ORG and VAR\_FREQ . 
+We detected and corrected multi - POS inconsistencies and Nc inconsistencies based on the two data sets of ORG and VAR\_FREQ . 
+144
+The ORG data set was the original VTB corpus and VAR\_FREQ was the original corpus with modifications to WS annotation . 
+The ORG data set was the original VTB corpus and VAR\_FREQ was the original corpus with modifications to WS annotation . 
+145
+This setting was made similar to that used by Nguyen et al . \shortcite to enable comparison .
+This setting was made similar to that used by Nguyen et al . \shortcite to enable comparison .
+146
+There are a total of 128 ,871 phrases in the VTB corpus . 
+There are a total of 128 ,871 phrases in the VTB corpus . 
+147
+The top five types of phrases are noun phrases ( NPs ) ( representing 49 .6\% of the total number of phrases ) , verb phrases ( VPs ) , prepositional phrases ( PP ) , adjectival phrases ( ADJPs ) , and quantity phrases ( QP ) , representing 99 .1\% of the total number of phrases in the VTB corpus . 
+The top five types of phrases are noun phrases ( NPs ) ( representing 49 .6\% of the total number of phrases ) , verb phrases ( VPs ) , prepositional phrases ( PP ) , adjectival phrases ( ADJPs ) , and quantity phrases ( QP ) , representing 99 .1\% of the total number of phrases in the VTB corpus . 
+148
+We analyzed the VTB corpus based on these five types of phrases .
+We analyzed the VTB corpus based on these five types of phrases .
+149
+</p>
+</p>
+150
+<subsection label=Results for detected POS inconsistencies>
+<subsection label=Results for detected POS inconsistencies>
+151
+<p>
+<p>
+152
+Tables \ref and \ref show overall statistics for multi - POS inconsistencies and Nc inconsistencies for each phrase category . 
+Tables \ref and \ref summarize the overall statistics for multi - POS inconsistencies and Nc inconsistencies for each phrase category . 
+153
+The second and third columns in these tables indicate the numbers of inconsistencies and their instances that were detected in the ORG data set . 
+The second and third columns in these tables indicate the numbers of inconsistencies and their instances that were detected in the ORG data set . 
+154
+The fourth and fifth columns indicate the numbers of inconsistencies and their instances that were detected in the VAR\_FREQ data set . The rows in Table \ref indicate the number of Nc inconsistencies and the number of instances detected with the NcI\_DM1 and NcI\_DM2 methods .
+The fourth and fifth columns indicate the numbers of inconsistencies and their instances that were detected in the VAR\_FREQ data set . The rows in Table \ref indicate the number of Nc inconsistencies and the number of instances detected with the NcI\_DM1 and NcI\_DM2 methods .
+155
+According to Table \ref , most of the multi - POS inconsistencies occurred in noun phrases , representing more than 72\% of the total number of multi - POS inconsistencies . 
+According to Table \ref , most of the multi - POS inconsistencies occurred in noun phrases , representing more than 72\% of the total number of multi - POS inconsistencies . 
+156
+All Nc inconsistencies in Table \ref are also in noun phrases . 
+All Nc inconsistencies in Table \ref are also in noun phrases . 
+157
+There are two possible reasons for this . 
+There are two possible reasons for this . 
+158
+First , noun phrases represent the majority of phrases in VTB ( represent 49 .6\% of the total number of phrases in the VTB corpus ) . 
+First , noun phrases represent the majority of phrases in VTB ( represent 49 .6\% of the total number of phrases in the VTB corpus ) . 
+159
+Second , nouns are sub - divided into many other types ( common nouns ( N ) , classifier nouns ( Nc ) , proper nouns ( Np ) , and unit nouns ( Nu ) ) ( mentioned in Section \ref , which may confuse annotators in annotating POS tags for nouns . 
+Second , nouns are sub - divided into many other types ( common nouns ( N ) , classifier nouns ( Nc ) , proper nouns ( Np ) , and unit nouns ( Nu ) ) ( mentioned in Section \ref , which may confuse annotators in annotating POS tags for nouns . 
+160
+In addition , the high number of Nc inconsistencies in Table \ref indicate that it is difficult to distinguish between Nc and other types of nouns . 
+In addition , the high number of Nc inconsistencies in Table \ref indicate that it is difficult to distinguish between Nc and other types of nouns . 
+161
+Therefore , we need to have clearer annotation guidelines for this .
+Therefore , we need to have clearer annotation guidelines for this .
+162
+</p>
+</p>
+163
+</subsection>
+</subsection>
+164
+<subsection label=” Evaluation of methods to detect and correct inconsistencies”>
+<subsection label=” Evaluation of methods to detect and correct inconsistencies”>
+165
+<p>
+<p>
+166
+We estimated the accuracy with which our methods detected and corrected inconsistencies in POS tagging by manually inspecting inconsistent annotations . 
+We estimated the accuracy with which our methods detected and corrected inconsistencies in POS tagging by manually inspecting inconsistent annotations . 
+167
+We manually inspected the two data sets of ORG\_EVAL and ORG\_POS\_EVAL . 
+We manually inspected the two data sets of ORG\_EVAL and ORG\_POS\_EVAL . 
+168
+For ORG\_EVAL , we randomly selected 100 sentences which contained instances of POS inconsistencies in the ORG data set . 
+We randomly selected 100 sentences in ORG\_EVAL , which contained instances of POS inconsistencies in the ORG data set . 
+169
+ORG\_EVAL contained 459 instances of 157 POS inconsistencies . 
+ORG\_EVAL contained 459 instances of 157 POS inconsistencies . 
+170
+ORG\_POS\_EVAL was the ORG\_EVAL data set with corrections made to multi - POS inconsistencies and Nc inconsistencies with our methods of correction above .
+ORG\_POS\_EVAL was the ORG\_EVAL data set with corrections made to multi - POS inconsistencies and Nc inconsistencies with our methods of correction above .
+171
+<subsubsection=” Detection  : “>
+<subsubsection=” Detection  : “>
+172
+<p>
+<p>
+173
+We manually checked POS inconsistencies and found that 153 cases out of 157 POS inconsistencies ( 97 .5\% ) were actual inconsistencies . 
+We manually checked POS inconsistencies and found that 153 cases out of 157 POS inconsistencies ( 97 .5\% ) were actual inconsistencies . 
+174
+There were four cases that our method detected as multi - POS inconsistencies , but they were actually ambiguities in Vietnamese POS tagging . 
+There were four cases that our method detected as multi - POS inconsistencies , but they were actually ambiguities in Vietnamese POS tagging . 
+175
+They were polysemous words whose meanings and POS tags depended on surrounding words , but did not depend on their positions in phrases . 
+They were polysemous words whose meanings and POS tags depended on surrounding words , but did not depend on their positions in phrases . 
+176
+For example , the word \textviet in the post - head positions of the verb phrases VP1 and VP2 below , can be a noun that means\emph in English , or it can be an adjective that means \emph , depending on the preceding verb .
+For example , the word \textviet in the post - head positions of the verb phrases VP1 and VP2 below , can be a noun that means\emph in English , or it can be an adjective that means \emph , depending on the preceding verb .
+177
+</p>
+</p>
+178
+</subsubsection>
+</subsubsection>
+179
+<subsection label =”Analysis of detected inconsistencies”>
+<subsection label =”Analysis of detected inconsistencies”>
+180
+<p>
+<p>
+181
+We analyzed the detected POS inconsistencies to find the reasons for inconsistent POS annotations . 
+We analyzed the detected POS inconsistencies to find the reasons for inconsistent POS annotations . 
+182
+We classified the detected POS inconsistencies according to pairs of their POS tags . 
+We classified the detected POS inconsistencies according to pairs of POS tags . 
+183
+There were a total of 85 patterns of pairs of POS tags . Table \ref lists the top five confusing patterns ( PoPOS ) , their counts of inconsistencies ( counts ) , and examples . 
+There were a total of 85 patterns of pairs of POS tags . Table \ref lists the top five confusing patterns ( PoPOS ) , their counts of inconsistencies ( counts ) , and examples . 
+184
+It also seemed to be extremely confusing for the annotators to distinguish types of nouns ( Nc and N , and N and Np ) and distinguish nouns from other types of words ( such as verbs , adjectives , and pronouns ) .
+It also seemed to be extremely confusing for the annotators to distinguish types of nouns ( Nc and N , and N and Np ) and distinguish nouns from other types of words ( such as verbs , adjectives , and pronouns ) .
+185
+We investigated POS inconsistencies and the annotation guidelines \cite to find why common nouns were sometimes tagged as classifier nouns and vice versa , and verbs were sometimes tagged as common nouns and vice versa . 
+We investigated POS inconsistencies and the annotation guidelines \cite to find why common nouns were sometimes tagged as classifier nouns and vice versa , and verbs were sometimes tagged as common nouns and vice versa . 
+186
+We found that these POS inconsistencies belonged to polysemous words that were difficult to tag .
+We found that these POS inconsistencies belonged to polysemous words that were difficult to tag .
+187
+The difficulties with tagging polysemous words were due to four main reasons : 
+The difficulties with tagging polysemous words were due to four main reasons : 
+188
+( 1 ) The POS of a polysemous word changes according to the function of that polysemous word in each phrase category or changes according to the meaning of surrounding words . 
+( 1 ) The POS of a polysemous word changes according to the function of that polysemous word in each phrase category or changes according to the meaning of surrounding words . 
+189
+Although polysemous words are annotated with different POS tags , they do not change their word form . 
+Although polysemous words are annotated with different POS tags , they do not change their word form . 
+190
+( 2 ) The way polysemous words are tagged according to their context is not completely clear in the POS tagging guidelines . 
+( 2 ) The way polysemous words are tagged according to their context is not completely clear in the POS tagging guidelines . 
+191
+( 3 ) Annotators referred to a dictionary that had been built as part of the VLSP project \cite ( VLSP dictionary ) to annotate the VTB corpus . 
+( 3 ) Annotators referred to a dictionary that had been built as part of the VLSP project \cite ( VLSP dictionary ) to annotate the VTB corpus . 
+192
+However , this dictionary lacked various words and did not cover all contexts for the words . 
+However , this dictionary lacked various words and did not cover all contexts for the words . 
+193
+For example , \textviet in Vietnamese is an adjective when it is the head word of an adjectival phrase , but \textviet is an adverb when it is the modifier of a quantifier noun ( such as \textviet . 
+For example , \textviet in Vietnamese is an adjective when it is the head word of an adjectival phrase , but \textviet is an adverb when it is the modifier of a quantifier noun ( such as \textviet . 
+194
+However , the VLSP dictionary only considered \textviet to be an adjective ( \textviet ) . 
+However , the VLSP dictionary only considered \textviet to be an adjective ( \textviet ) . 
+195
+No cases where \textviet was an adverb were mentioned in this dictionary . 
+No cases where \textviet was an adverb were mentioned in this dictionary . 
+196
+( 4 ) There are several overlapping but conflicting instructions across the annotation guidelines for different layers of the treebank . 
+( 4 ) There are several overlapping but conflicting instructions across the annotation guidelines for different layers of the treebank . 
+197
+For example , the combinations of affixes and words they modify to create compound words are clear in the WS guidelines , but POS tagging guidelines treat affixes as words and they are annotated as POS tags ``S'' . 
+For example , the combinations of affixes and words they modify to create compound words are clear in the WS guidelines , but POS tagging guidelines treat affixes as words and they are annotated as POS tags ``S'' . 
+198
+For words modifying quantifier nouns , such as \textviet , the POS tagging guidelines treat them as adjectives , but the bracketing guidelines treat them as adverbs . 
+For words modifying quantifier nouns , such as \textviet , the POS tagging guidelines treat them as adjectives , but the bracketing guidelines treat them as adverbs . 
+199
+Therefore , our method detected multi - POS inconsistencies as \textviet , \emph at the pre - head positions of noun phrases . 
+Therefore , our method detected multi - POS inconsistencies as \textviet , \emph at the pre - head positions of noun phrases . 
+200
+Since the frequencies of the adjective tags were greater than those of adverb tags ( fA > fR ) , these words were automatically assigned to adjective POS tags ( A ) according to our method of correction . 
+Since the frequencies of the adjective tags were greater than those of adverb tags ( fA > fR ) , these words were automatically assigned to adjective POS tags ( A ) according to our method of correction . 
+201
+These were POS inconsistencies that our method of correction could not be applied to , because the frequency of incorrect POS tags was higher than that of actual POS tags .
+These were POS inconsistencies that our method of correction could not be applied to , because the frequency of incorrect POS tags was higher than that of actual POS tags .
+202
+</p>
+</p>
+203
+</subsection>
+</subsection>
+204
+</section>
+</section>
+205
+<section label=”Evaluation of state - of - the - art parsers on VTB”>
+<section label=”Evaluation of state - of - the - art parsers on VTB”>
+206
+<p>
+<p>
+207
+We carried out experiments to evaluate two popular parsers , a syntactic parser and a dependency parser , on different versions of the VTB corpus . 
+We carried out experiments to evaluate two popular parsers , a syntactic parser and a dependency parser , on different versions of the VTB corpus . 
+208
+Some of these data sets were made the same as the data settings for WS in Nguyen et al . \shortcite . 
+Some of these data sets were made the same as the data settings for WS in Nguyen et al . \shortcite . 
+209
+The other data sets contained changes in POS annotations following our methods of correcting inconsistencies presented in Section \ref . 
+The other data sets contained changes in POS annotations following our methods of correcting inconsistencies presented in Section \ref . 
+210
+We could observe how the problems with WS and POS tagging influenced the quality of Vietnamese parsing by analyzing the parsing results .
+We could observe how the problems with WS and POS tagging influenced the quality of Vietnamese parsing by analyzing the parsing results .
+211
+</p>
+</p>
+212
+<subsection label=”Experimental settings”>
+<subsection label=”Experimental settings”>
+213
+<p>
+<p>
+214
+Data . Nine configurations of the VTB corpus were created as follows :
+Data . Nine configurations of the VTB corpus were created as follows :
+215
+ORG : The original VTB corpus .
+ORG : The original VTB corpus .
+216
+BASE , STRUCT\_AFFIX , STRUCT\_NC , VAR\_SPLIT , VAR\_COMB , and VAR\_FREQ correspond to different settings for WS described in Nguyen et al .\shortcite .
+BASE , STRUCT\_AFFIX , STRUCT\_NC , VAR\_SPLIT , VAR\_COMB , and VAR\_FREQ correspond to different settings for WS described in Nguyen et al .\shortcite .
+217
+ORG\_POS : The ORG data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+ORG\_POS : The ORG data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+218
+VAR\_FREQ\_POS : The VAR\_FREQ data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+VAR\_FREQ\_POS : The VAR\_FREQ data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+219
+Each of the nine data sets was randomly split into two subsets for training and testing our parser models . 
+Each of the nine data sets was randomly split into two subsets for training and testing our parser models . 
+220
+The training set contained 9 ,443 sentences , and the testing set contained 1 ,000 sentences .
+The training set contained 9 ,443 sentences , and the testing set contained 1 ,000 sentences .
+221
+Tools
+Tools
+222
+We used the Berkeley parser \cite to evaluate the syntactic parser on VTB . 
+We used the Berkeley parser \cite to evaluate the syntactic parser on VTB . 
+223
+This parser has been used in experiments in English , German , and Chinese and achieved an F1 of 90 .2\% on the English Penn Treebank .
+This parser has been used in experiments in English , German , and Chinese and achieved an F1 of 90 .2\% on the English Penn Treebank .
+224
+We used the conversion tool built by Johansson et al . \shortcite to convert VTB into dependency trees .
+We used the conversion tool built by Johansson et al . \shortcite to convert VTB into dependency trees .
+225
+We used the MST parser to evaluate the dependency parsing on VTB . 
+We used the MST parser to evaluate the dependency of parsing on VTB . 
+226
+This parser was evaluated on the English Penn Treebank \cite and 13 other languages \cite . 
+This parser was evaluated on the English Penn Treebank \cite and 13 other languages \cite . 
+227
+Its accuracy achieved 90 .7\% on the English Penn Treebank .
+Its accuracy achieved 90 .7\% on the English Penn Treebank .
+228
+We made use of the bracket scoring program EVALB , which was built by Sekine et al . ( 1997 ) , to evaluate the performance of the Berkeley parser . 
+We made use of the bracket scoring program EVALB , which was built by Sekine et al . ( 1997 ) , to evaluate the performance of the Berkeley parser . 
+229
+As an evaluation tool was included in the MST parser tool , we used it to evaluate the MST parser .
+As an evaluation tool was included in the MST parser tool , we used it to evaluate the MST parser .
+230
+</p>
+</p>
+231
+</subsection>
+</subsection>
+232
+<subsection label=”Experimental results”>
+<subsection label=”Experimental results”>
+233
+The bracketing F - measures of the Berkeley parser on nine configurations of the VTB corpus are listed in Table \ref . 
+The bracketing F - measures of the Berkeley parser on nine configurations of the VTB corpus are listed in Table \ref . 
+234
+The dependency of the MST parser on nine configurations of the VTB corpus are shown in Table \ref . 
+The dependency of the MST parser on the accuracies of nine configurations of the VTB corpus are summarized in Table \ref . 
+235
+These results indicate that the quality of the treebank strongly affected the quality of the parsers .
+These results indicate that the quality of the treebank strongly affected the quality of the parsers .
+236
+According to Table \ref , all modifications to WS inconsistencies improved the performance of the Berkeley parser except for STRUCT\_NC and VAR\_SPLIT . 
+According to Table \ref , all modifications to WS inconsistencies improved the performance of the Berkeley parser except for STRUCT\_NC and VAR\_SPLIT . 
+237
+More importantly , the ORG\_POS model achieved better results than the ORG model , and the VAR\_FREQ\_POS model achieved better results than the VAR\_FREQ model , which indicates that the modifications to POS inconsistencies improved the performance of the Berkeley parser . 
+More importantly , the ORG\_POS model achieved better results than the ORG model , and the VAR\_FREQ\_POS model achieved better results than the VAR\_FREQ model , which indicates that the modifications to POS inconsistencies improved the performance of the Berkeley parser . 
+238
+The VAR\_FREQ\_POS model scored 1 .11 points higher than ORG , which is a significant improvement .
+The VAR\_FREQ\_POS model scored 1 .11 points higher than ORG , which is a significant improvement .
+239
+Dependency accuracies of the MST parser in Table \ref shown that all modifications to POS inconsistencies improved the performance of the MST parser . 
+The dependency of the MST parser on accuracies in Table \ref indicates that all modifications to POS inconsistencies improved the performance of the MST parser . 
+240
+All modifications of WS inconsistencies also improved the performance of the MST parser except for STRUCT\_NC . 
+All modifications to WS inconsistencies also improved the performance of the MST parser except for STRUCT\_NC . 
+241
+The VAR\_FREQ\_POS model scored 7 .36 points higher than ORG , which is a significant improvement .
+The VAR\_FREQ\_POS model scored 7 .36 points higher than ORG , which is a significant improvement .
+242
+</p>
+</p>
+243
+</subsection>
+</subsection>
+244
+<subsection label=”Analysis of parsing results”>
+<subsection label=”Analysis of parsing results”>
+245
+<p>
+<p>
+246
+The results for the Berkeley parser and MST parser trained on the POS - modified versions of VTB were better than those trained on the original VTB corpus , but they were still much lower than the performance of the same parsers on the English language . 
+The results for the Berkeley parser and MST parser trained on the POS - modified versions of VTB were better than those trained on the original VTB corpus , but they were still much lower than the performance of the same parsers on the English language . 
+247
+We analyzed error based on the output data of the best parsing results ( VAR\_FREQ\_POS ) for the Berkeley parser , and found that the unmatched annotations between gold and test data were caused by ambiguous POS sequences in the VTB corpus .
+We analyzed error based on the output data of the best parsing results ( VAR\_FREQ\_POS ) for the Berkeley parser , and found that the unmatched annotations between gold and test data were caused by ambiguous POS sequences in the VTB corpus .
+248
+An ambiguous POS sequence is a sequence of POS tags that has two or more constituency tags . 
+An ambiguous POS sequence is a sequence of POS tags that has two or more constituency tags . 
+249
+For example , there are the verb phrases \emph and the adjectival phrase \emph in the training data of VAR\_FREQ\_POS . 
+For example , there are the verb phrases \emph and the adjectival phrase \emph in the training data of VAR\_FREQ\_POS . 
+250
+As these two phrases have the same POS sequence \emph , \emph is an ambiguous POS sequence , and VP and ADJP are confusing constituency tags ( CCTs ) . 
+As these two phrases have the same POS sequence \emph , \emph is an ambiguous POS sequence , and VP and ADJP are confusing constituency tags ( CCTs ) . 
+251
+We found 42 ,373 occurrences of 213 ambiguous POS sequences ( representing 37 .02\% of all phrases ) in the training data of VAR\_FREQ\_POS . 
+We found 42 ,373 occurrences of 213 ambiguous POS sequences ( representing 37 .02\% of all phrases ) in the training data of VAR\_FREQ\_POS . 
+252
+We also found 1 ,065 occurrences of 13 ambiguous POS sequences in the parsing results for VAR\_FREQ\_POS . 
+We also found 1 ,065 occurrences of 13 ambiguous POS sequences in the parsing results for VAR\_FREQ\_POS . 
+253
+Some examples of ambiguous POS sequences , their CCTs , and the number of occurrences of each CCT in the training data of VAR\_FREQ\_POS are listed in Table \ref .
+Some examples of ambiguous POS sequences , their CCTs , and the number of occurrences of each CCT in the training data of VAR\_FREQ\_POS are listed in Table \ref .
+254
+We classified the detected ambiguous POS sequences according to pairs of different CCTs to find the reasons for ambiguity in each pair . 
+We classified the detected ambiguous POS sequences according to pairs of different CCTs to find the reasons for ambiguity in each pair . 
+255
+There were a total of 42 pairs of CCTs , whose top three pairs , along with their counts of types of ambiguous POS sequences , and examples of ambiguous POS sequences are listed in Table \ref . 
+There were a total of 42 pairs of CCTs , whose top three pairs , along with their counts of types of ambiguous POS sequences , and examples of ambiguous POS sequences are listed in Table \ref . 
+256
+We extracted different POS tags at each position of each phrase category for each pair of CCTs , based on the ambiguous POS sequences . 
+We extracted different POS tags at each position of each phrase category for each pair of CCTs , based on the ambiguous POS sequences . 
+257
+For example , the third row in Table \ref has ``R A V'' and ``A V N'' , which are two ambiguous POS sequences that were sometimes annotated as VP and sometimes annotated as ADJP . 
+For example , the third row in Table \ref has ``R A V'' and ``A V N'' , which are two ambiguous POS sequences that were sometimes annotated as VP and sometimes annotated as ADJP . 
+258
+The different POS tags that were extracted from the pre - head positions of VPs based on these two POS sequences were ``R , A'' and ``R'' was the POS tag that was extracted from the pre - head positions of ADJPs based on these two POS sequences . 
+The different POS tags that were extracted from the pre - head positions of VPs based on these two POS sequences were ``R , A'' and ``R'' was the POS tag that was extracted from the pre - head positions of ADJPs based on these two POS sequences . 
+259
+These POS tags are important clues to finding reasons for ambiguities in POS sequences .
+These POS tags are important clues to finding reasons for ambiguities in POS sequences .
+260
+Table \ref summarizes the extracted POS tags at pre - head positions for the top three pairs of CCTs . 
+Table \ref summarizes the extracted POS tags at pre - head positions for the top three pairs of CCTs . 
+261
+For example , the POS tags in row NP - VP and column 1 are in the pre - head positions of NPs and the POS tags in row NP - VP and column 2 are in the pre - head positions of VP . 
+For example , the POS tags in row NP - VP and column 1 are in the pre - head positions of NPs and the POS tags in row NP - VP and column 2 are in the pre - head positions of VP . 
+262
+By comparing these results with the structures of the pre - head positions of phrase categories in the VTB bracketing guidelines \cite , we found many cases that were not annotated according to instructions in the VTB bracketing guidelines , such as those according to Table \ref , where an adjective ( A ) is in the pre - head position of VP , but according to the VTB bracketing guidelines , the structure of the pre - head position of VB only includes adverb ( R ) .
+By comparing these results with the structures of the pre - head positions of phrase categories in the VTB bracketing guidelines \cite , we found many cases that were not annotated according to instructions in the VTB bracketing guidelines , such as those according to Table \ref , where an adjective ( A ) is in the pre - head position of VP , but according to the VTB bracketing guidelines , the structure of the pre - head position of VB only includes an adverb ( R ) .
+263
+We investigated cases that had not been annotated according to the guidelines , and found two possible reasons that caused ambiguous POS sequences . 
+We investigated cases that had not been annotated according to the guidelines , and found two possible reasons that caused ambiguous POS sequences . 
+264
+First , although our methods improved the quality of the VTB corpus , some POS annotation errors remained in the VTB corpus . 
+First , although our methods improved the quality of the VTB corpus , some errors in POS annotations remained in the VTB corpus . 
+265
+These POS annotation errors were cases to which our methods could not be applied ( mentioned in Section \ref ) . 
+These errors in POS annotations were cases to which our methods could not be applied ( mentioned in Section \ref ) . 
+266
+Second , there were ambiguities in POS sequences caused by Vietnamese characteristics , such as the adjectival phrase \textviet and the noun phrase \emph that had the same POS sequence of ``R N A'' .
+Second , there were ambiguities in POS sequences caused by Vietnamese characteristics , such as the adjectival phrase \textviet and the noun phrase \emph that had the same POS sequence of ``R N A'' .
+267
+Therefore , POS annotation errors need to be eliminated from the VTB corpus to further improve its quality and that of the Vietnamese parser . 
+Therefore , POS annotation errors need to be eliminated from the VTB corpus to further improve its quality and that of the Vietnamese parser . 
+268
+We not only need to eliminate overlapping and conflicting instructions , which were mentioned in Section \ref , from the guidelines , but we also have to complete annotation instructions for cases that have not been treated ( or not been clearly treated ) in the guidelines . 
+We not only need to eliminate overlapping and conflicting instructions , which were mentioned in Section \ref , from the guidelines , but we also have to complete annotation instructions for cases that have not been treated ( or not been clearly treated ) in the guidelines . 
+269
+We may also need to improve POS tag set because adverbs modifying adjectives , nouns , and verbs are all presently tagged as ``R'' , which caused ambiguous POS sequences , such as the ambiguous POS sequence ``R N A'' mentioned above . 
+We may also need to improve POS tag set because adverbs modifying adjectives , nouns , and verbs are all presently tagged as ``R'' , which caused ambiguous POS sequences , such as the ambiguous POS sequence ``R N A'' mentioned above . 
+270
+If we use different POS tags for the adverb \textviet , which modifies the adjective \textviet , and the adverb \textviet , which modifies the noun \textviet , we can eliminate ambiguous POS sequences in these cases .
+If we use different POS tags for the adverb \textviet , which modifies the adjective \textviet , and the adverb \textviet , which modifies the noun \textviet , we can eliminate ambiguous POS sequences in these cases .
+271
+</p>
+</p>
+272
+</subsection>
+</subsection>
+273
+</section>
+</section>
+274
+<section label=”Conclusion”>
+<section label=”Conclusion”>
+275
+<p>
+<p>
+276
+We proposed several methods of improving the quality of the VTB corpus . 
+We proposed several methods of improving the quality of the VTB corpus . 
+277
+Our manual evaluation revealed that our methods improved the quality of the VTB corpus by 6 .5\% with correct POS tags . 
+Our manual evaluation revealed that our methods improved the quality of the VTB corpus by 6 .5\% with correct POS tags . 
+278
+Analysis of inconsistencies and the annotation guidelines suggested that : 
+Analysis of inconsistencies and the annotation guidelines suggested that : 
+279
+( 1 ) better instructions should be added to the VTB guidelines to help annotators to distinguish difficult POS tags , 
+( 1 ) better instructions should be added to the VTB guidelines to help annotators to distinguish difficult POS tags , 
+280
+( 2 ) overlapping and conflicting instructions should be eliminated from the VTB guidelines , 
+( 2 ) overlapping and conflicting instructions should be eliminated from the VTB guidelines , 
+281
+and ( 3 ) annotations that referred to dictionaries should be avoided .
+and ( 3 ) annotations that referred to dictionaries should be avoided .
+282
+To the best of our knowledge , this paper is the first report on evaluating state - of - the - art parsers used on the Vietnamese language . 
+To the best of our knowledge , this paper is the first report on evaluating state - of - the - art parsers used on the Vietnamese language . 
+283
+The results obtained from evaluating these two parsers were used as feedback to improve the quality of treebank annotations . 
+The results obtained from evaluating these two parsers were used as feedback to improve the quality of treebank annotations . 
+284
+We also thoroughly analyzed the parsing output , which revealed challenging issues in treebank annotations and in the Vietnamese parsing problem itself .
+We also thoroughly analyzed the parsing output , which revealed challenging issues in treebank annotations and in the Vietnamese parsing problem itself .
+285
+</p>
+</p>
+286
+</section>
+</section>
+287
+</document>
+</document>
