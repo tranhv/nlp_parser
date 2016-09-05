@@ -20,12 +20,12 @@ class Join
 end
 
 def main
-  files = Dir.glob(INPUT_PATH + "/SWA/*.crp").entries
+  files = Dir.glob(INPUT_PATH + "/SWA/*.crp").sort.entries
 
-  join_file = File.open("./output/full_crp.txt","w")
+  join_file = File.open("./output/full_crp_v2.txt","w")
   join_file.write("")
-  out_path = "#{OUTPUT_PATH}/full_crp.txt"
-  join_file = File.open(out_path,"a+")
+  out_path = "#{OUTPUT_PATH}/full_crp_v2.txt"
+  
 
   files.each do |file|
     if file != "." and file != ".." and file != ".DS_Store"
@@ -33,11 +33,11 @@ def main
       
       puts "in_put: #{in_path}"
       puts "out_put: #{out_path}"
+      join_file = File.open(out_path,"a+")
       join_files(in_path,out_path,join_file)
+      join_file.close
     end
   end
-  join_file.close
-
 end
 
 end
