@@ -137,7 +137,7 @@ class ReadData
 
   def get_aln
     array_alns = []
-    File.open(DATA_PATH + "/full_aln.txt", 'r').each do |line|
+    File.open(DATA_PATH + "/full_aln_hanh.txt", 'r').each do |line|
       array_alns << line
     end
     return array_alns
@@ -157,7 +157,7 @@ class ReadData
     flag_para = false
     alns = get_aln
     index_aln = 0
-    File.open(DATA_PATH + "/full_crp.txt", 'r').each_with_index do |line, index|      
+    File.open(DATA_PATH + "/full_crp_hanh.txt", 'r').each_with_index do |line, index|      
       if (index%3 == 0)
         arr = []
         arr << line
@@ -213,16 +213,28 @@ class ReadData
 
   def main
     # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
-    # merged_aln_crp = File.open(DATA_PATH + "/Test_merge_aln_crp.txt","w")
-    # merged_aln_crp.write("")
-    # merge_aln_crp(merged_aln_crp)
+    merged_aln_crp = File.open(DATA_PATH + "/merged_hanh.txt","w")
+    merged_aln_crp.write("")
+    merge_aln_crp(merged_aln_crp)
 
     # generate_data_manli(DATA_PATH + "/merged_aln_crp.txt")
 
+    # NEW DATA ===============
+    data_hanh = get_data_SWA(DATA_PATH + "/merged_hanh.txt")
+    data_hanh = refine_tag_preserved(data_hanh)
+    data_hanh = convert_typo_spelling(data_hanh)
+    puts "hanh: #{count_alignment(data_hanh)}\n"
+
+    data_quynhanh = get_data_SWA(DATA_PATH + "/merged_quynhanh.txt")
+    data_quynhanh = refine_tag_preserved(data_quynhanh)
+    data_quynhanh = convert_typo_spelling(data_quynhanh)   
+    puts "quynhanh: #{count_alignment(data_quynhanh)}\n" 
+    # END NEW DATA ===========
+
     # SWA ====================
-    data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
-    data_SWA = refine_tag_preserved(data_SWA)
-    data_SWA = convert_typo_spelling(data_SWA)
+    # data_SWA = get_data_SWA(DATA_PATH + "/merged_aln_crp.txt")
+    # data_SWA = refine_tag_preserved(data_SWA)
+    # data_SWA = convert_typo_spelling(data_SWA)
     # data_SWA = remove_tags_misc(data_SWA)
     # data_SWA = convert_to_Meteor_tag(data_SWA)
     # puts "SWA: #{count_alignment(data_SWA)}\n"
@@ -282,13 +294,13 @@ class ReadData
     # # END MANLI =============
 
     # GIZA ====================
-    data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
-    data_moses = insert_unaligned(data_moses)
-    data_moses = remove_all_tags(data_moses)
-    # # # puts "#{count_alignment(data_moses)}\n"
+    # data_moses = get_data_moses(DATA_PATH + "/source", DATA_PATH + "/target", DATA_PATH + "/aligned.grow-diag-final")
+    # data_moses = insert_unaligned(data_moses)
+    # data_moses = remove_all_tags(data_moses)
+    # # # # puts "#{count_alignment(data_moses)}\n"
 
-    data_moses = assign_tags(data_SWA, data_moses)
-    data_moses = assign_tags_wa(data_moses)
+    # data_moses = assign_tags(data_SWA, data_moses)
+    # data_moses = assign_tags_wa(data_moses)
     # # # data_moses = remove_tags_misc(data_moses)
 
     # data_moses1, data_moses2 = split_data(data_moses, N80_PERCENT)
@@ -319,22 +331,27 @@ class ReadData
 
     # # CHECK DATA ============
     # tags = ["exact", "stem", "syn", "para", "unaligned", "wa"]
-    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "bigrammar-nnum", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "para-freeword", "para-colocation", "para-passact", "moproblematic", "biproblematic", "unspec", "wa"]
     # puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
     # puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
     # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
-    puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
-    # puts "compare_data_alignment --> #{compare_data_alignment(data_SWA, data_moses)}\n"
-    # puts "compare_data --> #{compare_data(data_SWA, data_moses, tags)}"
+    # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
+    puts "Tag count hanh: #{count_tags(data_hanh, tags)}\n"
+    puts "Tag count quynhanh: #{count_tags(data_quynhanh, tags)}\n"
+    puts "compare_data_alignment --> #{compare_data_alignment(data_hanh, data_quynhanh)}\n"
+    puts "compare_data --> #{compare_data(data_hanh, data_quynhanh, tags)}\n"
+
+    # puts "#{get_tags(data_hanh)}"
 
     # data_meteor_1_5 = remove_all_but_wa(data_meteor_1_5)
     # data_manli = remove_all_but_wa(data_manli)
-    data_moses = remove_all_but_wa(data_moses)
+    # data_moses = remove_all_but_wa(data_moses)
 
     # # print_data(data_SWA)
     # print_data(data_meteor_1_5)
     # print_data_manli(data_manli)
-    print_data(data_moses)
+    # print_data(data_moses)
 
     # tmp = []
     # data_meteor_1_5.each do |line|
@@ -370,9 +387,9 @@ class ReadData
     #   break if line.source.include? "This paper analyzes the"
     # end   
 
-    # data_meteor_1_5.each_with_index do |line, index|
-    #   puts "#{line}\n\n" if index == 2784
-    #   break if index == 2784
+    # data_hanh.each_with_index do |line, index|
+    #   puts "#{line}\n\n" if index == 1
+    #   break if index == 1
     # end
 
     # data_manli.each_with_index do |line, index|
@@ -406,6 +423,16 @@ class ReadData
     data_moses = insert_unaligned(data_moses)
     puts "#{count_alignment(data_moses)}\n"
     print_data(data_moses)
+  end
+
+  def get_tags(data)
+    tags = []
+    data.each do |line|
+      line.Alignment.each do |aln|
+        tags << aln.tag_name
+      end
+    end
+    uniq_tags = tags.uniq
   end
 
   def get_data_moses(source_path, target_path, align_path)
@@ -1254,9 +1281,8 @@ class ReadData
     # puts "data1: #{data1.count}"
     # puts "data2: #{data2.count}"
     data1.each_with_index do |alignment1, index|
-      arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} &
-        data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
-
+      arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} & data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
+      # puts "line --> #{alignment1}\n"
       count = count + arr_tmp.length
     end
     return count

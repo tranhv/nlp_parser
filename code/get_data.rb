@@ -8,6 +8,7 @@
 class Get_data
   INPUT_PATH = "./input"
   OUTPUT_PATH = "./output"
+  PATH = "./data"
 
   def get_data(in_path,source_file,target_file)
     begin
@@ -21,6 +22,7 @@ class Get_data
           target_file.write(line)
           next
         end
+        # puts "line --> #{line}"
         next if line.match(/^</)      # if the first character of the line is < --> skip this line
         #next if !/\A\d+\z/.match(line[0,1]) 
         next if line.strip.match(/\A\d+\z/)     # if the line is numeric --> skip this line
@@ -29,16 +31,17 @@ class Get_data
       end      
     rescue Exception => e
       puts "Error happened in #{e.message}"
+      #puts line
     end
 
   end
   def main
-    files = Dir.glob(INPUT_PATH + "/full_crp.txt").entries
+    files = Dir.glob(PATH + "/full_crp_quynhanh.txt").entries
 
-    source_file = File.open("./output/source.txt","w")
+    source_file = File.open("./data/source_quynhanh.txt","w")
     source_file.write("")
 
-    target_file = File.open("./output/target.txt","w")
+    target_file = File.open("./data/target_quynhanh.txt","w")
     target_file.write("")
 
     source_file = File.open(source_file,"a+")
@@ -47,8 +50,8 @@ class Get_data
 
     files.each do |file|
       if file != "." and file != ".." and file != ".DS_Store"
-        puts "in_put: #{file}"
-        puts "out_put: #{source_file.inspect} - #{target_file.inspect}"
+        # puts "in_put: #{file}"
+        # puts "out_put: #{source_file.inspect} - #{target_file.inspect}"
         get_data(file,source_file,target_file)
       end
     end

@@ -3,6 +3,7 @@
 class Join
   INPUT_PATH = "./input"
   OUTPUT_PATH = "./output"
+  PATH = "./data"
   
   def join_files(in_path,out_path, join_file)
 
@@ -26,19 +27,17 @@ class Join
 end
 
 def main
-  files = Dir.glob(INPUT_PATH + "/SWA/*.aln").sort.entries
+  files = Dir.glob(PATH + "/quynhanh/*.aln").sort.entries
 
-  join_file = File.open("./output/full_aln_v2.txt","w")
+  join_file = File.open("./data/full_aln_quynhanh.txt","w")
   join_file.write("")
-  out_path = "#{OUTPUT_PATH}/full_aln_v2.txt"
+  out_path = "#{PATH}/full_aln_quynhanh.txt"
   
 
   files.each do |file|
     if file != "." and file != ".." and file != ".DS_Store"
       in_path = "#{file}"
       
-      puts "in_put: #{in_path}"
-      puts "out_put: #{out_path}"
       join_file = File.open(out_path,"a+")
       join_files(in_path,out_path,join_file)
       join_file.close
