@@ -27,11 +27,11 @@ class Join
 end
 
 def main
-  files = Dir.glob(PATH + "/quynhanh/*.aln").sort.entries
+  files = Dir.glob(PATH + "/kigoshi/*.aln").sort.entries
 
-  join_file = File.open("./data/full_aln_quynhanh.txt","w")
+  join_file = File.open("./data/full_aln_kigoshi.txt","w")
   join_file.write("")
-  out_path = "#{PATH}/full_aln_quynhanh.txt"
+  out_path = "#{PATH}/full_aln_kigoshi.txt"
   
 
   files.each do |file|
