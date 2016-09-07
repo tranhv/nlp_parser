@@ -225,20 +225,20 @@ class ReadData
     # data_hanh = convert_typo_spelling(data_hanh)
     # puts "hanh: #{count_alignment(data_hanh)}\n"
 
-    # data_quynhanh = get_data_SWA(DATA_PATH + "/merged_quynhanh.txt")
-    # data_quynhanh = refine_tag_preserved(data_quynhanh)
-    # data_quynhanh = convert_typo_spelling(data_quynhanh)   
-    # puts "quynhanh: #{count_alignment(data_quynhanh)}\n" 
+    data_quynhanh = get_data_SWA(DATA_PATH + "/merged_quynhanh.txt")
+    data_quynhanh = refine_tag_preserved(data_quynhanh)
+    data_quynhanh = convert_typo_spelling(data_quynhanh)   
+    puts "quynhanh: #{count_alignment(data_quynhanh)}\n" 
 
-    data_ngan = get_data_SWA(DATA_PATH + "/merged_ngan.txt")
-    data_ngan = refine_tag_preserved(data_ngan)
-    data_ngan = convert_typo_spelling(data_ngan)   
-    puts "ngan: #{count_alignment(data_ngan)}\n" 
+    # data_ngan = get_data_SWA(DATA_PATH + "/merged_ngan.txt")
+    # data_ngan = refine_tag_preserved(data_ngan)
+    # data_ngan = convert_typo_spelling(data_ngan)   
+    # puts "ngan: #{count_alignment(data_ngan)}\n" 
 
-    data_kigoshi = get_data_SWA(DATA_PATH + "/merged_kigoshi.txt")
-    data_kigoshi = refine_tag_preserved(data_kigoshi)
-    data_kigoshi = convert_typo_spelling(data_kigoshi)   
-    puts "data_kigoshi: #{count_alignment(data_kigoshi)}\n" 
+    # data_kigoshi = get_data_SWA(DATA_PATH + "/merged_kigoshi.txt")
+    # data_kigoshi = refine_tag_preserved(data_kigoshi)
+    # data_kigoshi = convert_typo_spelling(data_kigoshi)   
+    # puts "data_kigoshi: #{count_alignment(data_kigoshi)}\n" 
     # END NEW DATA ===========
 
     # SWA ====================
@@ -283,13 +283,13 @@ class ReadData
     # END METEOR ============
 
     # MANLI =================
-    # data_manli = get_data_json(DATA_PATH + "/output_manli_quynhanh.json")
-    # data_manli = insert_unaligned(data_manli)
-    # data_manli = remove_all_tags(data_manli)
+    data_manli = get_data_json(DATA_PATH + "/output_manli_quynhanh.json")
+    data_manli = insert_unaligned(data_manli)
+    data_manli = remove_all_tags(data_manli)
 
-    # puts "Manli: #{count_alignment(data_manli)}\n\n"    
+    puts "Manli: #{count_alignment(data_manli)}\n\n"    
 
-    # data_manli = assign_tags(data_quynhanh, data_manli)
+    data_manli = assign_tags(data_quynhanh, data_manli)
     # data_manli = assign_tags_wa(data_manli)
     # # data_manli = remove_tags_misc(data_manli)
 
@@ -341,16 +341,16 @@ class ReadData
 
     # # CHECK DATA ============
     # tags = ["exact", "stem", "syn", "para", "unaligned", "wa"]
-    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
+    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
     # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "bigrammar-nnum", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "para-freeword", "para-colocation", "para-passact", "moproblematic", "biproblematic", "unspec", "wa"]
     # # puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
     # puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
     # # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
     # # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
-    puts "Tag count ngan: #{count_tags(data_ngan, tags)}\n"
-    puts "Tag count kigoshi: #{count_tags(data_kigoshi, tags)}\n"
-    puts "compare_data_alignment --> #{compare_data_alignment(data_ngan, data_kigoshi)}\n"
-    puts "compare_data --> #{compare_data(data_ngan, data_kigoshi, tags)}\n"
+    # puts "Tag count ngan: #{count_tags(data_ngan, tags)}\n"
+    # puts "Tag count kigoshi: #{count_tags(data_kigoshi, tags)}\n"
+    # puts "compare_data_alignment --> #{compare_data_alignment(data_ngan, data_kigoshi)}\n"
+    # puts "compare_data --> #{compare_data(data_ngan, data_kigoshi, tags)}\n"
 
     # puts "#{get_tags(data_hanh)}"
 
@@ -1242,10 +1242,10 @@ class ReadData
         # này là mảng 2 phần tử [["","1"], ["2,3","2,3"], ["4","4"]]
         alignment_inter = (alignment1_arr & alignment2_arr)
 
-        puts "alignment_inter --> #{alignment_inter.inspect}"
-        puts data1[index].Alignment
-        puts data2[index].Alignment
-        puts "#{alignment1.source}"
+        # puts "alignment_inter --> #{alignment_inter.inspect}"
+        # puts data1[index].Alignment
+        # puts data2[index].Alignment
+        # puts "#{alignment1.source}"
         if alignment_inter.length > 0
           alignment_inter.each do |align|
             # puts "align #{align.inspect}"
