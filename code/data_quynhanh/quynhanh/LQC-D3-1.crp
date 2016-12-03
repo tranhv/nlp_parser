@@ -1,0 +1,1155 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Exploiting Motion Patterns for Action Recognition with Depth Sequences
+Exploiting Motion Patterns for Action Recognition with Depth Sequences
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+Dense trajectory-based approaches on 2D video have been demontrated state of the art at action recognition since it can capture most discriminative motion patterns . 
+Dense trajectory-based approaches have been used to recognize actions in 2D video because they can capture most discriminative motion patterns . 
+7
+However , there are not many studies related to exploiting the discriminative motion patterns in depth video . 
+However , there are not many studies related to exploiting discriminative motion patterns in depth video . 
+8
+In this work , we extend the dense trajectory-based approach on depth video and show its effectiveness for action recognition . 
+In this study , we extend the dense trajectory-based approach to depth video and show its effectiveness at recognizing actions . 
+9
+To achieve an effective extension , we extract dense trajectories on 2D videos transformed from depth video . 
+In particular , dense trajectories are extracted from depth video . 
+10
+The 2D videos are formed from views which can capture the discriminative motion patterns similar to observing actions from different directions . 
+These 2D videos are formed from views which capture the discriminative motion patterns similar to observing actions from different directions . 
+11
+We evaluate this approach on framework of action recognition using the benchmark MSR Action 3D , MSR Gesture 3D and 3D Action Pairs datasets . 
+We evaluate this approach to action recognition on the benchmark MSR Action 3D , MSR Gesture 3D and 3D Action Pairs datasets . 
+12
+Evaluation results show that our proposed approach is effective for action recognition on depth video and outperforms the state-of-the-art approaches .
+The results of the evaluation indicate that our approach is effective at recognizing actions in depth video and outperforms other state-of-the-art approaches .
+13
+</p>
+</p>
+14
+</abstract>
+</abstract>
+15
+<section label= “ Introduction “ >
+<section label= “ Introduction “ >
+16
+<p>
+<p>
+17
+Action recognition in videos has been one of the active research fields in the computer vision </CITE> , due to its wide applications in areas like surveillance , video retrieval , human-computer interaction , and smart environments . 
+The recognition of actions depicted in videos is an active topic of research in the computer vision field </CITE> , and it has a diverse range of applications in areas like surveillance , video retrieval , human-computer interaction , and smart environments . 
+18
+Due to the diversity and complexity of actions , as well as complicated environment ( e.g background clutter and illumination variation ) , action recognition is still a challenging problem . 
+As a result of the diversity and complexity of actions , as well as the complicated nature of most environments  ( e.g. , background clutter and illumination variation ) , action recognition is still a challenging problem . 
+19
+Recent approaches can be divided into three major categories : silhouette-based </CITE> , salient point-based </CITE> and trajectory-based </CITE> . 
+Recent approaches can be divided into three major categories : silhouette-based </CITE> , salient point-based </CITE> and trajectory-based </CITE> . 
+20
+All approaches basically try to capture motion information that appears in videos , since the motion is crucial information for presenting actions . 
+All of these approaches basically try to capture motion information appearing in videos , since it is crucial information for presenting actions . 
+21
+Based on recent works </CITE> , exploiting discriminative motion patterns has been demonstrated successful at action recognition .
+Recent studies </CITE> have shown that exploiting discriminative motion patterns is a successful means of action recognition .
+22
+Most existing studies mainly have investigate on video sequences captured by traditional 2D cameras .
+Most of the existing studies deal with video sequences captured by traditional 2D cameras .
+23
+Although , there are many improvements on motion pattern-based approach for action recognition in the domain of 2D video </CITE> , the mentioned challenges  ( e.g. background clutter , illumination variation ) are still difficult to handle . 
+Although , there have been many improvements to the motion pattern-based approach for 2D video </CITE> , the above - mentioned challenges  ( e.g. background clutter and illumination variation ) are still difficult to meet . 
+24
+With the development of new RGB-D cameras , e.g. Kinect camera , capturing RGB images as well as together with depth maps has become more easily in real time . 
+Meanwhile , the advent of RGB-D cameras , e.g. , the Kinect camera , has made it easier to capture depth maps together with RGB images in real time . 
+25
+The depth maps can enrich information for cues , such as body shape and motion information . 
+The depth maps enrich the information available as cues , such as the shape of body and its motions . 
+26
+In addition , depth information is less sensitive to the challenges RGB information usually deals with . 
+In addition , the depth information in these maps is less sensitive to the problems affecting RGB information . 
+27
+Due to these advantages , recent research trend concentrates on exploiting depth maps for action recognition </CITE> . 
+Because of these advantages , recent research has concentrated on exploiting depth maps for action recognition </CITE> . 
+28
+However , to the best of our knowledge , none success is related to combining discriminative motion pattern-based approach , the state-of-the-art on 2D video , on in depth video . 
+However , to the best of our knowledge , none have succeeded in developing a discriminative motion pattern-based approach , the state-of-the-art for 2D video , for depth video . 
+29
+In this paper , we investigate this approach with on depth sequences .
+In this paper , we investigate this approach for depth sequences .
+30
+Key idea of motion pattern-based approach is to capture discriminative trajectories in video .
+The key idea of the motion pattern-based approach is to capture discriminative trajectories in video .
+31
+Therefore , in order to effectively exploit this approach on depth video , it is necessary to extract the trajectories from depth video . 
+Therefore , to effectively exploit this approach on depth video , it is necessary to extract trajectories from depth video . 
+32
+To do that , a straightforward method is to consider depth value as intensity value , extract trajectories on the 2D video , and apply standard motion analysis technique for 2D data .
+To do that , a straightforward method is to consider the depth value as an intensity value , extract trajectories from the 2D video , and apply standard motion analysis techniques for 2D data .
+33
+Unfortunately , the method will lead to inherent limitation of the 2D trajectory-based approaches , and results in couple of confused motion patterns which cannot be distinguished by observing 2D videos from one view . 
+Unfortunately , this method will expose the inherent limitations of the 2D trajectory-based approaches and will result in confused motion patterns that cannot be distinguished by observing 2D videos from one view . 
+34
+For example , forward punch and hammer may be confused actions , if we view them from front , since they contain indistinguishable front view movements respectively : ``lift arm up'' and ``stretch out'' . 
+For example , a forward punch and hammer may be confused if we view them from the front because they contain ``lift arm up'' and ``stretch out'' movements that are indistinguishable when viewed from the front . 
+35
+However , if we properly use the depth information in motion pattern analysis , it is possible to extract discriminative motion patterns which is inaccessible from one fixed view but available from multiple different view directions .
+However , if we properly use the depth information in the motion pattern analysis , it is possible to extract discriminative motion patterns which are inaccessible from one fixed view but discernible from different views .
+36
+To deal with such cases , we consider getting more information on such actions from various directions .
+To deal with such cases , we try to get more information on such actions from various directions .
+37
+Information achieved from the view directions can provide clearer cues to discriminate such actions . 
+Information from different views can provide clearer cues to discriminate such actions . 
+38
+To collect such information from depth video , we propose a method to virtually project depth maps to multiple view images , as shown in figure </fig> . 
+To collect such information from depth video , we propose a method that virtually projects depth maps onto multiple view images , as shown in Figure </fig> . 
+39
+2D videos which are formed by the projections are easily obtained from depth data . 
+2D videos can be easily obtained from the projections . 
+40
+Motion features are then calculated to generate corresponding projection representations . 
+Motion features are then calculated to generate corresponding projection representations . 
+41
+Finally , depth video representation is formed by fusing the projection representations .
+Finally , a depth video representation is formed by fusing the projection representations .
+42
+In our experiments , we adopt dense trajectory-based approach </CITE> to exploit discriminative motion patterns since that is the state-of-the-art approach for action recognition on domain of 2D videos . 
+In our experiments , we use a dense trajectory-based approach </CITE> that exploits discriminative motion patterns; this is the state-of-the-art approach for recognizing actions depicted in 2D videos . 
+43
+To evaluate the effectiveness of proposed method , we conduct experiments on MSR Action 3D dataset , MSR Gesture 3D dataset , and 3D Action Pairs dataset . 
+To evaluate the effectiveness of the proposed method , we conducted experiments on the MSR Action 3D dataset , MSR Gesture 3D dataset , and 3D Action Pairs dataset . 
+44
+Experimental results show that our proposed method is shown to outperform the state-of-the-art methods at action recognition using depth data . 
+The results show that our method outperforms other state-of-the-art methods at recognizing actions using depth data . 
+45
+Our key contributions of this paper are as follows    : (1) we propose an effective method to exploit trajectories in depth video , (2) we perform comprehensive experiments on the challenging benchmark dataset and indicate that our proposed method is the best compared with the state-of-the-art depth-based methods .
+Our key contributions are as follows    : (1) we propose an effective method to exploit trajectories in depth video , and (2) we perform comprehensive experiments on a challenging benchmark dataset and indicate that our method is the best of the state-of-the-art depth-based methods .
+46
+After a brief review of the related work in Section , our action recognition framework is presented in Section . 
+After a brief review of the related work in Section , our action recognition framework is presented in Section . 
+47
+The proposed method is described in Section . 
+The proposed method is described in Section . 
+48
+Section presents the experimental settings and results . 
+Section describes the experimental settings and results . 
+49
+In section </ref> we provide some concerned discussions . 
+We discuss the results in section . 
+50
+The summaries of our work are given in Section .
+A summary of our work is given in Section .
+51
+</p>
+</p>
+52
+</section>
+</section>
+53
+<section label= “Related Work “ >
+<section label= “Related Work “ >
+54
+<p>
+<p>
+55
+In terms of action recognition in 2D video , there are three popular approaches used in several action recognition systems , including silhouette-based , salient point-based and trajectory-based . 
+There are three popular approaches to action recognition in 2D video    : silhouette-based , salient point-based and trajectory-based . 
+56
+The silhouette-based approach , as described in </CITE> , is powerful since it encodes a great deal of information in a sequence of images . 
+The silhouette-based approach , as described in </CITE> , is powerful since it encodes a great deal of information in a sequence of images . 
+57
+However , it is sensitive to pose changes , noise , and occlusions . 
+However , it is sensitive to pose changes , noise , and occlusions . 
+58
+Besides , it depends on the accuracy of localization , background subtraction , or tracking for exactly extracting region of interest . 
+In addition , it depends on the accuracy of the localization , background subtraction , and tracking when extracting the region of interest . 
+59
+Another approach based on salient points , generates a compact video representation and accepts background clutter , occlusions and scale changes . 
+Another approach , based on salient points , generates a compact video representation and can deal with background clutter , occlusions , and scale changes . 
+60
+The effectiveness of this approach is also showed in several works </CITE> . 
+This approach has been shown to be effective in several studies </CITE> . 
+61
+However , in case of recognizing complicated motions , the salient point-based approach has to deal with several challenges ; due to the lack of a relationship among salient points . 
+However , in the case of recognizing complicated motions , the salient point-based approach has to deal with several challenges due to the lack of relationships among the salient points . 
+62
+In recent studies </CITE> , the trajectory-based approach captures motion patterns in video . 
+Recent studies </CITE> have used the trajectory-based approach to capture motion patterns in video . 
+63
+Although the motion patterns provide even very complicated , structured motion , which are perceived easily by human subject , as shown by Johansson </CITE> .
+Although motion patterns are very complicated , structured motion can be easily perceived by humans , as has been shown by Johansson </CITE> .
+64
+Most recent and effective methods exploiting depth information are categorized into two major directions . 
+The most recent methods of exploiting depth information can be categorized into two major types . 
+65
+The first one is to adapt 2D techniques based methods for depth data . 
+The first one is to adapt 2D techniques to depth data . 
+66
+The second one is to propose 3D techniques for directly exploiting depth data .
+The second one is to devise 3D techniques for directly exploiting depth data .
+67
+For the first direction , X.Yang et al. </CITE> propose the Depth Motion Maps ( DMM ) which is alble to capture global activities in depth sequences . 
+Regarding the first direction , X.Yang et al. </CITE> propose Depth Motion Maps ( DMMs ) to capture global activities in depth sequences . 
+68
+The DMM are generated by stacking motion energy of depth maps projected to three orthogonal Cartesian planes . 
+DMMs are generated by stacking the motion energy of depth maps projected on three orthogonal Cartesian planes . 
+69
+And the Histogram of Oriented Gradients  ( HOG ) </CITE> are computed from the DMM to represent an action video . 
+A Histogram of Oriented Gradients  ( HOG ) </CITE> is computed from the DMMs to represent an action video . 
+70
+The approach can accumulate more silhouette information from the projections . 
+The approach can accumulate more silhouette information from the projections . 
+71
+However , as silhouette extraction is not trivial due to objectuve challenges , such as occlusion , data quality , the effectiveness of the approach is significantly affected . 
+However , silhouette extraction is not a trivial task due to problems such as occlusion and poor data quality . 
+72
+Another approach proposed by L Xia and J.K Aggarwal </CITE> presents a filtering method to extract spatio-temporal interest points from depth videos  ( DSTIPs ) . 
+Another approach , proposed by L. Xia and J.K. Aggarwal </CITE> , is to use filtering to extract spatio-temporal interest points from depth videos  ( DSTIPs ) . 
+73
+In this approach , they extend a work of Dollar et al. </CITE> to adapt for depth data . 
+It is an extension of the work of Dollar et al. </CITE> to depth data . 
+74
+Firstly , 2D and 1D filters ( e.g. Gaussian and Gabor filters ) are applied respectively on to the spatial dimensions and temporal dimension in depth video . 
+First , 2D and 1D filters ( e.g. Gaussian and Gabor filters ) are respectively applied to the spatial dimensions and temporal dimension of the depth video . 
+75
+A correction function then is used to suppress points as depth noises . 
+A correction function is used to suppress points that are depth noise . 
+76
+Finally , points with the largest responses by this filtering method will be selected as the DSTIPs for each video . 
+The points with the largest responses resulting from this filtering are selected as the DSTIPs for each video . 
+77
+Besides , a depth cuboid similarity feature ( DCSF ) is proposed to describe a 3D cuboid around the DSTIPs with supporting size to be adaptable to the depth . 
+In addition , a depth cuboid similarity feature ( DCSF ) is used to describe a 3D cuboid around the DSTIPs with supporting size to be adaptable to the depth . 
+78
+This work has demonstrated the effectiveness of 2D techniques applied for depth data . 
+That study demonstrated the effectiveness of using 2D techniques on depth data . 
+79
+Nevertheless , the authors have not solved inherent limitations of the 2D techniques . 
+Nevertheless , the authors did not overcome the inherent limitations of the 2D techniques . 
+80
+Therefore , this approach has to deal with the challenges as mentioned in 2D video data .
+That is , this approach still faces the challenges mentioned in the introduction .
+81
+For the second direction , </CITE> uses a bag of 3D points to characterize a set of salient postures .
+Regarding the second direction , </CITE> uses a bag of 3D points to characterize a set of salient postures .
+82
+The 3D points are extracted on the contours the planar projections of the 3D depth map . 
+The 3D points are extracted from the contours of planar projections of the 3D depth map . 
+83
+And then , about 1% 3D points are sampled to calculate feature . 
+About 1% of the 3D points are sampled to calculate a feature . 
+84
+Unlike </CITE> , works </CITE> use occupancy patterns to represent features in action videos .
+Unlike </CITE> , the methods described in </CITE> use occupancy patterns to represent features in action videos .
+85
+A.W. Vieira et al. </CITE> proposed a new feature descriptor , called Space-Time Occupancy Patterns ( STOP ) . 
+A.W. Vieira et al. </CITE> proposed a new feature descriptor , called Space-Time Occupancy Patterns ( STOP ) . 
+86
+This descriptor is formed by sparse cells divided by the sequence of depth maps in a 4D space-time grid .
+This descriptor is formed from the sparse cells of a 4D space-time grid dividing up a sequence of depth maps .
+87
+The values of the sparse cells are determined by points inside to be on the silhouettes or moving parts of the body . 
+The points inside the sparse cells are typically on the silhouette or on the moving parts of an object . 
+88
+J. Wang et al. </CITE> presented semi-local features , called Random Occupancy Pattern ( ROP ) features , from randomly sampled 4D sub-volumes with different sizes and different locations . 
+J. Wang et al. </CITE> created semi-local features , called Random Occupancy Pattern ( ROP ) features , from randomly sampled 4D sub-volumes of different sizes and at different locations . 
+89
+The random sampling is performed under a weighted scheme to effectively explore the large dense sampling space . 
+The random sampling is performed according to a weighted scheme in order to effectively explore the large dense sampling space . 
+90
+Besides , authors also apply a sparse coding approach to robustly encode these features . 
+The authors also used sparse coding to robustly encode these features . 
+91
+The work by J. Wang et al. </CITE> designed a feature , to describe the local ``depth appearance'' for each joint , named Local Occupancy Patterns ( LOP ) . 
+J. Wang et al. </CITE> designed features , named Local Occupancy Patterns ( LOPs ) , to describe the local ``depth appearance'' of each joint of the body . 
+92
+The LOP features are computed based on 3D point cloud around a particular joint . 
+LOP features are computed on the basis of a 3D point cloud around a particular joint . 
+93
+Moreover , they concatenate the LOP features with skeleton information-based features and apply Short Fourier Transform to obtain the Fourier Temporal Pyramid features at each joint . 
+Moreover , they concatenate the LOP features with skeleton information-based features and apply a Short Fourier Transform to obtain Fourier Temporal Pyramid features at each joint . 
+94
+The Fourier features are utilized in a novel actionlet ensemble model to represent each action video .
+The Fourier features are utilized in a novel actionlet ensemble model to represent each action in the video .
+95
+Recently , Oreifej and Liu </CITE> presented a new descriptor for depth maps , named Histogram of Oriented 4D Surface Normals ( HON4D ) . 
+Recently , Oreifej and Liu </CITE> presented a new descriptor for depth maps , named Histogram of Oriented 4D Surface Normals ( HON4D ) . 
+96
+To construct the HON4D , firstly , the 4D normal vectors are computed from the depth sequence . 
+To construct the HON4D ,  4D normal vectors are first computed from the depth sequence . 
+97
+At the next step , the 4D normal vectors is distributed into spatio-temporal cells . 
+Next , these 4D normal vectors are distributed into spatio-temporal cells . 
+98
+To quantize the 4D normal vectors , the 4D space is quantized by using vertices of a regular polychoron . 
+To quantize the 4D normal vectors , the 4D space is quantized by using the vertices of a regular polychoron . 
+99
+The quantization , then , is refined by additional projectors to make the 4D normal vectors in each cell denser and more discriminative . 
+The quantization is refined by additional projectors to make the 4D normal vectors in each cell denser and more discriminative . 
+100
+Afterwards , the HON4D features in cells are concatenated to represent a depth action video . 
+Afterwards , the HON4D features in the cells are concatenated to make depth video depicting actions . 
+101
+In general , the works </CITE> have shown the effectiveness of the approaches to directly exploit 3D data for human action recognition . 
+A number of studies </CITE> have shown the effectiveness of approaches that directly exploit 3D data for human action recognition . 
+102
+However , constraints existed in these approaches , such as human segmentation in </CITE> , or human location in </CITE> , have partially limited their applicability on practical applications .
+However , constraints , such as segmentation of the human body in </CITE> , or the location of the body in </CITE> , have somewhat limited their applicability .
+103
+Inspired by results of Shotton et al. </CITE> and L. Xia et al. </CITE> , the works in </CITE> developed skeleton-based methods from sequence of depth maps .
+Inspired by the results of Shotton et al. </CITE> and L. Xia et al. </CITE> , some studies </CITE> have developed skeleton-based methods from sequences of depth maps .
+104
+ </CITE> proposed an EigenJoints-based action recognition system using a Naive-Bayes-Nearest-Neighbor classifier . 
+ </CITE> proposed an EigenJoints-based action recognition system using a Naive-Bayes-Nearest-Neighbor classifier . 
+105
+The system is able to capture the characteristics of posture , motion and offset information of frames . 
+The system is able to capture the characteristics of posture , motion and offset of the frames . 
+106
+In addition , non-quantization of descriptors and distance computation in this work are showed effective for action recognition . 
+In addition , non-quantization of descriptors and distance computations have proved to be effective for action recognition . 
+107
+In work of J. Luo et al. </CITE> to better represent the 3D joint features a new discriminative dictionary learning algorithm ( DL-GSGC ) was proposed that . 
+J. Luo et al. </CITE> proposed a new discriminative dictionary learning algorithm ( DL-GSGC ) to better represent 3D joint features . 
+108
+incorporated both group sparsity and geometry constraints . 
+This algorithm incorporates both group sparsity and geometric constraints . 
+109
+Besides , to keep temporal information , a temporal pyramid matching method was used on each sequence of depth maps . 
+In addition , to keep temporal information , a temporal pyramid matching method can be used on each sequence of depth maps . 
+110
+Actually , most skeleton information-based approaches has achieved the state-of-the-art performance on benchmark datasets . 
+Most of the skeleton information-based approaches have state-of-the-art performance on benchmark datasets . 
+111
+However , due to depending on skeleton information , these approaches have to deal with limitations when skeleton information is not available or incorrect .
+However , their dependence on skeleton information is a detriment when such information is not available or incorrect .
+112
+Different from the previous approaches , we use a dense trajectory-based approach for action recognition . 
+Different from the previous studies , we take a dense trajectory-based approach to action recognition . 
+113
+We do not require to segment human body , like </CITE> . 
+We do not require the human body to be segmented , unlike the methods in </CITE> . 
+114
+In addition skeleton extraction as in </CITE> is not required in our work . 
+Moreover , unlike the methods in </CITE> , no skeleton has to be extracted . 
+115
+We investigate the benefit of generating 2D transformed videos from depth data , as mentioned in </CITE> . 
+We investigate the benefit of generating 2D transformed videos from depth data , as mentioned in </CITE> . 
+116
+Moreover , we leverage the effectiveness of trajectory feature to represent an action video . 
+Moreover , we leverage the trajectory feature to represent actions in video . 
+117
+To the best of our knowledge , no work has previously been proposed to adapt the dense trajectory-based approach to human action recognition in depth video . 
+To the best of our knowledge , no study has previously proposed to adapt the dense trajectory-based approach to human action recognition in depth video . 
+118
+We conduct evaluations on recognition accuracy in depth video using dense trajectories proposed by H. Wang et al. </CITE> .
+We evaluated the recognition accuracy of our method on depth video using the dense trajectories proposed by H. Wang et al. </CITE> .
+119
+</p>
+</p>
+120
+</section>
+</section>
+121
+<section label= “Action Recognition Framework “ >
+<section label= “Action Recognition Framework “ >
+122
+<p>
+<p>
+123
+In this section , we present a unified action recognition framework on depth data. 
+Here , we present a unified action recognition framework for depth data. 
+124
+We extract discriminative motion patterns from multiple views and then apply a bag-of-words ( BoW ) model to compute feature vectors for the feature fusion scheme . 
+We extract discriminative motion patterns from multiple views and apply a bag-of-words ( BoW ) model to them to compute feature vectors for the feature fusion scheme . 
+125
+The motivation of using a bag-of-words model to action recognition is to handle a variable number of motion patterns produced by arbitrary movements from various subjects . 
+The motivation behind using the bag-of-words model is that it can handle a variable number of motion patterns produced by arbitrary movements from various subjects . 
+126
+The fused feature vectors computed from a bag-of-words model are input of classifiers in training and testing phases . 
+The fused feature vectors computed from the bag-of-words model are then input to the classifiers in the training and testing phases . 
+127
+Following subsections provide concise descriptions about processes in our framework .
+The following steps are concise descriptions of the processes in our framework .
+128
+Projection : In this step , key problem is to find appropriate action representation to effectively captures discriminative motion patterns . 
+Projection : In this step , the problem is to find an action representation that effectively captures discriminative motion patterns . 
+129
+Currently , capturing the motion patterns has not been achieved specific successes on 3D data in comparison with 2D data . 
+Currently , capturing motion patterns in 3D data has had less success than in 2D data . 
+130
+Therefore , at this step , we try to present each 3D action through a combination of 2D actions . 
+Therefore , in this step , we try to represent each 3D action as a combination of 2D actions . 
+131
+To do that , M depth maps are projected onto N view planes to obtain corresponding 2D action videos .
+To do that , M depth maps are projected onto N view planes to obtain corresponding 2D action videos .
+132
+After the projection , each 2D motion video is abstracted by several local motion patterns .
+After the projection , each 2D motion video is abstracted by using several local motion patterns .
+133
+Feature Extraction : In order to capture discriminative motion patterns on the 2D videos , we adopt the trajectory based approach .
+Feature Extraction : Here , we use a trajectory-based approach to capture discriminative motion patterns in the 2D videos .
+134
+With this approach , we can keep away from the challenges from human body segmentation as well as skeleton extraction . 
+With this approach , we can avoid problems related to segmentation of the human body as well as skeleton extraction . 
+135
+Trajectory-aligned descriptors are then calculated on the extracted trajectories to build N ``bags of motion patterns'' corresponding to N views .
+Trajectory-aligned descriptors are then calculated on the extracted trajectories in order to build N ``bags of motion patterns'' corresponding to N views .
+136
+Clustering : The clustering step is to convert a ``bag of motion patterns'' from dataset to a ``bag of quantized motion patterns'' . 
+Clustering : The clustering step converts the ``bag of motion patterns'' from the dataset into a ``bag of quantized motion patterns'' . 
+137
+A quantized motion pattern can be considered as a representative of several similar motion patterns . 
+A quantized motion pattern can be considered to be representative of several similar motion patterns . 
+138
+A standard clustering method ( e.g. k-means ) can be applied over all the motion patterns . 
+A standard clustering method ( e.g. k-means ) can be applied to all the motion patterns . 
+139
+Quantized motion patterns are then defined as the centers of the learned clusters . 
+Quantized motion patterns are then defined as the centers of the learned clusters . 
+140
+The number of the clusters is the size of ``bag of quantized motion patterns'' .
+The number of clusters is the size of the ``bag of quantized motion patterns'' .
+141
+Quantization and Fusion : To represent an action with captured motion patterns , we map each “ motion pattern “ to a certain `` quantized motion pattern '' through the matching process . 
+Quantization and Fusion : To represent an action with captured motion patterns , we map each “ motion pattern “ to a certain `` quantized motion pattern '' through the matching process . 
+142
+Afterwards , the histogram of the quantized motion patterns is generated to represent action on a corresponding view . 
+Afterwards , a histogram of the quantized motion patterns is generated to represent the action in the corresponding view . 
+143
+After that , the histograms generated from all views are concatenated to form a larger feature vector as input to classifiers . 
+After that , the histograms generated from all views are concatenated to form a larger feature vector as input to the classifiers . 
+144
+Since each individual feature vector has the same meaning , the feature fusion can guarantee the effectiveness to represent action .
+Since each individual feature vector has the same meaning , the feature fusion can guarantee the effectiveness of the action representation .
+145
+Training and Testing : After the final feature representations are generated , we separate them into two histogram databases for training and testing phases . 
+Training and Testing : After the final feature representations are generated , we separate them into two histogram databases for the training and testing phases . 
+146
+We use a machine learning method such as Support Vector Machine ( SVM ) for classification . 
+We use a machine learning method such as Support Vector Machine ( SVM ) to make the classification . 
+147
+In practice , we use the precomputed-kernel technique with the histogram intersection kernel for this process . 
+In practice , we use the precomputed-kernel technique with the histogram intersection kernel for this process . 
+148
+Besides , we perform the one-vs-all strategy for multi-class classification .
+In addition , we employ the one-vs-all strategy for multi-class classification .
+149
+Our proposed trajectory-based approach is compared with the state-of-the-art methods for human action recognition on depth data . 
+We compared our trajectory-based approach with state-of-the-art methods for recognizing human actions with depth data . 
+150
+Actually , our approach does not count skeleton extraction , which is used as an important factor in some works , such as </CITE> . 
+Our approach does not use skeleton extraction , which is an important part of some methods , such as </CITE> . 
+151
+In fact , extracting skeleton exactly is still an completely unsolved problem , due to the challenges , such as cluttered background , hardware quality , camera motion , so on .
+In fact , extracting a skeleton exactly is still an unsolved problem because of challenges such as cluttered backgrounds , poor hardware quality , and camera motion .
+152
+</p>
+</p>
+153
+</section>
+</section>
+154
+<section label= “Proposed Method ” >
+<section label= “Proposed Method ” >
+155
+<p>
+<p>
+156
+As mentioned in section </Ref> , to support the aim , we decompose each 3D action to a set of 2D actions and leverage the trajectory-based approach to effectively capture the discriminative motion patterns . 
+As mentioned in section </Ref> , we decompose each 3D action into a set of 2D actions and leverage the trajectory-based approach to capture the discriminative motion patterns . 
+157
+In this section , we provide a description of our proposed method to obtain 2D videos from various views . 
+In this section , we describe our method to obtain 2D videos from various views . 
+158
+In addition , we briefly present the dense trajectory-based feature proposed by H. Wang et al. 
+In addition , we briefly present the dense trajectory-based feature proposed by H. Wang et al. 
+159
+As mentioned in section </CITE> , we decompose each 3D action into a set of 2D actions and leverage the trajectory-based approach to capture the discriminative motion patterns . 
+As mentioned in section </CITE> , we decompose each 3D action into a set of 2D actions and leverage the trajectory-based approach to capture the discriminative motion patterns . 
+160
+In this section , we describe our method to obtain 2D videos from various views . 
+In this section , we describe our method to obtain 2D videos from various views . 
+161
+In addition , we briefly present the dense trajectory-based feature proposed by H. Wang et al. </CITE> , which has been demonstrated state-of-the-art at action recognition . 
+In addition , we briefly present the dense trajectory-based feature proposed by H. Wang et al. </CITE> , which has state-of-the-art performance in action recognition . 
+162
+Related parts , such as : dense sampling , tracking , and feature descriptors are also referred to .
+Related aspects including dense sampling , tracking , and feature descriptors are also referred to .
+163
+Point </Eq> is the projection of point </Eq> along the view direction </Eq> onto the view plane </Eq> , which has state-of-the-art performance in action recognition . 
+Point </Eq> is the projection of point </Eq> along the view direction </Eq> onto the view plane </Eq> , which has state-of-the-art performance in action recognition . 
+164
+</p>
+</p>
+165
+<subsection label = “2D Motion Representations “ >
+<subsection label = “2D Motion Representations “ >
+166
+<subsubsection label = “General Case ” >
+<subsubsection label = “General Case ” >
+167
+<p>
+<p>
+168
+Our proposed method to obtain discriminative motion patterns for human action recognition on depth video is as follow . 
+Our method to obtain discriminative motion patterns for recognizing human actions in depth video is as follows . 
+169
+At first , 2D motion videos are formed from the sequence of depth maps , as illustrated in figure </fig> . 
+First , 2D motion videos are formed from a sequence of depth maps , as illustrated in Figure </fig> . 
+170
+At this step , to obtain a 2D motion video from a view direction </Eq> , corresponding to a view plane </Eq> , in each depth map </Eq> , each point </Eq> is projected to </Eq> on the view plane </Eq> see in figure </Fig> by    :
+In this step , to obtain a 2D motion video from a view </Eq> , corresponding to a view plane </Eq> , in each depth map </Eq> , each point </Eq> is projected to </Eq> on the view plane </Eq> ( see Figure </Fig> ) as follows    :
+171
+where , And the intensity value </Eq> at the projected point </Eq> is calculated by    :
+where , The intensity value </Eq> at the projected point </Eq> is calculated as    :
+172
+So , given a set of points </Eq> , we have a projection </Eq> . 
+Thus , given a set of points </Eq> , we have a projection </Eq> . 
+173
+Therefore , a set of the projections obtained from a given sequence of M depth maps under a view direction </Eq> is formed to a corresponding 2D motion video </Eq> . 
+Therefore , a set of the projections obtained from a given sequence of M depth maps for the view direction </Eq> is formed into a corresponding 2D motion video </Eq> . 
+174
+Each 2D video can be regarded as a 2D motion representation of corresponding action in depth video .
+Each 2D video can be regarded as a 2D motion representation of the corresponding action in the depth video .
+175
+In particular , we choose three 2D motion representations to present action on three view directions    : front , side , and top in 3D space , corresponding to three view planes , respectively    : </Eq> , </Eq> and </Eq> . 
+In particular , we use three 2D motion representations of action in three view directions    : the front , side , and top in 3D space , corresponding to three view planes    : </Eq> , </Eq> and </Eq> . 
+176
+With these view directions , the corresponding projections are respectively    :
+The corresponding projections in these view directions are    :
+177
+And the corresponding intensity values in the three projections are , respectively    :
+The corresponding intensity values of the three projections are    :
+178
+</p>
+</p>
+179
+</subsubsection>
+</subsubsection>
+180
+<subsubsection label= “A Case of Missing Observation Points “ >
+<subsubsection label= “The Case of Missing Observation Points “ >
+181
+<p>
+<p>
+182
+Essentially there are points we can observe from a certain view , but from other views in is impossible . 
+Essentially , there are points we can observe from a certain view , but not from other views . 
+183
+Indeed , considering an example as shown in figure </Fig> , two points </Eq> have the corresponding projections </Eq> along a view direction </Eq>    :
+Indeed , considering the example shown in Figure </Fig> , two points </Eq> have the corresponding projections </Eq> along the view direction </Eq>    :
+184
+However , if we observe two points </Eq> , </Eq> along a view direction </Eq> , their projection is only point </Eq>  :
+However , if we observe </Eq> and </Eq> along the view direction </Eq> , their projection is only </Eq>  :
+185
+In such cases , we cannot observe points ( i.e. , point </Eq> ) hidden by other point ( i.e. point </Eq> ) along a certain view direction ( i.e. , view direction </Eq> ) . 
+In such cases , we cannot observe points ( i.e. , point </Eq> ) hidden by others ( i.e. , point </Eq> ) along a certain view direction ( i.e. , view direction </Eq> ) . 
+186
+Therefore , the corresponding intensity value </Eq> at the projected point </Eq> is calculated by  :
+Therefore , the corresponding intensity value </Eq> at the projected point </Eq> is  :
+187
+Where </Eq> are parameters of the plane </Eq> . And </Eq> is the coordinate of </Eq> .
+Here , </Eq> are parameters of the plane </Eq> , and </Eq> is the coordinate of </Eq> .
+188
+Points </Eq> </Eq> are respectively the projection of points </Eq> , </Eq> along a view direction </Eq> onto a view plane </Eq> .  
+Points </Eq> and </Eq> are respectively the projections of </Eq> and </Eq> along the view direction </Eq> onto the view plane </Eq> .  
+189
+Point </Eq> is the projection of points </Eq> , </Eq> along a view direction </Eq> onto the view plane </Eq> . 
+</Eq> is the projection of </Eq> and </Eq> along the view direction </Eq> onto the view plane </Eq> . 
+190
+In this case , the intensity value of point </Eq> is calculated by distance from point </Eq> to the view plane </Eq> .
+In this case , the intensity value of </Eq> is calculated using the distance from </Eq> to </Eq> .
+191
+Considering equations , they are obviously the distance equations between a point and a plane . 
+Equations are obviously distance equations between a point and a plane . 
+192
+Therefore , equation can be presented by  :
+Therefore , equation can be represented as  :
+193
+Where , </Eq> is the distance between point </Eq> and plane </Eq> .
+Here , </Eq> is the distance between the point </Eq> and the plane </Eq> .
+194
+In addition , figure </Fig> shows that is greater than . 
+In addition , Figure </Fig> shows that is greater than . 
+195
+The evaluation has provided an important conclusion presented by the following equation  :
+The evaluation leads to an important conclusion in the form of the following equation  :
+196
+More generally , if there are N points belong to a line parallel to the view direction </Eq> , the intensity value at the projected point on plane </Eq> is calculated by  :
+More generally , if there are N points on a line parallel to the view direction </Eq> , the intensity value at the projected point on plane </Eq> is  :
+197
+</p>
+</p>
+198
+</subsubsection>
+</subsubsection>
+199
+</subsection>
+</subsection>
+200
+<subsection label= “Dense trajectories “ >
+<subsection label= “Dense trajectories “ >
+201
+<p>
+<p>
+202
+Trajectories provide a compact representation of motion information in video . 
+Trajectories provide a compact representation of motion information in video . 
+203
+Trajectories from intensity videos can be used for multimedia event detection ( MED ) , video mining , action classification , and so on . 
+Trajectories from intensity videos can be used for multimedia event detection ( MED ) , video mining , action classification , and so on . 
+204
+Trajectory extraction crucially depends on both processes : sampling and tracking . 
+Trajectory extraction crucially depends on the sampling and tracking processes . 
+205
+Some methods , such as </CITE> , used KLT tracker </CITE> or </CITE> matched SIFT descriptors between consecutive frames to obtain feature trajectories . 
+Some methods , such as </CITE> , use KLT tracker </CITE> or matched SIFT descriptors </CITE> between consecutive frames to obtain feature trajectories . 
+206
+Recently , the dense trajectory-based motion feature proposed by </CITE> has achieved the state of the art performance on MED systems , such as segment-based system </CITE> on TRECVID MED 2010 , 2011 or AXES </CITE> , and BBNVISER </CITE> on TRECVID MED 2012 . 
+Recently , the dense trajectory-based motion feature proposed by </CITE> has achieved high levels of performances on MED systems , including the segment-based system </CITE> on TRECVID MED 2010 and 2011 , AXES </CITE> , and BBNVISER </CITE> on TRECVID MED 2012 . 
+207
+</CITE> proposes sampling on a dense grid with a step size of 5 pixels . 
+</CITE> proposes sampling on a dense grid with a step size of 5 pixels . 
+208
+The sampling is performed at multiple scales with a factor of </Eq> . 
+The sampling is performed at multiple scales with a factor of </Eq> . 
+209
+Then , tracking is performed to form trajectories . 
+Tracking is then performed to form trajectories . 
+210
+At each scale , in frame t , each point </Eq> is tracked to point </Eq> in next frame </Eq> by  : where </Eq> denotes the dense optical flow field , </Eq> is the kernel of median filtering , and </Eq> is the rounded position of </Eq> . 
+At each scale , in frame t , each point </Eq> is tracked to point </Eq> in the next frame </Eq> by using  : where </Eq> denotes the dense optical flow field , </Eq> is the kernel of median filtering , and </Eq> is the rounded position of </Eq> . 
+211
+The algorithm of </CITE> adopts dense optical flow . 
+The algorithm presented in </CITE> uses dense optical flows . 
+212
+And to avoid a drifting problem , a suitable value of trajectory length is set to 15 frames . 
+To avoid drifting , it sets a suitable trajectory length of 15 frames . 
+213
+Besides trajectories with sudden changes are removed .
+It also removes trajectories with sudden changes .
+214
+After extracting trajectories , two kinds of descriptors : a trajectory shape descriptor and a trajectory-aligned descriptor , can be adopted . 
+Once the trajectories have been extracted , two kinds of descriptor , i.e. , a trajectory shape descriptor and a trajectory-aligned descriptor , can be used . 
+215
+In our experiments , we only use trajectory-aligned descriptors including the HOG </CITE> , the Histogram of Optical Flow ( HOF ) </CITE> , and the Motion Boundary Histogram ( MBH ) </CITE> . 
+In our experiments , we only used trajectory-aligned descriptors , including the HOG </CITE> , the Histogram of Optical Flow ( HOF ) </CITE> , and the Motion Boundary Histogram ( MBH ) </CITE> . 
+216
+HOG captures local appearance information , while HOF and MBH encode local motion patterns . 
+HOG captures local appearance information , while HOF and MBH encode local motion patterns . 
+217
+The descriptors are computed within a space-time volume </Eq> spatial pixels and </Eq> temporal frames ) around the trajectory . 
+The descriptors are computed within a space-time volume </Eq> spatial pixels and </Eq> temporal frames ) around the trajectory . 
+218
+This volume is divided into a 3D grid ( spatially </Eq> grid and temporally </Eq> segments ) . 
+This volume is divided into a 3D grid ( spatially into </Eq> grid and temporally into </Eq> segments ) . 
+219
+The default settings of these parameters are </Eq> = 32 pixels , </Eq> = 15 frames , </Eq> = 2 , and </Eq> = 3 .
+The default settings of these parameters are </Eq> = 32 pixels , </Eq> = 15 frames , </Eq> = 2 , and </Eq> = 3 .
+220
+According to authors in </CITE> , all the three descriptors have shown the effectiveness for action recognition on intensity video . 
+According to the authors of </CITE> , all three descriptors are capable of recognizing actions in intensity video . 
+221
+The experimental settings for these descriptors are based on an empirical study showed in </CITE> . 
+The experimental settings for these descriptors are based on an empirical study </CITE> . 
+222
+In our work , we also conduct experiments on all the three descriptors to wholly evaluate their effectiveness on depth video .
+We also conducted experiments on all the three descriptors to evaluate their effectiveness on depth video .
+223
+</p>
+</p>
+224
+</subsection>
+</subsection>
+225
+</section>
+</section>
+226
+<section label = “Experiments “ >
+<section label = “Experiments “ >
+227
+<p>
+<p>
+228
+This section presents the experimental results related to our proposed approach on MSR Action 3D dataset , MSR Gesture 3D dataset , and 3D Action Pairs dataset . 
+This section presents the experimental results of our approach for the MSR Action 3D dataset , MSR Gesture 3D dataset , and 3D Action Pairs dataset . 
+229
+Our aim is to clear up the following issues  : 
+Our aim is to clear up the following issues  : 
+230
+(1) Recognition accuracy in case of single view; 
+(1) Recognition accuracy in case of single view; 
+231
+(2) The role of compensating information from multiple views; 
+(2) The role of compensating information from multiple views; 
+232
+(3) Comparison with the state-of-the-art approaches . 
+(3) Comparison with state-of-the-art approaches . 
+233
+For analysis , we concentrate on MSR Action 3D dataset to explain experimental results . For MSR Gesture 3D dataset and 3D Action Pairs dataset , we only show the final results . 
+We will concentrate on the MSR Action 3D dataset when explaining the experimental results and show only the final results for the MSR Gesture 3D dataset and 3D Action Pairs dataset . 
+234
+All experimental results are reported under the settings mentioned in section . 
+All experimental results are reported for the settings described in section . 
+235
+In comparison with the state-of-the-art approaches , our reported result is calculated on concatenating action representations from the combinations of three views  : front , side and top . 
+Unlike the state-of-the-art approaches , our reported results are for concatenating action representations from combinations of three views  : front , side and top . 
+236
+All the results are compared in terms of recognition accuracy . 
+All the results are compared in terms of recognition accuracy . 
+237
+The best performance is highlighted in bold .
+The best performance is highlighted in bold .
+238
+</p>
+</p>
+239
+<subsection label = “  Framework Settings “>
+<subsection label = “  Framework Settings “>
+240
+<p>
+<p>
+241
+In this section , we provide the detail of parameters used in each step of our 3D action recognition framework .
+Here , we detail the parameters used in each step of our 3D action recognition framework .
+242
+Projection : Our aim at this step is to select the best views to effectively capture most discriminative motion patterns . 
+Projection : Our aim in this step is to select the best views to capture the most discriminative motion patterns . 
+243
+In our experiments , we conduct projections on views : front , side , and top , which have been demonstrated effective in works </CITE> . 
+We make projections from front , side , and top views  : these views have been demonstrated to be effective in other studies </CITE> . 
+244
+Results obtained from the projections are three 2D motion videos .
+The projections are then used to make three 2D motion videos .
+245
+Feature Extraction : We use the application available online to extract dense trajectories and calculate aligned-descriptors ( i.e. , MBH , HOG and HOF ) for each 2D motion video . 
+Feature Extraction : We use an application available online to extract trajectory - aligned descriptors ( i.e. , MBH , HOG and HOF ) for each 2D motion video . 
+246
+Experimental results reported in section attach to the MBH descriptor . 
+The experimental results reported in section are for the MBH descriptor . 
+247
+The HOG , HOF descriptors will be mentioned in the section .
+The HOG and HOF descriptors are described in section .
+248
+Clustering : Purpose of this step is to learn a visual vocabulary or codebook . 
+Clustering : The purpose of this step is to learn a visual vocabulary or codebook . 
+249
+Corresponding to three views : front , side and top , we create three codebooks ( i.e. three bags of quantized motion patterns ) . 
+We create three codebooks ( i.e. three bags of quantized motion patterns ) corresponding to the front , side , and top views . 
+250
+In addition , due to purpose of a stable and unified framework on all benchmark datasets , we cluster extracted motion features to 2000 codewords ( i.e. 2000 quantized motion patterns ) for each codebook . 
+In addition , to ensure a unified framework on all benchmark datasets , we cluster the extracted motion features around 2000 codewords ( i.e. 2000 quantized motion patterns ) for each codebook . 
+251
+The k-means algorithm with Euclidean distance is applied at this step .
+The k-means algorithm with the Euclidean distance is used in this step .
+252
+Quantization and Fusion : Two popular strategies used to quantize extracted features are hard-assignment and soft-assignment . 
+Quantization and Fusion : Two popular strategies for quantizing extracted features are hard-assignment and soft-assignment . 
+253
+To guarantee the efficiency of our framework , we apply the hard-assignment strategy to quantize dense trajectory motion features extracted at step Feature Extraction . 
+To guarantee the efficiency of our framework , we use the hard-assignment strategy to quantize the dense trajectory motion features extracted in step Feature Extraction . 
+254
+With this strategy , each feature vector can be assigned to a codeword using Euclidean distance or rejected as an outlier . 
+With this strategy , each feature vector can be assigned to a codeword or be rejected as an outlier by using the Euclidean distance . 
+255
+Results of the quantization step is to generatee 2D motion representations corresponding to selected views .
+The results of the quantization step are 2D motion representations corresponding to the selected views .
+256
+After that , these 2D motion representations are concatenated to form final motion representation for corresponding depth video . 
+After that , these 2D motion representations are concatenated to form the final motion representation for the corresponding depth video . 
+257
+The final representations are then separated into two histogram databases for training and testing phases .
+The final representations are then separated into two histogram databases for the training and testing phases .
+258
+Training and Testing : Most recent works used SVM classifier refer to the libSVM library </CITE> published online by author . 
+Training and Testing : Most of the recent methods using SVM classifiers refer to the libSVM library </CITE> published online . 
+259
+In our framework , we use the libSVM library with histogram intersection kernel  :
+In our framework , we use the libSVM library with the histogram intersection kernel  :
+260
+The one-vs-all strategy is used for classifiers in both phrases of training and testing . 
+The one-vs-all strategy is used for classifiers in both training and testing . 
+261
+Predicted value of each action is defined as the maximum score obtained from all the classifiers . 
+The predicted value of each action is defined as the maximum score obtained from all the classifiers . 
+262
+This score shows that a human action is confused with another or not .
+This score indicates whether a human action is confused with another or not .
+263
+</p>
+</p>
+264
+</subsection>
+</subsection>
+265
+<subsection label = “MSR Action 3D Dataset “>
+<subsection label = “MSR Action 3D Dataset “>
+266
+<subsubsection label = “Dataset Overview “>
+<subsubsection label = “Dataset Overview “>
+267
+<p>
+<p>
+268
+This dataset </CITE> contains 20 actions , as shown in figure </Fig> . 
+This dataset </CITE> contains 20 actions , as shown in Figure </Fig> . 
+269
+Actions are performed by ten subjects for two or three times in the context of game console interaction .
+Actions were performed two or three times by ten subjects in the context of game console interaction .
+270
+In total , there are 567 sequences of depth maps . 
+In total , there were 567 sequences of depth maps . 
+271
+The depth maps are shot at frame rate of 15 fps . 
+The depth maps were shot at a frame rate of 15 fps . 
+272
+The size of the depth map is </Eq> to ensure processing efficiency .
+The size of the depth map was </Eq> to ensure processing efficiency .
+273
+The three action subsets used in the experiments .
+The three action subsets used in the experiments .
+274
+In order to conduct a fair comparison , we use the same experimental settings as </CITE> . 
+In order to conduct a fair comparison , we used the same experimental settings as in </CITE> . 
+275
+In the settings , the dataset is divided into three action subsets . 
+In these settings , the dataset is divided into three action subsets . 
+276
+Each subset has 8 actions . 
+Each subset has eight actions . 
+277
+The two subsets AS1 and AS2 present that grouped actions have similar movements . 
+The AS1 and AS2 subsets are such that grouped actions have similar movements . 
+278
+The subset AS3 groups complex actions together . 
+The AS3 subset groups complex actions together . 
+279
+For instance , action hammer seems to be confused with action forward punch in AS1 or similar movements between action hand catch and side boxing in AS2 . 
+For instance , the hammer action seems to be confused with the forward punch action in AS1 , and the hand catch and side boxing actions are similar movements in AS2 . 
+280
+As for each subset , we select half of the subjects as training and the rest as testing ( i.e. cross subject test ) .
+For each subset , we selected half of the subjects for training and the rest for testing ( i.e. , a cross subjects test ) .
+281
+</p>
+</p>
+282
+</subsubsection>
+</subsubsection>
+283
+<subsubsection = “Action Recognition from Single Views “>
+<subsubsection = “Action Recognition from Single Views “>
+284
+<p>
+<p>
+285
+In this part , we evaluate the dense trajectory-based approach for action recognition under observing actions from single views . 
+In this part , we evaluate the dense trajectory-based approach on single views . 
+286
+A straightforward view is front view . 
+A straightforward view is the front . 
+287
+In order to obtain action presentation on front view from depth video , a simple way is to consider depth value as intensity value . 
+A simple way to obtain an action representation of the front view from the depth video is to consider the depth value as an intensity value . 
+288
+Table </tab> shows three confusion matrices corresponding to evaluations on three action subsets of MSR Action 3D dataset . 
+Table </tab> shows three confusion matrices corresponding to evaluations on three action subsets of the MSR Action 3D dataset . 
+289
+Considering results reported in table </tab> , two subsets AS1 , AS2 contain many confused actions as mentioned in the dataset description . For example , hammer (a03) and forward punch (a05) in AS1 , or side-boxing (a12) and hand catch (a04) in AS2 . 
+The results reported in the table </tab> indicate that AS1 , AS2 subsets contain many confusable actions , e.g. , hammer (a03) and forward punch (a05) in AS1 , or side-boxing (a12) and hand catch (a04) in AS2 , as is mentioned in the dataset description . 
+290
+The main cause is due to similar movements of actions in the same view direction . 
+The main cause is the similar movements of the actions in the same view direction . 
+291
+That is reason why we need compensating motion information from other views ( e.g. , side view and top view ) .
+That is why we need compensating motion information from other views ( e.g. , the side view and/or top view ) .
+292
+</p>
+</p>
+293
+</subsubsection>
+</subsubsection>
+294
+<subsubsection label = “Action Recognition from Multiple Views “>
+<subsubsection label = “Action Recognition from Multiple Views “>
+295
+<p>
+<p>
+296
+This section presents our experiments on action recognition using information from multiple views . 
+This section presents our experiments on action recognition using information from multiple views . 
+297
+Action representations in a depth sequence is fused by concatenating the feature vectors computed from corresponding views .
+The action representations in a depth sequence are fused by concatenating the feature vectors computed from the corresponding views .
+298
+We report the experimental results on three action subsets and the average of the three subsets . 
+We report the experimental results on three action subsets and the average of the three subsets . 
+299
+Figure </Fig> shows a comparison between the intensity representations from front , side and top and their fused representation .
+Figure </Fig> compares intensity representations from the front , side and top and their fused representation .
+300
+The average recognition accuracy of the fusion , which is 96.67% accuracy is better than the individual intensity representations on the three action subsets . 
+The average recognition accuracy of the fusion ( 96.67%) is better than those of the individual intensity representations on the three action subsets . 
+301
+These results demonstrate the effectiveness of leveraging depth information from multiple views .
+These results demonstrate the effectiveness of leveraging depth information from multiple views .
+302
+</p>
+</p>
+303
+</subsubsection>
+</subsubsection>
+304
+<subsubsection label = “The Role of Views “>
+<subsubsection label = “The Role of Views “>
+305
+Results in figure </Fig> show the role of views to our approach . 
+The results in Figure </Fig> show the role of views in our approach . 
+306
+Experimental results confirm that action representations from front view achieve the best accuracy . 
+They confirm that action representations from the front view achieve the best accuracy . 
+307
+Obviously , the presentation from front view is an indispensable component for combination . 
+Obviously , a front view representation is an indispensable component of a combination . 
+308
+Therefore , for the rest , we perform experiments on view combinations with front view . We creaate additional combinations front and side , front and top . 
+Therefore , in what follows , all view combinations that we describe will include a front view , i.e. , front and side or front and top . 
+309
+Figure </Fig> shows the performance of the view combinations . 
+Figure </Fig> shows the performance of the view combinations . 
+310
+Interestingly , the achieved performance ( 96.95% ) from the combination of front and top beats the performance based on combining all the three views ( 96.67\% ) as well as the combination of front and side ( 93.94\% ) in terms of average accuracy . 
+Interestingly , t the front and top combination ( 96.95\% ) beats combining all three views ( 96.67\% ) as well as front and side combination ( 93.94\% ) in terms of average accuracy . 
+311
+In addition , based on experimental results presented in figure </Fig> indicates two interesting points .
+In addition , the results in this figure </Fig> indicate two interesting points .
+312
+Firstly , compensating information from various views can cause unexpected risks , due to erroneous information from certain views . 
+Firstly , compensating information from various views can cause unexpected risks , due to erroneous information from certain views . 
+313
+Indeed , consider two actions  : high arm wave and two hand wave
+Indeed , consider two actions  : high arm wave and two hand wave . 
+314
+although both contain ``wave arm'' movement , we easily recognize them from front and top views due to number of performed movements . 
+Although both contain the ``wave arm'' movement , we can easily distinguish them from the number of performed movements apparent in the front and top views . 
+315
+However , if we observe the two actions from side view , a half of body is hidden ( see figure </Fig> ) . 
+However , if we observe the two actions from the side view , half of the body is hidden ( see Figure </Fig> ) . 
+316
+Therefore we confuse movements performed on the two actions . In this case , merging information from side view into the combination of front and top view causes to decrease the performance of the recognition system .
+In this case , it becomes easy to confuse movements of the two actions , and merging information from the side view into the front and top view combination actually causes the performance of the recognition system to decrease .
+317
+Secondly , the experimental results have provided a good choice to decrease computational cost but still ensures a convincing performance . 
+Secondly , the experimental results indicate a good way to decrease computational cost but still ensure convincing performance . 
+318
+Looking at figure </Fig> , we can see that the performances of two combinations , i.e. , ( front & top ) and ( front & side & top ) , are comparable . 
+Looking at figure </Fig> , we can see that the performances of two combinations , i.e. , ( front & top ) and ( front & side & top ) , are comparable . 
+319
+In some cases , such as in action subsets 2 , 3 , and average , combination of front and top provide better performances . 
+In some cases , such as in action subsets 2 , 3 , and average , the front and top combination has better performance . 
+320
+Obviously , if we eliminate unnecessary views , we can improve the efficiency of our system but still achieve competitive results .
+Obviously , if we eliminate unnecessary views , we can improve the efficiency of our system but still achieve competitive results .
+321
+These interesting points confirm that information combination from multiple views is better than only from single views . 
+These points confirm that information from multiple views is better than information from only single views . 
+322
+In addition , the points can lead to looking for optimal solution of combining views . 
+In addition , they suggest that there is an optimal way of combining views . 
+323
+This is a promising challenge to overcome and build an effective and efficient recognition system .
+These are promising results for building an effective and efficient recognition system .
+324
+</p>
+</p>
+325
+</subsubsection>
+</subsubsection>
+326
+<subsubsection  label= “Comparison with the state-of-the-art ”>
+<subsubsection  label= “Comparison with the state-of-the-art ”>
+327
+<p>
+<p>
+328
+Table </tab> shows evaluation results of our proposed approach compared to the state-of-the-art approaches on three action subsets of MSR Action 3D dataset ( seeing table </tab> ) . 
+Table </tab> compares the results of our approach with those of the state-of-the-art approaches on three action subsets of the MSR Action 3D dataset ( see Table </tab> ) . 
+329
+The compared approaches use various feature representations , such as silhouette features </CITE> , skeletal joint features like </CITE> , local occupancy patterns </CITE> , normal orientation features </CITE> , and cuboid similarity features </CITE> . 
+The compared approaches use various feature representations , such as silhouette features </CITE> , skeletal joint features like </CITE> , local occupancy patterns </CITE> , normal orientation features </CITE> , and cuboid similarity features </CITE> . 
+330
+Under the same setting ( i.e. cross subjects test ) , the result table </tab> indicates that our approach achieves the highest accuracy .
+For the same setting ( i.e. , a cross subjects test ) , the table </tab> indicates that our approach achieves the highest accuracy .
+331
+</p>
+</p>
+332
+</subsubsection>
+</subsubsection>
+333
+</subsection>
+</subsection>
+334
+<subsection label = “MSR Gesture 3D Dataset “>
+<subsection label = “MSR Gesture 3D Dataset “>
+335
+<p>
+<p>
+336
+The Gesture3D dataset </CITE> is a hand gesture dataset of depth sequences captured by a depth camera . 
+The Gesture3D dataset </CITE> is a hand gesture dataset of depth sequences captured by a depth camera . 
+337
+This dataset contains a set of 12 gestures defined by American Sign Language ( ASL ) as shown in figure </Fig> . 
+This dataset contains a set of 12 gestures defined by American Sign Language ( ASL ) ( see Figure </Fig> ) . 
+338
+In this dataset , ten subjects perform each gesture two or three times . 
+In this dataset , ten subjects performed each gesture two or three times . 
+339
+In total , the dataset contains 333 depth sequences . 
+In total , the dataset contains 333 depth sequences . 
+340
+The main challenge in this dataset is about self-occlusion . 
+The main challenge here is self-occlusion . 
+341
+We follow the experimental settings in </CITE> ( i.e. , the leave-one-subject-out cross-validation ) to evaluate our approach . 
+We used the experimental settings in </CITE> ( i.e. , the leave-one-subject-out cross-validation ) to evaluate our approach . 
+342
+The results are described in table </tab> , where our approach outperforms all previous approaches .
+The results are in Table </tab> , from which it is clear that our approach outperformed the previous approaches .
+343
+</p>
+</p>
+344
+</subsection>
+</subsection>
+345
+<subsection label = “3D Action Pairs Dataset ”>
+<subsection label = “3D Action Pairs Dataset ”>
+346
+<p>
+<p>
+347
+The 3D Action Pairs dataset </CITE> is a new type of action dataset . 
+The 3D Action Pairs dataset </CITE> is a new type of action dataset . 
+348
+The dataset contains pairs of actions , such that within each pair , the motion and the shape cues are similar , but their correlations vary . 
+The dataset contains pairs of actions , such that within each pair , the motion and shape cues are similar , but their correlations vary . 
+349
+It is useful to evaluate how well the approaches capture the prominent cues jointly in depth sequences . 
+It is useful for evaluating how well the approaches capture the prominent cues jointly in depth sequences . 
+350
+There are six pairs of actions see figure </Fig> . 
+There are six pairs of actions ( see figure </Fig> ) . 
+351
+Each action is performed three times by ten subjects . 
+Each action was performed three times by ten subjects . 
+352
+Actions from the first five subjects are used for testing , and the rest for training .
+Actions from the first five subjects were used for testing , the rest for training .
+353
+We compare our performance with the HON4D approach </CITE> , which achieved the best performance on this dataset up to date . 
+We compared our method with the HON4D approach </CITE> , which so far has had the best performance on this dataset . 
+354
+We summarize results in table </tab> , and show the confusion matrices in table </tab> . 
+Table </tab> summarizes the results , and Table </tab> shows the confusion matrices . 
+355
+It is clear that our approach significantly outperforms the state-of-the-art approach for which suffered from confusion appeared within action pairs .
+It is clear that our approach significantly outperformed the state-of-the-art approach , which suffered from confusion within the action pairs .
+356
+</p>
+</p>
+357
+</subsection>
+</subsection>
+358
+</section>
+</section>
+359
+<section label = “ Discussion “>
+<section label = “ Discussion “>
+360
+<p>
+<p>
+361
+According to </CITE> , MBH is the best feature descriptor for dense trajectories on intensity videos .
+According to </CITE> , MBH is the best feature descriptor for dense trajectories on intensity videos .
+362
+Therefore , in previous experiments , we only use MBH descriptor to represent motion information . 
+Therefore , in the previous experiments , we only used the MBH descriptor to represent the motion information . 
+363
+Due to the difference between depth data and intensity data , we conduct other experiments to investigate the impact of feature descriptors with replacing MBH with HOG and HOF .
+Due to the difference between the depth data and intensity data , we conducted other experiments to investigate the impact of feature descriptors by replacing MBH with HOG and HOF .
+364
+We report the average recognition accuracies of the approach using different descriptors from three views ( i.e. front , side , and top ) in table </tab> . 
+Table </tab> lists the average recognition accuracies of the approach using different descriptors from three views ( i.e. front , side , and top ) . 
+365
+Experimental results verify that the MBH descriptor is still the best trajectory-aligned descriptor in comparison with the HOG , HOF descriptors on the experimental datasets . 
+The experimental results verify that the MBH descriptor is still the best trajectory-aligned descriptor on the experimental datasets . 
+366
+However , using HOG or HOF also gives competitive performances .
+However , HOG and HOF do give competitive performance .
+367
+In addition , extracting HOG , HOF is less expensive than extracting MBH . 
+In addition , extracting HOG or HOF is less expensive than extracting MBH . 
+368
+These advantages provide a promising way for building effective and efficient systems .
+These advantages are promising for building effective and efficient systems .
+369
+</p>
+</p>
+370
+</section>
+</section>
+371
+<section label = “ Conclusions “>
+<section label = “ Conclusions “>
+372
+<p>
+<p>
+373
+We proposed a novel approach to effectively exploit discriminative motion patterns for human action recognition using depth sequences in this work . 
+We proposed a novel approach to effectively exploit discriminative motion patterns for human action recognition using depth sequences . 
+374
+The motion patterns based on trajectories jointly encodes local motion and appearance cues .
+The motion patterns based on trajectories jointly encode local motion and appearance cues .
+375
+In order to deal with confused actions due to similar movements , compensating information from different view directions is proposed . 
+Compensating information from different view directions is used to deal with actions that can be confused due to their having similar movements . 
+376
+In addition , we also provide an analysis about the role of single views in merging information with aim to obtain the best combination . 
+We conducted an analysis of the role of single views in merging information with the aim of obtaining the best combination of views . 
+377
+We have evaluated our proposed approach extensively on three challenging benchmark datasets and shown that it significantly outperforms the state-of-the-art .
+In addition , we extensively evaluated our approach on three challenging benchmark datasets and found that it significantly outperformed state-of-the-art methods .
+378
+Our motion pattern-based approach with compensating information from separate motion representations shows promising results . 
+Our motion pattern-based approach with compensating information from separate motion representations shows promising results . 
+379
+This also suggests the importance of discriminative motion patterns for human action recognition on depth sequences . 
+Our study also suggests the importance of discriminative motion patterns for recognizing human actions in depth sequences . 
+380
+Therefore , exploiting depth-based motion trajectories can be beneficial for action recognition systems using depth cameras . 
+Therefore , depth-based motion trajectories can be beneficial for action recognition systems using depth cameras . 
+381
+This is also an interesting idea for our future work .
+This is an interesting idea for us to pursue in our future work .
+382
+</p>
+</p>
+383
+</section>
+</section>
+384
+</document>
+</document>

@@ -1,0 +1,753 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+On the failure of Spatial Verification 
+Overcoming Spatial Verification Failure 
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+This paper proposes an object-centric boosting technique for visual instance search with more precise than existing ones . 
+An object-centric boosting technique for visual instance search that is more precise than existing ones is proposed . 
+7
+A hybrid method is applied to solve the problem of lacking confidence when using standard spatial verification methods . 
+A hybrid method is applied to solve the problem of lacking confidence when using standard spatial verification methods . 
+8
+We classify pairs of verified visual words into three categories discriminative , weak relevant and context inferred pairs based on the relation with . 
+We classify pairs of verified visual words into three categories — discriminative , weak relevant , and context - inferred — on the basis of the relation of these words to the object proposal location . 
+9
+In this paper , we use a Deformable Parts Model ( DPM ) detector to demonstrate . 
+In this work , we use a deformable parts model ( DPM ) detector to demonstrate the proposed technique . 
+10
+Three corresponding weighting functions are also proposed to compute final similarity score between query topic and shot video . 
+Three corresponding weighting functions are also proposed to compute the final similarity score between query topic and shot video . 
+11
+We evaluate our method over datasets of TRECVID Instance Search . The experiments show that our method give a better performance on many kinds of query objects . It improve about 29.9% and 22.3% comparing to standard BOW and spatial verification model , respectively .
+We evaluate our method using TRECVID Instance Search data sets and find that it performs better than conventional methods on many kinds of query objects , with improvements of about 29.9% and 22.3% compared to standard BOW and the spatial verification model , respectively .
+12
+</p>
+</p>
+13
+</abstract>
+</abstract>
+14
+<section label= “ Introduction “ >
+<section label= “ Introduction “ >
+15
+<p>
+<p>
+16
+This work is to address the problem of instance search or object retrieval in video databases including hundreds of thousands of shots made up of millions of frames . 
+The objective of this work is to address the problem of instance search or object retrieval in video databases that include hundreds of thousands of shots made up of millions of frames . 
+17
+The term instance search ( INS ) is defined formally by TRECVID \cite : finding video segments of a certain specific object , place or person , given a visual examples from video collection . 
+The term instance search ( INS ) is defined formally by TRECVID \cite as “finding video segments of a certain specific object , place , or person after being given visual examples from a video collection” . 
+18
+In practice , INS has many applications such as archive video search , law enforcement , brand-logo protection , personal video organization , surveillance .
+In practice , INS has many applications , including archive video searching , law enforcement , brand-logo protection , personal video organization , and surveillance .
+19
+Most of the state of the art approaches follow the original bag-of-visual-word ( BOW ) model that has been first introduced by Sivic in case of video retrieval \cite . 
+Most of the conventional approaches follow the original bag-of-visual-word ( BOW ) model first introduced by Sivic in a case involving video retrieval \cite . 
+20
+This model relies on the key assumption that two similar image will share significant amount of local patches which can be matched against each other . 
+This model relies on the key assumption that two similar images will share a significant amount of local patches that can be matched against each other . 
+21
+Using sparse feature detectors ( e.g. DoG \cite , Hessian Affine \cite , MSER \cite ) are very efficient to find regions of rich textured objects such as buildings , paintings , advertising poster , etc . 
+Using sparse feature detectors ( e.g. , DoG \cite , Hessian affine \cite , MSER \cite ) is very efficient in terms of finding regions of richly textured objects such as buildings , paintings , and advertising . 
+22
+As reported \cite , \cite , \cite , the mean average precision ( mAP ) evaluated on standard benchmarks such as Oxford buildings , Paris buildings is approaching to 90 percent . 
+As reported \cite , \cite , \cite , the mean average precision ( mAP ) evaluated on standard benchmarks such as Oxford buildings and Paris buildings is approaching 90 percent . 
+23
+Therefore , searching on this kind of object is to some extent solved problem .
+Therefore , searching this kind of object is to some extent a solved problem .
+24
+For small and fairly texture objects typical feature detectors collect not enough local information , thus invadate the BOW's assumption . 
+For small and fairly textured objects , however , conventional feature detectors cannot collect enough local information , thus invalidating the BOW's assumption . 
+25
+Therefore , the standard BOW and its improvements including spatial re-ranking \cite and query expansion \cite will encounter a lot of difficulties derived from noisy background and complex capturing conditions . 
+Therefore , the standard BOW and its improvements , including spatial re-ranking \cite and query expansion \cite , are poised to encounter a lot of difficulties stemming from noisy backgrounds and complex capturing conditions . 
+26
+After years of exploration in TRECVID competition , most of the state of the art INS systems \cite are based on BOW model but 
+After years of exploration in TRECVID competition , most INS systems currently in use \cite are based on the BOW model . 
+27
+reported very low in mAP due to many different types of query object . Hence , there still has a lot of potential challenges to solve . 
+However , these have been reported to be very low in mAP due to the many different types of query object , so there are still many challenges that remain to be addressed . 
+28
+In this paper , we aim at improving the accuracy of the instance search system which focuses on many kinds of realistic objects .
+In this paper , we aim at improving the accuracy of an instance search system that focuses on many different realistic objects .
+29
+Many that have been successfully applied on such as : RootSIFT feature \cite , large vocabulary \cite , soft assignment \cite , multiple detectors and features combination at late fusion[x] query-adaptive asymmetrical dissimilarities \cite , topology model for spatial verification \cite , weak geometric consistency ( WGC ) with hamming embedding ( HE ) \cite . 
+Several have already been successfully applied , including RootSIFT feature \cite , large vocabulary \cite , soft assignment \cite , multiple detectors and features combination at late fusion[x] query-adaptive asymmetrical dissimilarities \cite , the topology model for spatial verification \cite , and weak geometric consistency ( WGC ) with hamming embedding ( HE ) \cite . 
+30
+Spatial consistency checking is not only an important technique to improve the accuracy but also a needed step for query expansion to improve the recall of the system . 
+In addition to its importance as a technique to improve accuracy , spatial consistency checking is a step for query expansion to improve the recall of the system . 
+31
+However , this approach is not efficient very much for searching different types of query . 
+However , this approach is not very efficient for searching different types of query . 
+32
+There are three main reasons for the failure of spatial verification : ( i ) lacking of features due to viewpoint and light condition change , ( ii ) existing of confus objects which share similar parts with query object . 
+There are three main reasons for the failure of spatial verification : ( i ) the absence of features due to viewpoint and lighting condition changes , ( ii ) the existence of confus objects that share similar parts with the query object . 
+33
+These lead to lacking of high confidence visual words used for re-ranking . 
+These lead to a lack of high confidence visual words for re-ranking . 
+34
+Figure \ref gives some examples of scenario that database frames get high similarity score after spatial checking due to the existing of many similar objects which share the same part with the query object and a noisy background .
+Figure \ref gives some examples of a scenario in which database frames get a high similarity score after spatial checking due to reasons ( ii ) and ( iii ) above , namely , the existence of many similar objects that share the same part with the query object and a noisy background .
+35
+To overcome this difficulty , a typical way is to sampling in ense grid at various scales . 
+The typical way of addressing the above issue is to perform sampling in a dense grid on various scales . 
+36
+Object in image will be fully covered by local patches which are aggregated to a single vector and used for spatial verification step . 
+in an image is fully covered by local patches that are aggregated to a single vector and used for spatial verification . 
+37
+Many research has recently shifted from local feature detection to use denser techniques . It can be listed out here some applications of dense feature on image classification \cite , fine-grained classification \cite , action recognition in videos \cite . 
+Much research has recently shifted from local feature detection to the use of denser techniques , some of the applications of which include dense feature on image classification \cite , fine-grained classification \cite , and action recognition in videos \cite . 
+38
+The dense method , however , need a special treatment to apply in large scale retrieval since it extracts much more patches than sparse ones . Therefore , it is not applicable for large scale data if using per-feature level storage approach . 
+The dense method , however , requires a special treatment for application to large - scale retrieval since it extracts many more patches than sparse ones , so it is not applicable for large - scale data if taking a per-feature level storage approach . 
+39
+Using a dense feature at the post processing stage instead of at the early stage is more reasonable .
+Using a dense feature at the post - processing stage instead of at the early stage is more reasonable .
+40
+We use an object detector based on a dense feature like HOG to boost the confidence of a visual word . 
+Here , an object detector based on a dense feature such as HOG to boost the confidence of a visual word . 
+41
+Which words satisfy both BOW and detection models is used to boost the similarity score at the end . 
+Whichever words satisfy both BOW and the detection models are used to boost the similarity score at the end . 
+42
+We use DPM ( Deformable Parts Model ) \cite to demonstrate our proposed method since it is one of the state of the algorithms for object detection . 
+We use the deformable parts model \cite to demonstrate our proposed method since it is currently one of the best algorithms for object detection . 
+43
+Note that , this detector can be replaced by other detectors easily without changing structure of the system .
+This detector could easily be replaced by other detectors without changing the structure of the system .
+44
+Contribution : This paper proposes a novel re ranking method such as that exploits object proposal to boost the confidence of visual words . 
+Contribution : In this paper , we propose a novel re - ranking method that exploits object proposal to boost the confidence of visual words . 
+45
+The performance of the proposed approach is significantly better than that of other re ranking methods such as geometric consistency checking , multi-features late fusion technique thanks to the following contributions :
+The performance of the proposed approach is significantly better than that of other re-ranking methods ( geometric consistency checking , multi-features late fusion technique ) thanks to the following contributions :
+46
+To our best of knowledge , this is the first time that .
+To the best of our knowledge , this is the first time that .
+47
+We propose a new scheme of re - ranking method by combining two complementary models : BOW and object detector using dense feature .
+Our new re - ranking method combines two complementary models : BOW and object detector using dense features .
+48
+the proposed detector in our scheme small , texture-less and occluded objects . 
+the proposed detector in our scheme small , texture-less , and occluded objects . 
+49
+Meanwhile , traditional BOW model is suitable for big and rich textured objects . 
+In contrast , conventional BOW is suitable for big and richly textured objects . 
+50
+In the experimental section , we will prove the complementary characteristic by using a simple late fusion technique on these methods .
+In the experimental section , we will demonstrate how these characteristics complement each other through use of a simple late fusion technique .
+51
+We propose a new that takes into account location information of candidate object . 
+We propose a new that takes into account the location information of a candidate object . 
+52
+The shared visual words on database frame are classified into four categories based on the relationship between word location and bounding box of DPM algorithm . 
+The shared visual words on a database frame are classified into four categories on the basis of the relationship between word location and bounding box of DPM algorithm . 
+53
+Each class of visual word will contribute to the final score with a boosting function . 
+Each class of visual word will contribute to the final score with a boosting function . 
+54
+Unlike idf as a global weighting , our confidence function is applied for a specific query object .
+Unlike idf as a global weighting , our confidence function can be applied for a specific query object .
+55
+The rest of this paper is organized as follows . 
+The rest of this paper is organized as follows . 
+56
+Section dicusses some previous work related to our proposed method \ref . 
+Related work is discussed in Section \ref . 
+57
+Details of our framework are presented in Section \ref . 
+The details of our framework are presented in Section \ref . 
+58
+Section \ref and section \ref explain why we choose DPM to combine with BOW and propose a location based fusion technique for re ranking . 
+Sections \ref and \ref explain why we chose to combine DPM with BOW and propose a location - based fusion technique for re- ranking . 
+59
+Section \ref presents our experimental results on the dataset INS2013 and INS2014 . 
+Section \ref presents our experimental results using two datasets ( INS2013 and INS2014 ) . 
+60
+Finally , section \ref concludes thí papers .
+We conclude the paper with a brief summary in Section \ref .
+61
+</p>
+</p>
+62
+</section>
+</section>
+63
+<section label= “Related work “ >
+<section label= “Related work “ >
+64
+<p>
+<p>
+65
+BOW is an unstructured model ưhichassumes all visual word are independent in a high dimensional vector . 
+BOW is an unstructured model that assumes all visual words are independent in a high dimensional vector . 
+66
+Many researches have bên taken in to account this . 
+Many researches have tackled . 
+67
+Spatial verification is one of the most effective approaches to improve the accuracy of a retrieval system . 
+Spatial verification is one of the most effective approaches to improve the accuracy of retrieval systems . 
+68
+It also be a prerequisite stop for other advanced methods such as query expansion . 
+It is also a prerequisite for other advanced methods such as query expansion . 
+69
+Spatial re-ranking which check the geometric consistency on short list of about 200 to 1000 result returned from BOW model . 
+Spatial re-ranking , which checks the geometric consistency in a short list of about 200–1000 results , the BOW model . 
+70
+Using RANSAC with exploiting the local shape of affine covariant region for rigid affine consistency checking is an effective method and first applied by J. Philbin \cite . 
+Another effective model , first applied by J. Philbin \cite , uses RANSAC to exploit the local shape of an affine covariant region for rigid affine consistency checking . 
+71
+Hough Pyramid Matching for spatial re-ranking a hierarchical structure to group matches thus resulting in an algorithm which is only linear in the number of putative correspondences \cite . 
+Hough pyramid matching for spatial re-ranking a hierarchical structure to group matches , thus resulting in an algorithm that is only linear in the number of putative correspondences \cite . 
+72
+An elastic spatial checking technique is proposed to emphasizing the topology layouts of the matching points \cite .
+An elastic spatial checking technique has been proposed to emphasize the topology layouts of matching points \cite .
+73
+Another approach is spatial ranking which proposes to incorporate spatial information at the original ranking stage for more effective .
+Another approach is spatial ranking , which incorporates spatial information at the original ranking stage .
+74
+Jegou et al. \cite use a Hough-like voting scheme in the space of similarity transformation between query and database image . 
+Jegou et al. \cite use a Hough-like voting scheme in the space of similarity transformation between query and database image . 
+75
+However , this is a weak geometric consistency checking . 
+However , this is a weak geometric consistency checking . 
+76
+Cao et al. propose to use spatial-bag-of-features the spatial ordering of visual words under various linear and circular projections \cite . Shen et al. proposed to transform query ROI by predefined scales \cite . 
+Cao et al. proposed using spatial-bag-of-features the spatial ordering of visual words under various linear and circular projections \cite , while Shen et al. proposed transforming query ROI by predefined scales \cite . 
+77
+However , this method is much more computationally expensive than other systems such as BOW or WGC .
+However , this latter method is much more computationally expensive than other systems such as BOW or WGC .
+78
+All of the above methods do not mention or give a systematic solution to handle the failure of spatial re-ranking which caused by low number of feature or confus objects which has with query object . 
+None of the above methods consider or provide a systematic solution to handle the failure of spatial re-ranking caused by a low number of features or by the existence of confus objects that have as a query object . 
+79
+To the best of our knowledge , this is the first time solve that spatial verification problem .
+To the best of our knowledge , this is the first time that the spatial verification problem has been solved .
+80
+Deformable Part Models ( DPM ) is one of state-of-the-art algorithms in object detection . 
+The deformable parts model ( DPM ) is a state-of-the-art algorithm in object detection . 
+81
+The original version of DPM is very slow , thus it is difficult to apply on large-scale data . 
+The original version of DPM is very slow , making it difficult to apply on large-scale data . 
+82
+However , many research try to improve the accuracy and speed of DPM such as \cite , and could be applied for detection on large-scale dataset . 
+However , due to research on improving the accuracy and speed of DPM \cite , and seems like it could be effective for detection on a large-scale dataset . 
+83
+Moreover , combining part filters with root filter , DPM also be an implicit spatial check method for our proposed approach .
+Moreover , if we combine part filters with a root filter , DPM could also function as an implicit spatial check method for our proposed approach .
+84
+</p>
+</p>
+85
+</section>
+</section>
+86
+<section label= “Instance Search Framework “ >
+<section label= “Instance Search framework “ >
+87
+<p>
+<p>
+88
+All systems implemented in the experiment section are based on the following settings . 
+All systems implemented in the experiment section are based upon the following settings . 
+89
+Keyframes are extracted from raw videos at the rate of 5 frames per second . 
+Keyframes are extracted from raw video at the rate of 5 frames per second . 
+90
+For feature extraction , we use Hessian affine detector \cite and SIFT descriptor \cite . 
+For feature extraction , we use a Hessian affine detector \cite and a SIFT descriptor \cite . 
+91
+To improve the performance of retrieval system , RootSIFT \cite post-processing are applied with out adding storage memory and computational cost . 
+To improve the performance of the retrieval system , RootSIFT \cite post-processing is applied , with no additional storage memory or computational cost . 
+92
+A large vocabulary with 1 million visual words is trained using Approximate K-Means ( AKM ) algorithm \cite . 
+A large vocabulary with 1 million visual words is trained using the approximate K-means ( AKM ) algorithm \cite . 
+93
+To reduce quantization errors without adding storage memory , we use hard-assignment on database keyframes and soft-assignment on query images with three nearest neighbors . 
+To reduce quantization errors without adding storage memory , we use hard-assignment on database keyframes and soft-assignment on query images with three nearest neighbors . 
+94
+All frames of a shot are aggregated into one high-dimensional histogram vector using average pooling .
+All frames of a shot are aggregated into one high-dimensional histogram vector using average pooling .
+95
+Each query image of a topic are independently compared to all shots using asymmetrical metric \cite .
+Each query image of a topic is independently compared to all shots using asymmetrical metrics \cite .
+96
+Score of the final relevance between query topic and shot are computed using average fusion of all ranking lists returned from each query example retrieval .
+The final relevance score between query topic and shot are computed using the average fusion of all ranking lists returned from each query example retrieval .
+97
+For simplicity of notation , we only consider set of query examples and keyframes of a shot in video dataset . 
+For simplicity of notation , here we consider only the set of query examples and keyframes of a shot in the video dataset . 
+98
+Other shots are processed similarly . 
+Other shots are processed similarly . 
+99
+Let </Eq> be vector BOW of the k-th query image and the j-th frame of video shot , where </Eq> is size of the codebook . 
+Let </Eq> be the vector BOW of the k-th query image and the j-th frame of the video shot , respectively , where </Eq> is the size of the codebook . 
+100
+To be build inverted index with a compact representation , we use average pooling :
+To build an inverted index with a compact representation , we use average pooling :
+101
+where </Eq> is number of keyframes shot . 
+where </Eq> is the number of keyframes a shot . 
+102
+Similarity score of shot with given query examples is computed by the following formula : 
+The similarity score of a shot with given query examples is computed by 
+103
+where </Eq> is number of query examples and </Eq> is a asymmetrical similarity score . 
+where </Eq> is the number of query examples and </Eq> is the asymmetrical similarity score . 
+104
+Top </Eq> retrieved shots based on </Eq> similarity score are then used for re-ranking stage .
+The top </Eq> retrieved shots based on the </Eq> similarity score are then used for the re-ranking .
+105
+</p>
+</p>
+106
+</section>
+</section>
+107
+<section label= “Deformable Parts Model as a complementary method for BOW” >
+<section label= “Deformable parts model as a complementary method for BOW” >
+108
+<p>
+<p>
+109
+In order to verify the confidence of shared visual words between query and database frames , we propose to use an object detector with denser feature . 
+In order to verify the confidence of shared visual words between query and database frames , we propose using an object detector with denser features . 
+110
+that DPM is one of the state-of-the-art algorithms with part-based representation model . 
+that DPM is a state-of-the-art algorithm with a parts-based representation model . 
+111
+Histogram of Gradient feature ( HOG ) and latent-SVM was originally designed to handle change of illumination condition and variations in appearance of object .
+A histogram of gradient features ( HOG ) and latent-SVM were originally designed to handle changing lighting conditions and variations in the appearance of an object .
+112
+DPM take the advantage of shape information : BOW model with SIFT descriptor ( or its extension , rootSIFT ) and DPM model with HOG features both are based on the same idea computing histogram of gradient vector at a group pixel . 
+DPM takes advantage of shape information : The BOW model with a SIFT descriptor ( or its extension , rootSIFT ) and the DPM model with HOG features are both based on the idea of computing the histogram of a gradient vector at a group pixel . 
+113
+The difference is that : BOW use all of features independently while DPM algorithm groups local blocks together to represent a meaningful part . 
+The difference is that BOW uses all of the features independently while the DPM algorithm groups local blocks together to represent a meaningful part . 
+114
+Moreover , feature detector used in standard BOW retrieval system is very sparse and sensitive to light condition or viewpoint while HOG feature of DPM always cover full of object . 
+Moreover , the feature detector used in standard BOW retrieval systems is very sparse and sensitive to lighting condition or viewpoint , while the HOG feature of DPM always covers an object in its entirety . 
+115
+Figure \ref shows a comparison between Hessian Affine feature used in BOW and HOG feature used in DPM . 
+Figure \ref shows a comparison of the Hessian affine feature used in BOW and the HOG feature used in DPM . 
+116
+We can see that : the distribution of Hessian Affine feature are no uniform across regions within the same image . 
+We can clearly see that the distribution of Hessian affine features is not uniform across regions within the same image . 
+117
+In case of low contrast image , number of feature is very sparse or even no one detected . 
+In the case of a low contrast image , the number of features is very sparse or even completely absent . 
+118
+Meanwhile HOG feature of part filter can always be described in all conditions including case of low contrast .
+In contrast , the HOG feature of a part filter can always be described under all conditions , including cases of low contrast .
+119
+BOW and DPM are two complementary methods : In fact , there is no good method for all cases . 
+BOW and DPM are two complementary methods : In fact , there is no one method that is superior for all cases . 
+120
+For query objects which have dense local features , BOW model work effectively if accompanied with a spatial re-ranking method . 
+For query objects that have dense local features , the BOW model is effective if accompanied with a spatial re-ranking method . 
+121
+In case of small and textureless object , when lighting condition changes over time , the extracted features are sparser that makes the failure of spatial verification . 
+However , in the case of a small and textureless object , when the lighting condition changes over time , the extracted features are sparser , which leads to spatial verification failure . 
+122
+On the other hand DPM algorithm as mentioned above can describe any object in any lighting conditions and take advantage of the shape information more effectively . 
+In contrast , the DPM algorithm can describe any object under any lighting condition and is more effective when it comes to taking advantage of shape information . 
+123
+However , DPM algorithms are generally suitable for detecting generic object which have discriminative curves that makes it significantly different with other ones . This characteristic of DPM algorithm give failures in object with too much texture .
+However , DPM algorithms are generally suitable for detecting generic objects that have discriminative curves to show that they are significantly different from other ones , and this characteristic results in failure in objects with too much texture .
+124
+In order to show of these two approaches , we use a simple late fusion technique that combines two scores using formula . 
+To demonstrate of these two approaches , we use a simple late fusion technique that combines two scores using an formula . 
+125
+This method will be compared to standard spatial re-ranking in the experiment section . 
+This method will be compared to standard spatial re-ranking in the experiment section . 
+126
+Let </Eq> be a model trained from all query examples and 100 random image crawled from Google image with "things" is the . 
+Let </Eq> be a model trained from all query examples and 100 random images crawled from Google Images with "things" as the . 
+127
+Similarity score of query topic and in database is compute as following : where </Eq> is a keyframe of video shot . 
+The similarity score of the query topic and in the database is computed as where </Eq> is a keyframe of a video shot . 
+128
+The final late fusion similarity of BOW and DPM models is computed using following average normalized formula :	
+The final late fusion similarity of the BOW and DPM models is computed using the following average normalized formula :	
+129
+where </Eq> are z-score normalized value of </Eq> on top K of rank list , respectively :
+where </Eq> are the z-score normalized values of </Eq> on the top K of the rank list , respectively :
+130
+Note that this is just a simple average fusion technique on normalized scores .We still have a room to further improve on fusion formula xx . 
+Note that this is just a simple average fusion technique on normalized scores , and there is still room to improve on fusion formula xx . 
+131
+The value of </Eq> and </Eq> can be estimated adaptively using more information about number of visual words and ROI area given by topic examples .
+The values of </Eq> and </Eq> can be estimated adaptively using more information about the number of visual words and ROI area given by topic examples .
+132
+</p>
+</p>
+133
+</section>
+</section>
+134
+<section label = “Location-based boosting technique “>
+<section label = “Location-based boosting technique “>
+135
+<p>
+<p>
+136
+In late fusion approach , we simply combined score values of the two methods together without using any other useful information such as shared word and bounding box detected by DPM algorithm . 
+In the late fusion approach , we simply combined the score values of the two methods without using any other information such as shared word or bounding box detected by DPM algorithm . 
+137
+In this section we propose an integrated approach to effectively utilize this information . 
+In this section , we propose an integrated approach to effectively utilize this information . 
+138
+Figure \ref describes all cases may happen to the BOW shared words and candidate's bounding box . 
+Figure \ref displays all the cases that may occur with the BOW shared words and the candidate's bounding box . 
+139
+The ROI rectangle in the left image is the location of query object when put into the search engine . The object proposal region ( OPR ) rectangle on the right image is the DPM bounding box . 
+The ROI rectangle in the left image is the location of a query object when put in the search engine and the object proposal region ( OPR ) rectangle in the right image is the DPM bounding box . 
+140
+Each arrow starts from visual word of query image and ends at visual word of video frame of the database . 
+Each arrow starts from the visual word of a query image and ends at the visual word of a video frame the database . 
+141
+All pairs of matching points are divided into the following categories :
+All pairs of matching points are divided into the following categories :
+142
+Type 1 : Outlier shared words are the wrong pair of matched points represented by red arrows . 
+Type 1 : Outlier shared words , which are incorrect pairings of matched points represented by red arrows . 
+143
+These pairs of points will be removed by RANSAC algorithm , and the rest is the inlier pair of matching points includes three of next types .
+These pairs of points will be removed by the RANSAC algorithm , and the remaining pairs are inlier pairs of matching points that fall into one of the next three types .
+144
+Type 2 : discriminative points are represented by green arrows connecting words in the foreground to words inside DPM bounding box . 
+Type 2 : Discriminative points , which are represented by green arrows connecting words in the foreground to words inside the DPM bounding box . 
+145
+These points satisfy both BOW model and DPM algorithm so they contribute to identify accurately query object . 
+These points satisfy both the BOW model and the DPM algorithm and thus contribute to the accurate identification of the query object . 
+146
+Therefore we choose a monotonically increasing function of number of discriminative points </Eq> .
+We choose a monotonically increasing function of the number of discriminative points </Eq> .
+147
+Type 3 : weakly relevant points are represented by the blue arrows connecting point in the foreground to point outside the DPM bounding box . 
+Type 3 : Weakly relevant points , which are represented by blue arrows connecting a point in the foreground to a point outside the DPM bounding box . 
+148
+These points show the inconsistency between BOW model and DPM but it still contains valuable information , so we also use a monotonically increasing function of number of weakly relevant points </Eq> .
+These points indicate an inconsistency between the BOW model and DPM , but they still contain valuable information , so we also use a monotonically increasing function of the number of weakly relevant points </Eq> .
+149
+However , this function increases does not as fast as function </Eq> .
+This function does not increase as fast as function </Eq> .
+150
+Type 4 : context information points are represented by black arrows connecting outside points ( background point ) of query image to points outside bounding box . 
+Type 4 : Context information points , which are represented by black arrows connecting outside ( background ) points of a query image to points outside the bounding box . 
+151
+Although the main query object to be searched in the foreground , but the features on the background sometimes gives useful information for detecting objects . 
+Although the main query object to be searched in the foreground , the features in the background sometimes provide useful information for detecting objects . 
+152
+For example , the logo of a car company often located next to a car . 
+For example , the logo of a car company is often located next to a car . 
+153
+Context information can contribute to the final result but not too much so weighting function of context points should be used </Eq> which increases not as fast as functions </Eq> , </Eq> .
+Context information can contribute to the final result , albeit slightly , so the weighting function of context points </Eq> should be used , although these do not increase as fast as functions </Eq> , </Eq> .
+154
+are wrong cases removed by RANSAC algorithm . Therefore we will not consider them in the final score formula .
+are incorrect cases and thus removed by the RANSAC algorithm ; we do not consider them in the final score formula .
+155
+Let </Eq> is a set of points in image which represent location of the k-th given query example .
+Let </Eq> be a set of points in an image that represents the location of the k-th given query example .
+156
+</Eq> is a set of points corresponding to bounding box proposed by object detector on j-th frame of i-th shot . 
+</Eq> is a set of points corresponding to the bounding box proposed by the object detector on the j-th frame of the i-th shot . 
+157
+</Eq> , </Eq> , and </Eq> are computed as follows :
+</Eq> , </Eq> , and </Eq> are computed as follows :
+158
+where </Eq> and </Eq> are spatially verified points belong to Hessian Affine features extracted from query image and video frame which have the same word ID , respectively .
+where </Eq> and </Eq> are spatially verified points belonging to the Hessian affine features extracted from the query image and video frame that have the same word ID , respectively .
+159
+Our goal is not to find the optimal weighting function , we prove that our new method of calculating the score associated with selecting a suitable weighting function can improve accuracy significantly compared with . 
+Our goal is not to find the optimal weighting function but rather to prove that our new method of calculating the score associated with selecting a suitable weighting function can improve accuracy significantly compared with . 
+160
+The weighting functions must satisfy the following properties :
+The weighting functions must satisfy the following properties :
+161
+Property 1 . for all </Eq> . 
+Property 1 . for all </Eq> . 
+162
+The more verified shared words the more confidence it is .
+The greater the number of verified shared words , the higher the confidence is .
+163
+Property 2 . </Eq> for all </Eq>
+Property 2 . </Eq> for all </Eq>
+164
+This feature aims of each other as well as the average score of component models and </Eq> when number of shared visual words of each type equals to 0 . 
+This feature aims and the average score of the component models and </Eq> when the number of shared visual words of each type equals 0 . 
+165
+Therefore , in special cases if n = 0 then we are .
+Therefore , in special cases , if n = 0 , we are .
+166
+Property 3 . </Eq> for all </Eq> . 
+Property 3 . </Eq> for all </Eq> . 
+167
+This feature : distinctive points , weak points , and distinctive point bringing context information .
+This feature : distinctive points , weak points , and distinctive point bringing context information .
+168
+For ease of testing , we assume that these functions are in the same class of polynomial function . 
+For ease of testing , we assume that these functions are in the same class of polynomial function . 
+169
+In this paper , we propose three weighting functions as follows :
+In this paper , we propose three weighting functions :
+170
+The final score of the proposed method becomes :
+The final score of the proposed method becomes :
+171
+where </Eq> .
+where </Eq> .
+172
+</p>
+</p>
+173
+</section>
+</section>
+174
+<section label = “Experiments “>
+<section label = “Experiments “>
+175
+<p>
+<p>
+176
+In this section , a series of experiments were conducted to evaluate the proposed re-ranking method using BOW and an object detector model , where , DPM was chosen to demonstrate our idea . 
+In this section , we discuss the series of experiments we performed to evaluate the proposed re-ranking method using BOW and an object detector model , where DPM was chosen to demonstrate our idea . 
+177
+First , in order to show the complementary characteristic ; we comparfed BOW and DPM with its average late fusion . 
+First , in order to demonstrate the complementary characteristics of BOW and DPM , its average late fusion . 
+178
+Second , we compare our location-based fusion approach to other state-of-the-art techniques such as : practical spatial re-ranking \cite , Hamming Embeding and Weak Geometric Consistency \cite , multi-features fusion[x] and topology checking \cite . 
+Second , we compare our location-based fusion approach with other state-of-the-art techniques : practical spatial re-ranking \cite , Hamming embedding and weak geometric consistency \cite , and multi-features fusion[x] and topology checking \cite . 
+179
+Third , we examine the impact of value top </Eq> and contributions of each weighting functions on the performance of whole system . 
+Third , we examine the impact of value top </Eq> and the contributions of each weighting function to the performance of the system as a whole . 
+180
+</p>
+</p>
+181
+<subsection label = “ Dataset “>
+<subsection label = “ Dataset “>
+182
+<p>
+<p>
+183
+To demonstrate advantage of the proposed method on multiple types of query , we use TRECVID Instance Search ( INS ) datasets for evaluation . 
+To determine the performance of the proposed method with multiple types of query , we use TRECVID Instance Search ( INS ) datasets for evaluation . 
+184
+We use the TRECVID INS [xx] benchmarks in years 2013 and 2014 which was released in the evaluation campaign organized by NIST . For experiments , we name these as INS2013 and INS2014 , respectively . 
+Specifically , we used the TRECVID INS [xx] benchmarks from 2013 and 2014 , which were released in the evaluation campaign organized by NIST , referred to here as INS2013 and INS2014 , respectively . 
+185
+They share the same collection of test video with a master shot reference . 
+Both have the same collection of test videos with a master shot reference . 
+186
+The dataset contains approximately 244 video files extracted from the BBC EastEnders program with totally 300 GB in storage and 464 hours in duration . 
+The dataset contains approximately 244 video files extracted from the BBC EastEnders program with a total of 300 GB in storage and a duration of 464 hours . 
+187
+Each query topic of INS2013 and INS2014 consists of several query images and corresponding masks that delimit an object , place or person entity in some example video ; locate for each topic up to the 1000 shots most likely to contain a recognizable instance of the entity . 
+Each query topic of INS2013 and INS2014 consists of several query images and corresponding masks that delimit an object , place , or person entity in an example video and locate for each topic up to 1000 of the shots most likely to contain a recognizable instance of the entity . 
+188
+INS datasets are challenging due to containing varieties of query types including small to big objects , rich texture to texture-less objects .
+We should point out that INS datasets are quite challenging due to containing a variety of query types including small to big objects and rich texture to texture-less objects .
+189
+Evaluation protocol . 
+Evaluation protocol . 
+190
+The ground truth files for each query are created manually and provided by TRECVID organization . 
+The ground truth files for each query are created manually and provided by the TRECVID organization . 
+191
+To evaluate performance of each system , we use mean average precision as a standard score .
+To evaluate the performance of each system , we use the mean average precision as a standard score .
+192
+</p>
+</p>
+193
+</subsection>
+</subsection>
+194
+<subsection label = “Complementary characteristics of BOW and DPM “>
+<subsection label = “Complementary characteristics of BOW and DPM “>
+195
+<p>
+<p>
+196
+We first , evaluate the performance of late fusion technique to prove the complementary characteristic of BOW and DPM . 
+First , to demonstrate the complementary characteristics of BOW and DPM , we evaluate the performance of the late fusion technique . 
+197
+Top 10 ,000 shots retrieved from standard BOW model are used to re-rank using DPM object detector . 
+The top 10 ,000 shots retrieved from the standard BOW model are used for re-ranking using the DPM object detector . 
+198
+from all query example to find location of candidate object and its corresponding score value the similarity value for re-ranking . 
+from all query example to find the location of the candidate object and its corresponding score value , the similarity value for re-ranking . 
+199
+The score represented for a shot is the highest one of all keyframes ( equation 3 ) , BOW+DPM : average late fusion on normalized scores of BOW and DPM .
+The score representing one shot is the highest one of all keyframes ( Eq.3 ) , BOW+DPM : average late fusion on normalized scores of BOW and DPM .
+200
+Figure \ref shows that , although BOW is state-of-the-art model for image retrieval , in some cases , DPM gives better result such as : 9108 , 9109 , 9114 , 9118 , 9124 , 9125 and 9128 . 
+Figure \ref shows that , although BOW is a state-of-the-art model for image retrieval , in some cases , DPM gives a better result : for example , 9108 , 9109 , 9114 , 9118 compared to 9124 , 9125 , 9128 , respectively . 
+201
+DPM+BOW gives approximate performance with the higher one between DPM and BOW for most of query topics . 
+DPM+BOW gives a performance approximately on par with the higher one between DPM and BOW for most query topics . 
+202
+In some cases , such as 9102 , 9103 , 9123 , it is also significantly better than two baseline methods . 
+In some cases , e.g. , 9102 , 9103 , 9123 , it is also significantly better than the two baseline methods . 
+203
+Therefore , the overall MAP of DPB+BOW is 28.21% and outperform both BOW and DPM ( 25.01% and 21.23% , respectively ) see Table \ref . 
+Therefore , the overall MAP of DPB+BOW is 28.21% , which outperforms both BOW and DPM ( 25.01% and 21.23% , respectively ; see Table \ref ) . 
+204
+</p>
+</p>
+205
+</subsection>
+</subsection>
+206
+<subsection label = “Comparison with the state-of-the-art “>
+<subsection label = “Comparison with state-of-the-art systems “>
+207
+<p>
+<p>
+208
+In this section , we compared the proposed method with other state-of-the-art systems which have reported on INS2013 and INS2014 . 
+In this section , we compare the proposed method with other state-of-the-art systems that have been reported on INS2013 and INS2014 . 
+209
+Multi features in the system won on TRECVID INS 2013 competition which combine six pair of feature detectors and descriptors using asymmetrical similarity and late fusion technique [x] .
+The winner of the TRECVID INS 2013 competition was the multi-features system , which combines six pairs of feature detectors and descriptors using asymmetrical similarity and late fusion technique [x] .
+210
+Hamming Embedding and Weak Geometric Consistency ( HE+WCG ) votes dominant scale and orientation for fast but geometric checking . 
+Hamming embedding and weak geometric consistency ( HE+WCG ) dominant scale and orientation but geometric checking . 
+211
+Topology checking ( TC ) approach uses delaunay triangulation to improve the quality of visual matching . However , this method still does overcome problem spatial verification mentioned in this paper . 
+The topology checking ( TC ) approach uses Delaunay triangulation to improve the quality of visual matching , but it cannot overcome the problem spatial verification mentioned in this paper . 
+212
+Practical spatial re-ranking ( PSC ) apply RANSAC for a representative frame to avoid verifying all images of a shot or query topic .
+Practical spatial re-ranking ( PSC ) applies RANSAC for a representative frame to avoid having to verify all images of a shot or query topic .
+213
+Table \ref shows a comparison of the proposed method with state-of-the-art results . 
+Table \ref shows a comparison of the results of the proposed method and the state-of-the-art methods . 
+214
+As afore mentioned , the performance of the method is evaluated two benchmarks . 
+As stated above , performance is evaluated two benchmarks . 
+215
+We can see that , our approach consistently outperform other method , although we use only one pair of feature detector and descriptor . 
+As shown in the table , the proposed approach consistently outperforms the other methods , even though we use only one pair of feature detector and descriptor . 
+216
+Moreover , our late fusion technique BOW+DPM also give an approximate accuracy compared to Multi-features approach with a simple average computation . 
+Our late fusion technique BOW+DPM also delivers an approximate accuracy compared to the multi-features approach with a simple average computation . 
+217
+There is possibly still more room for improvement by adaptively combining BOW and DPM model . 
+There is still room for improvement by adaptively combining the BOW and DPM models . 
+218
+Although Multi-features and other spatial re-ranking methods improve performance very much , but they still do not solve the failure of spatial verification . 
+Although the multi-features and other spatial re-ranking methods improve performance very much , they cannot resolve the failure of spatial verification . 
+219
+The result also shows that , our method is good for not only small and texture-less objects but also big and rich textured ones .
+The results also show that our method is effective not only for small and texture-less objects but also for big and richly textured ones .
+220
+Ipact of parameter </Eq> . 
+Effect of parameter </Eq> . 
+221
+In this part , we examine the influence of value </Eq> to the final mAP when taking top </Eq> shots as the input of re-ranking stage . 
+Here , we briefly examine the effect of value </Eq> on the final mAP when taking top </Eq> shots as input at the re-ranking stage . 
+222
+Figure \ref shows that when </Eq> , the accuracy of the proposed algorithm seem to be saturated with no more improvement . 
+Figure \ref shows that when </Eq> , the accuracy of the proposed algorithm seem to be saturated with no more improvement . 
+223
+On the other hand , when </Eq> , there still have many positive shost in the bottom of the rank list returned standard BOW model . 
+In contrast , when </Eq> , there are still many positive shots in the bottom of the rank list returned the standard BOW model . 
+224
+Even in case of the least value </Eq> , the mAP of proposed method is </Eq> and </Eq> ( for INS2013 and INS2014 , respectively ) . 
+Even in the case of the least value </Eq> , the mAP of the proposed method is </Eq> and </Eq> ( for INS2013 and INS2014 , respectively ) . 
+225
+Contribution of each component in late fusion formula . 
+Contribution of each component in late fusion formula . 
+226
+In this part , weighting functions by constant 1 to evaluate the influence of each component on the system performance . 
+Here , weighting functions by constant 1 to evaluate the effect of each component on the system performance . 
+227
+We conduct a comparison of methods BOW and our final method with the configurations described in Table \ref . The base score mentioned in the table are the average normalized score of BOW and DPM</Eq> .
+We compare the BOW methods with our final method using the configurations in Table \ref , where the base score refers to the average normalized score of BOW and DPM</Eq> .
+228
+Table \ref shows that removing of any component of the re-ranking formula also decrease the accuracy significantly . 
+Table \ref shows that removing any component of the re-ranking formula decreases the accuracy significantly . 
+229
+As a result , in the final formula . 
+As a result , in the final formula . 
+230
+Without this component , the performance drop down significantly . 
+Without this component , the performance drops significantly . 
+231
+In addition to satisf three properties as mention in Section \ref , </Eq> should not be rapidly increasing functions because . 
+In addition to satisfying the three properties mentioned in Section \ref , </Eq> should not be rapidly increasing functions because . 
+232
+Therefore , square function for </Eq> . 
+Therefore , a square function for </Eq> . 
+233
+Similarly , the next important components are functions </Eq> respectively . 
+Similarly , the next most important components are functions </Eq> . 
+234
+On the other hand , we also see that verifying pair matching shared word using RANSAC algorithm also help to improve the accuracy very much . 
+We can see that verifying the pair matching shared word using the RANSAC algorithm also helps to significantly improve the accuracy . 
+235
+This was shown in configuration Ours\_w/oRANSAC , where the same formula xx are applied without spatial verification step .
+This was shown in configuration Ours\_w/oRANSAC , where the same formulae xx are applied without any spatial verification step .
+236
+</p>
+</p>
+237
+</subsection>
+</subsection>
+238
+</section>
+</section>
+239
+<section label = “Conclusion and future work “>
+<section label = “Conclusion and future work “>
+240
+<p>
+<p>
+241
+In this paper , we address about the failure of spatial verification in instance search or /object retrieval system . 
+In this paper , we addressed the failure of spatial verification in instance search/object retrieval systems . 
+242
+A new hybrid method that takes advantage of the complementary characteristic of BOW and DPM model has been introduced to overcome this challenge . 
+A new hybrid method that takes advantage of the complementary characteristics of the BOW and DPM models has been introduced to overcome this challenge . 
+243
+We classify pairs of verified visual words into three types based on the relationship between location of visual words and proposal region . 
+We classify pairs of verified visual words into three types based on the relationship between the location of visual words and the region . 
+244
+Each of this type corresponds to a weighting function which will boost the similarity score in re-ranking step . 
+Each of these types corresponds to a weighting function that will boost the similarity score at the time of re-ranking . 
+245
+Our experimental results show the superiority of our method compared to other state-of-the-art approaches .
+Experimental results demonstrate the superiority of our method compared to other state-of-the-art approaches .
+246
+Future work will involve exploring adaptive late fusion technique for the base score which combine the normalized BOW and DPM similarity score . 
+Our future work will involve exploring adaptive late fusion techniques for the base score that combine the normalized BOW and DPM similarity scores . 
+247
+Moreover , our scheme enables us to replace DPM byh any other object detectors without changing the structure of the system .
+Our scheme enables us to replace the DPM with other object detectors without changing the structure of the system .
+248
+</p>
+</p>
+249
+</section>
+</section>
+250
+</document>
+</document>

@@ -1,0 +1,744 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+A Minimum-Delay Routing Tree Algorithm for Access-Point Communications in Wireless Mesh Networks
+A Minimum-Delay Routing Tree Algorithm for Access-Point Communications in Wireless Mesh Networks
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+As a scalable , flexible access network to the Internet , we have studied the design optimization and the implementation of the Wireless Internet-access Mesh NETwork ( WIMNET ) .
+As a scalable , flexible access network to the Internet , we have studied the design optimization and the implementation of the Wireless Internet-access Mesh NETwork ( WIMNET ) .
+7
+WIMNET is composed of multiple access points ( APs ) that are connected with each other by wireless communications . 
+WIMNET is composed of multiple access points ( APs ) that are connected with each other by wireless communications . 
+8
+At least one AP performs as the gateway ( GW ) to the Internet .
+At least one AP performs as the gateway ( GW ) to the Internet .
+9
+Any host in the network can access to the Internet through this GW , after associating its neighbor AP and communicating with multihop wireless links between APs . 
+Any host in the network can access to the Internet through this GW , after associating its neighbor AP and communicating with multihop wireless links between APs . 
+10
+The delay along the routing path degrades the performance of WIMNET . 
+The delay along the routing path degrades the performance of WIMNET . 
+11
+To avoid the bottleneck of communications by minimizing the maximum delay , we formulate the routing tree problem for AP communications , and prove the NP-completeness of its decision version .
+To avoid the bottleneck of communications by minimizing the maximum delay , we formulate the routing tree problem for AP communications , and prove the NP-completeness of its decision version .
+12
+Then , we propose the greedy heuristic algorithm of sequentially selecting one link that minimizes the delay of the predicted tree containing the link . 
+Then , we propose the greedy heuristic algorithm of sequentially selecting one link that minimizes the delay of the predicted tree containing the link . 
+13
+The effectiveness of our algorithm is verified through extensive simulations in instances with 25 APs using the WIMNET simulator .
+The effectiveness of our algorithm is verified through extensive simulations in instances with 25 APs using the WIMNET simulator .
+14
+</p>
+</p>
+15
+</abtract>
+</abtract>
+16
+<section label=”INTRODUCTION”>
+<section label=”INTRODUCTION”>
+17
+<p>
+<p>
+18
+Nowadays , the Internet has become widely used in our daily lives with rapid developments of inexpensive small communication devices and high-speed communication technology . 
+Nowadays , the Internet has become widely used in our daily lives with the rapid development of inexpensive small communication devices and high-speed communication technology . 
+19
+A variety of information , data , and services have actually been provided through the Internet . 
+A variety of information , data , and services have actually been provided through the Internet . 
+20
+As a result , a high-speed , flexible , and inexpensive Internet access in every place at any time has been strongly desired among users by using wireless communication devices at mobile hosts such as personal computers ( PCs ) and personal digital assistances ( PDAs ) . 
+As a result , a high-speed , flexible , and inexpensive Internet access has been strongly desired by those who use wireless communication devices at mobile hosts such as personal computers ( PCs ) and personal digital assistances ( PDAs ) . 
+21
+In order to meet these demands , wireless local area networks ( WLANs ) have been widely studied and deployed as the access network to the Internet . 
+In order to meet these demands , wireless local area networks ( WLANs ) have been widely studied and deployed as the access network to the Internet . 
+22
+WLANs have now become available in many private and public spaces including offices , schools , homes , airports , stations , and shopping malls .
+WLANs have now become available in many private and public spaces including offices , schools , homes , airports , stations , and shopping malls .
+23
+The wireless mesh network has emerged as a very attractive technology among academics and industries to flexibly and inexpensively realize a large-scale WLAN </CITE> . 
+An emergency technology called the wireless mesh network is considered attractive and praise by academics and industries as a flexible and inexpensice large-scale WLAN </CITE> . 
+24
+The wireless mesh network is composed of multiple wireless routers that are distributed in the network field , so that it can expand the wireless coverage area by a single router that is often limited into a small space . 
+It is composed of multiple wireless routers distributed in the network field , so that it can expand the wireless coverage area by a single router that is often confined to a small space . 
+25
+In the wireless mesh network , data communications between routers are offered by multihop wireless communications , in addition to those between routers and hosts .
+In the wireless mesh network , data communications between routers are offered by multihop wireless communications , in addition to those between routers and hosts .
+26
+Among several variations of the wireless mesh network , our study has focused on the network for the Internet access , called the Wireless Internet-access Mesh NETwork ( WIMNET ) for convenience . 
+Among several variations of the wireless mesh network , our study has focused on the network for the Internet access , called the Wireless Internet-access Mesh NETwork ( WIMNET ) for convenience . 
+27
+WIMNET uses only access points ( APs ) as wireless routers , and realizes wireless communications between APs mainly on the MAC layer using the wireless distribution system ( WDS ) </CITE> . 
+WIMNET uses only access points ( APs ) as wireless routers , and realizes wireless communications between APs mainly on the MAC layer using the wireless distribution system ( WDS ) </CITE> . 
+28
+Figure 1 illustrates the overview of WIMNET . 
+Figure 1 illustrates the overview of WIMNET . 
+29
+At least one AP in WIMNET acts as a gateway ( GW ) to the Internet .
+At least one AP in WIMNET acts as a gateway ( GW ) to the Internet .
+30
+In WIMNET , each AP takes two different roles for wireless communications , specifically a wireless hub for its associated hosts and a wireless bridge for relaying packets between APs .
+In WIMNET , each AP takes two different roles for wireless communications , specifically a wireless hub for its associated hosts and a wireless bridge for relaying packets between APs .
+31
+To reduce the radio interference between these two communications , we use different protocols with different channels ( radio frequencies ) for them . 
+To reduce the radio interference between these two communications , we use different protocols with different channels ( radio frequencies ) for them . 
+32
+Actually , we assign the IEEE 802.11b/g protocol with 2.4GHz for the former role , which is usually available at mobile hosts , and the IEEE 802.11a protocol with 5GHz for the latter one . 
+Actually , we assign the IEEE 802.11b/g protocol with 2.4GHz for the former role , which is usually available at mobile hosts , and the IEEE 802.11a protocol with 5GHz for the latter one . 
+33
+For each protocol , several non-interfered frequency channels are available . 
+For each protocol , several non-interfered frequency channels are available . 
+34
+Using this feature , an AP can use multiple channels by equipped with multiple NICs ( Network Interface Cards ) to increase the bandwidth </CITE> . 
+Using this feature , an AP can use multiple channels by equipped with multiple NICs ( Network Interface Cards ) to increase the bandwidth </CITE> . 
+35
+For the optimal design of WIMNET , we have studied related combinatorial optimization problems and their algorithms . 
+For the optimal design of WIMNET , we have studied related combinatorial optimization problems and their algorithms . 
+36
+In </CITE> , we defined the AP allocation problem with its heuristic algorithms . 
+In </CITE> , we defined the AP allocation problem with its heuristic algorithms . 
+37
+In </CITE> , we studied the gateway AP selection problem . 
+In </CITE> , we studied the gateway AP selection problem . 
+38
+In </CITE> , we studied the NIC and channel assignment problem .
+In </CITE> , we studied the NIC and channel assignment problem .
+39
+As the size of WIMNET is expanded , two factors may determine its performance of communications . 
+As the size of WIMNET is expanded , two factors may determine its performance of communications . 
+40
+The first factor is the increase of the transmission delay at wireless links between GWs and their adjacent APs . 
+The first factor is the increase of the transmission delay at wireless links between GWs and their adjacent APs . 
+41
+In WIMNET , all the packets to/from user hosts associated with APs other than GWs , must be handled by a GW to access the Internet .
+In WIMNET , all the packets to/from user hosts associated with APs other than GWs must be handled by a GW to access the Internet .
+42
+Thus , wireless communications around GWs can be very crowded , and one link between GW and its adjacent AP may become the bottleneck of the whole communication in WIMNET . 
+Thus , wireless communications around GWs can be very crowded , and one link between GW and its adjacent AP may become the bottleneck of the whole communication in WIMNET . 
+43
+The second factor is the propagation delay due to multihop communications between an AP and GW .
+The second factor is the propagation delay due to multihop communications between an AP and GW .
+44
+The increase of the hop count ( the number of hops ) in the multihop communication directly increases the delay , because packets are transmitted in a bucket brigade way . 
+The increase of the hop count ( the number of hops ) in the multihop communication directly increases the delay , because packets are transmitted in a bucket - brigade manner . 
+45
+It can also increase the transmission delay , because more links need to be activated .
+It can also increase the transmission delay because more links need to be activated .
+46
+Therefore , the proper routing for communications between APs to minimize both delays is very important to improve the performance of the large-scale WIMNET .
+Therefore , the proper routing for communications between APs to minimize both delays is very important to improve the performance of the large-scale WIMNET .
+47
+The routing paths for AP communications in WIMNET with a single GW becomes a spanning tree rooted at GW of the graph representing the AP network topology , because every AP must be connected with GW for the Internet access . 
+The routing paths for AP communications in WIMNET with a single GW becomes a spanning tree rooted at GW of the graph representing the AP network topology , because every AP must be connected with GW for the Internet access . 
+48
+In this paper , using this graph representation , we formulate the minimum-delay routing tree problem to find optimal routing paths for AP communications in WIMNET . 
+In this paper , using this graph representation , we formulate the minimum-delay routing tree problem to find optimal routing paths for AP communications in WIMNET . 
+49
+We prove the NPcompleteness of the decision version through reduction from the NP-complete bin packing problem </CITE> . 
+We prove the NPcompleteness of the decision version via a reduction from the NP-complete bin packing problem </CITE> . 
+50
+Then , we propose the greedy heuristic algorithm for this problem .
+Then , we propose the greedy heuristic algorithm for this problem .
+51
+For the proper routing , the precise estimations of both delays become essential . 
+The precise estimations of both delays are essential for the proper routing . 
+52
+The propagation delay to an AP can be easily estimated by the summation of the link delays along the path between this AP and GW . 
+The propagation delay to an AP can be easily estimated by the summation of the link delays along the path between this AP and GW . 
+53
+However , the estimation of the transmission delay of a link is hard during the tree construction in the greedy algorithm . 
+However , it is hard to estimate the transmission delay of a link during the tree construction in the greedy algorithm . 
+54
+Although this estimation requires the sum of traffics at the link that are transmitted from all the APs along the same path as described later , this path can be known after the routing tree is completed .
+Although this estimation requires the sum of traffics at the link that are transmitted from all the APs along the same path as described later , this path can be known after the routing tree is completed .
+55
+Therefore , before selecting one link to construct a routing tree , our algorithm predicts the remaining part of the tree using the Dijkstra shortest path algorithm with link delays , and estimates the transmission delay using the traffics along this predicted path . 
+Therefore , before selecting one link to construct a routing tree , our algorithm predicts the remaining part of the tree using the Dijkstra shortest path algorithm with link delays , and estimates the transmission delay using the traffics along this predicted path . 
+56
+The effectiveness of our approach is evaluated through simulations using the WIMNET simulator </CITE> that has been developed by our group .
+The effectiveness of our approach is evaluated through simulations using the WIMNET simulator </CITE> that has been developed by our group .
+57
+The rest of this paper is organized as follows : Section II defines the minimum-delay routing tree problem in WIMNET .
+The rest of this paper is organized as follows : Section II defines the minimum-delay routing tree problem in WIMNET .
+58
+Section IV proves the NP-completeness of its decision version .
+Section IV proves the NP-completeness of its decision version .
+59
+Section IV presents our greedy heuristic algorithm . 
+Section IV presents our greedy heuristic algorithm . 
+60
+Section V shows evaluation results of our algorithm by simulations .
+Section V shows evaluation results of our algorithm by simulations .
+61
+Section VI notes some related works . 
+Section VI notes some related works . 
+62
+Section VII provides the conclusion and some future works of this paper .
+Section VII provides the conclusion and some future works of this paper .
+63
+</p>
+</p>
+64
+</section>
+</section>
+65
+<section label=”FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM”>
+<section label=”FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM”>
+66
+<subsection label=”Overview of Minimum-Delay Routing Tree Problem”>
+<subsection label=”Overview of Minimum-Delay Routing Tree Problem”>
+67
+<p>
+<p>
+68
+In the minimum-delay routing tree problem for AP communications in WIMNET , the AP network topology , G = ( V , E ) , is given as the input with one GW to the Internet . 
+In the minimum-delay routing tree problem for AP communications in WIMNET , the AP network topology , G = ( V , E ) , is given as the input with one GW to the Internet . 
+69
+A vertex in V represents an AP and an edge in E represents a wireless link between two APs . 
+A vertex in V represents an AP and an edge in E represents a wireless link between two APs . 
+70
+Every vertex in V and every edge in E are associated with non-negative weights . 
+Every vertex in V and every edge in E are associated with non-negative weights . 
+71
+The weight hi for the ith AP ( =APi ) represents the expected number of hosts associated with this AP . 
+The weight hi for the ith AP ( =APi ) represents the expected number of hosts associated with this AP . 
+72
+The weight sij for the link from APi to AP j ( =linkij ) represents the bandwidth or the transmission speed . 
+The weight sij for the link from APi to AP j ( =linkij ) represents the bandwidth or the transmission speed . 
+73
+They are estimated or observed beforehand to design WIMNET properly . 
+They are estimated or observed beforehand to design WIMNET properly . 
+74
+Then , the traffic through each link in E is estimated from vertex weights , assuming that every host communicates the same amount of traffic to/from the Internet .
+Then , the traffic through each link in E is estimated from vertex weights , assuming that every host communicates the same amount of traffic to/from the Internet .
+75
+The objective of this problem is to minimize the two delays described in Section I . 
+The objective of this problem is to minimize the two delays described in Section I . 
+76
+The propagation delay Di prop for APi is given by the summation of link delays along the route Pi from GW to APi . 
+The propagation delay Di prop for APi is given by the summation of link delays along the route Pi from GW to APi . 
+77
+Because the link delay is inversely proportional to the bandwidth , Di prop is given by : </Eq> ( 1 )
+Because the link delay is inversely proportional to the bandwidth , Di prop is given by : </Eq> ( 1 )
+78
+The transmission delay Di trans for the link between GW and its adjacent AP ( let APi ) is given by the transmission time of all the traffics at this bottleneck link . 
+The transmission delay Di trans for the link between GW and its adjacent AP ( let APi ) is given by the transmission time of all the traffics at this bottleneck link . 
+79
+Dtrans i is given by : </Eq> ( 2 ) where AP g represents GW , and </Eq> represents the traffic of link </Eq> , which will be discussed in II-C .
+Dtrans i is given by : </Eq> ( 2 ) where AP g represents GW , and </Eq> represents the traffic of link </Eq> , which will be discussed in II-C .
+80
+Then , the cost function E is defined to represent the minimization of the largest propagation delay and the largest transmission delay in the routing tree . 
+Then , the cost function E is defined to represent the minimization of the largest propagation delay and the largest transmission delay in the routing tree . 
+81
+E is given by : </Eq> ( 3 ) where </Eq> and </Eq> represent constant coefficients , the function </Eq> returns the maximum value in the set S , and Ng represents the set of APs adjacent to GW . 
+E is given by : </Eq> ( 3 ) where </Eq> and </Eq> represent constant coefficients , the function </Eq> returns the maximum value in the set S , and Ng represents the set of APs adjacent to GW . 
+82
+Note that </Eq> = 200 and </Eq> = 1 are used in our simulations .
+Note that </Eq> = 200 and </Eq> = 1 are used in our simulations .
+83
+</p>
+</p>
+84
+</subsection>
+</subsection>
+85
+<subsection label=” Formulation of Minimum-Delay Routing Tree Problem”>
+<subsection label=” Formulation of Minimum-Delay Routing Tree Problem”>
+86
+We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
+We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
+87
+Input : G = ( V , E ) : the AP network topology with </Eq> : a gateway to the Internet , hi : the expected number of hosts associated with APi for </Eq> , </Eq> : the bandwidth of </Eq> for </Eq> and </Eq> , TRs : the average sending traffic from a host , and TRr : the average receiving traffic to a host .
+Input : G = ( V , E ) : the AP network topology with </Eq> : a gateway to the Internet , hi : the expected number of hosts associated with APi for </Eq> , </Eq> : the bandwidth of </Eq> for </Eq> and </Eq> , TRs : the average sending traffic from a host , and TRr : the average receiving traffic to a host .
+88
+Output : T : the routing tree .
+Output : T : the routing tree .
+89
+Constraint : T must include every AP in V ( T must be a spanning tree rooted at GW ) .
+Constraint : T must include every AP in V ( T must be a spanning tree rooted at GW ) .
+90
+Objective : to minimize the cost function E in ( 3 ) .
+Objective : to minimize the cost function E in ( 3 ) .
+91
+</p>
+</p>
+92
+</subsection>
+</subsection>
+93
+<subsection label= ”Link Traffic Estimation”>
+<subsection label= ”Link Traffic Estimation”>
+94
+<p>
+<p>
+95
+The traffic of a link is given by the summation of the traffics to/from the APs along the path located on the opposite side of this link from GW in the routing tree T , because these traffics must be transmitted through this link to access the Internet in this multihop network .
+The traffic of a link is given by the summation of the traffics to/from the APs along the path located on the opposite side of this link from GW in the routing tree T , because these traffics must be transmitted through this link to access the Internet in this multihop network .
+96
+1 ) Initialization of the traffic of </Eq> : </Eq> .
+1 ) Initialization of the traffic of </Eq> : </Eq> .
+97
+2 ) Calculation of the traffic of </Eq> : </Eq> and </Eq> if </Eq> is included in Pk .
+2 ) Calculation of the traffic of </Eq> : </Eq> and </Eq> if </Eq> is included in Pk .
+98
+Figure 2 shows that the traffic of the link from GW to its adjacent AP is calculated by the summation of the traffics to the APs along the same path in the routing tree , because they must be transmitted by this link . tk ( k = 1 , 2 , 3 , 4 ) represents the traffic to APk .
+Figure 2 shows that the traffic of the link from GW to its adjacent AP is calculated by the summation of the traffics to the APs along the same path in the routing tree , because they must be transmitted by this link . tk ( k = 1 , 2 , 3 , 4 ) represents the traffic to APk .
+99
+</Eq>
+</Eq>
+100
+</p>
+</p>
+101
+</subsection>
+</subsection>
+102
+</section>
+</section>
+103
+<section label= “PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM”>
+<section label= “PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM”>
+104
+<p>
+<p>
+105
+In this section , the NP-completeness of the decision version of the minimum-delay routing tree problem is proved through reduction from the NP-complete bin packing problem </CITE> .
+In this section , the NP-completeness of the decision version of the minimum-delay routing tree problem is proved via a reduction from the NP-complete bin packing problem </CITE> .
+106
+</p>
+</p>
+107
+<subsection label=”Decision Version of Minimum-delay Routing Tree Problem”>
+<subsection label=”Decision Version of Minimum-delay Routing Tree Problem”>
+108
+<p>
+<p>
+109
+The decision version of the minimum-delay routing tree problem , Min-Tree , is defined as follows :
+The decision version of the minimum-delay routing tree problem , Min-Tree , is defined as follows :
+110
+Instance : The same inputs as the minimum-delay routing tree problem in II-B and an additional constant E0 .
+Instance : The same inputs as the minimum-delay routing tree problem in II-B and an additional constant E0 .
+111
+Question : Is there a routing tree to satisfy E ? E0 ?
+Question : Is there a routing tree to satisfy E ? E0 ?
+112
+</p>
+</p>
+113
+</subsection>
+</subsection>
+114
+<subsection label=”Bin Packing Problem”>
+<subsection label=”Bin Packing Problem”>
+115
+<p>
+<p>
+116
+The bin packing problem , Bin-packing , is defined as the following decision problem :
+The bin packing problem , Bin-packing , is defined as the following decision problem :
+117
+Instance : a set of M cups with water of volume </Eq> for cup i , and L bins with a constant volume B .
+Instance : a set of M cups with water of volume </Eq> for cup i , and L bins with a constant volume B .
+118
+Question : Is there a way of pouring the water of all the cups into bins without spilling , such that the whole water of any cup is poured into the same bin ?
+Question : Is there a way of pouring the water of all the cups into bins without spilling , such that the whole water of any cup is poured into the same bin ?
+119
+</p>
+</p>
+120
+</subsection>
+</subsection>
+121
+<subsection label=”Proof of NP-completeness”>
+<subsection label=”Proof of NP-completeness”>
+122
+<p>
+<p>
+123
+Clearly , Min-Tree belongs to the class NP . 
+Clearly , Min-Tree belongs to the class NP . 
+124
+Then , we show that an arbitrary instance of Bin-packing can be transformed into the following Min-Tree instance :
+Then , we show that an arbitrary instance of Bin-packing can be transformed into the following Min-Tree instance :
+125
+Input : G = ( V , E ) : GW ( =AP0 ) is connected with the K APs ( =APi for </Eq> ) , where the K APs are connected with all of the remaining M APs ( =APi for </Eq> ) , the M APs are connected with each other , and N = 1 + K + M , as shown in Figure 3 , </Eq> for </Eq> and </Eq> for </Eq> for </Eq> and </Eq> .
+Input : G = ( V , E ) : GW ( =AP0 ) is connected with the K APs ( =APi for </Eq> ) , where the K APs are connected with all of the remaining M APs ( =APi for </Eq> ) , the M APs are connected with each other , and N = 1 + K + M , as shown in Figure 3 , </Eq> for </Eq> and </Eq> for </Eq> for </Eq> and </Eq> .
+126
+In this Min-Tree instance , the cost function E in ( 3 ) is equal to the maximum traffic among the links incident to GW . 
+In this Min-Tree instance , the cost function E in ( 3 ) is equal to the maximum traffic among the links incident to GW . 
+127
+The traffic of such a link is given by the summation of the traffics from the APs along the route to GW in the tree . 
+The traffic of such a link is given by the summation of the traffics from the APs along the route to GW in the tree . 
+128
+Thus , each of K routes in the tree is equivalent to one bin packing of cups . 
+Thus , each of K routes in the tree is equivalent to one bin packing of cups . 
+129
+This proves the NP-completeness of Min-Tree .
+This proves the NP-completeness of Min-Tree .
+130
+</p>
+</p>
+131
+</subsection>
+</subsection>
+132
+</section>
+</section>
+133
+<section label=”MINIMUM-DELAY ROUTING TREE ALGORITHM”>
+<section label=”MINIMUM-DELAY ROUTING TREE ALGORITHM”>
+134
+<p>
+<p>
+135
+In this section , we propose a greedy heuristic algorithm for the minimum-delay routing tree problem for AP communications in WIMNET .
+In this section , we propose a greedy heuristic algorithm for the minimum-delay routing tree problem for AP communications in WIMNET .
+136
+</p>
+</p>
+137
+<subsection label=”Modified Cost Function”>
+<subsection label=”Modified Cost Function”>
+138
+<p>
+<p>
+139
+In WIMNET , all the traffics of the hosts for the Internet access must pass through GW . 
+In WIMNET , all the traffics of the hosts for the Internet access must pass through GW . 
+140
+When the hosts are associated with APs other than GW , their traffics must be transmitted by one of the links between GW and its adjacent APs . 
+When the hosts are associated with APs other than GW , their traffics must be transmitted by one of the links between GW and its adjacent APs . 
+141
+Because the number of such links is usually small , the minimization of the transmission delay of one link among them may increase delays of the other links . 
+Because the number of such links is usually small , the minimization of the transmission delay of one link among them may increase delays of the other links . 
+142
+To deal with this problem , our algorithm actually seeks the minimization of the difference between the maximum transmission delay and the minimum one . 
+To deal with this problem , our algorithm actually seeks the minimization of the difference between the maximum transmission delay and the minimum one . 
+143
+This modified cost function is given by : </Eq> ( 4 ) where min </Eq> returns the minimum value in the set S .
+This modified cost function is given by : </Eq> ( 4 ) where min </Eq> returns the minimum value in the set S .
+144
+</p>
+</p>
+145
+</subsection>
+</subsection>
+146
+<subsection label=”Minimum-delay Routing Tree Algorithm”>
+<subsection label=”Minimum-delay Routing Tree Algorithm”>
+147
+<p>
+<p>
+148
+Our algorithm greedily constructs the routing tree T = ( VT  , ET  ) by repeating the selection of one link that minimizes the modified cost function Em if it is added into T , until every AP is included in the tree .
+Our algorithm greedily constructs the routing tree T = ( VT  , ET  ) by repeating the selection of one link that minimizes the modified cost function Em if it is added into T , until every AP is included in the tree .
+149
+To estimate the transmission delay in Em accurately , the complete routing tree is predicted by expanding the current partial tree using the Dijkstra shortest path algorithm in terms of the link delay . 
+To estimate the transmission delay in Em accurately , the complete routing tree is predicted by expanding the current partial tree using the Dijkstra shortest path algorithm in terms of the link delay . 
+150
+Here , we note that the ?-term in Em is calculated from the current tree T with the selected link . 
+Here , we note that the ?-term in Em is calculated from the current tree T with the selected link . 
+151
+In the procedure , the routing tree T = ( VT  , ET  ) is first initialized with GW , and then , T is sequentially constructed by selecting the best link of minimizing the cost function of the predicted tree one by one , until V T = V  .
+In the procedure , the routing tree T = ( VT  , ET  ) is first initialized with GW , and then , T is sequentially constructed by selecting the best link of minimizing the cost function of the predicted tree one by one , until V T = V  .
+152
+1 ) Calculate the delay at linkij by </Eq> .
+1 ) Calculate the delay at linkij by </Eq> .
+153
+2 ) Initialize the routing tree T by V T=GW and </Eq> .
+2 ) Initialize the routing tree T by V T=GW and </Eq> .
+154
+3 ) Construct T by repeating the selection of the link satisfying the following two conditions , until every AP in V is included in T : it connects an </Eq> and an </Eq> , and when it is included in T , Em with the tree predicted in IV-C becomes minimum .
+3 ) Construct T by repeating the selection of the link satisfying the following two conditions , until every AP in V is included in T : it connects an </Eq> and an </Eq> , and when it is included in T , Em with the tree predicted in IV-C becomes minimum .
+155
+</p>
+</p>
+156
+</subsection>
+</subsection>
+157
+<subsection label=”Routing Tree Prediction”>
+<subsection label=”Routing Tree Prediction”>
+158
+<p>
+<p>
+159
+The complete routing tree is predicted by expanding the current partial tree T by selecting the links that connect the remaining APs using the Dijkstra shortest path algorithm .
+The complete routing tree is predicted by expanding the current partial tree T by selecting the links that connect the remaining APs using the Dijkstra shortest path algorithm .
+160
+1 ) Initialize the set of the unselected APs , A , by A = V  , and the decision variables , AP weight labels ( propagation delay ) and AP route labels ( previous APs in paths from GW ) , in the Dijkstra algorithm using the current partial tree T as follows :
+1 ) Initialize the set of the unselected APs , A , by A = V  , and the decision variables , AP weight labels ( propagation delay ) and AP route labels ( previous APs in paths from GW ) , in the Dijkstra algorithm using the current partial tree T as follows :
+161
+a ) for AP weight labels : set the propagation delay in 1 for any </Eq> , and set </Eq> for the remaining APs .
+a ) for AP weight labels : set the propagation delay in 1 for any </Eq> , and set </Eq> for the remaining APs .
+162
+b ) for AP route labels : set the previous AP along the route from GW in T for any AP in T , and set </Eq> for the remaining APs .
+b ) for AP route labels : set the previous AP along the route from GW in T for any AP in T , and set </Eq> for the remaining APs .
+163
+2 ) Select one AP ( let APk ) in A that has the smallest weight label .
+2 ) Select one AP ( let APk ) in A that has the smallest weight label .
+164
+3 ) Remove APk from A , and terminate the procedure if </Eq> .
+3 ) Remove APk from A , and terminate the procedure if </Eq> .
+165
+4 ) Update the both labels of the APs adjacent to </Eq> .
+4 ) Update the both labels of the APs adjacent to </Eq> .
+166
+</p>
+</p>
+167
+</subsection>
+</subsection>
+168
+</section>
+</section>
+169
+<section label=”EVALUATION BY NETWORK SIMULATIONS”>
+<section label=”EVALUATION BY NETWORK SIMULATIONS”>
+170
+<p>
+<p>
+171
+In this section , we discuss the performance improvement by our approach through network simulations using the WIMNET simulator .
+In this section , we discuss the performance improvement by our approach via network simulations using the WIMNET simulator .
+172
+</p>
+</p>
+173
+<subsection label=”WIMNET Simulator”>
+<subsection label=”WIMNET Simulator”>
+174
+<p>
+<p>
+175
+The WIMNET simulator simulates the least functions for wireless communications of hosts and APs required to evaluate throughputs and delays , because this simulator has bee developed for evaluations of a large-scale WIMNET with reasonable CPU time on a conventional PC . 
+The WIMNET simulator simulates the least functions for wireless communications of hosts and APs required to evaluate throughputs and delays , because this simulator has bee developed for evaluations of a large-scale WIMNET with reasonable CPU time on a conventional PC . 
+176
+Thus , a sequence of functions such as host movements , communication request arrivals , and wireless link activations , are synchronized by a single global clock called a time slot . 
+Thus , a sequence of functions such as host movements , communication request arrivals , and wireless link activations , are synchronized by a single global clock called a time slot . 
+177
+Within an integral multiple of time slots , a host or an AP can complete the one frame transmission and the acknowledgement reception . 
+Within an integral multiple of time slots , a host or an AP can complete the one frame transmission and the acknowledgement reception . 
+178
+In this paper , the duration time of one time slot is set 0.2ms .
+In this paper , the duration time of one time slot is set 0.2ms .
+179
+From our past experimental results , the maximum bandwidth of links between APs is set 30Mbps , and that between an AP and hosts is 20Mbps . 
+From our past experimental results , the maximum bandwidth of links between APs is set 30Mbps , and that between an AP and hosts is 20Mbps . 
+180
+Thus , the former link is completed with two slots , and the latter is with three slots , assuming every frame size is 1 , 500bytes . 
+Thus , the former link is completed with two slots , and the latter is with three slots , assuming every frame size is 1 , 500bytes . 
+181
+When two or more links within their wireless ranges may be activated at the same time slot , randomly selected only one link among them is successfully activated , and the others are inserted into waiting queues to avoid collisions , supposing DCF and RTS/CTS functions . 
+When two or more links within their wireless ranges are activated at the same time slot , only one link , randomly selected , is successfully activated , and the others are inserted into waiting queues to avoid collisions , assuming DCF and RTS/CTS functions . 
+182
+The packets for each request are routed along the path in the routing tree T . 
+The packets for each request are routed along the path in the routing tree T . 
+183
+Only the connection-less communication is implemented in the WIMNET simulator , where the retransmission is not considered .
+Only the connection-less communication is implemented in the WIMNET simulator , where the retransmission is not considered .
+184
+</p>
+</p>
+185
+</subsection>
+</subsection>
+186
+<subsection label=”Simulated Results for Fixed Traffic Patterns”>
+<subsection label=”Simulated Results for Fixed Traffic Patterns”>
+187
+<p>
+<p>
+188
+First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
+First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
+189
+1 ) Simulated Instances : In the simulated instances , 5 × 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+1 ) Simulated Instances : In the simulated instances , 5 × 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+190
+Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
+Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
+191
+The center AP is selected as the gateway to the Internet . 
+The center AP is selected as the gateway to the Internet . 
+192
+Two types of biased fixed traffic patterns , or host distributions , in the field shown in Figures 4 and 5 are considered . 
+Two types of biased fixed traffic patterns , or host distributions , in the field shown in Figures 4 and 5 are considered . 
+193
+A white circle in both figures represents an AP associated with 1 host . 
+A white circle in both figures represents an AP associated with 1 host . 
+194
+A black circle represents an AP with 8 hosts in Figure 4 and with 10 hosts in Figure 5 . 
+A black circle represents an AP with 8 hosts in Figure 4 and with 10 hosts in Figure 5 . 
+195
+We have selected them so that the total number of hosts in each instance becomes about 100 for the unification of loads . 
+We have selected them so that the total number of hosts in each instance becomes about 100 for the unification of loads . 
+196
+These simple but extreme cases are used to clarify the superiority of our combined delay approach to single delay approaches .
+These simple but extreme cases are used to clarify the superiority of our combined delay approach to single delay approaches .
+197
+For each traffic pattern , we first applied our routing tree algorithm in Section IV , and then , the channel configuration algorithm in </CITE> to optimally assign the traditional NICs to Aps and the channels to the communication links used in the routing tree .
+For each traffic pattern , we first applied our routing tree algorithm in Section IV , and then , the channel configuration algorithm in </CITE> to optimally assign the traditional NICs to Aps and the channels to the communication links used in the routing tree .
+198
+Then , we executed the WIMNET simulator using the network configuration given by these algorithms .
+Then , we executed the WIMNET simulator using the network configuration given by these algorithms .
+199
+Before starting each simulation run , every host has 125 packets sending to the gateway , and the gateway has 1 ,000 packets sending to each host , where each packet has a single frame size .
+Before starting each simulation run , every host has 125 packets sending to the gateway , and the gateway has 1 ,000 packets sending to each host , where each packet has a single frame size .
+200
+When all of the packets are received by their destinations , one simulation run is terminated .
+When all of the packets are received by their destinations , one simulation run is terminated .
+201
+For the network performance , the throughput is calculated by dividing the total received packet size with the simulation time .
+For the network performance , the throughput is calculated by the total received packet size divided by the simulation time .
+202
+2 ) Simulation Results : In simulations , in addition to our algorithm ( proposal ) , the algorithm considering only the propagation delay ( comp1 ) , which has often been used in routing , and the algorithm considering only the transmission delay ( comp2 ) , are executed for comparisons .
+2 ) Simulation Results : In simulations , in addition to our algorithm ( proposal ) , the algorithm considering only the propagation delay ( comp1 ) , which has often been used in routing , and the algorithm considering only the transmission delay ( comp2 ) , are executed for comparisons .
+203
+Figure 6 and 7 illustrate the routing trees obtained by three algorithms for traffic patterns 1 and 2 , respectively . 
+Figure 6 and 7 illustrate the routing trees obtained by three algorithms for traffic patterns 1 and 2 , respectively . 
+204
+For both patterns , proposal and comp1 find trees with the shortest path for any AP , whereas comp2 does not find such a tree for traffic pattern 2 .
+For both patterns , proposal and comp1 find trees with the shortest path for any AP , whereas comp2 does not find such a tree for traffic pattern 2 .
+205
+Figures 8 and 9 show changes of throughputs when the number of additional NICs at Aps increases .
+Figures 8 and 9 show changes of throughputs when the number of additional NICs at Aps increases .
+206
+When every AP is assigned only one NIC , the throughout is similar among them .
+When every AP is assigned only one NIC , the throughout is similar among them .
+207
+The reason is that the bandwidth of the single channel shared among the links around GW , becomes the bottleneck of whole communications in WIMNET , where the gateway must handle every traffic from/to the Internet .
+The reason is that the bandwidth of the single channel shared among the links around GW becomes the bottleneck of whole communications in WIMNET , where the gateway must handle every traffic from/to the Internet .
+208
+However , the throughput is improved by utilizing multiple channels even when a small number of additional NICs are used .
+However , the throughput is improved by utilizing multiple channels even when a small number of additional NICs are used .
+209
+This improvement becomes best for proposal , where the routing tree gives the shortest path for any AP , and disperses traffics more equally among the bottleneck links .
+This improvement becomes best for proposal , where the routing tree gives the shortest path for any AP , and disperses traffics more equally among the bottleneck links .
+210
+</p>
+</p>
+211
+</subsection>
+</subsection>
+212
+<subsection label=”Simulation results for random traffic patterns”>
+<subsection label=”Simulation results for random traffic patterns”>
+213
+<p>
+<p>
+214
+Then , we investigate the effectiveness of our approach with three different gateway positions in Figure 10 under random traffic patterns .
+Then , we investigate the effectiveness of our approach with three different gateway positions in Figure 10 under random traffic patterns .
+215
+In these simulations , the number of associated hosts for each AP is randomly selected between 1 and 7 hosts for each of 50 runs where the total number of hosts in the field is always 100 .
+In these simulations , the number of associated hosts for each AP is randomly selected between 1 and 7 hosts for each of 50 runs where the total number of hosts in the field is always 100 .
+216
+Figure 11 shows changes of their average throughputs with the increase of additional NICs for three gateway positions .
+Figure 11 shows changes of their average throughputs with the increase of additional NICs for three gateway positions .
+217
+When 13 Aps are added , the throughputs become saturated .
+When 13 Aps are added , the throughputs become saturated .
+218
+This maximum throughput is about 120Mbps for the center GW , 90Mbps for the edge-center GW , and 60Mbps for the corner GW .
+This maximum throughput is about 120Mbps for the center GW , 90Mbps for the edge-center GW , and 60Mbps for the corner GW .
+219
+These results are coincident with their rough estimations that can be given by sums of adjacent Aps .
+These results are coincident with their rough estimations that can be given by sums of adjacent Aps .
+220
+This fact justifies our routing algorithm for these random instances .
+This fact justifies our routing algorithm for these random instances .
+221
+</p>
+</p>
+222
+</subsection>
+</subsection>
+223
+</section>
+</section>
+224
+<section label=”Related Works”>
+<section label=”Related Works”>
+225
+<p>
+<p>
+226
+Several works have been reported for routings of point-to-point communications in wireless mesh networks .
+Several works have been reported for routings of point-to-point communications in wireless mesh networks .
+227
+</CITE> formulates the joint problem of the channel assignment , the routing , and the scheduling for a special case of the wireless mesh network where every link activation is synchronously controlled by a single global clock , and the presents its approximation algorithm that guarantees the order of approximation .
+</CITE> formulates the joint problem of the channel assignment , the routing , and the scheduling for a special case of the wireless mesh network where every link activation is synchronously controlled by a single global clock , and the presents its approximation algorithm that guarantees the order of approximation .
+228
+Unfortunately , the realization of this synchronous wireless mesh network is very hard , and the superiority of the performance is actually not clear to the conventional asynchronous one including this paper .
+Unfortunately , the realization of this synchronous wireless mesh network is very hard , and the superiority of the performance is actually not clear to the conventional asynchronous one including this paper .
+229
+Besides , it assumes that every AP has the same number of associated hosts and assigned NICs , which is different from out more practical assumption in this paper .
+Besides , it assumes that every AP has the same number of associated hosts and assigned NICs , which is different from out more practical assumption in this paper .
+230
+</CITE> compares three routing methods of selecting a route for each host to the gateway , where the host carried with a person or a car frequently moves .
+</CITE> compares three routing methods of selecting a route for each host to the gateway , where the host carried with a person or a car frequently moves .
+231
+</CITE> proposes ETT as the link metric and WCETT as the route metric for routing .
+</CITE> proposes ETT as the link metric and WCETT as the route metric for routing .
+232
+ETT represents the average transmission time that can be calculated from the loss rate and the bandwidth of the link .
+ETT represents the average transmission time that can be calculated from the loss rate and the bandwidth of the link .
+233
+WCETT is given by the summation of ETT along the route and the maximum of the summation of ETT for the links using the same channel .
+WCETT is given by the summation of ETT along the route and the maximum of the summation of ETT for the links using the same channel .
+234
+</CITE> proposes the link metric iAWARE that is given by the ratio between ETT and IR ( interference ratio ) , and the routing method using it .
+</CITE> proposes the link metric iAWARE that is given by the ratio between ETT and IR ( interference ratio ) , and the routing method using it .
+235
+</p>
+</p>
+236
+</section>
+</section>
+237
+<section label=”Conclusion”>
+<section label=”Conclusion”>
+238
+<p>
+<p>
+239
+This paper has presented the formulation of the minimum-delay routing problem for access-point communications in the wireless Internet-access mesh network ( WIMNET ) , and proved the NP-completeness of its decision version .
+This paper has presented the formulation of the minimum-delay routing problem for access-point communications in the wireless Internet-access mesh network ( WIMNET ) , and proved the NP-completeness of its decision version .
+240
+Then , it has proposed the greedy heuristic algorithm with repetitions of complete tree predictions .
+Then , it has proposed the greedy heuristic algorithm with repetitions of complete tree predictions .
+241
+The effectiveness of our approach is verified through simulations using the WIMNET simulator .
+The effectiveness of our approach is verified through simulations using the WIMNET simulator .
+242
+The significant performance improvements with a small number of additional NICs are observed using proper routing trees found by our algorithm .
+The significant performance improvements with a small number of additional NICs are observed using proper routing trees found by our algorithm .
+243
+In future works , our algorithm will be evaluated under non-uniform link bandwidths and/or dynamic traffic changes in simulations .
+In future works , our algorithm will be evaluated under non-uniform link bandwidths and/or dynamic traffic changes in simulations .
+244
+Besides , to justify our approach in the real world , the performance of WIMNET will be investigated after implementing real APs with multiple NICs .
+Besides , to justify our approach in the real world , the performance of WIMNET will be investigated after implementing real APs with multiple NICs .
+245
+</p>
+</p>
+246
+</section>
+</section>
+247
+</document>
+</document>

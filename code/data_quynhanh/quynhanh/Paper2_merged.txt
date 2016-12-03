@@ -1,0 +1,464 @@
+Quality Measurement for Transmitted Audio Data Using Distribution of Sub-band Signals
+Quality Measurement for Transmitted Audio Data Using Distribution of Sub-band Signals
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Recently , the remarkable progress of network technology has increased the requirement for transmission of high quality multimedia data . 
+Recently , the remarkable progress of network technology has increased the requirement for transmission of high quality multimedia data . 
+5 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+By the trend , it has been issued to investigate an efficient methodology for quality measurement of transmitted multimedia data . 
+By the trend , it has been issued to investigate an efficient methodology for quality measurement of transmitted multimedia data . 
+6 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+In this paper , we propose a new audio quality measurement technique to substitute for a typical quality measurement tool , RMSE (Root Mean Squared Error) .
+In this paper , we propose a new audio quality measurement technique to substitute for a typical quality measurement tool , RMSE (Root Mean Squared Error) .
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+The proposed method modifies the variance of sub-band signals to perform the estimation of audio quality at the transmitter  , the receiver is able to estimate the quality distortion of transmitted audio data by calculating the distance between the variance and the reference value representing the characteristics of sub-band signals , so called EVE (Estimated Variance Error) . 
+The proposed method modifies the variance of sub-band signals to perform the estimation of audio quality at the transmitter  , the receiver is able to estimate the quality distortion of transmitted audio data by calculating the distance between the variance and the reference value representing the characteristics of sub-band signals , so called EVE (Estimated Variance Error) . 
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved
+
+The proposed is as no reference technique , it does not require the original data to measure the audio quality . 
+The proposed is not a reference technique , so it does not require the original data to measure the audio quality . 
+9 0:0:preserved 1:1:preserved 2:2:preserved 3,4:4,3:bigrammar-det 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved :8:unaligned
+
+On the Gaussian noise channel with several standard deviations , we prove that the proposed scheme has good performance , and it is a novel alternative to RMSE .
+On the Gaussian noise channel with several standard deviations , we prove that the proposed scheme has good performance , and it is a novel alternative to RMSE .
+10 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+With the rapid growth of the Internet , most consumers have requested for service providers to transmit the multimedia data with high quality . 
+With the rapid growth of the Internet , most consumers have requested for service providers to transmit the multimedia data with high quality . 
+14 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+It encourages the researchers to develop the compression technology such as MPEG ( Motion Pictures Experts Group ) and JPEG ( Joint Photographic Experts Group ) / JPEG-2000 , the network environment to guarantee the QoS ( Quality of Services ) , and so on .
+It encourages the researchers to develop the compression technology such as MPEG ( Motion Pictures Experts Group ) and JPEG ( Joint Photographic Experts Group ) / JPEG-2000 , the network environment to guarantee the QoS ( Quality of Services ) , and so on .
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved
+
+Although the wellconstructed network environment is most important to satisfy the demands of consumers , it costs enormous expense since it is primarily based on the physical layer of OSI ( Open Systems Interconnection ) seven layers .
+Although the wellconstructed network environment is most important to satisfy the demands of consumers , it is costly since it is primarily based on the physical layer of OSI ( Open Systems Interconnection ) seven layers .
+16 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16,17,18:17,16:paraphrase 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved 37:36:preserved
+
+For that reason , recently , it has become a new issue to research schemes for quality measurement of multimedia data on the application layer .
+For that reason , recently , it has become a new issue to research schemes for quality measurement of multimedia data on the application layer .
+17 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+It is a good methodology to solve the cost problem .
+It is a good methodology to solve the cost problem .
+18 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Several quality measurement techniques of multimedia data have introduced by </CITE> . 
+Several quality measurement techniques of multimedia data have introduced by </CITE> . 
+19 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+R .Reibman </CITE> proposed the quality monitoring techniques of video . 
+R .Reibman </CITE> proposed the quality monitoring techniques of video . 
+20 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Compared with other researches , he introduced an especial method .
+Compared with other studies , he introduced an especial method .
+21 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The proposed algorithm on </CITE> measures the quality distortion from the video bit-stream instead of the samples .
+The proposed algorithm on </CITE> measures the quality distortion from the video bit-stream instead of the samples .
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Through the simulations , he claimed that his proposed algorithm using bit error is related on the real quality of video .
+Through the simulations , he claimed that his proposed algorithm using bit error is related to the real quality of video .
+23 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-prep 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+In </CITE> , they estimate the quality distortion of audio and still image by using fragile watermarking . 
+In </CITE> , they estimate the quality distortion of audios and still images by using fragile watermarking . 
+24 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,12:9,12:bigrammar-nnum 10:10:preserved 11:11:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+The proposed embeds watermark information into frequency components , which is obtained by DCT ( Discrete Cosine Transform ) or DWT ( Discrete Wavelet Transform ) .
+The method embeds watermark information into frequency components , which can be obtained by DCT ( Discrete Cosine Transform ) or DWT ( Discrete Wavelet Transform ) .
+25 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10,11:paraphrase 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved
+
+The measurement tool estimates the quality distortion from correct or incorrect extracted watermark bits . 
+The measurement tool estimates the quality distortion from correct or incorrect extracted watermark bits . 
+26 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Even if the fragile watermark is broken proportional to channel error ratio , the embedded watermark could be easily distorted by unintentional error such as compressions .
+Even if the fragile watermark is broken proportionally to channel error ratio , the embedded watermark could be easily distorted by such unintentional errors as compressions .
+27 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-wform 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:bigrammar-nnum 23:21:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Moreover it is difficult to decide a feature to embed watermark , which is sensitive to quality distortion .
+Moreover it is difficult to decide a feature to embed watermark , which is sensitive to quality distortion .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+In this paper , we propose a new audio quality measurement technique .
+In this paper , we propose a new audio quality measurement technique .
+29 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The proposed uses the distribution of sub-band signals , which is obtained by DWT .
+It uses the distribution of sub-band signals , which is obtained by DWT .
+30 0,1:0:paraphrase 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved
+
+At the transmitter , we alter the variance of sub-band signals into the constant value .
+At the transmitter , we alter the variance of sub-band signals into the constant value .
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The receiver , audio quality monitor , calculates the variance error from the constant value .
+The receiver monitors the audio quality by calculating the variance error from the constant value .
+32 0:0:preserved 1:1,2:paraphrase 2::unaligned 3:4:preserved 4,5:5:paraphrase 7,6:6,7:paraphrase 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved :3:mogrammar-det
+
+We denominate it as EVE ( Estimated Variance Error ) .
+We denominate it as EVE ( Estimated Variance Error ) .
+33 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+In general , since the variance moves according to changing of signals , we could estimate the quality distortion through checking the distance of variance .
+In general , since the variance moves according to the changing of signals , we could estimate the quality distortion by checking the distance of variance .
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:bigrammar-prep 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :9:mogrammar-det
+
+And , modifying the specific sub-band signals can decrease the distortion caused by the process of transmitter since modifying the variance of whole sub-band signals is waste of resource .
+And , modifying the specific sub-band signals can decrease the distortion caused by the process of transmission since modifying the variance of whole sub-band signals is a waste of resource .
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:bigrammar-wform 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved :26:mogrammar-det
+
+Besides , it allows us to select the optimal sub-band , which is most sensitive to noise .
+Besides , it allows us to select the optimal sub-band , which is most sensitive to noise .
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Note that a quality measurement system should be able to estimate the quantity of noise from the transmitted multimedia data .
+Note that a quality measurement system should be able to estimate the quantity of noise from the transmitted multimedia data .
+37 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Moreover , the proposed is no reference quality measurement technique , that is , it does not require the original audio data on the receiver .
+Moreover , the proposed is no reference quality measurement technique ; that is , it does not require the original audio data on the receiver .
+38 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:13:preserved 11:11:preserved 12:12:preserved 13:10:bigrammar-others 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+In section II , we describe our quality measurement technique using the distribution of sub-band signals in more detail .
+In section II , we describe our quality measurement technique using the distribution of sub-band signals in more detail .
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Section III shows the simulation results .
+Section III shows the simulation results .
+40 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+To demonstrate the efficiency of the proposed method , we compare the result with RMSE ( Root Mean Square Error ) on Gaussian noise channel .
+To demonstrate the efficiency of the proposed method , we compare the result with RMSE ( Root Mean Square Error ) on the Gaussian noise channel .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :22:mogrammar-det
+
+Finally , we conclude this paper in section IV .
+Finally , we conclude this paper in section IV .
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+In transmitting the multimedia data through wired / wireless network , the quality is almost dependent on channel noise .
+In transmitting the multimedia data through wired / wireless network , the quality is almost dependent on channel noise .
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Especially , if the characteristic of channel is represented by a kind of additive noise , RMSE ( Root Mean Squared Error ) can be used as a good quality measurement tool .
+Especially , if the characteristic of channel is represented by a kind of additive noise , RMSE ( Root Mean Squared Error ) can be used as a good quality measurement tool .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+RMSE can be redefined by the difference of variance between the original data and the transmitted data .
+RMSE can be redefined by the difference of variance between the original data and the transmitted data .
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+It is proved in appendix .
+It is proved in the appendix .
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved :4:mogrammar-det
+
+In this paper , we propose a quality measurement technique for transmitted audio data using the variance of sub-band signals , which is obtained by DWT ( Discrete Wavelet Transform ) .
+In this paper , we propose a quality measurement technique for transmitted audio data using the variance of sub-band signals , which is obtained by DWT ( Discrete Wavelet Transform ) .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Fig . 1 shows the proposed quality measurement system .
+Fig . 1 shows the proposed quality measurement system .
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+The proposed method modifies the variance of sub-band signals into constant value , so called reference value , and estimates the quality distortion from the distance between the variance of transmitted audio data and the constant value .
+The method modifies the variance of sub-band signals into constant value , or reference value and estimates the quality distortion from the distance between the variance of transmitted audio data and the constant value .
+54 0:0:preserved 2,1:1:paraphrase 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13,14,17:12:paraphrase 15:13:preserved 16:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved 28:25:preserved 29:26:preserved 30:27:preserved 31:28:preserved 32:29:preserved 33:30:preserved 34:31:preserved 35:32:preserved 36:33:preserved 37:34:preserved
+
+The reason of employing the sub-band signals for modifying the variance is that altering the whole frequency band signals has an influence on the distortion of audio quality .
+The reason of employing the sub-band signals for modifying the variance is that altering the whole frequency band signals has an influence on the distortion of audio quality .
+55 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Fig . 2 shows the main idea of proposed scheme .
+Fig . 2 shows the main idea of the proposed scheme .
+56 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved :8:mogrammar-det
+
+For the sake of simplicity , let’s assume that the sub-band signals is a random variable , X , with uniform distribution as shown in Fig . 2-(a) .
+For the sake of simplicity , let’s assume that the sub-band signals is a random variable , X , with a uniform distribution as shown in Fig . 2-(a) .
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved :20:mogrammar-det
+
+The distribution is modified according to reference value .
+The distribution is modified according to the reference value .
+58 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved :6:mogrammar-det
+
+For bigger reference value , the sub-band signals are modified to make their distribution concentrate on the mean value as shown in Fig . 2-(b) .
+For bigger reference values , the sub-band signals are modified to make their distribution concentrate on the mean value as shown in Fig . 2-(b) .
+59 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-nnum 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+On the other hand , for smaller reference value , the distribution becomes more distance from the mean value as shown in Fig . 2-(c) . 
+On the other hand , for smaller reference values , the distribution becomes more distant from the mean value as shown in Fig . 2-(c) . 
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-nnum 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-wform 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+The variance of random variable X with uniform distribution , </Eq> , is as follows .
+The variance of random variable X with uniform distribution , </Eq> , is as follows .
+61 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+That is , if we know the characteristics of signals , the reference value can be determined as constant value .
+That is , if we know the characteristics of signals , the reference value can be determined as constant value .
+63 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The quality measurement is quite easily performed , as the quality distortion can be estimated just by calculating the distance of variance from reference value .
+The quality measurement is quite easily performed , as the quality distortion can be estimated just by calculating the distance of variance from the reference value .
+64 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:24:preserved 24:25:preserved 25:26:preserved :23:mogrammar-det
+
+It means that the proposed can measure the audio quality without the original data .
+It means that the method can measure the audio quality without the original data .
+65 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+It is greatly correlated with RMSE . 
+It is greatly correlated with RMSE . 
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+Therefore , we designate the estimated RMSE as EVE ( Estimated Variance Error )
+Therefore , we designate the estimated RMSE as EVE ( Estimated Variance Error )
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+To measure the audio quality at the transmission side , we modify the variance of sub-band signals of original data into reference value .
+To measure the quality of the transmission audio , we modify the variance of sub-band signals of original data into reference values .
+71 0:0:preserved 1:1:preserved 2:2:preserved 3,4,5,6,7,8:7,3,4,5,6:para-colocation 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:bigrammar-nnum 23:22:preserved
+
+The original signal is decomposed into several sub-band signals by using DWT .
+The original signal is decomposed into several sub-band signals by using DWT .
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Fig . 3 shows the procedure of modifying the variance of original audio data into reference value .
+Fig . 3 shows the procedure of modifying the variance of original audio data into reference values .
+73 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:bigrammar-nnum 17:17:preserved
+
+Let’s consider only the simple system decomposed into two channel .
+Let’s consider only the simple system decomposed into two channels .
+74 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-nnum 10:10:preserved
+
+Firstly , the original signal </Eq> where , N is the number of audio samples) is divided into M small frames , </Eq> , where , M is the number of frame) .
+Firstly , the original signal </Eq> where , N is the number of audio samples) is divided into M small frames , </Eq> , where , M is the number of frame) .
+75 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+The signal of each frame is converted onto normalized range [ -1 , 1 ] .
+The signal of each frame is converted onto normalized range [ -1 , 1 ] .
+76 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The normalized j-th sample of i-th frame , </Eq> , is obtained by </Eq>
+The normalized j-th sample of i-th frame , </Eq> , is obtained by </Eq>
+77 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Where , max is the maximum value and min is the minimum value that an audio sample can have .
+Where , max is the maximum value and min is the minimum value that an audio sample can have .
+78 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+And then , each frame is decomposed into low frequency and high frequency band signals by analysis filter bank , HL(z) and HH(z) .
+And then , each frame is decomposed into low frequency and high frequency band signals by analysis filter bank , HL(z) and HH(z) .
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+To alter the variance of sub-band signals , one specific sub-band signals are selected .
+To alter the variance of sub-band signals , one specific sub-band signals are selected .
+80 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Note that , it is more reasonable that the high frequency band is selected , since its signals are more sensitive than the low frequency band signals to noise . 
+Note that , it is more reasonable that the high frequency band is selected since its signals are more sensitive than the low frequency band signals to noise . 
+81 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14::bigrammar-others 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved
+
+If the sub-band signals are divided into more and more small frames , the distortion caused by modifying the variance can be decreased .
+If the sub-band signals are divided into smaller frames , the distortion caused by modifying the variance can be decreased .
+82 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9,10:7:paraphrase 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved
+
+However , some modified sub-band signals belong to certain frame can invade into other neighbor frames .
+However , some modified sub-band signals that belong to certain frame can invade other neighbor frames .
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12::mogrammar-prep 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved :6:unaligned
+
+For that reason , the sub-band signals are modified by an exponential function , sign </Eq> .
+For that reason , the sub-band signals are modified by an exponential function , sign </Eq> .
+84 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The exponential function can cope with interference between altered sub-band signals .
+The exponential function can cope with interference between altered sub-band signals .
+85 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Fig . 4 shows that that the exponential function is able to prevent by exponential function in terms of k the modified sub-band signals from getting over the range [- 1 , 1] .
+Fig . 4 shows that that the exponential function is able to prevent by exponential function in terms of k the modified sub-band signals from getting over the range [- 1 , 1] .
+86 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+If the modified sub-band signals are denoted by random variable Y  , the variance of Y  , </Eq> , is obtained by </Eq> (3)
+If the modified sub-band signals are denoted by random variable Y  , the variance of Y  , </Eq> , is obtained by </Eq> (3)
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+It means that we can alter the variance by controlling k .
+It means that we can alter the variance by controlling k .
+89 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+The variation of variance according to k is shown in Fig . 5 .
+The variation of variance according to k is shown in Fig . 5 .
+90 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+The selected sub-band signals are modified by the exponential function , and the variance become reference value , r , where , r could be determined by the characteristics of signals .
+The selected sub-band signals are modified by the exponential function , and the variance become the reference value , r , where , r could be determined by the characteristics of signals .
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:15:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved :28:mogrammar-det
+
+For example , as shown in section II , the case of uniform distribution has the reference value of 1/3 . 
+For example , as shown in section II , the case of uniform distribution has the reference value of 1/3 . 
+92 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Now , the variance of specific sub-band signals in every frame is equal to the same as reference value .
+Now , the variance of specific the sub-band signals in every frame is equal to the reference value .
+93 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15,16::unaligned 17:16:preserved 18:17:preserved 19:18:preserved :6:mogrammar-det
+
+Whole sub-band signals including some part of modified sub-band signals are transformed into the modified signals , </Eq> , passing through reconstruction filter bank , GL(z) and GH(z) .
+The whole sub-band signals including some part of the modified sub-band signals are transformed into the modified signals , </Eq> , passing through reconstruction filter bank , GL(z) and GH(z) .
+94 0:1:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved :0:mogrammar-det :8:mogrammar-det
+
+Finally , the reconstructed audio signal , </Eq> , is denormalized onto original range and it is transmitted to receiver .
+Finally , the reconstructed audio signal , </Eq> , is denormalized onto original range and it is transmitted to the receiver .
+95 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20:preserved 20:21:preserved :19:bigrammar-others
+
+The denormalized j-th sample of ith frame , </Eq> , is obtained by </Eq> (4)
+The denormalized j-th sample of ith frame , </Eq> , is obtained by </Eq> (4)
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Fig . 6 shows the proposed audio quality measurement process .
+Fig . 6 shows the proposed audio quality measurement process .
+102 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+It is quite simple since the quality of transmitted audio signal can be estimated just by checking the difference between the variance of the sub-band signals and the reference value , r .
+It is quite simple since the quality of transmitted audio signal can be estimated just by checking the difference between the variance of the sub-band signals and the reference value , r .
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Similar to the process of transmitter , audio signal passing the noise channel </Eq> , is divided into M small frames , </Eq> .
+Similar to the process of transmission , audio signal passing the noise channel </Eq> is divided into M small frames , </Eq> .
+104 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-wform 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14::unaligned 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved
+
+The signal of each frame is converted onto normalized range [-1 , 1] .
+The signal of each frame is converted onto the normalized range [-1 , 1] .
+105 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :8:mogrammar-det
+
+And then , each frame signal is decomposed into sub-band signals by using the same analysis filter bank as used in transmitter .
+Then , each frame signal is decomposed into sub-band signals by using the same analysis filter bank as used in the transmitter .
+106 0,1:0:paraphrase 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:21:preserved 22:22:preserved :20:mogrammar-det
+
+In the same sub-band as transmitter of each frame , the quality of transmitted audio signal is determined as the estimated variance error , so called EVE .
+In these sub-band signals , the quality of transmitted audio signal is determined as the estimated variance error , so called EVE .
+107 0:0:preserved 1:5:preserved 2,5,7,4,6,8:1,3:paraphrase 3:2:preserved 9:4:preserved 10::unaligned 11:6:preserved 12:7:preserved 13:8:preserved 14:9:preserved 15:10:preserved 16:11:preserved 17:12:preserved 18:13:preserved 19:14:preserved 20:15:preserved 21:16:preserved 22:17:preserved 23:18:preserved 24:19:preserved 25:20:preserved 26:21:preserved 27:22:preserved
+
+The EVE of i-th frame , </Eq> , is calculated by </Eq> (5)
+The EVE of i-th frame , </Eq> , is calculated by </Eq> (5)
+108 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Note that the proposed audio quality measurement system does not require the original data .
+Note that the proposed audio quality measurement system does not require the original data .
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The simulations are carried out on mono pop , rock , and classic music with 16-bits/sample and sampling rate of 44.1 KHz , respectively .
+The simulations are carried out on mono pop , rock , and classic music with 16-bits/sample and sampling rate of 44.1 KHz , respectively .
+115 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+For sub-band decomposition , packet 5/3 - tap biorthogonal perfect reconstruction filter bank </CITE> is applied recursively to low and high frequency band signal .
+For sub-band decomposition , the packet 5/3 - tap biorthogonal perfect reconstruction filter bank </CITE> is applied recursively to low and high frequency band signals .
+116 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:bigrammar-nnum 24:25:preserved :4:mogrammar-det
+
+Here , original audio signal is decomposed into eight sub-bands ( three multi-resolution levels ) .
+Here , the original audio signal is decomposed into eight sub-bands on three multi-resolution levels .
+117 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10,14::unaligned 11:12:preserved 12:13:preserved 13:14:preserved 15:15:preserved :2:mogrammar-det :11:mogrammar-prep
+
+The filter bank can be implemented by fast operation algorithm , called lifting </CITE> .
+The filter bank can be implemented by a fast operation algorithm called lifting </CITE> .
+118 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10::unaligned 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved :7:mogrammar-det
+
+The frequency ranges of each sub-band are listed in table 1 .
+The frequency ranges of each sub-band are listed in table 1 .
+119 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+One frame consists of 4.644 sec ( 204,800 sam-ples ) in time domain .
+One frame consists of 4.644 sec ( 204,800 sam-ples ) in the time domain .
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved :11:mogrammar-det
+
+To evaluate the proposed quality measurement method , we perform the simulation comparing with RMSE , E , by using cross correlation .
+To evaluate the proposed quality measurement method , we perform the simulation comparing with RMSE , E , by using cross correlation .
+122 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+Where , </Eq> denotes the cross correlation of i-th frame .
+Where </Eq> denotes the cross correlation of i-th frame .
+125 0:0:preserved 1::bigrammar-others 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved
+
+And the simulation is carried out on Gaussian noise channel , which has the mean of zero , and the standard deviation from 100 to 1,000 .
+The simulation is carried out on the Gaussian noise channel , which has the mean of zero , and the standard deviation from 100 to 1,000 .
+126 0:0:bigrammar-det 1:6:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+As the high frequency band is more sensitive than low frequency band to noise .
+As a high frequency band is more sensitive than a low frequency band to noise ,
+127 0:0:preserved 1:1:bigrammar-det 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:spelling :9:mogrammar-det
+
+We experimentally select the 5th-band as optimal sub-band to modify the variance .
+we experimentally select the 5th-band as the optimal sub-band to modify the variance .
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:6:preserved 11:12:preserved 12:13:preserved :11:mogrammar-det
+
+The maximum and minimum value for converting onto normalized range is respectively determined as 32,767 and -32,768 , since the range of audio signal quantized by 16-bits is from 32,767 to -32 ,768 .
+The maximum and minimum values for converting onto the normalized range is respectively determined as 32,767 and -32,768 , since the range of audio signals quantized by 16-bits is from 32,767 to -32 ,768 .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-nnum 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:bigrammar-nnum 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved :8:mogrammar-det
+
+As mentioned in section II , if the characteristics of signals could be known , we can calculate the reference value , r .
+As mentioned in section II , if the characteristics of signals could be known , we can calculate the reference value r .
+130 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21::bigrammar-others 22:21:preserved 23:22:preserved
+
+In general , because the high frequency band has Laplacian distribution , the variance of normalized sub-band signals is nearby zero ( That is , the distribution is concentrated on the mean value ) .
+In general , because the high frequency band has Laplacian distribution , the variance of normalized sub-band signals is close to zero ( That is , the distribution is concentrated on the mean value ) .
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19,20:paraphrase 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved
+
+For that reason , we determine r as 0.0001 .
+For that reason , we determine r as 0.0001 .
+132 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Table 2 shows the audio quality after altering the variance of subband signals .
+Table 2 shows the audio quality after altering the variance of the subband signals .
+133 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved :11:mogrammar-det
+
+Since the proposed method uses only specific frequency resource , the modified audio data has little quality distortion .
+Since the proposed method uses one specific frequency resource , the modified audio data has little quality distortion .
+134 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The simulation results after Gaussian noise addition is shown in Fig . 7 , in terms of several standard deviations .
+The simulation results after Gaussian noise addition is shown in Fig . 7 , in terms of several standard deviations .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The quality measurement is performed frame by frame .
+The quality measurement is performed frame by frame .
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+To compare with RMSE , we indicate the real range , not normalized range ( Actually , the quality is represented from zero to one in the proposed audio quality measurement system ) .
+To compare with RMSE , we indicate the real range , not the normalized range ( Actually , the quality is represented from zero to one in the proposed audio quality measurement system ) .
+137 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:12:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:18:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved :27:mogrammar-det
+
+The circle dot denotes the result of RMSE , the squared dot is EVE , and the triangle dot is in case of no Gaussian noise .
+The circle dot denotes the result of RMSE , the squared dot is EVE , and the triangle dot is in case of no Gaussian noise .
+138 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+EVE shows the modality , which is proportional to RMSE .
+EVE shows the modality , which is proportional to RMSE .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+It means , the same as RMSE , EVE could estimate the quality distortion according to the strength of error .
+It means , like RMSE , EVE could estimate the quality distortion according to the strength of the error .
+140 0:0:preserved 1:1:preserved 2:2:preserved 3:9:preserved 4,5:3:paraphrase 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:14:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:17:preserved 17:15:preserved 18:16:preserved 19:18:preserved 20:19:preserved
+
+As shown in Fig . 8 , the proposed system is high correlated with RMSE and table 3 represents the cross correlation between RMSE and EVE .
+As shown in Fig . 8 , the proposed system is high correlated with RMSE and table 3 represents the cross correlation between RMSE and EVE .
+141 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Moreover , the proposed method is no reference technique , i.e. , it does not require the original data for audio quality measurement .
+Moreover , the proposed method is not a reference technique , i.e. , it does not require the original data for audio quality measurement .
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6,7:paraphrase 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved
+
+In this paper , we proposed a new quality measurement technique for transmitted audio data by calculating the variance of intentionally modified sub-band signal .
+In this paper , we proposed a new quality measurement technique for transmitted audio data by calculating the variance of intentionally modified sub-band signal .
+148 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Through the simulations , we proved that the proposed enables to estimate the quality distortion , not requiring the original data at the receiver .
+Through the simulations , we proved that the proposed enables to estimate the quality distortion , not requiring the original data at the receiver .
+149 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+As results , the proposed is a good alternative to the traditional quality measurement tool , RMSE .
+As a results , the proposed is a good alternative to the traditional quality measurement tool , RMSE .
+150 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved :1:mogrammar-det
+

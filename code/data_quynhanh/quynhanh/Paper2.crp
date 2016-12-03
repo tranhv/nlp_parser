@@ -1,0 +1,462 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Quality Measurement for Transmitted Audio Data Using Distribution of Sub-band Signals
+Quality Measurement for Transmitted Audio Data Using Distribution of Sub-band Signals
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+Recently , the remarkable progress of network technology has increased the requirement for transmission of high quality multimedia data . 
+Recently , the remarkable progress of network technology has increased the requirement for transmission of high quality multimedia data . 
+6
+By the trend , it has been issued to investigate an efficient methodology for quality measurement of transmitted multimedia data . 
+By the trend , it has been issued to investigate an efficient methodology for quality measurement of transmitted multimedia data . 
+7
+In this paper , we propose a new audio quality measurement technique to substitute for a typical quality measurement tool , RMSE (Root Mean Squared Error) .
+In this paper , we propose a new audio quality measurement technique to substitute for a typical quality measurement tool , RMSE (Root Mean Squared Error) .
+8
+The proposed method modifies the variance of sub-band signals to perform the estimation of audio quality at the transmitter  , the receiver is able to estimate the quality distortion of transmitted audio data by calculating the distance between the variance and the reference value representing the characteristics of sub-band signals , so called EVE (Estimated Variance Error) . 
+The proposed method modifies the variance of sub-band signals to perform the estimation of audio quality at the transmitter  , the receiver is able to estimate the quality distortion of transmitted audio data by calculating the distance between the variance and the reference value representing the characteristics of sub-band signals , so called EVE (Estimated Variance Error) . 
+9
+The proposed is as no reference technique , it does not require the original data to measure the audio quality . 
+The proposed is not a reference technique , so it does not require the original data to measure the audio quality . 
+10
+On the Gaussian noise channel with several standard deviations , we prove that the proposed scheme has good performance , and it is a novel alternative to RMSE .
+On the Gaussian noise channel with several standard deviations , we prove that the proposed scheme has good performance , and it is a novel alternative to RMSE .
+11
+</abstract>
+</abstract>
+12
+<section label= " Introduction " >
+<section label= " Introduction " >
+13
+<p>
+<p>
+14
+With the rapid growth of the Internet , most consumers have requested for service providers to transmit the multimedia data with high quality . 
+With the rapid growth of the Internet , most consumers have requested for service providers to transmit the multimedia data with high quality . 
+15
+It encourages the researchers to develop the compression technology such as MPEG ( Motion Pictures Experts Group ) and JPEG ( Joint Photographic Experts Group ) / JPEG-2000 , the network environment to guarantee the QoS ( Quality of Services ) , and so on .
+It encourages the researchers to develop the compression technology such as MPEG ( Motion Pictures Experts Group ) and JPEG ( Joint Photographic Experts Group ) / JPEG-2000 , the network environment to guarantee the QoS ( Quality of Services ) , and so on .
+16
+Although the wellconstructed network environment is most important to satisfy the demands of consumers , it costs enormous expense since it is primarily based on the physical layer of OSI ( Open Systems Interconnection ) seven layers .
+Although the wellconstructed network environment is most important to satisfy the demands of consumers , it is costly since it is primarily based on the physical layer of OSI ( Open Systems Interconnection ) seven layers .
+17
+For that reason , recently , it has become a new issue to research schemes for quality measurement of multimedia data on the application layer .
+For that reason , recently , it has become a new issue to research schemes for quality measurement of multimedia data on the application layer .
+18
+It is a good methodology to solve the cost problem .
+It is a good methodology to solve the cost problem .
+19
+Several quality measurement techniques of multimedia data have introduced by </CITE> . 
+Several quality measurement techniques of multimedia data have introduced by </CITE> . 
+20
+R .Reibman </CITE> proposed the quality monitoring techniques of video . 
+R .Reibman </CITE> proposed the quality monitoring techniques of video . 
+21
+Compared with other researches , he introduced an especial method .
+Compared with other studies , he introduced an especial method .
+22
+The proposed algorithm on </CITE> measures the quality distortion from the video bit-stream instead of the samples .
+The proposed algorithm on </CITE> measures the quality distortion from the video bit-stream instead of the samples .
+23
+Through the simulations , he claimed that his proposed algorithm using bit error is related on the real quality of video .
+Through the simulations , he claimed that his proposed algorithm using bit error is related to the real quality of video .
+24
+In </CITE> , they estimate the quality distortion of audio and still image by using fragile watermarking . 
+In </CITE> , they estimate the quality distortion of audios and still images by using fragile watermarking . 
+25
+The proposed embeds watermark information into frequency components , which is obtained by DCT ( Discrete Cosine Transform ) or DWT ( Discrete Wavelet Transform ) .
+The method embeds watermark information into frequency components , which can be obtained by DCT ( Discrete Cosine Transform ) or DWT ( Discrete Wavelet Transform ) .
+26
+The measurement tool estimates the quality distortion from correct or incorrect extracted watermark bits . 
+The measurement tool estimates the quality distortion from correct or incorrect extracted watermark bits . 
+27
+Even if the fragile watermark is broken proportional to channel error ratio , the embedded watermark could be easily distorted by unintentional error such as compressions .
+Even if the fragile watermark is broken proportionally to channel error ratio , the embedded watermark could be easily distorted by such unintentional errors as compressions .
+28
+Moreover it is difficult to decide a feature to embed watermark , which is sensitive to quality distortion .
+Moreover it is difficult to decide a feature to embed watermark , which is sensitive to quality distortion .
+29
+In this paper , we propose a new audio quality measurement technique .
+In this paper , we propose a new audio quality measurement technique .
+30
+The proposed uses the distribution of sub-band signals , which is obtained by DWT .
+It uses the distribution of sub-band signals , which is obtained by DWT .
+31
+At the transmitter , we alter the variance of sub-band signals into the constant value .
+At the transmitter , we alter the variance of sub-band signals into the constant value .
+32
+The receiver , audio quality monitor , calculates the variance error from the constant value .
+The receiver monitors the audio quality by calculating the variance error from the constant value .
+33
+We denominate it as EVE ( Estimated Variance Error ) .
+We denominate it as EVE ( Estimated Variance Error ) .
+34
+In general , since the variance moves according to changing of signals , we could estimate the quality distortion through checking the distance of variance .
+In general , since the variance moves according to the changing of signals , we could estimate the quality distortion by checking the distance of variance .
+35
+And , modifying the specific sub-band signals can decrease the distortion caused by the process of transmitter since modifying the variance of whole sub-band signals is waste of resource .
+And , modifying the specific sub-band signals can decrease the distortion caused by the process of transmission since modifying the variance of whole sub-band signals is a waste of resource .
+36
+Besides , it allows us to select the optimal sub-band , which is most sensitive to noise .
+Besides , it allows us to select the optimal sub-band , which is most sensitive to noise .
+37
+Note that a quality measurement system should be able to estimate the quantity of noise from the transmitted multimedia data .
+Note that a quality measurement system should be able to estimate the quantity of noise from the transmitted multimedia data .
+38
+Moreover , the proposed is no reference quality measurement technique , that is , it does not require the original audio data on the receiver .
+Moreover , the proposed is no reference quality measurement technique ; that is , it does not require the original audio data on the receiver .
+39
+In section II , we describe our quality measurement technique using the distribution of sub-band signals in more detail .
+In section II , we describe our quality measurement technique using the distribution of sub-band signals in more detail .
+40
+Section III shows the simulation results .
+Section III shows the simulation results .
+41
+To demonstrate the efficiency of the proposed method , we compare the result with RMSE ( Root Mean Square Error ) on Gaussian noise channel .
+To demonstrate the efficiency of the proposed method , we compare the result with RMSE ( Root Mean Square Error ) on the Gaussian noise channel .
+42
+Finally , we conclude this paper in section IV .
+Finally , we conclude this paper in section IV .
+43
+</p>
+</p>
+44
+</section>
+</section>
+45
+<section label= " The proposed quality measurement scheme " >
+<section label= " The proposed quality measurement scheme " >
+46
+<p>
+<p>
+47
+In transmitting the multimedia data through wired / wireless network , the quality is almost dependent on channel noise .
+In transmitting the multimedia data through wired / wireless network , the quality is almost dependent on channel noise .
+48
+Especially , if the characteristic of channel is represented by a kind of additive noise , RMSE ( Root Mean Squared Error ) can be used as a good quality measurement tool .
+Especially , if the characteristic of channel is represented by a kind of additive noise , RMSE ( Root Mean Squared Error ) can be used as a good quality measurement tool .
+49
+RMSE can be redefined by the difference of variance between the original data and the transmitted data .
+RMSE can be redefined by the difference of variance between the original data and the transmitted data .
+50
+It is proved in appendix .
+It is proved in the appendix .
+51
+In this paper , we propose a quality measurement technique for transmitted audio data using the variance of sub-band signals , which is obtained by DWT ( Discrete Wavelet Transform ) .
+In this paper , we propose a quality measurement technique for transmitted audio data using the variance of sub-band signals , which is obtained by DWT ( Discrete Wavelet Transform ) .
+52
+Fig . 1 shows the proposed quality measurement system .
+Fig . 1 shows the proposed quality measurement system .
+53
+</Fig>
+</Fig>
+54
+The proposed method modifies the variance of sub-band signals into constant value , so called reference value , and estimates the quality distortion from the distance between the variance of transmitted audio data and the constant value .
+The method modifies the variance of sub-band signals into constant value , or reference value and estimates the quality distortion from the distance between the variance of transmitted audio data and the constant value .
+55
+The reason of employing the sub-band signals for modifying the variance is that altering the whole frequency band signals has an influence on the distortion of audio quality .
+The reason of employing the sub-band signals for modifying the variance is that altering the whole frequency band signals has an influence on the distortion of audio quality .
+56
+Fig . 2 shows the main idea of proposed scheme .
+Fig . 2 shows the main idea of the proposed scheme .
+57
+For the sake of simplicity , let’s assume that the sub-band signals is a random variable , X , with uniform distribution as shown in Fig . 2-(a) .
+For the sake of simplicity , let’s assume that the sub-band signals is a random variable , X , with a uniform distribution as shown in Fig . 2-(a) .
+58
+The distribution is modified according to reference value .
+The distribution is modified according to the reference value .
+59
+For bigger reference value , the sub-band signals are modified to make their distribution concentrate on the mean value as shown in Fig . 2-(b) .
+For bigger reference values , the sub-band signals are modified to make their distribution concentrate on the mean value as shown in Fig . 2-(b) .
+60
+On the other hand , for smaller reference value , the distribution becomes more distance from the mean value as shown in Fig . 2-(c) . 
+On the other hand , for smaller reference values , the distribution becomes more distant from the mean value as shown in Fig . 2-(c) . 
+61
+The variance of random variable X with uniform distribution , </Eq> , is as follows .
+The variance of random variable X with uniform distribution , </Eq> , is as follows .
+62
+</Eq> ( 1 )
+</Eq> ( 1 )
+63
+That is , if we know the characteristics of signals , the reference value can be determined as constant value .
+That is , if we know the characteristics of signals , the reference value can be determined as constant value .
+64
+The quality measurement is quite easily performed , as the quality distortion can be estimated just by calculating the distance of variance from reference value .
+The quality measurement is quite easily performed , as the quality distortion can be estimated just by calculating the distance of variance from the reference value .
+65
+It means that the proposed can measure the audio quality without the original data .
+It means that the method can measure the audio quality without the original data .
+66
+It is greatly correlated with RMSE . 
+It is greatly correlated with RMSE . 
+67
+Therefore , we designate the estimated RMSE as EVE ( Estimated Variance Error )
+Therefore , we designate the estimated RMSE as EVE ( Estimated Variance Error )
+68
+</p>
+</p>
+69
+<subsection label= " Transmitter ; Modifying the Variance of Sub-band Signals " >
+<subsection label= " Transmitter ; Modifying the Variance of Sub-band Signals " >
+70
+<p>
+<p>
+71
+To measure the audio quality at the transmission side , we modify the variance of sub-band signals of original data into reference value .
+To measure the quality of the transmission audio , we modify the variance of sub-band signals of original data into reference values .
+72
+The original signal is decomposed into several sub-band signals by using DWT .
+The original signal is decomposed into several sub-band signals by using DWT .
+73
+Fig . 3 shows the procedure of modifying the variance of original audio data into reference value .
+Fig . 3 shows the procedure of modifying the variance of original audio data into reference values .
+74
+Let’s consider only the simple system decomposed into two channel .
+Let’s consider only the simple system decomposed into two channels .
+75
+Firstly , the original signal </Eq> where , N is the number of audio samples) is divided into M small frames , </Eq> , where , M is the number of frame) .
+Firstly , the original signal </Eq> where , N is the number of audio samples) is divided into M small frames , </Eq> , where , M is the number of frame) .
+76
+The signal of each frame is converted onto normalized range [ -1 , 1 ] .
+The signal of each frame is converted onto normalized range [ -1 , 1 ] .
+77
+The normalized j-th sample of i-th frame , </Eq> , is obtained by </Eq>
+The normalized j-th sample of i-th frame , </Eq> , is obtained by </Eq>
+78
+Where , max is the maximum value and min is the minimum value that an audio sample can have .
+Where , max is the maximum value and min is the minimum value that an audio sample can have .
+79
+And then , each frame is decomposed into low frequency and high frequency band signals by analysis filter bank , HL(z) and HH(z) .
+And then , each frame is decomposed into low frequency and high frequency band signals by analysis filter bank , HL(z) and HH(z) .
+80
+To alter the variance of sub-band signals , one specific sub-band signals are selected .
+To alter the variance of sub-band signals , one specific sub-band signals are selected .
+81
+Note that , it is more reasonable that the high frequency band is selected , since its signals are more sensitive than the low frequency band signals to noise . 
+Note that , it is more reasonable that the high frequency band is selected since its signals are more sensitive than the low frequency band signals to noise . 
+82
+If the sub-band signals are divided into more and more small frames , the distortion caused by modifying the variance can be decreased .
+If the sub-band signals are divided into smaller frames , the distortion caused by modifying the variance can be decreased .
+83
+However , some modified sub-band signals belong to certain frame can invade into other neighbor frames .
+However , some modified sub-band signals that belong to certain frame can invade other neighbor frames .
+84
+For that reason , the sub-band signals are modified by an exponential function , sign </Eq> .
+For that reason , the sub-band signals are modified by an exponential function , sign </Eq> .
+85
+The exponential function can cope with interference between altered sub-band signals .
+The exponential function can cope with interference between altered sub-band signals .
+86
+Fig . 4 shows that that the exponential function is able to prevent by exponential function in terms of k the modified sub-band signals from getting over the range [- 1 , 1] .
+Fig . 4 shows that that the exponential function is able to prevent by exponential function in terms of k the modified sub-band signals from getting over the range [- 1 , 1] .
+87
+</Fig>
+</Fig>
+88
+If the modified sub-band signals are denoted by random variable Y  , the variance of Y  , </Eq> , is obtained by </Eq> (3)
+If the modified sub-band signals are denoted by random variable Y  , the variance of Y  , </Eq> , is obtained by </Eq> (3)
+89
+It means that we can alter the variance by controlling k .
+It means that we can alter the variance by controlling k .
+90
+The variation of variance according to k is shown in Fig . 5 .
+The variation of variance according to k is shown in Fig . 5 .
+91
+The selected sub-band signals are modified by the exponential function , and the variance become reference value , r , where , r could be determined by the characteristics of signals .
+The selected sub-band signals are modified by the exponential function , and the variance become the reference value , r , where , r could be determined by the characteristics of signals .
+92
+For example , as shown in section II , the case of uniform distribution has the reference value of 1/3 . 
+For example , as shown in section II , the case of uniform distribution has the reference value of 1/3 . 
+93
+Now , the variance of specific sub-band signals in every frame is equal to the same as reference value .
+Now , the variance of specific the sub-band signals in every frame is equal to the reference value .
+94
+Whole sub-band signals including some part of modified sub-band signals are transformed into the modified signals , </Eq> , passing through reconstruction filter bank , GL(z) and GH(z) .
+The whole sub-band signals including some part of the modified sub-band signals are transformed into the modified signals , </Eq> , passing through reconstruction filter bank , GL(z) and GH(z) .
+95
+Finally , the reconstructed audio signal , </Eq> , is denormalized onto original range and it is transmitted to receiver .
+Finally , the reconstructed audio signal , </Eq> , is denormalized onto original range and it is transmitted to the receiver .
+96
+The denormalized j-th sample of ith frame , </Eq> , is obtained by </Eq> (4)
+The denormalized j-th sample of ith frame , </Eq> , is obtained by </Eq> (4)
+97
+</Fig>
+</Fig>
+98
+</p>
+</p>
+99
+</subsection>
+</subsection>
+100
+<subsection label= "  Receiver ; Quality Measurement for Transmitted Audio Signal " >
+<subsection label= "  Receiver ; Quality Measurement for Transmitted Audio Signal " >
+101
+<p>
+<p>
+102
+Fig . 6 shows the proposed audio quality measurement process .
+Fig . 6 shows the proposed audio quality measurement process .
+103
+It is quite simple since the quality of transmitted audio signal can be estimated just by checking the difference between the variance of the sub-band signals and the reference value , r .
+It is quite simple since the quality of transmitted audio signal can be estimated just by checking the difference between the variance of the sub-band signals and the reference value , r .
+104
+Similar to the process of transmitter , audio signal passing the noise channel </Eq> , is divided into M small frames , </Eq> .
+Similar to the process of transmission , audio signal passing the noise channel </Eq> is divided into M small frames , </Eq> .
+105
+The signal of each frame is converted onto normalized range [-1 , 1] .
+The signal of each frame is converted onto the normalized range [-1 , 1] .
+106
+And then , each frame signal is decomposed into sub-band signals by using the same analysis filter bank as used in transmitter .
+Then , each frame signal is decomposed into sub-band signals by using the same analysis filter bank as used in the transmitter .
+107
+In the same sub-band as transmitter of each frame , the quality of transmitted audio signal is determined as the estimated variance error , so called EVE .
+In these sub-band signals , the quality of transmitted audio signal is determined as the estimated variance error , so called EVE .
+108
+The EVE of i-th frame , </Eq> , is calculated by </Eq> (5)
+The EVE of i-th frame , </Eq> , is calculated by </Eq> (5)
+109
+Note that the proposed audio quality measurement system does not require the original data .
+Note that the proposed audio quality measurement system does not require the original data .
+110
+</p>
+</p>
+111
+</subsection>
+</subsection>
+112
+</section>
+</section>
+113
+<section label = " Simulation results " >
+<section label = " Simulation results " >
+114
+<p>
+<p>
+115
+The simulations are carried out on mono pop , rock , and classic music with 16-bits/sample and sampling rate of 44.1 KHz , respectively .
+The simulations are carried out on mono pop , rock , and classic music with 16-bits/sample and sampling rate of 44.1 KHz , respectively .
+116
+For sub-band decomposition , packet 5/3 - tap biorthogonal perfect reconstruction filter bank </CITE> is applied recursively to low and high frequency band signal .
+For sub-band decomposition , the packet 5/3 - tap biorthogonal perfect reconstruction filter bank </CITE> is applied recursively to low and high frequency band signals .
+117
+Here , original audio signal is decomposed into eight sub-bands ( three multi-resolution levels ) .
+Here , the original audio signal is decomposed into eight sub-bands on three multi-resolution levels .
+118
+The filter bank can be implemented by fast operation algorithm , called lifting </CITE> .
+The filter bank can be implemented by a fast operation algorithm called lifting </CITE> .
+119
+The frequency ranges of each sub-band are listed in table 1 .
+The frequency ranges of each sub-band are listed in table 1 .
+120
+One frame consists of 4.644 sec ( 204,800 sam-ples ) in time domain .
+One frame consists of 4.644 sec ( 204,800 sam-ples ) in the time domain .
+121
+</Fig>
+</Fig>
+122
+To evaluate the proposed quality measurement method , we perform the simulation comparing with RMSE , E , by using cross correlation .
+To evaluate the proposed quality measurement method , we perform the simulation comparing with RMSE , E , by using cross correlation .
+123
+</Eq> (6)
+</Eq> (6)
+124
+</Eq> (7)
+</Eq> (7)
+125
+Where , </Eq> denotes the cross correlation of i-th frame .
+Where </Eq> denotes the cross correlation of i-th frame .
+126
+And the simulation is carried out on Gaussian noise channel , which has the mean of zero , and the standard deviation from 100 to 1,000 .
+The simulation is carried out on the Gaussian noise channel , which has the mean of zero , and the standard deviation from 100 to 1,000 .
+127
+As the high frequency band is more sensitive than low frequency band to noise .
+As a high frequency band is more sensitive than a low frequency band to noise ,
+128
+We experimentally select the 5th-band as optimal sub-band to modify the variance .
+we experimentally select the 5th-band as the optimal sub-band to modify the variance .
+129
+The maximum and minimum value for converting onto normalized range is respectively determined as 32,767 and -32,768 , since the range of audio signal quantized by 16-bits is from 32,767 to -32 ,768 .
+The maximum and minimum values for converting onto the normalized range is respectively determined as 32,767 and -32,768 , since the range of audio signals quantized by 16-bits is from 32,767 to -32 ,768 .
+130
+As mentioned in section II , if the characteristics of signals could be known , we can calculate the reference value , r .
+As mentioned in section II , if the characteristics of signals could be known , we can calculate the reference value r .
+131
+In general , because the high frequency band has Laplacian distribution , the variance of normalized sub-band signals is nearby zero ( That is , the distribution is concentrated on the mean value ) .
+In general , because the high frequency band has Laplacian distribution , the variance of normalized sub-band signals is close to zero ( That is , the distribution is concentrated on the mean value ) .
+132
+For that reason , we determine r as 0.0001 .
+For that reason , we determine r as 0.0001 .
+133
+Table 2 shows the audio quality after altering the variance of subband signals .
+Table 2 shows the audio quality after altering the variance of the subband signals .
+134
+Since the proposed method uses only specific frequency resource , the modified audio data has little quality distortion .
+Since the proposed method uses one specific frequency resource , the modified audio data has little quality distortion .
+135
+The simulation results after Gaussian noise addition is shown in Fig . 7 , in terms of several standard deviations .
+The simulation results after Gaussian noise addition is shown in Fig . 7 , in terms of several standard deviations .
+136
+The quality measurement is performed frame by frame .
+The quality measurement is performed frame by frame .
+137
+To compare with RMSE , we indicate the real range , not normalized range ( Actually , the quality is represented from zero to one in the proposed audio quality measurement system ) .
+To compare with RMSE , we indicate the real range , not the normalized range ( Actually , the quality is represented from zero to one in the proposed audio quality measurement system ) .
+138
+The circle dot denotes the result of RMSE , the squared dot is EVE , and the triangle dot is in case of no Gaussian noise .
+The circle dot denotes the result of RMSE , the squared dot is EVE , and the triangle dot is in case of no Gaussian noise .
+139
+EVE shows the modality , which is proportional to RMSE .
+EVE shows the modality , which is proportional to RMSE .
+140
+It means , the same as RMSE , EVE could estimate the quality distortion according to the strength of error .
+It means , like RMSE , EVE could estimate the quality distortion according to the strength of the error .
+141
+As shown in Fig . 8 , the proposed system is high correlated with RMSE and table 3 represents the cross correlation between RMSE and EVE .
+As shown in Fig . 8 , the proposed system is high correlated with RMSE and table 3 represents the cross correlation between RMSE and EVE .
+142
+</Fig>
+</Fig>
+143
+Moreover , the proposed method is no reference technique , i.e. , it does not require the original data for audio quality measurement .
+Moreover , the proposed method is not a reference technique , i.e. , it does not require the original data for audio quality measurement .
+144
+</p>
+</p>
+145
+</section>
+</section>
+146
+<section label= " Conclusion " >
+<section label= " Conclusion " >
+147
+<p>
+<p>
+148
+In this paper , we proposed a new quality measurement technique for transmitted audio data by calculating the variance of intentionally modified sub-band signal .
+In this paper , we proposed a new quality measurement technique for transmitted audio data by calculating the variance of intentionally modified sub-band signal .
+149
+Through the simulations , we proved that the proposed enables to estimate the quality distortion , not requiring the original data at the receiver .
+Through the simulations , we proved that the proposed enables to estimate the quality distortion , not requiring the original data at the receiver .
+150
+As results , the proposed is a good alternative to the traditional quality measurement tool , RMSE .
+As a results , the proposed is a good alternative to the traditional quality measurement tool , RMSE .
+151
+</p>
+</p>
+152
+</section>
+</section>
+153
+</document>
+</document>

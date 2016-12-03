@@ -1,0 +1,844 @@
+Utilizing State - of - the - art Parsers to Diagnose Problems in Treebank Annotation for a Less Resourced Language
+Utilizing State - of - the - art Parsers to Diagnose Problems in Treebank Annotation for a Less Resourced Language
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+The recent success of statistical parsing methods has made treebanks become important resources for building good parsers . 
+The recent success of statistical parsing methods has made treebanks become important resources for building good parsers . 
+6 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+However , constructing high - quality annotated treebanks is a challenging task . 
+However , constructing high - quality annotated treebanks is a challenging task . 
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+We utilized two publicly available parsers , Berkeley and MST parsers , for feedback on improving the quality of part - of - speech tagging for the Vietnamese Treebank . 
+We utilized two publicly available parsers , Berkeley and MST parsers , for feedback on improving the quality of part - of - speech tagging for the Vietnamese Treebank . 
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+Analysis of the treebank and parsing errors revealed how problems with the Vietnamese Treebank influenced the parsing results and real difficulties of Vietnamese parsing that required further improvements to existing parsing technologies .
+Analysis of the treebank and parsing errors revealed how problems with the Vietnamese Treebank influenced the parsing results and real difficulties with Vietnamese parsing that required further improvements to existing parsing technologies .
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-prep 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Treebanks , corpora annotated with syntactic structures , have become more and more important for language processing . 
+Treebanks , i .e . , corpora annotated with syntactic structures , have become more and more important for language processing . 
+14 0:0:preserved 1:1,2,3,4,5:para-freeword 2:6:preserved 3:7:preserved 4:8:preserved 5:9:preserved 6:10:preserved 7:11:preserved 8:12:preserved 9:13:preserved 10:14:preserved 11:15:preserved 12:16:preserved 13:17:preserved 14:18:preserved 15:19:preserved 16:20:preserved 17:21:preserved
+
+The Vietnamese Treebank ( VTB ) has been built as part of the national project ``Vietnamese language and speech processing ( VLSP )'' to strengthen automatic processing of the Vietnamese language \cite . 
+The Vietnamese Treebank ( VTB ) has been built as part of the national project for ``Vietnamese language and speech processing ( VLSP )'' to strengthen automatic processing of the Vietnamese language \cite . 
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14,15:bigrammar-prep 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved
+
+However , when we trained the Berkeley parser \cite in our preliminary experiment with VTB and evaluated it using the corpus , the parser only achieved an F - score of 72 .1\%  . 
+However , when we trained the Berkeley parser \cite in our preliminary experiment with VTB and evaluated it using the corpus , the parser only achieved an F - score of 72 .1\%  . 
+16 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+This percentage was far lower than the state - of - the - art performance reported for the Berkeley parser on the English Penn Treebank of 90 .2\% \cite . 
+This percentage was far lower than the state - of - the - art performance reported for the Berkeley parser on the English Penn Treebank of 90 .2\% \cite . 
+17 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+There are two possible reasons for this . 
+There are two possible reasons for this . 
+18 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+First , the quality of VTB was not good enough to construct a good parser that included the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+First , the quality of VTB was not good enough to construct a good parser that included the quality of the annotation scheme , the annotation guidelines , and the annotation process . 
+19 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Second , parsing Vietnamese is a difficult problem on its own , and we need to seek new solutions to this .
+Second , parsing Vietnamese is a difficult problem on its own , and we need to seek new solutions to this .
+20 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Nguyen et al . \cite proposed methods of improving the annotations of word segmentation ( WS ) for VTB . 
+Nguyen et al . \cite proposed methods of improving the annotations of word segmentation ( WS ) for VTB . 
+21 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+They also evaluated different word segmentation criteria in two applications , i .e . , machine translation and text classification . 
+They also evaluated different word segmentation criteria in two applications , i .e . , machine translation and text classification . 
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+This paper focuses on improving the quality of parts - of - speech ( POS ) annotations by using state - of - the - art parsers to provide feedback for this process .
+This paper focuses on improving the quality of parts - of - speech ( POS ) annotations by using state - of - the - art parsers to provide feedback for this process .
+23 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+The difficulties with Vietnamese POS tagging have been recognized by many researchers \cite . 
+The difficulties with Vietnamese POS tagging have been recognized by many researchers \cite . 
+24 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+There is little consensus as to the methodology for classifying words . 
+There is little consensus as to the methodology for classifying words . 
+25 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Polysemous words , i .e . , words with the same surface form but having different meanings and grammar functions , are very popular in the Vietnamese language . 
+Polysemous words , i .e . , words with the same surface form but having different meanings and grammar functions , are very popular in the Vietnamese language . 
+26 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+For example , the word \textviet can be a noun that means \emph , or an adjective that means \emph depending on the context . 
+For example , the word \textviet can be a noun that means \emph , or an adjective that means \emph depending on the context . 
+27 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+This characteristic makes it difficult to tag POSs for Vietnamese , either manually or automatically .
+This characteristic makes it difficult to tag POSs for Vietnamese , either manually or automatically .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The rest of this paper is organized as follows : a brief introduction to VTB and its annotation schemes are provided in Section \ref . 
+The rest of this paper is organized as follows : a brief introduction to VTB and its annotation schemes are provided in Section \ref . 
+29 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Then , previous work is summarized in Section \ref . 
+Then , previous work is summarized in Section \ref . 
+30 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Section \ref describes our methods of detecting and correcting inconsistencies in POSs in the VTB corpus . 
+Section \ref describes our methods of detecting and correcting inconsistencies in POSs in the VTB corpus . 
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Evaluations of these methods are described in Section \ref . 
+Evaluations of these methods are described in Section \ref . 
+32 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Finally , Section \ref explains our evaluations of the Berkeley parser and MST parser on different versions of the VTB corpus , which were created by using detected inconsistencies . 
+Finally , Section \ref explains our evaluations of the Berkeley parser and maximum spanning tree ( MST ) parser on different versions of the VTB corpus , which were created by using detected inconsistencies . 
+33 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12,13,14,15,17,16:paraphrase 13:18:preserved 14:19:preserved 15:20:preserved 16:21:preserved 17:22:preserved 18:23:preserved 19:24:preserved 20:25:preserved 21:26:preserved 22:27:preserved 23:28:preserved 24:29:preserved 25:30:preserved 26:31:preserved 27:32:preserved 28:33:preserved 29:34:preserved
+
+These results from evaluations are considered to be a way of measuring the effect of automatically detected and corrected inconsistencies . 
+These results from evaluations are considered to be a way of measuring the effect of automatically detected and corrected inconsistencies . 
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+We could observe difficulties with Vietnamese that affected the quality of parsers by analyzing the results from parsing .
+We could observe difficulties with Vietnamese that affected the quality of parsers by analyzing the results from parsing .
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Our experiences in using state - of - the - art parsers for treebank annotation , which are presented in this paper , should not only benefit the Vietnamese language , but also other languages with similar characteristics .
+Our experiences in using state - of - the - art parsers for treebank annotation , which are presented in this paper , should not only benefit the Vietnamese language , but also other languages with similar characteristics .
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+The VTB corpus contains 10 .433 sentences ( 274 .266 tokens ) , semi - manually annotated with three layers of WS , POS tagging , and bracketing . 
+The VTB corpus contains 10 .433 sentences ( 274 .266 tokens ) , semi - manually annotated with three layers of WS , POS tagging , and bracketing . 
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The first annotation is produced for each annotation layer by using automatic tools . Then , the annotators revise these data . 
+The first annotation is produced for each annotation layer by using automatic tools . Then , the annotators revise these data . 
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The WS and POS annotation schemes were introduced by Nguyen et al . \cite . 
+The WS and POS annotation schemes were introduced by Nguyen et al . \cite . 
+43 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+This section briefly introduces POS tag sets and a bracketing annotation scheme .
+This section briefly introduces POS tag sets and a bracketing annotation scheme .
+44 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+VTB specifies the 18 different POS tags summarized in Table \ref \cite . 
+VTB specifies the 18 different POS tags summarized in Table \ref \cite . 
+45 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Each unit in this table goes with several example words . 
+Each unit in this table goes with several example words . 
+46 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+English translations of these words are included in braces . 
+English translations of these words are included in braces . 
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+However , as we could not find any appropriate English translations for some words , these empty translations have been denoted by asterisks ( * ) .
+However , as we could not find any appropriate English translations for some words , these empty translations have been denoted by asterisks ( * ) .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+The VTB corpus is annotated with three syntactic tag types : constituency tags , functional tags , and null - element tags . 
+The VTB corpus is annotated with three syntactic tag types : constituency tags , functional tags , and null - element tags . 
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+There are 18 constituency tags in VTB . The functional tags are used to enrich information for syntactic trees , such as where functional tag ``SUB'' is combined with constituency tag ``NP'' , which is presented as ``NP - SUB'' to indicate this noun phrase is a subject . 
+There are 18 constituency tags in VTB . The functional tags are used to enrich information for syntactic trees , such as where functional tag ``SUB'' is combined with constituency tag ``NP'' , which is presented as ``NP - SUB'' to indicate this noun phrase is a subject . 
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved
+
+There are 17 functional tags in VTB . The head word of a phrase is annotated with functional tag ``H'' .
+There are 17 functional tags in VTB . The head word of a phrase is annotated with functional tag ``H'' .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The phrase structures of Vietnamese include three positions : \emph , \emph , and \emph \cite . 
+The phrase structures of Vietnamese include three positions : \emph , \emph , and \emph \cite . 
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The head word of the phrase is in the <head> position . 
+The head word of the phrase is in the <head> position . 
+53 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+The words that are in the <pre - head> and <post - head> positions are modifiers of the head word .
+The words that are in the <pre - head> and <post - head> positions are modifiers of the head word .
+54 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+There are special types of nouns in Vietnamese that we have called Nc - nouns in this paper . 
+There are special types of nouns in Vietnamese that we have called Nc - nouns in this paper . 
+55 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Nc - nouns can be classifier nouns ( Nc ) , or common nouns ( N ) depending on their modifiers . 
+Nc - nouns can be classifier nouns ( Nc ) , or common nouns ( N ) depending on their modifiers . 
+56 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+For example , the Nc - noun \emph is a classifier noun if its modifier is the word \textviet , which means a specific fish , similar to \emph in English ) . 
+For example , the Nc - noun \emph is a classifier noun if its modifier is the word \textviet , which means a specific fish , similar to \emph in English ) . 
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+However , the Nc - noun \emph is a common noun if its modifier is the word \textviet , which means \emph in English ) . 
+However , the Nc - noun \emph is a common noun if its modifier is the word \textviet , which means \emph in English ) . 
+58 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+We found that Nc - nouns always appeared in the head positions of noun phrases by investigating the VTB corpus . 
+We found that Nc - nouns always appeared in the head positions of noun phrases by investigating the VTB corpus . 
+59 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+There is currently little consensus as to what the methodology is for annotating Nc - nouns \cite .
+There is currently little consensus as to what the methodology is for annotating Nc - nouns \cite .
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Nguyen et al . \shortcite described methods of detecting and correcting WS inconsistencies in the VTB corpus . 
+Nguyen et al . \shortcite described methods of detecting and correcting WS inconsistencies in the VTB corpus . 
+65 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+These methods focused on two types of WS inconsistencies in variation and structure , which are defined below .
+These methods focused on two types of WS inconsistencies in variation and structure , which are defined below .
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+\emph are sequences of tokens that have more than one way of being segmented in the corpus .
+\emph are sequences of tokens that have more than one way of being segmented in the corpus .
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+\emph occur when different sequences have similar structures , and thus should be split in the same way , but are segmented in different ways in the corpus . 
+\emph occur when different sequences have similar structures , and thus should be split in the same way , but are segmented in different ways in the corpus . 
+68 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Nguyen et al . \shortcite pointed out three typical cases of structural inconsistencies that were analyzed as classifier nouns ( Nc ) , affixes ( S ) , and special characters .
+Nguyen et al . \shortcite pointed out three typical cases of structural inconsistencies that were analyzed as classifier nouns ( Nc ) , affixes ( S ) , and special characters .
+69 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Nguyen et al .\shortcite analyzed N - gram sequences and phrase structures to detect WS inconsistencies . 
+Nguyen et al .\shortcite analyzed N - gram sequences and phrase structures to detect WS inconsistencies . 
+70 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Then , the detected WS inconsistencies were classified into several patterns of inconsistencies , parts of which were manually fixed to improve the quality of the corpus . 
+Then , the detected WS inconsistencies were classified into several patterns of inconsistencies , parts of which were manually fixed to improve the quality of the corpus . 
+71 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+The rest were used to create different versions of the VTB corpus . 
+The rest were used to create different versions of the VTB corpus . 
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+These data sets were evaluated on automatic WS and its applications to text classification and English - Vietnamese statistical machine translations to find appropriate criteria for automatic WS and its applications .
+These data sets were evaluated on automatic WS and its applications to text classification and English - Vietnamese statistical machine translations to find appropriate criteria for automatic WS and its applications .
+73 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Their experiments revealed that the VAR\_FREQ data set achieved excellent results in these applications . 
+Their experiments revealed that the VAR\_FREQ data set achieved excellent results in these applications . 
+74 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The VAR\_FREQ data set was the original VTB corpus with manually corrected structural inconsistencies in special characters and selected segmentations with higher frequencies in all detected variations . 
+The VAR\_FREQ data set was the original VTB corpus with manually corrected structural inconsistencies in special characters and selected segmentations with higher frequencies in all detected variations . 
+75 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+Therefore , we used the VAR\_FREQ data set in our experiments .
+Therefore , we used the VAR\_FREQ data set in our experiments .
+76 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+We propose two kinds of methods of detecting and correcting inconsistencies . 
+We propose two kinds of methods of detecting and correcting inconsistencies . 
+80 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+They correspond to two different types of POS inconsistencies that we call multi - POS inconsistencies ( MI ) and Nc inconsistencies ( NcI ) , which are defined as follows .
+They correspond to two different types of POS inconsistencies that we call multi - POS inconsistencies ( MI ) and Nc inconsistencies ( NcI ) , which are defined as follows .
+81 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+\emph are words that are not Nc - nouns and have more than one POS tag at each position in each phrase category .
+\emph are words that are not Nc - nouns and have more than one POS tag at each position in each phrase category .
+82 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+\emph are sequences of Nc - nouns and modifiers , in which Nc - nouns have more than one way of being annotated as POSs in the VTB corpus .
+\emph are sequences of Nc - nouns and modifiers , in which Nc - nouns have more than one way of being annotated as POSs in the VTB corpus .
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+We separated the POS inconsistencies into these two types of inconsistencies because Nc - nouns are special types of words in Vietnamese . 
+We separated the inconsistencies with POSs into these two types of inconsistencies because Nc - nouns are special types of words in Vietnamese . 
+84 0:0:preserved 1:1:preserved 2:2:preserved 3:4,5:bigrammar-others 4:3:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved
+
+The methods of detecting and correcting Nc inconsistencies were language - specific methods developed based on the characteristics of Vietnamese . 
+The methods of detecting and correcting Nc inconsistencies were language - specific methods developed based on the characteristics of Vietnamese . 
+85 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+However , as the methods for MI are rather general , they can be applied to other languages .
+However , as the methods for MI are rather general , they can be applied to other languages .
+86 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+\emph
+\emph
+90 0:0:preserved
+
+Our main problem was to distinguish multi - POS inconsistencies from polysemous words , since polysemous words should not be considered inconsistent for annotations . 
+Our main problem was to distinguish multi - POS inconsistencies from polysemous words , since polysemous words should not be considered inconsistent for annotations . 
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Our method was based on the position of words in phrases and phrase categories . 
+Our method was based on the position of words in phrases and phrase categories . 
+92 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+This idea resulted from the observation that polysemous words have many POS tags; however , each word usually has only one true POS tag at each position in each phrase category . 
+This idea resulted from the observation that polysemous words have many POS tags; however , each word usually has only one true POS tag at each position in each phrase category . 
+93 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+For example , when a phrase category is a verb phrase , the word \emph in the pre - head position of the verb phrase \emph should be a modal , but the word \emph in the head position should be a verb . 
+For example , when a phrase category is a verb phrase , the word \emph in the pre - head position of the verb phrase \emph should be a modal , but the word \emph in the head position should be a verb . 
+94 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved
+
+Further , the word \emph in the head position of a noun phrase \emph should be a noun , but the word \emph in the head position of the verb phrase \emph should be a verb . 
+Further , the word \emph in the head position of a noun phrase \emph should be a noun , but the word \emph in the head position of the verb phrase \emph should be a verb . 
+95 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+This may be more frequent in Vietnamese because it is not an inflectional language i .e . , the word form does not change according to tenses , word categories ( e .g . , nouns , verbs , and adjectives ) , or number ( singular and plural ) .
+This may be more frequent in Vietnamese because it is not an inflectional language i .e . , the word form does not change according to tenses , word categories ( e .g . , nouns , verbs , and adjectives ) , or number ( singular and plural ) .
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved
+
+The method involved three steps . 
+The method involved three steps . 
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+
+First , we extracted words in the same position for each phrase category . 
+First , we extracted words in the same position for each phrase category . 
+98 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Second , we counted the number of different POS tags of each word . 
+Second , we counted the number of different POS tags of each word . 
+99 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Words that had more than one POS tag were determined to be multi - POS inconsistencies . 
+Words that had more than one POS tag were determined to be multi - POS inconsistencies . 
+100 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+For example , in the following two preposition phrases , \textviet , the words \textviet appear at the head positions of both phrases , but they are annotated with different POS tags , i .e . , preposition ( E ) and conjunction ( C ) . 
+For example , in the following two preposition phrases , \textviet , the words \textviet appear at the head positions of both phrases , but they are annotated with different POS tags , i .e . , preposition ( E ) and conjunction ( C ) . 
+101 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved
+
+Therefore , they are multi - POS inconsistencies according to our method .
+Therefore , they are multi - POS inconsistencies according to our method .
+102 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+It should be noted that this method was applied to words that were direct children of a phrase . Embedded phrases , such as \textviet , were considered separately .
+It should be noted that this method was applied to words that were direct children of a phrase . Embedded phrases , such as \textviet , were considered separately .
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+A multi - POS inconsistency detected with the MI\_DM method is denoted by \emph , where \emph is a POS tag of word \emph , \emph is the frequency of POS tag \emph and AC involves applying the condition of \emph . 
+A multi - POS inconsistency detected with the MI\_DM method is denoted by \emph , where \emph is a POS tag of word \emph , \emph is the frequency of POS tag \emph and AC involves applying the condition of \emph . 
+107 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved
+
+Our method of correcting the POS tag for POS inconsistency \emph involves two steps . 
+Our method of correcting the POS tag for POS inconsistency \emph involves two steps . 
+108 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+First , we select the POS tag with the highest frequency of all POS tags of \emph ( \emph ) . Second , we replace POS tags \emph of all instances \emph satisfying condition \emph with POS tag \emph . 
+First , we select the POS tag with the highest frequency of all POS tags of \emph ( \emph ) . Second , we replace POS tags \emph of all instances \emph satisfying condition \emph with POS tag \emph . 
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved
+
+For multi POS inconsistencies  , AC of word \emph is its phrase category and position in the phrase .
+The AC of word \emph for multi - POS inconsistencies is its phrase category and position in the phrase .
+110 0,4,1,2,3,5,6,7,8:0,5,7,1,2,3,4,6,8,9:para-freeword 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+For example , \textviet is a multi - POS inconsistency in the pre - head position of a noun phrase . 
+For example , \textviet is a multi - POS inconsistency in the pre - head position of a noun phrase . 
+111 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The frequency of POS tag ``L'' is 27 and the frequency of POS tag ``P'' is 2 . 
+The frequency of POS tag ``L'' is 27 and the frequency of POS tag ``P'' is two . 
+112 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:typo 17:17:preserved
+
+Therefore , ``L'' is the POS tag that was selected by the MI\_CM method . 
+Therefore , ``L'' is the POS tag that was selected by the MI\_CM method . 
+113 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+We replace all POS tags \emph of instances \textviet in the pre - head positions of noun phrases with POS tag ``L'' .
+We replace all POS tags \emph of instances \textviet in the pre - head positions of noun phrases with POS tag ``L'' .
+114 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+As mentioned in Section \ref , an Nc - noun can be annotated with POS tag ``Nc'' or ``N'' depending on the modifier that follows that Nc - noun . 
+As mentioned in Section \ref , an Nc - noun can be annotated with POS tag ``Nc'' or ``N'' depending on the modifier that follows that Nc - noun . 
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+Analyzing the VTB corpus revealed that Nc - nouns had two characteristics . 
+Analyzing the VTB corpus revealed that Nc - nouns had two characteristics . 
+122 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+First , an Nc - noun that is followed by the same word is usually annotated with the same POS tag . Second , an Nc - noun that is followed by a phrase or nothing at each occurrence is annotated with the same POS tag . 
+First , an Nc - noun that is followed by the same word is usually annotated with the same POS tag . Second , an Nc - noun that is followed by a phrase or nothing at each occurrence is annotated with the same POS tag . 
+123 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved
+
+Based on these two cases , we propose two methods of detecting Nc inconsistencies , which we have called NcI\_DM1 and NcI\_DM2 . They are described below .
+Based on these two cases , we propose two methods of detecting Nc inconsistencies , which we have called NcI\_DM1 and NcI\_DM2 . They are described below .
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+\emph : We counted Nc - nouns in VTB that had two or more ways of POS annotation , satisfying the condition that Nc - nouns are followed by a phrase or nothing . 
+\emph : We counted Nc - nouns in VTB that had two or more ways of being annotated as POSs , satisfying the condition that Nc - nouns are followed by a phrase or nothing . 
+125 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16,17:16,17,18,19:para-colocation 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved
+
+For example , the Nc - noun \emph in \emph is followed by nothing or it is followed by a prepositional phrase as in \textviet .
+For example , the Nc - noun \emph in \emph is followed by nothing or it is followed by a prepositional phrase as in \textviet .
+126 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+\emph : We counted two - gram sequences beginning with an Nc - noun in VTB that had two or more ways of POS annotation of the Nc - noun , satisfying the conditions that two tokens were all in the same phrase and they all had the same depth in a phrase . 
+\emph : We counted two - gram sequences beginning with an Nc - noun in VTB that had two or more ways of being annotated as POSs of the Nc - noun , satisfying the conditions that two tokens were all in the same phrase and they all had the same depth in a phrase . 
+127 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23,24:23,24,25,26:para-colocation 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved 39:41:preserved 40:42:preserved 41:43:preserved 42:44:preserved 43:45:preserved 44:46:preserved 45:47:preserved 46:48:preserved 47:49:preserved 48:50:preserved 49:51:preserved 50:52:preserved 51:53:preserved 52:54:preserved 53:55:preserved
+
+For example , the Nc - noun \emph in the two - gram \textviet was sometimes annotated ``Nc'' , and sometimes annotated ``N'' in VTB; in addition , as \emph and \textviet in the structure \textviet were in the same phrase and had the same depth , \emph was an Nc inconsistency .
+For example , the Nc - noun \emph in the two - gram \textviet was sometimes annotated ``Nc'' , and sometimes annotated ``N'' in VTB; in addition , as \emph and \textviet in the structure \textviet were in the same phrase and had the same depth , \emph was an Nc inconsistency .
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved
+
+We denoted Nc inconsistencies with \emph similarly to multi - POS inconsistencies . 
+We denoted Nc inconsistencies with \emph similarly to multi - POS inconsistencies . 
+133 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+We also replaced the POS tag of Nc - nouns with the highest frequency tag . 
+We also replaced the POS tag of Nc - nouns with the highest frequency tag . 
+134 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The only differences were the applying conditions which varied according to the previous two cases of Nc inconsistencies .
+The only differences were the conditions of application that varied according to the previous two cases of Nc inconsistencies .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5,6,7:para-colocation 7:8:paraphrase 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+For Nc inconsistencies detected by the NcI\_DM1 method , AC is defined as follows : \emph is an Nc - noun that is followed by nothing or a phrase .
+For Nc inconsistencies detected by the NcI\_DM1 method , AC is defined as follows : \emph is an Nc - noun that is followed by nothing or a phrase .
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+For Nc inconsistencies detected by the NcI\_DM2 method , AC is defined as follows : \emph a Nc - noun that must be followed by a word , \emph .
+For Nc inconsistencies detected by the NcI\_DM2 method , AC is defined as follows : \emph a Nc - noun that must be followed by a word , \emph .
+137 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+We detected and corrected multi - POS inconsistencies and Nc inconsistencies based on the two data sets of ORG and VAR\_FREQ . 
+We detected and corrected multi - POS inconsistencies and Nc inconsistencies based on the two data sets of ORG and VAR\_FREQ . 
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The ORG data set was the original VTB corpus and VAR\_FREQ was the original corpus with modifications to WS annotation . 
+The ORG data set was the original VTB corpus and VAR\_FREQ was the original corpus with modifications to WS annotation . 
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+This setting was made similar to that used by Nguyen et al . \shortcite to enable comparison .
+This setting was made similar to that used by Nguyen et al . \shortcite to enable comparison .
+145 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+There are a total of 128 ,871 phrases in the VTB corpus . 
+There are a total of 128 ,871 phrases in the VTB corpus . 
+146 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The top five types of phrases are noun phrases ( NPs ) ( representing 49 .6\% of the total number of phrases ) , verb phrases ( VPs ) , prepositional phrases ( PP ) , adjectival phrases ( ADJPs ) , and quantity phrases ( QP ) , representing 99 .1\% of the total number of phrases in the VTB corpus . 
+The top five types of phrases are noun phrases ( NPs ) ( representing 49 .6\% of the total number of phrases ) , verb phrases ( VPs ) , prepositional phrases ( PP ) , adjectival phrases ( ADJPs ) , and quantity phrases ( QP ) , representing 99 .1\% of the total number of phrases in the VTB corpus . 
+147 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved
+
+We analyzed the VTB corpus based on these five types of phrases .
+We analyzed the VTB corpus based on these five types of phrases .
+148 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Tables \ref and \ref show overall statistics for multi - POS inconsistencies and Nc inconsistencies for each phrase category . 
+Tables \ref and \ref summarize the overall statistics for multi - POS inconsistencies and Nc inconsistencies for each phrase category . 
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :5:mogrammar-det
+
+The second and third columns in these tables indicate the numbers of inconsistencies and their instances that were detected in the ORG data set . 
+The second and third columns in these tables indicate the numbers of inconsistencies and their instances that were detected in the ORG data set . 
+153 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The fourth and fifth columns indicate the numbers of inconsistencies and their instances that were detected in the VAR\_FREQ data set . The rows in Table \ref indicate the number of Nc inconsistencies and the number of instances detected with the NcI\_DM1 and NcI\_DM2 methods .
+The fourth and fifth columns indicate the numbers of inconsistencies and their instances that were detected in the VAR\_FREQ data set . The rows in Table \ref indicate the number of Nc inconsistencies and the number of instances detected with the NcI\_DM1 and NcI\_DM2 methods .
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved
+
+According to Table \ref , most of the multi - POS inconsistencies occurred in noun phrases , representing more than 72\% of the total number of multi - POS inconsistencies . 
+According to Table \ref , most of the multi - POS inconsistencies occurred in noun phrases , representing more than 72\% of the total number of multi - POS inconsistencies . 
+155 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+All Nc inconsistencies in Table \ref are also in noun phrases . 
+All Nc inconsistencies in Table \ref are also in noun phrases . 
+156 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+There are two possible reasons for this . 
+There are two possible reasons for this . 
+157 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+First , noun phrases represent the majority of phrases in VTB ( represent 49 .6\% of the total number of phrases in the VTB corpus ) . 
+First , noun phrases represent the majority of phrases in VTB ( represent 49 .6\% of the total number of phrases in the VTB corpus ) . 
+158 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Second , nouns are sub - divided into many other types ( common nouns ( N ) , classifier nouns ( Nc ) , proper nouns ( Np ) , and unit nouns ( Nu ) ) ( mentioned in Section \ref , which may confuse annotators in annotating POS tags for nouns . 
+Second , nouns are sub - divided into many other types ( common nouns ( N ) , classifier nouns ( Nc ) , proper nouns ( Np ) , and unit nouns ( Nu ) ) ( mentioned in Section \ref , which may confuse annotators in annotating POS tags for nouns . 
+159 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved
+
+In addition , the high number of Nc inconsistencies in Table \ref indicate that it is difficult to distinguish between Nc and other types of nouns . 
+In addition , the high number of Nc inconsistencies in Table \ref indicate that it is difficult to distinguish between Nc and other types of nouns . 
+160 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Therefore , we need to have clearer annotation guidelines for this .
+Therefore , we need to have clearer annotation guidelines for this .
+161 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+We estimated the accuracy with which our methods detected and corrected inconsistencies in POS tagging by manually inspecting inconsistent annotations . 
+We estimated the accuracy with which our methods detected and corrected inconsistencies in POS tagging by manually inspecting inconsistent annotations . 
+166 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+We manually inspected the two data sets of ORG\_EVAL and ORG\_POS\_EVAL . 
+We manually inspected the two data sets of ORG\_EVAL and ORG\_POS\_EVAL . 
+167 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+For ORG\_EVAL , we randomly selected 100 sentences which contained instances of POS inconsistencies in the ORG data set . 
+We randomly selected 100 sentences in ORG\_EVAL , which contained instances of POS inconsistencies in the ORG data set . 
+168 6,3,4,5,1,0,2,7:3,2,1,0,4,5,6,7:para-freeword 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+ORG\_EVAL contained 459 instances of 157 POS inconsistencies . 
+ORG\_EVAL contained 459 instances of 157 POS inconsistencies . 
+169 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+ORG\_POS\_EVAL was the ORG\_EVAL data set with corrections made to multi - POS inconsistencies and Nc inconsistencies with our methods of correction above .
+ORG\_POS\_EVAL was the ORG\_EVAL data set with corrections made to multi - POS inconsistencies and Nc inconsistencies with our methods of correction above .
+170 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+We manually checked POS inconsistencies and found that 153 cases out of 157 POS inconsistencies ( 97 .5\% ) were actual inconsistencies . 
+We manually checked POS inconsistencies and found that 153 cases out of 157 POS inconsistencies ( 97 .5\% ) were actual inconsistencies . 
+173 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+There were four cases that our method detected as multi - POS inconsistencies , but they were actually ambiguities in Vietnamese POS tagging . 
+There were four cases that our method detected as multi - POS inconsistencies , but they were actually ambiguities in Vietnamese POS tagging . 
+174 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+They were polysemous words whose meanings and POS tags depended on surrounding words , but did not depend on their positions in phrases . 
+They were polysemous words whose meanings and POS tags depended on surrounding words , but did not depend on their positions in phrases . 
+175 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+For example , the word \textviet in the post - head positions of the verb phrases VP1 and VP2 below , can be a noun that means\emph in English , or it can be an adjective that means \emph , depending on the preceding verb .
+For example , the word \textviet in the post - head positions of the verb phrases VP1 and VP2 below , can be a noun that means\emph in English , or it can be an adjective that means \emph , depending on the preceding verb .
+176 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved
+
+We analyzed the detected POS inconsistencies to find the reasons for inconsistent POS annotations . 
+We analyzed the detected POS inconsistencies to find the reasons for inconsistent POS annotations . 
+181 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+We classified the detected POS inconsistencies according to pairs of their POS tags . 
+We classified the detected POS inconsistencies according to pairs of POS tags . 
+182 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10,11,12:11,10:para-colocation 13:12:preserved
+
+There were a total of 85 patterns of pairs of POS tags . Table \ref lists the top five confusing patterns ( PoPOS ) , their counts of inconsistencies ( counts ) , and examples . 
+There were a total of 85 patterns of pairs of POS tags . Table \ref lists the top five confusing patterns ( PoPOS ) , their counts of inconsistencies ( counts ) , and examples . 
+183 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+It also seemed to be extremely confusing for the annotators to distinguish types of nouns ( Nc and N , and N and Np ) and distinguish nouns from other types of words ( such as verbs , adjectives , and pronouns ) .
+It also seemed to be extremely confusing for the annotators to distinguish types of nouns ( Nc and N , and N and Np ) and distinguish nouns from other types of words ( such as verbs , adjectives , and pronouns ) .
+184 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved
+
+We investigated POS inconsistencies and the annotation guidelines \cite to find why common nouns were sometimes tagged as classifier nouns and vice versa , and verbs were sometimes tagged as common nouns and vice versa . 
+We investigated POS inconsistencies and the annotation guidelines \cite to find why common nouns were sometimes tagged as classifier nouns and vice versa , and verbs were sometimes tagged as common nouns and vice versa . 
+185 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+We found that these POS inconsistencies belonged to polysemous words that were difficult to tag .
+We found that these POS inconsistencies belonged to polysemous words that were difficult to tag .
+186 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The difficulties with tagging polysemous words were due to four main reasons : 
+The difficulties with tagging polysemous words were due to four main reasons : 
+187 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+( 1 ) The POS of a polysemous word changes according to the function of that polysemous word in each phrase category or changes according to the meaning of surrounding words . 
+( 1 ) The POS of a polysemous word changes according to the function of that polysemous word in each phrase category or changes according to the meaning of surrounding words . 
+188 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Although polysemous words are annotated with different POS tags , they do not change their word form . 
+Although polysemous words are annotated with different POS tags , they do not change their word form . 
+189 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+( 2 ) The way polysemous words are tagged according to their context is not completely clear in the POS tagging guidelines . 
+( 2 ) The way polysemous words are tagged according to their context is not completely clear in the POS tagging guidelines . 
+190 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+( 3 ) Annotators referred to a dictionary that had been built as part of the VLSP project \cite ( VLSP dictionary ) to annotate the VTB corpus . 
+( 3 ) Annotators referred to a dictionary that had been built as part of the VLSP project \cite ( VLSP dictionary ) to annotate the VTB corpus . 
+191 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+However , this dictionary lacked various words and did not cover all contexts for the words . 
+However , this dictionary lacked various words and did not cover all contexts for the words . 
+192 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+For example , \textviet in Vietnamese is an adjective when it is the head word of an adjectival phrase , but \textviet is an adverb when it is the modifier of a quantifier noun ( such as \textviet . 
+For example , \textviet in Vietnamese is an adjective when it is the head word of an adjectival phrase , but \textviet is an adverb when it is the modifier of a quantifier noun ( such as \textviet . 
+193 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+However , the VLSP dictionary only considered \textviet to be an adjective ( \textviet ) . 
+However , the VLSP dictionary only considered \textviet to be an adjective ( \textviet ) . 
+194 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+No cases where \textviet was an adverb were mentioned in this dictionary . 
+No cases where \textviet was an adverb were mentioned in this dictionary . 
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+( 4 ) There are several overlapping but conflicting instructions across the annotation guidelines for different layers of the treebank . 
+( 4 ) There are several overlapping but conflicting instructions across the annotation guidelines for different layers of the treebank . 
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For example , the combinations of affixes and words they modify to create compound words are clear in the WS guidelines , but POS tagging guidelines treat affixes as words and they are annotated as POS tags ``S'' . 
+For example , the combinations of affixes and words they modify to create compound words are clear in the WS guidelines , but POS tagging guidelines treat affixes as words and they are annotated as POS tags ``S'' . 
+197 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+For words modifying quantifier nouns , such as \textviet , the POS tagging guidelines treat them as adjectives , but the bracketing guidelines treat them as adverbs . 
+For words modifying quantifier nouns , such as \textviet , the POS tagging guidelines treat them as adjectives , but the bracketing guidelines treat them as adverbs . 
+198 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+Therefore , our method detected multi - POS inconsistencies as \textviet , \emph at the pre - head positions of noun phrases . 
+Therefore , our method detected multi - POS inconsistencies as \textviet , \emph at the pre - head positions of noun phrases . 
+199 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+Since the frequencies of the adjective tags were greater than those of adverb tags ( fA > fR ) , these words were automatically assigned to adjective POS tags ( A ) according to our method of correction . 
+Since the frequencies of the adjective tags were greater than those of adverb tags ( fA > fR ) , these words were automatically assigned to adjective POS tags ( A ) according to our method of correction . 
+200 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+These were POS inconsistencies that our method of correction could not be applied to , because the frequency of incorrect POS tags was higher than that of actual POS tags .
+These were POS inconsistencies that our method of correction could not be applied to , because the frequency of incorrect POS tags was higher than that of actual POS tags .
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+We carried out experiments to evaluate two popular parsers , a syntactic parser and a dependency parser , on different versions of the VTB corpus . 
+We carried out experiments to evaluate two popular parsers , a syntactic parser and a dependency parser , on different versions of the VTB corpus . 
+207 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Some of these data sets were made the same as the data settings for WS in Nguyen et al . \shortcite . 
+Some of these data sets were made the same as the data settings for WS in Nguyen et al . \shortcite . 
+208 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The other data sets contained changes in POS annotations following our methods of correcting inconsistencies presented in Section \ref . 
+The other data sets contained changes in POS annotations following our methods of correcting inconsistencies presented in Section \ref . 
+209 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+We could observe how the problems with WS and POS tagging influenced the quality of Vietnamese parsing by analyzing the parsing results .
+We could observe how the problems with WS and POS tagging influenced the quality of Vietnamese parsing by analyzing the parsing results .
+210 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+Data . Nine configurations of the VTB corpus were created as follows :
+Data . Nine configurations of the VTB corpus were created as follows :
+214 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+ORG : The original VTB corpus .
+ORG : The original VTB corpus .
+215 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+BASE , STRUCT\_AFFIX , STRUCT\_NC , VAR\_SPLIT , VAR\_COMB , and VAR\_FREQ correspond to different settings for WS described in Nguyen et al .\shortcite .
+BASE , STRUCT\_AFFIX , STRUCT\_NC , VAR\_SPLIT , VAR\_COMB , and VAR\_FREQ correspond to different settings for WS described in Nguyen et al .\shortcite .
+216 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+ORG\_POS : The ORG data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+ORG\_POS : The ORG data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+217 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+VAR\_FREQ\_POS : The VAR\_FREQ data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+VAR\_FREQ\_POS : The VAR\_FREQ data set with corrections for multi - POS inconsistencies and Nc inconsistencies by using the methods in Section \ref and \ref .
+218 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Each of the nine data sets was randomly split into two subsets for training and testing our parser models . 
+Each of the nine data sets was randomly split into two subsets for training and testing our parser models . 
+219 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+The training set contained 9 ,443 sentences , and the testing set contained 1 ,000 sentences .
+The training set contained 9 ,443 sentences , and the testing set contained 1 ,000 sentences .
+220 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Tools
+Tools
+221 0:0:preserved
+
+We used the Berkeley parser \cite to evaluate the syntactic parser on VTB . 
+We used the Berkeley parser \cite to evaluate the syntactic parser on VTB . 
+222 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+This parser has been used in experiments in English , German , and Chinese and achieved an F1 of 90 .2\% on the English Penn Treebank .
+This parser has been used in experiments in English , German , and Chinese and achieved an F1 of 90 .2\% on the English Penn Treebank .
+223 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+We used the conversion tool built by Johansson et al . \shortcite to convert VTB into dependency trees .
+We used the conversion tool built by Johansson et al . \shortcite to convert VTB into dependency trees .
+224 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+We used the MST parser to evaluate the dependency parsing on VTB . 
+We used the MST parser to evaluate the dependency of parsing on VTB . 
+225 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved :9:bigrammar-others
+
+This parser was evaluated on the English Penn Treebank \cite and 13 other languages \cite . 
+This parser was evaluated on the English Penn Treebank \cite and 13 other languages \cite . 
+226 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Its accuracy achieved 90 .7\% on the English Penn Treebank .
+Its accuracy achieved 90 .7\% on the English Penn Treebank .
+227 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+We made use of the bracket scoring program EVALB , which was built by Sekine et al . ( 1997 ) , to evaluate the performance of the Berkeley parser . 
+We made use of the bracket scoring program EVALB , which was built by Sekine et al . ( 1997 ) , to evaluate the performance of the Berkeley parser . 
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+As an evaluation tool was included in the MST parser tool , we used it to evaluate the MST parser .
+As an evaluation tool was included in the MST parser tool , we used it to evaluate the MST parser .
+229 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The bracketing F - measures of the Berkeley parser on nine configurations of the VTB corpus are listed in Table \ref . 
+The bracketing F - measures of the Berkeley parser on nine configurations of the VTB corpus are listed in Table \ref . 
+233 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The dependency of the MST parser on nine configurations of the VTB corpus are shown in Table \ref . 
+The dependency of the MST parser on the accuracies of nine configurations of the VTB corpus are summarized in Table \ref . 
+234 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9,10,11,12:10,11,7,8,9,12,13,14,15:para-colocation 13:16:preserved 14:17:paraphrase 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved
+
+These results indicate that the quality of the treebank strongly affected the quality of the parsers .
+These results indicate that the quality of the treebank strongly affected the quality of the parsers .
+235 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+According to Table \ref , all modifications to WS inconsistencies improved the performance of the Berkeley parser except for STRUCT\_NC and VAR\_SPLIT . 
+According to Table \ref , all modifications to WS inconsistencies improved the performance of the Berkeley parser except for STRUCT\_NC and VAR\_SPLIT . 
+236 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+More importantly , the ORG\_POS model achieved better results than the ORG model , and the VAR\_FREQ\_POS model achieved better results than the VAR\_FREQ model , which indicates that the modifications to POS inconsistencies improved the performance of the Berkeley parser . 
+More importantly , the ORG\_POS model achieved better results than the ORG model , and the VAR\_FREQ\_POS model achieved better results than the VAR\_FREQ model , which indicates that the modifications to POS inconsistencies improved the performance of the Berkeley parser . 
+237 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved
+
+The VAR\_FREQ\_POS model scored 1 .11 points higher than ORG , which is a significant improvement .
+The VAR\_FREQ\_POS model scored 1 .11 points higher than ORG , which is a significant improvement .
+238 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Dependency accuracies of the MST parser in Table \ref shown that all modifications to POS inconsistencies improved the performance of the MST parser . 
+The dependency of the MST parser on accuracies in Table \ref indicates that all modifications to POS inconsistencies improved the performance of the MST parser . 
+239 0,1,2,3,4,5:0,1,2,3,4,5,6,7:para-colocation 6:8:preserved 7:9:preserved 8:10:preserved 9:11:paraphrase 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved
+
+All modifications of WS inconsistencies also improved the performance of the MST parser except for STRUCT\_NC . 
+All modifications to WS inconsistencies also improved the performance of the MST parser except for STRUCT\_NC . 
+240 0:0:preserved 1:1:preserved 2:2:bigrammar-prep 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The VAR\_FREQ\_POS model scored 7 .36 points higher than ORG , which is a significant improvement .
+The VAR\_FREQ\_POS model scored 7 .36 points higher than ORG , which is a significant improvement .
+241 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The results for the Berkeley parser and MST parser trained on the POS - modified versions of VTB were better than those trained on the original VTB corpus , but they were still much lower than the performance of the same parsers on the English language . 
+The results for the Berkeley parser and MST parser trained on the POS - modified versions of VTB were better than those trained on the original VTB corpus , but they were still much lower than the performance of the same parsers on the English language . 
+246 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved
+
+We analyzed error based on the output data of the best parsing results ( VAR\_FREQ\_POS ) for the Berkeley parser , and found that the unmatched annotations between gold and test data were caused by ambiguous POS sequences in the VTB corpus .
+We analyzed error based on the output data of the best parsing results ( VAR\_FREQ\_POS ) for the Berkeley parser , and found that the unmatched annotations between gold and test data were caused by ambiguous POS sequences in the VTB corpus .
+247 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved
+
+An ambiguous POS sequence is a sequence of POS tags that has two or more constituency tags . 
+An ambiguous POS sequence is a sequence of POS tags that has two or more constituency tags . 
+248 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+For example , there are the verb phrases \emph and the adjectival phrase \emph in the training data of VAR\_FREQ\_POS . 
+For example , there are the verb phrases \emph and the adjectival phrase \emph in the training data of VAR\_FREQ\_POS . 
+249 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+As these two phrases have the same POS sequence \emph , \emph is an ambiguous POS sequence , and VP and ADJP are confusing constituency tags ( CCTs ) . 
+As these two phrases have the same POS sequence \emph , \emph is an ambiguous POS sequence , and VP and ADJP are confusing constituency tags ( CCTs ) . 
+250 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+We found 42 ,373 occurrences of 213 ambiguous POS sequences ( representing 37 .02\% of all phrases ) in the training data of VAR\_FREQ\_POS . 
+We found 42 ,373 occurrences of 213 ambiguous POS sequences ( representing 37 .02\% of all phrases ) in the training data of VAR\_FREQ\_POS . 
+251 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+We also found 1 ,065 occurrences of 13 ambiguous POS sequences in the parsing results for VAR\_FREQ\_POS . 
+We also found 1 ,065 occurrences of 13 ambiguous POS sequences in the parsing results for VAR\_FREQ\_POS . 
+252 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Some examples of ambiguous POS sequences , their CCTs , and the number of occurrences of each CCT in the training data of VAR\_FREQ\_POS are listed in Table \ref .
+Some examples of ambiguous POS sequences , their CCTs , and the number of occurrences of each CCT in the training data of VAR\_FREQ\_POS are listed in Table \ref .
+253 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+We classified the detected ambiguous POS sequences according to pairs of different CCTs to find the reasons for ambiguity in each pair . 
+We classified the detected ambiguous POS sequences according to pairs of different CCTs to find the reasons for ambiguity in each pair . 
+254 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+There were a total of 42 pairs of CCTs , whose top three pairs , along with their counts of types of ambiguous POS sequences , and examples of ambiguous POS sequences are listed in Table \ref . 
+There were a total of 42 pairs of CCTs , whose top three pairs , along with their counts of types of ambiguous POS sequences , and examples of ambiguous POS sequences are listed in Table \ref . 
+255 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+We extracted different POS tags at each position of each phrase category for each pair of CCTs , based on the ambiguous POS sequences . 
+We extracted different POS tags at each position of each phrase category for each pair of CCTs , based on the ambiguous POS sequences . 
+256 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+For example , the third row in Table \ref has ``R A V'' and ``A V N'' , which are two ambiguous POS sequences that were sometimes annotated as VP and sometimes annotated as ADJP . 
+For example , the third row in Table \ref has ``R A V'' and ``A V N'' , which are two ambiguous POS sequences that were sometimes annotated as VP and sometimes annotated as ADJP . 
+257 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+The different POS tags that were extracted from the pre - head positions of VPs based on these two POS sequences were ``R , A'' and ``R'' was the POS tag that was extracted from the pre - head positions of ADJPs based on these two POS sequences . 
+The different POS tags that were extracted from the pre - head positions of VPs based on these two POS sequences were ``R , A'' and ``R'' was the POS tag that was extracted from the pre - head positions of ADJPs based on these two POS sequences . 
+258 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved
+
+These POS tags are important clues to finding reasons for ambiguities in POS sequences .
+These POS tags are important clues to finding reasons for ambiguities in POS sequences .
+259 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Table \ref summarizes the extracted POS tags at pre - head positions for the top three pairs of CCTs . 
+Table \ref summarizes the extracted POS tags at pre - head positions for the top three pairs of CCTs . 
+260 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+For example , the POS tags in row NP - VP and column 1 are in the pre - head positions of NPs and the POS tags in row NP - VP and column 2 are in the pre - head positions of VP . 
+For example , the POS tags in row NP - VP and column 1 are in the pre - head positions of NPs and the POS tags in row NP - VP and column 2 are in the pre - head positions of VP . 
+261 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved
+
+By comparing these results with the structures of the pre - head positions of phrase categories in the VTB bracketing guidelines \cite , we found many cases that were not annotated according to instructions in the VTB bracketing guidelines , such as those according to Table \ref , where an adjective ( A ) is in the pre - head position of VP , but according to the VTB bracketing guidelines , the structure of the pre - head position of VB only includes adverb ( R ) .
+By comparing these results with the structures of the pre - head positions of phrase categories in the VTB bracketing guidelines \cite , we found many cases that were not annotated according to instructions in the VTB bracketing guidelines , such as those according to Table \ref , where an adjective ( A ) is in the pre - head position of VP , but according to the VTB bracketing guidelines , the structure of the pre - head position of VB only includes an adverb ( R ) .
+262 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved 63:63:preserved 64:64:preserved 65:65:preserved 66:66:preserved 67:67:preserved 68:68:preserved 69:69:preserved 70:70:preserved 71:71:preserved 72:72:preserved 73:73:preserved 74:74:preserved 75:75:preserved 76:76:preserved 77:77:preserved 78:78:preserved 79:79:preserved 80:80:preserved 81:81:preserved 82:82:preserved 83:83:preserved 84:85:preserved 85:86:preserved 86:87:preserved 87:88:preserved 88:89:preserved :84:mogrammar-det
+
+We investigated cases that had not been annotated according to the guidelines , and found two possible reasons that caused ambiguous POS sequences . 
+We investigated cases that had not been annotated according to the guidelines , and found two possible reasons that caused ambiguous POS sequences . 
+263 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+First , although our methods improved the quality of the VTB corpus , some POS annotation errors remained in the VTB corpus . 
+First , although our methods improved the quality of the VTB corpus , some errors in POS annotations remained in the VTB corpus . 
+264 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 15,16,14:17,14,15,16:para-colocation 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved
+
+These POS annotation errors were cases to which our methods could not be applied ( mentioned in Section \ref ) . 
+These errors in POS annotations were cases to which our methods could not be applied ( mentioned in Section \ref ) . 
+265 0:0:preserved 1,2,3:3,1,2,4:para-colocation 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+Second , there were ambiguities in POS sequences caused by Vietnamese characteristics , such as the adjectival phrase \textviet and the noun phrase \emph that had the same POS sequence of ``R N A'' .
+Second , there were ambiguities in POS sequences caused by Vietnamese characteristics , such as the adjectival phrase \textviet and the noun phrase \emph that had the same POS sequence of ``R N A'' .
+266 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved
+
+Therefore , POS annotation errors need to be eliminated from the VTB corpus to further improve its quality and that of the Vietnamese parser . 
+Therefore , POS annotation errors need to be eliminated from the VTB corpus to further improve its quality and that of the Vietnamese parser . 
+267 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+We not only need to eliminate overlapping and conflicting instructions , which were mentioned in Section \ref , from the guidelines , but we also have to complete annotation instructions for cases that have not been treated ( or not been clearly treated ) in the guidelines . 
+We not only need to eliminate overlapping and conflicting instructions , which were mentioned in Section \ref , from the guidelines , but we also have to complete annotation instructions for cases that have not been treated ( or not been clearly treated ) in the guidelines . 
+268 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved
+
+We may also need to improve POS tag set because adverbs modifying adjectives , nouns , and verbs are all presently tagged as ``R'' , which caused ambiguous POS sequences , such as the ambiguous POS sequence ``R N A'' mentioned above . 
+We may also need to improve POS tag set because adverbs modifying adjectives , nouns , and verbs are all presently tagged as ``R'' , which caused ambiguous POS sequences , such as the ambiguous POS sequence ``R N A'' mentioned above . 
+269 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved
+
+If we use different POS tags for the adverb \textviet , which modifies the adjective \textviet , and the adverb \textviet , which modifies the noun \textviet , we can eliminate ambiguous POS sequences in these cases .
+If we use different POS tags for the adverb \textviet , which modifies the adjective \textviet , and the adverb \textviet , which modifies the noun \textviet , we can eliminate ambiguous POS sequences in these cases .
+270 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+We proposed several methods of improving the quality of the VTB corpus . 
+We proposed several methods of improving the quality of the VTB corpus . 
+276 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Our manual evaluation revealed that our methods improved the quality of the VTB corpus by 6 .5\% with correct POS tags . 
+Our manual evaluation revealed that our methods improved the quality of the VTB corpus by 6 .5\% with correct POS tags . 
+277 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Analysis of inconsistencies and the annotation guidelines suggested that : 
+Analysis of inconsistencies and the annotation guidelines suggested that : 
+278 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+( 1 ) better instructions should be added to the VTB guidelines to help annotators to distinguish difficult POS tags , 
+( 1 ) better instructions should be added to the VTB guidelines to help annotators to distinguish difficult POS tags , 
+279 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+( 2 ) overlapping and conflicting instructions should be eliminated from the VTB guidelines , 
+( 2 ) overlapping and conflicting instructions should be eliminated from the VTB guidelines , 
+280 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+and ( 3 ) annotations that referred to dictionaries should be avoided .
+and ( 3 ) annotations that referred to dictionaries should be avoided .
+281 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+To the best of our knowledge , this paper is the first report on evaluating state - of - the - art parsers used on the Vietnamese language . 
+To the best of our knowledge , this paper is the first report on evaluating state - of - the - art parsers used on the Vietnamese language . 
+282 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The results obtained from evaluating these two parsers were used as feedback to improve the quality of treebank annotations . 
+The results obtained from evaluating these two parsers were used as feedback to improve the quality of treebank annotations . 
+283 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+We also thoroughly analyzed the parsing output , which revealed challenging issues in treebank annotations and in the Vietnamese parsing problem itself .
+We also thoroughly analyzed the parsing output , which revealed challenging issues in treebank annotations and in the Vietnamese parsing problem itself .
+284 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+

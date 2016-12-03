@@ -1,0 +1,1716 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+Face retrieval on large-scale news video datasets
+Face retrieval in large-scale news video datasets
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+Face retrieval in news video has been identified as a challenging task due to huge variations in visual appearance of human face .
+Face retrieval in news video has been identified as a challenging task due to huge variations in the visual appearance of the human face .
+7
+Although there are several approaches proposed to cope with this problem , their extremely high computational cost limits their scalability on largescale video datasets that may contain millions faces of hundreds characters .
+Although several approaches have been proposed to deal with this problem , their extremely high computational cost limits their scalability to large-scale video datasets that may contain millions of faces of hundreds of characters .
+8
+In this paper , we introduce approaches for face retrieval which are scalable on such datasets while maintaining competitive performances with the state-of-the-art approaches .
+In this paper , we introduce approaches to face retrieval that are scalable to such datasets while maintaining competitive performances with state-of-the-art approaches .
+9
+To utilize the variability of face appearances in video , we use a set of face images called face-track to represent for the appearance of a character in a video shot .
+To utilize the variability of face appearances in video , we use a set of face images called face track to represent the appearance of a character in a video shot .
+10
+Our first proposal is an approach for extracting face-tracks .
+Our first proposal is an approach to extracting face tracks .
+11
+We use a point tracker for exploring the connections between detected faces belonging to the same character , then grouping them into one face-track .
+We use a point tracker to explore the connections between detected faces belonging to the same character and , then group them into one face track .
+12
+We present techniques to make the approach robust to common problems caused by sudden illumination changes , partial occlusions , and scattered appearances of characters in news videos .
+We present techniques to make the approach robust to common problems caused by sudden illumination changes , partial occlusions , and scattered appearances of characters in news videos .
+13
+In the second proposal , we introduce an efficient approach to match face-tracks for retrieval .
+In the second proposal , we introduce an efficient approach to matching face tracks for retrieval .
+14
+Instead of using all faces in face-tracks to compute their similarity , our approach select representative faces for each face-track .
+Instead of using all the faces in the face tracks to compute their similarity , our approach selects representative faces for each face track .
+15
+The representative faces are sampled from the original face-track .
+The representative faces are sampled from the original face track .
+16
+As a result , we significantly reduce the computational cost for face-track matching while taking into account variability of faces in face-tracks for high matching accuracy .
+As a result , we significantly reduce the computational cost of face-track matching while taking into account the variability of faces in face tracks to achieve high matching accuracy .
+17
+Experiments are conducted on two face-track datasets extracted from real-world news videos , .
+Experiments are conducted on two face-track datasets extracted from real-world news videos , of such .
+18
+Their scales have not been considered in literature ever .
+scales that have never been considered in the literature .
+19
+One dataset contains 1,497 face-tracks of 41 characters extracted from 370 hours of TRECVID videos .
+One dataset contains 1,497 face tracks of 41 characters extracted from 370 hours of TRECVID videos .
+20
+The other dataset provides 5,567 face-tracks of 111 characters observed from television news program ( NHK News 7 ) channel in 11 years .
+The other dataset provides 5,567 face tracks of 111 characters observed from a television news program ( NHK News 7 ) over 11 years .
+21
+We make both datasets public for research community .
+We make both datasets public for the research community .
+22
+The experimental results demonstrate that our proposed approaches achieved a remarkable balance between accuracy and efficiency.
+The experimental results show that our proposed approaches achieved a remarkable balance between accuracy and efficiency.
+23
+</p>
+</p>
+24
+</abstract>
+</abstract>
+25
+<section label = " Introduction ">
+<section label = " Introduction ">
+26
+<p>
+<p>
+27
+News videos play an important role in our sources of information nowadays because of their rich and important contents .
+News videos play an important role as a source of information nowadays because of their rich and relevant contents .
+28
+With the advances of modern technology , a huge amount of news videos can be obtained easily .
+With the advances in modern technology , a huge amount of news videos can be obtained easily .
+29
+Accordingly , it creates an urgent demand for retrieving useful information in such news video datasets .
+Accordingly , this creates an urgent demand to retrieve useful information from such news video datasets .
+30
+Since most of the news is related to human , human face retrieval , which is defined as the task of extracting and returning faces relevant to a given query , obviously becomes an important task .
+Because most news are related to people , human face retrieval , which is defined as the task of extracting and returning faces relevant to a given query , obviously becomes an important task .
+31
+A robust face retrieval system on large-scale news video datasets is indeed of much benefit to a wide range of applications .
+A robust face retrieval system for large-scale news video datasets is indeed of much benefit in a wide range of applications .
+32
+For example , by applying face retrieval to a news video dataset , we are returned a list of relevant shots or scenes containing appearance of a selected well-known character .
+For example , by applying face retrieval to a news video dataset , we are returned a list of relevant shots or scenes containing the appearance of a selected well-known character .
+33
+With the list , important events related to the character can be detected or summarized.
+With such a list , important events related to the character can be found or summarized.
+34
+</p>
+</p>
+35
+<p>
+<p>
+36
+However , developing an accurate face retrieval system is not a trivial task because of the fact that imaged appearance of a face changes dramatically under large variations in poses , facial expressions , and complex capturing conditions .
+However , developing an accurate face retrieval system is not a trivial task because of the fact that the imaged appearance of a face changes dramatically under large variations in poses , facial expressions , and complex capturing conditions .
+37
+On the other hand , efficiency is also an issue of such a face retrieval system beside its accuracy since scales of available datasets are getting larger rapidly , for instance , exceeding thousands hours of videos with millions faces of hundreds character .
+Besides accuracy , efficiency is also an issue in such a face retrieval system because the scales of available datasets are rapidly getting larger , for instance , exceeding thousands of hours of videos with millions of faces of hundreds of characters .
+38
+Thus , accurate and efficient approaches for face retrieval are always required.
+Thus , accurate and efficient approaches to face retrieval are always required.
+39
+</p>
+</p>
+40
+<p>
+<p>
+41
+Generally , there are two principle steps in a face retrieval system .
+Generally , a face retrieval system consists of two principal steps .
+42
+The first step is extracting appearance of faces in video .
+The first step is extracting the appearance of faces in videos .
+43
+And , the second step is matching the extracted ones with a given query to return a rank list .
+, The second step is matching the extracted appearances with a given query so as to return a rank list .
+44
+While conventional approaches consider single face images as the basic units for extracting and matching \CITE , recently proposed approaches sifted towards sets of face images called face-tracks .
+Whereas conventional approaches consider single face images as the basic units in extracting and matching \CITE , recently proposed approaches shifted toward the use of sets of face images called face tracks .
+45
+A face-track contains multiple face images belonging to the same individual character within a video shot .
+A face track contains multiple face images belonging to the same individual character within a video shot .
+46
+Face images in a face-track may present the corresponding character under different viewpoints and facial expressions ( as shown in Figure 1 ) .
+The face images in a face track may present the corresponding character from different viewpoints and with different facial expressions ( as shown in Figure 1 ) .
+47
+By exploiting the plenteous information from multiple exemplar faces in face-tracks , face-track based approaches are expected to achieve more robust and stable performance.
+By exploiting the plenteous information from the multiple exemplar faces in the face tracks , face track-based approaches are expected to achieve a more robust and stable performance.
+48
+</p>
+</p>
+49
+<p>
+<p>
+50
+Once all face-tracks in video shots are extracted , they are matched with the query to return a ranked list as the output of the face retrieval system .
+Once all the face tracks in the video shots are extracted , they are matched with the query to return a ranked list as the output of the face retrieval system .
+51
+Since each face-track is a set of face images , matching face-tracks essentially can be thought of as a problem of matching image sets .
+Because each face track is a set of face images , matching face tracks can essentially be thought of as a problem of matching image sets .
+52
+There are several approaches introduced to deal with this problem \CITE .
+Several approaches have been introduced to deal with this problem \CITE .
+53
+They differ in the ways in which the sets are modeled and the similarity between sets is computed .
+They differ in the ways in which the sets are modeled and the similarity between sets is computed .
+54
+In these works , image set has been modeled in different way , such as distributions \CITE , subspaces \CITE , convex geometric region in feature space \CITE , or more general manifolds \CITE .
+Using these approaches , the image set has been modeled in different ways , including as distributions \CITE , subspaces \CITE , a convex geometric region in a feature space \CITE , or more general manifolds \CITE .
+55
+Although these approaches shown promising results on benchmark datasets , they require high computational costs to characterize the representation of face-tracks , such as computing the convex geometric region in \CITE , the probability in \CITE , and the eigenvectors in \CITE .
+Although these approaches have shown promising results in benchmark datasets , they require high computational costs to characterize the representation of face tracks , such as computing the convex geometric region in \CITE , the probability in \CITE , and the eigenvectors in \CITE .
+56
+Their complexity in modeling facetracks and estimating similarity between face-tracks limits their practicability on large-scale datasets.
+Their complexity in modeling face tracks and estimating the similarity between face tracks limits their practicability in large-scale datasets.
+57
+</p>
+</p>
+58
+<p>
+<p>
+59
+Working toward solving the above problems , our contributions in this paper is three-fold.
+This paper provides a threefold contribution toward solving the above problems , .
+60
+</p>
+</p>
+61
+<p>
+<p>
+62
+Robust face-track extraction on news video .
+Robust face-track extraction from news video .
+63
+To enhance the performance of face-track matching , face-tracks should be first extracted accurately .
+To enhance the performance of face-track matching , face tracks should first be extracted accurately .
+64
+, We introduce an approach for this purpose .
+For this purpose , we introduce an approach .
+65
+Our approach is motivated by a study of Everingham et al .
+motivated by a study of Everingham et al .
+66
+The basic idea is to employ a point tracker ( Kanade-Lucas-Tomasi tracker \CITE ) to establish the connections between faces belonging to the same character in consecutive frames of a shot .
+The basic idea is to use a point tracker ( Kanade-Lucas-Tomasi tracker \CITE ) to establish the connections between faces belonging to the same character in consecutive frames of a shot .
+67
+, In constrast to the approach in \CITE , which is failed to deal with specific problems of news video caused by sudden illumination change and partial occlusion , our approach is incorporated techniques to overcome the problems .
+Our approach incorporates techniques to overcome specific problems with news video caused by sudden illumination change and partial occlusion , in contrast to the approach in \CITE , which failed to deal with , these problems .
+68
+Evaluations on a collection of real-world news videos showed that our proposed face-track extraction approach achieved approximately 95% accuracy , a significant improvement compare the approach in \CITE .
+Evaluations of a collection of real-world news videos showed that our proposed face-track extraction approach achieved approximately 95% accuracy , a significant improvement compared to the approach in \CITE .
+69
+</p>
+</p>
+70
+<p>
+<p>
+71
+Efficient face-track matching .
+Efficient face-track matching .
+72
+We introduce an approach which significantly reduces the computational cost for face-track matching while maintaining a competitive performance compare to those of the state-of-the-art approaches .
+We introduce an approach that significantly reduces the computational cost for face-track matching while maintaining a competitive performance with state-of-the-art approaches .
+73
+Based on the observation that face-tracks obtained by tracking provide highly similar faces in consecutive frames , we argue that it is redundant to use all faces in a face-track for learning the variation of faces .
+Based on the observation that face tracks obtained by tracking provide highly similar faces in consecutive frames , we argue that it is redundant to use all the faces in a face track for learning the variation of faces .
+74
+Thus , a set of faces is sampled from the original face-track for matching .
+Thus , a set of faces is sampled from the original face track for matching .
+75
+The size of the set is much smaller than the size of original face-track .
+The size of the set is much smaller than that of the original face track .
+76
+Then , the mean face of sampled faces in the set is computed .
+The , mean face of the sampled faces in the set is then computed .
+77
+The similarity between two face-tracks is the distance between their mean faces.
+The similarity between two face tracks is the distance between their mean faces.
+78
+</p>
+</p>
+79
+<p>
+<p>
+80
+Large-scale face-track datasets from real-world news videos .
+Large-scale face-track datasets from real-world news videos .
+81
+We investigated the problem of face-retrieval on news video datasets whose scales have not been considered in literature ever .
+We investigated the problem of face retrieval in news video datasets whose scales have never been considered in the literature .
+82
+Our first dataset is from 370 hours TRECVID news videos which contains 405,887 detected faces belonging to 41 individuals .
+Our first dataset is from 370 hours of TRECVID news videos and contains 405,887 detected faces belonging to 41 individuals .
+83
+The second dataset is observed from NHK News7 channel in 11 years .
+The second dataset includes 1.2 million faces of 111 individuals observed in the NHK News 7 program over 11 years .
+84
+In this dataset , 1.2 millions faces of 111 individuals are provided .
+, .
+85
+The total number of available face-track is 5,567 .
+The total number of available face tracks is 5,567 .
+86
+Number of occurrence of each individual character varies from 4 to 550 .
+The number of occurrences of each individual character varies from 4 to 550 .
+87
+Both datasets are published for the research community.
+Both datasets are published for the research community.
+88
+</p>
+</p>
+89
+<p>
+<p>
+90
+The remaining of this paper is organized as follows .
+The remainder of this paper is organized as follows .
+91
+In Section 2 , we introduce related works in details .
+In Section 2 , we introduce related works in detail .
+92
+Section 3 and Section 4 describe our face-track extraction and matching , approaches respectively .
+Sections 3 and 4 describe our approaches to face-track extraction and matching , respectively .
+93
+Section 5 presents our experimental settings , .
+Section 5 presents our experimental settings , and Section 6 provides our .
+94
+Conclusion is given in the final Section 6.
+conclusions.
+95
+</p>
+</p>
+96
+</section>
+</section>
+97
+<section label = " Related Works ">
+<section label = " Related Works ">
+98
+<p>
+<p>
+99
+Face-track extraction .
+Face-track extraction .
+100
+Face-track extraction is a key step in a video-based face retrieval system .
+Face-track extraction is a key step in a video-based face retrieval system .
+101
+Existing studies on automatic face-track extraction follow a standard paradigm that consists of two basic steps , detecting faces in frames and grouping faces of the same character into face-tracks .
+The existing studies on automatic face-track extraction follow a standard paradigm that consists of two basic steps , detecting faces in frames and grouping faces of the same character into face tracks .
+102
+In the first step , Viola-Jones detector is usually employed to detect near frontal faces in frames of videos .
+In the first step , the Viola-Jones detector is usually used to detect near frontal faces in frames of videos .
+103
+Then , in the second step , detected faces of the same character will be grouped by using either clustering approaches \CITE or tracking approaches \CITE .
+, In the second step , the detected faces of the same character are grouped by using either clustering \CITE or tracking approaches \CITE .
+104
+In \CITE , Ramanan et al .
+In \CITE , Ramanan et al .
+105
+builds a color histogram for the hair , face , and torso associated with each detected face in a frame .
+built a color histogram for the hair , face , and torso associated with each detected face in a frame .
+106
+A concatenated vector of the normalized color histograms represents the face .
+A concatenated vector of the normalized color histogram represented the face .
+107
+They then cluster all vectors to obtain groups of similar faces , using agglomerative clustering .
+They then clustered all vectors to obtain groups of similar faces , using agglomerative clustering .
+108
+Limitations of this approach includes the expensive computational cost for constructing and clustering high dimensional representation feature vectors; and , its dependence on determining a reasonable threshold for the clustering algorithm to ensure no group contains faces of multiple characters and groups are not over-fragmented.
+The limitations of this approach include its high computational cost for constructing and clustering high-dimensional representation feature vectors and , its dependence on determining a reasonable threshold for the clustering algorithm to ensure that no group contains faces of multiple characters and that groups are not over-fragmented.
+109
+</p>
+</p>
+110
+<p>
+<p>
+111
+On the other hand , Everingham etl al .
+On the other hand , Everingham et al .
+112
+in \CITE and Sivic et al .
+\CITE and Sivic et al .
+113
+In \CITE , an affine covariance tracker of \CITE is used .
+In \CITE , an affine covariance tracker of \CITE is used .
+114
+This tracker can develop tracks on deforming objects , where the between frame region deformation can be modelled by an affine geometric transformation plus perturbations .
+This tracker can develop tracks on deforming objects , where the between-frame region deformation can be modeled by an affine geometric transformation plus perturbations .
+115
+The outcome is that a face can be tracked ( by the collection of regions on it ) through significant pose variations and expression changes , allowing association of possibly distant face detections .
+The outcome is that a face can be tracked ( by the collection of regions on it ) through significant pose variations and expression changes , allowing the association of possibly distant face detections .
+116
+The disadvantage of this tracker is the computational cost for locating and tracking affine covariance regions .
+The disadvantage of this tracker is its high computational cost for locating and tracking affine covariance regions .
+117
+Another way of using tracker is introduced by Everingham et al .
+Another way of using a tracker was introduced by Everingham et al .
+118
+in \CITE , .
+in \CITE , in which .
+119
+The authors employ Kanade-Lucas-Tomasi ( KLT ) tracker to create a set of point tracks starting at some frame in a shot and continuing until some later frame .
+they used a Kanade-Lucas-Tomasi ( KLT ) tracker to create a set of point tracks starting at some frame in a shot and continuing until some later frame .
+120
+Grouping faces in different frames of one character is based on enumerating track points shared between faces .
+Grouping faces in different frames for one character is based on enumerating the track points shared between faces .
+121
+Although using tracking is an efficient solution , it may return poor tracking results since trackers are very sensitive to illumination changes and partial occlusions .
+Although using tracking is an efficient solution , it may return poor tracking results because trackers are very sensitive to illumination changes and partial occlusions .
+122
+</p>
+</p>
+123
+<p>
+<p>
+124
+Face-track matching .
+Face-track matching .
+125
+There are two major categories of approaches target to employ multiple-exemplar of faces in face-tracks ( i.e. , sets of face images ) for robust face matching and recognition .
+There are two major categories of approaches to using multiple exemplars of faces in face tracks ( i.e. , sets of face images ) for robust face matching and recognition .
+126
+Approaches in the first category \CITE make use of both face images and temporal order of their appearances .
+The approaches in the first category \CITE make use of both face images and the temporal order of their appearances .
+127
+Face dynamics within the video sequence are modeled and exploited to improve recognition accuracy .
+The face dynamics within the video sequence are modeled and exploited to improve recognition accuracy .
+128
+For instance , Li et al .
+For instance , Li et al .
+129
+Edwards et al .
+Edwards et al .
+130
+They than use the trained statistical face model to incorporate identity evidence over a sequence .
+They then used the trained statistical face model to incorporate identity evidence over a sequence .
+131
+In \CITE , Liu and Chen use an adaptive Hidden Markov Model ( HMM ) for this face recognition problem .
+In \CITE , Liu and Chen used an adaptive hidden Markov model ( HMM ) for this face recognition problem .
+132
+In the training face , they create a HMM model for each character to learn the statistics and temporal dynamics using the eigen-face image sequence .
+In the training face , they created a HMM for each character to learn the statistics and temporal dynamics using the eigen-face image sequence .
+133
+The implicit constraint of these approaches is that dynamics of faces should be temporally consecutive .
+The implicit constraint of these approaches is that the dynamics of faces should be temporally consecutive .
+134
+In general , this constraint is not always satisfied.
+In general , this constraint is not always satisfied.
+135
+</p>
+</p>
+136
+<p>
+<p>
+137
+Without relying on temporal coherence between consecutive images , approaches in the second category uses multiple face images only .
+Without relying on temporal coherence between consecutive images , the approaches in the second category use multiple face images only and .
+138
+They treat the problem as a set matching problem .
+treat the problem as a set-matching problem .
+139
+These approaches are differentiated based on the ways in which the sets are modeled and the similarity between sets is computed .
+These approaches are differentiated based on the ways in which the sets are modeled and the similarity between sets is computed .
+140
+Shakhnarovich et al .
+Shakhnarovich et al .
+141
+However , to make the computation tractable , they made a assumption that faces are normally distributed , which may not be true \CITE .
+However , to make the computation tractable , they made the assumption that faces are normally distributed , which may not be true \CITE .
+142
+Cevikalp and Triggs \CITE claimed a face sequence was a set of points and discovered a convex geometric region expanded by these points .
+Cevikalp and Triggs \CITE claimed that a face sequence is a set of points and discovered a convex geometric region expanded by these points .
+143
+The min-min approach \CITE considered a face sequence as a cluster of points and measured the distance between these clusters .
+The min-min approach \CITE considered a face sequence as a cluster of points and measured the distance between these clusters .
+144
+Subspace methods \CITE viewed a face sequence as points spread over a subspace .
+Subspace methods \CITE viewed a face sequence as points spread over a subspace .
+145
+Although these methods can be highly accurate , a lot of computation is needed to represent the distribution of the face sequence , such as computing the convex hulls in \CITE , the probability models in \CITE , and the eigenvectors in \CITE .
+Although these methods can be highly accurate , a lot of computation is needed to represent the distribution of the face sequence , such as computing the convex hulls in \CITE , the probability models in \CITE , and the eigenvectors in \CITE .
+146
+For this reason , they are not scalable for large-scale video datasets .
+For this reason , they are not scalable to large-scale video datasets .
+147
+</p>
+</p>
+148
+<p>
+<p>
+149
+Face Datasets .
+Face datasets .
+150
+To evaluate performance of face matching approaches , most of recent works on face retrieval in video uses two benchmark datasets Mobo ( Motion of Body ) \CITE and Honda / UCSD \CITE .
+In evaluating the performance of face-matching approaches , most of the recent works on face retrieval in video use two benchmark datasets: Mobo ( Motion of Body ) \CITE and Honda / UCSD \CITE .
+151
+Scales of these datasets are limited , they are varying from hundreds to thousands face images of tens individual characters .
+The scales of these datasets are limited , varying from hundreds to thousands of face images of tens of individual characters .
+152
+Particularly , Honda / UCSD consists of 75 videos involving 20 individual .
+Particularly , Honda / UCSD consists of 75 videos involving 20 individuals .
+153
+Each video contains approximately 300-500 frames .
+Each video contains approximately 300-500 frames .
+154
+Meanwhile , Mobo provides 96 image sets of 24 individuals .
+Meanwhile , Mobo provides 96 image sets of 24 individuals .
+155
+Hence , there are only 4 image sets for each individual .
+Hence , there are only 4 image sets for each individual .
+156
+One of the largest available face dataset recently is the Youtube Faces dataset \CITE , .
+One of the largest face datasets recently available is the YouTube Faces dataset \CITE , which .
+157
+It provides 3,425 videos of 1,595 individual characters .
+provides 3,425 videos of 1,595 individual characters .
+158
+However , one character has only around 2.15 videos .
+However , each character has only around 2.15 videos .
+159
+Such a small number of samples for each character is not sufficient for stably evaluating a face matching or recognition approach , which is an important part of a face retrieval system .
+Such a small number of samples for each character is not sufficient to stably evaluate a face-matching or recognition approach , which is an important part of a face retrieval system .
+160
+In addition , there is no face dataset related to real-world news videos , which is our targeted domain .
+In addition , there is no face dataset related to real-world news videos , which is our targeted domain .
+161
+Because of all above mentioned reasons , we prepare new datasets for evaluating the approaches.
+In view of all the above-mentioned considerations , we prepare new datasets for evaluating the approaches.
+162
+</p>
+</p>
+163
+</section>
+</section>
+164
+<section label = " Framework Overview ">
+<section label = " Framework Overview ">
+165
+<p>
+<p>
+166
+Figure 2 illustrates the overview of our framework .
+Figure 2 illustrates the overview of our framework .
+167
+In the offline stage , face-tracks in all shots of videos are extracted using our face-track extraction approach ( described in Section 4 ) .
+In the off-line stage , the face tracks in all video shots are extracted using our face-track extraction approach ( described in Section 4 ) .
+168
+One extracted face-track contains multiple face images of one individual character , varied under different viewpoints , illumination conditions , and expressions within a shot .
+Each extracted face track contains multiple face images of one individual character , varied under different viewpoints , illumination conditions , and expressions within a shot .
+169
+A single face image in a face-track is represented by a feature vector .
+Each single face image in a face track is represented by a feature vector .
+170
+The process consisting of face-track extraction and face image representation is performed once for the entire video dataset .
+The process consisting of face-track extraction and face image representation is performed once for the entire video dataset .
+171
+Our contribution here is to make the face-track extraction approach robust to sudden illumination changes , scattered appearance of characters , and occlusions.
+Our contribution here is making the face-track extraction approach robust to sudden illumination changes , scattered appearances of characters , and occlusions.
+172
+</p>
+</p>
+173
+<p>
+<p>
+174
+Given a face-track as an input retrieval query , the online stage of our system starts by using our proposed face-track matching algorithm ( described in Section 5 ) to estimate the similarity between a query face-track and each face-track in the retrieved set containing all face-tracks extracted from the dataset in the offline stage .
+Given a face track as an input retrieval query , the online stage of our system starts by using our proposed face-track matching algorithm ( described in Section 5 ) to estimate the similarity between a query face track and each face track in the retrieved set containing all face tracks extracted from the dataset in the offline stage .
+175
+A ranked list of the evaluated face-tracks is returned as retrieval results of the online stage .
+A ranked list of the evaluated face tracks is returned as the retrieval result of the online stage .
+176
+Since the retrieved set is huge , our approach targets an extremely efficient face-track matching strategy while maintaining competitive performance with state-ofthe-art approaches.
+Because the retrieved set is huge , our approach targets an extremely efficient face-track matching strategy while maintaining a competitive performance with state-of-the-art approaches.
+177
+</p>
+</p>
+178
+</section>
+</section>
+179
+<section label = " Face-track Extraction ">
+<section label = " Face-track Extraction ">
+180
+<p>
+<p>
+181
+Given a video shot with occurrences of multiple characters , face-track extraction is the process of extracting sets of face images .
+Given a video shot with occurrences of multiple characters , face-track extraction is the process of extracting sets of face images .
+182
+A set is supposed to contain face images of only one character who appears in the shot .
+A set is supposed to contain the face images of only one character who appears in the shot .
+183
+Such sets of face images are called face-tracks ( sometimes called face sequences ) .
+Such sets of face images are called face tracks ( sometimes called face sequences ) .
+184
+A common strategy of existing approaches for face-track extraction consists of detecting faces in frames and grouping detected faces of the same character .
+A common strategy in the existing approaches to face-track extraction consists in detecting faces in frames and grouping detected faces of the same character .
+185
+While detecting faces is done by using a standard face detector ( e.g. , Viola-Jones face detector ) \CITE , grouping detected faces requires comprehensive techniques to identify faces of the same character.
+Whereas detecting faces is done by using a standard face detector ( e.g. , Viola-Jones face detector ) \CITE , grouping detected faces requires comprehensive techniques to identify faces of the same character.
+186
+</p>
+</p>
+187
+<p>
+<p>
+188
+In this section , we first briefly introduce an approach for face-track extraction proposed by Everingham et al .
+In this section , we first briefly introduce an approach to face-track extraction proposed by Everingham et al .
+189
+Its problems as it is applied to news video and our proposed solutions to overcome the problems is then presented.
+We then present the problems with this approach as applied to news video and our proposed solutions.
+190
+</p>
+</p>
+191
+<subsection label = " Face-track xtraction by tracking points ">
+<subsection label = " Face-track extraction by tracking points ">
+192
+<p>
+<p>
+193
+To group detected faces into face-tracks , connections between faces belonging to the same character in different frames should be established .
+To group detected faces into face tracks , connections should be established between faces belonging to the same character in different frames .
+194
+Motion analysis can be used to investigate such connections .
+Motion analysis can be used to investigate such connections .
+195
+If two faces in different frames are defined that they are translated faces of each other according to a motion , they are likely faces of the same character .
+If two faces in different frames are defined that they are translated faces of each other according to a motion , they are likely faces of the same character .
+196
+Everingham et al .
+Everingham et al .
+197
+in \CITE propose to use KLT tracker for this purpose .
+in \CITE proposed the use of a KLT tracker for this purpose .
+198
+Their algorithm starts by detecting interest points in the first frame of the shot and propagating them to the next frames based on local appearance matching .
+Their algorithm starts by detecting interest points in the first frame of the shot and propagating them to the next frames based on local appearance matching .
+199
+Points which can not be propagated from one frame to the next are eliminated and replaced with new points .
+Points that cannot be propagated from one frame to the next are eliminated and replaced with new points .
+200
+Given two faces in different frames , if the number of point tracks passing through both faces is larger than half of the total number of point tracks which are not in common to both faces , they are grouped into one face-track.
+Given two faces in different frames , if the number of point tracks passing through both faces is larger than half of the total number of point tracks that are not common to both faces , the faces are grouped into one face track.
+201
+</p>
+</p>
+202
+</subsection>
+</subsection>
+203
+<subsection label = " Our proposed approach face-track extraction ">
+<subsection label = " Our proposed approach to face-track extraction ">
+204
+<p>
+<p>
+205
+Although the approach by Everingham et al .
+Although the approach by Everingham et al .
+206
+has demonstrated its efficiency and robustness on drama videos \CITE , directly applying the approach to news videos results poor performances due to following issues.
+has shown its efficiency and robustness with drama videos \CITE , directly applying the approach to news videos results in poor performance due to the following issues.
+207
+</p>
+</p>
+208
+<p>
+<p>
+209
+Tracking errors due to sudden illumination change .
+Tracking errors due to sudden illumination change .
+210
+Since the KLT tracker uses intensity variance for computing the image motion to find the correspondence between points in different frames , it is unreliable when there is a sudden and significant change in illumination .
+Because the KLT tracker uses intensity variance for computing the image motion to find the correspondence between points in different frames , it is unreliable when there is a sudden and significant change in illumination .
+211
+As shown in Figure 3 ( top ) , points are distracted when flash occurs .
+As shown in Figure 3 ( top ) , points are distracted when a flash occurs .
+212
+As a result , the points are badly tracked .
+As a result , the points are badly tracked .
+213
+The flash breaks all connections between faces in frames before and after its occurrence.
+The flash breaks all connections between faces in the frames before and after its occurrence.
+214
+</p>
+</p>
+215
+<p>
+<p>
+216
+Unadaptive track point generation .
+Unadaptive track point generation .
+217
+In \CITE , track point generation is totally independent with face appearances .
+In \CITE , the track point generation is totally independent from face appearances .
+218
+New points are generated at the first frame of the shot or at a frame in which some existing points can not be propagated .
+New points are generated at the first frame of the shot or at a frame in which some existing points cannot be propagated .
+219
+As a result , a face , which does not appear in the aforementioned frames , may not contain any point .
+As a result , a face that , does not appear in the aforementioned frames , may not contain any point .
+220
+Its connections with other faces in the shot cannot be established for grouping.
+Its connections with other faces in the shot cannot be established for grouping.
+221
+</p>
+</p>
+222
+<p>
+<p>
+223
+Tracking errors due to occlusion .
+Tracking errors due to occlusion .
+224
+To successfully connect actual faces of the same character in different frames , track points generated for the first face should be tracked and retained inside the latter faces for a sufficient number of shared points between faces .
+To successfully connect actual faces of the same character in different frames , the track points generated for the first face should be tracked and retained inside the latter faces for a sufficient number of shared points between faces .
+225
+However , when occlusion occurs , points are distracted by occluded regions .
+However , when occlusion occurs , the points are distracted by occluded regions .
+226
+Thus , the number of shared points drops , .
+Thus , the number of shared points drops , .
+227
+It results in face connection failure .
+resulting in face connection failure .
+228
+As shown in Figure 3 ( bottom ) , when the woman moves the paper , which partially occludes her face in several frames , some points in her facial region are drifted with the paper .
+As shown in Figure 3 ( bottom ) , when the woman moves the paper , which partially occludes her face in several frames , some points in her facial region are drifted with the paper .
+229
+These points are not lost so they are not replaced by new points .
+These points are not lost so they are not replaced by new points .
+230
+But , they become meaningless to determine the connection between faces.
+However , they become meaningless in determining the connection between faces.
+231
+</p>
+</p>
+232
+<p>
+<p>
+233
+Based on above observed limitations of the approach in \CITE on news videos , we integrate techniques to bypass these liminations in our proposed approach for face-track extraction on news videos.
+Based on the observed limitations of the approach in \CITE when applied to news videos , we integrate techniques to bypass these restrictions in our proposed approach to face-track extraction in news videos.
+234
+</p>
+</p>
+235
+<p>
+<p>
+236
+Firstly , \CITE , our approach does not compare all possible pairs of faces in a shot for face grouping as in \CITE .
+First , unlike in \CITE , our approach does not compare all possible pairs of faces in a shot for face grouping\CITE; .
+237
+Such pair-wise comparison rapidly becomes intractable as the number of faces in a shot increases .
+such pairwise comparison rapidly becomes intractable as the number of faces in a shot increases .
+238
+Instead of that , we group faces into face-track following temporal order of their appearances .
+Instead , we group faces into face tracks according to the temporal order of their appearances .
+239
+A detected face in the current frame is considered to group into existing face-tracks formed by previously detected faces only .
+A detected face in the current frame is considered for grouping into existing face tracks formed by previously detected faces only .
+240
+By doing this , we avoid greedy pairwise comparison.
+By doing this , we avoid greedy pairwise comparison.
+241
+</p>
+</p>
+242
+<p>
+<p>
+243
+Secondly , as our first observation , a sudden illumination change in any frame make the KLT tracker failed to track points properly .
+Second , as described in our first observation , a sudden illumination change in any frame causes the KLT tracker to fail to track points properly .
+244
+Because such illumination changes are very common and they mostly appear together with important character in a news , a solution to this problem is vital .
+Because such illumination changes are very common and mostly occur simultaneously with important characters in a news video , finding a solution to this problem is vital .
+245
+We learn that the occurences of such illumination changes are usually very short ( less than 3 frames ) .
+We learn that the occurrences of such illumination changes are usually very short ( less than 3 frames ) .
+246
+And , faces appeared in those frames are less informative for recognition since most of the facial identity characteristics are loss due to overlighting .
+and that the , faces that appear in those frames are less informative for recognition because most of the facial identity characteristics are lost due to over-lighting .
+247
+, They can not enrich information of its corresponding face-track , but may add noise .
+Thus , the faces cannot enrich the information on its corresponding face track , but may only add noise .
+248
+Therefore , our solution is to detect and skip all frames contain sudden illumination changes , .
+Therefore , our solution is to detect and skip all frames containing sudden illumination changes , which .
+249
+We call such frames as flashframes.
+we call flash frames.
+250
+</p>
+</p>
+251
+<p>
+<p>
+252
+To indetify flash-frames , we measures the brightness of frames in the video shot .
+To identify flash frames , we measure the brightness of the frames in the video shot .
+253
+If the brightness of a frame significantly increases compared with those of its neighbors , the frame is declared as a flash-frame and is skipped for processing .
+If the brightness of a frame is significantly increased compared with its neighbors , the frame is declared a flash frame and skipped in processing .
+254
+Particularly , given a frame \SYM with t indicates its frame index , we compute the average luminosity L of the frame \SYM and its consicutive frames \SYM , where i = \SYM; t +W+ 1 , and W is the potential length of a sudden illumination change .
+Particularly , given a frame \SYM with t indicating its frame index , we compute the average luminosity L of the frame \SYM and its consecutive frames \SYM , where i = \SYM; t +W+ 1 , and W is the potential length of a sudden illumination change .
+255
+Then , we compare the average luminosity L of each frame \SYM in the set S = \SYM with s = t; t +W to those of \SYM and \SYM .
+Then , we compare the average luminosity L of each frame \SYM in the set S = \SYM with s = t; t +W to those of \SYM and \SYM .
+256
+If L( \SYM ) > L( \SYM ) and L( \SYM ) > L( \SYM ) , \SYM is defined as flash-frames regarding a predefined brightness sensitive threshold \SYM .
+If L( \SYM ) > L( \SYM ) and L( \SYM ) > L( \SYM ) , \SYM is defined as flash frames according to a predefined brightness sensitive threshold \SYM .
+257
+In our experiments , we found that \SYM = 1:25 and W = {1; 2; 3} are optimal for detecting all flash-frames with a low false alarm rate.
+In our experiments , we found that \SYM = 1:25 and W = {1; 2; 3} are optimal for detecting all flash frames with a low false alarm rate.
+258
+</p>
+</p>
+259
+<p>
+<p>
+260
+Given a video shot , our approach starts by finding the first frame in which faces are detected .
+Given a video shot , our approach starts by finding the first frame in which faces are detected .
+261
+All point tracking and face grouping processes are initialized from this frame , not at the first frame of the shot as in \CITE .
+All point-tracking and face-grouping processes are initialized from this frame , not at the first frame of the shot as in \CITE .
+262
+This helps us to save computational cost as well as to avoid tracking errors caused by transition effects between shots .
+This helps us to save on computational cost and avoid tracking errors caused by transition effects between shots .
+263
+Initial track points will be generated for all detected faces in the frame .
+Initial track points will be generated for all detected faces in the frame .
+264
+Each face now becomes the first face of a corresponding newly formed face-track.
+Each face now becomes the first face of a corresponding newly formed face track.
+265
+</p>
+</p>
+266
+<p>
+<p>
+267
+After the initialization , we sequentially process each frame afterwards , knowing all flash-frames will be skipped .
+After the initialization , we sequentially process each frame , knowing all flash frames will be skipped .
+268
+At a given frame , points from the previous frame are tracked by the KLT tracker to update their locations .
+In a given frame , the points from the previous frame are tracked by the KLT tracker to update their locations .
+269
+If there are faces detected , each face is checked against all existing facetracks formed in the previous frames to find out which facetrack it belongs to .
+If there are faces detected , each face is checked against all the existing face tracks formed in the previous frames to find out to which face track the face belongs .
+270
+Checking between a face and a facetrack is based on enumerating points shared by both the face and the last appeared face of the face-track .
+The checking between a face and a face track is based on enumerating the points shared by both the face and the last face that appeared on the face track .
+271
+If the enumerated number is larger than half of the total number of points which are not in common to both faces , the faces is grouped into the face-track .
+If the enumerated number is larger than half of the total number of points that are not common to both faces , the face is grouped into the face track .
+272
+Our grouping criterion here is similar to \CITE .
+Our grouping criterion here is similar to that in \CITE .
+273
+</p>
+</p>
+274
+<p>
+<p>
+275
+A face which can not be grouped into any face-track is treated as an initial face of a new face-track .
+A face that cannot be grouped into any face track is treated as the initial face of a new face track .
+276
+We then generate new track points inside such faces for tracking an grouping its corresponding faces in latter frames .
+We then generate new track points within such faces for tracking and grouping its corresponding faces in latter frames .
+277
+In our approach , track points are generated in conjunction with face appearances .
+In our approach , track points are generated in conjunction with face appearances .
+278
+We can ensure that there are always track points for all faces appear in the shot .
+We can ensure that there are track points for all faces that appear in the shot .
+279
+Consequently , our approach overcomes the second observed limitation of \CITE.
+Consequently , our approach overcomes the second observed limitation in \CITE.
+280
+</p>
+</p>
+281
+<p>
+<p>
+282
+In other case , when a face in the current frame is grouped to an existing face-track , we prepare points for further tracking .
+In other cases , when a face in the current frame is grouped into an existing face track , we prepare points for further tracking .
+283
+We remove all points which are inside the last appeared face of the face-track but not inside the current face , and vice versa .
+We remove all points that are inside the last face that appeared on the face track but are not inside the current face , and vice versa .
+284
+Since such points are likely tracked incorrectly , eliminating them prevent us from transferring tracking errors to latter frames .
+Because such points are likely tracked incorrectly , eliminating them prevents us from transferring tracking errors to latter frames .
+285
+Points which are shared by both faces are kept .
+Points that are shared by both faces are kept .
+286
+Besides , we generate additional points to replace the removed ones and to provide updated points .
+Besides , we generate additional points to replace the removed ones and to provide updated points .
+287
+By doing that , our tracking results through a long sequence of frames become more accurate and reliable .
+By doing so , our tracking results over a long sequence of frames become more accurate and reliable .
+288
+As a result , we can partly bypass the third observed limitation of \CITE .
+As a result , we can partly bypass the third observed limitation of \CITE .
+289
+When a face is partly and slowly occluded , our approach can discard incorrectly tracked points as well as reproduce points for the face after being occluded .
+When a face is partly and slowly occluded , our approach can discard incorrectly tracked points and reproduce points for the face after it has been occluded .
+290
+Thus , the connection between faces before and after the occlusion are retained.
+Thus , the connection between faces before and after the occlusion is retained.
+291
+</p>
+</p>
+292
+<p>
+<p>
+293
+Our approach continuously process the next frame until reaching the end of the shot .
+Our approach continuously processes the next frame until the end of the shot is reached .
+294
+The pseudo-code is presented in the Algorithm 1 as follows.
+The pseudo-code is presented in Algorithm 1 as follows.
+295
+</p>
+</p>
+296
+</subsection>
+</subsection>
+297
+<section label = " Matching face-tracks ">
+<section label = " Matching face-tracks ">
+298
+<p>
+<p>
+299
+There are several approaches have been proposed for matching face-tracks ( as presented in Section 2 ) .
+Several approaches to matching face tracks have been proposed ( as presented in Section 2 ) .
+300
+, Although these existing approaches achive high accuracy on benchmark datasets , their expensive computational costs limits their practical applications on large-scale datasets .
+However , although these approaches have shown high accuracy in benchmark datasets , their high computational costs limit their practical applications in large-scale datasets .
+301
+This motivate us to target an matching approach which is balanced between accuracy and computational cost .
+This motivates us to target a matching approach that provides a good balance between accuracy and computational cost .
+302
+The approach should be extremely efficient while archiving competitive performance compare to state-of-the-art approaches�f.
+The approach should be extremely efficient while achieving a competitive performance with state-of-the-art approaches.
+303
+</p>
+</p>
+304
+<p>
+<p>
+305
+In order to maintain a competitive accuracy , we still employ plenteous information from multiple faces of a facetrack to enrich its representation .
+To maintain competitive accuracy , we still use the plenteous information from the multiple faces of a face track to enrich the representation .
+306
+However , instead of using all faces in a face-track , we propose to subsample the faces .
+However , instead of using all the faces in a face track , we propose taking a subsample of faces .
+307
+By doing that , the require computational cost can be reduced while a sufficient amount of information is kept for improving accuracy .
+In doing so , the required computational cost can be reduced while keeping the amount of information sufficient to improve accuracy .
+308
+We called our approach as k-Faces.
+We call our approach k-Faces.
+309
+</p>
+</p>
+310
+<p>
+<p>
+311
+Given a specific value of k , which indicates the expected size of the sub-sampled set of a face-track , the approach starts by dividing each face-track into k parts following its temporal order .
+Given a specific value of k , which indicates the expected size of the subsampled set of a face track , the approach starts by dividing each face track into k parts according to the temporal order of appearances .
+312
+For each part , one face is selected to represent for all faces within the part .
+For each part , one face is selected to represent all faces within the part .
+313
+The mean face of k selected faces is then computed .
+The mean face of k selected faces is then computed .
+314
+The similarity between two face-tracks is now the distance between their mean faces.
+The similarity between two face tracks is now the distance between their mean faces.
+315
+</p>
+</p>
+316
+<p>
+<p>
+317
+Let denote mA = {\SYM; \SYM; : :; \SYM} and mB = {\SYM ; \SYM; : :; \SYM} are two mean faces of two face-track A and B , respectively , with N imposes the number of dimension of the feature space .
+Let mA = {\SYM; \SYM; : :; \SYM} and mB = {\SYM ; \SYM; : :; \SYM} denote the mean faces of face tracks A and B , respectively , with N representing the number of dimensions of the feature space .
+318
+We employ following standard distance types to compute the distance between mA and mB.
+We use following standard distance types to compute the distance between mA and mB.
+319
+</p>
+</p>
+320
+<p>
+<p>
+321
+An illustration of our k-Faces , is shown in Figure 4 .
+Figure 4 illustrates our k-Faces , with the following .
+322
+Its pseudo-code is presented as follows .
+pseudo-code: .
+323
+</p>
+</p>
+324
+<p>
+<p>
+325
+Clearly , the higher value of k is selected , the more faces in each face-track are selected to compute the representative face of the face track .
+Clearly , the higher the value of k selected , the more faces in each face track selected to compute the representative face and the .
+326
+And , better approximations , may result in higher accuracies .
+, better the approximations , which may result in higher accuracies .
+327
+However , the computational cost can overly increases .
+However , the computational cost can overly increases .
+328
+By using k as a predefined parameter , k-Faces provides flexibility for users in balancing their expected accuracy and the cost which they can afford ( or time they can wait for the result ).
+By using k as a predefined parameter , k-Faces provides users with flexibility in balancing the accuracy they expect and the cost they can afford ( or the time they can spend waiting for the result ).
+329
+</p>
+</p>
+330
+<p>
+<p>
+331
+Besides that , since k-Faces averages multiple faces for a representative face of a face-track , the effects of noisy or outliers faces on estimating the similarity of face-tracks will be substantially reduced.
+Besides , because k-Faces averages multiple faces for the representative face of a face track , the effects of noisy or outlier faces on estimating the similarity of face tracks will be substantially reduced.
+332
+</p>
+</p>
+333
+</section>
+</section>
+334
+<section label = " Experiments ">
+<section label = " Experiments ">
+335
+<p>
+<p>
+336
+In this section , we present our experiments to evaluate the proposed approaches .
+In this section , we present our experiments to evaluate the proposed approaches .
+337
+The experiments are divided into two parts .
+The experiments are divided into two parts; .
+338
+In the first part , we evaluate the performance of the proposed approach for face-track extraction , .
+the first , evaluates the performance of the proposed approach in face-track extraction , and the second in .
+339
+Evaluation of the proposed approach for face-track matching is given in the second part.
+face-track matching.
+340
+</p>
+</p>
+341
+<subsection label = " Evaluation of face-track extraction ">
+<subsection label = " Evaluation of face-track extraction ">
+342
+<p>
+<p>
+343
+We tested our proposed approach for face-track extraction on 8 video sequences from different video broadcasting stations , including NHK News 7 , ABC News , and CNN News.
+We tested our proposed approach to face-track extraction on 8 video sequences from different video broadcasting stations , including NHK News 7 , ABC News , and CNN News.
+344
+</p>
+</p>
+345
+<p>
+<p>
+346
+All shot boundaries are provided in advance .
+All shot boundaries are provided in advance .
+347
+A face detector based on Viola-Jones approach \CITE was used for detecting near frontal faces in every frame of these video sequences .
+A face detector based on the Viola-Jones approach \CITE is used to detect near frontal faces in every frame of the video sequences .
+348
+A conservative threshold is used to reduce the number of false positives ( i.e. , a non-face classified as a face ).
+A conservative threshold is used to reduce the number of false positives ( i.e. , a non-face classified as a face ).
+349
+</p>
+</p>
+350
+<p>
+<p>
+351
+Ground-truth information on face-tracks in videos is manually prepared .
+Ground-truth information on the face tracks in videos is manually prepared .
+352
+A face-track of one character appearing in a video shot is annotated by indexes of the frames which the first face and the last face of that character occur .
+Each face track of a character appearing in a video shot is annotated by indexes of the frames in which the first face and the last face of that character occur .
+353
+An approach is called exactly extracting a face-track if it provides precise starting and ending frame indexes of the face-track , compared to ground-truth annotation .
+An approach is considered as exactly extracting a face track if it provides precise starting and ending frame indexes of the face track , compared to ground-truth annotation .
+354
+Note that if a character moves out of the frame then moves in again , annotators will divide the appearance of that character into two independent face-tracks in our ground-truth .
+Note that if a character moves out of the frame and then moves back into it again , annotators will divide the appearance of that character into two independent face tracks in ground-truth annotation .
+355
+The number of frames , faces , and face tracks are shown in Table 1 .
+Table 1 shows the number of frames , faces , and face tracks .
+356
+In this experiment , we directly compare our approach with one proposed by Everingham et al .
+In this experiment , we directly compare our approach with that proposed by Everingham et al .
+357
+in \CITE.
+in \CITE.
+358
+</p>
+</p>
+359
+<p>
+<p>
+360
+As shown in Table 2 , by detecting flash-frames , our approach successfully overcomes the problem of face-track fragmentation due to illumination changes .
+As shown in Table 2 , by detecting flash frames , our approach successfully overcomes the problem of face-track fragmentation due to illumination changes .
+361
+Meanwhile , the approach by Everingham et al .
+Meanwhile , the approach by Everingham et al .
+362
+is almost failed to do that .
+almost completely fails to do that .
+363
+In addition , the results also shows that our approach is superior to the approach by Everingham et al .
+In addition , the results also show that our approach is superior to that of Everingham et al .
+364
+in handling problem caused by partial occlusion and appearance of character in the middle of a shot .
+in handling problems caused by partial occlusion and the appearance of a character in the middle of a shot .
+365
+All face-tracks which we could not extract exactly are those fully occluded at some frames during their occurences .
+The only face tracks that we could not extract exactly are those fully occluded in some frames during their occurrences .
+366
+In those cases , all points in face regions are drifted to background region .
+In those cases , all points in the face regions are drifted to the background region .
+367
+Thus , there is no clue to re-group face of that person after such full occlusions .
+After such full occlusions , there is no clue to regrouping the face of that person .
+368
+To handle this problem , using only tracker is not enough .
+, Using only a tracker is not enough to handle this problem .
+369
+One can apply visual information based clustering to group the fragmented face-track , as in \CITE , .
+One can apply visual information-based clustering to group the fragmented face track , as in \CITE , but this .
+370
+Obviously , extra cost is required .
+obviously , requires extra cost .
+371
+However , we observe that fully occlusion is rarely happened in news video since characters reported in the news are recorded with care , especially with important and well-known character .
+Nevertheless , we observe that full occlusion rarely happens in news video because the characters featured in the news are recorded with care , especially the important and well-known ones .
+372
+This is a special property of news videos .
+This is a special characteristic of news videos .
+373
+The last column of the table shows the overall extraction performance of both approaches .
+The last column of the table shows the overall extraction performance of both approaches .
+374
+These facts clearly indicate that our approach is robust and outperforms the approach of Everingham et al .
+These facts clearly indicate that our approach is robust and outperforms that of Everingham et al .
+375
+in \CITE.
+in \CITE.
+376
+</p>
+</p>
+377
+<p>
+<p>
+378
+In terms of speed , our approach is approximately 2 times slower than the approach of Everingham .
+In terms of speed , our approach is approximately 2 times slower than that of Everingham et al .
+379
+However , our complexity is somehow linear to total number of face , because we consequently enlarge face-tracks following temporal order by checking new faces with only one last appeared face of each face-track .
+However , our complexity is somehow linear to the total number of faces , because we consequently enlarge face tracks according to the temporal order by checking new faces with only the last face that appeared on each face track .
+380
+Meanwhile , Everingham et al .
+Meanwhile , Everingham et al .
+381
+compare all pairs of faces in the shot .
+compared all pairs of faces in the shot .
+382
+Their complexity is polynomial to the total number of faces .
+Their complexity is polynomial to the total number of faces .
+383
+If this number is getting larger , the gap in speed between our approach and the approach by Everingham et al .
+If the number of faces increases , the gap in speed between our approach and that by Everingham et al .
+384
+will be narrowed rapidly.
+will narrow rapidly.
+385
+</p>
+</p>
+386
+<p>
+<p>
+387
+Because all presented problems here , such as those due to flash , occlusion , and in-the-middle face appearance , are practically observed , overcoming them is vital for practical application .
+Because all the problems presented here , such as those due to flash , occlusion , and in-the-middle face appearance , are practically observed , overcoming them is vital for the practical application of our approach .
+388
+In this experiment , we show that our proposed techniques and solutions for the problems are robust and efficient enough for extracting face-tracks in real-world news videos by successfully extracting 94% of all face-tracks .
+In this experiment , we show that our proposed techniques and solutions to the problems are robust and efficient enough for extracting face tracks in real-world news videos by successfully extracting 94% of all face tracks .
+389
+From our observations , one can use other complex techniques to handle the problems .
+Based on our observations , other complex techniques can be applied to handle the problems .
+390
+However , a trade-o_ between completely obtaining 6% remaining face-tracks and an overly expensive computational cost should be considered with care.
+However , the trade-off between obtaining the 6% remaining face tracks and incurring an overly high computational cost should be considered with care.
+391
+</p>
+</p>
+392
+</subsection>
+</subsection>
+393
+<subsection label = " Evaluation of face-track matching ">
+<subsection label = " Evaluation of face-track matching ">
+394
+<subsubsection label = " Datasets ">
+<subsubsection label = " Datasets ">
+395
+<p>
+<p>
+396
+Due to the limitations of existing public datasets , we prepare new datasets for experiments .
+Due to the limitations of existing public datasets , we prepared new datasets for the experiments .
+397
+Face-tracks in videos of the datasets are extracted by using our proposed approach for face-track extraction ( see section 4.2 ) .
+Face tracks are extracted from videos of the datasets by using our proposed approach to face-track extraction ( see section 4.2 ) .
+398
+Identity of the character associated with each extracted face-track is given by annotators .
+The identity of the character associated with each extracted face track is given by annotators .
+399
+Since our approach extract face-tracks in each video shot , shot boundaries for videos are required .
+Because our approach extracts face tracks in each video shot , the shot boundaries of videos are required .
+400
+A simple shot boundary detector based on color histogram of frames is used .
+A simple shot boundary detector based on a color histogram of frames is used .
+401
+The whole process , including detecting shot boundaries and face-track extraction , is fully automatic.
+The whole process , including shot boundary detection and face-track extraction , is fully automated.
+402
+</p>
+</p>
+403
+<p>
+<p>
+404
+TRECVID Dataset .
+TRECVID dataset .
+405
+We used the TRECVID news videos from 2004 to 2006 .
+We used TRECVID news videos from 2004 to 2006 .
+406
+This dataset contains 370 hours of videos in different languages , such as English , Chinese , and Arabic .
+This dataset contains 370 hours of videos in different languages , such as English , Chinese , and Arabic .
+407
+The total number of frames that we processed was approximately 35 millions frames .
+The total number of frames that we processed was approximately 35 million .
+408
+Among those , 20 millions faces were grouped into 157,524 face tracks .
+Among those , 20 million faces were grouped into 157,524 face tracks .
+409
+We filtered out short face tracks that had less than ten faces , .
+We filtered out short face tracks that had less than 10 faces , which .
+410
+This resulted in 35,836 face tracks .
+resulted in 35,836 face tracks .
+411
+Finally , we annotated 1,497 face tracks containing 405,887 faces of 41 well known individual characters .
+Finally , we annotated 1,497 face tracks containing 405,887 faces of 41 well-known individual characters .
+412
+</p>
+</p>
+413
+<p>
+<p>
+414
+NHKNews7 Dataset .
+NHKNews7 dataset .
+415
+This dataset is observed from NHKNews7 channel in 11 years .
+This dataset consists of observations from the NHK News 7 program over 11 years .
+416
+After the annotation process , 1,259,320 faces of 111 individuals are provided .
+After the annotation process , 1,259,320 faces of 111 individuals are provided .
+417
+The total number of face-tracks is 5,567 .
+The total number of face tracks is 5,567 .
+418
+Each character has from 4 to 550 face-tracks .
+Each character has from 4 to 550 face tracks .
+419
+In this dataset , we discard facetracks with fewer than 100 faces and more than 500 faces .
+In this dataset , we discard face tracks with fewer than 100 faces and more than 500 faces .
+420
+Compared to the TRECVID dataset , NHKNews7 dataset is much more challenging.
+Compared to the TRECVID dataset , the NHKNews7 dataset is much more challenging.
+421
+</p>
+</p>
+422
+<p>
+<p>
+423
+In the Table 4 , we compare our datasets with some public benchmark datasets .
+Table 4 shows a , comparison between our datasets and some public benchmark datasets .
+424
+, It is obvious that our datasets are extremely higher than datasets , such as MoBo and Honda / UCSD , on all statistical terms , including the number of videos , characters , and average length of face-track .
+Based on the results , it is obvious that our datasets are superior over the other datasets , such as MoBo and Honda / UCSD , on all statistical terms , including number of videos , number of characters , and average face-track length .
+425
+Compared to Youtube Faces dataset , although ours have less number of character ( or subjects ) , we provide much more face-tracks ( or video shots ) per character , .
+Compared to the YouTube Faces dataset , , we provide much more face tracks ( or video shots ) per character , although our datasets have smaller numbers of characters ( or subjects ) .
+426
+Thus , ours are more relevant for evaluating retrieval system.
+Thus , our datasets are more relevant in evaluating a face retrieval system.
+427
+</p>
+</p>
+428
+<p>
+<p>
+429
+Statistical information of our datasets is given in the Figure 5 .
+Figure 5 presents statistical information on our datasets .
+430
+The datasets can be downloaded at http: / / satohlab .
+The datasets can be downloaded from http: / / satohlab .
+431
+ex.nii.ac.jp / users / ndthanh / NIIFacetrackDatasets .
+ex.nii.ac.jp / users / ndthanh / NIIFacetrackDatasets .
+432
+However , due to copyright issues , face images in face-tracks can not be published .
+However , due to copyright issues , the face images in the face tracks cannot be published .
+433
+Instead , we provide a feature vector , used in \CITE , for each face image .
+Instead , we provide a feature vector , used in \CITE , for each face image .
+434
+A feature vector of a face is extracted by computing descriptors of the local appearance of the face around each of the located facial features .
+The feature vector of a face is extracted by computing the descriptors of the local appearance of the face around each of the located facial features .
+435
+Before extracting descriptors , the face is geometrically normalized to reduce the effect of pose variation .
+Before extracting the descriptors , the face is geometrically normalized to reduce the effect of pose variation .
+436
+They estimate an affine transformation , which transform the located facial feature points to a canonical set of feature positions .
+An affine transformation is estimated , which transforms the located facial feature points to a canonical set of feature positions .
+437
+Then , appearance descriptors are computed around each facial feature .
+Then , the appearance descriptors around each facial feature are computed .
+438
+The final feature representation of the face is formed by concatenating all descriptors of its facial features.
+The final feature representation of the face is formed by concatenating all the descriptors of its facial features.
+439
+</p>
+</p>
+440
+</subsubsection>
+</subsubsection>
+441
+<subsubsection label = " Evaluated approaches ">
+<subsubsection label = " Evaluated approaches ">
+442
+<p>
+<p>
+443
+We compare k-Faces with several approaches , including approaches based on pair-wise distances , MSM \CITE and CMSM \CITE.
+We compared k-Faces with several approaches , including those based on pair-wise distances , MSM \CITE and CMSM \CITE.
+444
+</p>
+</p>
+445
+<p>
+<p>
+446
+Given two face-tracks having multiple face images represented as feature vectors , pair-wise based approaches compute distances between each possible pair of feature vectors in two face-tracks .
+Given two face tracks having multiple face images represented as feature vectors , pair-wise-based approaches compute the distances between each possible pair of feature vectors in two face tracks .
+447
+They then use the maximum distance , the minimum distance , or the mean distance of the computed pair-wise distances as the similarity measurement between two face-tracks .
+The maximum distance , the minimum distance , or the mean distance of the computed pair-wise distances is the used as the similarity measurement between two face tracks .
+448
+We denote the approaches as pair:max , pair:min , and pair:mean , respectively ( see Figure 6 for illustration ) .
+We refer to the approaches as pair:max , pair:min , and pair:mean , respectively ( see Figure 6 for the illustration ) .
+449
+The pair:min ( sometimes called min-min ) is a state-of-the-art approach widely used in other studies \CITE.
+The pair:min ( sometimes called min-min ) is a state-of-the-art approach widely used in other studies \CITE.
+450
+</p>
+</p>
+451
+<p>
+<p>
+452
+Regarding to \CITE , if the pair-wise based approaches are representative for non-parametric sampled based approaches , MSM and CMSM are representative for approaches based on parametric model .
+Regarding \CITE , if the pair-wise-based approaches are representative of nonparametric sample-based approaches , MSM and CMSM are representative of approaches based on a parametric model .
+453
+MSM , introduced by Yamaguchi et al .
+MSM , introduced by Yamaguchi et al .
+454
+The similarity between the sets is computed using the angle between subspaces .
+The similarity between the sets is computed using the angle between subspaces .
+455
+CMSM is an extension of MSM , in which subspaces of the sets are projected on a constraint subspace .
+CMSM is an extension of MSM , in which subspaces of the sets are projected onto a constraint subspace .
+456
+By doing that , the subspaces are expected to be better separatable .
+In doing so , the subspaces are expected to be more separable .
+457
+All of these approaches had been shown their robustness on benchmark datasets , such as MoBo , HondaUCSD , and Youtube Faces .
+All of these approaches have shown their robustness in benchmark datasets , such as MoBo , HondaUCSD , and YouTube Faces .
+458
+Therefore , it is appealing to compare our k-Faces with them for a comprehensive evaluation.
+Therefore , it is appealing to compare our k-Faces with them for a comprehensive evaluation.
+459
+</p>
+</p>
+460
+<p>
+<p>
+461
+Besides evaluating k-Faces with different values of k as well as different types of distance ( e.g. , Euclidean , L1 , cosine ) , we try another criterion to select k representative faces in a face-track .
+Besides evaluating k-Faces with different values of k and different types of distance ( e.g. , Euclidean , L1 , and cosine ) , we try another criterion for selecting k representative faces in a face track .
+462
+In the original way , we proposed to select these faces by partitioning the face-track following temporal order and selecting the middle face of each partition .
+In the original way , we proposed selecting these faces by partitioning the face track according to the temporal order and choosing the middle face of each partition .
+463
+However , an yet another criterion can be applied to select these representative faces is based on clustering .
+However , another criterion that is based on clustering can be applied in selecting these representative faces .
+464
+In this new way , all faces in a face-track will be clustered in to k groups by a clustering algorithm .
+In this new way , all the faces in a face track will be clustered to k groups by using a clustering algorithm .
+465
+The centroid of each group is selected .
+The centroid of each group is selected .
+466
+Then , the mean of k centroids is used as the representative face for the face-track .
+Then , the mean of k centroids is used as the representative face for the face track .
+467
+In this experiment , we use the standard K-Means for clustering .
+In this experiment , we use the standard K-Means for clustering .
+468
+We denote the former k-Faces as k-Faces.Temporal and the latter k-Faces as k-Faces.KMeans.
+We refer to the former k-Faces as k-Faces.Temporal and to the latter k-Faces as k-Faces.KMeans.
+469
+</p>
+</p>
+470
+<p>
+<p>
+471
+We evaluate performance of a face-track matching approach by computing the average precision on the rank list returned by the approach .
+We evaluate the performance of a face-track matching approach by computing the average precision of the rank list that it returned .
+472
+In particular , for each dataset , each face-track is alternatively picked out as a query facetrack , while the remaining face-tracks are used as the retrieved database .
+In particular , in each dataset , a face track is alternatively picked out as a query face track , while the remaining face tracks are used as the retrieved database .
+473
+, Average precision of the returned ranked list is computed , given a query .
+Given a query , the average precision of the returned ranked list is computed , .
+474
+Finally , the mean of all average precision ( MAP ) from all query is reported as the overall evaluation metric for the approach on the database.
+Finally , the mean of all average precision ( MAP ) values for all queries is reported as the overall evaluation metric for the approach with the given database.
+475
+</p>
+</p>
+476
+<p>
+<p>
+477
+Let denote r as a rank in the returned face-track list , Pre( r ) as is the precision at the rank r of the list , Nl as the length of the list , Nhit as the total number of face-tracks matched with the query face-track q , and I sMatched( k ) as a binary function returning 1 if the face-track at rank r is matched with q ( based on ground-truth annotations ) , zero otherwise .
+Let r denote a rank in the returned face-track list , Pre( r ) the precision at rank r of the list , Nl the length of the list , Nhit the total number of face tracks matched with the query face track q , and I sMatched( k ) a binary function returning 1 if the face track at rank r is matched with q ( based on ground-truth annotations ) and , zero otherwise .
+478
+Then , the MAP of the evaluated approach can be computed as following: \MATH
+Then , the MAP of the evaluated approach can be computed as follows: \MATH
+479
+</p>
+</p>
+480
+<p>
+<p>
+481
+MAP is a standard metric to evaluate retrieval and matching systems .
+The MAP is a standard metric for evaluating retrieval and matching systems .
+482
+Besides MAP , we record processing times of the approaches on each dataset for efficiency comparison.
+Besides the MAP , we record the processing times of the approaches in each dataset to compare their efficiency.
+483
+</p>
+</p>
+484
+</subsubsection>
+</subsubsection>
+485
+<subsubsection label = " Results ">
+<subsubsection label = " Results ">
+486
+<p>
+<p>
+487
+Figure 7 presents Mean Average Precision ( MAP ) of all evaluated approaches on our two datasets , Trecvid and NHKNews7 .
+Figure 7 presents the mean average precision ( MAP ) of all the evaluated approaches in our two datasets , Trecvid and NHKNews7 .
+488
+Generally , all MAPs vary from 64.61% to 76.54% on Trecvid dataset .
+Generally , all the MAPs vary from 64.61% to 76.54% in the Trecvid dataset .
+489
+Meanwhile , , the best MAP is 60.99% , and the worst MAP is 42.75% on NHKNews7 dataset .
+Meanwhile , in the NHKNews7 dataset , the best MAP is 60.99% , and the worst is 42.75% .
+490
+The gap of MAPs between two datasets can be explained by following reasons .
+The difference in the MAPs between the two datasets can be explained by following reasons .
+491
+Firstly , the number of characters in NHKNews7 is more larger than those in Trecvid , 111 characters in NHKNews7 compared to 41 characters in Trecvid .
+First , the number of characters in NHKNews7 is larger than that in Trecvid , 111 characters in NHKNews7 compared to 41 characters in Trecvid .
+492
+This clearly increases the probability of mismatching face-tracks .
+This clearly increases the probability of mismatching face tracks .
+493
+Secondly , videos in NHKNews7 are recorded during a long time ( i.e. , 11 years ) .
+Second , the videos in NHKNews7 were recorded over a long time ( i.e. , 11 years ) .
+494
+Thus , besides facial variations caused by enviromental conditions at the time of recording ( e.g. , illumination , pose , viewpoint ) in each face-track , face-tracks of a character themself also contain biological variation of the character during time .
+Thus , besides facial variations in each face track caused by the environmental conditions at the time of recording ( e.g. , illumination , pose , viewpoint ) , the face tracks of the character themselves also reflect the biological variations of the character over time; .
+495
+For instance , a character may look older after several years ( see Figure 8 , for example ) .
+for instance , a character may look older after several years ( see Figure 8 , for example ) .
+496
+Due to those reasons , matching faces in NHKNews7 becomes more challenging , .
+For these reasons , matching faces in NHKNews7 becomes more challenging , which .
+497
+It results in drops of MAP( s ) of all evaluated approaches.
+resulted in decreased MAP( s ) for all the evaluated approaches.
+498
+</p>
+</p>
+499
+<p>
+<p>
+500
+A clear and consistent observation from both datasets is that pair:min ( i.e. , min-min ) always achieves the best MAPs , which are 76.54% and 60.99% on two dataset , respectively .
+A clear and consistent observation from both datasets is that pair:min ( i.e. , min-min ) always achieves the best MAPs , which are 76.54% and 60.99% in the two datasets , respectively .
+501
+Among several distance types , L1 is the optimal one to be used with pair:min .
+Among the distance types , L1 is the optimal for use with pair:min .
+502
+A reasonable replacement can be Euclidean distance .
+A reasonable replacement is the Euclidean distance .
+503
+However , there is a minor accuracy gap between pair:min using L1 and pair:min using Euclidean .
+However , there is a minor accuracy gap between pair:min using L1 and pair:min using the Euclidean distance .
+504
+And , computing Euclidean distance between two feature vectors is more expensive than computing their L1 distance .
+In addition , computing the Euclidean distance between two feature vectors is more expensive than computing their L1 distance .
+505
+</p>
+</p>
+506
+<p>
+<p>
+507
+The results also show that pair:min is better than pair:mean .
+The results also show that pair:min is better than pair:mean .
+508
+This is because pair:mean uses the mean of all pair-wise distances between two face-tracks as their similarity score .
+This is because pair:mean uses the mean of all pair-wise distances between two face tracks as the similarity score .
+509
+By computing the mean , pair:mean reduces the effect of noisy pairs .
+By computing the mean , pair:mean reduces the effect of noisy pairs .
+510
+At the same time , it eliminates the influence of pairs containing identical faces , which can help to instantly determine they are belong to the same character .
+At the same time , it eliminates the influence of pairs containing identical faces , which can help to instantly determine that the faces belong to the same character .
+511
+Thus , discriminative power of the computed similarity score is reduced , compared to one computed by pair:min .
+Thus , the discriminative power of the computed similarity score is reduced , compared to that computed by pair:min .
+512
+It causes the gap of MAPs between pair:min and pair:min .
+This causes the difference in MAPs between pair:min and pair:min .
+513
+More generally , this explains why such a gap between pair:min and pair:mean on NHKNews7 is larger than on Trecvid .
+More generally , this explains why such a gap between pair:min and pair:mean is larger in NHKNews7 than in Trecvid .
+514
+Since the average length of face-tracks on NHKNews7 is longer ( i.e. , each face-track contains more sample faces of a character ) , there is more chance that two face-tracks of the same character contain identical faces.
+Because the average length of face tracks on NHKNews7 is longer ( i.e. , each face track contains more sample faces of a character ) , there is a greater chance that two face tracks of the same character contain identical faces.
+515
+</p>
+</p>
+516
+<p>
+<p>
+517
+About our k-Faces , its MAP increases when k increases .
+Regarding our k-Faces , its MAP increases when k increases .
+518
+Between k-Faces.Temporal and k-Faces.KMeans , the impact of k on MAP of k-Faces.KMeans is less significant .
+Between k-Faces.Temporal and k-Faces.KMeans , the impact of k on the MAP of k-Faces.KMeans is less significant .
+519
+Since k-Faces.KMeans always use all faces in a facetrack for clustering and selecting centroids for representative faces , the final mean face is less sensitive to k .
+Because k-Faces.KMeans always uses all the faces in a face track for clustering and selecting centroids for representative faces , the final mean face is less sensitive to k .
+520
+On the contrary , k plays an important role in k-Faces.Temporal .
+In contrast , k plays an important role in k-Faces.Temporal .
+521
+The higher k is set , the more representative faces of each facetrack are selected .
+The higher the k set , the more representative faces of each face track selected .
+522
+Thus , the final mean face of each facetrack becomes more reliable and accurate .
+Thus , the final mean face of each face track becomes more reliable and accurate .
+523
+The advantages of k-Faces.KMeans is that it can achieve high accuracy even when k is very small .
+The advantages of k-Faces.KMeans is that it can achieve high accuracy even when k is very small .
+524
+Meanwhile , its disadvantage is the expensive computational cost to perform clustering faces on a high dimensional feature space ( i.e. , 1937 dimensions ) .
+However , its disadvantage is the high computational cost of clustering faces on a high-dimensional feature space ( i.e. , 1,937 dimensions ) .
+525
+When k is large enough , there is no substantial difference in MAP between k-Faces.KMeans and k-Faces.Temporal.
+When k is large enough , there is no substantial difference in MAP between k-Faces.KMeans and k-Faces.Temporal.
+526
+</p>
+</p>
+527
+<p>
+<p>
+528
+On both datasets , when k increases from 2 to 20 , MAPs of k-Faces approaches grow rapidly .
+In both datasets , when k increases from 2 to 20 , the MAPs of k-Faces approaches grow rapidly .
+529
+However , theirs MAPs become stable from 20 afterwards .
+However , the MAPs become stable from k = 20 upward .
+530
+Since keep increasing k does not help to obtain imporant accuracy improvement but expensive computational cost , we select k = 20 to investigate the trade-off between accuracy and computational costs of k-Faces approaches compared to others .
+Because further increasing k does not help improve accuracy but increases the computational cost , we select k = 20 for investigating the trade-off between the accuracy and computational cost of k-Faces approaches in comparison to others .
+531
+We report MAP and processing time of each approach in the Table 5 .
+Table 5 shows the MAP and processing time of each approach .
+532
+Processing time is separated into two parts , corresponding to preprocessing time and matching time .
+Processing time is divided into two parts , preprocessing and matching .
+533
+Preprocessing time presents time required for preprocessing face-tracks before matching .
+The preprocessing time refers to the time required to preprocess face tracks before matching .
+534
+With k-Faces approaches , preprocessing facetracks includes selecting representative faces and computing their mean face .
+In k-Faces approaches , the preprocessing of face tracks includes selecting representative faces and computing their mean face .
+535
+In MSM and CMSM , it indicates time for computing subspaces for face-tracks .
+In MSM and CMSM , preprocessing includes computing subspaces for face tracks .
+536
+Matching time is averaged for one query run .
+The matching time is averaged over one query run .
+537
+Time unit is second.
+The time unit used is seconds.
+538
+</p>
+</p>
+539
+<p>
+<p>
+540
+According to Table 5 , k-Faces.KMeans and k- Faces.Temporal achieve almost equal accuracy and consume the same amount of time for one query on both datasets .
+As shown in Table 5 , k-Faces.KMeans and k- Faces.Temporal achieve almost equal accuracy and consume the same amount of time for one query in both datasets .
+541
+However , k-Faces.Temporal is hundreds times ( 240 times on Trecvid and 360 times on NHKNews7 ) faster than k-Faces.Temporal in the preprocessing phase .
+However , k-Faces.Temporal is hundreds of times ( 240 times in Trecvid and 360 times in NHKNews7 ) faster than k-Faces.Temporal in the preprocessing phase .
+542
+This suggest that , selecting presentative faces based on tempo .
+This suggests that in terms of both accuracy and efficiency , selecting representative faces based on temporal sampling is better than that based on clustering .
+543
+ral sampling is better than one based on clustering , in both terms of accuracy and efficiency.
+,
+544
+</p>
+</p>
+545
+<p>
+<p>
+546
+Compared to state-of-the-art approaches , our k- Faces.Temporal is thousands times faster than the best approach , which is pair:min , and hundred times faster than MSM and CMSM on both datasets .
+Compared to state-of-the-art approaches , our k- Faces.Temporal is thousands of times faster than the best approach , which is pair:min , and hundreds of times faster than MSM and CMSM in both datasets .
+547
+In terms of accuracy , k-Faces take second place , with 73.65% on Trevid dataset , after pair:min .
+In terms of accuracy , k-Faces takes second place , with 73.65% in the Trevid dataset , after pair:min .
+548
+The gap with pair:min is 2.89% difference in MAP .
+The difference in MAP between our approach and pair:min is 2.89% .
+549
+Meanwhile , it is significantly better than MSM and CMSM , which respectively achieve 69.20% and 64.62% .
+Meanwhile , k- Faces.Temporal is significantly better than MSM and CMSM , which respectively achieved 69.20% and 64.62% accuracy .
+550
+On NHKNews7 dataset , our k-Faces.Temporal is still better than CMSM , but is worse than pair:min and MSM .
+In the NHKNews7 dataset , k-Faces.Temporal is better than CMSM , but worse than pair:min and MSM .
+551
+One may concern that why MSM perform poorly on Trecvid dataset , but it is superior to our k-Faces.Temporal on NHKNews7 .
+One may question why MSM performed poorly in the Trecvid dataset , but was superior to k-Faces.Temporal in NHKNews7 .
+552
+This is due to the fact that face-tracks on NHKNews7 dataset is larger than those on Trecvid dataset .
+The reason for this is the fact that the face tracks in the NHKNews7 dataset are larger than those in the Trecvid dataset .
+553
+Therefore , more sample faces in each face-track can be used to obtain a reliable subspace .
+Therefore , more sample faces in each face track can be used to obtain a reliable subspace .
+554
+</p>
+</p>
+555
+<p>
+<p>
+556
+As expected , the results in this experiment demonstrate that our proposed approach is extremely efficient while archiving comparable performance with state-of-the-art approaches�f.
+As expected , the results of this experiment show that our proposed approach is extremely efficient while achieving comparable performance with state-of-the-art approaches .
+557
+</p>
+</p>
+558
+</subsubsection>
+</subsubsection>
+559
+</subsection>
+</subsection>
+560
+</section>
+</section>
+561
+<section label = " Conclusion ">
+<section label = " Conclusion ">
+562
+<p>
+<p>
+563
+In this paper , we investigate face retrieval on large-scale news video datasets .
+In this paper , we investigate face retrieval in large-scale news video datasets .
+564
+Our contributions is 3-fold .
+Our contribution is threefold .
+565
+Firstly , we presented practical problems when a tracker is used to extract face-tracks in news videos .
+First , we present the practical problems encountered when a tracker is used to extract face tracks in news videos .
+566
+Based on that , we introduce techniques and solutions to bypass the problems for robust face-track extraction .
+Based on these , we introduce techniques and solutions to overcome these problems to achieve robust face-track extraction .
+567
+Secondly , we present an approach for face-track matching which significantly reduces the computational cost and achive competitive performance compared to state-of-the-art approaches .
+Second , we present an approach for face-track matching that significantly reduces the computational cost while achieving competitive performance compared with state-of-the-art approaches .
+568
+Thirdly , we prepare , evaluate state-of-the-art face retreival approaches , and publish real-world face-track datasets whose scale have not been considered in literature ever.
+Third , we prepare datasets , evaluate state-of-the-art face retrieval approaches , and publish real-world face-track datasets of such scales that have never been considered in the literature.
+569
+</p>
+</p>
+570
+</section>
+</section>
+571
+</document>
+</document>

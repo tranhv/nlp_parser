@@ -1,0 +1,548 @@
+Ent-Boost : Boosting Using Entropy Measure
+Ent-Boost : Boosting Using Entropy Measures
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-nnum
+
+for Robust Object Detection
+for Robust Object Detection
+3 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved
+
+Recently , boosting is used widely in object detection applications because of its impressive performance in both speed and accuracy .
+Recently , boosting has come to be used widely in object detection applications because of its impressive performance in both speed and accuracy .
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3,4:bigrammar-vtense 4:5,6,7:paraphrase 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved
+
+However , learning weak classifiers which is one of the most significant tasks in using boosting is left for users .
+However , learning weak classifiers , which is one of the most significant tasks in using boosting , is left to users . //learning / training / identifying / finding?<--Here and throughout , I am not sure that " learning " is the best word choice . If you change it here , it should be changed throughout .
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:bigrammar-prep 19:21:preserved 20:22:preserved
+
+In Discrete AdaBoost , weak classifiers with binary output are too weak to boost when the training data is complex .
+In Discrete AdaBoost , weak classifiers with binary output are too weak to boost when the training data is complex .
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Meanwhile , determining the appropriate number of bins for weak classifiers learned by Real AdaBoost is a challenging task because small one might not well approximate the real distribution while large one might cause over-fitting , increase computation time and waste storage space .
+Meanwhile , determining the appropriate number of bins for weak classifiers learned by Real AdaBoost is a challenging task because small ones might not accurately approximate the real distribution while large ones might cause over-fitting , increase computation time , and waste storage space .
+10 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-nnum 22:22:preserved 23:23:preserved 24:24:spelling 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:bigrammar-nnum 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved
+
+This paper describes a novel method for efficiently learning weak classifiers using entropy measures , called Ent-Boost .
+We have developed Ent-Boost , a novel method for efficiently learning weak classifiers using entropy measures . //method / boosting scheme?
+13 15,0,1,2:0,1,2:paraphrase 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 16:3:preserved 17:16:preserved
+
+The class entropy information is used to estimate the optimal number of bins automatically through discretization process .
+Class entropy information is used to automatically estimate the optimal number of bins through discretization .
+14 0::mogrammar-det 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:6:preserved 14:13:preserved 15:14:preserved 17:15:preserved
+
+Then Kullback-Leibler divergence which is the relative entropy between probability distributions of positive and negative samples is employed to select the best weak classifier in the weak classifier set .
+Then Kullback-Leibler divergence , which is the relative entropy between probability distributions of positive and negative samples , is used to select the best weak classifier in the weak classifier set .
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:paraphrase 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved
+
+Experiments have shown that strong classifiers learned by Ent-Boost can achieve good performance , and have compact storage space .
+Experiments showed that strong classifiers learned by Ent-Boost can achieve good performance and be stored compactly . //[be stored compactly / achieve compact storage?]
+16 0:0:preserved 1,2:1:bigrammar-vtense 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 14:12:preserved 15,16,17,18:13,14,15:paraphrase 19:16:preserved
+
+Results on building a robust face detector are also reported .
+The results of building a robust face detector using Ent-Boost showed the boosting scheme to be effective .
+17 0:1:preserved 1:2:bigrammar-prep 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7,8,9:8,9,10,11,12,13,14,15,16:paraphrase :0:mogrammar-det
+
+Building a robust and reliable classifier is always a fundamental problem of pattern recognition .
+Building a robust and reliable classifier is always a fundamental problem of pattern recognition .
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Several kinds of classifiers , such as Neural Network [1] and Support Vector Machines [2] , have been proposed and applied successfully in many object-detection systems .
+Several kinds of classifiers , such as neural networks [1] and support vector machines [2] , have been proposed and applied successfully in many object-detection systems .
+23 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:spelling 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Boosting [3] and its variants [4] ,[5] ,[6] ,[7] ,[8] ,[9] ,[10] have recently gained a lot of attentions from researchers because of its excellent performance .
+Boosting [3] and its variants [4] ? [10] have recently gained much attention from researchers because of their excellent performance .
+24 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9,10,11:6,7:preserved 13,12,14:9,8,10:preserved 15,16,17,18:12,11:paraphrase 19,20,21,22:13,14,15,16:preserved 23:17:bigrammar-det 24,25:19,18:preserved
+
+In regards to face detection , for example , the methods described in works [4] ,[5] ,[10] represent the state of the art in terms of both high accuracy and running speed .
+In regard to face detection , for example , the methods described in [4] , [5] , and [10] are state-of-the-art in terms of both accuracy and running speed .
+25 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,19,20,21,22:20:spelling 14:13:preserved 15:14,15:preserved 16:17,16,18:bigrammar-others 17:19:paraphrase 18::mogrammar-det 23:21:preserved 24:22:preserved 25:23:bigrammar-prep 26:24:preserved 28:25:preserved 29:26:preserved 30:27:preserved 31:28:preserved 32:29:preserved
+
+The main idea of boosting is to combine the performance of weak classifiers to form a strong classifier .
+The main idea of boosting is to combine the performance of weak classifiers to form a strong classifier .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Typically , each weak classifier is any classifier whose performance is better than random guessing ( i.e. , error rate is less than 0 .5 ) .
+Typically , a weak classifier is any classifier whose performance is better than random guessing ( i.e. , its error rate is less than 0 .5 ) .
+29 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved :18:mogrammar-det
+
+Performances of weak classifiers are integrated into the final form of the strong classifier through a learning process in which more accurate weak classifiers have larger weights in final voting .
+The performances of these weak classifiers are integrated into the final form of a strong classifier through a learning process in which more accurate weak classifiers have larger weights in final voting .
+30 0:1:preserved 1:2:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11::mogrammar-det 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved :0:mogrammar-det :3:mogrammar-det :13:mogrammar-det
+
+In practical problems , designing and learning weak classifiers are left for practitioners with two main challenges : computational evaluation and discriminant power .
+In practical problems , designing and learning weak classifiers leave practitioners with two main challenges : computational evaluation and discriminant power .
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10,11:9:paraphrase 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved
+
+Generally , for efficient computation , the dimension of the input space of weak classifiers is reduced to much lower than that of the strong classifier .
+Generally , for efficient computation , the dimensions of the input space of weak classifiers are reduced be to much smaller than those of the strong classifier[s?] .
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-nnum 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15,16:15,16:bigrammar-inter 17:18:preserved 18:19:preserved 19:20:paraphrase 20:21:preserved 21:22:bigrammar-det 22:23:preserved 23:24:preserved 24:25:preserved 25:26:bigrammar-others 26:27:preserved :17:moproblematic
+
+In object-detection frameworks [4] ,[5] ,[11] ,[12] ,[13] weak classifiers are usually constructed from one or several features .
+In object-detection frameworks [4] , [5] , [11] ? [13] , weak classifiers are usually constructed from one or several features .
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5,6,7:5,7,4,6,8,9:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved
+
+For example , a weak classifier can be constructed from one Haar wavelet feature that is evaluated very rapidly through an integral image [4] .
+For example , a weak classifier can be constructed from one Haar wavelet feature that is evaluated very rapidly through an integral image [4] .
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Given a feature type , choosing the suitable way to form a weak classifier that balance efficiency and computation is still a open problem [14] .
+Given a feature type , choosing the suitable way to form a weak classifier that balances efficiency and computation is still an open problem [14] .
+37 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-nnum 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-det 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+There are two key trends for seeking the most discriminant weak classifier .
+Two key trends exist for seeking the most discriminant weak classifier .
+40 0,1:3:paraphrase 2:0:preserved 3:1:preserved 4:2:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved
+
+The first trend is dealing with the problem of how to design features for best representation of the target object .
+The first trend is dealing with the problem of how to design features for best representing the target object .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15,16:15:paraphrase 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+
+Besides Haar wavelet features [4] , Gabor wavelets [5] , edge orientation histogram ( EOH ) [11] , orientation dominants [12] , scale invariant feature transform ( SIFT )-based-high-level features [13] and local binary pattern ( LBP ) [15] have also been used .
+Besides Haar wavelet features [4] , Gabor wavelets [5] , edge orientation histograms ( EOH ) [11] , orientation dominants [12] , scale invariant feature transform ( SIFT )-based high-level features [13] , and local binary patterns ( LBP ) [15] have also been used .
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-nnum 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28,29:spelling 29:30:preserved 30:31:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:bigrammar-nnum 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved 39:41:preserved 40:42:preserved 41:43:preserved 42:44:preserved 43:45:preserved
+
+The second trend is studying how to optimally select the best weak classifier from a weak classifier set .
+The second trend is studying how to optimally select the best weak classifier from a weak classifier set .
+43 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+In Discrete AdaBoost [16] , weak classifiers are threshold-functions whose the output is restricted to binary .
+In Discrete AdaBoost [16] , weak classifiers are threshold-functions whose output is restricted to binary data. //[data / values??I think you need a noun here?binary what?]
+46 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10::mogrammar-det 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14,15:paraphrase
+
+This leads weak classifiers are too weak to boost when handling complex data sets .
+This leads weak classifiers to be too weak to boost when handling complex data sets .
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:bigrammar-wform 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved
+
+For example , in later layers of the cascaded face classifiers [4] , the error rate of weak classifiers is between 0 .4 and 0 .5 .
+For example , in later layers of the cascaded face classifiers [4] , the error rate of weak classifiers is between 0 .4 and 0 .5 .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Meanwhile , in Real AdaBoost [3] , a generalized version of Discrete AdaBoost , weak classifiers are piece-wise functions whose the output is a real value representing the confidence-rated prediction .
+Meanwhile , in Real AdaBoost [3] , a generalized version of Discrete AdaBoost , weak classifiers are piece-wise functions whose output is a real value representing the confidence-rated prediction .
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20::mogrammar-det 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved
+
+Normally , to construct such weak classifiers , one splits the input space \MATH into non-overlapping blocks ( or subspaces ) \MATH , \MATH , . . . , \MATH so that the predictions of the weak classifier are the same for all instances falling into the same block .
+Normally , to construct such weak classifiers , one splits the input space \MATH into non-overlapping blocks ( or subspaces ) \MATH , \MATH , . . . , \MATH so that the predictions of the weak classifier are the same for all instances falling into the same block .
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved
+
+In the case of one-feature-based weak classifiers , this is equivalent to dividing the real line into intervals .
+In the case of one-feature-based weak classifiers , this is equivalent to dividing the real line into intervals .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Typically , most current works [5] ,[17] ,[6] ,[8] ,[10] split the data into \MATH bins that are equal width which suffers from following limitations :
+Typically , most current works [5] , [6] , [8] , [10] , [17] split the data into \MATH bins that are equal in width . This method suffers from the following limitations : //[works / systems?]
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9:7,6,8,9,11,10,12,13:preserved 10,11,12,13,14,15,16,17,18:14,15,16,17,18,19,20,21,22:preserved 19:24:preserved 20:26,27:paraphrase 22,21:29,28:preserved 24,23:32,31:preserved :23:mogrammar-prep :30:mogrammar-det
+
+-Choosing the appropriate number of bins is undetermined .
+-The way to choose the appropriate number of bins is undetermined .
+55 0:2,3,0,1:paraphrase 1:4:preserved 2:5:preserved 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved
+
+Normally , it has been done by trials and errors [6] ,[17] - a tedious task .
+Normally , it has been done by trial and error [6] , [17] ? a tedious task .
+56 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9:9,7,8:bigrammar-nnum 10,11,12:10,12,11,13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved
+
+In the training cascade of classifiers [6] ,[17] , when the complexity of the training data changes over time , using the same number of bins for training every layers is not optimal .
+In the training cascade of classifiers [6] , [17] , when the complexity of the training data changes over time , using the same number of bins for training every layer is not optimal .
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8,7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:bigrammar-nnum 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved
+
+-Choosing a large number of bins might cause over-fitting because of outliers in the case of noisy data [18] .
+-Choosing a large number of bins might cause over-fitting because of outliers in the case of noisy data [18] .
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Furthermore it might increase computation and training time , waste storage space which is critical in applications with limited resources , for example , face detection on mobile phones .
+Furthermore , it might lengthen computation and training time and waste storage space , which is critical in applications with limited resources , for example , face detection on mobile phones .
+61 0:0:preserved 1:2:preserved 2:3:preserved 3:4:paraphrase 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:paraphrase 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved
+
+Meanwhile choosing a small number of bins might not well approximate the real densities of the data distribution and thus influence selection of the best weak classifier .
+Choosing a small number of bins , however , might not accurately approximate the real densities of the data distribution and could influence the selection of the best weak classifier .
+62 0:7:paraphrase 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:9:preserved 8:10:preserved 9:11:paraphrase 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 20:21,22:bigrammar-vtense 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved :23:mogrammar-det
+
+It is therefore necessary to have a deterministic method to choose this number of bins automatically and optimally .
+A deterministic method is therefore needed to automatically and optimally choose the number of bins .
+65 0,1,3,4,5:3,5:paraphrase 2:4:preserved 6,7,8:0,1,2:preserved 9:6:preserved 10:10:preserved 11:11:bigrammar-det 12:12:preserved 13:13:preserved 14:14:preserved 15,16,17:7,8,9:preserved 18:15:preserved
+
+This problem can be formulated as a discretization problem in which subspace boundaries are found by some criteria .
+This problem can be formulated as a discretization problem in which subspace boundaries are found by some criteria . //[some criteria?This sounds a bit vague . Could you be more specific?]
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Among discretization methods , the entropy based method [19] has been proved most efficiently ; hence , we propose using it to solve the problem .
+Among discretization methods , the entropy-based method [19] has been proved most efficient . Hence , we propose using it to solve the problem .
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:bigrammar-wform 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved
+
+The entropy based discretization method is an algorithm that automatically selects appropriate thresholds to split feature values into optimal bins by using entropy measurement .
+The entropy-based discretization method is an algorithm that automatically selects appropriate thresholds to split feature values into optimal bins by using entropy measurement .
+70 0:0:preserved 1,2:1:spelling 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved
+
+It is a supervised discretization method which takes into account class information and data distribution , so it is generic and can be applied for any kinds of input data .
+It is a supervised discretization method that takes into account class information and data distribution , so it is generic and can be applied to any kind of input data .
+71 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-others 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:bigrammar-prep 25:25:preserved 26:26:bigrammar-nnum 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Furthermore , many studies have been shown that discretization process might help to improve performance in induction tasks [18] , it can also work with a weighted data distribution ; therefore , it is most appropriate for boosting-based methods .
+Furthermore , many studies have shown that the discretization process might help to improve performance in induction tasks [18] and it can also work with a weighted data distribution . Therefore , it is most appropriate for boosting-based methods .
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5,6:4,5:para-passact 7:6:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved :7:mogrammar-det
+
+Besides learning weak classifiers , selecting the best weak classifier in the large weak classifier set in each round of boosting is also important .
+Besides learning weak classifiers , selecting the best weak classifier in the large set of weak classifiers in each round of boosting is also important .
+75 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:15:preserved 14:16:bigrammar-nnum 15:13:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :14:mogrammar-prep
+
+Adopting [5] , it is done by choosing the weak classifier that maximizes Kullback-Leibler ( KL ) divergence between two distributions of positive and negative samples .
+Following the method used in [5] , it is done by choosing the weak classifier that maximizes Kullback-Leibler ( KL ) divergence between two distributions of positive and negative samples . // [used / proposed?]
+76 0:0,1,2,3,4:paraphrase 1:5:preserved 3,4,5,6,7,8,9,10,11,12:7,8,9,10,11,12,13,14,15,16:preserved 13,14,15,16:17,18,19,20:preserved 17,18,19,20,21,22,23,24,25:21,22,23,24,25,26,27,28,29:preserved
+
+The integration of entropy-based discretization process and optimal weak classifier selection into the current boosting framework forms a new variant of AdaBoost , called Ent-Boost .
+The integration of the entropy-based discretization process and optimal weak classifier selection into the current boosting framework formed a new variant of AdaBoost , called Ent-Boost .
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:bigrammar-vtense 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :3:mogrammar-det
+
+Experiments on building a robust face detector have shown effectiveness of this new boosting scheme .
+Experiments on building a robust face detector have shown the effectiveness of this new boosting scheme .
+80 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved :9:mogrammar-det
+
+Originally , Discrete AdaBoost proposed by Freund and Schapire [16] is a learning method of combining weak classifiers to a strong classier .
+Originally , Discrete AdaBoost , proposed by Freund and Schapire [16] , was a learning method of combining weak classifiers to form a strong classier .
+85 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:12:bigrammar-vtense 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:21,20:paraphrase 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved
+
+Given a training set \MATH where \MATH and \MATH , a weak classifier \MATH has the form \MATH .
+Given a training set \MATH , where \MATH and \MATH , a weak classifier \MATH has the form \MATH .
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+Normally , a weak classifier is any classifier whose performance measured by error rate is less than 0 .5 .
+Normally , a weak classifier is any classifier whose performance measured by error rate is less than 0 .5 .
+89 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Therefore , in many applications [4] ,[5] ,[7] , it is simplified by associating to one feature \MATH .
+Therefore , in many applications [4] , [5] , [7] , it is simplified by associating with one feature \MATH .
+90 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:9,7,8,6:preserved 8::unaligned 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:bigrammar-prep 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved
+
+Through boosting processing , weak classifiers are combined into a strong classifier \MATH where \MATH are values that measure performance of the selected weak classifier .
+Through boosting processing , weak classifiers are combined into a strong classifier \MATH where \MATH are values that measure the performance of the selected weak classifier .
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :19:mogrammar-det
+
+In boosting process , a distribution \MATH or set of weights over the training samples are maintained and updated so that subsequent weak classifiers focus on the hard classified samples .
+In the boosting process , a distribution \MATH or set of weights over the training samples are maintained and updated so that subsequent weak classifiers focus on the strong-classified samples . //[hard / strong?]
+94 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27,28:28:spelling 29:29:preserved 30:30:preserved :1:mogrammar-det
+
+Real AdaBoost [3] is a generalized version of Discrete AdaBoost in that weak classifiers are real-valued functions instead of binary ones and \MATH is found numerically in general instead of predescription .
+Real AdaBoost [3] is a generalized version of Discrete AdaBoost in that weak classifiers are real-valued functions instead of binary ones and \MATH is found numerically instead of by predescription . //[This method also involves?NOTE : A method cannot propose something .
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 28:26:preserved 29:27:preserved 30:29:preserved 31:30:preserved :28:mogrammar-prep
+
+This method also proposes designing weak classifiers that partition the input space into subspaces so that its predictions are unique in each subspace .
+Do you mean that the creators of this system proposed this?] designing weak classifiers that partition the input space into subspaces so that the predictions are unique in each subspace .
+98 15:14:preserved
+
+Such weak classifiers are used widely in current state of the art object detection systems [5] ,[17] ,[8] .
+Such weak classifiers are used widely in current state-of-the-art object detection systems [5] , [8] , [17] .
+99 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,9,10,11:8:spelling 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16,17:16,14,15:preserved 18:17:preserved
+
+Suppose that \MATH , \MATH , . . . , \MATH is a partition of the domain \MATH on which such weak classifiers $h$ are defined .
+Suppose that \MATH , \MATH , . . . , \MATH is a partition of the domain \MATH on which such weak classifiers $h$ are defined .
+102 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+The prediction of \MATH depends only on which block \MATH a given instance falls into .
+The prediction of \MATH depends only on which block \MATH a given instance falls into .
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+On the other hand , \MATH for all \MATH .
+On the other hand , \MATH for all \MATH .
+104 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+In the case of one-feature-based weak classifiers , the histograms of positive and negative samples are computed as follows \MATH where \MATH .
+In the case of one-feature-based weak classifier , the histograms of positive and negative samples are computed as follows \MATH where \MATH .
+105 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-nnum 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+It is proved in [3] that the most appropriate choice for the prediction of the weak classifier on block \MATH to maximize the margin is \MATH where \MATH is a smoothed value in order to handle cases that \MATH is very small or even zero .
+It is proven in [3] that the most appropriate choice for the prediction of the weak classifier on block \MATH to maximize the margin is \MATH where \MATH is a smoothed value in order to handle cases in which \MATH is very small or even zero .
+108 0:0:preserved 1:1:preserved 2:2:spelling 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37,38:paraphrase 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved
+
+A summary of the Real AdaBoost algorithm is given in Algorithm 1 .
+A summary of the Real AdaBoost algorithm is given in Algorithm 1 .
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Real AdaBoost is easy to implement ; however , in practical applications , designing and learning weak classifiers depend on specific applications .
+Real AdaBoost is easy to implement , but in practical applications , designing and learning weak classifiers depend on specific applications .
+112 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 7:7:paraphrase 8:6:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved
+
+In such face detection systems as [5] ,[6] ,[17] ,[8] , weak classifiers are usually associated with one feature .
+In such face detection systems as [those described in?] [5] , [6] , [8] , and [17] , weak classifiers are usually associated with one feature .
+113 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:9:preserved 7:11,10:preserved 8:15,16,17:bigrammar-others 9:13,12:preserved 10:14:preserved 11:18:preserved 12:19:preserved 13:20:preserved 14:21:preserved 15:22:preserved 16:23:preserved 17:24:preserved 18:25:preserved
+
+With a very large number of available features , hundreds of thousands , there are a lot of choices to choose one weak classifier for each round of boosting .
+With a very large number of available features ? hundreds of thousands ? [there are many candidates from which to / many choices must be made to?] select one weak classifier for each round of boosting .
+114 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9:9:preserved 10:10:preserved 11:11:preserved 14:14:preserved 19:19:preserved
+
+Generally , optimally selecting the suitable weak classifier will make the final strong classifier more robust and efficient .
+Optimally selecting the suitable weak classifier makes the final strong classifier more robust and efficient .
+115 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8,9:6:bigrammar-vtense 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved
+
+Furthermore , it can reduce the number of boosting rounds that directly shorten training time .
+Furthermore , optimal selection can reduce the number of boosting rounds , thus directly shortening training time .
+116 0:0:preserved 1:1:preserved 2:2,3:paraphrase 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10,12:12,14:paraphrase 11:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved
+
+So far , most current studies have been focused on how to measure the discriminant power of weak classifiers in order to select the best weak classifier .
+Most studies so far have been focused on how to measure the discriminant power of weak classifiers in order to select the best weak classifier .
+119 0:2:preserved 1:3:preserved 3:0:preserved 5:1:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved
+
+Many measurements have been proposed ; for example , Bhattacharyya distance [6] , Kullback-Leibler divergence [5] and , recently , Jensen-Shannon divergence [8] and mutual information [9] ( cf . Table 1 .
+Many measurements have been proposed , for example , Bhattacharyya distance [6] , Kullback-Leibler divergence [5] , and recently , Jensen-Shannon divergence [8] and mutual information [9] ( Table 1 ) .
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:19:preserved 18:18:preserved 19:16:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 29:31:preserved 30:28:preserved 31:29:preserved
+
+Meanwhile , few studies have been made for efficiently partitioning subspaces .
+Meanwhile , few studies have been made on efficiently partitioning subspaces .
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-prep 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+As shown in Figure 1 , using a fixed number of bins , strong classifiers trained by above measurements give comparable performance .
+As shown in Figure 1 , using a fixed number of bins , strong classifiers trained by the above measures give similar performances . //[measurements / measures?]
+122 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:19:bigrammar-wform 19:20:preserved 20:21:paraphrase 21:22:bigrammar-others 22:23:preserved :17:mogrammar-det
+
+However , it will be shown in section 5 , these performances are affected seriously if different subspace splitting methods are used .
+However , as section 5 will show , these performances are affected dramatically if different subspace splitting methods are used .
+123 0:0:preserved 1:1:preserved 3,4,5,2,6:5,6,2:paraphrase 7,8:3,4:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:paraphrase 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved
+
+The proposed boosting scheme Ent-Boost is an integration of adaptive entropy-based subspace splitting and the symmetric KL divergence-based weak classifier selection .
+The proposed boosting scheme , Ent-Boost , is an integration of adaptive entropy-based subspace splitting and the symmetric KL divergence-based weak classifier selection .
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved
+
+In Ent-Boost , each weak classifier is constructed from one feature and trained on the weighted training samples similar to Real AdaBoost .
+In Ent-Boost , each weak classifier is constructed from one feature and trained on weighted training samples similar to [those used in?] Real AdaBoost .
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14::mogrammar-det 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:22:preserved 21:23:preserved 22:24:preserved
+
+However , instead of using equal-width binning method like Real AdaBoost [6] ,[17] which is hard to know the suitable number of bins in advance , we use entropy-based discretization method [19] to split the input space into subspaces .
+However , instead of using the equal-width binning method used in Real AdaBoost [6] , [17] which has a hard time predicting the suitable number of bins in advance , we use the entropy-based discretization method [19] to split the input space into subspaces .
+132 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9,10:paraphrase 9:11:preserved 10:12:preserved 11:13:preserved 12:15,14:preserved 13:16:preserved 14,15,16,17:17,18,19,20,21:paraphrase 18,19,20,21,22,23,24:22,23,24,25,26,27,28:preserved 26,27:30,31:preserved 28,29,30,31,32,33,34,35,36,37,38,39:33,34,35,36,37,38,39,40,41,42,43,44:preserved :5:mogrammar-det :32:mogrammar-det
+
+This subspace splitting process is totally automatically in which the stopping criteria of splitting process is determined through using Minimum Description Length Principles ( MDLP ) ( see the next section ) .
+This subspace splitting process is totally automatic ; the stopping criteria of the splitting process are determined using minimum description length principles ( MDLP ) . This process will be described in greater detail in the next section .
+133 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:13:preserved 14:14:preserved 15,16:15,16:bigrammar-inter 17::mogrammar-prep 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved :12:mogrammar-det
+
+To select the best weak classifier from the input weak classifier set , we use symmetric KL divergence as in [5] which measures the distance between two distributions as follows : \MATH where \MATH and \MATH are probability distributions of a discrete random variable .
+To select the best weak classifier from the input weak classifier set , we use symmetric KL divergence as in [5] , which measures the distance between two distributions as follows : \MATH where \MATH and \MATH are probability distributions of a discrete random variable .
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved
+
+This formula can be rewritten in entropy terms : \MATH or \MATH where \MATH and \MATH are entropy , and \MATH is cross entropy of \MATH and \MATH .
+This formula can be rewritten in entropy terms : \MATH or \MATH where \MATH and \MATH are entropy and \MATH is cross entropy of \MATH and \MATH .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved
+
+The outline of Ent-Boost is shown in Algorithm 2 .
+The outline of Ent-Boost is shown in Algorithm 2 .
+142 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Note that the discretization process is performed in every round of boosting to adapt to new distributions of samples .
+Note that the discretization process is performed in every round of boosting to adapt to new distributions of samples .
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+As a result , the number of intervals of selected weak classifier varies .
+As a result , the number of intervals of the selected weak classifier varies . //[classifier varies / classifiers vary?]
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :9:mogrammar-det
+
+This is different from previous methods that fix the number of equal-width intervals in advance .
+This is different from previous methods , which fix the number of equal-width intervals in advance .
+145 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:bigrammar-others 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved
+
+This section gives a brief introduction on automatic subspace splitting using entropy-based discretization .
+This section briefly describes automatic subspace splitting using entropy-based discretization .
+150 0:0:preserved 1:1:preserved 2,3,4,5,6:2,3:paraphrase 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved
+
+Basically , discretization is a quantizing process that converts continuous values into discrete values ; it typically consists of four steps [18] :
+Discretization is a quantizing process that converts continuous values into discrete values . It typically consists of four steps [18] .
+151 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved
+
+Step 1 : Sorting the continuous values of the feature to be discretized .
+Step 1 : Sorting the continuous values of the feature to be discretized .
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Step 2 : valuating candidate cut-points and selecting the best cut-point for splitting .
+Step 2 : Evaluating candidate cut-points and selecting the best cut-point for splitting .
+157 0:0:preserved 1:1:preserved 2:2:preserved 3:3:typo 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+A cut-point is a threshold value that divides the range of continuous values into two intervals ; one interval is less than or equal to the threshold , and the other interval is greater than the threshold .
+A cut-point is a threshold value that divides the range of continuous values into two intervals ; one interval is less than or equal to the threshold , and the other interval is greater than the threshold .
+158 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+Step 3 : Splitting the data into two intervals using the selected cut-point in step 2 .
+Step 3 : Splitting the data into two intervals using the cut-point selected in step 2 .
+161 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:11:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Step 4 : Continuing discretization with each interval until a stopping criteria is satisfied .
+Step 4 : Continuing discretization with each interval until a stopping criteria is satisfied .
+164 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The stopping criteria are usually selected according to a trade-off between lower arity ( the number of intervals or the number of bins ) and its effect on the accuracy of classification tasks .
+The stopping criteria are usually selected by considering a trade-off between lower arity ( the number of intervals or the number of bins ) and its effect on the accuracy of classification tasks .
+165 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:6,7:paraphrase 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+A higher arity can make the understanding of an attribute more difficult , while a very low arity may affect predictive accuracy negatively .
+A higher arity can make the complicate the understanding of an attribute , while a very low arity may damage predictive accuracy .
+166 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:7,5,6,8:paraphrase 7:9:preserved 8:10:preserved 9:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:paraphrase 20:20:preserved 21:21:preserved 23:22:preserved
+
+Given a set \MATH of sorted continuous values \MATH , candidate cut-points are usually selected as mid-points of every successive pair of \MATH .
+Given a set \MATH of sorted continuous values \MATH , candidate cut-points are usually selected as mid-points of every successive pair of \MATH .
+170 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+On the other hand , candidate cut-points are \MATH .
+On the other hand , candidate cut-points are \MATH .
+171 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+For each cut-point \MATH that splits set \MATH into two subsets \MATH , the class entropy of a subset \MATH is defined as \MATH where \MATH is the number of classes \MATH , and \MATH is the proportion of examples in \MATH that have class \MATH .
+For each cut-point \MATH that splits set \MATH into two subsets \MATH , the class entropy of a subset \MATH is defined as \MATH where \MATH is the number of classes \MATH , and \MATH is the proportion of examples in \MATH that have class \MATH .
+174 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved
+
+To evaluate the resulting class entropy after set \MATH is partitioned into two sets \MATH and \MATH , the class-information entropy of the partition induced by cut-point T is defined by taking the weighted average of their resulting class entropies \MATH he best cut-point selected in step 2 is the cut-point \MATH for which \MATH is minimal amongst all the candidate cut-points .
+To evaluate the resulting class entropy after set \MATH is partitioned into two sets \MATH and \MATH , the class-information entropy of the partition induced by cut-point T is defined by taking the weighted average of their resulting class entropies \MATH he best cut-point selected in step 2 is the cut-point \MATH for which \MATH is minimal amongst all the candidate cut-points .
+177 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved
+
+Given set S and a potential binary partition , \MATH , specified on S by the given cut-point \MATH , a stopping criteria is used to decide whether or not this partition should be accepted .
+Given set S and a potential binary partition \MATH , specified on S by the given cut-point \MATH , a stopping criteria is used to decide whether or not this partition should be accepted .
+182 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:8:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+
+If the answer is YES , the discretization will continue with each partition given by \MATH ; otherwise , the discretization process will stop .
+If the answer is YES , the discretization will continue with each partition given by \MATH ; otherwise , the discretization process will stop .
+183 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Suppose \MATH is the probability of a \MATH answer , and \MATH is the probability of the \MATH answer .
+Suppose \MATH is the probability of a \MATH answer , and \MATH is the probability of a \MATH answer .
+186 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 17:17:preserved 18:18:preserved 19:19:preserved :16:mogrammar-det
+
+Partition \MATH is only accepted if \MATH .
+Partition \MATH is only accepted if \MATH .
+187 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+However , in practice , there is no easy way to estimate these probabilities directly .
+However , in practice , there is no easy way to estimate these probabilities directly .
+190 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Instead , Fayyad and Irani [19] proposed using MDLP to indirectly estimate them .
+Instead , Fayyad and Irani [19] proposed using MDLP to indirectly estimate them .
+191 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Originally , the minimum description length of an object is defined as the minimum number of bits required to uniquely specify that object out of the universe of all objects .
+The minimum description length of an object is defined as the minimum number of bits required to uniquely specify that object out of the universe of all objects .
+194 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved
+
+To employ MDLP in choosing the stopping criteria , Fayyad and Irani formulated the above problem as a communication problem between a sender and a receiver .
+To employ MDLP in choosing the stopping criteria , Fayyad and Irani formulated the above problem as a communication problem between a sender and a receiver .
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+It is assumed that the sender has the entire set of training examples , while the receiver has the examples without their class labels .
+It is assumed that the sender has the entire set of training examples , while the receiver has the examples without their class labels .
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The sender needs to convey to proper class labeling of the example set to the receiver .
+The sender needs to convey needed information for the proper class labeling of the example set to the receiver .
+197 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5,6,7:paraphrase 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved :8:mogrammar-det
+
+It says that the partition induced by a cut-point is accepted if and only if the length of the message required to send before partition is more than the length of the message required to send after partition .
+It says that the partition induced by a cut-point is accepted if and only if the length of the message required to be sent before the partition is more than the length of the message required to be sent after the partition .
+198 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21,22:22,21,23:para-passact 23:24:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34,35:36,37,38:para-passact 36:39:preserved 37:41:preserved :25:mogrammar-det :40:mogrammar-det
+
+By inferring from coding hypothesis , the stopping criteria is defined as follows : MDLP Criteria :A partition induced by cut-point \MATH for a set \MATH of \MATH examples is accepted iff :\MATH
+By inferring from coding hypothesis , the stopping criteria is defined as follows : MDLP Criteria :A partition induced by cut-point \MATH for a set \MATH of \MATH examples is accepted iff :\MATH
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+where \MATH and \MATH \MATH is the number of classes in \MATH Extensive experiments [19] ,[18] recommended that this method should be the first choice for variable discretization because it gives small number of cut-points while maintaining consistency .
+where \MATH and \MATH where\MATH is the number of classes in \MATH Extensive experiments [18] , [19] recommended that this method should be the first choice for variable discretization because it gives a small number of cut-points while maintaining consistency .
+202 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:16:preserved 15:14,15:bigrammar-others 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved :32:mogrammar-det
+
+For experiments , face and non-face patterns are of size 24x24 .
+For our experiments , face and non-face patterns were of size 24x24 . //[what is the unit here?]
+209 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:bigrammar-vtense 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved :1:mogrammar-det
+
+A set of 10 ,000 face patterns were collected from the Internet .
+A set of 10 ,000 face patterns were collected from the Internet .
+210 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Another set of 10 ,000 hard non-face patterns were false positives collected by running a cascade of 17 AdaBoost classifiers at different locations and scales on 8 ,440 images with various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+Another set of 10 ,000 hard non-face patterns were false positives collected by running a cascade of 17 AdaBoost classifiers at different locations and scales on 8 ,440 images with various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+211 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved
+
+The 10 ,000 patterns in each set are divided into a training set of 6 ,000 patterns and a test set of 4 ,000 examples .
+The 10 ,000 patterns in each set were divided into a training set of 6 ,000 patterns and a test set of 4 ,000 examples .
+212 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8:7,8:bigrammar-vtense 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Some examples of the collected 24x24 face and non-face patterns are shown in Figure 2 .
+Some examples of the collected 24x24 face and non-face patterns are shown in Figure 2 .
+213 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Haar wavelet feature that has been widely used in many face detection systems [4] ,[6] ,[14] is used in our experiments .
+Haar wavelet features , which have been used in many face detection systems [4] , [6] , [14] , were used in our experiments .
+216 0:0:preserved 1:1:preserved 2:2:bigrammar-nnum 3,4:4,5:paraphrase 5:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14,15:15,14,16,17:preserved 16,17:19,20:bigrammar-vtense 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved
+
+It consists of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+These consisted of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+217 0:0:bigrammar-nnum 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The feature value is defined as the difference of sum of the pixels within rectangles ( cf . Figure 3 ) .
+The feature value was defined as the difference of the sum of the pixels within rectangles ( Figure 3 ) .
+218 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3,4:bigrammar-vtense 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 17:20:preserved 18:17:preserved 19:18:preserved 20:19:preserved :9:mogrammar-det
+
+In total , 134 ,736 features were used for training classifiers .
+In total , 134 ,736 features were used for training classifiers .
+219 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Figure 4 shows a comparison of performances of strong classifiers trained by different boosting schemes that are AdaBoost [4] , Real AdaBoost [17] and Ent-Boost .
+Figure 4 shows a comparison of the performances of strong classifiers trained by the different boosting schemes : AdaBoost [4] , Real AdaBoost [17] , and Ent-Boost .
+224 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:25:preserved 24:26:preserved 25:27:preserved :6:mogrammar-det :13:mogrammar-det
+
+Each strong classifier is a combination of 80 weak classifiers ( using more weak classifiers does not improve much the performance ) .
+Each strong classifier is a combination of 80 weak classifiers ( using more weak classifiers does not much improve the performance ) .
+225 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:17:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+As for Real AdaBoost , the subspace splitting is done by equal width binning in which the number of bins is arbitrarily selected to be 64 and 128 .
+For Real AdaBoost , subspace splitting is done by equal-width binning in which the number of bins is arbitrarily selected to be 64 and 128 .
+226 0,1:0:bigrammar-prep 2:1:preserved 3:2:preserved 4:3:preserved 5::mogrammar-det 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11,12:9:spelling 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved 28:25:preserved
+
+The curves indicate that the performances of Real AdaBoost and Ent-Boost are better than that of AdaBoost .
+The curves indicate that the performances of Real AdaBoost and Ent-Boost were better than that of AdaBoost .
+227 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-vtense 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+In addition , the performance of Real AdaBoost classifiers varies when using different number of bins .
+In addition , the performance of Real AdaBoost classifiers varied when using different numbers of bins .
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-vtense 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved 15:15:preserved 16:16:preserved
+
+Overall , Ent-Boost has the best result .
+Overall , Ent-Boost produced the best result .
+229 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+As for storage space , the Ent-Boost based classifier only employs 6 .79 bins on average which is much smaller than that of Real AdaBoost-based classifiers .
+As for storage space , the Ent-Boost-based classifier only uses 6 .79 bins on average , which is much fewer than the number used by Real AdaBoost-based classifiers .
+230 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:6:spelling 8:7:preserved 9:8:preserved 10:9:paraphrase 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:paraphrase 20:20:preserved 21,22:21,22,23,24:paraphrase 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved
+
+Using Ent-Boost , a robust face detector was built .
+Using Ent-Boost , a robust face detector was built .
+233 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+It was a cascade of Ent-Boost based classifiers that were trained similar to [4] .
+It was a cascade of Ent-Boost-based classifiers that were trained [through a process similar to that used in] [4] .
+234 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:13:preserved 12:14:preserved
+
+The result cascade has 25 layers employing 3 ,850 features .
+The resulting cascade has 25 layers using 3 ,850 features .
+237 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Performances of AdaBoost-based face detector [4] and Ent-Boost based face detector on MIT+CMU test set [1] shown in Table 2 has confirmed the effectiveness of our proposed boosting scheme .
+The performances of the AdaBoost-based face detector [4] and our Ent-Boost-based face detector on the MIT+CMU test set [1] confirmed the effectiveness of our proposed boosting scheme ( Table 2 ) .
+238 0:1:preserved 1:2:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7,8:10:spelling 9:11:preserved 10:12:preserved 11:13:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 20,21:19:bigrammar-vtense 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:31:preserved :0:mogrammar-det :3:mogrammar-det :9:mogrammar-det :14:mogrammar-det
+
+Some detection results are given in Figure 5 .
+Some detection results are given in Figure 5 .
+239 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+We have presented Ent-Boost , a variant of AdaBoost , which uses entropy measure for automatic subspace splitting and optimal weak classifier selection .
+We have described Ent-Boost , a variant of AdaBoost , which uses entropy measures for automatic subspace splitting and optimal weak classifier selection .
+245 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+The resulted strong classifier has good performance and compact storage .
+The resultant strong classifier has good performance and achieves compact storage .
+246 0:0:preserved 1:1:bigrammar-wform 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved
+
+Furthermore , it overcomes the main limitation of Real AdaBoost which is hard to determine the suitable number of bins for subspace splitting .
+Furthermore , this new boosting scheme overcomes the main limitation of Real AdaBoost , which is difficulty in determining the suitable number of bins for subspace splitting .
+247 0:0:preserved 1:1:preserved 2:2,3,4,5:paraphrase 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10,11,15,16,17,18,19,20,21,22,23:14,15,19,20,21,22,23,24,25,26,27:preserved 12:16:paraphrase 13,14:17,18:paraphrase
+
+By considering the class information and the distribution of the input data in splitting process , this method is generic and can be applied to other applications .
+Because it considers the class information and the distribution of the input data in the splitting process , this method is generic and can be used for other applications .
+248 1,0:0,1,2:paraphrase 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23,24:25,26:paraphrase 25:27:preserved 26:28:preserved 27:29:preserved :14:mogrammar-det
+
+Experiments have shown promising results , especially in building a robust face detector .
+Experiments have shown promising results , especially in the building of a robust face detector .
+249 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved :8:mogrammar-det :10:mogrammar-prep
+

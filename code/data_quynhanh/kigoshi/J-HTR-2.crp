@@ -1,0 +1,1698 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+On Contribution of Syntactic Dependencies to Word Sense Disambiguation
+On Contribution of Syntactic Dependencies to Word Sense Disambiguation
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+Traditionally , many researchers have addressed word sense disambiguation ( WSD ) as an independent classification problem for each word .
+Traditionally , many researchers have addressed word sense disambiguation ( WSD ) as an independent classification problem for each word .
+7
+However , problems with their approaches are the disregard of the interdependencies of word senses , and the limited applicability to those word senses for which training instances are served .
+However , the problem with these approaches , is that they disregard the interdependencies of word senses , and that it is limited in its applicability to the word senses for which training instances are served .**[<-This sentence is a bit confusing]
+8
+In this paper , we propose a supervised WSD model based on the syntactic dependencies of word senses .
+In this paper , we propose a supervised WSD model based on the syntactic dependencies of word senses .
+9
+Particularly , we assume that there exist strong dependencies between the sense of a syntactic head and those of its dependents .
+In particular , we assume that strong dependencies between the sense of a syntactic head and those of its dependents exist .
+10
+We describe these dependencies on the tree-structured conditional random fields ( T-CRFs ) , and obtain the most appropriate assignment of senses optimized over the sentence .
+We describe these dependencies on the tree-structured conditional random fields ( T-CRFs ) , and obtain the most appropriate assignment of senses optimized over the sentence .
+11
+Also , we define these sense dependencies in combination with various coarse-grained sense tag sets , so that our model can even work for words that do not appear in the training data , and these combined features help relieve the data sparseness problem .
+Furthermore , we define these sense dependencies in combination with various coarse-grained sense tag sets , so that our model can also work for words that do not appear in the training data ; these combined features help relieve the data sparseness problem .
+12
+In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
+In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+13
+The performance of our model is shown to be comparable to those of state-of-the-art WSD systems .
+The performance of our model is shown to be comparable to those of state-of-the-art WSD systems .
+14
+We also present an in-depth analysis on the effectiveness of the sense dependency features with intuitive examples .
+We also present an in-depth analysis of the effectiveness of the sense dependency features by using intuitive examples .
+15
+</p>
+</p>
+16
+</abstract>
+</abstract>
+17
+<section label = " Introduction " >
+<section label = " Introduction " >
+18
+<p>
+<p>
+19
+Word sense disambiguation ( WSD ) is one of the fundamental problems in computational linguistics .
+Word sense disambiguation ( WSD ) is one of the most fundamental problems in computational linguistics .
+20
+The task of WSD is to resolve the inherent polysemy of words by determining the appropriate sense( s ) for each polysemous word in a given text .
+The task of WSD is to resolve the inherent polysemy of words by determining the appropriate sense( s ) for each polysemous word in a given text .
+21
+It is considered to be an intermediate , but necessary step toward many NLP applications including machine translation and information extraction , which require the knowledge of word senses to achieve better performance .
+It is considered to be an intermediate , but necessary step for many NLP applications , including machine translation and information extraction , which[what does " which " refer to ? Machine translation ? Information extraction , or both ? Clarify] require the knowledge of word senses to perform better .
+22
+</p>
+</p>
+23
+<p>
+<p>
+24
+One major obstacle to large-scale and precise WSD is the data sparseness problem caused by the fine-grainedness of the sense distinction .
+One major obstacle for large-scale and precise WSD is solving the data sparseness problem caused by the fine-grained nature of sense distinction .
+25
+In order to resolve this problem , several semi-supervised approaches have been explored in recent years .
+In recent years in order to resolve this problem , several semi-supervised approaches have been explored .
+26
+Some researchers have addressed directly the scarcity of the training data , and explored the methods to obtain more tagged instances , by the co-training and self-training .
+Some researchers have addressed the scarcity of the training data directly , and have explored the methods to obtain more tagged instances , by co-training and self-training .
+27
+Other researchers have employed useful global information , such as the domain information extracted from unannotated corpora .
+Other researchers have employed useful global information , such as the domain information extracted from unannotated corpora .
+28
+Although the use of the global information has succeeded in dramatically increase the performance of WSD , there are much room left to examine the effectiveness of local or syntactic information .
+Although the use of global information has succeeded in dramatically increasing the performance of WSD , there is much room left to examine the effectiveness of local or syntactic information .
+29
+</p>
+</p>
+30
+<p>
+<p>
+31
+One of such information yet to be explored is the interdependencies of word senses .
+One such information yet to be explored , is the interdependency of word senses .
+32
+Although the use of local and syntactic information has been common in WSD , traditional approaches to WSD are based on the individual classification framework for each word , in which each word 's sense is treated independently , regardless of any interdependencies nor cooccurrences of word senses .
+Although the use of local and syntactic information has been common in WSD , traditional approaches to WSD are based on the individual classification framework for each word ; each word 's sense is treated independently , regardless of any interdependencies or cooccurrences of word senses .
+33
+As a result , the resulting sense assignment may not semantically consistent over the sentence .
+In turn , the resulting sense assignment may not be semantically consistent over the sentence .
+34
+To solve this problem is of great interest from both practical and theoretical perspectives .
+To solve this problem is of great interest from both a practical and theoretical viewpoint .
+35
+In this thesis , we present a WSD model that naturally handles all content words in a sentence .
+In this thesis , we present a WSD model that naturally handles all content words in a sentence .
+36
+We focus on the use of the interdependency of word senses , so that we can directly address the issue of semantic ambiguity of a whole sentence arose from the interaction of each word 's sense ambiguity .
+We focus on using the interdependency of word senses , so that we can directly address the issue of semantic ambiguity in a whole sentence that arose from the interaction of each word 's sense ambiguity . **[ <- this part is confusing .]
+37
+Specifically , we assume that there exist strong sense dependencies between a syntactic head and its dependents in the dependency tree , rather than between neighboring words in the sentence .
+Specifically , we assume that are strong sense dependencies between a syntactic head , and its dependents in the dependency tree , rather than between neighboring words of a sentence .
+38
+We confirm the appropriateness of this assumption by showing the superiority of the tree-structured models over the linear-chain models .
+We confirm the validity of this assumption , by showing the superiority of the tree-structured models over the linear-chain models .
+39
+</p>
+</p>
+40
+<p>
+<p>
+41
+Furthermore , we combine these sense dependency features with various coarse-grained sense tag sets .
+Furthermore , we combine these sense dependency features with various coarse-grained sense tag sets .
+42
+This is to relieve the data sparseness problem caused by the explosion of the number of features , which is roughly squared by the combination of two word senses .
+This is to relieve the data sparseness problem caused by the explosion in the number of features , which is roughly squared by the combination of two word senses .
+43
+The combined features also enable our model to work even for those words that do not appear in the training data , which the traditional individual classifiers cannot handle .
+The combined features also enable our model to work , even for words that do not appear in the training data , which traditional individual classifiers cannot handle .
+44
+</p>
+</p>
+45
+<p>
+<p>
+46
+As a machine learning method , we adopt the tree-structured conditional random fields ( T-CRFs ) .
+As a machine learning method , we adopt the tree-structured conditional random fields ( T-CRFs ) .
+47
+We solve WSD as a labeling problem to a sentence described as a dependency tree , where the vertices correspond to words and the edges correspond to the sense dependencies .
+We solve WSD as a labeling problem to a sentence described as a dependency tree , where the vertices correspond to the words , and the edges correspond to the sense dependencies .
+48
+In this model , the intensities of the sense dependencies are described as the weights of edge features .
+In this model , the intensities of the sense dependencies are described as the weights of edge features .
+49
+T-CRFs also enable us to incorporate various sense tag sets all together in a simple framework .
+T-CRFs also enable us to incorporate various sense tag sets all together into a simple framework .
+50
+</p>
+</p>
+51
+<p>
+<p>
+52
+In our experiments , three interesting results are found : the interdependency of word senses contribute to the improvement of WSD models , the combined features with coarse-grained sense tags work effectively , and the tree-structured model outperforms the linear-chain model .
+In our experiments , three interesting results are found : the interdependency of word senses contribute to the improvement of WSD models , the combined features with coarse-grained sense tags work effectively , and the tree-structured model outperforms the linear-chain model .
+53
+These results are confirmed on three data sets ( the SemCor corpus and the Senseval-2 and -3 English all-words task test sets ) and on two sense inventories ( WordNet synsets and supersenses ) .
+These results are confirmed on three data sets ( the SemCor corpus and the Senseval-2 and -3 English all-words task test sets ) , and on two sense inventories ( WordNet synsets and supersenses ) .
+54
+Our final model is shown to perform comparably with state-of-the-art WSD systems .
+Our final model is shown to perform comparably to state-of-the-art WSD systems .
+55
+</p>
+</p>
+56
+<p>
+<p>
+57
+The rest of the paper is organized as follows : In Section 2 , we describe background topics related to WSD .
+The rest of the paper is organized as follows : In Section 2 , we describe background topics related to WSD .
+58
+In Section 3 , we describe current problems of WSD , and related works .
+In Section 3 , we describe current problems of WSD , and related works .
+59
+In Section 4 , we describe our model with intuitive examples , and the machine learning method we use .
+In Section 4 , we describe our model with intuitive examples , and we describe the machine learning method that we use .
+60
+In Section 5 , 6 , and 7 , we present our experimental setup and results , and an in-depth analysis on the contribution of the sense dependency features .
+In Section 5 , 6 , and 7 , we present our experimental setup , the results , and an in-depth analysis on the contribution of the sense dependency features .
+61
+Finally , in Section 8 , we present concluding remarks .
+Finally , in Section 8 , we present our concluding remarks .
+62
+</p>
+</p>
+63
+</section>
+</section>
+64
+<section label = " Background " >
+<section label = " Background " >
+65
+<subsection label = " WordNet " >
+<subsection label = " WordNet " >
+66
+<p>
+<p>
+67
+The WordNet is a broad-coverage machine-readable dictionary ( MRD ) for English , which contains about 150 ,000 words .
+The WordNet is a broad-coverage machine-readable dictionary ( MRD ) for English , containing about 150 ,000 words .
+68
+It also serves as an ontology , in which various kinds of meta data , relations among words and senses , and well-organized hierarchical classification of word senses are defined .
+WordNet also serves as an ontology of various kinds of meta data , relations among words and senses , and a well-organized hierarchical classification of word senses that are defined .
+69
+In this paper , we always refer to the WordNet version 2 .0 unless otherwise noted .
+In this paper , we always refer to the WordNet version 2 .0 unless otherwise noted .
+70
+The statistical information of the WordNet 2 .0 is shown in Table 1 and 2 .
+The statistical information of the WordNet 2 .0 is shown in Table 1 and 2 .
+71
+</p>
+</p>
+72
+<p>
+<p>
+73
+In the WordNet , nouns and verbs are organized in hierarchical structures with IS-A ( hypernym-hyponym ) relationships among words , as shown in Figure 1 .
+As shown in Figure 1 , in WordNet , nouns and verbs are organized into hierarchical structures with IS-A ( hypernym-hyponym ) relationships among words , .
+74
+Nouns have a far deeper structure than verbs , while that of verbs is transversely developed .
+Nouns have a far deeper structure than verbs do , while that the structure of verbs is transversely developed .
+75
+All nouns and verbs except some top-level concepts are classified into primitive groups called supersenses , which we describe later .
+All nouns and verbs , with the exception of some top-level concepts , are classified into primitive groups called supersenses , which we will describe later .
+76
+Figure 1 shows the WordNet hierarchical structure for the first sense ( financial bank ) of a noun bank , where each line shows a synset with the list of words headed by its supersense label , and an arrow denotes that two synsets are in an IS-A relation .
+Figure 1 shows the WordNet hierarchical structure for the first sense ( financial bank ) of a noun bank , where each line indicates a synset with the list of words headed by its supersense label ; an arrow denotes that the two synsets are in an IS-A relation .
+77
+The synset {group#1 , grouping#1} is a broad semantic category that governs the supersense noun group .
+The synset {group#1 , grouping#1} is a broad semantic category that governs the supersense group noun .group .
+78
+The lower synsets {social group#1} , {organization#1 , organisation#3} , and {institution#1 , establishment#2} are the more specific synsets , which in this paper we call the first , second , and third general synsets .
+The lower synsets {social group#1} , {organization#1 , organisation#3} , and {institution#1 , establishment#2} are the more specific synsets , which in this paper we call the first , second , and third general synsets .
+79
+Note that since the organizations of adjectives and adverbs are far different from those of nouns and verbs , we use this hierarchical information for only nouns and verbs .
+Note that since the organizations of adjectives and adverbs are very different from those of nouns and verbs , we use this hierarchical information for only nouns and verbs .
+80
+</p>
+</p>
+81
+</subsection>
+</subsection>
+82
+<section label = " Supersense " >
+<section label = " Supersense " >
+83
+<p>
+<p>
+84
+A supersense is a coarse-grained semantic category , with which each noun or verb synset in WordNet is associated .
+A supersense is a coarse-grained semantic category , with which each noun or verb synset in WordNet is associated .
+85
+Noun and verb synsets are associated with 26 and 15 categories , respectively .
+Noun and verb synsets are associated with 26 and 15 categories , respectively .
+86
+The coarse-grained sets of sense labels are easily recognizable , and enable us to build a high-performance and robust tagger with small training data .
+The coarse-grained sets of sense labels are easily recognizable , and enable us to build a high-performance and robust tagger with small training data .
+87
+Hence , we can expect them to act as a good smoothing feature for WSD , which would make up for the sparseness of features associated with finer-grained senses .
+Hence , we can expect them to act as a good smoothing feature for WSD , which would make up for the problem of the sparseness of features , commonly associated with finer-grained senses .
+88
+The effectiveness of using supersenses for WSD has recently been shown by several researchers ( e.g. , , and ) .
+The effectiveness of using supersenses for WSD has recently been shown by several researchers ( e.g. , , and ) .
+89
+The lists of supersenses are shown below .
+The lists of supersenses are shown below .
+90
+</p>
+</p>
+91
+<p>
+<p>
+92
+- Noun supersense : act , animal , artifact , attribute , body , cognition , communication , event , feeling , food , group , location , motive , object , quantity , phenomenon , plant , possession , process , person , relation , shape , state , substance , time , Tops
+- Noun supersense : act , animal , artifact , attribute , body , cognition , communication , event , feeling , food , group , location , motive , object , quantity , phenomenon , plant , possession , process , person , relation , shape , state , substance , time , Tops
+93
+</p>
+</p>
+94
+<p>
+<p>
+95
+- Verb supersense : body , change , cognition , communication , competition , consumption , contact , creation , emotion , perception , possession , social , stative , weather
+- Verb supersense : body , change , cognition , communication , competition , consumption , contact , creation , emotion , perception , possession , social , stative , weather
+96
+</p>
+</p>
+97
+</subsection>
+</subsection>
+98
+<subsection label = " Sense frequency information " >
+<subsection label = " Sense frequency information " >
+99
+<p>
+<p>
+100
+Since the data sparsity has been a significant problem in WSD , the sense frequency information is necessary to achieve good performance .
+Since data sparsity has been a significant issue in WSD , the sense frequency information is necessary in achieving a good performance .
+101
+In this section , we introduce two kinds of the sense frequency information .
+In this section , we introduce two kinds of sense frequency information .
+102
+</p>
+</p>
+103
+<p>
+<p>
+104
+A sense ranking is the ranking of a sense of a word in the WordNet .
+A sense ranking is the ranking of a sense of a word in the WordNet .
+105
+Since senses of a word are ordered according to frequency , the sense ranking acts as a useful feature offering a preference for frequent senses .
+Since senses of a word are ordered according to frequency , the sense ranking acts as a useful feature that offers a preference for frequent senses .
+106
+It is also important as a back-off feature , which enables our model to output the first ( most frequent ) sense when no other features are active for that word .
+It is also important as a back-off feature , which enables our model to output the first ( most frequent ) sense when no other features are active for that word .
+107
+The first sense classifier is known as a strong baseline in WSD , which can be even considered to be a good alternative to WSD .
+The first sense classifier is known as a strong baseline in WSD , which can even be considered as a good alternative to WSD .
+108
+In our experiment , our first sense classifier achieved the accuracies 65 .3% for the Senseval-2 English all-words task data , and 63 .4% for the Senseval-3 English all-words task data .
+In our experiment , our first sense classifier achieved the accuracies 65 .3% for the Senseval-2 English all-words task data , and 63 .4% for the Senseval-3 English all-words task data .
+109
+Since the sense ranking in the WordNet is based on the word frequency in the SemCor , this baseline performs far better on the SemCor : 75 .9% for the brown1 section and 74 .3% for the brown2 section .
+Since the sense ranking in the WordNet is based on the word frequency in the SemCor , this baseline performs far better on the SemCor : 75 .9% for the brown1 section and 74 .3% for the brown2 section .
+110
+</p>
+</p>
+111
+<p>
+<p>
+112
+Alternatively , we can consider incorporating the first sense of each word as a feature .
+Alternatively , we can consider incorporating the first sense of each word as a feature .
+113
+Instead of uniformly predicting the distribution of sense frequencies according to their sense ranking , it can capture the conditional probability of each sense over the first sense .
+Instead of uniformly predicting the distribution of sense frequencies according to their sense ranking , it can capture the conditional probability of each sense over the first sense .
+114
+It is considered to be a good feature that reflects the sense frequency information when sufficient training data is available for every sense .
+When sufficient training data is available for every sense this method is considered to be a good feature that reflects the sense frequency information .
+115
+For this reason , we use this first sense feature instead of the ranking feature , for the supersense-based evaluation .
+For such a reason , we use this first sense feature instead of the ranking feature , for the supersense-based evaluation .
+116
+</p>
+</p>
+117
+</subsection >
+</subsection >
+118
+</section >
+</section >
+119
+<section label = " Problems and Related Works " >
+<section label = " Problems and Related Works " >
+120
+<subsection label = " Word sense dependencies " >
+<subsection label = " Word sense dependencies " >
+121
+<p>
+<p>
+122
+For the unsupervised WSD , the use of sense dependencies has been a common method .
+For the unsupervised WSD , the use of sense dependencies has been a common method .
+123
+introduces an unsupervised graph-based algorithm , and showed a significant superiority of the sequence labeling model over the individual label assignment .
+introduces an unsupervised graph-based algorithm , and shows a significant improvement over the sequence labeling model over the individual label assignment .
+124
+built a model based on various word semantic similarity measures and graph centrality algorithms , which also used the graph structure incorporating the word-sense dependencies .
+built a model based on various word semantic similarity measures , and graph centrality algorithms , which also used the graph structure that incorporates the word-sense dependencies .
+125
+Thus , the effectiveness of sense dependencies for the unsupervised WSD has been shown by several researches .
+Thus , the effectiveness of sense dependencies for unsupervised WSD has been shown by several researches .
+126
+</p>
+</p>
+127
+<p>
+<p>
+128
+On the other hand , the traditional approach to the supervised WSD is to solve an independent classification problem for each word .
+On the contrary , the traditional approach to supervised WSD is to solve an independent classification problem for each word .
+129
+This approach has been developed along with the researches based on the lexical sample task in the Sensevals .
+This approach has been developed along with research based on the lexical sample task in the Sensevals .
+130
+However , as we described in Section 1 , this approach cannot deal with the interdependencies among word senses , and may output a semantically inconsistent assignment of senses .
+However , as described in Section 1 , this approach cannot handle the interdependencies among word senses , and may output a semantically inconsistent assignment of senses .
+131
+</p>
+</p>
+132
+<p>
+<p>
+133
+Recently , with the growing interest on the all-words task , a few supervised WSD systems have incorporated the sense dependencies .
+Recently , with the growing interest in the all-words task , a few supervised WSD systems have incorporated the sense dependencies .
+134
+SenseLearner and SuperSenseLearner incorporate sequencial sense dependencies into the supervised WSD frameworks .
+SenseLearner and SuperSenseLearner incorporate sequential sense dependencies into the supervised WSD frameworks .
+135
+They no longer treat each word sense individually , assuming the sense dependencies between adjacent words .
+They no longer treat each word sense individually , assuming the sense dependencies between adjacent words .
+136
+also took a sequencial tagging approach for the disambiguation of WordNet supersenses .
+also took a sequential tagging approach for the disambiguation of WordNet supersenses . [<-This sentence is a bit confusing]
+137
+However , the dependencies they considered are rather simple ones between the adjacent words , and between either WordNet synsets or supersenses .
+The dependencies that they considered , however , are rather simple ones between the adjacent words , and between either WordNet synsets or supersenses .
+138
+Note additionally that they do not mention how and how much they contribute to the improvement of supervised WSD .
+Note additionally , that they do not mention the means or the quality of contribution in improving supervised WSD .
+139
+</p>
+</p>
+140
+<p>
+<p>
+141
+One interesting model related is the exponential family model proposed by , which captures the occurrences and co-occurrences of words and senses in a joint probability distribution .
+The exponential family model proposed by , captures the occurrences and co-occurrences of words and senses in a joint probability distribution .
+142
+Although they focused on the use of the co-occurrences of word senses rather than the dependencies , they clarified the contribution of sense co-occurrences to the supervised WSD .
+Although they focused on the use of the co-occurrences of word senses rather than that of dependencies , they clarified the contribution of sense co-occurrences to the supervised WSD .
+143
+</p>
+</p>
+144
+<p>
+<p>
+145
+In this context , it is of an interest if the sense dependencies on a syntactic structure , rather than on a linear chain , works effectively or not .
+In this context , it is of interest to note whether the sense dependencies on a syntactic structure , rather than on a linear chain , works effectively or not .**[why ?]
+146
+To the extent of our knowledge , there exists no model that considers the interdependencies of word senses on a syntactic tree .
+To the extent of our knowledge , there exists no model that considers the interdependencies of word senses on a syntactic tree .
+147
+Also , despite the approaches described above , the contribution of sense dependencies for the supervised WSD has not explicitly examined thus far .
+Furthermore , despite the approaches described above , the contribution of sense dependencies for the supervised WSD has not been explicitly examined thus far .
+148
+These questions are clarified by our research .
+These questions are clarified by our research .
+149
+</p>
+</p>
+150
+<subsection>
+<subsection>
+151
+<subsection label = " The use of coarse-grained tag sets " >
+<subsection label = " The use of coarse-grained tag sets " >
+152
+<p>
+<p>
+153
+In Section 1 , we presented one of the most significant problems in WSD - the data sparsity .
+In Section 1 , we presented one of the most significant issues in WSD - the data sparsity problem .
+154
+This problem may even be magnified when we consider the interdependencies of word senses , since the number of features is roughly squared by the combination of two word senses .
+This problem may even be magnified , when taking into consideration the interdependencies of word senses , since the number of features is roughly squared by the combination of two word senses .
+155
+In order to relieve this problem , we use the hierarchical information in the WordNet , including the superordinate words and supersenses , which we describe in Section 2 .1 and 2 .2 .
+In order to relieve this problem , we use the hierarchical information in the WordNet , including the superordinate words and supersenses , as described in Section 2 .1 and 2 .2 .
+156
+The use of the hierarchical information has been motivated by several researches .
+The use of hierarchical information has been motivated by several different researches .
+157
+For example , a WSD system by , which was ranked second in the Senseval-3 , consists of two models : the first model applied to words seen in the training data , and the second model that performs a generalized disambiguation process for words unseen in the data by using the hierarchical information in the WordNet .
+For example , a WSD system by , ranked second in the Senseval-3 , consists of two models : the first model applied to words seen in the training data , and the second model performs a generalized disambiguation process for words unseen in the data , by using the hierarchical information in the WordNet .
+158
+</p>
+</p>
+159
+<p>
+<p>
+160
+The fine granularity of the WordNet synsets is not just a major obstacle to high-performance WSD , but is sometimes too fine-grained even for a human to disambiguate .
+The fine granularity of the WordNet synsets is not just a major obstacle in achieving a high-performance WSD , but is sometimes too fine-grained even for a human to disambiguate .
+161
+This is reflected in the low inter-annotator agreement of sense tagging ( typically around 70% ) , which implies that WSD models are unlikely to perform better than this accuracy .
+This is reflected in the low inter-annotator agreement of sense tagging ( typically around 70% ) , which implies that WSD models would be unlikely to perform better than the accuracy achieved .
+162
+Also , this fine-grainedness is reported to be not appropriate for many NLP applications .
+Also , this fine-grained nature is reported to be inappropriate for many NLP applications .
+163
+For example , reported that coarse-grained sense distinctions are sufficient for several NLP applications .
+For example , reported that coarse-grained sense distinctions are sufficient for several NLP applications .
+164
+Especially , the use of the supersenses has recently been investigated by , and receiving much attention in the WSD field .
+In particular , the use of the supersenses has recently been investigated by , and has received much attention in the WSD field .
+165
+In this case , the inter-annotator agreements are turned out to reach around 90% .
+In this case , the inter-annotator agreements have reached nearly90% .
+166
+For this reason , we use as our sense inventory the WordNet supersenses as well as the synsets .
+For this reason , we use the WordNet supersenses , as well as the synsets as our sense inventory .
+167
+</p>
+</p>
+168
+</subsection >
+</subsection >
+169
+</section>
+</section>
+170
+<section label = " WSD Model with Tree-Structured CRFs " >
+<section label = " WSD Model with Tree-Structured CRFs " >
+171
+<subsection label = " Approach " >
+<subsection label = " Approach " >
+172
+<p>
+<p>
+173
+In Section 3 , we described two problems in the WSD field .
+In Section 3 , we described two problems in the WSD field .
+174
+One is the independent classification of each word 's sense regardless of the sense dependencies among words .
+One problem is the independent classification of each word 's sense , regardless of the sense dependencies among words .
+175
+The other is the scarcity of the training data arose from the fine granularity of the sense distinction .
+The other problem is the scarcity of the training data that arose from the fine granularity of the sense distinction .
+176
+We address these problems by the combination of two methods .
+We address these problems by combining two methods .
+177
+</p>
+</p>
+178
+<p>
+<p>
+179
+The first is the use of the syntactic dependencies of word senses on a dependency tree .
+The first [method ?] is the use of the syntactic dependencies of word senses on a dependency tree .
+180
+Particularly , we assume that there exist strong dependencies of word senses between a head and its dependents in the dependency tree , rather than between neighboring words in the sentence .
+In particular , we assume that there are strong dependencies of word senses between a head and its dependents in the dependency tree , rather than between neighboring words in the sentence .
+181
+Even though some models so far have considered the dependencies between adjacent words , no one has focused on the syntactic dependencies of word senses .
+Even though some models so far have considered the dependencies between adjacent words , no one has focused on the syntactic dependencies of word senses .
+182
+Thus , to the extent of our knowledge , our model is the first WSD model that incorporates the sense dependencies based on a syntactic tree .
+Thus , to the extent of our knowledge , our model is the first WSD model that incorporates the sense dependencies based on a syntactic tree .
+183
+</p>
+</p>
+184
+<p>
+<p>
+185
+The second is the combination of various coarse-grained sense tag sets with the WordNet synsets .
+The second [method ?] combines various coarse-grained sense tag sets with the WordNet synsets .
+186
+This enables our model to work for unseen words in the training data , and is expected to relieve the data sparseness problem .
+This enables our model to work for unseen words in the training data , and is expected to relieve the data sparseness problem .
+187
+In our experiment , these tag sets are used in two ways .
+In our experiment , these tag sets are used in two ways .
+188
+One way is to use them directly as the sense inventory instead of a finer sense inventory .
+One way directly uses them as the sense inventory , instead of as a finer sense inventory .
+189
+In our supersense-based model , we use the supersenses as the sense inventory , and each word sense is disambiguated at the granularity level of this tag set .
+In our supersense-based model , we use the supersenses as the sense inventory , and each word sense is disambiguated at the granularity level of this tag set .
+190
+This method serves us much more training instances for each coarser sense , while we can no longer distinguish finer senses .
+This method serves us many more training instances for each coarser sense , while we can no longer distinguish finer senses .
+191
+The other is to use them in combination with finer sense tag sets .
+The other way uses them**[<-define " them " ] in combination with finer sense tag sets .
+192
+In our synset-based model , three coarse-grained label sets are incorporated in combination with the fine-grained WordNet synsets .
+In our synset-based model , three coarse-grained label sets are incorporated in combination with the fine-grained WordNet synsets .
+193
+Although the sense disambiguation is still based on the finer senses , the coarser sense tags will help the discrimination of the finer senses , serving generalized information for each fine-grained sense .
+Although sense disambiguation is still based on the finer senses , the coarser sense tags will help the discrimination of the finer senses , thereby serving generalized information for each fine-grained sense .
+194
+This approach has been taken in several hierarchical WSD methods , but never combined with the sense dependencies as we use .
+This approach has been taken in several hierarchical WSD methods , but has never been combined with the sense dependencies in a way that have used them .
+195
+</p>
+</p>
+196
+<p>
+<p>
+197
+The process of WSD is summarized as below .
+The process of WSD is summarized below .
+198
+At the beginning , we parse target sentences with a dependency parser , and compact the outputted trees in order to capture informative dependencies among words , as described in Section 4 .3 .
+At the beginning , we parse target sentences with a dependency parser , and compact the outputted trees in order to capture informative dependencies among words , as described in Section 4 .3 .
+199
+Then , the WSD task is regarded as a labeling task on the tree structures .
+Then , the WSD task is regarded as a labeling task on the tree structures .
+200
+By using T-CRFs , we can model this as the maximization of the probability of word sense trees , given scores for vertices and edges .
+By using T-CRFs , we can model this as the maximization of the probability of word sense trees , given the scores for vertices and edges .
+201
+In the training phase , all vertex features and edge features are extracted using the gold-standard senses , and the weight vectors for them are optimized over the training data .
+In the training phase , all vertex features and edge features are extracted using the gold-standard senses , and the weight vectors are optimized over the training data .
+202
+Finally , in the testing phase , all possible combinations of senses are evaluated for each sentence , and the most probable sense assignment is selected by evaluating the equation 3 .
+Finally , in the testing phase , all possible combinations of senses are evaluated for each sentence , and the most probable sense assignment is selected by evaluating the equation 3 .
+203
+</p>
+</p>
+204
+</subsection >
+</subsection >
+205
+<subsection label = " Tree-Structured Conditional Random Fields " >
+<subsection label = " Tree-Structured Conditional Random Fields " >
+206
+<p>
+<p>
+207
+Conditional Random Fields ( CRFs ) are graph-based probabilistic discriminative models proposed by .
+Conditional Random Fields ( CRFs ) are graph-based probabilistic discriminative models proposed by .
+208
+CRFs are the state-of-the-art methods for sequence labeling problems in many NLP tasks .
+CRFs are state-of-the-art methods for sequence labeling problems in many NLP tasks .
+209
+CRFs construct a conditional model / MATH from a set of paired observations and label sequences .
+CRFs construct a conditional model / MATH from a set of paired observations and label sequences .
+210
+The conditional probability of a label sequence / MATH conditioned on a data sequence / MATH is given by / MATH	 , where / MATH and / MATH are the feature vectors for an edge and a vertex , / MATH and / MATH are the weight vectors for them , / MATH and / MATH are the set of components of / MATH associated with an edge / MATH and a vertex / MATH , and / MATH is the partition function which constrains the sum of all the probabilities to be 1 .
+The conditional probability of a label sequence / MATH conditioned on a data sequence / MATH is given by / MATH	 , where / MATH and / MATH are the feature vectors for an edge and a vertex , / MATH and / MATH are the weight vectors , / MATH and / MATH are the set of components of / MATH associated with an edge / MATH and a vertex / MATH , and / MATH is the partition function that constrains the sum of all the probabilities to be 1 .
+211
+</p>
+</p>
+212
+<p>
+<p>
+213
+Tree-structured CRFs ( T-CRFs ) are different from widely used linear-chain CRFs in that the random variables are organized in a tree structure ( acyclic graph ) .
+Tree-structured CRFs ( T-CRFs ) are different from widely used linear-chain CRFs , in that the random variables are organized in a tree structure ( acyclic graph ) .
+214
+Hence , we can consider them appropriate for modeling the syntactic dependencies of word senses , which cannot be represented by linear structures .
+Hence , we can consider them relevant in modeling the syntactic dependencies of word senses , which cannot be represented by linear structures .
+215
+In this model , the optimal label assignment / MATH for an observation sequence / MATH is then calculated by / MATH , where / MATH denotes a vertex corresponding to a word while / MATH denotes the vertex corresponding to its parent in the dependency tree .
+In this model , the optimal label assignment / MATH for an observation sequence / MATH is then calculated by / MATH , where / MATH denotes a vertex corresponding to a word , while / MATH denotes the vertex corresponding to its parent in the dependency tree .
+216
+If we interpret / MATH as the vertex associated with the preceding word in a sentence , it reduces to a linear-chain CRF .
+If we interpret / MATH as the vertex associated with the preceding word in a sentence , it delineates into a linear-chain CRF .
+217
+Although T-CRFs are relatively new models , they have already been applied to several NLP tasks , such as semantic role labeling and semantic annotation , proving to be useful in modeling the semantic structure of a text .
+Although T-CRFs are relatively new models , they have already been applied to several NLP tasks , such as semantic role labeling and semantic annotation , proving to be useful in modeling the semantic structure of a text .
+218
+Our model is the first application of T-CRFs to WSD .
+Our model is the first application of T-CRFs to WSD .
+219
+</p>
+</p>
+220
+</subsection>
+</subsection>
+221
+<subsection label = " Graph construction " >
+<subsection label = " Graph construction " >
+222
+<p>
+<p>
+223
+In this section , we introduce a method to build graph structures on which CRFs are constructed .
+In this section , we introduce the method of building graph structures on which CRFs are constructed .
+224
+First , we describe how to construct a tree used in the tree-structured model .
+First , we describe how to construct a tree used in the tree-structured model .
+225
+Let us consider the synset-level disambiguation of the following sentence .
+Let us consider the synset-level disambiguation of the following sentence .
+226
+</p>
+</p>
+227
+<p>
+<p>
+228
+( i ) - The man destroys confidence in banks .
+( i ) - The man destroys confidence in banks .
+229
+</p>
+</p>
+230
+<p>
+<p>
+231
+At the beginning , we parse this sentence with the Sagae and Tsujii 's dependency parser , which outputs parsed trees in the CoNLL-X dependency format .
+In the beginning , we parse this sentence with Sagae and Tsujii 's dependency parser , which outputs parsed trees in the CoNLL-X dependency format .
+232
+The left-hand side of Figure 2 shows the parsed tree for Sentence ( i ) , where each child-parent edge denotes a directed dependency of words , and the labels on the edges denote the dependency types .
+The left-hand side of Figure 2 shows the parsed tree for Sentence ( i ) , where each child-parent edge denotes a directed dependency of words , and the labels on the edges denote the dependency types .
+233
+This dependency tree describes dependencies among all words in a sentence , including content words and function words .
+This dependency tree describes dependencies among all words in a sentence , including content words and function words .
+234
+However , some of these dependencies are not informative for our WSD task , because our task does not focus on the disambiguation function words .
+However , some of these dependencies are not informative for our WSD task , because our task does not focus on the disambiguation function words .
+235
+For example , on the right-hand side of Figure 2 , the dependencies among confidence-in-bank are splitted into the two dependencies confidence-in and in-bank ; Hence our model cannot capture the direct dependency between confidence and bank .
+For example , on the right-hand side of Figure 2 , the dependencies among confidence-in-bank are split into the two dependencies confidence-in and in-bank ; hence our model cannot capture the direct dependency between confidence and bank .
+236
+One way to resolve this problem is to use higher-order ( semi-Markov ) dependencies , but this may drastically increase the computational cost .
+One way to resolve this problem is to use higher-order ( semi-Markov ) dependencies , but this may drastically increase the computational cost .
+237
+For this reason , for the synset-based model , we convert the outputted dependency tree into a tree of content words , as exemplified on the right-hand side of Figure 2 .
+Thus , for the synset-based model , we convert the outputted dependency tree into a tree of content words , as exemplified on the right-hand side of Figure 2 .
+238
+In this process , the function words are removed from the tree , and their parent and child vertices are directly connected with the dependency labels of the uppermost edge in the original tree .
+In this process , the function words are removed from the tree , and their parent and child vertices are directly connected with the dependency labels of the uppermost edge in the original tree .
+239
+Then , on the right-hand side of Figure 2 , we can see that the dependency between confidence and bank is now described as a direct edge .
+Then , on the right-hand side of Figure 2 , the dependency between confidence and bank is now described as a direct edge .
+240
+Thus , by the compaction of the trees , our model can capture more useful dependencies among word senses .
+By the compaction of the trees , therefore , our model can capture more useful dependencies among word senses .
+241
+</p>
+</p>
+242
+<p>
+<p>
+243
+Note that for the supersense-based model , we further convert the tree into a tree of nouns and verbs , because supersenses are defined for only these two parts of speech .
+For the supersense-based model , we further convert the tree into a tree of nouns and verbs , because supersenses are defined for only these two parts of speech .
+244
+The inclusion of removed words and dependency relation labels are performed in the same manner as in the synset-based model , and the tree on the right hand side of Figure 2 in this case remains unchanged because the sentence does not contain any adjectives nor adverbs .
+The inclusion of removed words and dependency relation labels are performed in the same manner as in the synset-based model ; the tree on the right hand side of Figure 2 in this case remains unchanged , because the sentence does not contain any adjectives nor adverbs .
+245
+</p>
+</p>
+246
+<p>
+<p>
+247
+For the linear-chain models , we do not need to parse a sentence .
+For the linear-chain models , parsing a sentence is unnecessary .
+248
+At first , we connect every adjacent words with an edge , and build a linear chain .
+At first , we connect every adjacent words with an edge , and build a linear chain .
+249
+Next , as the same reason for the tree-structured case , we remove from the graph those words that we do not need to disambiguate , in order to capture the direct dependencies between content words ( or nouns and verbs in the supersense-based model ) .
+Next , as the same reason as for the tree-structured case , we remove those words that we do not need to disambiguate from the graph , in order to capture the direct dependencies between content words ( or nouns and verbs in the supersense-based model ) .
+250
+Thus , the process of the tree compaction is performed in the same manner , as described in Figure 3 .
+Thus , the process of the tree compaction[ ? ?] is performed in the same manner , as described in Figure 3 .
+251
+</p>
+</p>
+252
+</subsection>
+</subsection>
+253
+<subsection label = " Example " >
+<subsection label = " Example " >
+254
+<p>
+<p>
+255
+In this section , let us present an intuitive illustration of how our model works .
+In this section , let us present an intuitive illustration of how our model works .
+256
+Here , we focus on three words destroy , confidence , and bank in Sentence ( i ) , and for simplicity consider only two major senses for each word as described in Table 3 , so that the number of possible sense assignments is in this case / MATH .
+Here , we focus on three words : destroy , confidence , and bank in Sentence ( I ) . For simplicity , we consider only two major senses for each word as described in Table 3 , so that the number of possible sense assignments is / MATH .
+257
+After an appropriate compaction of the dependency tree , relationships among destroy , confidence , and bank , are represented as direct connections .
+After an appropriate compaction of the dependency tree , relationships among destroy , confidence , and bank , are represented as direct connections .
+258
+Now , our objective is to determine the correct assignment of senses to these words , given the trained weight vector for features .
+Now , our objective is to determine the correct assignment of senses to these words , given the trained weight vector for features .
+259
+We conduct this by evaluating the scores for all possible assignment of senses .
+We conduct this by evaluating the scores for all possible assignment of senses .
+260
+</p>
+</p>
+261
+<p>
+<p>
+262
+Let us start from the dependency between confidence and bank .
+Let us start from the dependency between confidence and bank .
+263
+The first intuition would be that confidence( n )#2 is strongly related to a group or an institution ( financial bank ) but not related to natural landscape ( river bank ) , while confidence( n )#1 depends mostly on persons and not on other entities .
+The first intuition would be that confidence( n )#2 is strongly related to a group or an institution ( financial bank ) , but is unrelated to a natural landscape ( river bank ) , while confidence( n )#1 depends mostly on persons and not on other entities .
+264
+Because bank does not have a " person " meaning , the weight of confidence( n )#2-bank( n )#1 is expected to be higher than other possible sense bigrams .
+Because bank does not have a " person " meaning , the weight of confidence( n )#2-bank( n )#1 is expected to be higher than for other possible sense bigrams .
+265
+A similar argument can be made for the dependency between destroy and confidence .
+A similar argument can be made for the dependency between destroy and confidence .
+266
+We can assume that destroy( v )#1 is usually associated with real objects , whereas destroy( v )#2 can take either a real entity or an abstract thing as its direct object .
+We can assume that destroy( v )#1 is usually associated with real objects , whereas destroy( v )#2 can take either a real entity or an abstract thing as its direct object .
+267
+Given confidence does not have an " object " meaning , the weights of destroy( v )#2-confidence( n )#1 and destroy( v )#2-confidence( n )#2 would be the largest among others .
+Given confidence does not have an " object " meaning , the weights of destroy( v )#2-confidence( n )#1 and destroy( v )#2-confidence( n )#2 would be the largest [largest what ?] among others .
+268
+Finally , given all scores for these sense dependencies , we can evaluate the overall score for the sentence , and see / MATHdestroy( v )#2 , confidence( n )#2 , bank( n )#1 / MATH is the most probable assignment of senses .
+Finally , given all scores for these sense dependencies , we can evaluate the overall score for the sentence , and see / MATHdestroy( v )#2 , confidence( n )#2 , bank( n )#1 / MATH is the most probable assignment of senses .
+269
+Practically , specific bigrams of synsets such as confidence( n )#2-bank( n )#1 and destroy( v )#2-confidence( n )#2 may not appear in the training data .
+Practically , specific bigrams of synsets such as confidence( n )#2-bank( n )#1 and destroy( v )#2-confidence( n )#2 may not appear in the training data .
+270
+In this case , sense bigrams combined with coarser sense labels work effectively .
+In this case , sense bigrams combined with coarser sense labels work effectively .
+271
+For example , if there exist synset bigrams such as destroy( v )#2-affection( n )#1 in the training data , the model can still perform the disambiguation process properly by considering a generalized synset-supersense bigram destroy( v )#2-noun .feeling .
+For example , if there are synset bigrams such as destroy( v )#2-affection( n )#1 in the training data , the model can still perform the disambiguation process properly by considering a generalized synset-supersense bigram destroy( v )#2-noun .feeling .
+272
+The detailed description of sense bigrams are given in Section 4 .7 .
+The detailed description of sense bigrams are provided in Section 4 .7 .
+273
+</p>
+</p>
+274
+</subsection>
+</subsection>
+275
+<subsection label = " Sense Labels " >
+<subsection label = " Sense Labels " >
+276
+<p>
+<p>
+277
+Using the information in the WordNet , we make use of four sense labels for each word : a synset / MATH , two general synsets / MATH and / MATH , and a supersense / MATH , which we introduced in Section 2 .
+Using the information in the WordNet , we make use of four sense labels for each word : a synset / MATH , two general synsets / MATH and / MATH , and a supersense / MATH , which we introduced in Section 2 .
+278
+These labels represent word senses at various levels , and to be combined with the vertex and edge features .
+These labels represent word senses at various levels , and are to be combined with the vertex and edge features .
+279
+We hereinafter distinguish each sense label by putting one of the prefixes WS , G1 , G2 , and SS , as in WS :bank#1 and SS :noun .group .
+We hereafter distinguish each sense label by putting one of the prefixes WS , G1 , G2 , and SS , as in WS :bank#1 and SS :noun .group .
+280
+The examples of these sense labels are shown in Table 4 .
+The examples of these sense labels are shown in Table 4 .
+281
+</p>
+</p>
+282
+<p>
+<p>
+283
+In our model , we combine the synset and supersense labels with the vertex features , and all four sense labels with the edge features .
+In our model , we combine the synset and supersense labels with the vertex features , and all four sense labels with the edge features .
+284
+We denote the set of sense labels for vertex features by / MATH , and the one for edge features by / MATH .
+We denote the set of sense labels for vertex features by / MATH , and the one for edge features by / MATH .
+285
+Each of these sense labels is combined with the contextual information in the vertex features , whereas all possible combinations of two sense labels comprise the edge features .
+Each of these sense labels is combined with the contextual information in the vertex features , whereas all possible combinations of two sense labels comprise the edge features .
+286
+</p>
+</p>
+287
+</subsection >
+</subsection >
+288
+<subsection label = " Vertex features " >
+<subsection label = " Vertex features " >
+289
+<subsubsection label = " Synset-based model " >
+<subsubsection label = " Synset-based model " >
+290
+<p>
+<p>
+291
+We implement as vertex features a set of typical contextual features widely used in a lot of supervised WSD models .
+We implement as vertex features a set of typical contextual features widely used in many supervised WSD models .
+292
+Most of these features are those used by with the exception of the syntactic features .
+Most of these features are those used by with the exception of the syntactic features .
+293
+</p>
+</p>
+294
+<p>
+<p>
+295
+In order to see whether the sense dependency features are certainly effective or not , we include as vertex features the word forms , lemmas , and parts of speech of both the parent and the child words in the dependency tree .
+In order to see the efficiency of sense dependency features , we include as vertex features the word forms , lemmas , and parts of speech of both the parent and the child words in the dependency tree .
+296
+These features provide the syntactic information of the parent and child words , but are not semantically disambiguated .
+These features provide the syntactic information of the parent and child words , but are not semantically disambiguated .
+297
+Therefore , if the sense bigram features work effectively over these features , it clearly shows that there exist instances that cannot be disambiguated without considering the interdependency of word senses .
+Therefore , if the sense bigram features work effectively over these features , it clearly shows that there exist instances that cannot be disambiguated without considering the interdependency of word senses .
+298
+The list of vertex features also includes the information of both the preceding and following words , which in the linear-chain model plays the same role as the parent and child information in the tree-structured model .
+The list of vertex features also includes the information of both the preceding and following words , which in the linear-chain model plays the same role as the parent and child information in the tree-structured model .
+299
+</p>
+</p>
+300
+<p>
+<p>
+301
+Below is the list of contextual information used for the vertex features in the synset-based model .
+Below is the list of contextual information used for the vertex features in the synset-based model .
+302
+We refer to these features as / MATH .
+We refer to these features as / MATH .
+303
+</p>
+</p>
+304
+<p>
+<p>
+305
+- Word form ( WF ) : word form as it appears in a text .
+- Word form ( WF ) : word form as it appears in a text .
+306
+</p>
+</p>
+307
+<p>
+<p>
+308
+- Global context ( GC ) : bag-of-words within a 60-word window .
+- Global context ( GC ) : bag-of-words within a 60-word window .
+309
+</p>
+</p>
+310
+<p>
+<p>
+311
+- Local PoS ( LP ) : / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , and / MATH , where / MATH in / MATH denotes the relative position to the target word .
+- Local PoS ( LP ) : / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , and / MATH , where / MATH in / MATH denotes the relative position to the target word .
+312
+</p>
+</p>
+313
+<p>
+<p>
+314
+- Local context ( LC ) : / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , and / MATH , where / MATH denotes the word at the relative position / MATH , and / MATH the n-gram from the relative position / MATH to / MATH .
+- Local context ( LC ) : / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , / MATH , and / MATH , where / MATH denotes the word at the relative position / MATH , and / MATH the n-gram from the relative position / MATH to / MATH .
+315
+</p>
+</p>
+316
+<p>
+<p>
+317
+- Syntactic context ( SC ) : word forms , lemmas , and parts of speech of the parent and child words .
+- Syntactic context ( SC ) : word forms , lemmas , and parts of speech of the parent and child words .
+318
+</p>
+</p>
+319
+<p>
+<p>
+320
+Using this contextual information and the set of vertex labels / MATH , we construct a set of features on a vertex / MATH by / MATH .
+Using this contextual information , and the set of vertex labels / MATH , we construct a set of features on a vertex / MATH by / MATH .
+321
+Additionally , we include the sense ranking feature ( see Section 2 .3 for detail ) .
+Additionally , we include the sense ranking feature ( see Section 2 .3 for detail ) .
+322
+Note that this feature is not combined with any sense labels nor contextual information .
+Note that this feature is not combined with any sense label nor with any contextual information .
+323
+</p>
+</p>
+324
+</subsubsection >
+</subsubsection >
+325
+<subsubsection label = " Supersense-based model " >
+<subsubsection label = " Supersense-based model " >
+326
+<p>
+<p>
+327
+For the supersense-based model , we use vertex features based on , which includes some features from the named entity recognition literature such as the word shape features along with the standard feature set for WSD .
+For the supersense-based model , we use vertex features based on , which include some features from the named entity recognition literature , including the word shape features , along with the standard feature set for WSD .
+328
+As the sense frequency information , we use the first sense feature .
+As the sense frequency information , we use the first sense feature .
+329
+Unlike in the synset-based model , we do not incorporate the syntactic information of the parent and child words , since it has been reported not to improve the performance .
+Unlike in the synset-based model , we do not incorporate the syntactic information of the parent and child words , since it has not been reported to improve the performance .
+330
+</p>
+</p>
+331
+</subsubsection >
+</subsubsection >
+332
+</subsection >
+</subsection >
+333
+<subsection label = " Edge features " >
+<subsection label = " Edge features " >
+334
+<p>
+<p>
+335
+We design a set of edge features that represents the inter-word sense dependencies .
+We design a set of edge features that represents the inter-word sense dependencies .
+336
+For each edge , we define the sense bigram features / MATH .
+For each edge , we define the sense bigram features / MATH .
+337
+Moreover , in addition to these simple bigrams , we define two kinds of combined bigrams : the sense bigrams with dependency relation labels ( e.g. WS :confidence#2-( NMOD )-WS :bank#1 ) , and the sense bigrams with removed words in between ( e.g. WS :confidence#2-in-WS :bank#1 ) .
+Moreover , in addition to these simple bigrams , we define two kinds of combined bigrams : the sense bigrams with dependency relation labels ( e.g. WS :confidence#2-( NMOD )-WS :bank#1 ) , and the sense bigrams with removed words in between ( e.g. WS :confidence#2-in-WS :bank#1 ) .
+338
+Consequently , the number of features for each edge is / MATH .
+Consequently , the number of features for each edge is / MATH .
+339
+<p>
+<p>
+340
+</subsection >
+</subsection >
+341
+</section >
+</section >
+342
+<section label = " Experimental Setup " >
+<section label = " Experimental Setup " >
+343
+<subsection label = " Data sets " >
+<subsection label = " Data sets " >
+344
+<p>
+<p>
+345
+In this section , we introduce corpora we use for the evaluation .
+In this section , we introduce corpora that we have used for the evaluation .
+346
+SemCor is a corpus , in which all content words are annotated with the WordNet synsets , and consists of balanced 352 files from the Brown Corpus .
+SemCor is a corpus in which all content words are annotated with the WordNet synsets , and consists of balanced 352 files from the Brown Corpus .
+347
+It is divided into three parts : brown1 , brown2 , and brownv sections .
+It is divided into three parts : brown1 , brown2 , and brownv sections .
+348
+In brown1 and brown2 , all content words ( nouns , verbs , adjectives , and adverbs ) are semantically annotated , while in brownv only verbs are annotated .
+In brown1 and brown2 , all content words ( nouns , verbs , adjectives , and adverbs ) are semantically annotated , while in brownv only verbs are annotated .
+349
+Also , we use two data sets from the Senseval ( International Workshop on Evaluating Word Sense Disambiguation Systems ) exercises : the Senseval-2 English all-words task test set , consisting of three articles from the Wall Street Journal , and the Senseval-3 English all-words task test set , consisting of two articles from the Wall Street Journal and a fiction excerpt from the unannotated portion of the Brown corpus .
+Also , we use two data sets from the Senseval ( International Workshop on Evaluating Word Sense Disambiguation Systems ) exercises : the Senseval-2 English all-words task test set , consisting of three articles from the Wall Street Journal , and the Senseval-3 English all-words task test set , consisting of two articles from the Wall Street Journal and a fiction excerpt from the unannotated portion of the Brown corpus .
+350
+</p>
+</p>
+351
+<p>
+<p>
+352
+As the data sets for evaluation , we use the brown1 and brown2 sections ( denoted as SEM ) of SemCor , and the Senseval-2 and -3 all-words task test sets ( denoted as SE2 and SE3 , respectively ) .
+As the data sets for evaluation , we use the brown1 and brown2 sections ( denoted as SEM ) of SemCor , and the Senseval-2 and -3 all-words task test sets ( denoted as SE2 and SE3 , respectively ) .
+353
+We use the converted versions annotated with WordNet 2 .0 synsets .
+We use the converted versions annotated with WordNet 2 .0 synsets .
+354
+Note that these data sets are different from the originals in that multi-word expressions are already segmented .
+These data sets are different from the originals because multi-word expressions are already segmented .
+355
+However , on the other hand , our model cannot output any answers to multi-word expressions that have no directly corresponding WordNet synsets , because we treat expression as one unit in the process of WSD .
+However , our model cannot output any answers to multi-word expressions that have no directly corresponding WordNet synsets , because we treat expression as one unit in the process of WSD .
+356
+For example , the multi-word expression tear-filled is treated as one instance but not tagged with any WordNet synsets in the converted corpus , while in the original corpus it is tagged with two WordNet synsets for tear and filled .
+For example , the multi-word expression tear-filled is treated as one instance , but are untagged with any WordNet synsets in the converted corpus , while in the original corpus it[define " it " ] is tagged with two WordNet synsets for tear and filled .
+357
+For this reason , we exclude such instances beforehand , and evaluate our models focused on expressions that have corresponding synsets in the WordNet .
+For this reason , we exclude such instances beforehand , and evaluate our models focused on expressions that have corresponding synsets in the WordNet .
+358
+The resulting statistics of the data sets are shown in Table 5 .
+The resulting statistics of the data sets are shown in Table 5 .
+359
+</p>
+</p>
+360
+<p>
+<p>
+361
+The evaluation of our model is performed by splitting these corpora into training , development , and test sets .
+The evaluation of our model is performed by splitting these corpora into training , development , and test sets .
+362
+At first , all files in SEM are sorted according to their file names and distributed into five data sets in order ( denoted as SEM-A , SEM-B , SEM-C , SEM-D , and SEM-E ) , so that each set has almost the same distribution of domains .
+At first , all files in SEM are sorted according to their file names and distributed into five data sets in order ( denoted as SEM-A , SEM-B , SEM-C , SEM-D , and SEM-E ) , so that each set has almost the same distribution of domains .
+363
+Furthermore , each of these five data sets is again split into two sets : SEM-A1 , SEM-A2 , / MATH , SEM-E1 , and SEM-E2 , also according to the order of file names .
+Furthermore , each of these five data sets is again split into two sets : SEM-A1 , SEM-A2 , / MATH , SEM-E1 , and SEM-E2 , also according to the order of file names .
+364
+</p>
+</p>
+365
+<p>
+<p>
+366
+Our evaluation is based on a 5-fold cross validation scheme .
+Our evaluation is based on a 5-fold cross validation scheme .
+367
+In the training phase , four sets ( e.g. SEM-A , SEM-B , SEM-C , SEM-D ) in the SEM are used for training .
+In the training phase , four sets ( e.g. SEM-A , SEM-B , SEM-C , SEM-D ) in the SEM are used for training .
+368
+Next , for the evaluation on SemCor , one half of the rest ( e.g. SEM-E1 ) is used for development and the other half ( e.g. SEM-E2 ) is used for evaluation .
+Next , for the evaluation on SemCor , one half of the rest ( e.g. SEM-E1 ) is used for development and the other half ( e.g. SEM-E2 ) is used for evaluation .
+369
+For the evaluation on the Senseval data sets , all instances of the rest ( e.g. SEM-E ) is used for development and one of the Senseval data sets ( SE2 or SE3 ) is used for evaluation .
+For the evaluation on the Senseval data sets , all instances of the rest ( e.g. SEM-E ) are used for development , and one of the Senseval data sets ( SE2 or SE3 ) is used for evaluation .
+370
+Lastly , for the comparison with state-of-the-art models , our model is trained on the whole set of SEM , and SE2 and SE3 are used for development and evaluation respectively .
+Lastly , for the comparison with state-of-the-art models , our model is trained on the whole set of SEM , and SE2 and SE3 are used for development and evaluation respectively .
+371
+</p>
+</p>
+372
+<p>
+<p>
+373
+All sentences are parsed by the Sagae and Tsujii 's dependency parser , and the T-CRF model is trained by using Amis .
+All sentences are parsed by the Sagae and Tsujii 's dependency parser , and the T-CRF model is trained by using Amis .
+374
+During the development phase , we tune the Gaussian parameter / MATH for the / MATH regularization term .
+During the development phase , we tune the Gaussian parameter / MATH for the / MATH regularization term .
+375
+As the evaluation measure , we use the standard recall measure , which is equivalent to the precision as we output answers to all instances .
+As the evaluation measure , we use the standard recall measure , which is equivalent to the precision as we output answers to all instances . **[This section is a bit monotonous]
+376
+</p>
+</p>
+377
+</subsection >
+</subsection >
+378
+<subsection label = " Evaluation and Models " >
+<subsection label = " Evaluation and Models " >
+379
+<p>
+<p>
+380
+The synset-based evaluation is performed based on the WordNet synsets .
+The synset-based evaluation is performed based on the WordNet synsets .
+381
+We evaluate the outputs of our system for all instances that are semantically tagged in the data sets .
+We evaluate the outputs of our system for all instances that are semantically tagged in the data sets .
+382
+Each target word is either a noun , verb , adjective , or adverb .
+Each target word is either a noun , verb , adjective , or adverb .
+383
+</p>
+</p>
+384
+<p>
+<p>
+385
+For the supersense-based evaluation , we follow most of the experimental setup in .
+For the supersense-based evaluation , we follow most of the experimental setup in .
+386
+As they noted , in the WordNet , there is semantically inconsistent labeling of supersenses such that top level synsets are tagged as the supersense noun .Tops rather than the specific supersense they govern .
+As noted , in the WordNet , the labeling of supersensesis semantically inconsistent , and top level synsets are tagged as the supersense noun .Tops[ ? ?] rather than the specific supersense they govern .
+387
+For example , nouns such as peach and plum are tagged as noun .plant but their hypernym plant itself belongs to noun .Tops .
+For example , nouns such as peach and plum are tagged as noun .plant but their hypernym plant itself belongs to noun .Tops .
+388
+For this reason , we adopted the modification of noun supersenses in the same way as , substituting noun .Tops labels with more specific supersense labels when possible , and left some general nouns with noun .TopsoteNouns which are left with noun .Tops are : entity , thing , anything , something , nothing , object , living thing , organism , benthos , heterotroph , life , and biont . .
+For this reason , we adopted the modification of noun supersenses in the same way as , substituting noun .Tops labels with more specific supersense labels when possible , and left some general nouns with noun .TopsoteNouns , which are left with noun .Tops are : entity , thing , anything , something , nothing , object , living thing , organism , benthos , heterotroph , life , and biont . .
+389
+The evaluation is based on these modified labels .
+The evaluation is based on these modified labels .
+390
+We ignore the adjective and adverb instances in the evaluation .
+We ignore the adjective and adverb instances in the evaluation .**[This section is a bit confusing . Maybe break up the longer sentences to clarify]
+391
+</p>
+</p>
+392
+<p>
+<p>
+393
+Table 6 is the list of models we use for the evaluation , where FS and SR correspond to the first sense and sense ranking features respectively , and non-dependency denotes models that do not incorporate sense dependency features ( i.e.
+Table 6 is the list of models that we use for the evaluation , where FS and SR correspond to the first sense and sense ranking features respectively , and non-dependency denotes models that do not incorporate sense dependency features ( i.e.
+394
+only the vertex features ) .
+only the vertex features ) .
+395
+</p>
+</p>
+396
+</subsection>
+</subsection>
+397
+</section>
+</section>
+398
+<section label = " Result " >
+<section label = " Result " >
+399
+<subsection label = " Contribution of sense dependencies " >
+<subsection label = " Contribution of sense dependencies " >
+400
+<p>
+<p>
+401
+In this section , we focus on the contribution of the sense dependencies .
+In this section , we focus on the contribution of the sense dependencies .
+402
+Table 7 shows the comparisons between the tree-structured models with sense dependencies ( dependency models ) and the models without sense dependencies ( non-dependency models ) .
+Table 7 shows the comparisons between the tree-structured models with sense dependencies ( dependency models ) and the models without sense dependencies ( non-dependency models ) .
+403
+In this section , each figure shows the mean recall ( equivalent to the precisions ) averaged over the five trials of the cross validation , the " Diff . " rows show the differences between the dependency models and the non-dependency models , and / MATH and / MATH denote the statistical significance of / MATH and / MATH respectively .
+Each figure displays the mean recall ( equivalent to the precisions ) averaged over the five trials of the cross validation , the " Diff . " rows show the differences between the dependency models and the non-dependency models , and / MATH and / MATH denote the statistical significance of / MATH and / MATH respectively .
+404
+We can see from Table 7 that with the sense frequency information , the tree-structured models ( statistically ) significantly outperformed the non-dependency models on all the data sets .
+From Table 7 , it can be seen that with the sense frequency information , the tree-structured models ( statistically ) significantly outperformed the non-dependency models on all the data sets .
+405
+These improvements seem small in terms of figures ; However , considering for instance the No-Dep-SS-FS model outperforms the Baseline-SS-FS model only by 0 .37% on SEM , the further improvement of 0 .21% is considerable because this means our dependency model could handle 57% more instances over the first sense baseline .
+These improvements seem insignificant in figures ; however , considering that for instance the No-Dep-SS-FS model outperforms the Baseline-SS-FS model by only 0 .37% on SEM , the further improvement of 0 .21% is substantial , because it indicates that our dependency model could handle 57% more instances over the first sense baseline .
+406
+</p>
+</p>
+407
+<p>
+<p>
+408
+Note that , without the sense frequency information , the synset-based tree-structured model ( Tree-WS ) performed poorer than the non-dependency model ( NoDep-WS ) on all the data sets , whereas the supersense-based model ( Tree-SS ) exhibited the robustness regardless of the existence of the sense frequency information .
+Note that , without the sense frequency information , the synset-based tree-structured model ( Tree-WS ) performed worse than the non-dependency model ( NoDep-WS ) on all the data sets , whereas the supersense-based model ( Tree-SS ) exhibited the robustness [of ...] regardless of the existence of the sense frequency information .
+409
+These results suggest that for the synset-based model , in which most synsets do not have enough instances in the training data , the combination with sense-frequency information is necessary in order to avoid the data sparseness problem .
+These results suggest that for the synset-based model , in which most synsets do not have enough instances in the training data , the combination with sense-frequency information is necessary in order to avoid the data sparseness problem .
+410
+</p>
+</p>
+411
+<p>
+<p>
+412
+Similarly , Table 8 shows the comparisons between the linear-chain dependency models and the non-dependency models .
+Similarly , Table 8 shows the comparisons between the linear-chain dependency models and the non-dependency models .
+413
+In the supersense-based evaluation , although the differences are slightly smaller than in the tree-structured models , we confirmed that the sense dependencies with the first sense features work effectively , with the overall improvements of 0 .29% , 0 .20% , and 0 .30% for the three data sets .
+In the supersense-based evaluation , although the differences are slightly smaller than in the tree-structured models , we confirmed that the sense dependencies with the first sense features work effectively , with the overall improvements of 0 .29% , 0 .20% , and 0 .30% for the three data sets .
+414
+However , without the first sense features , no statistically significant improvement nor deterioration is observed .
+However , without the first sense features , no statistically significant improvement nor deterioration is observed .
+415
+In the synset-based evaluation , the overall trend is almost same as in the tree-structured case .
+In the synset-based evaluation , the overall trend is almost same as in the tree-structured case .
+416
+However , by the incorporation of the sense dependencies , the improvements with the sense ranking features are even smaller , and the deteriorations without them are even larger than in the tree-structured case .
+Nonetheless , by the incorporation of the sense dependencies , the improvements with the sense ranking features was even less , and the deteriorations without them[define " them " ] were even more than in the tree-structured case .
+417
+These results seem to suggest that the sense dependencies on the tree structures are more robust than those on the linear chains .
+These results seem to suggest that the sense dependencies on the tree structures are more robust than those on the linear chains .
+418
+</p>
+</p>
+419
+</subsection>
+</subsection>
+420
+<subsection label = " Tree-structured CRFs vs Linear-chain CRFs " >
+<subsection label = " Tree-structured CRFs vs Linear-chain CRFs " >
+421
+<p>
+<p>
+422
+In this section , let us focus on the difference between the tree-structured models and the linear-chain models .
+In this section , let us focus on the difference between the tree-structured models and the linear-chain models .
+423
+In the results shown in Table 9 , although some of the differences are marginal , we can see that the tree-structured models outperformed the linear-chain models , focusing on the statistically significant differences .
+In the results shown in Table 9 , although some of the differences are marginal , we can see that the tree-structured models outperformed the linear-chain models , focusing on the statistically significant differences .**[<-This is a confusing sentence]
+424
+These results suggest that although both the dependency trees and the linear chains capture useful dependencies of word senses , the dependencies on the tree structures capture more important information .
+Thus , although both the dependency trees and the linear chains capture useful dependencies of word senses , the dependencies on the tree structures capture more important information .
+425
+</p>
+</p>
+426
+</subsection>
+</subsection>
+427
+<subsection label = " Contribution of coarse-grained sense labels " >
+<subsection label = " Contribution of coarse-grained sense labels " >
+428
+<p>
+<p>
+429
+Table 10 shows the contributions of the coarse-grained labels .
+Table 10 shows the contributions of the coarse-grained labels .
+430
+Whereas Tree-WS-SR and Tree-WS use all four sense labels for the edge features ( / MATH ) , Tree-WS-SR' and Tree-WS' only use the synset labels ( / MATH ) , so that we can see the contribution of the coarse-grained sense labels .
+Whereas Tree-WS-SR and Tree-WS use all four sense labels for the edge features ( / MATH ) , Tree-WS-SR' and Tree-WS' only use the synset labels ( / MATH ) . Thus , we can see the contribution of the coarse-grained sense labels .
+431
+Although the improvements are marginal , we can see that the coarse-grained sense labels did consistently improve the performance on all the data sets , relieving the data sparseness problem .
+Although the improvements are marginal , we can see that the coarse-grained sense labels consistently did improve the performance on all the data sets , relieving the data sparseness problem .
+432
+</p>
+</p>
+433
+</subsection >
+</subsection >
+434
+<subsection label = " Synset-based model vs Supersense-based model " >
+<subsection label = " Synset-based model vs Supersense-based model " >
+435
+<p>
+<p>
+436
+Since synset-based models can directly be used as supersense taggers by a simple conversion of senses , we compared the performance of the synset-based model with that of the supersense-based model .
+Since synset-based models can directly be used as supersense taggers by a simple conversion of senses , we compared the performance of the synset-based model with that of the supersense-based model .
+437
+Interestingly , when evaluated at the supersense level , the synset-based models considerably outperformed the supersense-based models , with the overall improvements of 0 .69% with the sense frequency information and 1 .41% without it , as shown in Table fcomp-ws-ss-tree .
+Interestingly , when evaluated at the supersense level , the synset-based models considerably outperformed the supersense-based models , with an overall improvements of 0 .69% with the sense frequency information and 1 .41% without it , as shown in Table fcomp-ws-ss-tree .
+438
+These results suggest that even though the granularity of the supersenses is sufficient for many NLP tasks , they are too coarse-grained to capture enough information for WSD models ; Therefore , even for the supersense-based disambiguation , we can improve the performance by considering finer-grained senses .
+Thus , even though the granularity of the supersenses is sufficient for many NLP tasks , they are too coarse-grained to capture enough information for WSD models ; therefore , for the supersense-based disambiguation , we can improve the performance by considering finer-grained senses .
+439
+</p>
+</p>
+440
+</subsection >
+</subsection >
+441
+<subsection label = " Comparison with state-of-the-art models " >
+<subsection label = " Comparison with state-of-the-art models " >
+442
+<p>
+<p>
+443
+Table 12 shows the comparison of our model with the state-of-the-art WSD systems .
+Table 12 shows the comparison of our model with the state-of-the-art WSD systems .
+444
+The evaluation here is performed with the Senseval official scorer .
+The evaluation here is performed with the Senseval official scorer .
+445
+Our model Tree-WS-SR outperformed the two best systems in the Senseval-3 ( Gambl and SenseLearner ) , but lagged behind PNNL by 1 .6% .
+Our model Tree-WS-SR outperformed the two best systems in the Senseval-3 ( Gambl and SenseLearner ) , but lagged behind PNNL by 1 .6% .
+446
+However , considering that all systems in Table 12 except for Simil-Prime utilize other sense-annotated corpora in addition to SemCor , such as the Senseval data sets or example sentences in the WordNet , and our model cannot handle multi-word expressions that do not exist in the WordNet as noted in Section 5 .1 , we can conclude that the performance of our T-CRF model is comparable to that of state-of-the-art WSD systems .
+However , taking into consideration that all systems in Table 12 except for Simil-Prime utilize other sense-annotated corpora in addition to SemCor , such as the Senseval data sets or example sentences in the WordNet , and that our model cannot handle multi-word expressions that do not exist in the WordNet as noted in Section 5 .1 , we can conclude that the performance of our T-CRF model is comparable to that of state-of-the-art WSD systems . **[This is a long sentence- shorten .]
+447
+</p>
+</p>
+448
+</subsection>
+</subsection>
+449
+</section>
+</section>
+450
+<section label = " Discussion and Analysis " >
+<section label = " Discussion and Analysis " >
+451
+<subsection label = " Edge feature overview " >
+<subsection label = " Edge feature overview " >
+452
+<p>
+<p>
+453
+Table 13 shows the list of the 15 largest-weighted sense dependency features in the tree-structured , synset-based model ( Tree-WS ) .
+Table 13 shows the list of the 15 largest-weighted sense dependency features in the tree-structured , synset-based model ( Tree-WS ) .
+454
+The list includes features associated with verb-noun relations ( e.g. SS :verb .consumption-SS :noun .food ) and noun-noun relations ( e.g. SS :noun .communication-SS :noun .communication ) , which we will describe in detail with several examples .
+The list includes features associated with verb-noun relations ( e.g. SS :verb .consumption-SS :noun .food ) and noun-noun relations ( e.g. SS :noun .communication-SS :noun .communication ) , which we will describe in detail with several examples .
+455
+Hereinafter , / MATH denotes / MATH in Equation 3 , and / MATH denotes the exponential of / MATH .
+Hereinafter , / MATH denotes / MATH in Equation 3 , and / MATH denotes the exponential of / MATH .
+456
+We call a feature either with a positive lambda or with an alpha larger than 1 as an excitatory feature , while that either with a negative lambda or an alpha smaller than 1 as an inhibitory feature .
+We call a feature either with a positive lambda or with an alpha larger than 1 as an excitatory feature , and those features with either with a negative lambda or an alpha smaller than 1 as an inhibitory feature .
+457
+</p>
+</p>
+458
+<p>
+<p>
+459
+Also , Table 14 shows the 15 largest-weighted sense dependency features in the linear-chain , synset-based model .
+Also , Table 14 shows the 15 largest-weighted sense dependency features in the linear-chain , synset-based model .
+460
+When compared to the outputs of the tree-structured model , we can see that the linear-chain model captures more successive noun-noun dependencies , while the tree-structured model captures more adjective-noun and verb-object dependencies .
+When compared to the outputs of the tree-structured model , we can see that the linear-chain model captures more successive noun-noun dependencies , while the tree-structured model captures more adjective-noun and verb-object dependencies .
+461
+Thus , although the difference of the recalls is small , we can assume that the sense dependency features in the tree-structured model and those in the linear-chain model have different contributions to the results .
+Thus , although the difference of the recalls is small , we can assume that the sense dependency features in the tree-structured model , and those in the linear-chain model have different contributions to the results .
+462
+The simultaneous use of both is of an interest from practical and semantical perspectives ; However , since it makes our model no longer a tree , the implementation is not straightforward .
+The simultaneous use of both is of an interest from practical and semantical perspectives ; however , since it makes our model no longer a tree , the implementation is not straightforward .
+463
+Hence , this is left as one of our future works .
+Hence , this is left as one of our future works .
+464
+</p>
+</p>
+465
+<subsection label = " Instance-based Analysis " >
+<subsection label = " Instance-based Analysis " >
+466
+<subsubsection label = " Overview " >
+<subsubsection label = " Overview " >
+467
+<p>
+<p>
+468
+In this section , we present instance-based analyses based on the first 100 instances for which the answer of the dependency model Tree-WS-SR differs from that of the non-dependency model NoDep-WS-SR in the first trial on SemCor .
+In this section , we present an instance-based analyses based on the first 100 instances for which the answer of the dependency model Tree-WS-SR differs from that of the non-dependency model NoDep-WS-SR in the first trial on SemCor .
+469
+We extracted only the largest-weighted edge feature for each instance , assuming that this feature had the largest contribution to the result .
+We extracted only the largest-weighted edge feature for each instance , assuming that this feature had the largest contribution to the result .
+470
+These instances consist of 54 positive instances , for which Tree-WS-SR output the correct answer while NoDep-WS-SR did not , and 46 negative instances , for which Tree-WS-SR did not output the correct answer while NoDep-WS-SR did .
+These instances consist of 54 positive instances , for which Tree-WS-SR output the correct answer while NoDep-WS-SR did not , and 46 negative instances , for which Tree-WS-SR did not output the correct answer while NoDep-WS-SR did .
+471
+Table 15 and 16 shows the count of each edge type for these instances .
+Table 15 and 16 show the count of each edge type for these instances .
+472
+For both positive and negative instances , the verb-noun dependencies are the dominant dependencies , corresponding to 48% of all the instances .
+For both positive and negative instances , the verb-noun dependencies are the dominant dependencies , corresponding to 48% of all the instances .
+473
+One noteworthy point is that more number of noun-noun dependencies are found in the positive instances than in the negative instances , which might suggest that noun-noun dependencies are particularly likely to capture useful dependencies and contribute to positive instances .
+One noteworthy point is that more number of noun-noun dependencies are found in the positive instances than in the negative instances , further suggesting that noun-noun dependencies are particularly likely to capture useful dependencies and contribute to positive instances .
+474
+</p>
+</p>
+475
+</subsubsection>
+</subsubsection>
+476
+<subsubsection label = " Verb-noun dependencies " >
+<subsubsection label = " Verb-noun dependencies " >
+477
+<p>
+<p>
+478
+First of all , let us present two instances in which the verb-noun dependencies worked effectively .
+First of all , let us present two instances in which the verb-noun dependencies worked effectively .
+479
+The first sentence is
+The first sentence is :
+480
+</p>
+</p>
+481
+<p>
+<p>
+482
+From this earth , then , while it was still virgin God took dust and fashioned the man , the beginning of humanity .
+From this earth , then , while it was still virgin God took dust and fashioned the man , the beginning of humanity .
+483
+</p>
+</p>
+484
+<p>
+<p>
+485
+The verb take has surprisingly as many as 42 senses in the WordNet .
+Surprisingly , the verb take has as many as 42 senses in the WordNet .
+486
+But , fortunatelly , the first six senses belong to different supersenses , and our dependency model succeeded in outputting the correct sense take#4 ( SS :verb .contact , take physically ) by making use of the strong dependency SS :verb .contact-SS :noun .substance ( / MATH ) , given dust#1 belongs to noun .substance .
+But fortunately , the first six senses belong to different supersenses , and our dependency model succeeded in outputting the correct sense take#4 ( SS :verb .contact , take physically ) by making use of the strong dependency SS :verb .contact-SS :noun .substance ( / MATH ) , given dust#1 belongs to noun .substance .
+487
+</p>
+</p>
+488
+<p>
+<p>
+489
+The second instance is also a positive instance from the SEM-A data set .
+The second instance is also a positive instance from the SEM-A data set .
+490
+For a serious young man who plays golf with a serious intensity , Palmer has such an inherent sense of humor that it relieves the strain and keeps his nerves from jangling like banjo strings .
+For a serious young man who plays golf with a serious intensity , Palmer has such an inherent sense of humor that it relieves the strain and keeps his nerves from jangling like banjo strings .
+491
+Here , has is an ambiguous verb that has 19 senses in the WordNet .
+Here , has is an ambiguous verb that has 19 senses in the WordNet .
+492
+The correct sense here is have( v )#2 ( SS :verb .stative , have as a feature ) .
+The correct sense here is have( v )#2 ( SS :verb .stative , have as a feature ) .
+493
+Given sense of humor#1 belongs to the supersense noun .attribute , the correct sense was output by the strong verb-object dependency G1 :have( v )#2-( OBJ )-SS :noun .attribute ( / MATH ) .
+Given sense of humor#1 belongs to the supersense noun .attribute , the correct sense was output by the strong verb-object dependency G1 :have( v )#2-( OBJ )-SS :noun .attribute ( / MATH ) .
+494
+While this verb-object dependency had a large excitatory weight , the corresponding verb-subject dependency had an inhibitory weight ( G1 :have( v )#2-( SBJ )-SS :noun .attribute ( / MATH ) ) , which means the dependency relationlabel also contributed to the result .
+While this verb-object dependency had a large excitatory weight , the corresponding verb-subject dependency had an inhibitory weight ( G1 :have( v )#2-( SBJ )-SS :noun .attribute ( / MATH ) ) , which indicates that the dependency relationlabel also contributed to the result .
+495
+Note also that this long dependency cannot be described by linear-chain models .
+Note also that this long dependency cannot be described by linear-chain models .
+496
+</p>
+</p>
+497
+<p>
+<p>
+498
+Next , let us show a typical negative example , where a verb-subject dependency worked inappropriately .
+Next , let us show a typical negative example , where a verb-subject dependency worked inappropriately .
+499
+</p>
+</p>
+500
+<p>
+<p>
+501
+The repeated efforts in Christian history to describe death as altogether the consequence of human sin show that these two aspects of death cannot be separated .
+The repeated efforts in Christian history to describe death as altogether the consequence of human sin show that these two aspects of death cannot be separated .
+502
+The correct sense for show here is show#2 ( verb .cognition , establish the validity ) , but the model output show#3 ( verb .communication , prove evidence for ) affected by the long dependency WS :testify( v )#2-( SBJ )-SS :noun .act ( / MATH ) between efforts and show .
+The correct sense for show here is show#2 ( verb .cognition , establish the validity ) , but the model output show#3 ( verb .communication , prove evidence for ) affected by the long dependency WS :testify( v )#2-( SBJ )-SS :noun .act ( / MATH ) between efforts and show .
+503
+This subject information seems to be not adequate for the disambiguation of show .
+This subject information seems to be inadequate for the disambiguation of show .
+504
+</p>
+</p>
+505
+</subsubsection >
+</subsubsection >
+506
+<subsubsection label = " Noun-noun dependencies " >
+<subsubsection label = " Noun-noun dependencies " >
+507
+<p>
+<p>
+508
+Next we focus on the noun-noun dependencies .
+Next we focus on the noun-noun dependencies .
+509
+The first example is a negative instance .
+The first example is a negative instance .
+510
+Philadelphia permitted him to seek a better connection after he had refused to reconsider his decision to end his career as a player .
+Philadelphia permitted him to seek a better connection after he had refused to reconsider his decision to end his career as a player .
+511
+The noun career has two meanings : the particular occupation for which you are trained ( career#1 ) and the general progression of your working or professional life ( career#2 ) .
+The noun career has two meanings : the particular occupation for which you are trained ( career#1 ) and the general progression of your working or professional life ( career#2 ) .
+512
+From the phrase career as a player , we can assume that the correct sense of career can be either of two senses , and possibly there is a preference for career#2 , as captured by the largest-weighted dependency WS :career%1%2-( NMOD )-SS :noun .person ( / MATH ) between career and player .
+From the phrase career as a player , we can assume that the correct sense of career can be either of two senses , with the possibility that there is a preference for career#2 , as captured by the largest-weighted dependency WS :career%1%2-( NMOD )-SS :noun .person ( / MATH ) between career and player .
+513
+Although there was originally the preference for the correct sense career#1 by the sense frequency features , the noun-noun dependency thus contributed to the wrong answer career#2 .
+Although there was originally the preference for the correct sense career#1 by the sense frequency features , the noun-noun dependency thus contributed to the wrong answer career#2 .
+514
+The determining clue for this instance seems to be the verb-object dependency end-career , which was not captured by our model .
+The determining clue for this instance seems to be the verb-object dependency end-career , which was not captured by our model .
+515
+</p>
+</p>
+516
+<p>
+<p>
+517
+Among the ten positive instances of the noun-noun dependencies , four instances were contributed by the noun-of-noun dependencies .
+Among the ten positive instances of the noun-noun dependencies , four instances were contributed by the noun-of-noun dependencies .
+518
+Since dependencies of this type were not observed in the negative instances at all , they seem to particularly contribute to the positive instances .
+Since dependencies of this type were not observed in the negative instances , they seem to particularly contribute to the positive instances .
+519
+Let us consider the following example .
+Let us consider the following example .
+520
+</p>
+</p>
+521
+<p>
+<p>
+522
+The embarrassment of these theories over the naturalness of death is an illustration of the thesis that death cannot be only a punishment , for some termination seems necessary in a life that is lived within the natural order of time and change .
+The embarrassment of these theories over the naturalness of death is an illustration of the thesis that death cannot be only a punishment , for some termination seems necessary in a life that is lived within the natural order of time and change .
+523
+</p>
+</p>
+524
+<p>
+<p>
+525
+Although the correct sense time#5 ( noun .Tops , the continuum of experience in which events pass from the future through the present to the past ) is not a frequent sense , our model correctly output the correct sense by using the dependency SS :noun .object-of-WS :time%1%5 ( / MATH ) , given natural order#1 belongs to the supersense noun .object .
+Although the correct sense time#5 ( noun .Tops , the continuum of experience in which events pass from the future through the present to the past ) is not a frequent sense , our model correctly output the correct sense by using the dependency SS :noun .object-of-WS :time%1%5 ( / MATH ) , given natural order#1 belongs to the supersense noun .object .
+526
+</p>
+</p>
+527
+</subsubsection>
+</subsubsection>
+528
+<subsubsection label = " Coordination dependencies " >
+<subsubsection label = " Coordination dependencies " >
+529
+<p>
+<p>
+530
+Another interesting result observed is that the noun-noun dependencies in coordination relations work remarkably strongly .
+Through our result , we observed that the noun-noun dependencies in coordination relations work remarkably well .
+531
+In the following sentence , three words nails , levels , and T squares are in a coordination relation .
+In the following sentence , three words nails , levels , and T squares are in a coordination relation .
+532
+He also bought a huge square of pegboard for hanging up his tools , and lumber for his workbench , sandpaper and glue and assorted nails , levels and T squares and plumb lines and several gadgets that he had no idea how touse or what they were for .
+He also bought a huge square of pegboard for hanging up his tools , and lumber for his workbench , sandpaper and glue and assorted nails , levels and T squares and plumb lines and several gadgets that he had no idea how touse or what they were for .
+533
+Here , the correct sense for nail is nail#2 ( noun .artifact , a thin pointed piece of metal ) and that for level is level#5 ( noun .artifact , indicator of the horizontal ) .
+Here , the correct sense for nail is nail#2 ( noun .artifact , a thin pointed piece of metal ) , and that for level is level#5 ( noun .artifact , indicator of the horizontal ) .
+534
+The relatively low frequency of these senses prevent our model from outputting the correct senses in an ordinal way .
+The relatively low frequency of these senses prevent our model from outputting the correct senses in an ordinal way .
+535
+However , the dependency model could capture the fact that two words in a coordination relation are quite likely to belong to the same semantic group ( SS :noun .artifact-( COORD )-SS :noun .artifact ( / MATH ) ) , and hence succeeded in the correct disambiguation of these three words .
+However , the dependency model could capture the fact that two words in a coordination relation are quite likely to belong to the same semantic group ( SS :noun .artifact-( COORD )-SS :noun .artifact ( / MATH ) ) , and hence succeeded in the correct disambiguation of these three words .
+536
+More generally , we have observed that the coordination features for an edge that connects the same supersense all have positive weights .
+More generally , we have observed that the coordination features for an edge that connects the same supersense all have positive weights .
+537
+</p>
+</p>
+538
+</subsubsection>
+</subsubsection>
+539
+</subsection>
+</subsection>
+540
+</section>
+</section>
+541
+<section label = " Conclusion " >
+<section label = " Conclusion " >
+542
+<p>
+<p>
+543
+In this paper , we proposed a novel approach to the all-words WSD , focusing on the use of syntactic dependencies of word senses , and investigated the contribution of these dependencies to WSD .
+In this paper , we proposed a novel approach for the all-words WSD , focusing on the use of syntactic dependencies of word senses , and investigated the contribution of these dependencies to WSD .
+544
+Our proposals were twofold : to apply tree-structured CRFs to the dependency trees , and to use the combined bigrams of fine- and coarse-grained senses as edge features .
+Our proposals were twofold : to apply tree-structured CRFs to the dependency trees , and to use the combined bigrams of fine- and coarse-grained senses as edge features .
+545
+</p>
+</p>
+546
+<p>
+<p>
+547
+In our experiments , the sense dependency features were shown to work effectively for WSD , with 0 .29% , 0 .64% , and 0 .30% improvements of recalls for SemCor , Senseval-2 , and Senseval-3 data sets respectively .
+In our experiments , the sense dependency features were shown to work effectively for WSD , with a 0 .29% , 0 .64% , and 0 .30% improvement of recalls for SemCor , Senseval-2 , and Senseval-3 data sets , respectively .
+548
+Despite the small improvements in terms of overall figures , these improvements indeed correspond to 25%-57% improvements over the first sense baseline .
+Despite the small improvements in overall figures , these improvements indeed correspond to 25%-57% improvements over the first sense baseline .
+549
+The dependency tree structures was shown to be appropriate for modeling the dependencies of word senses , by the results that the tree-structured models outperformed the linear-chain models .
+The dependency tree structures were shown to be appropriate in modeling the dependencies of word senses , because the results of the tree-structured models outperformed the [results of ?] linear-chain models .
+550
+In the analysis section , we presented an in-depth analysis of the observed instances , and saw that the noun-noun dependencies particularly contribute to the positive instances .
+In the analysis section , we presented an in-depth analysis of the observed instances , and observed that the noun-noun dependencies particularly contribute to the positive instances .
+551
+</p>
+</p>
+552
+<p>
+<p>
+553
+Also , the combination of coarse-grained tag sets with the sense dependency features were proved to be effective .
+In addition , the combination of coarse-grained tag sets with the sense dependency features were proved to be effective .
+554
+However , our experiments on the other hand showed that even when combined with the coarse-grained tag sets , the sense dependency features do not improve the performance unless combined with proper sense frequency information , due to the data sparseness problem .
+However , our experiments showed that even when combined with the coarse-grained tag sets , the sense dependency features do not improve the performance , unless combined with proper sense frequency information . This is due to the data sparseness problem .
+555
+The supersense-based WSD models , on the contrary , exhibited the robustness regardless of the existence of the sense frequency information , while they are defeated by the synset-based models in recalls .
+The supersense-based WSD models , on the contrary , exhibited the robustness [of ...] regardless of the existence of the sense frequency information , while they are defeated by the synset-based models in recalls .
+556
+These results show the importance of fine-grained and coarse-grained sense information , and that the combination of both enables us to build a precise and robust WSD system .
+These results show the importance of fine-grained and coarse-grained sense information , and show that the combination of both enables us to build a more precise and robust WSD system .
+557
+</p>
+</p>
+558
+<p>
+<p>
+559
+The performance of our tree-structured model was comparable to that of the state-of-the-art WSD systems .
+The performance of our tree-structured model was comparable to that of the state-of-the-art WSD systems .
+560
+Although our model was based on a simple framework and trained only on the SemCor corpus , the results we gained were promising , suggesting that our model still has a great potential for improvement .
+Although our model was based on a simple framework , and was trained only on the SemCor corpus , the results that we gained were promising . They suggested that our model still has a great potential for improvement .
+561
+Our next interest is to combine our framework with the recently-developed semi-supervised frameworks .
+Our next interest is to combine our framework with the recently-developed semi-supervised frameworks .
+562
+The combination of the local and syntactic dependencies with the global information is expected to further the WSD research .
+The combination of the local and syntactic dependencies with the global information is expected to further the WSD research .
+563
+</p>
+</p>
+564
+</section>
+</section>
+565
+</document>
+</document>

@@ -1,0 +1,573 @@
+0
+<document>
+<document>
+1
+<title>
+<title>
+2
+ROBUST OBJECT DETECTION USING FAST FEATURE SELECTION FROM HUGE FEATURE SETS
+ROBUST OBJECT DETECTION USING FAST FEATURE SELECTION FROM HUGE FEATURE SETS
+3
+</title>
+</title>
+4
+<abstract>
+<abstract>
+5
+<p>
+<p>
+6
+This paper describes an efficient feature selection method which quickly selects a small subset out of a given huge feature set for building robust object detection systems .
+This paper describes an efficient feature selection method which that quickly selects a small subset out of a given huge feature set ; the proposed method for will be useful for building robust object detection systems .
+7
+In this filter-based method , features are selected so that not only maximizing their relevance with the target class but also minimizing their mutual dependency .
+In this filter-based method , features are selected so that not only to maximizeing their relevance with the target class but also to minimizeing their mutual dependency .
+8
+As a result , the selected feature set only contains highly informative and non-redundant features which when combined together , significantly improve classification performance .
+As a result , the selected feature set only contains only highly informative and non-redundant features , which significantly improve classification performance when combined together , significantly improve classification performance .
+9
+The relevance and mutual dependency of features are measured by using conditional mutual information ( CMI ) in which features and classes are treated as discrete random variables .
+The relevance and mutual dependency of features are measured by using conditional mutual information ( CMI ), in which features and classes are treated as discrete random variables . //[ ,?<--A comma can be used here if the following describes CMI in general .]
+10
+Experiments on different huge feature sets have shown that the proposed CMI-based feature selection can both reduce significantly the training time and achieve high accuracy .
+Experiments on different huge feature sets have shown that the proposed CMI-based feature selection can both reduce significantly the training time significantly and achieve high accuracy .
+11
+</p>
+</p>
+12
+</abstract>
+</abstract>
+13
+<section label= " INTRODUCTION " >
+<section label= " INTRODUCTION " >
+14
+<p>
+<p>
+15
+One of the fundamental research issues in pattern recognition is feature selection which is the task of finding a small subset out of a given large set of features .
+One of the fundamental research issues in pattern recognition is feature selection , which is the task of finding a small subset out of a given large set of features .
+16
+It is significant due to the following three reasons .
+Improving the method of accomplishing this task is important due to the following three reasons .
+17
+</p>
+</p>
+18
+<p>
+<p>
+19
+First , there are many ways to represent a target object , leading to a huge feature set .
+First , there are many ways can be used to represent a target object , and this variety leadsleading to a huge feature set .
+20
+For example , the number of Haar wavelet features used in [1] for face detection is hundreds of thousands .
+For example , the number of Haar wavelet features used in [1] for face detection is hundreds of thousands .
+21
+However , only small and incomplete training sets are available .
+However , only small and incomplete training sets are available .
+22
+As a result , these systems suffer from the curse of dimensionality and over-fitting .
+As a result , these systems suffer from the curse of dimensionality and over-fitting .
+23
+</p>
+</p>
+24
+<p>
+<p>
+25
+Second , a huge feature set usually includes many irrelevant and redundant features that can degrade the generalization performance of classifiers , waste storage space and increase training time [2 , 3] .
+Second , a huge feature set usually includes many irrelevant and redundant features that can degrade the generalization performance of classifiers , waste storage space , and increase training time [2 , 3] .
+26
+</p>
+</p>
+27
+Third , selecting an optimal feature subset from a huge feature set can improve the performance and speed of classifiers .
+Third , selecting an optimal feature subset from a huge feature set can improve the performance and speed of classifiers .
+28
+</p>
+</p>
+29
+<p>
+<p>
+30
+Furthermore , less complex model is easier to understand and verify .
+Furthermore , less complex models is are easier to understand and verify .
+31
+In face detection , the success of systems such as those in [1 , 4] comes mainly from efficient feature selection methods .
+In face detection , the success of systems such as those in [1 , 4] comes mainly from efficient feature selection methods .
+32
+</p>
+</p>
+33
+<p>
+<p>
+34
+Generally , feature selection methods can be categorized into two kinds : filter-based approach and wrapper-based approach [5] .
+Generally , feature selection methods can be categorized into two kinds : the filter-based approach and the wrapper-based approach [5] .
+35
+The filter-based approach is independent of any induction algorithm while the wrapper-based approach is associated with a specific induction algorithm to evaluate the goodness of the selected feature subset .
+The filter-based approach is independent of any induction algorithm , while but the wrapper-based approach is associated with a specific induction algorithm to evaluate the quality of the selected feature subset . //[goodness / quality / appropriateness?<--If " goodness " is the word you would usually use in your field for this , it is fine , but I would suggest a different word choice otherwise . " Goodness " seems vague , so in what sense do you mean " good " ?]
+36
+</p>
+</p>
+37
+<p>
+<p>
+38
+In the filter-based approach , features are normally selected based on their individual predictive power which is measured by Fisher scores , Pearson correlation [6] or mutual information [7] .
+In the filter-based approach , features are normally selected based on their individual predictive power . This power is measured by Fisher scores , Pearson correlation [6] , or mutual information [7] .
+39
+The major advantage of these methods is their speed and ability to scale to huge feature sets .
+The major advantage of these measurement methods is their speed and ability to scale to huge feature sets .
+40
+However , the mutual relationships between features is often not taken into account , leading selected features might be highly redundant and less informative because two features with high individual predict power when combined together might not bring significant performance improvement compared with two features which one of them has low predictive power but is useful when combined with others .
+However , because the mutual relationships between features is are often not taken into account , leading the selected features might be highly redundant and less informative because two features with high individual predictive power , when combined together , might not bring significant performance improvement . Combining compared with two features of which one of them has low predictive power but is useful when combined with others would thus be more effective for improving performance .
+41
+</p>
+</p>
+42
+Since wrapper-based feature selection methods use machine learning algorithms as a black box in selection process , they can suffer from over-fitting in situations of small training sets .
+Since wrapper-based feature selection methods use machine learning algorithms as a black box in the selection process , they can suffer from over-fitting in situations of when applied to small training sets . //[when used with / when applied to?]
+43
+Furthermore , in practical object detection systems as in [1 , 8] , the feature sets usually have hundreds of thousands features , using wrapper-based methods is obviously inefficient because of very high computation cost .
+Furthermore , in practical object detection systems as in [1 , 8] , the feature sets usually have hundreds of thousands of features , so using wrapper-based methods is obviously inefficient because of the very high computation costs they incur .
+44
+For example , in the state of the art face detection system [1] , choosing a 6 ,061- feature set out of a 180 ,000-feature set by AdaBoost has taken several weeks .
+For example , in the state- of- the- art face detection system in [1] , choosing a 6 ,061- feature set out of a 180 ,000-feature set by using AdaBoost has takentook several weeks . //[by using / generated by?]
+45
+</p>
+</p>
+46
+<p>
+<p>
+47
+Consequently , conditional mutual information ( CMI ) based feature selection methods have been proposed [9 , 8 , 7 , 10] to take full advantage of above approaches for handling large scale feature sets .
+Consequently , feature selection methods based on conditional mutual information ( CMI ) based feature selection methods have been proposed [9 , 8 , 7 , 10] to take full advantage of the above approaches for handling large scale feature sets .
+48
+</p>
+</p>
+49
+<p>
+<p>
+50
+The main idea of CMI-based methods is to select features which maximize their relevance with the target class and simultaneously minimize mutual dependency between selected ones .
+The main goal of these CMI-based methods is to select features which that maximize their relevance with the target class and to simultaneously minimize mutual dependency between selected ones . //[idea / goal?]
+51
+It does not select a feature similar to already selected ones , even if it is individual powerful , as selecting it might not increase much information about the target class [7] .
+It doesThese methods do not select a feature similar to ones already selected ones , even if itthe feature is individually powerful , as because selecting it might not do much to increase much information about the target class [7] .
+52
+</p>
+</p>
+53
+<p>
+<p>
+54
+One of the important tasks in using CMI-based methods is mutual information estimation which involves to compute probability densities of continuous random variables .
+One of the important tasks in using CMI-based methods is mutual information estimation , which involves to computecomputing the probability densities of continuous random variables .
+55
+In [9] , Kwak and Choi used Parzen windows based density estimation method in which many parameters such as kernel function and window width are complicated to determine .
+In [9] , Kwak and Choi used a Parzen windows -based density estimation method in which many parameters such as kernel function and window width are complicated to determine .
+56
+For simplification , discretizing features is often used .
+For simplification , discretizing features is often used on the features . //[discretizing features is often used on the features / the features are often discretized?]
+57
+So far , in object detection systems like [8 , 7] , features are treated as binary random variables by choosing appropriate thresholds .
+So far , in object detection systems like [8 , 7] treat , features are treated as binary random variables by choosing appropriate thresholds .
+58
+However , binarizing features is not a suitable way to handle highly complex data for which it is hard to find the best threshold .
+However , binarizing features is not a suitable way to handle highly complex data for which it is hard to finding the best threshold is difficult .
+59
+It is better if multiple thresholds are used to discretize data .
+Using multiple thresholds to discretize data is better than using a binary approach .
+60
+Such a simple method is equal-width binning which divides the range of feature values into m equal sized bins , where m must be known in advance .
+Such a simple method is equal-width binning , which divides the range of feature values into m equally sized bins , where m must be known in advance .
+61
+</p>
+</p>
+62
+<p>
+<p>
+63
+Our method is also a CMI-based feature selection method .
+Our method is also a CMI-based feature selection method .
+64
+However , the main distinguished point is that it employs the entropy-based discretization method [11] to discretize features .
+However , the method�fs main distinguishing point is that it employs the entropy-based discretization method [11] to discretize features . //[distinguishing / unique?]
+65
+This discretization method is simpler than Parzen windows based density estimation method and more efficient than binary discretization .
+This discretization method is simpler than the Parzen window-s based density estimation method and is more efficient than binary discretization .
+66
+Furthermore , contrary to equal-width binning , it can automatically evaluate the optimal number of bins based on data distribution .
+Furthermore , contrary to equal-width binning , it can automatically evaluate the optimal number of bins based on data distribution . //[evaluate / determine?]
+67
+Experiments show that the proposed method can well handle huge feature sets for face detection such as Haar wavelets [1] and Gabor wavelets [12] , significantly reduce the training time while maintaining high classification performance .
+Experiments show that the proposed method can well capably handle huge feature sets of data such as Haar wavelets [1] and Gabor wavelets [12] for face detection , significantly reducinge the training time while maintaining high classification performance .
+68
+</p>
+</p>
+69
+</section>
+</section>
+70
+<section label= " CONDITIONAL MUTUAL INFORMATION BASED
+<section label= " CONDITIONAL MUTUAL INFORMATION- BASED
+71
+FEATURE SELECTION " >
+FEATURE SELECTION " >
+72
+<p>
+<p>
+73
+Huge feature sets usually contain four kinds of features : ( i ) irrelevant features , ( ii ) weakly relevant and redundant features , ( iii ) weakly relevant but non-redundant features and ( iv ) strongly relevant features in which ( iii ) and ( iv ) are the objective of feature selection methods [13] .
+Huge feature sets usually contain four kinds of features : ( i ) irrelevant features , ( ii ) weakly relevant and redundant features , ( iii ) weakly relevant but non-redundant features , and ( iv ) strongly relevant features ; in which ( iii ) and ( iv ) are the objectives of feature selection methods [13] .
+74
+To measure relevance of a feature , the entropy-based measure which quantifies the uncertainty of random variables is normally used .
+To measure the relevance of a feature , an entropy-based measure , which quantifies the uncertainty of random variables , is normally used .
+75
+</p>
+</p>
+76
+<p>
+<p>
+77
+The entropy of a discrete random variable X is defined as : \MATH and the conditional entropy of X after another variable Y is known is defined as \MATH
+The entropy of a discrete random variable X is defined as : \MATH and the conditional entropy of X after another variable Y is known is defined as \MATH
+78
+</p>
+</p>
+79
+<p>
+<p>
+80
+The mutual dependence between two random variables is measured by mutual information \MATH .
+The mutual dependence between two random variables is measured by mutual information : \MATH .
+81
+</p>
+</p>
+82
+<p>
+<p>
+83
+The conditional mutual information is defined as : \MATH
+The conditional mutual information is defined as : \MATH .
+84
+</p>
+</p>
+85
+<p>
+<p>
+86
+In the first step , the most relevant feature F1 which has the highest mutual information is selected .
+In the first step , the most relevant feature F1 , which has the highest largest amount of mutual information , is selected .
+87
+However , in the second step , the condition to select feature F2 is not its mutual information alone , but how much information of F2 can add with respect to the already existing F1 .
+However , iIn the second step , however , the condition to select feature F2 is not its mutual information alone , but how much information of F2 can add with respect to the already existing F1 .
+88
+Therefore , F2 is selected so that maximizing :\MATH .
+Therefore , F2 is selected so that maximizingas to maximize the information it can add :\MATH .
+89
+</p>
+</p>
+90
+<p>
+<p>
+91
+Following the same scheme , we iteratively add the feature that brings the highest increase of information content contained in current selected feature set .
+Following the same scheme, we iteratively add the feature that brings the highest increase of the information content contained in the current selected feature set . //[the / an?<-- " An " is correct if there is more than one such measure .]
+92
+The next feature Ft to be added at iteration t is defined by :\MATH .
+The next feature Ft to be added at iteration t is defined by :\MATH .
+93
+</p>
+</p>
+94
+<p>
+<p>
+95
+In order to simply estimate mutual information , the easiest way is features are discretized in binary values by specifying thresholds [8 , 7] .
+To simply estimate mutual information , the easiest way is to discretize features are discretized in binary values by specifying thresholds [8 , 7] .
+96
+However , for complex data , it is not efficient ; therefore , we use entropy-based method proposed by Fayyad and Irani [11] for discretization .
+However , for complex data , doing thisit is not efficient ; therefore , we use the entropy-based method proposed by Fayyad and Irani [11] for discretization .
+97
+This method is a supervised method , thus it is generic and can adapt very well to any kind of data distributions .
+This method is a supervised method , thus so it is generic and can adapt very well to any kind of data distributions .
+98
+</p>
+</p>
+99
+<subsection label= " Entropy-Based Variable Discretization " >
+<subsection label= " Entropy-Based Variable Discretization " >
+100
+<p>
+<p>
+101
+Basically , discretization is a quantizing process that converts continuous values into discrete values .
+Discretization is essentially a quantizing process that converts continuous values into discrete values .
+102
+Suppose that we are given a set of instances S , a feature A and a cut-point T ( a cutpoint is a threshold value that divides the range of continuous values into two intervals ; one interval is less than or equal to the threshold , and the other interval is greater than the threshold ) .
+Suppose that we are given a set of instances S , a feature A , and a cut-point T . ( A cut-point is a threshold value that divides the range of continuous values into two intervals ; one interval is less than or equal to the threshold , and the other interval is greater than the threshold . ) .
+103
+</p>
+</p>
+104
+<p>
+<p>
+105
+The class-information entropy of the partition induced by T is defined as :
+The class-information entropy of the partition induced by T is defined as :
+106
+</p>
+</p>
+107
+<p>
+<p>
+108
+Among candidate cut-points , the best candidate cut-point Tmin which minimizes the entropy function \MATH is selected to split \MATH into two partitions \MATH and \MATH .
+Among candidate cut-points , the best candidate cut-point Tmin , which minimizes the entropy function \MATH , is selected to split \MATH into two partitions \MATH and \MATH .
+109
+This process can then be repeated recursively to \MATH and \MATH until some stopping condition is satisfied , thus creating multiple intervals on the feature \MATH .
+This process can then be repeated recursively forto \MATH and \MATH until some stopping condition is satisfied , thus creating multiple intervals on the feature \MATH .
+110
+</p>
+</p>
+111
+<p>
+<p>
+112
+Using MDLP , the stopping criteria is proposed by Fayyad and Irani [11] as follows :
+Using MDLP , the stopping criteria is was proposed by Fayyad and Irani [11] as follows :
+113
+</p>
+</p>
+114
+<p>
+<p>
+115
+MDLP Criteria : A partition induced by cut-point T for a set S of N examples is accepted if : \MATH Where \MATH ,where \MATH , \MATH , \MATH is the number of classes in \MATH , \MATH , \MATH .
+MDLP Criteria : A partition induced by cut-point T for a set S of N examples is accepted if : \MATH wWhere \MATH ,where \MATH , \MATH , and \MATH is are the numbers of classes in \MATH , \MATH , and \MATH , respectively .
+116
+Extensive experiments [11 , 14] have shown that this method is one of the best variable discretization one because it gives small number of cut-points while maintaining consistency .
+Extensive experiments [11 , 14] have shown that this method is one of the best in variable discretization one because it gives a small number of cut-points while maintaining consistency .
+117
+</p>
+</p>
+118
+<p>
+<p>
+119
+The outline of the proposed feature selection method is shown in Algorithm 1 .
+The outline of the proposed feature selection method is shown in Algorithm 1 .
+120
+</p>
+</p>
+121
+</subsection>
+</subsection>
+122
+</section>
+</section>
+123
+<section label= " EXPERIMENTS " >
+<section label= " EXPERIMENTS " >
+124
+<subsection label= " Training Data " >
+<subsection label= " Training Data " >
+125
+<p>
+<p>
+126
+For experiments , a set face and non-face patterns of size 24x24 was used .
+For experiments , a set of face and non-face patterns of size 24x24 was used .
+127
+A set of 10 ,000 face patterns were collected from the Internet .
+A set of 10 ,000 face patterns were collected from the Internet .
+128
+Another set of 10 ,000 complex non-face patterns were false positives collected by running a face detector based on a cascade of 17 AdaBoost classifiers at different locations and scales on 8 ,440 images with various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+Another set of 10 ,000 complex non-face patterns were false positives collected by running a face detector based on a cascade of 17 AdaBoost classifiers at different locations and scales on 8 ,440 images that contained no faces ; the images with included various subjects , such as rocks , trees , buildings , scenery , and flowers , containing no faces .
+129
+The 10 ,000 patterns in each set were divided into a training set of 6 ,000 patterns and a test set of 4 ,000 patterns .
+The 10 ,000 patterns in each set were divided into a training set of 6 ,000 patterns and a test set of 4 ,000 patterns .
+130
+Some examples of the collected 24x24 face and non-face patterns are shown in Figure 1 .
+Some examples of the collected 24x24 face and non-face patterns are shown in Figure 1 .
+131
+</p>
+</p>
+132
+<p>
+<p>
+133
+Two types of features that are Haar wavelet feature and Gabor wavelet feature were used in experiments .
+Two types of features ?that are Haar wavelet features and Gabor wavelet features ? were used in our experiments .
+134
+Haar wavelet features have been widely used in many face detection systems [1 , 15] .
+Haar wavelet features have been widely used in many face detection systems [1 , 15] .
+135
+It consists of four kinds of features modeled from adjacent basic rectangles with the same size and shape .
+They consists of four kinds of features modeled from adjacent basic rectangles with the same size and shape . //I�fm not 100 percent clear on what " they " points to here . " These Haar wavelet features , " perhaps? But can features consist of other kinds of features? You may want to clarify here .]
+136
+</p>
+</p>
+137
+<p>
+<p>
+138
+The feature value is defined as the difference of sum of the pixels within rectangles .
+The feature value is defined as the difference of the sum of the pixels within the rectangles .
+139
+In total , 134 ,736 features were used for training classifiers .
+In total , 134 ,736 features were used for training classifiers .
+140
+</p>
+</p>
+141
+<p>
+<p>
+142
+Gabor wavelet features have also often been used in face recognition systems [12] and are defined as : \MATH where \MATH and \MATH define the orientation and scale of the Gabor kernels respectively , \MATH , and the wave vector \MATH , is defined as : \MATH where \MATH , \MATH \MATH .
+Gabor wavelet features have also often been used often in face recognition systems [12] and are defined as : \MATH , where \MATH and \MATH define the orientation and scale of the Gabor kernels respectively , \MATH , and the wave vector \MATH , is defined as : \MATH where \MATH , \MATH and \MATH .
+143
+</p>
+</p>
+144
+<p>
+<p>
+145
+The Gabor representation of a face image is computed by convolving the face image with the Gabor filters .
+The Gabor representation of a face image is computed by convolving the face image with the Gabor filters .
+146
+Let \MATH be the face image , its convolution with a Gabor filter �� ,_( z ) is defined as : \MATH where \MATH denotes the convolution operator .
+Let \MATH be the face image ; , its convolution with a Gabor filter �� ,_( z ) is defined as : \MATH where \MATH denotes the convolution operator .
+147
+</p>
+</p>
+148
+<p>
+<p>
+149
+Similar to [12] , Gabor kernels at five scales \MATH and eight orientations \MATH were used .
+Similar to [12] , Gabor kernels at five scales , \MATH , and eight orientations , \MATH , were used .
+150
+At each pixel position , 40 Gabor features are computed by convolving the input image with the real part of Gabor filters .
+At each pixel position , 40 Gabor features are computed by convolving the input image with the real part of Gabor filters .
+151
+As a result , \MATH there are \MATH Gabor features for one 24x24 training sample .
+As a result , one \MATH training sample hasthere are \MATH Gabor features for one 24x24 training sample .
+152
+</p>
+</p>
+153
+</subsection>
+</subsection>
+154
+<subsection label= " Results " >
+<subsection label= " Results " >
+155
+<p>
+<p>
+156
+In order to show effectiveness of the proposed feature selection method ( CMI-Multi ) , we compared it with two other feature selection methods that are forward feature selection ( FFS ) [16] and CMI-basedmethod using binary features ( CMIBinary ) [8 , 7] on the data set and feature setsmentioned above .
+To prove the effectiveness of the proposed feature selection method ( CMI-Multi ) , we compared it with two other feature selection methods ?that are forward feature selection ( FFS ) [16] and a CMI-based methods using binary features ( CMI-Binary ) [8 , 7] ? on the data set and feature sets mentioned described above .
+157
+</p>
+</p>
+158
+<p>
+<p>
+159
+All classifiers were trained using AdaBoost similar to [1] .
+All classifiers were trained using AdaBoost similar to [1] .
+160
+We chose the forward feature selection proposed by Wu et. al. [16] because it has very impressive results when not only reducing significantly the training time of AdaBoost-based face detection system [1] ( about 100 times ) but also maintaining comparable performance .
+We chose the forward feature selection proposed by Wu et. al. [16] because it has very impressive results , when not only reducing significantly the training time of the AdaBoost-based face detection systems [1] by ( about 100 times , ) but also maintaining comparable performance .
+161
+</p>
+</p>
+162
+<p>
+<p>
+163
+Figure 2 shows performance of classifiers trained by Haar feature subsets selected by three feature selection methods .
+Figure 2 shows performance of classifiers trained by Haar feature subsets selected by three feature selection methods .
+164
+It indicates that , the proposed method CMI-Multi outperforms the others while FFS and CMI-Binary have comparable performance .
+The figureIt indicates that , the proposed method , CMI-Multi , outperforms the others while the performances of FFS and CMI-Binary have were comparable performanceto one another .
+165
+</p>
+</p>
+166
+<p>
+<p>
+167
+The similar result is also shown when tested on Gabor wavelet features .
+The A similar result is was also shown when the three feature selection methods were tested on Gabor wavelet features .
+168
+In this case , CMI-based feature selection methods obviously outperform FFS and CMI-Multi is confirmed to be more efficient than CMI-Binary .
+In this case , CMI-based feature selection methods obviously clearly outperformed FFS , and CMI-Multi is was confirmed to be more efficient than CMI-Binary .
+169
+</p>
+</p>
+170
+<p>
+<p>
+171
+Because our proposed method uses same principle as FFS which only trains weak classifiers once , it is extremely fast compared with AdaBoost [1] .
+Because our proposed method uses same principle as FFS , which only trains weak classifiers once , it is extremely fast compared with AdaBoost [1] .
+172
+We built two cascade of AdaBoost classifiers that use CMI-Multi and AdaBoost [1] as feature selection methods .
+We built two cascades of AdaBoost classifiers that use CMI-Multi and AdaBoost [1] as feature selection methods .
+173
+Testing on the standard benchmark MIT+CMU test set , they have comparable performance .
+Testing on the standard benchmark MIT+CMU test set , they hadve comparable performance .
+174
+</p>
+</p>
+175
+<p>
+<p>
+176
+However , CMI-Multi is trained faster than AdaBoost approximately 70 times .
+However , CMI-Multi wasis trained faster than was AdaBoost by approximately 70 times .
+177
+</p>
+</p>
+178
+</subsection>
+</subsection>
+179
+</section>
+</section>
+180
+<section label= " CONCLUSION " >
+<section label= " CONCLUSION " >
+181
+<p>
+<p>
+182
+We have presented a fast feature selection method using conditional mutual information to handle huge feature sets .
+We have presented a fast feature selection method using conditional mutual information to handle huge feature sets .
+183
+The estimation of mutual information is simplified by using MDLP based discretization method .
+The estimation of mutual information is simplified by using an MDLP- based discretization method .
+184
+Integrated into AdaBoost-based object detection systems , it can not only reduce the training time significantly but also achieve high classification performance .
+Integrated into AdaBoost-based object detection systems , our proposed methodit can not only reduces the training time significantly , but also achieves high classification performance .
+185
+</p>
+</p>
+186
+<p>
+<p>
+187
+Experiments on two popular feature sets such as Haar wavelets and Gabor wavelets have demonstrated the effectiveness of the proposed method .
+Experiments on two popular feature sets have demonstrated the effectiveness of the proposed method . //[Please note : I am not sure which of the following you mean .--> one composed of such as Haar wavelets and the other composed of Gabor wavelets / ? Haar wavelets and Gabor wavelets ?]
+188
+</p>
+</p>
+189
+</section>
+</section>
+190
+</document>
+</document>

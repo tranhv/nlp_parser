@@ -1,0 +1,700 @@
+Automatic approach to understanding mathematical expressions using MathML Parallel Markup corpora
+Automatic approach to understanding mathematical expressions using MathML Parallel Markup corpora
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+This paper explores the use of MathML Pallel Markup Corpora for mathematical expression understanding , the task of which is formulated as a translation from Presentation to Content MathML Markups in our approach .
+This paper explores the use of MathML Pallel Markup Corpora for automatic understanding of mathematical expressions , the task of which is formulated as a translation from Presentation to Content MathML Markups . // <the use of capitals implies that these are software applications like PowerPoint or Word . I assume this is the right idea .> .
+6 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10,11:paraphrase 13,12,11:12,13,14,15:para-colocation 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 33:32:preserved
+
+In contrast to existing researches that mainly relied on manually encoded transformation rules , we adopt a Statistical-Machine-Translation-based method to automatically extract translation rules from parallel markup corpora .
+In contrast to previous research that mainly relied on manually encoded transformation rules , we use a statistical-machine-translation-based method to automatically extract translation rules from parallel markup corpora .
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:bigrammar-nnum 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:paraphrase 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Our study shows that the structural features embedded in the MathML tree can be effectively exploited in the sub-tree alignment and the translation rules extracted from the alignment give boost to the translation system .
+Our study shows that the structural features embedded in the MathML tree can be effectively exploited in the sub-tree alignment and the translation rules extracted from the alignment give a boost to the translation system .
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved :29:mogrammar-det
+
+Experimental results on the Wolfram Function Site show that our approach achieves an improvement against the prior rule-based system .
+Experimental results on the Wolfram Function Site show that our approach is an improvement over prior rule-based systems . // <Note : It seems that where were two prior systems that were compared . If not , you can go back to using a prior system .> .
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:paraphrase 12:12:preserved 13:13:preserved 14:14:bigrammar-prep 15::mogrammar-det 16:15:preserved 17:16:preserved 18:17:bigrammar-nnum 19:18:preserved
+
+One of the most significant current discussions in the digitization of mathematical and scientific content and its applications is the semantic enrichment of mathematical documents , that is adding or associating semantic tags - usually concepts - to mathematical expressions .
+One of the most significant discussions regarding the digitization of mathematical and scientific content and its applications is about semantic enrichment of mathematical documents , that is , adding or associating semantic tags - usually concepts - with mathematical expressions .
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6:5:preserved 7:6:bigrammar-prep 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19::mogrammar-det 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 38:38:preserved 39:39:preserved 40:40:preserved :18:mogrammar-prep :37:mogrammar-prep
+
+By encoding the underlying mathematical meaning of an expression explicitly , it is possible to interchange information more precisely between systems that semantically process mathematical objects .
+By encoding the underlying mathematical meaning of an expression explicitly , it is possible to interchange information more precisely between systems that semantically process mathematical objects .
+16 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+The direct application of this is enabling semantic searches for mathematical expressions by understanding the intent of the searcher and the contextual meaning of mathematical terms improve search accuracy .
+The direct application of this idea enables semantic searches for mathematical expressions whereby the system 's �eunderstanding ' of the intent of the searcher and the contextual meaning of mathematical terms improves search accuracy .
+17 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5,4:paraphrase 5,6:6:bigrammar-vtense 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-prep 13:16:preserved 14:13:preserved 15:20:preserved 16:18:preserved 19,20,17,18,21,22,23,24,25:24,25,22,23,26,27,28,29,30:preserved 26:31:bigrammar-nnum 27,28:32,33:preserved :19:mogrammar-det :21:mogrammar-prep
+
+It also benefits computer algebra systems , automatic reasoning system and multi-lingual translation systems .
+It also benefits computer algebra systems , automatic reasoning systems and multi-lingual translation systems .
+18 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-nnum 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+However , as is the case with natural language , the semantic enrichment of mathematical expressions is a non-trivial task .
+However , as is the case with natural language , semantic enrichment of mathematical expressions is a non-trivial task .
+21 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10::mogrammar-det 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+
+- First , mathematical notation , though more rigorous than natural language , is nonetheless at times ambiguous , context-dependent , and varies from community to community .
+- First , mathematical notation , though more rigorous than natural language , is nonetheless at times ambiguous , context-dependent , and varies from community to community .
+24 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+- Second , the underlying mathematical meaning of an expression need to follow a semantic markup in a semantically rigorous way .
+- Second , the underlying mathematical meaning of an expression needs to follow a semantic markup in a semantically rigorous way .
+27 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-nnum 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Because of this , failing to follow the constraint , the computer might not be able to process that expression .
+Because of this , in failing to follow the constraint , the computer might not be able to process that expression .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved :4:mogrammar-prep
+
+- The third problem is that new notations tend to be introduced and used as and when needed so a mechanism is required for referring to mathematical concepts outside of the base collection , allowing them to be represented .
+- The third problem is that new notations tend to be introduced and used when needed so a mechanism is required for referring to mathematical concepts outside of the base collection .
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved 32:30:preserved
+
+The aim of this paper is to introduce a method for automatic mathematics semantic enrichment that capable of analyze and disambiguate mathematical terms .
+The aim of this paper is to describe a method of automatic semantic enrichment for mathematics that is capable of analyzing and disambiguating mathematical terms .
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:paraphrase 8:8:preserved 9:9:preserved 10:10:bigrammar-prep 11:11:preserved 12:15:preserved 13:12:preserved 14:13:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:bigrammar-wform 19:21:preserved 20:22:bigrammar-wform 21:23:preserved 22:24:preserved 23:25:preserved :14:mogrammar-prep
+
+In our research , MathML \CITE Presentation Markup is used to display mathematical expressions and MathML Content Markup is used to convey mathematical meaning .
+In our research , MathML \CITE Presentation Markup is used to display mathematical expressions and MathML Content Markup is used to convey mathematical meaning .
+38 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The semantic enrichment task then becomes generating Content MathML outputs from Presentation MathML expressions .
+The semantic enrichment task then becomes one of generating Content MathML outputs from Presentation MathML expressions .
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:8,6,7:paraphrase 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved
+
+There are three reasons why we choose MathML markup in our research .
+There are three reasons why we chose MathML markup in our research .
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-vtense 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+- First , since its first release in 1997 , MathML has grown to become a general format that enables mathematics to be served , received , and processed in a wide variety of applications .
+- First , since its first release in 1997 , MathML has grown to become a general format that enables mathematics to be served , received , and processed in a wide variety of applications .
+45 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+- Second , MathML can be used to encode both mathematical notation and mathematical content .
+- Second , MathML can be used to encode both mathematical notations and mathematical content .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-nnum 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+- Last , large collections of formulas are available in MathML and we can easily assess these collections .
+- Last , large collections of formulas are available in MathML , and we can easily assess these collections .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+- In the scope of this paper , we only make use the information within a mathematical expression for disambiguation when translating it to content markup .
+- In the scope of this paper , we only make use the information within a mathematical expression for disambiguation when translating it into content markup .
+54 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:bigrammar-prep 24:24:preserved 25:25:preserved 26:26:preserved
+
+The prior solution to this problem is SnuggleTeX \CITE , which was proposed by David McKain .
+The prior solution to this problem is SnuggleTeX \CITE , which was proposed by David McKain .
+59 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The system used rule-based methods for disambiguation and translation .
+The system uses rule-based methods for disambiguation and translation .
+60 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+This solution has two main limitations :
+This solution has two main limitations :
+61 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+- Since it is a hand written rule-based system , SnuggleTeX requires mathematical knowledge and human effort to develop
+- Since it is a hand-written rule-based system , SnuggleTeX requires mathematical knowledge and human effort to develop .
+64 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved
+
+- Due to the diversity of mathematical expressions , SnuggleTeX is still to be considered experimental and has difficulty processing complicated mathematical symbols and expressions .
+- Due to the diversity of mathematical expressions , SnuggleTeX is still considered experimental and has difficulty processing complicated mathematical symbols and expressions .
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12,13,14:12:paraphrase 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved
+
+In this paper , we propose an approach that automatically learn the semantics inference from a presentation from parallel markup data .
+In this paper , we propose an approach that automatically learns semantic inferences in a presentation from parallel markup data . // <The original has too many from to be logically clear . The rewrite is a guess . > .
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-inter 11::mogrammar-det 12:11:bigrammar-nnum 13:12:bigrammar-inter 14:13:bigrammar-prep 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved
+
+The idea of this approach is based on statistical machine translation .
+This approach is based on statistical machine translation .
+73 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved
+
+The underlying mathematical meaning of an expression is inferred according to the probability distribution $ p( c | p ) $ that a semantic expression $ c $ is the translation of a presentation expression $ p $ .
+The underlying mathematical meaning of an expression is inferred from the probability distribution $ p( c | p ) $ that a semantic expression $ c $ is the translation of a presentation expression $ p $ .
+74 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10:9:bigrammar-prep 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved 37:36:preserved 38:37:preserved
+
+The probability distribution will be automatically learned from data that have both Presentation and Content MathML markup , that is the parallel markup MathML data .
+The probability distribution is automatically learned from both Presentation and Content MathML markup data , that is , parallel markup MathML data .
+75 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3:bigrammar-vtense 5:4:preserved 6:5:preserved 7:6:preserved 8:13:preserved 11:7:preserved 12,13,14,15,16:8,9,10,11,12:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20::mogrammar-det 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved
+
+The data used in this study was collected from the Wolfram Function Site \CITE .
+The data used in this study was collected from the Wolfram Function Site \CITE .
+76 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+We also prepare another parallel markup MathML data by annotating mathematical expressions on 20 papers from The Archives of the Association for Computational Linguistics \CITE ( ACL-ARC ) .
+We also prepared other parallel markup MathML data by annotating mathematical expressions in 20 papers from The Archives of the Association for Computational Linguistics \CITE ( ACL-ARC ) .
+77 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:bigrammar-others 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-prep 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+We have two main contributions in this paper
+There are two main contributions in this paper :
+80 0,1:0,1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+- First , successfully apply the machine translation techniques to the problem of mathematic semantic enrichment .
+- First , we successfully applied machine translation techniques to solving the problem of mathematic semantic enrichment .
+82 0:0:preserved 1:1:preserved 2:2:preserved 3:4,3:paraphrase 4:5:bigrammar-vtense 5::mogrammar-det 6:6:preserved 7:7:preserved 8:8:preserved 9:10,9:paraphrase 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved
+
+Experimental results show that our system significantly outperforms the current rule-based system and it can handle a lot of practical cases in the mathematics semantic enrichment problem .
+Experimental results show that our system significantly outperforms the current rule-based system and it can handle a lot of practical cases in the semantic enrichment problem .
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved
+
+Since both quantity and quality of mathematical expressions are continuing to grow and expand through time , we believe that our system will cover most of real life mathematical expressions .
+The quantity and quality of mathematical expressions are continuing to grow , and we believe that our system will be able to cover most mathematical expressions .
+84 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:12:preserved 17,18,19,20,21:13,14,15,16,17:preserved 22,23:18,19,20,21,22:paraphrase 24:23:preserved 28,29:24,25:preserved :0:mogrammar-det
+
+- Second , mathematics knowledge such as symbol 's meanings or structural relations is automatically learned while training , therefor it is not required mathematics experts nor human effort and it is also easier to update the system given more data .
+- Second , mathematics knowledge such as a symbol 's meanings or structural relations is automatically learned while training ; therefore , the system requires no human effort or expertise , and it is easier to update with more data .
+87 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:21:preserved 19:20:typo 20,22,23,21,26:22,23,24,25,28:paraphrase 24,25:29:paraphrase 27,28:27,26:preserved 29:31:preserved 30:32:preserved 31:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 38:37:paraphrase 39:38:preserved 40:39:preserved 41:40:preserved
+
+Since new notations keep growing , it is important to update the system as quick as possible .
+Since new notations keep cropping up , it is important to update the system as quickly as possible .
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:bigrammar-wform 15:16:preserved 16:17:preserved 17:18:preserved
+
+In our experiments , we performed a 10-folds cross validation on mathematical expressions from 6 categories of the Wolfram Functions Site to evaluate the effectiveness of our proposed learning method .
+We performed a ten-fold cross validation on mathematical expressions from six categories of the Wolfram Functions Site to evaluate the effectiveness of our learning method .
+93 4,5,6:0,1,2:preserved 7:3:spelling 8,9,10,11,12,13:4,5,6,7,8,9:preserved 14:10:spelling 15,16,17,18,19,20,21,22,23,24,25,26,27,28,29:11,12,13,14,15,16,17,18,19,20,21,22,23,24:preserved
+
+We set up another experiment to confirm the correlation between system performance and training set size and saw that increasing the size of training data actually boost the system performance .
+We performed another experiment to assess the correlation between the system 's performance and training set size and found that increasing the size of the training data boosted the system 's performance .
+94 0:0:preserved 1,2:1:paraphrase 3:2:preserved 4:3:preserved 5:4:preserved 6:5:paraphrase 7:6:preserved 8:7:preserved 9:8:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:paraphrase 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:25:preserved 24:26:preserved 26:27:bigrammar-vtense 27:28:preserved 28:29:preserved 29:31:preserved 30:32:preserved :24:mogrammar-det
+
+We also performed extensive side-by-side comparison with prior work \CITE over a data set from ACL-ARC scientific papers .
+We also performed an extensive comparison with prior work \CITE using a data set collected from ACL-ARC scientific papers .
+95 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:paraphrase 11:11:preserved 12:12:preserved 13:13:preserved 14:15,14:paraphrase 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved :3:mogrammar-det
+
+Our experimental results show that the proposed approach works well on the mathematics semantic enrichment problem and it excels the previous work by providing significantly less error rate .
+Our experimental results show that our approach works well in dealing with the mathematics semantic enrichment problem and it outperforms the previous work by making significantly fewer errors .
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-det 7:6:preserved 8:7:preserved 9:8:preserved 10:9,10,11:paraphrase 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:paraphrase 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:paraphrase 24:25:preserved 25,26,27:26,27:paraphrase 28:28:preserved
+
+The remainder of this paper is organized as follows : In Section 2 , we give a brief overview of the background and related work for semantic enrichment of mathematical expressions , while in Section 3 we present our proposed method .
+The remainder of this paper is organized as follows : In Section 2 , we give a brief overview of the background and related work on semantic enrichment of mathematical expressions .
+99 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:bigrammar-prep 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+We then describe the experimental setup and results in Section 4 .
+We present our method in Section 3 and describe the experimental setup and results in Section 4 .
+100 0:0:preserved 1,2,3,4,5:1,2,3,4,5,6,8,9,10,11,12:paraphrase 6:7:preserved 7,8,9,10:13,14,15,16:preserved
+
+Section 5 concludes the paper and gives avenues for future work .
+Section 5 concludes the paper and gives avenues for future work .
+101 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Since mathematical formulas contain both mathematical symbols and structures , a special markup is required for their representation .
+Since mathematical formulas contain both mathematical symbols and structures , a special markup is required for their representation .
+107 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Until recently , images have been used to represent mathematical formulas on the web .
+Until recently , images have been used to represent mathematical formulas on the web .
+108 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+This type of display does not need any markup language to decode the formulas , but it is hard to process them .
+This type of display does not need any markup language to decode the formulas , but it is hard to process them .
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+A way of dealing with mathematical formulas in this format is to convert them to another text-based format , as seen in InftyReader \CITE .
+A way of dealing with mathematical formulas in this format is to convert them into another text-based format , for example , InftyReader \CITE .
+110 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-prep 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19,20,21:19,20:paraphrase 22:22:preserved 23:23:preserved 24:24:preserved
+
+For scientific documents , \TeX{} has been used to encode mathematical formulas .
+\TeX{} has been used to encode mathematical formulas in scientific documents .
+113 0:8:bigrammar-prep 1,2:9,10:preserved 11,10,9,8,7,6,5,4:6,7,5,4,3,2,1,0:preserved 12:11:preserved
+
+The formula is printed in a way a person would write by hand , or typeset the equation .
+A formula is printed in a way a person would write by hand , or typeset the equation .
+114 0:0:bigrammar-det 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+In some web pages , such as the Wikipedia site , a formula is displayed in both image and \TeX{} formats .
+In some web pages , such as on the Wikipedia site , formulas are displayed in both image and \TeX{} formats .
+115 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11,12,13:12,13:bigrammar-inter 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved :7:mogrammar-prep
+
+The best known open markup format for representing mathematical formulas for the web is MathML \CITE , which was recommended by the W3C math working group .
+The best known open markup format for representing mathematical formulas for the web is MathML \CITE , which was recommended by the W3C math working group .
+118 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+It provides a standard way of representing mathematical expressions .
+It provides a standard way of representing mathematical expressions .
+119 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+It is an XML application for describing mathematical notations and encoding mathematical content within a text format .
+It is an XML application for describing mathematical notations and encoding mathematical content within a text format .
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+MathML has two types of encoding , content-based encoding which is called Content MathML , dealing with the meaning of formulas , and presentation-based encoding which is called Presentation MathML , dealing with the display of formulas .
+MathML has two types of encoding , content-based encoding , called Content MathML , dealing with the meaning of formulas , and presentation-based encoding , called Presentation MathML , dealing with the display of formulas .
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 25,26,9,10::unspec 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved 32:30:preserved 33:31:preserved 34:32:preserved 35:33:preserved 36:34:preserved 37:35:preserved
+
+The illustration tree display of Presentation and Content Markup of the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ are depicted in Figure \REF and Figure \REF respectively .
+The illustration trees of the Presentation and Content Markup of the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ are depicted in Figure \REF and Figure \REF .
+122 0:0:preserved 1:1:preserved 2:2:bigrammar-nnum 4:3:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 26:25:preserved :4:mogrammar-det
+
+Besides MathML , there are other markups such as eqn \CITE , OpenOffice .
+Besides MathML , there are other markups such as eqn \CITE , OpenOffice .
+123 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+org Math \CITE , ASCIIMathML \CITE and OpenMath \CITE , but these markup can be converted to MathML using freely available tools .
+org Math \CITE , ASCIIMathML \CITE , and OpenMath \CITE , but these markups can be converted into MathML by using freely available tools .
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:bigrammar-nnum 13:14:preserved 14:15:preserved 15:16:preserved 16:17:bigrammar-prep 17:18:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved :19:mogrammar-prep
+
+There are not many studies on semantic enrichment problem .
+There are not many studies on the semantic enrichment problem .
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved :6:mogrammar-det
+
+In this section , we list some works that related to exploit the meaning of mathematical expressions .
+In this section , we list some of the work on exploiting the meanings of mathematical expressions .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:9:bigrammar-nnum 8,10,9,11:10,11:paraphrase 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved :7:mogrammar-prep :8:mogrammar-det
+
+For understanding mathematical expressions , Grigole et al. \CITE proposed an approach based on the surrounding text of mathematical expressions .
+Grigole et al. \CITE proposed an approach to understanding mathematical expressions based on the text surrounding the mathematical expressions .
+132 0:7:bigrammar-prep 1,2,3:8,9,10:preserved 6,5,7,8:0,1,2,3:preserved 9,10,11:4,5,6:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:15:preserved 16:14:preserved 17::mogrammar-prep 18:17:preserved 19:18:preserved 20:19:preserved :16:mogrammar-det
+
+The main idea of this approach is to use the surrounding text for disambiguation which is based on word sense disambiguation and lexical similarity .
+The main idea of this approach is to use the surrounding text for disambiguation based on word sense disambiguation and lexical similarity .
+133 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved
+
+First , a local context C ( 5 nouns preceding a target mathematical expression ) is found in each sentence .
+First , a local context C ( five nouns preceding a target mathematical expression ) is found in each sentence .
+134 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:spelling 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For each noun , the system identifies a Term Cluster ( derived from the OpenMath Content Dictionary ) with the highest semantic similarity according to a similarity metric .
+For each noun , the system identifies a Term Cluster ( derived from the OpenMath Content Dictionary ) with the highest semantic similarity according to a similarity metric .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The similarity scores obtained were weighted , summed up , and normalized by the length of the considered context .
+The similarity scores obtained are weighted , summed up , and normalized by the length of the considered context .
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5:4,5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+The assigned interpretation is the Term Cluster with the highest similarity score .
+The Term Cluster with the highest similarity score is assigned as the interpretation .
+137 0:11:preserved 1,3:9,8,10:para-freeword 2:12:preserved 4:0:preserved 5,6,7,8,9,10,11:1,2,4,3,5,6,7:preserved 12:13:preserved
+
+The approach was evaluated on 451 manually annotated mathematical expressions and the best result was 68.26 $ F_{0.5} $ score .
+The approach was evaluated on 451 manually annotated mathematical expressions , and the best result was an F_{0.5} $ score of 68.26 $ .
+138 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:21:preserved 16:18:preserved 17:17:preserved 18:22:preserved 19:19:preserved 20:23:preserved :16:mogrammar-det :20:mogrammar-prep
+
+To deal with the meanings of mathematical formulas , Nghiem et al. \CITE proposed an approach for extracting the names or descriptions of the formulas using natural language text surrounding them .
+To deal with the meanings of mathematical formulas , Nghiem et al. \CITE proposed an approach for extracting names or descriptions of formulas by using the natural language text surrounding them .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18::mogrammar-det 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:25:preserved 24:22:preserved 25:24:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved :23:mogrammar-prep
+
+The most accurate extraction result using data from Wikipedia was $ 68.33 $ percent .
+The most accurate extraction result using data from Wikipedia was $ 68.33 $ percent .
+140 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+There are two other projects that deal with the semantic meaning of mathematical expressions .
+There are two other projects that deal with the semantic meaning of mathematical expressions .
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The first is the SnuggleTeX project \CITE , which provides a free and open-source Java library for converting fragments of LaTeX to XML including Content MathML .
+The first is the SnuggleTeX project \CITE , which provides a free and open-source Java library for converting fragments of LaTeX into XML including Content MathML .
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21::unaligned 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved :21:mogrammar-prep
+
+The other project is Lamapun \CITE .
+The other project is Lamapun \CITE .
+145 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+This project investigates semantic enrichment , structural semantics and ambiguity resolution in mathematical corpora .
+This project investigates semantic enrichment , structural semantics , and ambiguity resolution in mathematical corpora .
+146 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved
+
+Unfortunately , there are no evaluation report on these systems .
+Unfortunately , there are no evaluations of these systems .
+147 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6,5:5:paraphrase 7:6:bigrammar-prep 8:7:preserved 9:8:preserved 10:9:preserved
+
+To translate mathematical expressions from the Presentation MathML to Content MathML format , a list of rules for translation is required .
+To translate mathematical expressions from the Presentation MathML into Content MathML format , a list of translation rules is required .
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-prep 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17::mogrammar-prep 18:16:preserved 19:18:preserved 20:19:preserved 21:20:preserved
+
+Building these translation rules by hand is a large undertaking .
+Building these translation rules by hand is a large undertaking .
+153 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Our task is inherently domain specific therefore we propose an approach which is based on statistical machine learning methods that automatically extract these rules from a dataset .
+Our task is inherently domain-specific ; therefore , we devised an approach based on statistical machine learning for automatically extracting rules from a dataset .
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5:4:spelling 6:6:preserved 7:8:preserved 8:9:paraphrase 9:10:preserved 10:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18,19,21:17,19:paraphrase 20:18:preserved 22::mogrammar-det 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved
+
+Nowadays , statistical machine translation ( SMT ) is by far the most widely-studied machine translation method .
+Statistical machine translation ( SMT ) is by far the most widely studied machine translation method .
+157 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11,12:spelling 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved
+
+SMT uses a very large data set of good translations , that is , a corpus of texts which have already been translated into other language , and then uses those texts to automatically infer a statistical model of translation .
+SMT uses a very large data set of good translations , that is , a corpus of texts which have already been translated into another language , and it uses those texts to automatically infer a statistical model of translation .
+158 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:bigrammar-others 25:25:preserved 26:26:preserved 27:27:preserved 28:28:paraphrase 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved
+
+The statistical model is then applied to new texts to make a translation .
+The statistical model is then applied to new texts to make a translation of them .
+159 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12,13,14:paraphrase 13:15:preserved
+
+Tree-based or syntax-based SMT can be used for tree-to-tree translation but it has two drawbacks when apply to the problem of translating from Presentation to Content MathML expression .
+Tree-based or syntax-based SMT can be used for tree-to-tree translation but it has two drawbacks when it is applied to the problem of translating Presentation into Content MathML .
+160 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16,17,18:paraphrase 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22::mogrammar-prep 23:24:preserved 24:25:bigrammar-prep 25:26:preserved 26:27:preserved 28:28:preserved
+
+- The first drawback is tree-based SMT focus on generating the surface texts rather than the tree structures .
+- The first drawback is that tree-based SMT focuses on generating surface texts rather than tree structures .
+163 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:paraphrase 5:6:preserved 6:7:preserved 7:8:bigrammar-others 8:9:preserved 9:10:preserved 10::mogrammar-det 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15::mogrammar-det 16:15:preserved 17:16:preserved 18:17:preserved
+
+While mathematical expressions have strict structures , it fails to fulfill this requirement .
+Mathematical expressions have strict structures , and it fails to fulfill this requirement .
+164 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5,6:paraphrase 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+- The second drawback is there are many long mathematical expressions in real-world data and translating long and complex sentences has been a critical problem in machine translation .
+- The second drawback is there are many long mathematical expressions in real-world data and translating long and complex sentences has been a critical problem in machine translation .
+167 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+To overcome these limitations , we introduced two separated sets of rule : fragment rules and translation rules .
+To overcome these limitations , we made two separate rule sets : fragment rules and translation rules .
+170 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:paraphrase 7:7:preserved 8:8:bigrammar-wform 9:10:preserved 10::mogrammar-prep 11:9:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved
+
+The detail is described in the next section .
+The details are described in the next section .
+171 0:0:preserved 1,2:2,1:bigrammar-inter 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+The framework of the system is shown in Figure \REF .
+The framework of the system is shown in Figure \REF .
+178 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The system has three main modules .
+The system has three main modules .
+179 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+- Preprocessing : processes MathML expressions to remove error expressions or format tags with no semantic meaning .
+- Preprocessing : This module processes MathML expressions by removing error expressions or format tags with no semantic meaning .
+181 0:0:preserved 1:1:preserved 2:2:preserved 3:5,4,3:paraphrase 4:6:preserved 5:7:preserved 6,7:8,9:paraphrase 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved
+
+- Extracting Rules : given a dataset contains MathML parallel markup expressions , extract the rules for translation .
+- Rule Extraction : This module is given a dataset containing MathML parallel markup expressions , and it extracts translation rules from it . // <The original is ungrammatical and unclear . The rewrite is a guess .> .
+184 0:0:preserved 1,2:2,1:para-colocation 3:3:preserved 4:7,6,5,4:paraphrase 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:18,17,16:paraphrase 14::mogrammar-det 15:20:preserved 16::mogrammar-prep 17:19:preserved
+
+- Generating Content MathML : given a mathematical expressions in Presentation MathML markup , and a set of rules , generate Content MathML expressions to enrich the Presentation MathML expressions .
+- Content MathML Generation : This module is given mathematical expressions in Presentation MathML markup and a set of rules , and it generates Content MathML expressions to enrich the Presentation MathML expressions .
+187 0:0:preserved 1:3,2,1:para-colocation 2::unaligned 3::unaligned 4:4:preserved 5:8,7,5,6:paraphrase 6::mogrammar-det 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:23,22,21:paraphrase 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved
+
+The presentation elements of Presentation MathML are divided into two classes : token elements and layout schemata .
+The presentation elements of Presentation MathML are divided into two classes : token elements and layout schemata .
+192 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Token elements represent identifier 's names , function 's names , numbers , etc.
+Token elements represent the identifier 's names , function 's names , numbers , etc. // <the identifier 's names means there is one identifier with possibly many names . If this is what you want to say , it is okay . If not , maybe you mean simply " identifier names " . ><Likewise , maybe you mean " function names " .>
+193 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :3:mogrammar-det
+
+Layout schemata build expressions out of parts .
+Layout schemata build expressions out of parts .
+194 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+By investigating the data from the Wolfram Function Site , we noticed that there are elements that have no specific meaning , they are used for displaying purpose only and most of them are layout schemata .
+After investigating data on the Wolfram Function Site , we noticed that there are elements that have no specific meaning ; they are used for display purposes only and most of them are layout schemata .
+195 0:0:bigrammar-prep 1:1:preserved 2::mogrammar-det 3:2:preserved 4::unaligned 5:4:bigrammar-det 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:bigrammar-wform 27:26:bigrammar-inter 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved :3:mogrammar-prep
+
+For example , the $ <mtext> </mtext> $ or $ <mspace / > $ tags are used to insert some space between expressions .
+For example , the $ <mtext> </mtext> $ or $ <mspace / > $ tags are used to insert some space between expressions .
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Another example are the pairs of parentheses , it is used to indicate that the expressions in the parentheses go together , while its structure already encoded that information .
+Another example is pairs of parentheses ; these are used to indicate that the expressions in the parentheses go together , despite that their structure already encodes that information . // <The original is unclear . The rewrite is a guess . > .
+197 0:0:preserved 1:1:preserved 2:2:bigrammar-inter 3::mogrammar-det 4:3:preserved 5:4:preserved 6:5:preserved 8,9:7,8:bigrammar-inter 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21,22:paraphrase 23:23:bigrammar-det 24:24:preserved 25:25:preserved 26:26:bigrammar-vtense 27:27:preserved 28:28:preserved 29:29:preserved
+
+As a result , in this preprocessing step , these elements are removed .
+This preprocessing step removes these elements .
+198 11,12,4:3:paraphrase 5,6,7:0,1,2:preserved 9,10:5,4:preserved
+
+In this step , we also removed mathematical expressions with error markups such as expressions that have no Content markup .
+We also remove mathematical expressions with error markups such as expressions that have no Content markup .
+199 5,4:1,0:preserved 6:2:bigrammar-vtense 7,8:3,4:preserved 10,11,12,13,14,15,16,17,18,19,9:5,6,7,8,9,10,11,12,13,14,15:preserved
+
+For simplification , expressions with more than 200 content nodes also be removed .
+For simplification , expressions with more than 200 content nodes are also removed .
+200 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11,12:10,12:bigrammar-wform 13:13:preserved
+
+In the training phase , we use GIZA++ \CITE for alignment between Presentation MathML terms and Content MathML terms .
+In the training phase , we use GIZA++ \CITE for aligning Presentation MathML terms and Content MathML terms .
+205 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-wform 11::mogrammar-prep 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved
+
+Based on the aligned data , we use some heuristics to extract rules which we called " fragment rules " .
+Based on the aligned data , we use heuristics to extract rules that we call " fragment rules " .
+206 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:bigrammar-others 14:13:preserved 15:14:bigrammar-vtense 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+
+Fragment rules are rules that define the translation from Presentation MathML sub-trees to Content MathML sub-trees .
+Fragment rules are rules that define the translation from the Presentation MathML sub-trees to the Content MathML sub-trees .
+207 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved :9:mogrammar-det :14:mogrammar-det
+
+These rules are applied to break the large Presentation MathML tree into smaller sub-trees while maintaining the structure of output Content MathML trees .
+These rules are used to break up a large Presentation MathML tree into smaller sub-trees while maintaining the structure of the output Content MathML trees .
+208 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6::mogrammar-det 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved :6:mogrammar-prep :7:mogrammar-det :20:mogrammar-det
+
+These rules are extracted based on the fact that translate small tree is easier than translate large one .
+These rules are extracted based on the fact that translating a small tree is easier than translating a large one .
+209 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-wform 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:bigrammar-wform 16:18:preserved 17:19:preserved 18:20:preserved :10:mogrammar-det :17:mogrammar-det
+
+Each rule in fragment rule set is associated with its probability , that is the frequent that rule happened in the training data .
+Each rule in the fragment rule set is associated with a probability , that is , the frequency at which a rule occurs in the training data .
+210 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:bigrammar-det 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:16:preserved 15:17:bigrammar-wform 16:19,18:paraphrase 17:21:preserved 18:22:paraphrase 19,20,21,22:23,24,25,26:preserved :3:mogrammar-det :20:mogrammar-det
+
+If the sub-trees can not be broken any longer , we extract another rules , which we called " translation rules " , at that point .
+Once the sub-trees cannot be broken down further , we start to extract other rules , which we call " translation rules " .
+213 0:0:paraphrase 1:1:preserved 2:2:preserved 3,4:3:paraphrase 5:4:preserved 6:5:preserved 7,8:7:paraphrase 9:8:preserved 10:9:preserved 11:10,11,12:paraphrase 12:13:bigrammar-others 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:bigrammar-vtense 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 26:23:preserved :6:mogrammar-prep
+
+We then enhances the translation rule set with the translation terms extracted by GIZA++ .
+We enhance the translation rule set with translation terms extracted by GIZA++ .
+214 0:0:preserved 2:1:bigrammar-inter 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8::mogrammar-det 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved
+
+The pseudo code of the algorithm for extracting fragment rules is described in Algorithm \REF .
+The pseudo code for extracting fragment rules is described in Algorithm \REF .
+215 0:0:preserved 1:1:preserved 2:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved
+
+In the previous steps , we got two sets of rules , fragment rule set and translation rule set .
+In the previous steps , we get two sets of rules , a fragment rule set and a translation rule set .
+220 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-vtense 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved :12:mogrammar-det :17:mogrammar-det
+
+We then use these rules for translation .
+We then use these rules for translation .
+221 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+Given a mathematical expressions in Presentation MathML markup , the system will generate Content MathML markup of that expression .
+Given mathematical expressions in Presentation MathML markup , the system will generate Content MathML markup for each expression .
+222 0:0:preserved 1::mogrammar-det 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:bigrammar-prep 17:16:paraphrase 18:17:preserved 19:18:preserved
+
+- First , the expression is preprocess to remove non semantic elements .
+- First , the expression is preprocessed to remove non-semantic elements .
+225 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 7:7:preserved 8:8:preserved 9,10:9:spelling 11:10:preserved 12:11:preserved
+
+- Second , the fragment rule is applied to the expression until it could not be divided any further .
+- Second , the fragment rule is applied to the expression until it cannot be divided any further .
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,14:13:bigrammar-vtense 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved
+
+- Third , the small sub-expressions in Presentation MathML markup will be translated into sub-expressions in Content MathML markup using translation rule set .
+- Third , the small sub-expressions in Presentation MathML markup are translated into sub-expressions in Content MathML markup by using the translation rule set .
+231 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 11,10:10:bigrammar-vtense 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:19:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved :18:mogrammar-prep :20:mogrammar-det
+
+If no translation rule is found for a sub-expression , that expression is marked as untranslated .
+If no translation rule is found for a sub-expression , that expression is marked as untranslated .
+232 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+- Last , sub-expressions in Content MathML markup is grouped to form the complete Content MathML expression .
+- Last , sub-expressions in Content MathML markup are grouped to form the complete Content MathML expression .
+235 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-inter 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Before the last step , we add a heuristic translation to translate numbers .
+Before the last step , we add a heuristic translation to translate numbers .
+238 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+The reason for this is that there is infinite number and we could never present every number in the rule .
+The reason for this is that there is an infinite number of rules . // <The rewrite is a guess .> .
+239 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10,11,12,13,14,15,16,17:11:paraphrase 18::mogrammar-det 19:12:bigrammar-nnum 20:21:preserved :8:mogrammar-det
+
+The translation algorithm is described in Algorithm \REF .
+The translation algorithm is described in Algorithm \REF .
+240 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+The experiments were carried out using the datasets from the Wolfram Function site .
+The experiments were carried out using datasets from the Wolfram Function site .
+247 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:8:preserved 7:6:preserved 8:7:preserved 9::mogrammar-det 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved
+
+This site was created as a resource for educational , mathematical , and scientific communities .
+This site was created as a resource for educational , mathematical , and scientific communities .
+248 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+It contains the world 's most encyclopedic collection of information about mathematical functions .
+It contains the world 's most encyclopedic collection of information about mathematical functions .
+249 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+All formulas on this site are available in both Presentation MathML and Content MathML format .
+All formulas on this site are available in both Presentation MathML and Content MathML format .
+250 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+These datasets we used contain 205 , 653 mathematical expressions belong to 6 categories .
+The datasets we used contain 205 , 653 mathematical expressions belonging to six categories .
+251 0:0:bigrammar-det 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-wform 11:11:preserved 12:12:spelling 13:13:preserved 14:14:preserved
+
+All of these expressions have both MathML Presentation and Content Markup .
+All of these expressions have both MathML Presentation and Content Markups .
+252 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-nnum 11:11:preserved
+
+Training and testing were performed using 10-fold cross-validation ; for each category , the original corpus is partitioned into 10 subsets .
+Training and testing were performed using ten-fold cross-validation ; for each category , the original corpus was partitioned into ten subsets .
+255 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:spelling 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16,17:16,17:bigrammar-vtense 18:18:preserved 19:19:spelling 20:20:preserved 21:21:preserved
+
+Of the 10 subsets , a single subset is retained as the validation data for testing the model , and the remaining subsets are used as training data .
+Of the ten subsets , a single subset was retained as the validation data for testing the model , and the remaining subsets were used as training data .
+256 0:0:preserved 1:1:preserved 2:2:typo 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-vtense 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:bigrammar-vtense 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The cross-validation process is then repeated 10 times , with each of the 10 subsets used exactly once as the validation data .
+The cross-validation process was repeated ten times , with each of the ten subsets used exactly once as the validation data .
+257 0:0:preserved 1:1:preserved 2:2:preserved 3,5:3,4:bigrammar-vtense 6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:spelling 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved
+
+The 10 results from the folds then are averaged to produce a single estimation .
+The ten results from the folds then were averaged to produce a single estimation .
+258 0:0:preserved 1:1:spelling 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-vtense 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+To prove the effectiveness of our models to real data , we conducted another experiment on the mathematical expressions in scientific papers .
+To prove the effectiveness of our models with real data , we conducted another experiment on the mathematical expressions in scientific papers .
+261 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-prep 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+Currently we have 20 papers from ACL archive , all of the math expressions in these papers are annotated manually with both Presentation Markup and Content Markup .
+Currently , we have 20 papers from the ACL archive , and we manually annotated all of the math expressions in these papers with both Presentation Markup and Content Markup . // The original is somewhat vague . The rewrite is a guess . Use it if it is correct . > .
+262 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:8:preserved 7:9:preserved 8:10:preserved 15,14,16,9,10,11,12,13:20,21,22,15,16,17,18,19:preserved 17:12,11:paraphrase 18:14:preserved 19:13:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved :7:mogrammar-det
+
+We called this data ACL-ARC .
+We called this data ACL-ARC .
+263 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+
+In the first experiment , the data is not compatible with SnuggleTeX since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+In the first experiment , the data was not compatible with SnuggleTeX since SnuggleTeX uses ASCII MathML but the Wolfram Functions site does not .
+264 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-vtense 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-inter 15:15:preserved 16:16:preserved 17:17:paraphrase 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+In the second experiment with ACL-ARC data , we compared our model side by side with SnuggleTeX .
+In the second experiment with ACL-ARC data , we compared our model with SnuggleTeX .
+265 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved
+
+Table \REF contains the various data statistics .
+Table \REF lists the various data statistics .
+266 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+Given a Presentation MathML expression $ e $ , we assume that tree $ A $ is the correct Content MathML tree of expression $ e $ and tree $ B $ is the output using the automatic translation .
+Given a Presentation MathML expression $ e $ , we assume that tree $ A $ is the correct Content MathML tree of expression $ e $ and tree $ B $ is the output of the automatic translation .
+271 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:paraphrase 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved
+
+The basic idea to evaluate the correctness of tree $ B $ is directly comparing it with tree $ A $ .
+The basic idea to evaluate the correctness of tree $ B $ is directly comparing it with tree $ A $ .
+272 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+In the experiments , we extend the conventional definition of " Translation Error Rate " and use a metric which is the combined version of
+In the experiments , we extended the conventional definition of " Translation Error Rate " and used a metric which is a combined version of
+273 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:bigrammar-vtense 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-det 22:22:preserved 23:23:preserved 24:24:preserved
+
+- Tree Edit Distance \CITE : the tree edit distance is the minimal cost to transform A into B using edit operations .
+- the Tree Edit Distance \CITE : the tree edit distance is the minimal cost to transform A into B using edit operations .
+276 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved :1:mogrammar-det
+
+There are three types of edit operations : substituting a node , inserting a node , and deleting a node .
+There are three types of edit operation : substituting a node , inserting a node , and deleting a node .
+277 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-nnum 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+- Translation Error Rate \CITE : translation error rate is an error metric for machine translation that measures the number of edits required to change a system output into one of the references .
+- the Translation Error Rate \CITE : the translation error rate is an error metric for machine translation that measures the number of edits required to change a system output into one of the references .
+280 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved :1:mogrammar-det :7:mogrammar-det
+
+We call the new metric Tree Edit Distance Rate ( TEDR ) .
+We called the new metric the Tree Edit Distance Rate ( TEDR ) .
+283 0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved :5:mogrammar-det
+
+TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B .
+TEDR is defined as the rate between ( 1 ) the minimal cost to transform a tree A into another tree B using edit operations and ( 2 ) the maximum number of nodes of A and B . // <The " rate between " is unclear to me . Do you mean , " the ratio of " >
+284 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+It can be computed using Eq . \REF .
+It can be computed using Eq . \REF .
+285 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+For example , the output tree using translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depict in Figure \REF .
+For example , the output tree using the translation system for the expression $ C_{-\frac{17}{2}}= \tilde {\infty} $ is depicted in Figure \REF .
+288 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:bigrammar-vtense 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved :7:mogrammar-det
+
+Compare to the reference tree in Figure \REF , we need to substituting X node , inserting Y node , and deleting Z node , so that $ TED( A , B ) = x $ . While the maximum number of node of two trees is y .
+Compared with the reference tree in Figure \REF , we need to substitute X nodes , insert Y nodes , and delete Z nodes , so that $ TED( A , B ) = x $ , while the maximum number of nodes of the two trees is y .
+289 0,1:0,1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-wform 13:13:preserved 14:14:bigrammar-nnum 15:15:preserved 16:16:bigrammar-wform 17:17:preserved 18:18:bigrammar-nnum 19:19:preserved 20:20:preserved 21:21:bigrammar-wform 22:22:preserved 23:23:bigrammar-nnum 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:bigrammar-nnum 43:43:preserved 44:45:preserved 45:46:preserved 46:47:preserved 47:48:preserved 48:49:preserved :44:mogrammar-det
+
+Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
+Therefore , $ TEDR( A \rightarrow B ) = \frac{x}{y} = z $ .
+290 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+For the data in Wolfram Function site , it appeared that SnuggleTeX is not applicable to this data since SnuggleTeX use ASCII MathML while the Wolfram Functions site does not .
+It appeared that SnuggleTeX was not applicable to the data from the Wolfram Function site since it uses ASCII MathML but the site does not .
+295 3:10:bigrammar-prep 4,5,6:12,13,14:preserved 8,9,10,11,14,15,13:0,1,2,3,5,6,7:preserved 12:4:bigrammar-vtense 16:8:bigrammar-det 17:9:preserved 18:15:preserved 19:16:paraphrase 20:17:bigrammar-others 21:18:preserved 22:19:preserved 23:20:paraphrase 24,25,26,27:21,22:paraphrase 28,29:23,24:preserved :11:mogrammar-det
+
+Therefore we could not do the side-by-side comparison on this data .
+Therefore , we could not do a comparison on this data .
+296 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:bigrammar-det 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Our experimental results show that our approach can archive reasonable results , that is 20 percent TEDR with large training data .
+Our experimental results show that our approach gives reasonable results , that is , a 20 percent TEDR with large training data .
+297 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8:7:spelling 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved :14:mogrammar-det
+
+For small data which has less than 3000 training samples , the results vary from 50 to 75 percent TEDR .
+For small data ( less than 3000 training samples ) , the results vary from 50 to 75 percent TEDR .
+298 0:0:preserved 1:1:preserved 2:2:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For ACL-ARC data , the experimental results from our side-by-side comparison show that our system significantly outperforms SnuggleTeX in terms of Tree Edit Distance Rate .
+For ACL-ARC data , the experimental results show that our system significantly outperforms SnuggleTeX in terms of the Tree Edit Distance Rate .
+301 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 8::unaligned 11,12:7,8:preserved 13,14,15,16,17,18,19,20:9,10,11,12,13,14,15,16:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved :17:mogrammar-det
+
+Our system archived 24 percent TEDR less than the output using SnuggleTeX .
+Our system had a 24 percent lower TEDR in comparison with SnuggleTeX .
+302 0:0:preserved 1:1:preserved 2:2:paraphrase 3:4:preserved 4:5:preserved 5:7:preserved 6,7:6,8,9,10:paraphrase 11:11:preserved 12:12:preserved :3:mogrammar-det
+
+To find out the correlation between TEDR score and training set size , we set up an experiment using mathematical expressions in Elementary Functions category .
+To investigate the correlation between the TEDR score and training set size , we set up an experiment using mathematical expressions in the Elementary Functions category .
+305 0:0:preserved 2,1:1:paraphrase 3:2:preserved 4:3:preserved 5:4:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :5:mogrammar-det :22:mogrammar-det
+
+We started with one fifth of the data , and then increase data one fifth each run .
+We started with one fifth of the data and increased the data by one fifth in each run .
+306 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9:8:preserved 11:9:bigrammar-vtense 12:11:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved 17:18:preserved :10:mogrammar-det :12:mogrammar-prep :15:mogrammar-prep
+
+Our experimental results conform with the theoretical analysis that the more training data we have , the better the results are .
+Our experimental results conformed with the theoretical analysis that the more training data we have , the better the results are .
+307 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Table \REF and Table \REF show the TEDR of our proposed method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
+Table \REF and Table \REF show the TEDR of our method on the Wolfram Functions Site data and in comparison with SnuggleTeX on ACL ARC data , respectively .
+312 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved
+
+Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
+Table \REF and Figure \REF shows the correlation between TEDR score and training set size .
+315 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+In this paper , we discussed the problem of the semantic enrichment of mathematical expressions .
+We discussed the problem of semantic enrichment of mathematical expressions .
+321 4,5,6,7,8:0,1,2,3,4:preserved 9::mogrammar-det 10,11,12,13,14:5,6,7,8,9:preserved
+
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expression to a Content MathML expression has the significant improvement over a prior system .
+Our experimental results show that our approach based on the statistical machine translation method for translating a Presentation MathML expressions to Content MathML expressions is a significant improvement over prior systems .
+322 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:bigrammar-nnum 20:20:preserved 21::mogrammar-det 22:21:preserved 23:22:preserved 24:23:bigrammar-nnum 25:24:paraphrase 26:25:bigrammar-det 27:26:preserved 28:27:preserved 29:28:preserved 30,32:30:bigrammar-nnum 31:29:preserved 33:31:preserved
+
+As we mentioned before , mathematical notations are context-dependent .
+As we mentioned before , mathematical notations are context-dependent .
+325 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
+That means we need to consider not only surrounding expressions but also the document that contains the notations in order to generate the correct semantic output .
+326 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+In the scope of this paper , we only consider the first context information .
+In the scope of this paper , we only considered the first sort of context information .
+327 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-vtense 10:10:preserved 11:11:preserved 12:14,12,13:paraphrase 13:15:preserved 14:16:preserved
+
+Since this is a first attempt to translate Presentation to Content MathML using a machine learning method , there is room for further improvement .
+Since this is a first attempt to translate from Presentation to Content MathML using a machine learning method , there is room for further improvement .
+328 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :8:mogrammar-prep
+
+Possible improvements are
+Possible improvements are
+329 0:0:preserved 1:1:preserved 2:2:preserved
+
+- Increasing the training data so the system can cover more mathematical notations
+- Increasing the training data so the system can cover more mathematical notations
+332 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+- Expanding the work by incorporating the surrounding information of mathematical expressions , for example definitions or other mathematical expressions .
+- Expanding the work by incorporating the surrounding information of mathematical expressions , for example , definitions or other mathematical expressions .
+335 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+By combining the automatic extraction of fragment rules and translation rules , our approach has shown promising results .
+Our approach combining automatic extraction of fragment rules and translation rules has shown promising results .
+338 0::mogrammar-prep 1:2:preserved 2::mogrammar-det 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 12,13:0,1:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved
+
+The experimental results confirm that this approach is helpful to the understanding of mathematical expressions .
+The experimental results confirm that it would be helpful for automatic understanding of mathematical expressions .
+339 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5,6,7:5,6,7:paraphrase 8:8:preserved 9:9:bigrammar-prep 10::mogrammar-det 11:11,10:paraphrase 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+However , this is only a first step ; many important issues remain for future studies .
+However , this is only a first step ; many important issues remain for future studies .
+340 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Currently , our system deals only with a sub-part of mathematical notations .
+Currently , our system deals with a limited range of mathematical notations .
+341 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6:5:preserved 7:6:preserved 8:7,8:paraphrase 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+In future work , we should also consider expanding it to cover all mathematical notations .
+In the future , we should consider expanding it to cover all mathematical notations .
+342 0,1,2:0,1,2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved
+

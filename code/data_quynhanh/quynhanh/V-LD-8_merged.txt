@@ -1,0 +1,880 @@
+Unsupervised Face Re-Ranking By Mining the Web and Video Archives
+Unsupervised Face Re-Ranking By Mining the Web and Video Archives
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+to improve the retrieval performance of image search engines that use textual information for indexing , it is necessary to utilize visual information .
+It is necessary to utilize visual information to improve the efficiency of retrieval in image-search engines that use textual information for indexing .
+6 1,0:7,8:preserved 2:9:preserved 3,4:10,11,12:paraphrase 5:13:bigrammar-prep 6,7:14:spelling 8:15:preserved 14,13,12,11,10,9:20,16,17,18,19,21:preserved 16:0:preserved 17:1:preserved 18:2:preserved 19,20,21,22:5,4,3,6:preserved 23:22:preserved
+
+One popular approach is to learn visual consistency among the images returned by these search engines .
+One popular approach has been to learn visual consistency between images returned by these search engines .
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3,4:bigrammar-vtense 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:bigrammar-prep 9::mogrammar-det 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Most of the state of the art methods for learning the visual consistency usually learn one specific classifier for each query for re-ranking the returned images .
+Most state-of-the-art methods of learning visual consistency usually learn one specific classifier for each query to re-rank the returned images .
+10 0:0:preserved 1::mogrammar-prep 2::mogrammar-det 3,4,5,6:1:spelling 7:2:preserved 8:3:bigrammar-prep 9:4:preserved 10::mogrammar-det 11,12:5,6:preserved 13,14,15,16,17,18,19,20:7,8,9,10,11,12,13,14:preserved 21,22:15,16:paraphrase 23,24,25:17,18,19:preserved
+
+The drawback of these methods is it requires computational cost and processing time that are unsuitable for handling a large number of queries .
+The main drawback with these methods is that they require computational cost and processing time that are unsuitable for handling a large number of queries .
+11 0:0:preserved 1:1,2:paraphrase 2:3:bigrammar-prep 3:4:preserved 4:5:preserved 5:6,7:bigrammar-others 7,6:9,8:bigrammar-inter 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved
+
+We propose a method in which one generic classifier is learned and then is used for all queries .
+We propose a method in which one generic classifier is learned and is then used for all queries .
+12 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:12:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Different from query-specific based methods that learn classifiers for recognition concepts encoded in each query , the generic classifier of our method learns relevancy between images and the query for re-ranking purpose .
+Different from query-specific based methods that learn classifiers for recognition concepts encoded in each query , the generic classifier in our method learns relevance between images and the query for re-ranking purposes .
+13 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:bigrammar-prep 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:bigrammar-inter 32:32:preserved
+
+The key contribution of this paper is to introduce a query-dependent feature to represent this relevancy and an unsupervised method to collect training samples for learning the generic classifier .
+The key contribution of this research is to introduce a query-dependent feature to represent this relevance and an unsupervised method of collecting training samples to learn the generic classifier .
+14 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:spelling 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20,21:20,21:paraphrase 22:22:preserved 23:23:preserved 24,25:24,25:paraphrase 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+The generic classifier is built automatically and independent with existing ranking algorithms of input search engines .
+The generic classifier is built automatically and is independent of existing ranking algorithms for input search engines .
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8,7:paraphrase 8:9:bigrammar-prep 9:10:preserved 10:11:preserved 11:12:preserved 12:13:bigrammar-prep 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved
+
+experimental results show that the proposed method achieves good performance in various datasets .
+The experimental results demonstrated that the proposed method performed very well in various datasets .
+16 0:1:preserved 1:2:preserved 2:3:paraphrase 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7,8,9:8,9,10:paraphrase 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :0:mogrammar-det
+
+Image search is essential for many search engines .
+Image searches are essential for many search engines .
+21 0:0:preserved 1:1:bigrammar-nnum 2:2:bigrammar-inter 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+Most of existing image search engines usually use text information for judging relevancy , resulting low precision performance .
+Most existing image-search engines usually use text information to determine relevance , resulting in poor precision .
+22 0:0:preserved 1::mogrammar-prep 2:1:preserved 3,4:2:spelling 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:bigrammar-prep 11:9:paraphrase 12:10:spelling 13:11:preserved 14:12:preserved 15,17:13,14:paraphrase 16:15:preserved 18:16:preserved
+
+To improve the retrieval performance , it is necessary to use visual information of images for re-ranking .
+To improve the accuracy of retrieval , it is necessary to use visual information from images to re-rank them .
+23 0:0:preserved 1:1:preserved 2:2:preserved 3:5:preserved 4:3,4:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:bigrammar-prep 14:15:preserved 15,16:16,17,18:paraphrase 17:19:preserved
+
+However , content-based image understanding is a challenging and unsolved problem .
+However , understanding content-based images remains a challenging and unsolved problem .
+24 0:0:preserved 1:1:preserved 2,3,4:3,2,4:para-colocation 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+In addition , using visual information requires huge computational cost compared with using text .
+In addition , using visual information requires much greater computational cost than using text .
+25 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7,8:paraphrase 8:9:preserved 9:10:preserved 11,10:11:paraphrase 12:12:preserved 13:13:preserved 14:14:preserved
+
+One popular approach \CITE combining both text and visual information is to use text information to quickly retrieve a set of candidates and then do post-processing (i . e . re-rank) on this set to improve the precision .
+One popular approach \CITE combining both text and visual information has been to use text information to quickly retrieve a set of candidates and then do post-processing ( i . e . , re-ranking ) on this set to improve precision .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10,11:bigrammar-vtense 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26,30,27,28,29:27,28,33,34,29,30,31,32:preserved 31,32,33,34,35,36:35,36,37,38,39:preserved 37:40:preserved 38:41:preserved
+
+There are two ways for post-processing : The first way \CITE is to build a ranker or a classifier specific to the given query using the returned images .
+There are two ways of doing post-processing : The first \CITE has been to build a ranker or a classifier specific to the given query using the returned images .
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8,9:9:paraphrase 10:10:preserved 11:11,12:bigrammar-vtense 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved
+
+Building such classifiers requires large computational cost and time .
+Building such classifiers involves large computational cost and time .
+32 0:0:preserved 1:1:preserved 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+As a result , this way is not scalable for applications processing very large number of queries .
+As a result , this way is not scalable for applications that process very large numbers of queries .
+33 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11,12:paraphrase 12:13:preserved 13:14:preserved 14:15:bigrammar-nnum 15:16:preserved 16:17:preserved 17:18:preserved
+
+The second way \CITE is to build a generic classifier once and then use it for all new queries .
+The second way \CITE has been to build a generic classifier once and then use it for all new queries .
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:bigrammar-vtense 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved
+
+This way is more scalable and can be used for practical applications such as meta search engines .
+This is more scalable and can be used for practical applications such as meta-search engines .
+35 0,1:0:paraphrase 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14,15:13:spelling 16:14:preserved 17:15:preserved
+
+We follow the latter way for the problem of face retrieval in which the system enables users to search persons's appearance by their names .
+We pursued the latter way to solve the problem with face retrieval in which the system enables users to search people's appearances by their names .
+38 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5,6:paraphrase 6:7:preserved 7:8:preserved 8:9:bigrammar-prep 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19,20:20,21:paraphrase 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved
+
+Our system re-ranks the faces returned by text-based search engines by a generic classifier that is trained in advance using visual information before returning to the user .
+Our system re-ranks the faces returned by text-based search engines with a generic classifier that is trained in advance using visual information before returning them to the user .
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-prep 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23,24:para-freeword 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved
+
+Building such generic classifiers requires solving two problems : finding good query-relative representation of faces and collecting a large labeled dataset for training the classifier .
+Building such generic classifiers requires two problems to be solved : finding a good query-relative representation of faces and collecting a large labeled dataset to train the classifier .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:7,8,9:paraphrase 6:5:preserved 7:6:preserved 8:10:preserved 9:11:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved 21,22:24,25:paraphrase 23:26:preserved 24:27:preserved 25:28:preserved :12:mogrammar-det
+
+By addressing these problems , Our contribution is two-fold :
+Our contribution by addressing these problems is two-fold :
+42 0:2:preserved 1:3:preserved 2:4:preserved 3:5:preserved 5,6:0,1:preserved 7:6:preserved 8:7:preserved 9:8:preserved
+
+-We propose a general framework for re-ranking faces returned by existing text-based search engine .
+-We propose a general framework for re-ranking faces returned by existing text-based search engines .
+45 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved
+
+In this framework , We learn a relevance classifier that classifies whether an input face is relevant to the associated query or not .
+We learn a relevance classifier that classifies whether an input face is relevant to the associated query or not in this framework .
+46 0,1,2:19,20,21:preserved 4,5,6,7,8,9,10,11,12,13,14,16,15,17,18,19,20,21,22:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18:preserved 23:22:preserved
+
+The output scores returned by this classifier are used to re-rank the faces .
+The output scores returned by this classifier are used to re-rank the faces .
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+The more relevant a face to the query , the higher score is .
+The more relevant a face is to the query , the higher score is .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6,5:paraphrase 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved
+
+This approach is different from existing approaches such as \CITE that learn a classifier to recognize the identity of the returned faces .
+This approach is different from existing ones \CITE that learn a classifier to recognize the identity of the returned faces .
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:paraphrase 7,8::unaligned 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved
+
+For example , it recognizes a face as the appearance of 'personX' or not the appearance of 'personX' .
+For example , it recognizes a face as the appearance of 'personX' or not the appearance of 'personX' .
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Instead , the relevance classifier is learned to classify a face being relevant or irrelevant to the query .
+Instead , the relevance classifier is learned to classify a face being relevant or irrelevant to the query .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+this classifier is independent with the identity of faces , so it can be shared for multiple queries (cf . Figure \REF) .
+As this classifier is independent of the identity of faces , it can be shared for multiple queries ( cf . Figure \REF ) .
+52 0:1,0:para-freeword 1:2:preserved 2:3:preserved 3:4:preserved 4:5:bigrammar-prep 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10::unaligned 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18,21:18,19,22,23:preserved 19:20:preserved 20:21:preserved 22:24:preserved
+
+We propose a novel representation for each face that models relevance between that face and the query .
+We propose a novel representation for each face that models the relevance between that face and the query .
+53 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved :10:mogrammar-prep
+
+Once this query-dependent feature for each face is extracted , one relevance classifier can be shared by faces of various queries .
+Once this query-dependent feature for each face is extracted , one relevance classifier can be shared by the faces of various queries .
+54 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved :17:mogrammar-det
+
+experimental results show that the relevance classifier that is independent with underlying ranking algorithm of existing search engines can significantly boost the performance .
+The experimental results demonstrated that the relevance classifier that is independent of the underlying ranking algorithms of existing search engines could significantly boost performance .
+55 0:1:preserved 1:2:preserved 2:3:paraphrase 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:bigrammar-prep 11:13:preserved 12:14:preserved 13:15:bigrammar-nnum 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:bigrammar-vtense 19:21:preserved 20:22:preserved 21::mogrammar-det 22:23:preserved 23:24:preserved :0:mogrammar-det :12:mogrammar-det
+
+-We propose a simple yet efficient mining technique for automatically collecting labeled data for training the generic classifier .
+-We propose a simple yet efficient mining technique of automatically collecting labeled data to train the generic classifier .
+58 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-prep 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,14:13,14:paraphrase 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Specifically , We detect and group faces of persons appearing in video programs in face tracks in which each face track contains of the faces of one person .
+We specifically detected and grouped faces of people appearing in video programs in face tracks in which each face track contained the faces of one person .
+59 0:1:preserved 2:0:preserved 3:2:bigrammar-vtense 4:3:preserved 5:4:bigrammar-vtense 6:5:preserved 7:6:preserved 8:7:spelling 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21,22:20:paraphrase 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved
+
+To distinguish face tracks of different persons , we assume that if multiple faces are detected at different locations in one frame , they are of different persons (cf . Figure \REF) .
+To distinguish the face tracks of different people , we assumed that if multiple faces were detected at different locations in one frame , they would be of different people ( cf .
+60 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:spelling 7:8:preserved 8:9:preserved 9:10:bigrammar-vtense 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:bigrammar-vtense 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25,26:bigrammar-vtense 25:27:preserved 26:28:preserved 27:29:spelling 28,29,30,31:31,30,32:preserved :2:mogrammar-prep
+
+Using this assumption , we collect the face tracks whose faces are detected in the same frames to guarantee that each face track is associated to one unique person .
+Using this assumption , we collected face tracks whose faces were detected in the same frames to guarantee that each face track was associated with one unique person .
+61 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6::mogrammar-det 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:bigrammar-vtense 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:bigrammar-vtense 24:23:preserved 25:24:bigrammar-prep 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved
+
+To enlarge the number of such face tracks , We use video programs of multiple genres and channels .
+We used video programs from multiple genres and channels to increase the number of such face tracks .
+62 0,1:9,10:paraphrase 2,3,4,6,5,7:11,12,14,15,16,13:preserved 9:0:preserved 10:1:bigrammar-vtense 11,12:2,3:preserved 13:4:bigrammar-others 14,15,16,17:5,6,7,8:preserved 18:17:preserved
+
+From these faces , We can artificially generate face sets similar to the sets returned by search engines given person names .
+We could artificially generate face sets from these faces similar to the sets returned by search engines given people's names .
+63 0,1,2:6,7,8:preserved 4:0:preserved 5:1:bigrammar-vtense 6,7,8,9:2,3,4,5:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:typo 20:19:preserved 21:20:preserved
+
+Since we know the relevance of these faces to the artificial sets , the labels of each face can be easily generated and no human intervention is needed for this process .
+Since we knew the relevance of these faces to the artificial sets , the labels for each face could be easily generated and no human intervention was needed in this process .
+64 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-prep 16:16:preserved 17:17:preserved 18:18:bigrammar-vtense 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:bigrammar-vtense 27:27:preserved 28:28:bigrammar-prep 29:29:preserved 30:30:preserved 31:31:preserved
+
+Note that the label of faces in our approach is not identity of that face . It is the relevance between the face and the associated query .
+Note that the labels of faces in our approach did not identity those faces but the relevance between the faces and the associated query .
+65 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-nnum 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-vtense 10:10:preserved 11:11:preserved 12,13,14:12,13:paraphrase 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:bigrammar-others 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved
+
+Collecting training sets from such external sources as video archives is easy and efficient because : firstly , a large number of videos can be easy to obtain .
+Collecting training sets from such external sources as video archives is easy and efficient because , first , a large number of videos can be easily obtained .
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 16:16:bigrammar-wform 17:15:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25,26,27:25,26:para-freeword 28:27:preserved
+
+For example , people can record broadcast videos of different channels in a certain period .
+For example , people can record broadcast videos from different channels within a certain period .
+67 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-prep 9:9:preserved 10:10:preserved 11:11:bigrammar-prep 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Secondly , a huge number of faces can be obtained by applying the face detector in every frame .
+Second , a huge number of faces can be obtained by applying a face detector to all frames .
+68 0:0:bigrammar-wform 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-det 13:13:preserved 14:14:preserved 15:15:bigrammar-prep 16,17:16,17:paraphrase 18:18:preserved
+
+In addition , using temporal information , faces of one person appearing in consecutive frames can be automatically grouped with high accuracy .
+In addition , the faces of one person appearing in consecutive frames can be automatically grouped with a high degree of accuracy using temporal information .
+69 0:0:preserved 1:1:preserved 2:2:preserved 3,4,5:22,23,24:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20,21:17,18,19,20,21:paraphrase 22:25:preserved :3:mogrammar-det
+
+given a query described by text , for example , 'airplane' or 'George Bush' , finding relevant images with high precision is essential for image search engines .
+It is essential for image-search engines to find relevant images with a high degree of precision given queries described by text , e.g. , 'airplane' or 'George Bush' .
+74 0:16:preserved 1,2:17:bigrammar-nnum 3,4,5:18,19,20:preserved 7,8:22:paraphrase 12,13,10,11:26,27,24,25:preserved 15:6,7:paraphrase 16,17:8,9:preserved 18:10:preserved 19,20:14,13,15,11,12:paraphrase 22,23,24,25,26:2,3,4,5:preserved 27:28:preserved
+
+Existing image search engines usually use textual information associated with the images such as filename , image caption , and surrounding text for ranking that leads to poor precision .
+Existing image-search engines usually use textual information associated with images such as filenames , image captions , and surrounding text for ranking that leads to poor precision .
+75 0:0:preserved 1,2:1:spelling 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10::mogrammar-det 11:9:preserved 12:10:preserved 13:11:preserved 14:12:bigrammar-nnum 15:13:preserved 16:14:preserved 17:15:bigrammar-nnum 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved
+
+To improve the precision , visual information is used to re-rank the returned images .
+To improve precision , visual information is used to re-rank the returned images .
+76 0:0:preserved 1:1:preserved 2::mogrammar-det 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved
+
+The idea is to rely on the visual consistency among these images to learn visual classifiers that measure the relevancy between an image and the input query .
+The idea is to rely on the visual consistency between these images to learn visual classifiers that measure the relevance between an image and the input query .
+77 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-prep 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:spelling 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+There are different approaches described in \CITE for re-ranking images containing general objects and faces returned from text-based search engines .
+There have been different approaches \CITE to re-ranking images containing general objects and faces returned from text-based search engines .
+80 0:0:preserved 1:1,2:bigrammar-vtense 2:3:preserved 3:4:preserved 4,5::unaligned 6:5:preserved 7:6:bigrammar-prep 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+
+Work such as \CITE extend topics models using probabilistic Late Semantic Analysis , Latent Dirichlet Allocation , or Hierarchical Dirichlet Process to learn generative model based classifiers .
+Work \CITE has extended to topics on models using probabilistic Late Semantic Analysis , Latent Dirichlet Allocation , or the Hierarchical Dirichlet Process to learn generative model-based classifiers .
+81 0,1,2,3:0,1:paraphrase 4:2,3:bigrammar-vtense 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18,19,20:20,21,22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24,25:26:spelling 26:27:preserved 27:28:preserved :4:preserved :6:mogrammar-prep :19:mogrammar-det
+
+These models can handle noisy image data in some degree .
+These models can handle noisy image data to some degree .
+82 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-prep 8:8:preserved 9:9:preserved 10:10:preserved
+
+However , they have many parameters needed to be tuned such as number of topics and feature configurations .
+However , they have many parameters that need to be tuned such as the number of topics and feature configurations .
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6,7:paraphrase 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved :13:mogrammar-det
+
+In addition , how to select the best topic associated with the input query for identifying target label is still challenging \CITE .
+In addition , how the best topic is selected associated with the input query to identify the target label is still a difficult issue \CITE .
+84 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5,6,7,8:4,5,6,7,8:para-freeword 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14,15:14,15:paraphrase 16,17:17,18:preserved 18:19:preserved 19:20:preserved 20:21,22,23:paraphrase 21:24:preserved 22:25:preserved :16:mogrammar-det
+
+In \CITE , Textual information is used to build a text ranker to re-rank the returned images \CITE .
+Textual information has been used to build a text ranker to re-rank the returned images \CITE .
+87 0,1::unaligned 3:0:preserved 4:1:preserved 5:2,3:bigrammar-vtense 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved
+
+The top images in this ranked list are used as positive samples to train visual classifiers using SVM (Support vector machines) .
+The top images in this ranked list were used as positive samples to train visual classifiers using SVM ( Support vector machines ) .
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-vtense 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18,20:19,18,21,22:preserved 19:20:preserved 21:23:preserved
+
+This method makes the training data cleaner that leads to performance improvement .
+This method made the training data cleaner and led to improved performance .
+89 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8:7,8:paraphrase 9:9:preserved 11,10:10,11:para-colocation 12:12:preserved
+
+In \CITE , A multiple instance learning framework is used to learn category models from images associated with keywords \CITE .
+A multiple-instance learning framework has been used to learn category models from images associated with keywords \CITE .
+92 0,1::unaligned 3:0:preserved 4,5:1:spelling 6,7:2,3:preserved 8:4,5:bigrammar-vtense 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18,19:15,16:preserved :17:unaligned
+
+The returned images are treated as positive bag .
+The returned images were treated as a positive bag .
+93 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved :6:mogrammar-det
+
+Negative bags are collected from image sets corresponding to unrelated keywords .
+Negative bags were collected from image sets corresponding to unrelated keywords .
+94 0:0:preserved 1:1:preserved 2,3:2,3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+The learned model is used to re-rank the images .
+The learned model was used to re-rank the images .
+95 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3,4:bigrammar-vtense 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+The work mentioned above are for re-ranking images containing general objects .
+These researchers re-ranked images containing general objects .
+98 4,0,1,2,3,5,6:0,1,2:paraphrase 8,9,10,7:5,4,6,3:preserved
+
+For re-ranking faces , work described in \CITE use Gaussian mixture models to build face recognizers and apply these recognizers back to the input faces for re-ranking \CITE .
+Gaussian mixture models have been used for re-ranking faces to build face recognizers and apply these recognizers back to the input faces for re-ranking \CITE .
+99 0,1,2:6,7,8:preserved 4,5,6,8:3,4,5:paraphrase 27,7:24:preserved 9,10,11:0,1,2:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 28:25:preserved
+
+In \CITE , Discriminative approach based models such as SVM and linear discriminant analysis are used instead of Gaussian mixture models \CITE .
+Discriminative-approach-based models such as SVM and linear discriminant analysis have been used instead of Gaussian mixture models \CITE .
+100 0,1::unaligned 3,4,5:0:spelling 7,8,6,9,10,11,12,13:1,2,3,4,5,6,7,8:preserved 14,15:9,10,11:bigrammar-vtense 16,17:12,13:preserved 18,19,20:14,15,16:preserved 21:17:preserved 22:18:preserved
+
+In \CITE , A densest graph based method is used for finding the face group relevant to the query \CITE .
+A densest-graph-based method has been used for finding the face group relevant to the query \CITE .
+101 3:0:preserved 6,5,4:1:spelling 7:2:preserved 8,9:3,4,5:bigrammar-vtense 10,11,12,13,14,15,16,17,18,19:6,7,8,9,10,11,12,13,14,15:preserved
+
+As for these approaches , One specific classifier is built for each query .
+One specific classifier is built for each query in these approaches .
+104 0,1:8:bigrammar-prep 2:9:preserved 3:10:preserved 5,6,7,8,9,10,11,12:0,1,2,3,4,5,6,7:preserved 13:11:preserved
+
+Therefore , to handle a large number of queries , many classifiers must be built which are not suitable in practice .
+Therefore , many classifiers must be built , which are not suitable in practice , to handle a large number of queries .
+105 0:0:preserved 1:1:preserved 2,3,5,4,6,7,8:15,16,17,18,19,20,21:preserved 9:7:preserved 10,11,12,13,14,15,16,17,18,19,20:2,3,4,5,6,8,9,10,11,12,13:preserved 21:22:preserved
+
+In \CITE{Krapac10CVPR} , Only one generic classifier is built in advance \CITE and then used for all queries .
+Only one generic classifier has been built in advance \CITE and then used for all queries .
+106 0::unaligned 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:4,5:bigrammar-vtense 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved
+
+This generic classifier is a relevance classifier that learns relevancy between an image and the query .
+This generic classifier was a relevance classifier that learned relevance between an image and the query .
+107 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-vtense 9:9:spelling 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+As for specific classifiers , Each image is classified as 'class-A' or 'non-class-A' , where 'class-A' is the category associated with the query , for example , 'airplane' .
+Each image for specific classifiers is classified as 'class-A' or 'non-class-A' , where 'class-A' is the category associated with the query , e.g. , 'airplane' .
+108 1:2:preserved 2:3:preserved 3:4:preserved 5,6:0,1:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24,25:22:paraphrase 26:23:preserved 27:24:preserved 28:25:preserved
+
+In other words , each specific classifier is associated with one class label implied by the query .
+In other words , each specific classifier is associated with one class label implied by the query .
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+In generic classifier , Each image is classified as relevant or irrelevant to the query .
+Each image in a generic classifier is classified as relevant or irrelevant to the query .
+110 0:2:preserved 1:4:preserved 2:5:preserved 4,5:0,1:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved :3:mogrammar-det
+
+Therefore , it is independent to class labels and can be used for any query .
+Therefore , it is independent of class labels and can be used for any query .
+111 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-prep 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+This method works well for objects such as car , flag , but fails to handle faces .
+This method works well for objects such as cars and flags , but fails to handle faces .
+112 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-nnum 9:9:bigrammar-others 10:10:bigrammar-nnum 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Our method is inspired by the generic classifier based approach .
+Our method was inspired by the generic-classifier-based approach .
+115 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8:6:spelling 9:7:preserved 10:8:preserved
+
+We extend it by two means : first , query-dependent features specific for faces are proposed , and second , the training data for learning the generic classifier is collected automatically by mining video archives .
+We extended it in two ways : first , query-dependent features specific to faces are proposed , and second , the training data for learning the generic classifier are collected automatically by mining video archives .
+116 0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:bigrammar-prep 4:4:preserved 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-prep 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:bigrammar-inter 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+Given a set of faces returned by any search engine for a queried person ( e .g . 'George Bush' ) , our task is to re-rank these faces to improve the precision .
+Given a set of faces returned by any search engine for a queried person ( e.g. , 'George Bush' ) , our task is to re-rank these faces to improve precision .
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15,16:15:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31::mogrammar-det 32:30:preserved 33:31:preserved
+
+To this end , we extract query-dependent feature for each face and then use the generic classifier trained in advance to predict scores representing the relevance between that face and the query .
+To this end , we extract query-dependent features for each face and then use the generic classifier trained in advance to predict scores representing the relevance between that face and the query .
+122 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-nnum 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+These scores are sorted and used for re-ranking .
+These scores are sorted and used for re-ranking .
+123 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+The ranked list is then return to users as shown in Figure \REF( b ) .
+The ranked list is then returned to users as shown in Figure \REF( b ) .
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+This approach is different from existing approaches such as \CITE as shown in Figure \REF( a ) in which one specific classifier is built for each query .
+This approach is different from the existing approaches \CITE shown in Figure \REF( a ) in which one specific classifier is built for each query .
+127 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 9:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved :5:mogrammar-det
+
+To build the specific classifier for re-ranking faces returned by the query of 'personX' , each face is represented by the query-independent feature such as pixel intensity around facial features such as eyes , nose , and mouth \CITE .
+To build a specific classifier for re-ranking faces returned by the query of 'personX' , each face is represented by a query-independent feature such as pixel intensity around facial features such as the eyes , nose , and mouth \CITE .
+128 0:0:preserved 1:1:preserved 2:2:bigrammar-det 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:bigrammar-det 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved :32:mogrammar-det
+
+The label for each face is 'personX' or 'non-personX' meaning that it is relevant or irrelevant to 'personX' .
+The label for each face is 'personX' or 'non-personX' meaning that it is relevant or irrelevant to 'personX' .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Meanwhile , to build the generic classifier which is independent with any \textit{'personX'} , each face is represented by the query-dependent feature .
+Further , each face is represented by the query-dependent feature to build a generic classifier that is independent of any 'personX' .
+130 0:0:paraphrase 1:1:preserved 2,3,5,6:10,11,13,14:preserved 4:12:bigrammar-det 7:15:bigrammar-others 8,9:16,17:preserved 10:18:bigrammar-prep 11,12:19,20:preserved 14,15,16,17,18,19,20,21:2,3,4,5,6,7,8,9:preserved 22:21:preserved
+
+The label for each face is relevant or irrelevant to the query .
+The label for each face is relevant or irrelevant to the query .
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The query-dependent feature is used to encode this relevancy .
+The query-dependent feature is used to encode this relevance .
+132 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:spelling 9:9:preserved
+
+In \CITE , the Query-dependent features using textual information are proposed \CITE .
+Query-dependent features using textual information has been proposed \CITE .
+133 3::mogrammar-det 4,5,6,7,8:0,1,2,3,4:preserved 9:5,6:bigrammar-vtense 10:7:preserved 11:8:preserved 12:9:preserved
+
+Each feature is treated as binary indicating the presence or absence of the query terms in textual data associated with the input image , for example , filename , image title , and nearby text .
+Each feature was treated as binary indicating the presence or absence of query terms in the textual data associated with the input image , e.g. , filenames , image titles , and nearby text .
+134 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:15:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24,25:24:paraphrase 26:25:preserved 27:26:bigrammar-nnum 28:27:preserved 29:28:preserved 30:29:bigrammar-nnum 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+
+Extending this query-dependent feature for using visual information is not trivial since we can not compute the presence and absence of the query term such as 'George Bush' in each face .
+Extending this query-dependent feature to use visual information is not trivial since we cannot compute the presence or absence of query terms such as 'George Bush' in each face .
+137 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5:4,5:bigrammar-inter 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,14:13:typo 15:14:preserved 16:15:preserved 17:16:preserved 18:17:bigrammar-others 19:18:preserved 20:19:preserved 21::mogrammar-det 22:20:preserved 23:21:bigrammar-others 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved
+
+In \CITE , Each image \CITE is represented as a set of visual words .
+Each image in \CITE is represented as a set of visual words .
+138 0:2:preserved 1:3:preserved 3:0:preserved 4:1:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved
+
+The top- \MATH visual words that are strongly associated with the set of the returned images for the query are selected .
+The top- \MATH visual words that are strongly associated with the set of returned images for the query are selected .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13::mogrammar-det 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved
+
+The binary features for each image are computed by evaluating the presence and absence of these visual words in that image .
+The binary features for each image are computed by evaluating the presence and absence of these visual words in that image .
+140 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Since this method is suitable for general objects rather than faces , we proposed another method described below for extracting query-dependent features to train the generic classifier .
+Since this method is suitable for general objects rather than faces , we propose another method of extracting query-dependent features to train the generic classifier that is described below .
+141 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-vtense 14:14:preserved 15:15:preserved 16,17:27,28:preserved 18:16:bigrammar-prep 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:29:preserved
+
+To be able to model the relevance between a face and the given query , We assume that there is visual consistency among faces returned by search engines for that query .
+We assumed that there would be visual consistency between faces returned by search engines for a query to be able to model the relevance between a face and that given query .
+145 3,2,1,0,4,5,6,7,12,10,9,8:20,19,18,17,21,22,23,24,25,26,27,29:preserved 11:28:bigrammar-det 13:30:preserved 15,16,17,18:0,1,2,3:preserved 19:4,5:bigrammar-vtense 20,21:6,7:preserved 22:8:bigrammar-prep 23,24,25,26,27,28:9,10,11,12,13,14:preserved 29:15:bigrammar-det 30:16:preserved 31:31:preserved
+
+In the other word , we assume faces that are relevant to the query form the largest cluster .
+In the other words , we assumed faces that were relevant to the query would form the largest cluster .
+146 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-nnum 4:4:preserved 5:5:preserved 6:6:bigrammar-vtense 7:7:preserved 8:8:preserved 9:9:bigrammar-vtense 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:15,14:bigrammar-vtense 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+Note that finding such cluster is still difficult since the number of clusters is not known in advance and the accuracy of clustering algorithms always depends on the discriminative power of feature representation .
+Note that finding such clusters is still difficult since the number of clusters is not known in advance and the accuracy of clustering algorithms always depends on the discriminative power of feature representation .
+147 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-nnum 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+This assumption is widely accepted in most of the work of this field \CITE .
+This assumption is widely accepted in most of the work in this field \CITE .
+148 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-prep 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+We consider the problem of finding relevant and irrelevant faces in the input set as the problem of outlier detection \CITE that is popular in data mining community .
+We consider the problem of finding relevant and irrelevant faces in the input set to be the problem of outlier detection \CITE that is popular in the data-mining community .
+151 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14,15:paraphrase 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25,26:27:spelling 27:28:preserved 28:29:preserved :26:mogrammar-det
+
+We first describe several distance based outlier detection methods that use the distance to the \MATH -nearest neighbors to determine observations as outliers or non-outliers .
+We first describe several distance-based methods of outlier detection that use the distance to the \MATH -nearest neighbors to determine observations as outliers or non-outliers .
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5:4:spelling 6:7:preserved 7:8:preserved 8:5:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved :6:mogrammar-prep
+
+Then the adaptation is proposed to form the query-dependent feature .
+Then , adaptation is proposed to form a query-dependent feature .
+153 0:0:preserved 1::mogrammar-det 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-det 8:8:preserved 9:9:preserved 10:10:preserved
+
+Given a threshold \MATH , for each point \MATH , we examine number of points \MATH so that \MATH , where \MATH is the distance ( e .g . Euclidean distance ) between \MATH and \MATH in the feature space .
+Given threshold \MATH , for each point \MATH , we examine the number of points \MATH so that \MATH , where \MATH is the distance ( e.g. , Euclidean distance ) between \MATH and \MATH in the feature space .
+158 0:0:preserved 1::mogrammar-det 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26,27:26:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved 37:36:preserved 38:37:preserved 39:38:preserved 40:39:preserved :11:mogrammar-det
+
+This number of points \MATH is called the neighborhood score of \MATH and is defined as follows : \MATH where \MATH is the total number of points of the input dataset .
+This number of points \MATH is called the neighborhood score of \MATH and is defined as : \MATH where \MATH is the total number of points in the input dataset .
+159 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:bigrammar-prep 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved
+
+A low value of \MATH indicates \MATH is a candidate of outliers , while a high value of \MATH indicates \MATH is a member of one strong association cluster .
+A low value for \MATH indicates \MATH is a candidate of outliers , while a high value for \MATH indicates \MATH is a member of one strong association cluster .
+162 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-prep 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:bigrammar-prep 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+In practice , it is difficult to know \MATH because it depends on underlying distribution of the input dataset .
+In practice , it is difficult to know \MATH because this depends on the underlying distribution of the input dataset .
+163 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:paraphrase 11:11:preserved 12:12:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :13:mogrammar-det
+
+For each point \MATH , find its \MATH -nearest neighbors \MATH , the distance score of \MATH is the sum of the distances between \MATH and its \MATH -nearest neighbors \MATH and is defined as follows : \MATH
+For each point \MATH , find its \MATH -nearest neighbors \MATH ; the distance score of \MATH is the sum of the distances between \MATH and its \MATH -nearest neighbors \MATH and is defined as : \MATH
+168 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 36:35:preserved 37:36:preserved
+
+Points with larger values for \MATH have more sparse neighborhoods and are likely outliers than points belonging to dense clusters which usually have lower values of \MATH .
+Points with larger values for \MATH have sparser neighborhoods and are more likely outliers than points belonging to dense clusters , which usually have lower values for \MATH .
+171 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8:7:paraphrase 9:8:preserved 10:9:preserved 11:10:preserved 12:12,11:paraphrase 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:bigrammar-prep 26:27:preserved 27:28:preserved
+
+Similar to nearest neighbor score , it is difficult to determine the appropriate \MATH value for each dataset .
+Similar to the nearest neighbor score , it is difficult to determine the appropriate \MATH value for each dataset .
+172 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved :2:mogrammar-det
+
+We consider the generic classifier as an outlier classifier that classifies an input sample as outlier or non-outlier .
+We consider the generic classifier as an outlier classifier that classifies an input sample as an outlier or a non-outlier .
+177 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved 17:19:preserved 18:20:preserved :15:mogrammar-det :18:mogrammar-det
+
+In our framework , Each face is an sample , and non-outliers / outliers mean faces relevant / irrelevant to the query ( i .e . target person ) .
+Each face in our framework is a sample , and non-outliers / outliers mean faces are relevant / irrelevant to the query ( i.e. , target person ) .
+178 0:2:preserved 1:3:preserved 2:4:preserved 4,5:0,1:preserved 6:5:preserved 7:6:bigrammar-det 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16,15:paraphrase 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23,24:23:preserved 25:28:preserved 26:25:preserved 27:26:preserved 28:27:preserved
+
+As described above , \MATH and \MATH of outliers and non-outliers might have distributions shown in Figure \REF , these scores can be used as feature values to discriminate non-outliers and outliers .
+As described above , the \MATH and \MATH of outliers and non-outliers might have the distributions in Figure \REF ; these scores can be used as feature values to discriminate non-outliers from outliers .
+181 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 31:32:preserved 32:33:preserved :4:mogrammar-det :14:mogrammar-det :31:mogrammar-prep
+
+From this observation , the feature vector is formed by varying parameters such as \MATH and \MATH in formula of \MATH and \MATH as follows : \MATH .
+From this observation , the feature vector is formed by varying parameters such as \MATH and \MATH in the formula of \MATH and \MATH as follows : \MATH .
+182 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved :18:mogrammar-det
+
+In order to train the relevance classifier using supervised learning methods such as SVM , it requires a sufficient number of training samples .
+It requires a sufficient number of training samples to train the relevance classifier using supervised learning methods such as SVM .
+187 2:8:preserved 3,4,5,6,7,8,9,10,11,12,13:9,10,11,12,13,14,15,16,17,18,19:preserved 15,16,17,18,19,20,21,22:0,1,2,3,4,5,6,7:preserved 23:20:preserved
+
+To collect training samples , The simplest way \CITE is we pick many names , and pass them to search engines .
+The simplest way \CITE of collecting training samples is to pick many names , and pass them to search engines .
+188 0,1:4,5:paraphrase 2,3:6,7:preserved 5,6,7,8:0,1,2,3:preserved 9:8:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved :9:mogrammar-prep
+
+After collecting the returned faces , we manually label each face whether it is relevant to the input query or not .
+After collecting the returned faces , we manually label each face as to whether it is relevant to the input query or not .
+189 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved
+
+It is a tedious task and requires human labor cost .
+This is a tedious task and involves a human-labor cost .
+190 0:0:paraphrase 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:paraphrase 7,8:8:spelling 9:9:preserved 10:10:preserved :7:mogrammar-det
+
+We propose another approach to automatically collect training samples for training the relevant classifier .
+We propose another approach to automatically collecting training samples to train the relevant classifier .
+193 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 7:7:preserved 8:8:preserved 9,10:9,10:paraphrase 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+This approach consists of two steps :
+This approach consists of two steps .
+194 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+
+First , by mining video archives , we automatically collect a set of faces of \MATH different persons \MATH , where \MATH is the set of faces of person \MATH , and \MATH is the number of persons; and
+First , by mining video archives , we automatically collect a set of faces of \MATH different people \MATH , where \MATH is the set of faces of person \MATH , and \MATH is the number of people .
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:paraphrase 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:paraphrase
+
+Second , we generate a set of subsets \MATH , where \MATH is the set of faces that is picked from \MATH , and \MATH is the number of subsets .
+Second , we generate a set of subsets \MATH , where \MATH is the set of faces that is picked from \MATH , and \MATH is the number of subsets .
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+The restriction is the assumption of visual consistency is satisfied .
+The restriction is that the assumption of visual consistency is satisfied .
+197 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved :3:mogrammar-det
+
+In other words , as shown in Figure \REF , \MATH might have several face clusters and the largest cluster is equivalent to the faces relevant to the query if returning by a search engine .
+In other words , as seen in Figure \REF , \MATH might have several face clusters and the largest cluster is equivalent to the faces relevant to the query if they are returned by a search engine .
+198 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30,31,32:paraphrase 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved
+
+As a result , this method can stimulate face sets returned by search engines using many names mentioned above .
+As a result , this method can be used to stimulate face sets returned by search engines using many names as mentioned above .
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6,7,8,9:paraphrase 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17,18:21,22:preserved
+
+To obtain \MATH , we use a simple technique for faces extracted from video archives .
+To obtain \MATH , we use a simple technique for faces extracted from video archives .
+206 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Specifically , We use the following heuristics to pick a set of different persons appearing in video archives :
+We specifically use the following heuristics to pick a set of different people appearing in video archives :
+207 0:1:preserved 2:0:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:paraphrase 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved
+
+-If there are more than one face appearing in different locations in one frame , they likely belong to different persons .
+-If there is more than one face appearing in different locations in one frame , they are likely to belong to different people .
+210 0:0:preserved 1:1:preserved 2:2:bigrammar-wform 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17,16:paraphrase 17:19:preserved 18:20:preserved 19:21:preserved 20:22:paraphrase 21:23:preserved
+
+Figure \REF shows an example of this case .
+Figure \REF shows an example where this has occurred .
+211 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-others 6:6:preserved 7:7,8:paraphrase 8:9:preserved
+
+-If two persons appear in video programs broadcast by different broadcast stations ( e .g . , CNN , MSNBC , and CCTV ) , they are likely different .
+-If two people appear in video programs broadcast by different broadcast stations ( e.g. , CNN , MSNBC , and CCTV ) , they are likely to be different .
+213 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,14:13:paraphrase 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25,26,27:paraphrase 28:28:preserved 29:29:preserved
+
+If we have large video archives , using these heuristics we can collect a sufficient number of training samples for learning the relevance classifier .
+If we have large video archives , we can collect a sufficient number of training samples to learn the relevance classifier by using these heuristics .
+216 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9:22,23,24:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19,20:16,17:bigrammar-wform 21:18:preserved 22:19:preserved 23:20:preserved 24:25:preserved :21:mogrammar-prep
+
+We form a face set Generating \MATH by picking a subset of faces of Generating \MATH and adding randomly faces from other sets Generating \MATH .
+We form face set Generating \MATH by picking a subset of faces of Generating \MATH and randomly adding faces from other sets Generating \MATH .
+221 0:0:preserved 1:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:17:preserved 18:16:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved
+
+To keep the assumption of visual consistency satisfied , the number of faces selected in each set Generating \MATH must be smaller than the number of faces in set Generating \MATH .
+To keep satisfying the assumption of visual consistency , the number of faces selected in each set Generating \MATH must be smaller than the number of faces in set Generating \MATH .
+222 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:2:bigrammar-wform 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+We then label faces in set Generating \MATH as relevant to the query associated with Generating \MATH , and the other faces of Generating \MATH as irrelevant to the query .
+We then label faces in set Generating \MATH as relevant to the query associated with Generating \MATH , and the other faces of Generating \MATH as irrelevant to the query .
+223 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Once the training samples are collected , we use SVM with linear kernel to learn the relevance classifier .
+Once the training samples are collected , we use SVM with a linear kernel to learn the relevance classifier .
+226 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved :11:mogrammar-det
+
+TRECVID dataset : We collected all video programs of TRECVID 2006 dataset \CITE .
+TRECVID dataset : We collected all video programs from the TRECVID 2006 dataset \CITE .
+232 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-prep 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved :9:mogrammar-det
+
+There are 527 video programs broadcast on 7 channels in 3 languages including English , Chinese and Arabic .
+There were 527 video programs broadcast on seven channels in three languages including English , Chinese , and Arabic .
+233 0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:spelling 8:8:preserved 9:9:preserved 10:10:spelling 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:18:preserved 18:19:preserved
+
+We extracted faces from these video programs and grouped faces belonging to one person in each shot in one face track using a similar method described in \CITE .
+We extracted faces from these video programs and grouped faces belonging to one person in each shot in one face track using a similar method to that described in \CITE .
+234 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:27,26,25:paraphrase 26:28:preserved 27:29:preserved 28:30:preserved
+
+For each channel , We scanned all face tracks extracted from the videos broadcast by this channel , and picked face tracks extracted from keyframes that several faces were detected at different locations .
+We scanned all face tracks for each channel extracted from the videos broadcast by this channel , and picked face tracks extracted from key frames where several faces were detected at different locations .
+235 0,1,2:5,6,7:preserved 5,4,6,7,8:0,1,2,3,4:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23,24:typo 25:25:bigrammar-others 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+To guarantee selected face tracks representing different persons , for one channel , only face tracks of one shot was picked .
+To guarantee selected face tracks representing different people , only the face tracks from one shot were picked for one channel .
+236 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:paraphrase 8:8:preserved 9,10,11:18,19,20:preserved 13:9:preserved 14:11:preserved 15:12:preserved 16:13:bigrammar-prep 17:14:preserved 18:15:preserved 19:16:bigrammar-wform 20:17:preserved 21:21:preserved :10:mogrammar-det
+
+As a result , there are 5 ,126 faces of 19 face tracks picked from the 7 channels corresponding to 19 different persons .
+As a result , there were 5 ,126 faces of 19 face tracks selected from the seven channels corresponding to 19 different people .
+237 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:paraphrase 14:14:preserved 15:15:preserved 16:16:spelling 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:paraphrase 23:23:preserved
+
+Note that , the system does not know the identity of these faces .
+Note that the system did not know the identity of these faces .
+238 0:0:preserved 1:1:preserved 3:2:preserved 4:3:preserved 5:4:bigrammar-vtense 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved
+
+It only knows any two face tracks represent different persons .
+It only knew any two face tracks represented different people .
+239 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-vtense 8:8:preserved 9:9:paraphrase 10:10:preserved
+
+The number of faces of these face tracks is shown in Figure \REF .
+The number of faces in these face tracks is shown in Figure \REF .
+240 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-prep 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Using these face tracks , We generated 133 labeled sets described in Section \REF and used them for training the relevance classifier .
+We generated the 133 labeled sets described in Section \REF using these face tracks and used them to train the relevance classifier .
+243 0,1,2,3:10,11,12,13:preserved 5,6,7,8,9,10,11,12,13:9,8,7,6,5,4,3,1,0:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17,18:17,18:bigrammar-wform 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved :2:mogrammar-det
+
+Yahoo News Images : This dataset consists of approximately half a million news photos and captions from Yahoo News collected over a period of roughly two years \CITE .
+Yahoo News Images : This dataset consists of approximately half a million news photos and captions from Yahoo News collected over a period of roughly two years \CITE .
+246 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Using person names as queries , we applied simple string search to the captions this dataset to return a list of faces for each queried name .
+Using people�fs names as queries , we applied a simple string search to the captions in this dataset to return a list of faces for each queried name .
+247 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved :8:mogrammar-det :15:mogrammar-prep
+
+We used 23 names of celebrities such as George W .
+We used 23 names of celebrities such as George W .
+248 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Bush , Vladimir Putin , Ziang Jemin , Tony Blair , and Abdullah Gul .
+Bush , Vladimir Putin , Ziang Jemin , Tony Blair , and Abdullah Gul .
+249 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+These names are widely used in experiments such as \CITE .
+These names have widely been used in experiments \CITE .
+250 0:0:preserved 1:1:preserved 2:2,4:bigrammar-vtense 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 9:8:preserved 10:9:preserved
+
+In total , 9 ,136 faces were retrieved in which 3 ,909 faces were relevant .
+A total of 9 ,136 faces were retrieved in which 3 ,909 faces were relevant .
+251 0::mogrammar-prep 1:1:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved :0:mogrammar-det :2:mogrammar-prep
+
+On average , The accuracy was \MATH .
+The accuracy was \MATH on average .
+252 0,1:4,5:preserved 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:6:preserved
+
+Google Images : We used the same set of person names used in Yahoo News Images dataset and put to Google Image Search Engine .
+Google Images : We used the same set of people�fs names used in the Yahoo News Images dataset and input them into the Google Image Search Engine .
+255 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:paraphrase 10:10:preserved 11:11:preserved 12:12:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18,19:19,20,21:paraphrase 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved :13:mogrammar-det :22:mogrammar-det
+
+For each query , We crawled a maximum of 500 images from URLs returned by Google .
+We crawled a maximum of 500 images from URLs returned by Google for each query .
+256 1,0,2:12,13,14:preserved 4,5,7,8,9,10,11,12,13,14,15,6:0,1,2,3,4,5,6,7,8,9,10,11:preserved 16:15:preserved
+
+In total , 9 ,516 faces were extracted in which 5 ,816 faces were relevant .
+A total of 9 ,516 faces were extracted in which 5 ,816 faces were relevant .
+257 0::mogrammar-prep 1:1:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved :0:mogrammar-det :2:mogrammar-prep
+
+On average , The accuracy was \MATH .
+The accuracy was \MATH on average .
+258 0,1:4,5:preserved 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:6:preserved
+
+The TRECVID dataset was used for training the generic classifier .
+The TRECVID dataset was used for training the generic classifier .
+261 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The datasets , Yahoo News Images and Google Images as shown in Figure \REF , were used for testing .
+The datasets for Yahoo News Images and Google Images , as shown in Figure \REF , were used for testing .
+262 0:0:preserved 1:1:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :2:mogrammar-prep
+
+We used the Viola-Jones face detector \CITE to detect frontal faces in images and video frames .
+We used the Viola-Jones face detector \CITE to detect frontal faces in images and video frames .
+267 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+To group faces belonging to one person in one video shot , We simply used a similar technique described in \CITE .
+We simply used a similar technique to that described in \CITE to group faces belonging to one person in one video shot .
+268 0,1,2,3,4,5,6,7,8,9,10:11,12,13,14,15,16,17,18,19,20,21:preserved 12,13,14,16,15,17:0,1,2,3,4,5:preserved 18:7,8:paraphrase 19:9:preserved 20:10:preserved 21:22:preserved :6:preserved
+
+Using the prior knowledge that faces of the same person in consecutive frames do not change much in locations and appearance , the technique used tracked points to robustly associate these faces into face tracks with the precision of \MATH .
+Using prior knowledge that faces of the same person in consecutive frames do not change much in locations and appearance , the technique used tracked points to robustly associate these faces in face tracks with a precision of \MATH .
+269 0:0:preserved 1::mogrammar-det 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:bigrammar-prep 33:32:preserved 34:33:preserved 35:34:preserved 36:35:bigrammar-det 37:36:preserved 38:37:preserved 39:38:preserved 40:39:preserved
+
+Once faces were extracted , we used the code provided by the authors \CITE to extract features .
+Once faces were extracted , we used the code provided by the authors \CITE to extract features .
+272 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Each face is then represented as a point in a very high dimensional feature space .
+Each face was then represented as a point in a very high dimensional feature space .
+273 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Specifically , for each face , 9 facial feature points were detected , and 4 more facial feature points were inferred from these 9 points .
+Nine facial-feature points were specifically detected for each face , and four more facial feature points were inferred from these nine points .
+274 0:4:preserved 2,3,4:6,7,8:preserved 6:0:spelling 7,8:1:spelling 9,10,11:2,3,5:preserved 12:9:preserved 13:10:preserved 14:11:spelling 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:spelling 24:21:preserved 25:22:preserved
+
+In total , There were 13 feature points from which features are extracted .
+There were a total of 13 feature points from which features were extracted .
+275 0::mogrammar-prep 1:3:preserved 3:0:preserved 4:1:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-vtense 12:12:preserved 13:13:preserved :2:mogrammar-det :4:mogrammar-prep
+
+The features are intensity values lying within the circle with radius of 15 pixels .
+The features were intensity values lying within a circle with a radius of 15 pixels .
+276 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-det 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved :10:mogrammar-det
+
+The output feature has 13x149 = 1 ,937 dimensions .
+The output feature had 13x149 = 1 ,937 dimensions .
+277 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Figure \REF shows illustration of this feature .
+Figure \REF illustrates this feature .
+278 0:0:preserved 1:1:preserved 2,3,4:2:paraphrase 5:3:preserved 6:4:preserved 7:5:preserved
+
+We evaluated the retrieval performance with measures that are commonly used in information retrieval , such as precision , recall , and average precision .
+We evaluated the efficiency of retrieval with measures that are commonly used in information retrieval , such as precision , recall , and average precision .
+283 0:0:preserved 1:1:preserved 2:2:preserved 3:5:preserved 4:3,4:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved
+
+Given a queried person and letting \MATH be the total number of faces returned , \MATH the number of relevant faces , and \MATH the total number of relevant faces , recall and precision can be calculated as follows : \MATH .
+Given a queried person and letting \MATH be the total number of faces returned , \MATH the number of relevant faces , and \MATH the total number of relevant faces , recall and precision can be calculated as : \MATH .
+284 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 39:38:preserved 40:39:preserved 41:40:preserved
+
+Precision and recall only evaluate the quality of an unordered set of retrieved faces .
+Precision and recall were only used to evaluate the quality of an unordered set of retrieved faces .
+287 0:0:preserved 1:1:preserved 2:2:preserved 3:4,3,5,6:paraphrase 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 14:17:preserved
+
+To evaluate ranked lists in which both recall and precision are taken into account , the average precision is usually used .
+Average precision is usually used to evaluate ranked lists in which both recall and precision are taken into account .
+288 0,1,2,3,4,5,6,7,8,9,10,11,12,13:5,6,7,8,9,10,11,12,13,14,15,16,17,18:preserved 15::mogrammar-det 16,17,19,18,20:0,1,2,3,4:preserved 21:19:preserved
+
+The average precision is computed by taking the average of the interpolated precision measured at the 11 recall levels of 0 .0 , 0 .1 , 0 .2 , . . . , 1 .0 .
+The average precision is computed by taking the average of the interpolated precision measured at 11 recall levels of 0 .0 , 0 .1 , 0 .2 , . . . , 1 .0 .
+289 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15::mogrammar-det 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+
+The interpolated precision \MATH at a certain recall level \MATH is defined as the highest precision found for any recall level \MATH :
+The interpolated precision , \MATH , at a certain recall level , \MATH , is defined as the highest precision found for any recall level \MATH :
+290 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:12:preserved 10,11,12,13,14,15,16,17,18,19,20,21:14,15,16,17,18,19,20,21,22,23,24,25:preserved
+
+In addition , to evaluate the performance of multiple queries , we used mean average precision , which is the mean of average precisions computed from queries .
+In addition , we used the mean average precision to evaluate the performance of multiple queries , which is the mean of average precisions computed from queries .
+293 0:0:preserved 1:1:preserved 2:2:preserved 3,4,5,6,7,8,9:9,10,11,12,13,14,15:preserved 11,12,13,14,15:3,4,6,7,8:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved :5:mogrammar-det
+
+In this experiment , We compare the MAP performance of the following systems testing on YahooNews Images :
+We compared the performance of the Maximum A-Posteriori ( MAP ) algorithm in seven systems in this experiment by testing it on YahooNews Images :
+299 0,1,2:15,16,17:preserved 4:0:preserved 5:1:bigrammar-vtense 6,8,9,10:2,3,4,5:preserved 7:6,7,8,9,10:paraphrase 12:14:preserved 15,16:22,23:preserved
+
+-DistScore-TrainGoogleImages : The training set is the set of annotated faces returned by Google Images Search for 23 person names .
+-DistScore-TrainGoogleImages : The training set was the set of annotated faces returned by Google Images Search for 23 people�fs names .
+302 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:paraphrase 19:19:preserved 20:20:preserved
+
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+303 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+-NNScore-TrainGoogleImages : The training set is the same as DistScore-TrainGoogleImages .
+-NNScore-TrainGoogleImages : The training set was the same as DistScore-TrainGoogleImages .
+306 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+307 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+DistScore-TrainTRECVID : The feature vector is computed using .
+DistScore-TrainTRECVID : The feature vector was computed using .
+308 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved
+
+The training set is the set of annotated faces artificially generated by our method described in Section \REF .
+The training set was the set of annotated faces artificially generated with our method described in Section \REF .
+309 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-prep 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+-NNScore-TrainTRECVID : The training set is the same as DistScore-TrainTRECVID .
+-NNScore-TrainTRECVID : The training set was the same as DistScore-TrainTRECVID .
+312 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The feature vector is computed using \MATH .
+The feature vector was computed using \MATH .
+313 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+-Krapac[11]-TrainGoogleImages : The training set is the same as DistScore-TrainGoogleImages .
+-Krapac[11]-TrainGoogleImages : The training set was the same as DistScore-TrainGoogleImages .
+316 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-vtense 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+We re-implemented the method proposed by Krapac et al . \CITE for extracting query-dependent feature .
+We re-implemented the method proposed by Krapac et al. \CITE of extracting the query-dependent feature .
+317 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 10:9:preserved 11:10:bigrammar-prep 12:11:preserved 13:13:preserved 14:14:preserved 15:15:preserved :12:mogrammar-det
+
+Since this method was proposed to handle images , not for faces , we modified it for handling faces .
+Since this method was proposed to handle images , not faces , we modified it to handle faces .
+318 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10::mogrammar-prep 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16,17:15,16:bigrammar-wform 18:17:preserved 19:18:preserved
+
+Specifically , Each face is represented as a bag of visual words .
+Each face was specifically represented as a bag of visual words .
+319 0:3:preserved 2:0:preserved 3:1:preserved 4:2:bigrammar-vtense 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved
+
+We used 13 facial feature points detected in each face and their descriptors using pixel intensity as visual words .
+We used 13 facial-feature points detected in each face and their descriptors using pixel intensity as visual words .
+320 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3:spelling 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved
+
+The codebook is formed by clustering all visual words extracted from all faces of the training set into 200 clusters .
+The codebook was formed by clustering all visual words extracted from all faces of the training set into 200 clusters .
+321 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+top-$k$ visual words strongly related to the returned faces of each query and the binary feature vector are computed as described in \CITE .
+The top-$k$ visual words strongly related to the returned faces of each query and the binary feature vector were computed as described in \CITE .
+322 0:1:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:bigrammar-vtense 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved :0:mogrammar-det
+
+-Mensink[15]-GaussianModels : This method proposed by Mensink et al . \CITE models the returned faces by using two Gaussians , one for the faces relevant to the target person and one for the remaining faces .
+-Mensink[15]-GaussianModels : This method proposed by Mensink et al. \CITE modeled the returned faces by using two Gaussians , the first for the faces relevant to the target person and the second for the remaining faces .
+325 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,9:8:typo 10:9:preserved 11:10:bigrammar-vtense 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19,20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30,31:paraphrase 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved
+
+-Mensink[15]-Friends : This method proposed by Mensink et al . \CITE uses linear discriminant analysis to train a specific classifier for each query .
+-Mensink[15]-Friends : This method proposed by Mensink et al. \CITE used linear discriminant analysis to train a specific classifier for each query .
+328 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9,8:8:typo 10:9:preserved 11:10:bigrammar-vtense 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved
+
+This method uses detected person names in captions associated with faces for query expansion to model faces of the target person 's friends .
+This method used detected people�fs names in captions associated with faces for query expansion to model faces of the target person 's friends .
+329 0:0:preserved 1:1:preserved 2:2:bigrammar-vtense 3:3:preserved 4:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+The Methods such as Mensink[15]-GaussianModels and Mensink[15]-Friends are the state of the art methods that learn a specific classifier for each query .
+Methods such as Mensink[15]-GaussianModels and Mensink[15]-Friends are state-of-the-art that learn a specific classifier for each query .
+332 0::mogrammar-det 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8,9,10,11,12:7:spelling 14,15,16,17,18,19,20,21:8,9,10,11,12,13,14,15:preserved
+
+The method Krapac[11]-TrainGoogleImages is similar to our method in which one generic classifier is trained in advance and then is used for new queries .
+Krapac[11]-TrainGoogleImages is similar to our method in which one generic classifier is trained in advance and then used for new queries .
+333 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19,20:17:bigrammar-vtense 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved
+
+Figure \REF shows the performance comparison of these systems when testing on YahooNews Images dataset .
+Figure \REF compares the performance of these systems when they were tested on the YahooNews Images dataset .
+336 0:0:preserved 1:1:preserved 3:3:preserved 4:4:preserved 5:2:bigrammar-wform 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:10,11,9:para-freeword 11:12:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved :13:mogrammar-det
+
+As for systems such as DistScore-TrainGoogleImages , NNScore-TrainGoogleImages , DistScore-TrainTRECVID , and NNScore-TrainTRECVID , the curves show the correlation between the performance and the number of features .
+The curves plot the correlation between performance and the number of features for systems such as DistScore-TrainGoogleImages , NNScore-TrainGoogleImages , DistScore-TrainTRECVID , and NNScore-TrainTRECVID .
+337 1,2,3,4,5:12,13,14,15,16:preserved 7,9,11,12:18,20,22,23:preserved 14,15,17,18,19,21,22,23,24,25,26:0,1,3,4,5,6,7,8,9,10,11:preserved 16:2:paraphrase 20::mogrammar-det 27:24:preserved
+
+-DistScore is significantly better than that of NNScore .
+-DistScore performed significantly better than NNScore .
+340 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 7:5:preserved 8:6:preserved
+
+-The performance of DistScore and NNScore are not affected by selecting the number of features .
+-The performance of DistScore and NNScore was not affected by selecting the number of features .
+343 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-vtense 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Therefore , we can use small number of features for reducing the computational cost .
+Therefore , we could use small numbers of features to reduce the computational cost .
+344 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:bigrammar-nnum 7:7:preserved 8:8:preserved 9,10:9,10:bigrammar-wform 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+-The performance of the system using the training data generated artificially by our method is comparable with that of the system using the training data returned by search engines .
+-The performance of the system using training data generated artificially with our method was comparable to that of the system using training data returned by search engines .
+347 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6::mogrammar-det 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:bigrammar-prep 12:11:preserved 13:12:preserved 14:13:bigrammar-vtense 15:14:preserved 16:15:bigrammar-prep 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved
+
+-Our proposed method DistScore-TrainTRECVID has comparable performance to the state of the art method in specific classifier-based approach Mensink[15]-Friends .
+-The method of DistScore-TrainTRECVID we propose performed comparably to the state-of-the-art method in the specific classifier-based approach of Mensink[15]-Friends .
+350 0,1:4,5:para-colocation 2:1:preserved 3:3:preserved 5:7:bigrammar-wform 6:6:bigrammar-wform 7:8:preserved 8:9:preserved 9,10,11,12:10:paraphrase 13:11:preserved 14:12:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:18:preserved 19:19:preserved :0:mogrammar-det :2:mogrammar-prep :13:mogrammar-det :17:mogrammar-prep
+
+It outperforms the method using only visual information Mensink[15]-GaussianModels .
+It outperformed the method where only visual information was used , i.e. , Mensink[15]-GaussianModels .
+351 0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:8,9:bigrammar-vtense 5:5,4:bigrammar-others 6:6:preserved 7:7:preserved 8:13:preserved
+
+-Our proposed method DistScore-TrainTRECVID outperforms the method proposed by Krapac et al . customized for handling faces .
+-Our proposed method DistScore-TrainTRECVID outperformed the method proposed by Krapac et al. , which was customized to handle faces .
+354 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-vtense 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11,12:11,12,13,14:paraphrase 13:15:preserved 14,15:16,17:bigrammar-wform 16:18:preserved 17:19:preserved
+
+As shown in Figure \REF , DistScore-TrainTRECVID outperforms original ranking of Google Images Search Engine if using from 20 to 50 features .
+As seen in Figure \REF , DistScore-TrainTRECVID outperformed the original ranking of the Google Images Search Engine if from 20 to 50 features were used .
+359 0:0:preserved 1:1:bigrammar-vtense 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-vtense 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:23,24:bigrammar-vtense 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:25:preserved :8:mogrammar-det :12:mogrammar-det
+
+The result of DistScore-TrainTRECVID on YahooNews Images set and Google Images set indicates that the relevance classifier of our proposed method is able to generalize well on different queries and independent with underlying ranking algorithms of search engines .
+The results for DistScore-TrainTRECVID on the YahooNews Images set and Google Images set indicate that the relevance classifier with our proposed method was able to generalize well on different queries and was independent of underlying ranking algorithms used in search engines .
+360 0:0:preserved 1:1:bigrammar-nnum 2:2:bigrammar-prep 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:bigrammar-wform 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:bigrammar-prep 18:19:preserved 19:20:preserved 20:21:preserved 21:22:bigrammar-vtense 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:32,31:paraphrase 31:33:bigrammar-prep 32:34:preserved 33:35:preserved 34:36,37:paraphrase 35:38:bigrammar-prep 36:39:preserved 37:40:preserved 38:41:preserved :5:mogrammar-det
+
+Figure \REF shows an example of re-ranking result of top-30 faces for the query John Paul that is one of the most difficult cases of the YahooNews Images set .
+Figure \REF shows an example of re-ranking results for the top-30 faces for the query John Paul , which is one of the most difficult cases in the YahooNews Images set .
+363 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-nnum 8:8:bigrammar-prep 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:bigrammar-others 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:bigrammar-prep 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved :9:mogrammar-det
+
+The result clearly shows that our proposed method outperforms the other state of the art methods .
+The results clearly demonstrate that our proposed method outperformed the other state-of-the-art methods .
+364 0:0:preserved 1:1:bigrammar-nnum 2:2:preserved 3:3:paraphrase 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-vtense 9:9:preserved 10:10:preserved 11,12,13,14:11:spelling 15:12:preserved 16:13:preserved
+
+Our query-dependent feature is based on nearest neighbors of the images in the returned image set that usually have complexity of \MATH , where \MATH is the total number of images in the set .
+Our query-dependent feature was based on the nearest neighbors of images in the returned image set that usually have a complexity of \MATH , where \MATH is the total number of images in the set .
+369 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9::mogrammar-det 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved :6:mogrammar-det :19:mogrammar-det
+
+However , recent studies on indexing techniques such as \MATH -d tree , locality sensitive hashing ( LSH ) , and SASH \CITE can speed up the nearest neighbor search significantly .
+However , recent studies on indexing techniques such as \MATH -d tree , locality sensitive hashing ( LSH ) , and a Self Adaptive Set of Histograms ( SASH ) \CITE could significantly speed up the nearest neighbor search .
+370 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22,23,24,25,26,27,28,29:paraphrase 22:30:preserved 23:31:bigrammar-vtense 24,25,26,27,28,29:33,34,35,36,37,38:preserved 30:32:preserved :21:mogrammar-det
+
+For example , as described in \CITE , the complexity of fast lookup of $k$ approximate nearest neighbors is \MATH \CITE .
+For example , the complexity of the fast lookup of $k$ approximate nearest neighbors is \MATH \CITE .
+371 0:0:preserved 1:1:preserved 2:2:preserved 8,9,10,11,12,13,14,15,16,17,18,19,20:3,4,5,7,8,9,10,11,12,13,14,15,16:preserved :6:mogrammar-det
+
+Studying other techniques to speedup the query-feature extraction process is our next step in future work .
+Studying other techniques to speed up the process of query-feature extraction is our next step in future work .
+372 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:typo 5:6:preserved 6:9:preserved 7:10:preserved 8:7:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved :8:mogrammar-prep
+
+We have presented a novel method for re-ranking face images returned by existing search engines .
+We have presented a novel method of re-ranking face images returned by existing search engines .
+379 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-prep 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Instead of training a specific classifier for each new query , we train only one generic classifier and use it for ranking new queries .
+Instead of training a specific classifier for each new query , we only trained one generic classifier and used it for ranking new queries .
+380 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:bigrammar-vtense 13:12:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:bigrammar-vtense 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+This helps to make the ranking application more scalable .
+This helped make the ranking application more scalable .
+381 0:0:preserved 1:1:bigrammar-vtense 2::mogrammar-prep 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved
+
+To train the generic classifier , We propose a simple unsupervised method to obtain a large number of labeled faces from video archives .
+We propose a simple unsupervised method to train the generic classifier to obtain a large number of labeled faces from video archives .
+382 0,1,2,3,4:6,7,8,9,10:preserved 6,7,8,9,10,11:0,1,2,3,4,5:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved
+
+It uses temporal information to group faces belonging to one person in one shot into one track .
+It uses temporal information to group faces belonging to one person in one shot into one track .
+383 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Several heuristics are employed to guarantee that a subset of face tracks has the correct labels used in the training process .
+Several heuristics are employed to guarantee that a subset of face tracks has the correct labels used in the training process .
+384 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Experiments shown that although our method is unsupervised and independent with underlying algorithms of existing search engines but successfully learns visual consistency among returned faces to boosts retrieval performance .
+Experiments revealed that although our method is unsupervised and independent of underlying algorithms in existing search engines , it successfully learned visual consistency between returned faces to boost efficiency of retrieval .
+385 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-prep 11:11:preserved 12:12:preserved 13:13:bigrammar-prep 14:14:preserved 15:15:preserved 16:16:preserved 18:19,18:paraphrase 19:20:bigrammar-vtense 20:21:preserved 21:22:preserved 22:23:bigrammar-prep 23:24:preserved 24:25:preserved 25:26:preserved 26:27:bigrammar-wform 27:30:preserved 28:28,29:paraphrase 29:31:preserved
+
