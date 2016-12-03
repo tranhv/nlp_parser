@@ -1,6 +1,7 @@
 require 'engtagger'
 require 'lemmatizer'
 require 'json'
+require 'nokogiri'
 
 class ReadData
   DATA_PATH = "./data"
@@ -876,6 +877,11 @@ class ReadData
     end
     return [data, target.join(" ")]
   end
+
+  def get_data_nucle(xml_str)
+    doc = Nokogiri::XML(xml_str)
+    
+  end 
 
   def parse_alignment_meteor(line_align)
     line_align.gsub!("\t\t\t", "\t\t")
