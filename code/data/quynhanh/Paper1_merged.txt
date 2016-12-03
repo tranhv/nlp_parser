@@ -1,0 +1,648 @@
+A Minimum-Delay Routing Tree Algorithm for Access-Point Communications in Wireless Mesh Networks
+A Minimum-Delay Routing Tree Algorithm for Access-Point Communications in Wireless Mesh Networks
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+As a scalable , flexible access network to the Internet , we have studied the design optimization and the implementation of the Wireless Internet-access Mesh NETwork ( WIMNET ) .
+As a scalable , flexible access network to the Internet , we have studied the design optimization and the implementation of the Wireless Internet-access Mesh NETwork ( WIMNET ) .
+6 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+WIMNET is composed of multiple access points ( APs ) that are connected with each other by wireless communications . 
+WIMNET is composed of multiple access points ( APs ) that are connected with each other by wireless communications . 
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+At least one AP performs as the gateway ( GW ) to the Internet .
+At least one AP performs as the gateway ( GW ) to the Internet .
+8 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Any host in the network can access to the Internet through this GW , after associating its neighbor AP and communicating with multihop wireless links between APs . 
+Any host in the network can access to the Internet through this GW , after associating its neighbor AP and communicating with multihop wireless links between APs . 
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+The delay along the routing path degrades the performance of WIMNET . 
+The delay along the routing path degrades the performance of WIMNET . 
+10 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+To avoid the bottleneck of communications by minimizing the maximum delay , we formulate the routing tree problem for AP communications , and prove the NP-completeness of its decision version .
+To avoid the bottleneck of communications by minimizing the maximum delay , we formulate the routing tree problem for AP communications , and prove the NP-completeness of its decision version .
+11 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Then , we propose the greedy heuristic algorithm of sequentially selecting one link that minimizes the delay of the predicted tree containing the link . 
+Then , we propose the greedy heuristic algorithm of sequentially selecting one link that minimizes the delay of the predicted tree containing the link . 
+12 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The effectiveness of our algorithm is verified through extensive simulations in instances with 25 APs using the WIMNET simulator .
+The effectiveness of our algorithm is verified through extensive simulations in instances with 25 APs using the WIMNET simulator .
+13 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Nowadays , the Internet has become widely used in our daily lives with rapid developments of inexpensive small communication devices and high-speed communication technology . 
+Nowadays , the Internet has become widely used in our daily lives with the rapid development of inexpensive small communication devices and high-speed communication technology . 
+18 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:14:preserved 14:15:bigrammar-nnum 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :13:mogrammar-det
+
+A variety of information , data , and services have actually been provided through the Internet . 
+A variety of information , data , and services have actually been provided through the Internet . 
+19 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+As a result , a high-speed , flexible , and inexpensive Internet access in every place at any time has been strongly desired among users by using wireless communication devices at mobile hosts such as personal computers ( PCs ) and personal digital assistances ( PDAs ) . 
+As a result , a high-speed , flexible , and inexpensive Internet access has been strongly desired by those who use wireless communication devices at mobile hosts such as personal computers ( PCs ) and personal digital assistances ( PDAs ) . 
+20 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13,14,15,17,18,23,24,26,16:18,19,20:paraphrase 19:13:preserved 20:14:preserved 21:15:preserved 22:16:preserved 25:17:preserved 27:21:preserved 28:22:preserved 29:23:preserved 30:24:preserved 31:25:preserved 32:26:preserved 33:27:preserved 34:28:preserved 35:29:preserved 36:30:preserved 37:31:preserved 38:32:preserved 39:33:preserved 40:34:preserved 41:35:preserved 42:36:preserved 43:37:preserved 44:38:preserved 45:39:preserved 46:40:preserved 47:41:preserved
+
+In order to meet these demands , wireless local area networks ( WLANs ) have been widely studied and deployed as the access network to the Internet . 
+In order to meet these demands , wireless local area networks ( WLANs ) have been widely studied and deployed as the access network to the Internet . 
+21 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+WLANs have now become available in many private and public spaces including offices , schools , homes , airports , stations , and shopping malls .
+WLANs have now become available in many private and public spaces including offices , schools , homes , airports , stations , and shopping malls .
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+The wireless mesh network has emerged as a very attractive technology among academics and industries to flexibly and inexpensively realize a large-scale WLAN </CITE> . 
+An emergency technology called the wireless mesh network is considered attractive and praise by academics and industries as a flexible and inexpensice large-scale WLAN </CITE> . 
+23 0:0:bigrammar-det 1:5:preserved 2:6:preserved 3:7:preserved 4,8,11,15,16,18,19:3,4,8,9,12,13,19,20,21:paraphrase 5:1:bigrammar-wform 6:17:preserved 7:18:preserved 9:10:preserved 10:2:preserved 12:14:preserved 13:11:preserved 14:16:preserved 17:15:preserved 20::mogrammar-det 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved
+
+The wireless mesh network is composed of multiple wireless routers that are distributed in the network field , so that it can expand the wireless coverage area by a single router that is often limited into a small space . 
+It is composed of multiple wireless routers distributed in the network field , so that it can expand the wireless coverage area by a single router that is often confined to a small space . 
+24 0,1,2,3:0:paraphrase 4:1:preserved 5:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10,11,34:29:paraphrase 12:7:preserved 13:8:preserved 14:9:preserved 15:10:preserved 16:11:preserved 17:12:preserved 18:13:preserved 19:14:preserved 20:15:preserved 21:16:preserved 22:17:preserved 23:18:preserved 24:19:preserved 25:20:preserved 26:21:preserved 27:22:preserved 28:23:preserved 29:24:preserved 30:25:preserved 31:26:preserved 32:27:preserved 33:28:preserved 35:30:bigrammar-prep 36:31:preserved 37:32:preserved 38:33:preserved 39:34:preserved
+
+In the wireless mesh network , data communications between routers are offered by multihop wireless communications , in addition to those between routers and hosts .
+In the wireless mesh network , data communications between routers are offered by multihop wireless communications , in addition to those between routers and hosts .
+25 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Among several variations of the wireless mesh network , our study has focused on the network for the Internet access , called the Wireless Internet-access Mesh NETwork ( WIMNET ) for convenience . 
+Among several variations of the wireless mesh network , our study has focused on the network for the Internet access , called the Wireless Internet-access Mesh NETwork ( WIMNET ) for convenience . 
+26 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+WIMNET uses only access points ( APs ) as wireless routers , and realizes wireless communications between APs mainly on the MAC layer using the wireless distribution system ( WDS ) </CITE> . 
+WIMNET uses only access points ( APs ) as wireless routers , and realizes wireless communications between APs mainly on the MAC layer using the wireless distribution system ( WDS ) </CITE> . 
+27 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Figure 1 illustrates the overview of WIMNET . 
+Figure 1 illustrates the overview of WIMNET . 
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+At least one AP in WIMNET acts as a gateway ( GW ) to the Internet .
+At least one AP in WIMNET acts as a gateway ( GW ) to the Internet .
+29 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+In WIMNET , each AP takes two different roles for wireless communications , specifically a wireless hub for its associated hosts and a wireless bridge for relaying packets between APs .
+In WIMNET , each AP takes two different roles for wireless communications , specifically a wireless hub for its associated hosts and a wireless bridge for relaying packets between APs .
+30 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+To reduce the radio interference between these two communications , we use different protocols with different channels ( radio frequencies ) for them . 
+To reduce the radio interference between these two communications , we use different protocols with different channels ( radio frequencies ) for them . 
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Actually , we assign the IEEE 802.11b/g protocol with 2.4GHz for the former role , which is usually available at mobile hosts , and the IEEE 802.11a protocol with 5GHz for the latter one . 
+Actually , we assign the IEEE 802.11b/g protocol with 2.4GHz for the former role , which is usually available at mobile hosts , and the IEEE 802.11a protocol with 5GHz for the latter one . 
+32 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved
+
+For each protocol , several non-interfered frequency channels are available . 
+For each protocol , several non-interfered frequency channels are available . 
+33 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Using this feature , an AP can use multiple channels by equipped with multiple NICs ( Network Interface Cards ) to increase the bandwidth </CITE> . 
+Using this feature , an AP can use multiple channels by equipped with multiple NICs ( Network Interface Cards ) to increase the bandwidth </CITE> . 
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+For the optimal design of WIMNET , we have studied related combinatorial optimization problems and their algorithms . 
+For the optimal design of WIMNET , we have studied related combinatorial optimization problems and their algorithms . 
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+In </CITE> , we defined the AP allocation problem with its heuristic algorithms . 
+In </CITE> , we defined the AP allocation problem with its heuristic algorithms . 
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+In </CITE> , we studied the gateway AP selection problem . 
+In </CITE> , we studied the gateway AP selection problem . 
+37 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+In </CITE> , we studied the NIC and channel assignment problem .
+In </CITE> , we studied the NIC and channel assignment problem .
+38 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+As the size of WIMNET is expanded , two factors may determine its performance of communications . 
+As the size of WIMNET is expanded , two factors may determine its performance of communications . 
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The first factor is the increase of the transmission delay at wireless links between GWs and their adjacent APs . 
+The first factor is the increase of the transmission delay at wireless links between GWs and their adjacent APs . 
+40 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+In WIMNET , all the packets to/from user hosts associated with APs other than GWs , must be handled by a GW to access the Internet .
+In WIMNET , all the packets to/from user hosts associated with APs other than GWs must be handled by a GW to access the Internet .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15::bigrammar-others 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved
+
+Thus , wireless communications around GWs can be very crowded , and one link between GW and its adjacent AP may become the bottleneck of the whole communication in WIMNET . 
+Thus , wireless communications around GWs can be very crowded , and one link between GW and its adjacent AP may become the bottleneck of the whole communication in WIMNET . 
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+The second factor is the propagation delay due to multihop communications between an AP and GW .
+The second factor is the propagation delay due to multihop communications between an AP and GW .
+43 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The increase of the hop count ( the number of hops ) in the multihop communication directly increases the delay , because packets are transmitted in a bucket brigade way . 
+The increase of the hop count ( the number of hops ) in the multihop communication directly increases the delay , because packets are transmitted in a bucket - brigade manner . 
+44 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27,28:27,28,29:typo 29:30:paraphrase 30:31:preserved
+
+It can also increase the transmission delay , because more links need to be activated .
+It can also increase the transmission delay because more links need to be activated .
+45 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7::bigrammar-others 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved
+
+Therefore , the proper routing for communications between APs to minimize both delays is very important to improve the performance of the large-scale WIMNET .
+Therefore , the proper routing for communications between APs to minimize both delays is very important to improve the performance of the large-scale WIMNET .
+46 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The routing paths for AP communications in WIMNET with a single GW becomes a spanning tree rooted at GW of the graph representing the AP network topology , because every AP must be connected with GW for the Internet access . 
+The routing paths for AP communications in WIMNET with a single GW becomes a spanning tree rooted at GW of the graph representing the AP network topology , because every AP must be connected with GW for the Internet access . 
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved
+
+In this paper , using this graph representation , we formulate the minimum-delay routing tree problem to find optimal routing paths for AP communications in WIMNET . 
+In this paper , using this graph representation , we formulate the minimum-delay routing tree problem to find optimal routing paths for AP communications in WIMNET . 
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+We prove the NPcompleteness of the decision version through reduction from the NP-complete bin packing problem </CITE> . 
+We prove the NPcompleteness of the decision version via a reduction from the NP-complete bin packing problem </CITE> . 
+49 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8,9:bigrammar-prep 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved
+
+Then , we propose the greedy heuristic algorithm for this problem .
+Then , we propose the greedy heuristic algorithm for this problem .
+50 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+For the proper routing , the precise estimations of both delays become essential . 
+The precise estimations of both delays are essential for the proper routing . 
+51 0:8:preserved 1:9:preserved 2:10:preserved 3:11:preserved 4::unaligned 5:0:preserved 6:1:preserved 7:2:preserved 8:3:preserved 9:4:preserved 10:5:preserved 11:6:paraphrase 12:7:preserved 13:12:preserved
+
+The propagation delay to an AP can be easily estimated by the summation of the link delays along the path between this AP and GW . 
+The propagation delay to an AP can be easily estimated by the summation of the link delays along the path between this AP and GW . 
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+However , the estimation of the transmission delay of a link is hard during the tree construction in the greedy algorithm . 
+However , it is hard to estimate the transmission delay of a link during the tree construction in the greedy algorithm . 
+53 0:0:preserved 1:1:preserved 2::mogrammar-det 3,4,6:6,8:para-colocation 5:7:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:3:preserved 12:4:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved :2,5:unaligned
+
+Although this estimation requires the sum of traffics at the link that are transmitted from all the APs along the same path as described later , this path can be known after the routing tree is completed .
+Although this estimation requires the sum of traffics at the link that are transmitted from all the APs along the same path as described later , this path can be known after the routing tree is completed .
+54 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+Therefore , before selecting one link to construct a routing tree , our algorithm predicts the remaining part of the tree using the Dijkstra shortest path algorithm with link delays , and estimates the transmission delay using the traffics along this predicted path . 
+Therefore , before selecting one link to construct a routing tree , our algorithm predicts the remaining part of the tree using the Dijkstra shortest path algorithm with link delays , and estimates the transmission delay using the traffics along this predicted path . 
+55 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved
+
+The effectiveness of our approach is evaluated through simulations using the WIMNET simulator </CITE> that has been developed by our group .
+The effectiveness of our approach is evaluated through simulations using the WIMNET simulator </CITE> that has been developed by our group .
+56 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The rest of this paper is organized as follows : Section II defines the minimum-delay routing tree problem in WIMNET .
+The rest of this paper is organized as follows : Section II defines the minimum-delay routing tree problem in WIMNET .
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Section IV proves the NP-completeness of its decision version .
+Section IV proves the NP-completeness of its decision version .
+58 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Section IV presents our greedy heuristic algorithm . 
+Section IV presents our greedy heuristic algorithm . 
+59 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+Section V shows evaluation results of our algorithm by simulations .
+Section V shows evaluation results of our algorithm by simulations .
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Section VI notes some related works . 
+Section VI notes some related works . 
+61 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+Section VII provides the conclusion and some future works of this paper .
+Section VII provides the conclusion and some future works of this paper .
+62 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+In the minimum-delay routing tree problem for AP communications in WIMNET , the AP network topology , G = ( V , E ) , is given as the input with one GW to the Internet . 
+In the minimum-delay routing tree problem for AP communications in WIMNET , the AP network topology , G = ( V , E ) , is given as the input with one GW to the Internet . 
+68 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+A vertex in V represents an AP and an edge in E represents a wireless link between two APs . 
+A vertex in V represents an AP and an edge in E represents a wireless link between two APs . 
+69 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Every vertex in V and every edge in E are associated with non-negative weights . 
+Every vertex in V and every edge in E are associated with non-negative weights . 
+70 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The weight hi for the ith AP ( =APi ) represents the expected number of hosts associated with this AP . 
+The weight hi for the ith AP ( =APi ) represents the expected number of hosts associated with this AP . 
+71 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The weight sij for the link from APi to AP j ( =linkij ) represents the bandwidth or the transmission speed . 
+The weight sij for the link from APi to AP j ( =linkij ) represents the bandwidth or the transmission speed . 
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+They are estimated or observed beforehand to design WIMNET properly . 
+They are estimated or observed beforehand to design WIMNET properly . 
+73 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Then , the traffic through each link in E is estimated from vertex weights , assuming that every host communicates the same amount of traffic to/from the Internet .
+Then , the traffic through each link in E is estimated from vertex weights , assuming that every host communicates the same amount of traffic to/from the Internet .
+74 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The objective of this problem is to minimize the two delays described in Section I . 
+The objective of this problem is to minimize the two delays described in Section I . 
+75 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The propagation delay Di prop for APi is given by the summation of link delays along the route Pi from GW to APi . 
+The propagation delay Di prop for APi is given by the summation of link delays along the route Pi from GW to APi . 
+76 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Because the link delay is inversely proportional to the bandwidth , Di prop is given by : </Eq> ( 1 )
+Because the link delay is inversely proportional to the bandwidth , Di prop is given by : </Eq> ( 1 )
+77 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The transmission delay Di trans for the link between GW and its adjacent AP ( let APi ) is given by the transmission time of all the traffics at this bottleneck link . 
+The transmission delay Di trans for the link between GW and its adjacent AP ( let APi ) is given by the transmission time of all the traffics at this bottleneck link . 
+78 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Dtrans i is given by : </Eq> ( 2 ) where AP g represents GW , and </Eq> represents the traffic of link </Eq> , which will be discussed in II-C .
+Dtrans i is given by : </Eq> ( 2 ) where AP g represents GW , and </Eq> represents the traffic of link </Eq> , which will be discussed in II-C .
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Then , the cost function E is defined to represent the minimization of the largest propagation delay and the largest transmission delay in the routing tree . 
+Then , the cost function E is defined to represent the minimization of the largest propagation delay and the largest transmission delay in the routing tree . 
+80 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+E is given by : </Eq> ( 3 ) where </Eq> and </Eq> represent constant coefficients , the function </Eq> returns the maximum value in the set S , and Ng represents the set of APs adjacent to GW . 
+E is given by : </Eq> ( 3 ) where </Eq> and </Eq> represent constant coefficients , the function </Eq> returns the maximum value in the set S , and Ng represents the set of APs adjacent to GW . 
+81 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved
+
+Note that </Eq> = 200 and </Eq> = 1 are used in our simulations .
+Note that </Eq> = 200 and </Eq> = 1 are used in our simulations .
+82 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
+We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
+86 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Input : G = ( V , E ) : the AP network topology with </Eq> : a gateway to the Internet , hi : the expected number of hosts associated with APi for </Eq> , </Eq> : the bandwidth of </Eq> for </Eq> and </Eq> , TRs : the average sending traffic from a host , and TRr : the average receiving traffic to a host .
+Input : G = ( V , E ) : the AP network topology with </Eq> : a gateway to the Internet , hi : the expected number of hosts associated with APi for </Eq> , </Eq> : the bandwidth of </Eq> for </Eq> and </Eq> , TRs : the average sending traffic from a host , and TRr : the average receiving traffic to a host .
+87 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved 63:63:preserved 64:64:preserved 65:65:preserved 66:66:preserved 67:67:preserved
+
+Output : T : the routing tree .
+Output : T : the routing tree .
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+Constraint : T must include every AP in V ( T must be a spanning tree rooted at GW ) .
+Constraint : T must include every AP in V ( T must be a spanning tree rooted at GW ) .
+89 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Objective : to minimize the cost function E in ( 3 ) .
+Objective : to minimize the cost function E in ( 3 ) .
+90 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The traffic of a link is given by the summation of the traffics to/from the APs along the path located on the opposite side of this link from GW in the routing tree T , because these traffics must be transmitted through this link to access the Internet in this multihop network .
+The traffic of a link is given by the summation of the traffics to/from the APs along the path located on the opposite side of this link from GW in the routing tree T , because these traffics must be transmitted through this link to access the Internet in this multihop network .
+95 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved
+
+1 ) Initialization of the traffic of </Eq> : </Eq> .
+1 ) Initialization of the traffic of </Eq> : </Eq> .
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+2 ) Calculation of the traffic of </Eq> : </Eq> and </Eq> if </Eq> is included in Pk .
+2 ) Calculation of the traffic of </Eq> : </Eq> and </Eq> if </Eq> is included in Pk .
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Figure 2 shows that the traffic of the link from GW to its adjacent AP is calculated by the summation of the traffics to the APs along the same path in the routing tree , because they must be transmitted by this link . tk ( k = 1 , 2 , 3 , 4 ) represents the traffic to APk .
+Figure 2 shows that the traffic of the link from GW to its adjacent AP is calculated by the summation of the traffics to the APs along the same path in the routing tree , because they must be transmitted by this link . tk ( k = 1 , 2 , 3 , 4 ) represents the traffic to APk .
+98 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved
+
+In this section , the NP-completeness of the decision version of the minimum-delay routing tree problem is proved through reduction from the NP-complete bin packing problem </CITE> .
+In this section , the NP-completeness of the decision version of the minimum-delay routing tree problem is proved via a reduction from the NP-complete bin packing problem </CITE> .
+105 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18,19:bigrammar-prep 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved
+
+The decision version of the minimum-delay routing tree problem , Min-Tree , is defined as follows :
+The decision version of the minimum-delay routing tree problem , Min-Tree , is defined as follows :
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Instance : The same inputs as the minimum-delay routing tree problem in II-B and an additional constant E0 .
+Instance : The same inputs as the minimum-delay routing tree problem in II-B and an additional constant E0 .
+110 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Question : Is there a routing tree to satisfy E ? E0 ?
+Question : Is there a routing tree to satisfy E ? E0 ?
+111 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The bin packing problem , Bin-packing , is defined as the following decision problem :
+The bin packing problem , Bin-packing , is defined as the following decision problem :
+116 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Instance : a set of M cups with water of volume </Eq> for cup i , and L bins with a constant volume B .
+Instance : a set of M cups with water of volume </Eq> for cup i , and L bins with a constant volume B .
+117 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Question : Is there a way of pouring the water of all the cups into bins without spilling , such that the whole water of any cup is poured into the same bin ?
+Question : Is there a way of pouring the water of all the cups into bins without spilling , such that the whole water of any cup is poured into the same bin ?
+118 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+Clearly , Min-Tree belongs to the class NP . 
+Clearly , Min-Tree belongs to the class NP . 
+123 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+Then , we show that an arbitrary instance of Bin-packing can be transformed into the following Min-Tree instance :
+Then , we show that an arbitrary instance of Bin-packing can be transformed into the following Min-Tree instance :
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+Input : G = ( V , E ) : GW ( =AP0 ) is connected with the K APs ( =APi for </Eq> ) , where the K APs are connected with all of the remaining M APs ( =APi for </Eq> ) , the M APs are connected with each other , and N = 1 + K + M , as shown in Figure 3 , </Eq> for </Eq> and </Eq> for </Eq> for </Eq> and </Eq> .
+Input : G = ( V , E ) : GW ( =AP0 ) is connected with the K APs ( =APi for </Eq> ) , where the K APs are connected with all of the remaining M APs ( =APi for </Eq> ) , the M APs are connected with each other , and N = 1 + K + M , as shown in Figure 3 , </Eq> for </Eq> and </Eq> for </Eq> for </Eq> and </Eq> .
+125 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved 59:59:preserved 60:60:preserved 61:61:preserved 62:62:preserved 63:63:preserved 64:64:preserved 65:65:preserved 66:66:preserved 67:67:preserved 68:68:preserved 69:69:preserved 70:70:preserved 71:71:preserved 72:72:preserved 73:73:preserved 74:74:preserved 75:75:preserved 76:76:preserved 77:77:preserved 78:78:preserved 79:79:preserved 80:80:preserved
+
+In this Min-Tree instance , the cost function E in ( 3 ) is equal to the maximum traffic among the links incident to GW . 
+In this Min-Tree instance , the cost function E in ( 3 ) is equal to the maximum traffic among the links incident to GW . 
+126 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+The traffic of such a link is given by the summation of the traffics from the APs along the route to GW in the tree . 
+The traffic of such a link is given by the summation of the traffics from the APs along the route to GW in the tree . 
+127 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Thus , each of K routes in the tree is equivalent to one bin packing of cups . 
+Thus , each of K routes in the tree is equivalent to one bin packing of cups . 
+128 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+This proves the NP-completeness of Min-Tree .
+This proves the NP-completeness of Min-Tree .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+In this section , we propose a greedy heuristic algorithm for the minimum-delay routing tree problem for AP communications in WIMNET .
+In this section , we propose a greedy heuristic algorithm for the minimum-delay routing tree problem for AP communications in WIMNET .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+In WIMNET , all the traffics of the hosts for the Internet access must pass through GW . 
+In WIMNET , all the traffics of the hosts for the Internet access must pass through GW . 
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+When the hosts are associated with APs other than GW , their traffics must be transmitted by one of the links between GW and its adjacent APs . 
+When the hosts are associated with APs other than GW , their traffics must be transmitted by one of the links between GW and its adjacent APs . 
+140 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+Because the number of such links is usually small , the minimization of the transmission delay of one link among them may increase delays of the other links . 
+Because the number of such links is usually small , the minimization of the transmission delay of one link among them may increase delays of the other links . 
+141 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+To deal with this problem , our algorithm actually seeks the minimization of the difference between the maximum transmission delay and the minimum one . 
+To deal with this problem , our algorithm actually seeks the minimization of the difference between the maximum transmission delay and the minimum one . 
+142 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+This modified cost function is given by : </Eq> ( 4 ) where min </Eq> returns the minimum value in the set S .
+This modified cost function is given by : </Eq> ( 4 ) where min </Eq> returns the minimum value in the set S .
+143 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Our algorithm greedily constructs the routing tree T = ( VT  , ET  ) by repeating the selection of one link that minimizes the modified cost function Em if it is added into T , until every AP is included in the tree .
+Our algorithm greedily constructs the routing tree T = ( VT  , ET  ) by repeating the selection of one link that minimizes the modified cost function Em if it is added into T , until every AP is included in the tree .
+148 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved
+
+To estimate the transmission delay in Em accurately , the complete routing tree is predicted by expanding the current partial tree using the Dijkstra shortest path algorithm in terms of the link delay . 
+To estimate the transmission delay in Em accurately , the complete routing tree is predicted by expanding the current partial tree using the Dijkstra shortest path algorithm in terms of the link delay . 
+149 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+Here , we note that the ?-term in Em is calculated from the current tree T with the selected link . 
+Here , we note that the ?-term in Em is calculated from the current tree T with the selected link . 
+150 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+In the procedure , the routing tree T = ( VT  , ET  ) is first initialized with GW , and then , T is sequentially constructed by selecting the best link of minimizing the cost function of the predicted tree one by one , until V T = V  .
+In the procedure , the routing tree T = ( VT  , ET  ) is first initialized with GW , and then , T is sequentially constructed by selecting the best link of minimizing the cost function of the predicted tree one by one , until V T = V  .
+151 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved
+
+1 ) Calculate the delay at linkij by </Eq> .
+1 ) Calculate the delay at linkij by </Eq> .
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+2 ) Initialize the routing tree T by V T=GW and </Eq> .
+2 ) Initialize the routing tree T by V T=GW and </Eq> .
+153 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+3 ) Construct T by repeating the selection of the link satisfying the following two conditions , until every AP in V is included in T : it connects an </Eq> and an </Eq> , and when it is included in T , Em with the tree predicted in IV-C becomes minimum .
+3 ) Construct T by repeating the selection of the link satisfying the following two conditions , until every AP in V is included in T : it connects an </Eq> and an </Eq> , and when it is included in T , Em with the tree predicted in IV-C becomes minimum .
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved
+
+The complete routing tree is predicted by expanding the current partial tree T by selecting the links that connect the remaining APs using the Dijkstra shortest path algorithm .
+The complete routing tree is predicted by expanding the current partial tree T by selecting the links that connect the remaining APs using the Dijkstra shortest path algorithm .
+159 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+1 ) Initialize the set of the unselected APs , A , by A = V  , and the decision variables , AP weight labels ( propagation delay ) and AP route labels ( previous APs in paths from GW ) , in the Dijkstra algorithm using the current partial tree T as follows :
+1 ) Initialize the set of the unselected APs , A , by A = V  , and the decision variables , AP weight labels ( propagation delay ) and AP route labels ( previous APs in paths from GW ) , in the Dijkstra algorithm using the current partial tree T as follows :
+160 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved
+
+a ) for AP weight labels : set the propagation delay in 1 for any </Eq> , and set </Eq> for the remaining APs .
+a ) for AP weight labels : set the propagation delay in 1 for any </Eq> , and set </Eq> for the remaining APs .
+161 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+b ) for AP route labels : set the previous AP along the route from GW in T for any AP in T , and set </Eq> for the remaining APs .
+b ) for AP route labels : set the previous AP along the route from GW in T for any AP in T , and set </Eq> for the remaining APs .
+162 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+2 ) Select one AP ( let APk ) in A that has the smallest weight label .
+2 ) Select one AP ( let APk ) in A that has the smallest weight label .
+163 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+3 ) Remove APk from A , and terminate the procedure if </Eq> .
+3 ) Remove APk from A , and terminate the procedure if </Eq> .
+164 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+4 ) Update the both labels of the APs adjacent to </Eq> .
+4 ) Update the both labels of the APs adjacent to </Eq> .
+165 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+In this section , we discuss the performance improvement by our approach through network simulations using the WIMNET simulator .
+In this section , we discuss the performance improvement by our approach via network simulations using the WIMNET simulator .
+171 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-prep 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+The WIMNET simulator simulates the least functions for wireless communications of hosts and APs required to evaluate throughputs and delays , because this simulator has bee developed for evaluations of a large-scale WIMNET with reasonable CPU time on a conventional PC . 
+The WIMNET simulator simulates the least functions for wireless communications of hosts and APs required to evaluate throughputs and delays , because this simulator has bee developed for evaluations of a large-scale WIMNET with reasonable CPU time on a conventional PC . 
+175 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved
+
+Thus , a sequence of functions such as host movements , communication request arrivals , and wireless link activations , are synchronized by a single global clock called a time slot . 
+Thus , a sequence of functions such as host movements , communication request arrivals , and wireless link activations , are synchronized by a single global clock called a time slot . 
+176 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Within an integral multiple of time slots , a host or an AP can complete the one frame transmission and the acknowledgement reception . 
+Within an integral multiple of time slots , a host or an AP can complete the one frame transmission and the acknowledgement reception . 
+177 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+In this paper , the duration time of one time slot is set 0.2ms .
+In this paper , the duration time of one time slot is set 0.2ms .
+178 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+From our past experimental results , the maximum bandwidth of links between APs is set 30Mbps , and that between an AP and hosts is 20Mbps . 
+From our past experimental results , the maximum bandwidth of links between APs is set 30Mbps , and that between an AP and hosts is 20Mbps . 
+179 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Thus , the former link is completed with two slots , and the latter is with three slots , assuming every frame size is 1 , 500bytes . 
+Thus , the former link is completed with two slots , and the latter is with three slots , assuming every frame size is 1 , 500bytes . 
+180 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+When two or more links within their wireless ranges may be activated at the same time slot , randomly selected only one link among them is successfully activated , and the others are inserted into waiting queues to avoid collisions , supposing DCF and RTS/CTS functions . 
+When two or more links within their wireless ranges are activated at the same time slot , only one link , randomly selected , is successfully activated , and the others are inserted into waiting queues to avoid collisions , assuming DCF and RTS/CTS functions . 
+181 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10:9:bigrammar-vtense 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:21:preserved 19:22:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23,24:39:paraphrase 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved 37:36:preserved 38:37:preserved 39:38:preserved 40:23:preserved 41:40:paraphrase 42:41:preserved 43:42:preserved 44:43:preserved 45:44:preserved 46:45:preserved :20:unaligned
+
+The packets for each request are routed along the path in the routing tree T . 
+The packets for each request are routed along the path in the routing tree T . 
+182 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Only the connection-less communication is implemented in the WIMNET simulator , where the retransmission is not considered .
+Only the connection-less communication is implemented in the WIMNET simulator , where the retransmission is not considered .
+183 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
+First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
+188 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+1 ) Simulated Instances : In the simulated instances , 5 x 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+1 ) Simulated Instances : In the simulated instances , 5 x 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+189 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
+Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
+190 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The center AP is selected as the gateway to the Internet . 
+The center AP is selected as the gateway to the Internet . 
+191 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Two types of biased fixed traffic patterns , or host distributions , in the field shown in Figures 4 and 5 are considered . 
+Two types of biased fixed traffic patterns , or host distributions , in the field shown in Figures 4 and 5 are considered . 
+192 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+A white circle in both figures represents an AP associated with 1 host . 
+A white circle in both figures represents an AP associated with 1 host . 
+193 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+A black circle represents an AP with 8 hosts in Figure 4 and with 10 hosts in Figure 5 . 
+A black circle represents an AP with 8 hosts in Figure 4 and with 10 hosts in Figure 5 . 
+194 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+We have selected them so that the total number of hosts in each instance becomes about 100 for the unification of loads . 
+We have selected them so that the total number of hosts in each instance becomes about 100 for the unification of loads . 
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+These simple but extreme cases are used to clarify the superiority of our combined delay approach to single delay approaches .
+These simple but extreme cases are used to clarify the superiority of our combined delay approach to single delay approaches .
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For each traffic pattern , we first applied our routing tree algorithm in Section IV , and then , the channel configuration algorithm in </CITE> to optimally assign the traditional NICs to Aps and the channels to the communication links used in the routing tree .
+For each traffic pattern , we first applied our routing tree algorithm in Section IV , and then , the channel configuration algorithm in </CITE> to optimally assign the traditional NICs to Aps and the channels to the communication links used in the routing tree .
+197 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved
+
+Then , we executed the WIMNET simulator using the network configuration given by these algorithms .
+Then , we executed the WIMNET simulator using the network configuration given by these algorithms .
+198 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Before starting each simulation run , every host has 125 packets sending to the gateway , and the gateway has 1 ,000 packets sending to each host , where each packet has a single frame size .
+Before starting each simulation run , every host has 125 packets sending to the gateway , and the gateway has 1 ,000 packets sending to each host , where each packet has a single frame size .
+199 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+When all of the packets are received by their destinations , one simulation run is terminated .
+When all of the packets are received by their destinations , one simulation run is terminated .
+200 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+For the network performance , the throughput is calculated by dividing the total received packet size with the simulation time .
+For the network performance , the throughput is calculated by the total received packet size divided by the simulation time .
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:15:paraphrase 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16:bigrammar-prep 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+2 ) Simulation Results : In simulations , in addition to our algorithm ( proposal ) , the algorithm considering only the propagation delay ( comp1 ) , which has often been used in routing , and the algorithm considering only the transmission delay ( comp2 ) , are executed for comparisons .
+2 ) Simulation Results : In simulations , in addition to our algorithm ( proposal ) , the algorithm considering only the propagation delay ( comp1 ) , which has often been used in routing , and the algorithm considering only the transmission delay ( comp2 ) , are executed for comparisons .
+202 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved
+
+Figure 6 and 7 illustrate the routing trees obtained by three algorithms for traffic patterns 1 and 2 , respectively . 
+Figure 6 and 7 illustrate the routing trees obtained by three algorithms for traffic patterns 1 and 2 , respectively . 
+203 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For both patterns , proposal and comp1 find trees with the shortest path for any AP , whereas comp2 does not find such a tree for traffic pattern 2 .
+For both patterns , proposal and comp1 find trees with the shortest path for any AP , whereas comp2 does not find such a tree for traffic pattern 2 .
+204 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+Figures 8 and 9 show changes of throughputs when the number of additional NICs at Aps increases .
+Figures 8 and 9 show changes of throughputs when the number of additional NICs at Aps increases .
+205 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+When every AP is assigned only one NIC , the throughout is similar among them .
+When every AP is assigned only one NIC , the throughout is similar among them .
+206 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The reason is that the bandwidth of the single channel shared among the links around GW , becomes the bottleneck of whole communications in WIMNET , where the gateway must handle every traffic from/to the Internet .
+The reason is that the bandwidth of the single channel shared among the links around GW becomes the bottleneck of whole communications in WIMNET , where the gateway must handle every traffic from/to the Internet .
+207 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:24:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25::bigrammar-others 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved
+
+However , the throughput is improved by utilizing multiple channels even when a small number of additional NICs are used .
+However , the throughput is improved by utilizing multiple channels even when a small number of additional NICs are used .
+208 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+This improvement becomes best for proposal , where the routing tree gives the shortest path for any AP , and disperses traffics more equally among the bottleneck links .
+This improvement becomes best for proposal , where the routing tree gives the shortest path for any AP , and disperses traffics more equally among the bottleneck links .
+209 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Then , we investigate the effectiveness of our approach with three different gateway positions in Figure 10 under random traffic patterns .
+Then , we investigate the effectiveness of our approach with three different gateway positions in Figure 10 under random traffic patterns .
+214 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+In these simulations , the number of associated hosts for each AP is randomly selected between 1 and 7 hosts for each of 50 runs where the total number of hosts in the field is always 100 .
+In these simulations , the number of associated hosts for each AP is randomly selected between 1 and 7 hosts for each of 50 runs where the total number of hosts in the field is always 100 .
+215 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+Figure 11 shows changes of their average throughputs with the increase of additional NICs for three gateway positions .
+Figure 11 shows changes of their average throughputs with the increase of additional NICs for three gateway positions .
+216 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+When 13 Aps are added , the throughputs become saturated .
+When 13 Aps are added , the throughputs become saturated .
+217 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+This maximum throughput is about 120Mbps for the center GW , 90Mbps for the edge-center GW , and 60Mbps for the corner GW .
+This maximum throughput is about 120Mbps for the center GW , 90Mbps for the edge-center GW , and 60Mbps for the corner GW .
+218 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+These results are coincident with their rough estimations that can be given by sums of adjacent Aps .
+These results are coincident with their rough estimations that can be given by sums of adjacent Aps .
+219 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+This fact justifies our routing algorithm for these random instances .
+This fact justifies our routing algorithm for these random instances .
+220 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+Several works have been reported for routings of point-to-point communications in wireless mesh networks .
+Several works have been reported for routings of point-to-point communications in wireless mesh networks .
+226 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Unfortunately , the realization of this synchronous wireless mesh network is very hard , and the superiority of the performance is actually not clear to the conventional asynchronous one including this paper .
+Unfortunately , the realization of this synchronous wireless mesh network is very hard , and the superiority of the performance is actually not clear to the conventional asynchronous one including this paper .
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Besides , it assumes that every AP has the same number of associated hosts and assigned NICs , which is different from out more practical assumption in this paper .
+Besides , it assumes that every AP has the same number of associated hosts and assigned NICs , which is different from out more practical assumption in this paper .
+229 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+ETT represents the average transmission time that can be calculated from the loss rate and the bandwidth of the link .
+ETT represents the average transmission time that can be calculated from the loss rate and the bandwidth of the link .
+232 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+WCETT is given by the summation of ETT along the route and the maximum of the summation of ETT for the links using the same channel .
+WCETT is given by the summation of ETT along the route and the maximum of the summation of ETT for the links using the same channel .
+233 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+This paper has presented the formulation of the minimum-delay routing problem for access-point communications in the wireless Internet-access mesh network ( WIMNET ) , and proved the NP-completeness of its decision version .
+This paper has presented the formulation of the minimum-delay routing problem for access-point communications in the wireless Internet-access mesh network ( WIMNET ) , and proved the NP-completeness of its decision version .
+239 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Then , it has proposed the greedy heuristic algorithm with repetitions of complete tree predictions .
+Then , it has proposed the greedy heuristic algorithm with repetitions of complete tree predictions .
+240 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The effectiveness of our approach is verified through simulations using the WIMNET simulator .
+The effectiveness of our approach is verified through simulations using the WIMNET simulator .
+241 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+The significant performance improvements with a small number of additional NICs are observed using proper routing trees found by our algorithm .
+The significant performance improvements with a small number of additional NICs are observed using proper routing trees found by our algorithm .
+242 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+In future works , our algorithm will be evaluated under non-uniform link bandwidths and/or dynamic traffic changes in simulations .
+In future works , our algorithm will be evaluated under non-uniform link bandwidths and/or dynamic traffic changes in simulations .
+243 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Besides , to justify our approach in the real world , the performance of WIMNET will be investigated after implementing real APs with multiple NICs .
+Besides , to justify our approach in the real world , the performance of WIMNET will be investigated after implementing real APs with multiple NICs .
+244 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+

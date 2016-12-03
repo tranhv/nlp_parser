@@ -47,8 +47,8 @@ The effectiveness of our algorithm is verified through extensive simulations in 
 </abtract>
 </abtract>
 16
-<section label=”INTRODUCTION”>
-<section label=”INTRODUCTION”>
+<section label=INTRODUCTION>
+<section label=INTRODUCTION>
 17
 <p>
 <p>
@@ -194,11 +194,11 @@ Section VII provides the conclusion and some future works of this paper .
 </section>
 </section>
 65
-<section label=”FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM”>
-<section label=”FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM”>
+<section label=FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM>
+<section label=FORMULATION OF MINIMUM-DELAY ROUTING TREE PROBLEM>
 66
-<subsection label=”Overview of Minimum-Delay Routing Tree Problem”>
-<subsection label=”Overview of Minimum-Delay Routing Tree Problem”>
+<subsection label=Overview of Minimum-Delay Routing Tree Problem>
+<subsection label=Overview of Minimum-Delay Routing Tree Problem>
 67
 <p>
 <p>
@@ -254,8 +254,8 @@ Note that </Eq> = 200 and </Eq> = 1 are used in our simulations .
 </subsection>
 </subsection>
 85
-<subsection label=” Formulation of Minimum-Delay Routing Tree Problem”>
-<subsection label=” Formulation of Minimum-Delay Routing Tree Problem”>
+<subsection label=Formulation of Minimum-Delay Routing Tree Problem>
+<subsection label=Formulation of Minimum-Delay Routing Tree Problem>
 86
 We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
 We formulate this minimum-delay routing tree problem as a combinatorial optimization problem .
@@ -278,8 +278,8 @@ Objective : to minimize the cost function E in ( 3 ) .
 </subsection>
 </subsection>
 93
-<subsection label= ”Link Traffic Estimation”>
-<subsection label= ”Link Traffic Estimation”>
+<subsection label= Link Traffic Estimation>
+<subsection label= Link Traffic Estimation>
 94
 <p>
 <p>
@@ -308,8 +308,8 @@ Figure 2 shows that the traffic of the link from GW to its adjacent AP is calcul
 </section>
 </section>
 103
-<section label= “PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM”>
-<section label= “PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM”>
+<section label= PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM>
+<section label= PROOF OF NP-COMPLETENESS FOR MINIMUM-DELAY ROUTING TREE PROBLEM>
 104
 <p>
 <p>
@@ -320,8 +320,8 @@ In this section , the NP-completeness of the decision version of the minimum-del
 </p>
 </p>
 107
-<subsection label=”Decision Version of Minimum-delay Routing Tree Problem”>
-<subsection label=”Decision Version of Minimum-delay Routing Tree Problem”>
+<subsection label=Decision Version of Minimum-delay Routing Tree Problem>
+<subsection label=Decision Version of Minimum-delay Routing Tree Problem>
 108
 <p>
 <p>
@@ -341,8 +341,8 @@ Question : Is there a routing tree to satisfy E ? E0 ?
 </subsection>
 </subsection>
 114
-<subsection label=”Bin Packing Problem”>
-<subsection label=”Bin Packing Problem”>
+<subsection label=Bin Packing Problem>
+<subsection label=Bin Packing Problem>
 115
 <p>
 <p>
@@ -362,8 +362,8 @@ Question : Is there a way of pouring the water of all the cups into bins without
 </subsection>
 </subsection>
 121
-<subsection label=”Proof of NP-completeness”>
-<subsection label=”Proof of NP-completeness”>
+<subsection label=Proof of NP-completeness>
+<subsection label=Proof of NP-completeness>
 122
 <p>
 <p>
@@ -398,8 +398,8 @@ This proves the NP-completeness of Min-Tree .
 </section>
 </section>
 133
-<section label=”MINIMUM-DELAY ROUTING TREE ALGORITHM”>
-<section label=”MINIMUM-DELAY ROUTING TREE ALGORITHM”>
+<section label=MINIMUM-DELAY ROUTING TREE ALGORITHM>
+<section label=MINIMUM-DELAY ROUTING TREE ALGORITHM>
 134
 <p>
 <p>
@@ -410,8 +410,8 @@ In this section , we propose a greedy heuristic algorithm for the minimum-delay 
 </p>
 </p>
 137
-<subsection label=”Modified Cost Function”>
-<subsection label=”Modified Cost Function”>
+<subsection label=Modified Cost Function>
+<subsection label=Modified Cost Function>
 138
 <p>
 <p>
@@ -437,8 +437,8 @@ This modified cost function is given by : </Eq> ( 4 ) where min </Eq> returns th
 </subsection>
 </subsection>
 146
-<subsection label=”Minimum-delay Routing Tree Algorithm”>
-<subsection label=”Minimum-delay Routing Tree Algorithm”>
+<subsection label=Minimum-delay Routing Tree Algorithm>
+<subsection label=Minimum-delay Routing Tree Algorithm>
 147
 <p>
 <p>
@@ -470,8 +470,8 @@ In the procedure , the routing tree T = ( VT  , ET  ) is first initialized with 
 </subsection>
 </subsection>
 157
-<subsection label=”Routing Tree Prediction”>
-<subsection label=”Routing Tree Prediction”>
+<subsection label=Routing Tree Prediction>
+<subsection label=Routing Tree Prediction>
 158
 <p>
 <p>
@@ -506,8 +506,8 @@ b ) for AP route labels : set the previous AP along the route from GW in T for a
 </section>
 </section>
 169
-<section label=”EVALUATION BY NETWORK SIMULATIONS”>
-<section label=”EVALUATION BY NETWORK SIMULATIONS”>
+<section label=EVALUATION BY NETWORK SIMULATIONS>
+<section label=EVALUATION BY NETWORK SIMULATIONS>
 170
 <p>
 <p>
@@ -518,8 +518,8 @@ In this section , we discuss the performance improvement by our approach via net
 </p>
 </p>
 173
-<subsection label=”WIMNET Simulator”>
-<subsection label=”WIMNET Simulator”>
+<subsection label=WIMNET Simulator>
+<subsection label=WIMNET Simulator>
 174
 <p>
 <p>
@@ -557,8 +557,8 @@ Only the connection-less communication is implemented in the WIMNET simulator , 
 </subsection>
 </subsection>
 186
-<subsection label=”Simulated Results for Fixed Traffic Patterns”>
-<subsection label=”Simulated Results for Fixed Traffic Patterns”>
+<subsection label=Simulated Results for Fixed Traffic Patterns>
+<subsection label=Simulated Results for Fixed Traffic Patterns>
 187
 <p>
 <p>
@@ -566,8 +566,8 @@ Only the connection-less communication is implemented in the WIMNET simulator , 
 First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
 First , we verify our approach using rather artificial simple instances with fixed traffic patterns .
 189
-1 ) Simulated Instances : In the simulated instances , 5 × 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
-1 ) Simulated Instances : In the simulated instances , 5 × 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+1 ) Simulated Instances : In the simulated instances , 5 x 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
+1 ) Simulated Instances : In the simulated instances , 5 x 5 ( N = 25 ) APs are regularly placed with the same interval in the field . 
 190
 Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
 Each AP can communicate with its four neighbor APs , where any link has the same maximum bandwidth . 
@@ -635,8 +635,8 @@ This improvement becomes best for proposal , where the routing tree gives the sh
 </subsection>
 </subsection>
 212
-<subsection label=”Simulation results for random traffic patterns”>
-<subsection label=”Simulation results for random traffic patterns”>
+<subsection label=Simulation results for random traffic patterns>
+<subsection label=Simulation results for random traffic patterns>
 213
 <p>
 <p>
@@ -671,8 +671,8 @@ This fact justifies our routing algorithm for these random instances .
 </section>
 </section>
 224
-<section label=”Related Works”>
-<section label=”Related Works”>
+<section label=Related Works>
+<section label=Related Works>
 225
 <p>
 <p>
@@ -710,8 +710,8 @@ WCETT is given by the summation of ETT along the route and the maximum of the su
 </section>
 </section>
 237
-<section label=”Conclusion”>
-<section label=”Conclusion”>
+<section label=Conclusion>
+<section label=Conclusion>
 238
 <p>
 <p>

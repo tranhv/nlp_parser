@@ -1,0 +1,520 @@
+Face detection , tracking , and recognition for broadcast video
+Face detection , tracking , and recognition for broadcast video
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Human face processing techniques for broadcast video including face detection , tracking and recognition have long been a topic that attracts much research interest due to its crucial value in various applications including video structuring , indexing , retrieval , summarization , etc.
+Human face processing techniques for broadcast video , including face detection , tracking , and recognition , have long been a topic that has attracted a lot of research interest due to its crucial value in various applications , such as in video structuring , indexing , retrieval , and summarization .
+6 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:14:preserved 13:15:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23,24:bigrammar-vtense 21:25,26,27:paraphrase 22,23,24,25,26,27,28,29,30,31:28,29,30,31,32,33,34,35,36,37:preserved 32:39,40:paraphrase 33,34,36,37,35,38,39:42,43,44,45,46,47,48:preserved 40:50:preserved 41::unaligned :38:unaligned :41:mogrammar-prep
+
+The main reason is human face provides rich information for people 's appearance such as a government leader in a news video , a pitcher in a sport video or a hero in a movie , and is the basis for interpreting facts .
+The main reason for this is that the human face provides rich information for people 's appearances , such as for a government leader in a news video , a pitcher in a sports video or a hero in a movie , and is the basis for interpreting facts .
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:5:preserved 4,5,6,7,8,9,10,11:8,9,10,11,12,13,14,15:preserved 12:16:bigrammar-nnum 13,14:19,18:preserved 15:21:preserved 16,17,18,19,20,21,22,23,24,25,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43:22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49:preserved 26::unaligned :20:mogrammar-prep
+
+This article describes state-of-the art techniques for face detection , tracking and recognition with application to broadcast video .
+This article describes some state-of-the art techniques for face detection , tracking , and recognition with applications to broadcast video .
+10 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:bigrammar-nnum 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved
+
+Face detection which is the task of localizing faces in an input image is fundamental for any face processing system .
+Face detection , which is the task of localizing faces in an input image , is a fundamental part of any face processing system .
+15 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 14:17:preserved 15:18,19:paraphrase 17,18,19,16:21,22,23,20:preserved :16:mogrammar-det
+
+The extracted faces can then be used for initializing of face tracking or automatic face recognition .
+The extracted faces can then be used for initializing face tracking or automatic face recognition .
+16 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9::mogrammar-prep 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved
+
+An ideal face detector should possess the following characteristics :
+An ideal face detector should possess the following characteristics :
+17 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+- Robustness : it should be capable of handling appearance variations of pose changes , size , illuminations , occlusions , complex background , facial expressions , low resolutions , etc.
+- Robustness : it should be capable of handling appearance variations , such as pose changes , size , illuminations , occlusions , complex backgrounds , facial expressions , and low resolutions .
+20 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12,13:paraphrase 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:bigrammar-nnum 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:30:preserved 28:31:preserved
+
+- Fastness : it should be fast for real-time processing which is an important factor in processing large video archives .
+- Quickness : it should be fast in order to perform real-time processing , which is an important factor in processing large video archives .
+23 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8,9,10,7:paraphrase 8:11:preserved 9:12:preserved 11,10,12,13,14,15,16,17,18,19,20:14,15,16,17,18,19,20,21,22,23,24:preserved
+
+- Simplicity : The training process should be simple .
+- Simplicity : the training process should be simple .
+26 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+For example , the training time is short , the number of parameters is small and training samples are collected without costly .
+For example , the training time is short , the number of parameters is small , and training samples are collected cheaply .
+27 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20,21:21:paraphrase 22:22:preserved
+
+Many approaches have been proposed for building fast and robust face detectors \CITE .
+Many approaches have been proposed for building faster and more robust face detectors \CITE .
+30 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-wform 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved
+
+Among them , those using advanced learning methods such as neural network , support vector machines and boosting are the best .
+Among them , those using advanced learning methods , such as neural network , support vector machines and boosting , are the best .
+31 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved
+
+Typically , detecting faces in an image includes the following steps :
+Typically , detecting the faces in an image takes the following steps :
+32 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:paraphrase 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved :3:mogrammar-det
+
+- Window scanning : in order to detect faces at multiple locations and sizes , a fixed window size ( e.g. 24x24 pixels ) is used to extract image patterns at every location and scale .
+- Window scanning : in order to detect faces at multiple locations and sizes , a fixed window size ( e.g. 24 x 24 pixels ) is used to extract image patterns at every location and scale .
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21,22,23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved
+
+The number of patterns extracted from one 320x240 frame image is large , approximately 160 ,000 in which only a small number of patterns containing face .
+The number of patterns extracted from a 320 x 240 frame image is large , approximately 160 ,000 , in which only a small number of patterns contain a face .
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-det 7:7,8,9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:bigrammar-wform 25:29:preserved :28:mogrammar-det
+
+- Feature extraction : given an image pattern , features are extracted .
+- Feature extraction : given an image pattern , the features are extracted .
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved :9:mogrammar-det
+
+The most popular feature type is Haar wavelet since it is very fast to compute using the integral image \CITE .
+The most popular feature type is the Haar wavelet because it is very fast to compute using the integral image \CITE .
+40 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:paraphrase 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved :6:mogrammar-det
+
+Other feature types can be listed including pixel intensity \CITE , local binary patterns \CITE and edge orientation histogram \CITE .
+Other feature types can be listed including the pixel intensity \CITE , local binary patterns \CITE , and edge orientation histogram \CITE .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved :7:mogrammar-det
+
+- Classification : the extracted features is passed through a classifier which is trained beforehand to classify the input pattern associated with these features as a face or a non-face .
+- Classification : the extracted features are passed through a classifier that has been previously trained to classify the input pattern associated with these features as a face or a non-face . //[trained / programmed ?]
+44 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-inter 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-others 12,13:12,13,15:bigrammar-vtense 14:14:paraphrase 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved
+
+- Merging overlapping detections : since the classifier is insensitive to small changes in translation and scale , there might be multiple detections around each face .
+- Merging overlapping detections : since the classifier is insensitive to small changes in translation and scale , there might be multiple detections around each face .
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+In order to return one final detection per face , it is necessary to combine overlapping detections into a single detection .
+In order to return a single final detection per face , it is necessary to combine the overlapping detections into a single detection .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved :16:mogrammar-det
+
+Since the number of processed patterns is large while the vast majority of them are non-face , a single classifier based systems such as neural network \CITE and support vector machines \CITE are usually slow .
+Since the vast majority of processed patterns are non-face , the single classifier based systems , such as the neural network \CITE and the support vector machines \CITE , are usually slow .
+51 0:0:preserved 1::unaligned 2,3,4,6,7,8:5:preserved 5:6:preserved 9:1:preserved 10,11:2,3:preserved 12:4:preserved 13::unaligned 14,15:7,8:preserved 16:9:preserved 17::mogrammar-det 18,19,20,21:11,12,13,14:preserved 22,23:16,17:preserved 24,25,26,27:19,20,21,22:preserved 28,29,30,31:24,25,26,27:preserved 32:29:preserved 33:30:preserved 34:31:preserved 35:32:preserved :10:mogrammar-det :15:unaligned :18:mogrammar-det :23:mogrammar-det
+
+To overcome this problem , a combination of simple-to-complex classifiers has been proposed \CITE leading to the first real-time robust face detector in the world .
+To overcome this problem , a combination of simple-to-complex classifiers has been proposed \CITE leading to the first real-time robust face detector in the world .
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+In this structure , fast and simple classifiers are used as filters at the earliest stages to quickly reject a large number of non-face patterns and slower yet more accurate classifiers are then used for classifying face-like patterns .
+In this structure , fast and simple classifiers are used as filters in the earliest stages to quickly reject a large number of the non-face patterns and then slower but more accurate classifiers are used for classifying the face-like patterns .
+53 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-prep 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:28:preserved 27:29:paraphrase 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:38:preserved 37:39:preserved 38:40:preserved :23:mogrammar-det :37:mogrammar-det
+
+In this way , the complexity of classifiers can be adapted corresponding to the increasing difficulty in the input patterns .
+In this way , the complexity of classifiers can be adapted to correspond to the increasing difficulty with the input patterns .
+54 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11,12:12,11,13:biproblematic 13:14:preserved 14:15:preserved 15:16:preserved 16:17:bigrammar-prep 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+Training classifiers usually consists of several steps :
+Training classifiers usually consist of the following steps :
+57 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-inter 4:4:preserved 5:6,5:paraphrase 6:7:preserved 7:8:preserved
+
+- Training set preparation : Supervised learning methods require a large number of training samples to obtain accurate classifiers .
+- Training set preparation : Supervised learning methods require a large number of training samples to obtain accurate classifiers .
+60 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+The training samples are patterns that must be labeled as face ( positive sample ) or non-face ( negative sample ) in advance .
+The training samples are patterns that must be labeled as face ( positive samples ) or non-face ( negative samples ) in advance .
+61 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:bigrammar-nnum 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Face patterns are manually collected in images containing faces and then are scaled to the same size and normalized to a canonical pose which eyes , mouth and nose are aligned .
+Face patterns are manually collected from images containing faces and then are scaled to the same size and normalized to a canonical pose in which the eyes , mouth , and nose are aligned .
+62 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-prep 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:24:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved :23:mogrammar-prep :25:mogrammar-det
+
+Then these face patterns can be used to generate other artificial faces by randomly rotating the images ( about their center points ) up to 10 degree , scaling between 90% and 110% , translating up to half a pixel , and mirroring to enlarge the number of positive samples \CITE .
+Then these face patterns can be used to generate other artificial faces by randomly rotating the images ( about their center points ) by up to 10 degrees , scaling them between 90 and 110% , translating them up to half a pixel , and mirroring them to enlarge the number of positive samples \CITE .
+63 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:bigrammar-nnum 27:28:preserved 28:29:preserved 29:31:preserved 30:32:typo 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:38:preserved 36:39:preserved 37:40:preserved 38:41:preserved 39:42:preserved 40:43:preserved 41:44:preserved 42:45:preserved 43,44,45,46,47,48,49,50:47,48,49,50,51,53,52,54:preserved
+
+Collecting non-face patterns are usually done automatically by scanning through images which contain no faces .
+The collection of non-face patterns is usually done automatically by scanning through images which contain no faces .
+64 0:0,1,2:paraphrase 1:3:preserved 2:4:preserved 3:5:bigrammar-inter 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved
+
+The accurate classifier described in \CITE requires about five thousand original face patterns and hundreds of million non-face patterns extracted from 9 ,500 non-face images .
+The accurate classifier described in \CITE requires about five thousand original face patterns and hundreds of millions of non-face patterns extracted from 9 ,500 non-face images .
+65 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:bigrammar-nnum 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved :17:mogrammar-prep
+
+In \CITE a smaller number of training samples can be used to build a robust face detector by using edge orientation histogram feature .
+In \CITE a smaller number of training samples can be used to build a robust face detector by using an edge orientation histogram .
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20:preserved 20:21:preserved 21:22:preserved 23:23:preserved :19:mogrammar-det
+
+- Learning method selection : Basically , in the ideal case with proper settings , advanced learning methods such as neural network , support vector machines and AdaBoost produce similar performance .
+- Learning method selection : Basically , in an ideal situation with the proper settings , the advanced learning methods , such as the neural network , support vector machines , and AdaBoost , can perform similarly .
+69 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-det 9:9:preserved 10:10:paraphrase 11:11:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:21:preserved 19:22:preserved 20:24:preserved 21:25:preserved 22:26:preserved 23:27:preserved 24:28:preserved 25:29:preserved 26:31:preserved 27:32:preserved 28,29,30:34,35,36:paraphrase :12:mogrammar-det :16:mogrammar-det :20:unaligned :23:mogrammar-det
+
+However , in practice , it is difficult to find these proper settings .
+However , in practice , it is difficult to find these proper settings .
+70 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Using neural network requires the design of layers , nodes , etc.hich is complicated .
+Using a neural network requires the design of layers , nodes , etc. , which is complicated .
+71 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12,14:typo 12:15:preserved 13:16:preserved 14:17:preserved :1:mogrammar-det
+
+Therefore , it is preferable to use support vector machines since the number of parameters is only two if using RBF kernel and many tools are available .
+Therefore , it is preferable to use support vector machines because only two parameters are necessary if a RBF kernel is used and many tools are available .
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:paraphrase 16,17,11,12,13,15:11,12,14,15:paraphrase 14:13:preserved 18:16:preserved 19:20,21:paraphrase 20:18:preserved 21:19:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved :17:mogrammar-det
+
+Another learning method which has been used widely in many object detection systems is AdaBoost and its variants .
+Another learning method that has been widely used in many object detection systems is AdaBoost and its variants .
+73 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-others 4:4:preserved 5:5:preserved 6:7:preserved 7:6:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The advantage of AdaBoost is it can be used for both selecting features and learning the classifier .
+The advantage of AdaBoost is it can be used for both selecting features and learning the classifier .
+74 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Face tracking is the process of locating a moving face or several ones in time using a camera , as illustrated in Figure 1 .
+Face tracking is the process of locating a moving face or several of them over a period of time using a camera , as illustrated in Fig. 1 .
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12,13:paraphrase 13:14,15,16,17:paraphrase 14:18:preserved 15,16,17,18,19,20,21:19,20,21,22,23,24,25:preserved 22:26:spelling 23:27:preserved
+
+Face is first initialized manually or by a face detector .
+A given face is first initialized manually or by a face detector .
+80 0:2,1,0:paraphrase 1:3:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved
+
+Face tracker then analyses subsequent video frames and outputs the location of the initialized face within these frames by estimating the motion parameters of the moving face .
+The face tracker then analyzes the subsequent video frames and outputs the location of the initialized face within these frames by estimating the motion parameters of the moving face .
+81 0:1:preserved 1:2:preserved 2:3:preserved 3:4:spelling 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved :0:mogrammar-det :5:mogrammar-det
+
+Different from face detection , the outcome of which is the position and scale of one single face in one single frame , face tracking enables the information acquisition of multiple consecutive faces within consecutive video frames .
+This is different from face detection , the outcome of which is the position and scale of one single face in one single frame ; face tracking enables the information acquisition of multiple consecutive faces within consecutive video frames .
+82 0:2,0,1:paraphrase 1:3:preserved 2:4:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 37:39:preserved
+
+More important , these faces have the same identity .
+More important , these faces have the same identity .
+83 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+Although frame-based face detection techniques have demonstrated success on real images , the current ability on detecting faces from video is still primitive .
+Although frame-based face detection techniques have been successfully demonstrated on real images , the current ability for detecting faces from video is still primitive .
+88 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6,7,5:8,5,7,6:paraphrase 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:bigrammar-prep 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved
+
+The detector responses can decrease due to different reasons including occlusions , lighting conditions and face pose .
+The quality of the detector responses can decrease due to different reasons including occlusions , lighting conditions , and face poses .
+89 0:0,1,2,3:paraphrase 1:4:preserved 2:5:preserved 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved 12:15:preserved 13:16:preserved 15,14:19,18:preserved 16:20:bigrammar-others
+
+Without any additional information , these responses can easily be rejected even if they indicate the presence of a face .
+Without any additional information , these responses can easily be rejected , even if they indicate the presence of a face .
+90 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+It is therefore important to incorporate the temporal information in a video sequence to provide more complete video segments displaying the person of interest , which is always named as face tracking .
+It is therefore important to incorporate the temporal information in a video sequence to provide more complete video segments displaying the person of interest , which is always named as / already called ? face tracking .
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+One of the main applications of face tracking is person retrieval from broadcast video , for example : intelligent fast-forwards " , where the video jumps to the next scene containing a certain person / actor ; or retrieval of different TV interventions , e.g. interviews , shows , etc. , of a given person in a video or a large collection of TV broadcast videos .
+One of the main applications for face tracking is in the person retrieval from broadcast video , for example : " Intelligent fast-forwards�E, where the video jumps to the next scene containing a certain person / actor ; or retrieval of different TV interventions , e.g. interviews , shows , etc. , of a given person in a video or a large collection of TV broadcast videos .
+94 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-prep 6:6:preserved 7:7:preserved 8:8:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:21:preserved 19:22:preserved 20:20:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved 46:47:preserved 47:48:preserved 48:49:preserved 49:50:preserved 50:51:preserved 51:52:preserved 52:53:preserved 53:54:preserved 54:55:preserved 55:56:preserved 56:57:preserved 57:58:preserved 58:59:preserved 59:60:preserved 60:61:preserved 61:62:preserved 62:63:preserved 63:64:preserved 64:65:preserved 65:66:preserved 66:67:preserved :9:mogrammar-prep :10:mogrammar-det
+
+In [5] , a person retrieval system for feature-length movie video is proposed using straightforward face tracking .
+In [5] , the person retrieval system for a feature-length movie video is proposed using straightforward face tracking .
+95 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-det 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved :8:mogrammar-det
+
+At run time a user outlines a face in a frame of the video , and the face tracks within the movie are then ranked according to the similarity to the outlined query face in the manner of Google .
+At run time a user outlines a face in a video frame , and the face tracks within the movie are then ranked according to their similarity to the outlined query face in the same way as Google .
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 12:14:preserved 13:10:preserved 14:12:preserved 15:13:preserved 16:18:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20::mogrammar-det 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved 27:25:bigrammar-det 28:26:preserved 29:27:preserved 30:28:bigrammar-det 31:29:preserved 32:30:preserved 33:31:preserved 34:32:preserved 35:33:bigrammar-det 36,37:35,34,36:paraphrase 38:37:preserved 39:38:preserved
+
+Since one face track corresponds to one identity , the workload of intra-shot face matching is greatly reduced , which is not available in frame-based face detection .
+Since one face track corresponds to one identity , the workload of intra-shot face matching is greatly reduced , which is not available in frame-based face detection .
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+In addition , face tracking provides multiple examples of the same character 's appearance to help with inter-shot face matching .
+In addition , face tracking provides multiple examples of the same character 's appearance to help with inter-shot face matching .
+98 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Face tracking also finds applications in the area of face-name association , the objective of which is to label television or movie footage with the identity of the person present in each frame of the video .
+Face tracking is also used in the area of face-name association , the objective of which is to label television or movie footage with the identity of the person present in each frame of the video .
+101 0:0:preserved 1:1:preserved 2:3:preserved 3:4,2:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+Everingham et al [8] proposed an automatic face-name association system .
+Everingham et al. [8] proposed an automatic face-name association system .
+102 0:0:preserved 1:1:preserved 2:2:spelling 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+This system uses a face tracker similar with [5] to extract a few hundred tracks of a particular character each in a single shot .
+This system uses a face tracker similar to the one in [5] that can extract a few hundred tracks of each particular character in a single shot .
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:bigrammar-prep 8:11:preserved 9,10:12,13,14:paraphrase 11,12,13,14,15:15,16,17,18,19:preserved 16:20:paraphrase 17,18:21,22:preserved 19::unaligned 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved
+
+Based on the temporal information obtained from the face tracker , textual information for TV and movie footage including subtitles and transcripts is employed to assign the character 's name to each face track .
+Based on the temporal information obtained from the face tracker , the textual information for TV and the movie footage including the subtitles and transcripts is employed to assign the character 's name to each face track .
+104 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved 32:35:preserved 33:36:preserved 34:37:preserved :11:mogrammar-det :17:mogrammar-det :21:mogrammar-det
+
+For instance , shots containing a particular person can be retrieved by a keyword like " Bush " or " Julia Roberts " instead of an outlined query face as used in [5] .
+For instance , shots containing a particular person can be retrieved by a keyword like " Bush " or " Julia Roberts " instead of the use of an outlined query face as used in [5] .
+105 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24,25,26,27:paraphrase 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved 32:35:preserved 33:36:preserved
+
+Besides broadcast video , face tracker also has important applications in the video used in humanoid robotics , visual surveillance , human-computer interaction ( HCI ) , video conferencing , face-based biometric person authentication , etc.
+Besides broadcast video , face tracker also has important applications in the videos used in humanoid robotics , visual surveillance , human-computer interaction ( HCI ) , video conferencing , and face-based biometric person authentication among others .
+108 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-nnum 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 35:35,36:paraphrase
+
+Choosing a face tracker can be a difficult task due to the variety of face trackers available .
+Choosing a face tracker can be a difficult task because of the variety of face trackers currently available .
+113 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10:9,10:paraphrase 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:18:preserved
+
+The application provider will have to decide which face tracker is best suited to his / her individual needs and , of course , the type of video that he / she wants to use as the target .
+The application provider will have to decide which face tracker is best suited to his / her individual needs and , of course , the type of video that he / she wants to use as the target .
+114 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved
+
+Generally speaking , the important issues that should be addressed include speed , robustness and accuracy .
+Generally speaking , the important issues that should be addressed include speed , robustness , and accuracy .
+115 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:15:preserved 15:16:preserved 16:17:preserved
+
+Can the system run in real time ? Similar with many other processing tools for broadcast video , speed is not the most critical issue because offline processing is permitted in most cases of video structuring and indexing .
+Can the system run in real time ? Similar to many other processing tools for broadcast video , speed is not the most critical issue because offline processing is permitted in most video structuring and indexing cases .
+118 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-prep 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32,33:36:paraphrase 34:32:preserved 35:33:preserved 36:34:preserved 37:35:preserved 38:37:preserved
+
+However , a real-time face tracker will become necessary if the target archive is established from too large quantities of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+However , a real-time face tracker will become necessary if a target archive is established from too large a quantity of videos , e.g. 24-hour continuous video recording that needs daily structuring .
+119 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:bigrammar-det 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19,18:bigrammar-nnum 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved
+
+On the other hand , the speed of the tracker is critical in most cases of applications for non-broadcast video , e.g. HCI .
+On the other hand , the speed of the tracker is critical in most of the application cases for non-broadcast video , e.g. HCI .
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:17:preserved 15:14:preserved 16:16:bigrammar-nnum 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved :15:mogrammar-det
+
+It should be noted that there is always a tradeoff between speed and performance-related issues including robustness and accuracy .
+It should be noted that there is always a tradeoff between speed and performance-related issues including the robustness and accuracy .
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :16:mogrammar-det
+
+Can the system cope with varying illumination , facial expression , scale , pose , camerawork , occlusion and large head motion ? A number of illumination factors , e.g. light sources , background colors , luminance levels , and media , impact greatly on the change in appearance of a moving face , for instance , when tracking a person who are moving from indoor to outdoor environment .
+Can the system cope with varying illuminations , facial expressions , scales , poses , camerawork , occlusion , and large head motions ? A number of illumination factors , e.g. light sources , background colors , luminance levels , and media , impact greatly on the change in appearance of a moving face , for instance , when tracking a person who is moving from an indoor to an outdoor environment .
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-nnum 7:7:preserved 8:8:preserved 9:9:bigrammar-nnum 10:10:preserved 11:11:bigrammar-nnum 12:12:preserved 13:13:bigrammar-nnum 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:bigrammar-nnum 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved 46:47:preserved 47:48:preserved 48:49:preserved 49:50:preserved 50:51:preserved 51:52:preserved 52:53:preserved 53:54:preserved 54:55:preserved 55:56:preserved 56:57:preserved 57:58:preserved 58:59:preserved 59:60:preserved 60:61:preserved 61:62:preserved 62:63:bigrammar-inter 63:64:preserved 64:65:preserved 65:67:preserved 66:68:preserved 67:70:preserved 68:71:preserved 69:72:preserved :66:mogrammar-det :69:mogrammar-det
+
+Face tracking also tends to fail under large facial deformations of eyes , nose , mouth , etc. due to facial expression variation .
+Face tracking also tends to fail under large facial deformations of the eyes , nose , mouth , etc. due to the facial expression variation .
+125 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved :11:mogrammar-det :21:mogrammar-det
+
+Different from non-broadcast video , e.g. video used for HCI , faces appearing in broadcast video varies from large close-up faces to small faces taken by a long-shot .
+Different from non-broadcast video , e.g. video used for HCI , faces appearing in broadcast video vary from large close-up faces to small faces taken by a long-shot .
+126 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:bigrammar-nnum 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Small face scale always leads to low resolution and will reject most face trackers designed by computer vision researchers .
+A smaller face scale always leads to a lower resolution and will reject most face trackers designed by computer vision researchers .
+127 0:0,1:paraphrase 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:8,7:paraphrase 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved
+
+Pose variation , i.e. head rotations including pitch , roll and yaw , is another influencing factor , which can cause disappearance of part of the face .
+Pose variations , i.e. head rotations including the pitch , roll , and yaw , is another influencing factor , which can cause disappearances of parts of faces .
+128 0:0:preserved 1:1:bigrammar-nnum 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:bigrammar-nnum 22:24:preserved 23:25:bigrammar-nnum 24:26:preserved 25::mogrammar-det 26:27:bigrammar-nnum 27:28:preserved :7:mogrammar-det
+
+In some cases , the variation of scale and pose might be caused by camerawork change .
+In some cases , the scale and pose variations might be caused by camerawork changes .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:8:bigrammar-nnum 6::mogrammar-prep 7:5:preserved 8:6:preserved 9:7:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:bigrammar-nnum 16:15:preserved
+
+Disappearance of part of the face is also apt to happen due to occlusion by other objects , and motion information may be distracted by alternate motion of them .
+The partial disappearance of a face is also apt to happen due to occlusion by other objects , and motion information may be distracted by an alternate motion .
+130 0:2:preserved 1:3:preserved 2,3:0,1:paraphrase 4:4:bigrammar-det 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:26:preserved 26:27:preserved 29:28:preserved :25:mogrammar-det
+
+Moreover , the task of face tracking becomes even more difficult when the head are moving fast relative to the frame rate so that the tracker fails to arrive in time " .
+Moreover , the task of face tracking becomes even more difficult when the head is moving fast relative to the frame rate , so that the tracker fails to �arrive in time�E.
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-inter 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved
+
+How accurate is the tracking ? The first factor that affects the accuracy might be the false face detections generated when initializing the tracker by a face detector .
+How accurate is the tracking ? The first factor that affects the accuracy might be the false face detections generated when initializing the tracker by a face detector .
+134 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+This problem is difficult to solve due to a fixed threshold .
+This problem is difficult to solve because it has a fixed threshold .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7:6,7,8:paraphrase 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved
+
+Lowering the threshold of the face detector reduces false rejections but increases the number of false detections , and vice versa .
+Lowering the threshold of the face detector reduces the number of false rejections , but increases the number of false detections , and vice versa .
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:11:preserved 9:12:preserved 10:14:preserved 11:15:preserved 12,13,14,15,16,17,18,19,20,21:16,17,18,19,20,21,22,23,24,25:preserved
+
+The drifting or the long sequence motion problem is another factor that might affect the accuracy .
+The drifting or the long sequence motion problem is another factor that might affect the accuracy .
+137 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+This problem always happens due to the imperfect motion estimation technique .
+This problem always happens due to the imperfect motion estimation technique .
+138 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+A tracker might accumulate motion errors and eventually lose track of the face , for instance , when tracking faces that change from a frontal view to a profile position .
+A tracker might accumulate motion errors and eventually lose track of a face , for instance , when tracking faces that change from a frontal view to a profile position .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-det 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Face tracking can be considered as an algorithm that analyses the video frames and outputs the location of moving faces within the video frame .
+Face tracking can be considered an algorithm that analyzes the video frames and outputs the location of moving faces within the video frame .
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:spelling 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved
+
+For each tracked face , three steps are involved that are initialization , tracking and a stopping procedure , as illustrated in Figure 2 .
+For each tracked face , three steps are involved , which are the initialization , tracking , and stopping procedures , as illustrated in Fig. 2 .
+145 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:bigrammar-others 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:17:preserved 17,15:19:bigrammar-nnum 16:18:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:spelling 23:25:preserved 24:26:preserved :12:mogrammar-det
+
+Most of the developed methods use a face detector as the initialization of their tracking process .
+Most of the developed methods use a face detector for the initialization of their tracking processes .
+148 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:bigrammar-prep 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-nnum 16:16:preserved
+
+An always ignored but existing difficulty of this step lies in the control of false face detections described above .
+An always ignored but existing difficulty with this step lies in the control of the false face detections described above .
+149 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-prep 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :14:mogrammar-det
+
+Another problem is the difficulty in handling the appearance of new non-frontal faces .
+Another problem is the difficulty in handling the appearance of new non-frontal faces .
+150 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Although there have been literatures in profile or intermediate pose face detector , this kind of work suffers from the false-detection problem far more than frontal face detector .
+Although there have been literatures on profile or intermediate pose face detectors , this kind of work suffers from the false-detection problem far more than a frontal face detector .
+151 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-prep 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:bigrammar-nnum 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved :25:mogrammar-det
+
+To alleviate these two problems , Chaudhury et al [1] used two face probability maps instead of a fixed threshold to initialize face tracker , one for frontal views and one for profiles .
+To alleviate these two problems , Chaudhury et al. [1] used two face probability maps instead of a fixed threshold to initialize the face tracker , one for frontal views and one for profiles .
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:spelling 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved :22:mogrammar-det
+
+All local maxima in these maps are chosen as the face candidates , the face probabilities of which are propagated throughout the temporal sequence .
+All local maxima in these maps are chosen as the face candidates , the face probabilities of which are propagated throughout the temporal sequence .
+153 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Candidates whose probabilities either go to zero or remain low over time are determined as non-face and eliminated .
+Candidates whose probabilities either go to zero or remain low over time are determined as non-face and eliminated .
+154 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The information from two face probability maps is combined to represent intermediate head pose .
+The information from the two face probability maps is combined to represent an intermediate head pose .
+155 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved :3:mogrammar-det :12:mogrammar-det
+
+Their experiments showed that the proposed probabilistic detector improved the accuracy over traditional face detector and is able to handle the head movement covering a range of �90 degrees out-of-plane rotation ( yaw ) .
+Their experiments showed that the proposed probabilistic detector improved the accuracy more than a traditional face detector and is able to handle the head movement covering a range of �90 degrees out-of-plane rotation ( yaw ) .
+156 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11,12:paraphrase 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved :13:mogrammar-det
+
+After initialization , one should choose what features to track before tracking the face .
+After initialization , one should choose what features to track before tracking a face .
+159 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:bigrammar-det 13:13:preserved 14:14:preserved
+
+The exploitation of color is one of the common choices in order to be invariant to facial expression , scale and pose change [4 , 9] .
+The exploitation of color is one of the more common choices in order to be invariant to facial expressions , scale , and pose changes [4 , 9] .
+160 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:bigrammar-nnum 18:19:preserved 19:20:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved
+
+However , color-based face trackers often depend on a learning set dedicated to the type of processed videos and are not guaranteed to be easily expendable to unknown videos with varying illumination conditions or different races .
+However , color-based face trackers often depend on a learning set dedicated to the type of processed videos and are not guaranteed to be easily expendable to unknown videos with varying illumination conditions or different races .
+161 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+Also , color is susceptible to occlusion by other head-like objects .
+Also , color is susceptible to occlusion by other head-like objects .
+162 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Another two choices are key-point [5 , 8] and facial features [3 , 6 , 10] , e.g. eyes , nose , mouth , etc. , both of which are more robust to varying illumination and occlusion .
+Two other choices are the key-point [5 , 8] and facial features [3 , 6 , 10] , e.g. eyes , nose , mouth , etc. , both of which are more robust to varying illuminations and occlusions .
+163 0:1:bigrammar-others 1:0:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:bigrammar-nnum 35:36:preserved 36:37:bigrammar-nnum 37:38:preserved :4:mogrammar-det
+
+Although the generality of key-point allows for tracking different kinds of objects , without any face-specific knowledge its discriminant power between target and clutter might be in peril under tough conditions , e.g. strong background noise .
+Although the generality of key-points allows for tracking different kinds of objects , without any face-specific knowledge its discriminant power between the target and clutter might be in peril under tough conditions , e.g. strong background noise .
+164 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-nnum 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved :21:mogrammar-det
+
+Facial features enable to track higher-level information from a human face but are weak in low video quality .
+Facial features enable the tracking of higher-level information from a human face , but are weak in lower video quality .
+165 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3,4,5:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:bigrammar-wform 16:18:preserved 17:19:preserved 18:20:preserved
+
+Most facial-feature-based face trackers [6 , 10] are only tested by using non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+Most facial-feature-based face trackers [6 , 10] have been tested using only non-broadcast video , e.g. webcam video , and their application potentiality to broadcast video is questionable .
+166 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,9:7,8,9:bigrammar-vtense 8:11:preserved 10::mogrammar-prep 11:10:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Note that these different cues described above may be combined .
+Note that these different cues described above may be combined .
+167 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+An appearance-based or featureless tracker matches an observation model of the entire facial appearance with the input image , instead of choosing a few features to track .
+An appearance-based or featureless tracker matches an observation model of the entire facial appearance with the input image , instead of choosing only a few features to track .
+170 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved
+
+One example of appearance-based face tracker is [1] that has been introduced above .
+One example of an appearance-based face tracker is [1] , which was introduced above .
+171 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:10:bigrammar-others 9,10:11:bigrammar-vtense 11:12:preserved 12:13:preserved 13:14:preserved :3:mogrammar-det
+
+Another example is proposed by Li et al [9] , which uses a multi-view face detector to detect and track faces of different poses .
+Another example was proposed by Li et al. [9] , which uses a multi-view face detector to detect and track faces from different poses .
+172 0:0:preserved 1:1:preserved 2,3:2,3:bigrammar-vtense 4:4:preserved 5:5:preserved 6:6:preserved 7:7:spelling 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:bigrammar-prep 22:22:preserved 23:23:preserved 24:24:preserved
+
+Besides the face-based observation model , a head model is also included to represent the information of head rear .
+Besides the face-based observation model , a head model is also included to represent the information of head rear .
+173 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+It is based on the idea that head can be considered as the object of interest instead of face because face is not always present in the tracking process .
+It is based on the idea that a head can be considered an object of interest instead of a face , because the face is not always present in the tracking process .
+174 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 12:12:bigrammar-det 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:21:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved :7:mogrammar-det :18:mogrammar-det :22:mogrammar-det
+
+An extended particle filter is proposed to fuse these two interrelated information so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
+An extended particle filter is proposed to fuse these two interrelated information together so as to handle the occlusion due to out-of-plane head rotation ( yaw ) that is more than �90 degrees .
+175 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved
+
+During the tracking procedure , face tracking systems usually employ a motion model that describes how the image of the target might change for different possible motions of the face to track .
+During the tracking procedure , face tracking systems usually use a motion model that describes how the image of the target might change for different possible motions of the face to track .
+178 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:paraphrase 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved
+
+Examples of simple motion models are as follows .
+Some examples of simple motion models are as follows .
+179 0:1:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved
+
+Based on the assumption that face can be considered as a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
+Based on the assumption that a face can be considered a planar object , the corresponding motion model can be a 2D transformation , e.g. affine transformation or homography , of an image of the face , e.g. the initial frame [3 , 6] .
+180 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved :5:mogrammar-det
+
+Some researchers assume the face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
+Some researchers view a face as a rigid 3D object , thus the motion model defines its aspect depending on its 3D position and orientation [10] .
+181 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:bigrammar-det 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+However , face is actually both 3D and deformable .
+However , a face is actually both 3D and deformable .
+182 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved :2:mogrammar-det
+
+Some system try to model face in this sense , and the image of deformable faces can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
+Some systems try to model faces in this sense , and the image of deformed face can be covered with a mesh , i.e. a sophisticated geometry and texture face model [2 , 7] .
+183 0:0:preserved 1:1:bigrammar-nnum 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-nnum 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-wform 15:15:bigrammar-nnum 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved
+
+The motion of the face is defined by the position of the nodes of the mesh .
+The motion of the face is defined by the position of the nodes of the mesh .
+184 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Generally if the quality of the video is high , more sophisticated motion model is used , more accurate result the face tracker generates .
+Generally if the quality of the video is high , a more sophisticated motion model is used , and then the face tracker generates a more accurate result .
+185 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17,18,19:25,26,27:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved :10:mogrammar-det :24:mogrammar-det
+
+For instance , a sophisticated geometry and texture model might suffer from false face detections and drifting less than a simple 2D transformation model .
+For instance , a sophisticated geometry and texture model might suffer from false face detections and a level of drifting [less than / that is worse than ?] a simple 2D transformation model .
+186 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:19,16,17,18:paraphrase 18:21:preserved 19,20,21,22,23:28,29,30,31,32:preserved
+
+But note that most 3D-based and mesh-based face trackers require relatively clear appearance , high resolution , and limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
+However , it must be noted that most 3D-based and mesh-based face trackers require a relatively clear appearance , high resolution , and a limited pose variation of the face , e.g. out-of-plane head rotations ( roll and yaw ) that are far less than �90 degrees .
+187 0:0:paraphrase 1:5,4,3,2:paraphrase 2,3,4,5,6,7,8,9,10,11,12:6,7,8,9,10,11,12,13,15,16,17:preserved 13,14,15,16,17:19,20,18,21,22:preserved 18,19,20,21,22,23,24,25:24,25,26,27,28,29,30,31:preserved 26,27,28,29,30,31,32,33:32,34,36,37,35,38,39,33:preserved 34,35,36,37,38:40,41,42,43,44:preserved 39,40:45,46:preserved :14:mogrammar-det :23:mogrammar-det
+
+Both of these requirements are always unavailable in the case of broadcast video .
+Both of these requirements are always unavailable in the case of broadcast video .
+188 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
+Therefore , most 3D-based and mesh-based face trackers are only tested by using non-broadcast video , e.g. webcam video [2 , 7 , 10] .
+189 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Finally , the stopping procedure is rarely discussed .
+Finally , the stopping procedure is rarely discussed .
+192 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+This constitutes a major deficiency of face tracking algorithms that are generally not able to stop a face track in case of tracking error , i.e. drifting .
+This constitutes a major deficiency for the face tracking algorithms that are generally not able to stop a face track in case of tracking errors , i.e. drifting .
+193 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-prep 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:bigrammar-nnum 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved :6:mogrammar-det
+
+Arnaud et al [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
+Arnaud et al. [3] proposed an approach that uses a general object tracker for face tracking and a stopping criterion based on the addition of an eye tracker to alleviate drifting .
+194 0:0:preserved 1:1:preserved 2:2:spelling 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Two positions of tracked eyes are compared with tracked face position .
+The two positions of the tracked eyes are compared with the tracked face position .
+195 0:1:preserved 1:2:preserved 2:3:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:preserved 8:11:preserved 9:12:preserved 10:13:preserved 11:14:preserved :0:mogrammar-det :4:mogrammar-det :10:mogrammar-det
+
+If none of the two eyes are in the face region , it will be determined as drifting and the tracking process will be stopped .
+If neither of the eyes is in the face region , it will be determined as drifting and the tracking process will be stopped .
+196 0:0:preserved 1:1:paraphrase 2:2:preserved 3:3:preserved 5:4:preserved 6:5:bigrammar-others 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved
+
+Besides , most mesh-based trackers and top-down trackers are considered to be able to avoid drifting .
+In addition , most mesh-based and top-down trackers are assumed to be able to avoid drifting .
+197 0:1,0:paraphrase 1:2:preserved 2:3:preserved 3,4:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:paraphrase 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide application .
+Face tracking has attracted much attention from researchers in communities including multimedia content analysis , computer vision , etc. because of its wide applications .
+202 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:bigrammar-others 24:24:preserved
+
+However , while most attempts have been made on face tracking for videos with high quality by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
+However , while most of the attempts have been on the face tracking for high-quality videos by computer vision researchers , only a limited number of face trackers are designed for broadcast video .
+203 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:6:preserved 7,6,5:7,8:paraphrase 8:9:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12,13,14,15:15,14:para-colocation 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved :4:mogrammar-prep :5:mogrammar-det :10:mogrammar-det
+
+This is because the current ability of face tracking still depends on relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
+This is because the current ability of face tracking still depends on a relatively clear appearance , high resolution , and limited pose variation of the face , which are unavailable in broadcast video .
+204 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved :12:mogrammar-det
+
+On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
+On the other hand , currently proposed face trackers are still evaluated by using different types of videos and different criteria .
+205 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+A general evaluation criterion , in terms of speed , robustness and accuracy , is needed for performance comparison between face trackers of different purposes .
+A general evaluation criterion , in terms of speed , robustness , and accuracy , is needed for a performance comparison between the face trackers with different purposes .
+206 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:23:preserved 21:24:preserved 22:25:bigrammar-prep 23:26:preserved 24:27:preserved 25:28:preserved :18:mogrammar-det :22:mogrammar-det
+

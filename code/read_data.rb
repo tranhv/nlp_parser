@@ -135,9 +135,12 @@ class ReadData
     # return tmp
   end
 
-  def get_aln
+  def get_aln(full_aln_path)
     array_alns = []
-    File.open(DATA_PATH + "/full_aln_kigoshi.txt", 'r').each do |line|
+    # File.open(DATA_PATH + "/full_aln_kigoshi.txt", 'r').each do |line|
+    # File.open(full_aln_path, 'r').each do |line|
+    File.open(full_aln_path, 'r').each_with_index do |line, index| # --> only in case count sentence for each file, file aln co dong dau trong nen phai bo ra.
+      next if index == 0
       array_alns << line
     end
     return array_alns
@@ -151,13 +154,14 @@ class ReadData
   #   return array_crp
   # end
 
-  def get_crp
+  def get_crp(full_aln_path, full_crp_path)
     array_crps = []
     arr = []
     flag_para = false
-    alns = get_aln
+    alns = get_aln(full_aln_path)
     index_aln = 0
-    File.open(DATA_PATH + "/full_crp_kigoshi.txt", 'r').each_with_index do |line, index|      
+    # File.open(DATA_PATH + "/full_crp_kigoshi.txt", 'r').each_with_index do |line, index|
+    File.open(full_crp_path, 'r').each_with_index do |line, index|      
       if (index%3 == 0)
         arr = []
         arr << line
@@ -198,10 +202,11 @@ class ReadData
   #   end
   # end
 
-  def merge_aln_crp(output_file)
-    array_crp = get_crp
+  def merge_aln_crp(output_file, full_aln_path, full_crp_path)
+    array_crp = get_crp(full_aln_path, full_crp_path)
     
     array_crp.each_with_index do |line, index|
+      # puts "#{line}"
       if not line[1].match(/^</)
         output_file.write(line[1].to_s)
         output_file.write(line[2].to_s)
@@ -215,20 +220,61 @@ class ReadData
     # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/merged_kigoshi.txt","w")
     # merged_aln_crp.write("")
-    # merge_aln_crp(merged_aln_crp)
+    # merge_aln_crp(merged_aln_crp, DATA_PATH + "/full_aln_kigoshi.txt", DATA_PATH + "/full_crp_kigoshi.txt")
 
     # generate_data_manli(DATA_PATH + "/merged_quynhanh.txt")
+
+    # Dem so sentence cua each file trong mot thu muc
+    # files = Dir.glob(DATA_PATH + "/quynhanh/*.aln").sort.entries
+
+    # files.each do |file|
+    #   filename = file.split(".")[1].split("/")[3]
+    #   merged = File.open(DATA_PATH + "/quynhanh/" + filename + "_merged.txt", "w")
+    #   merged.write("")
+    #   merge_aln_crp(merged, DATA_PATH + "/quynhanh/" + filename + ".aln", DATA_PATH + "/quynhanh/" + filename + ".crp")
+    # end
+
+    # files = Dir.glob(DATA_PATH + "/quynhanh/*_merged.txt").sort.entries
+
+    # files.each do |file|
+    #   filename = file.split(".")[1].split("/")[3]
+    #   sentence_no = get_data_SWA(DATA_PATH + "/quynhanh/" + filename + ".txt").length
+    #   puts "#{filename} --> #{sentence_no}"
+    # end
+    # END Dem so sentence
+
+    files = Dir.glob(DATA_PATH + "/quynhanh/*.aln").sort.entries
+    
+    file_aln = File.open(DATA_PATH + "/quynhanh/alignments.txt", "w")
+    file_aln.write("")
+
+    files.each do |file|
+      filename = file.split(".")[1].split("/")[3]
+      data = get_data_SWA(DATA_PATH + "/quynhanh/" + filename + "_merged.txt")
+      print_alignments(data, filename, file_aln)
+    end
 
     # NEW DATA ===============
     # data_hanh = get_data_SWA(DATA_PATH + "/merged_hanh.txt")
     # data_hanh = refine_tag_preserved(data_hanh)
     # data_hanh = convert_typo_spelling(data_hanh)
     # puts "hanh: #{count_alignment(data_hanh)}\n"
+    # puts "Sentence: #{data_hanh.length}"
 
-    data_quynhanh = get_data_SWA(DATA_PATH + "/merged_quynhanh.txt")
-    data_quynhanh = refine_tag_preserved(data_quynhanh)
-    data_quynhanh = convert_typo_spelling(data_quynhanh)   
-    puts "quynhanh: #{count_alignment(data_quynhanh)}\n" 
+    # data_quynhanh = get_data_SWA(DATA_PATH + "/merged_quynhanh.txt")
+    # data_quynhanh = refine_tag_preserved(data_quynhanh)
+    # data_quynhanh = convert_typo_spelling(data_quynhanh)   
+    # puts "quynhanh: #{count_alignment(data_quynhanh)}\n" 
+    # puts "Sentence: #{data_quynhanh.length}"
+
+    # data_quynhanh = remove_tags_misc(data_quynhanh)
+    # puts "quynhanh remove misc: #{count_alignment(data_quynhanh)}\n" 
+
+    # data_quynhanh = reduce_tags_preserved(data_quynhanh)
+    # data_quynhanh = reduce_tags_paraphrase(data_quynhanh)
+    # data_quynhanh = reduce_tags_mogdet(data_quynhanh)
+
+    # print_csv(data_quynhanh)
 
     # data_ngan = get_data_SWA(DATA_PATH + "/merged_ngan.txt")
     # data_ngan = refine_tag_preserved(data_ngan)
@@ -265,16 +311,17 @@ class ReadData
     # data_meteor_1_5 = get_data_meteor_1_5(DATA_PATH + "/meteor_quynhanh.txt")
     # data_meteor_1_5 = insert_unaligned(data_meteor_1_5)
     # data_meteor_1_5 = remove_all_tags(data_meteor_1_5)   
-
-    # puts "Meteor: #{count_alignment(data_meteor_1_5)}\n\n"
+    # puts "Meteor: #{count_alignment(data_meteor_1_5)}\n"
 
     # data_meteor_1_5 = assign_tags(data_quynhanh, data_meteor_1_5)
     # data_meteor_1_5 = assign_tags_wa(data_meteor_1_5)
     # data_meteor_1_5 = remove_tags_misc(data_meteor_1_5)
+    # puts "Meteor remove misc: #{count_alignment(data_meteor_1_5)}\n\n"
 
-    # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, N80_PERCENT)
+    # # data_meteor1, data_meteor2 = split_data(data_meteor_1_5, N80_PERCENT)
     # data_meteor_1_5 = reduce_tags_preserved(data_meteor_1_5)
     # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
+    # data_meteor_1_5 = reduce_tags_mogdet(data_meteor_1_5)
     # data_meteor_1_5 = reduce_tags_exact(data_meteor_1_5)
     # data_meteor_1_5 = reduce_tags_unaligned(data_meteor_1_5)
     # data_meteor_1_5 = reduce_tags_wa(data_meteor_1_5)
@@ -283,19 +330,21 @@ class ReadData
     # END METEOR ============
 
     # MANLI =================
-    data_manli = get_data_json(DATA_PATH + "/output_manli_quynhanh.json")
-    data_manli = insert_unaligned(data_manli)
-    data_manli = remove_all_tags(data_manli)
+    # data_manli = get_data_json(DATA_PATH + "/output_manli_quynhanh.json")
+    # data_manli = insert_unaligned(data_manli)
+    # data_manli = remove_all_tags(data_manli)
 
-    puts "Manli: #{count_alignment(data_manli)}\n\n"    
+    # puts "Manli: #{count_alignment(data_manli)}\n\n"    
 
-    data_manli = assign_tags(data_quynhanh, data_manli)
+    # data_manli = assign_tags(data_quynhanh, data_manli)
     # data_manli = assign_tags_wa(data_manli)
-    # # data_manli = remove_tags_misc(data_manli)
+    # data_manli = remove_tags_misc(data_manli)
+    # puts "Manli remove misc: #{count_alignment(data_manli)}\n\n"
 
     # data_manli1, data_manli2 = split_data(data_manli, N80_PERCENT)
     # data_manli = reduce_tags_preserved(data_manli)
     # data_manli = reduce_tags_wa(data_manli)
+    # data_manli = reduce_tags_mogdet(data_manli)
     # data_manli = reduce_tags_exact(data_manli)
     # data_manli = reduce_tags_unaligned(data_manli)
     # data_manli = reduce_tags_wa(data_manli)
@@ -342,15 +391,20 @@ class ReadData
     # # CHECK DATA ============
     # tags = ["exact", "stem", "syn", "para", "unaligned", "wa"]
     # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "moproblematic", "biproblematic", "unspec", "wa"]
-    # tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "bigrammar-nnum", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "para-freeword", "para-colocation", "para-passact", "moproblematic", "biproblematic", "unspec", "wa"]
+    tags = ["preserved", "bigrammar-vtense", "bigrammar-wform", "bigrammar-inter", "bigrammar-nnum", "paraphrase", "unaligned", "mogrammar-prep", "mogrammar-det", "bigrammar-prep", "bigrammar-det", "bigrammar-others", "typo-spelling", "duplicate", "para-freeword", "para-colocation", "para-passact", "moproblematic", "biproblematic", "unspec", "wa"]
+    
     # # puts "Tag count SWA: #{count_tags(data_SWA, tags)}\n"
     # puts "Tag count Meteor: #{count_tags(data_meteor_1_5, tags)}\n\n"
-    # # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
+    # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
     # # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
     # puts "Tag count ngan: #{count_tags(data_ngan, tags)}\n"
     # puts "Tag count kigoshi: #{count_tags(data_kigoshi, tags)}\n"
+    # puts "Tag count quynhanh: #{count_tags(data_quynhanh, tags)}"
+
     # puts "compare_data_alignment --> #{compare_data_alignment(data_ngan, data_kigoshi)}\n"
     # puts "compare_data --> #{compare_data(data_ngan, data_kigoshi, tags)}\n"
+    # puts "compare_data_alignment --> #{compare_data_alignment(data_hanh, data_quynhanh)}\n"
+    # puts "compare_data --> #{compare_data(data_hanh, data_quynhanh, tags)}\n"
 
     # puts "#{get_tags(data_hanh)}"
 
@@ -966,6 +1020,19 @@ class ReadData
     end
   end
 
+  # In ra file alignment nhu dinh dang co dua
+  def print_alignments(data, filename, file)
+    data.each do |line|
+      line.Alignment.each do |aln|
+        source_phrase = get_string_by_index(aln.source_numbers, line.source)
+        target_phrase = get_string_by_index(aln.target_numbers, line.target)
+        array = [filename.gsub("\n",""), line.source.gsub("\n",""), line.target.gsub("\n",""), source_phrase.gsub("\n",""), target_phrase.gsub("\n",""), aln.tag_name.gsub("\n","")]
+        # puts "print_alignments array --> #{array}"
+        file.write (array.join("@") + "\n")
+      end
+    end
+  end
+
   def split_data(data, no_sentences_of_1st_part)
     data1 = []
     data2 = []
@@ -1091,13 +1158,13 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
-          break if count >= 68935
+          break if count >= 101860
         end
-        break if count >= 68935
+        break if count >= 101860
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 68935 
+      break if count >= 101860 
       # 58004 SWA 80
       # 11562 SWA 20
       # 69566 SWA 100
@@ -1108,6 +1175,9 @@ class ReadData
       # 11185 moses 20
       # 67416 moses 100
       # 68935 moses improved 100
+      #  104215 quynhanh 100
+      # 87523 meteor qa 100
+      # 101860 manli qa 100 
     end
     return data
   end
@@ -1120,16 +1190,39 @@ class ReadData
         if (aln.tag_name == "paraphrase")
           aln_delete << i
           count = count + 1
-          break if count >= 360
+          break if count >= 1297
         end
-        break if count >= 360
+        break if count >= 1297
       end
       # delete paraphrase alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 360
+      break if count >= 1297
       # 312 SWA 80
       # 48 SWA 20
       # 360 SWA 100
+      # 1297 quynhanh 100
+    end
+    return data
+  end
+
+  def reduce_tags_mogdet(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "mogrammar-det")
+          aln_delete << i
+          count = count + 1
+          break if count >= 705
+        end
+        break if count >= 705
+      end
+      # delete paraphrase alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 705
+      #  808  quynhanh 100
+      # 562 meteor qa 100
+      # 705 manli qa 100
     end
     return data
   end
@@ -1142,13 +1235,13 @@ class ReadData
         if (aln.tag_name == "wa")
           aln_delete << i
           count = count + 1
-          break if count >= 8033
+          break if count >= 17228
         end
-        break if count >= 8033
+        break if count >= 17228
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 8033 
+      break if count >= 17228 
       # 12456 meteor 100
       # 13012 manli 100
       # 6728 moses 100 
@@ -1160,6 +1253,9 @@ class ReadData
       # 1100 moses 20
       # 6358 moses 100
       # 8033 moses improved 100
+
+      # 32360 meteor qa 100
+      # 17228 manli qa 100
     end
     return data
   end
@@ -1302,6 +1398,7 @@ class ReadData
     # puts "data2: #{data2.count}"
     data1.each_with_index do |alignment1, index|
       arr_tmp = data1[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} & data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
+     # arr_tmp = data1[index].Alignment.select{|e| e[:tag_name] != "preserved"}.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers }} & data2[index].Alignment.map{|e|{:source_numbers => e.source_numbers, :target_numbers => e.target_numbers}}
       # puts "line --> #{alignment1}\n"
       count = count + arr_tmp.length
     end

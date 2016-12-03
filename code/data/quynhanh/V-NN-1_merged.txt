@@ -1,0 +1,1032 @@
+Improving protein coreference resolution by simple semantic classification
+Improving protein coreference resolution by simple semantic classification
+2 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved
+
+Recent research shows a major part of difficult cases in event extraction for the biomedical domain are related to coreference .
+Current research has shown that major difficulties in event extraction cases for the biomedical domain are related to coreference .
+6 0:0:paraphrase 1:1:preserved 2:2,3:bigrammar-vtense 3,4,5,6:5:paraphrase 8,7:6:paraphrase 9:7:preserved 10:8:preserved 11:9,10:paraphrase 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20::unaligned
+
+Therefore , coreference resolution is believed to be useful for the improvement of event extraction .
+Therefore , coreference resolution is believed to be useful for improving event extraction .
+7 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10,11,12:10:paraphrase 13:11:preserved 14:12:preserved 15:13:preserved
+
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in the BioNLP-ST 2011 as a supporting task .
+To address coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in the BioNLP-ST 2011 , as a supporting task .
+8 0:0:preserved 1:1:preserved 2,3,4::unaligned 5:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved
+
+However , the shared task results showed that transferring coreference resolution methods developed for other domains to the biological domain was not straight forward , which is supposed to be caused by the domain differences in coreference phenomena .
+However , the shared task results indicated that transferring coreference resolution methods developed for other domains to the biological domain was not straightforward , due to the domain differences in the coreference phenomena .
+9 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:paraphrase 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22,23:22:spelling 24:23:preserved 25,26,27,28,29,30,31:24,25:paraphrase 32,33,34,35,36,37:30,26,27,28,31,32,29:preserved
+
+We studied the contribution of domain-specific information , i .e information indicating the protein type , in a rule-based protein coreference resolution system .
+We studied the contribution of domain-specific information , including information that indicates the protein type , in a rule-based protein coreference resolution system .
+14 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 9,8:8:paraphrase 10:9:preserved 11:10,11:paraphrase 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+In particular , the domain-specific information is encoded into semantic classification modules whose output is used in different components of the coreference resolution .
+In particular , the domain-specific information is encoded into semantic classification modules for which the output is used in different components of the coreference resolution .
+15 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12,13:paraphrase 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved :14:mogrammar-det
+
+We compared our system with the top four systems in the BioNLP-ST 2011 , and surprisingly we found that the minimal configuration has outperformed the best system in the BioNLP-ST 2011 .
+We compared our system with the top four systems in the BioNLP-ST 2011 ; surprisingly , we found that the minimal configuration had outperformed the best system in the BioNLP-ST 2011 .
+16 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:15:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22,23:22,23:bigrammar-vtense 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Analysis of the experimental results showed that semantic classification using protein information has contributed to an increase in performance ( 2.3 % on the test data , and 4 .0% on the development data , in F-score ) .
+Analysis of the experimental results revealed that semantic classification , using protein information , had contributed to an increase in performance by 2.3 % on the test data , and 4 .0% on the development data , in F-score .
+17 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12,13:14,15:bigrammar-vtense 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 38:39:preserved :21:mogrammar-prep
+
+The use of domain-specific information in semantic classification is important for coreference resolution .
+The use of domain-specific information in semantic classification is important for coreference resolution .
+22 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Since such information is difficult to be transferred across different domains , we need to continue seeking for methods to exploit and use it in coreference resolution .
+Since it is difficult to transfer domain-specific information across different domains , we need to continue to seek methods to exploit and use it in coreference resolution .
+23 0:0:preserved 1:6:paraphrase 2:7:preserved 3,5,6,7:5,4,2,1:paraphrase 4:3:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16,17:bigrammar-wform 17::mogrammar-prep 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+While named entity recognition ( NER ) and relation or event extraction are regarded as standard tasks of biomedical information extraction ( IE ) , coreference resolution [ 2 , 16 , 30 ] is more and more recognized as an important component of IE for a higher performance .
+While named entity recognition ( NER ) and relation / event extraction are regarded as standard tasks for biomedical information extraction ( IE ) , coreference resolution [ 2 , 16 , 30 ] is being recognized more and more as an important component of IE to achieve a higher performance .
+28 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:paraphrase 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:bigrammar-prep 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34,38:34,35,36:paraphrase 35:37:preserved 36:38:preserved 37:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45,46,47:47,48,49,46:paraphrase 48:50:preserved 49:51:preserved
+
+Without coreference resolution , the performance of IE is often substantially limited due to an abundance of coreference relations in natural language text , i.e. , information pieces written in text with involvement of a coreference relation are hard to be captured [ 9 , 14 ] .
+Without coreference resolution , oftentimes , the IE performance issubstantially limited , due to the abundance of coreference relations in natural language text ; information pieces written in text with the involvement of a coreference relation are hard to be captured [ 9 , 14 ] .
+29 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:6:preserved 5:8:preserved 6::mogrammar-prep 7:7:preserved 10,8:9:preserved 9:4:paraphrase 11:10:preserved 12:12:preserved 13:13:preserved 14:14:bigrammar-det 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 24:23:paraphrase 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved 36:35:preserved 37:36:preserved 38:37:preserved 39:38:preserved 40:39:preserved 41:40:preserved 42:41:preserved 43:42:preserved 44:43:preserved 45:44:preserved 46:45:preserved 47:46:preserved :30:mogrammar-det
+
+There have been several attempts for coreference resolution , particularly for newswire texts [ 7 , 8 , 22 , 23 , 28 , 30 ] .
+There have been several attempts for coreference resolution ; in particular , they have been for newswire texts [ 7 , 8 , 22 , 23 , 28 , 30 ] .
+30 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:11:preserved 9:9,10:paraphrase 10:12,13,14,15:paraphrase 12,11:17,16:preserved 25,24,23,22,21,20,19,18,17,16,15,14,13:29,30,28,27,26,25,24,23,22,21,20,19,18:preserved
+
+It is also one of the lessons from BioNLP Shared Task ( BioNLP-ST , hereafter ) 2009 that coreference relations in biomedical text substantially hinder the progress of fine-grained IE [ 10 ] .
+Coreference resolution is also one of the lessons from the BioNLP Shared Task ( BioNLP-ST , hereafter ) 2009 , in which it was communicated that coreference relations in biomedical text substantially hinder the progress of fine-grained IE [ 10 ] .
+31 0:0,1:paraphrase 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:25,24,20,21,22,23:paraphrase 19,18:27,26:preserved 23,22,21,20:31,30,29,28:preserved 24,25,26,27,28,29:32,33,34,35,36,37:preserved 30,31,32:38,39,40:preserved :9:mogrammar-det
+
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in BioNLP-ST 2011 as a supporting task .
+To address the problem of coreference resolution in molecular biology literature , the Protein Coreference ( COREF ) task was arranged in BioNLP-ST 2011 as a supporting task .
+34 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+This task definition focuses on a specific type of entities , i.e. Protein .
+This task definition focuses on protein , as a specific type of entity .
+35 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:bigrammar-nnum 12:5:preserved 13:13:preserved :7:mogrammar-prep
+
+Figure 1 shows an example text segmented into four sentences , S2 - S5 , where coreferential expressions are shown in brackets .
+Figure 1 shows an example text segmented into four sentences , S2 - S5 , where coreferential expressions are shown in brackets .
+36 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+In the figure , protein names are highlighted in bold face , P4 - P10 , and targeted anaphoric expressions of the shared task , e.g. pronouns and definite noun phrases , are T29 , and T32 , of which the antecedents are indicated by arrows if found in the text .
+In the figure , protein names P4 - P10 are highlighted in boldface ; the targeted anaphoric expressions of the shared task ( pronouns and definite noun phrases ) are T29 , and T32 , for which the antecedents are indicated by arrows , if found in the text .
+37 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9,10:12:spelling 12,13,14:6,7,8:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 26:23:preserved 27:24:preserved 28:25:preserved 29:26:preserved 30:27:preserved 31:31:preserved 32:29:preserved 33:30:preserved 34:34:preserved 35:32:preserved 36:33:preserved 38:35:bigrammar-prep 39:36:preserved 40:37:preserved 41:38:preserved 42:39:preserved 43:40:preserved 44:41:preserved 45:42:preserved 46:44:preserved 47:45:preserved 48:46:preserved 49:47:preserved 50:48:preserved 51:49:preserved :14:mogrammar-det
+
+In the example , the definite-noun-phrase expression , this transcription factor ( T32 ) , is considered coreferential with the protein mention p65 ( P10 ) .
+In the example , the definite-noun-phrase expression , this transcription factor ( T32 ) , is considered coreferential with the protein mention p65 ( P10 ) .
+38 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Without knowing this coreference relation , it becomes hard to capture the information written in the phrase , nuclear exclusion of this transcription factor , which is localization of p65 ( out of nucleus ) according to the framework of BioNLP-ST .
+Without knowing this coreference relation , it becomes difficult to capture the information written in the phrase , nuclear exclusion of this transcription factor , which is a localization of p65 ( out of nucleus ) , according to the framework of BioNLP-ST .
+39 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:paraphrase 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:37:preserved 36:38:preserved 37:39:preserved 38:40:preserved 39:41:preserved 40:42:preserved 41:43:preserved :27:mogrammar-det
+
+The terminologies used in this paper are similar to those in [ 25 ] .
+The terminologies used in this paper are similar to those in [ 25 ] .
+40 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+A new term is introduced in the BioNLP-ST is antecedent protein , which indicates the protein mention contained in the antecedent expression , e.g. p65 in T28 .
+A new term introduced in the BioNLP-ST is antecedent protein , which indicates the protein mention contained in the antecedent expression , e.g. , p65 in T28 .
+41 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3:para-passact 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+There are other coreferential expressions which are ignored in the context of this COREF task such as this complex and the NF-kappa B transcription factor complex ( Figure 1 ) , since we only focus on the antecedent expressions that contain and point to protein mentions .
+There are other coreferential expressions , which are ignored in the context of this COREF task , such as : this complex and the NF-kappa B transcription factor complex ( Figure 1 ) , since our focus is on the antecedent expressions that contain and point to protein mentions .
+42 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:17:preserved 16:18:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved 32,33,34:35,36,37:paraphrase 35:38:preserved 36:39:preserved 37:40:preserved 38:41:preserved 39:42:preserved 40:43:preserved 41:44:preserved 42:45:preserved 43:46:preserved 44:47:preserved 45:48:preserved 46:49:preserved
+
+The best system in the COREF shared task according to the primary evaluation found 22 .2% of anaphoric protein references at the precision of 73 .3% ( 34 .1% Fscore ) .
+The best system in the COREF shared task , according to the primary evaluation , found 22 .2% of the anaphoric protein references at the precision of 73 .3% ( 34 .1% F-score ) .
+45 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved :19:mogrammar-det
+
+This is an encouraging result , since the authors make use of an external coreference resolution tool originally built for the news domain , without much domain adaptation on the main coreference resolution algorithm .
+The results are promising , since the authors make use of an external coreference resolution tool originally built for the news domain , without much domain adaptation on the main coreference resolution algorithm .
+46 0,1,2,3,4:0,1,2,3:paraphrase 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved
+
+Modifications are mostly made to the markable detection component and post processing for the output coreference links [ 11 ] .
+Modifications are mostly made to the markable detection component and post-processing for the output coreference links [ 11 ] .
+47 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 11,10:10:spelling 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved
+
+However , the external coreference tool achieves much lower results on biological texts than that on news texts , from 66 .38% down to 49 .65% in MUC-score [ 11 , 27 ] , which is supposed to be caused by domain differences .
+However , the external coreference tool " s performance drops for biological texts than for news texts , from 66 .38% to 49 .65% in MUC-score [ 11 , 27 ] , which is supposed to be caused by domain differences .
+48 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9:9,8,7,6:paraphrase 10:10:bigrammar-prep 11:11:preserved 12:12:preserved 13:13:preserved 14,15:14:paraphrase 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22,23:21:bigrammar-prep 24:22:preserved 25:23:preserved 26:24:preserved 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved 32:30:preserved 33:31:preserved 34:32:preserved 35:33:preserved 36:34:preserved 37:35:preserved 38:36:preserved 39:37:preserved 40:38:preserved 41:39:preserved 42:40:preserved 43:41:preserved
+
+A detailed analysis on the _nal submissions of the COREF task participants was reported in the organizer 's papers [ 15 , 31 ] , which is summarized in table 2 .
+A detailed analysis on the _nal submission of the COREF task participants was reported in the organizer 's papers [ 15 , 31 ] , and is summarized in table 2 .
+51 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-nnum 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:paraphrase 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+In this analysis , the submitted predictions on the test data set of the COREF shared task are analyzed according to four types of anaphoric expressions : DNP for definite noun phrases , RELAT for relative pronouns , PRON for other pronouns including personal , possessive , and demonstrative pronouns , and OTHER for catch-all type .
+In this analysis , the submitted predictions on the test data set of the COREF shared task are analyzed according to four types of anaphoric expressions : DNP for definite noun phrases , RELAT for relative pronouns , PRON for other pronouns including personal , possessive , and demonstrative pronouns , and OTHER for catch-all type .
+52 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved
+
+Below are examples of the coreference types .
+Examples of the coreference types are outlined below :
+53 0:7:preserved 1:5,6:paraphrase 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved
+
+- " . . . ,the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+- " [ . . . ] the phosphorylation status of [ TRAF2 ] had significant effects on the ability of [ the protein ] to bind to CD40 , " ( DNP )
+56 0:0:preserved 1:1:preserved 4,3,2,5:5,2,3,4,6,7:bigrammar-inter 6:8:preserved 7:9:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved
+
+- " Subnuclear fractionation reveals that there are [ two ATF1 isoforms ] [ which ] appear to differ with respect to DNA binding activity , " ( RELAT )
+- " Subnuclear fractionation reveals that there are [ two ATF1 isoforms , which ] appear to differ with respect to DNA binding activity , " ( RELAT )
+59 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:14:preserved 14:13:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved
+
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential , " ( PRON )
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential , " ( PRON )
+62 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+The analysis results in also showed that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type are 27 .5% F-score and 10 .1 F-score respectively , which are far less than that for relative pronoun ( the RELAT type ) 66 .2 % F-score .
+An analysis of the results indicated that the best resolution results for definite noun phrases ( the DNP type ) , and several pronouns of the PRON type was 27 .5% F-score and 10 .1 F-score , respectively ; the scores were much lower than the F-score for relative pronouns ( the RELAT type ) , which yielded a 66 .2 % F-score .
+65 0,1,2:0,1,2,3,4:paraphrase 5:5:paraphrase 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:bigrammar-vtense 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:37:preserved 37:36:preserved 38:39,40:paraphrase 39:41:bigrammar-vtense 40,41:42,43:paraphrase 42:44:preserved 43:45,46:paraphrase 44:47:preserved 45:48:preserved 46:49:bigrammar-nnum 47:50:preserved 48:51:preserved 49:52:preserved 50:53:preserved 51:54:preserved 55,54,53,52:62,61,60,59:preserved :58:mogrammar-det
+
+Thus , it can be inferred that definite noun phrases and pronouns are more difficult to be resolved than relative pronouns .
+Thus , it can be inferred that it is more difficult to resolve definite noun phrases and pronouns than relative pronouns .
+66 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7,8,9,10,11:13,14,15,16,17:preserved 15,16,17,12:11,12,8,7:paraphrase 13,14:9,10:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+The top four official results of the COREF shared task are shown again in the top four rows of Table 2 .
+The top four official results of the COREF shared task are presented in the top four rows of Table 2 .
+69 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 12,11:11:paraphrase 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved
+
+In this paper , we compare the contributions of different features in coreference resolution , two simple types of domain-portable information : discourse preference and number-agreement , and domain-specific information which can be considered as more difficult to be transferred across different domains .
+In this paper , we compare the contributions of different features in coreference resolution ; two simple types of domain-portable information : discourse preference and number-agreement , is compared , as well as domain-specific information , which is considered to be more difficult to be transferred across different domains .
+70 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:28,29,30,31,32:paraphrase 28,29:33,34:preserved 30:36:preserved 31,32:37:bigrammar-vtense 33:38:preserved 34:39,40:paraphrase 36,35,37,38,39,40,41,42,43:41,42,43,44,45,46,47,48,49:preserved :27:moproblematic
+
+We implemented a protein coreference system that makes use of syntactic information from parser output , and protein-indicated information encoded in rule-based semantic classification .
+We implemented a protein coreference system that makes use of syntactic information from the parser output , and protein-indicated information encoded in rule-based semantic classification .
+71 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :13:mogrammar-det
+
+Experimental results showed that domain specific semantic information is important for coreference resolution , and that simple semantic classification using semantic features helped our system to outperform the best reported result in the shared task .
+Experimental results showed that domain-specific semantic information is important for coreference resolution , and that simple semantic classification using semantic features helped our system to outperform the best-reported system results in the shared task .
+72 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4,5:4:spelling 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28,29:27:spelling 30:28,29:paraphrase 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+
+As we needed to get an insight into the problem , we took a rule-based approach , analyzing the training data of BioNLP-ST 2011 Coref task .
+In order to acquire insight into the problem , we took a rule-based approach , analyzing the training data of BioNLP-ST 2011 Coref task .
+77 0,1,2,3,4,5:3,2,1,0:paraphrase 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved 26:24:preserved
+
+The performance of the system evaluated on the official test data set of the COREF task shows a significant improvement over the official winning system of the task .
+The performance of the system evaluated on the official test dataset of the COREF task shows a significant improvement over the official winning system of the task .
+78 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10,11:10:spelling 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved
+
+This section presents the overview and the performance evaluation of our system .
+This section presents the overview and the performance evaluation of our system .
+79 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Figure 2 shows the overall design of the system , which includes five main components : preprocessing , markable detection , anaphor selection , antecedent candidate selection , and antecedent prediction .
+Figure 2 shows the overall design of the system , which includes five main components : preprocessing , markable detection , anaphor selection , antecedent candidate selection , and antecedent prediction .
+84 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved
+
+Processing of each component is briefly described as below .
+Processing of each component is briefly described below .
+85 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7::mogrammar-prep 8:7:preserved 9:8:preserved
+
+More details of implementation can be found in the method section .
+More details of implementation can be found in the method section .
+86 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+Step 0 - Preprocessing : The input text is preprocessed using NLP tools for sentence segmentation , and syntactic parsing .
+Step 0 - Preprocessing : The input text is preprocessed using NLP tools for sentence segmentation , and syntactic parsing .
+89 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+We used Genia Sentence Splitter and Enju Parser [ 15 ] for the purposes , respectively .
+We used the Genia Sentence Splitter and Enju Parser [ 15 ] for sentence segmentation and syntactic parsing , respectively .
+90 0:0:preserved 1:1:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12,13:13,14,15,16,17:paraphrase 15:19:preserved :2:mogrammar-det
+
+( Enju parser comes with a default tokenizer and part-of-speech tagger for biological text . ) Row 1 in the example Table 1 shows three sentences outputted from Genia Sentence Splitter , and noun phrases outputted from Enju Parser for the sentence S3 .
+( Enju parser comes with a default tokenizer and part-of-speech tagger for biological text . ) Row 1 in the example of Table 1 shows three sentences as the output from the Genia Sentence Splitter , and noun phrases as the output from the Enju Parser for the sentence , S3 .
+91 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27,28,29:paraphrase 27:30:preserved 28,29,30:32,33,34:preserved 32,33,34:36,37,38:preserved 35:41,39,40:paraphrase 36:42:preserved 42,41,40,39,38,37:50,48,47,46,45,44:preserved :21:mogrammar-prep :31:mogrammar-det :43:mogrammar-det
+
+Due to the limit of space , only a part of the phrases are shown in the table .
+Due to the limited space , only a part of the phrases are shown in the table .
+92 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3:paraphrase 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved
+
+The full parse tree of this sentence is separately shown in Figure 3 .
+The full parse tree for this sentence is separately shown in Figure 3 .
+93 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-prep 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Step 1 - Markable detection : collects text chunks that are candidate coreferential expressions , which are also called markables following the jargon of MUC-7 .
+Step 1 - Markable detection : Text chunks that are candidate coreferential expressions , which are also called markables following the jargon of MUC-7 , are collected .
+96 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:25,26:paraphrase 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:27:preserved
+
+For the set of markables , noun phrases , which do not include subordinate clause , are collected as analyzed by a syntactic parser , Enju in our case .
+For the set of markables , noun phrases , which do not include a subordinate clause , are collected as they are analyzed by a syntactic parser ( in our case , Enju ) .
+97 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:22,20,21:paraphrase 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 25:32:preserved 26:28:preserved 27:29:preserved 28:30:preserved
+
+Pronouns are also collected as markables .
+Pronouns are also collected as markables .
+98 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+Then , for chunks that share the same head word , which is normally the main noun of a noun phrase , only the longest is taken .
+Then , for chunks that share the same head word , which is normally the main noun of a noun phrase , only the longest chunk is taken .
+99 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24,25:paraphrase 25:26:preserved 26:27:preserved 27:28:preserved
+
+Since the Enju parser output such head-word information for every noun phrase , we make use of this information for our processing without any modification .
+Since the Enju parser outputs head-word information for every noun phrase , we make use of this information for our processing , without any modification .
+100 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:bigrammar-nnum 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+The third row of Table 1 shows the result of markable detection for the sample text .
+The third row of Table 1 shows the result of markable detection for the sample text .
+101 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+In the sentence S3 , three noun phrases recognized by the NX and NP tags of Enju output , role , role for c-Myc in apoptosis , and this role for c-Myc in apoptosis ( Step 0 results ) share the same head word role , thus only the longest one this role for c-Myc in apoptosis is selected .
+In the sentence S3 , three noun phrases recognized by the NX and NP tags of the Enju output , role , role for c-Myc in apoptosis , and this role for c-Myc in apoptosis ( Step 0 results ) share the same head-word role ; thus , only the longest noun phrase , this role for c-Myc in apoptosis , is selected .
+102 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42,43:43:spelling 44:44:preserved 45:47:preserved 46:46:preserved 47:48:preserved 48:49:preserved 49:50:preserved 50:52,51:paraphrase 51:54:preserved 52:55:preserved 53:56:preserved 54:57:preserved 55:58:preserved 56:59:preserved 57,58:61,62:preserved :16:mogrammar-det
+
+However , between studies and studies using . . .
+However , between studies and studies using . . .
+103 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+apoptosis , the former chunk is selected , since the latter contains a subordinate clause .
+apoptosis , the former chunk is selected , since the latter contains a subordinate clause .
+104 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Step 2 - Anaphor selection : determines candidate anaphoric expressions , which are basically pronouns and definite noun phrases ( a minority of anaphors are indefinite noun phrases or entity names , which act as appositions . )
+Step 2 - Anaphor selection : Candidate anaphoric expressions , which are basically pronouns and definite noun phrases , are determined . A minority of anaphors are indefinite noun phrases or entity names , which act as appositions .
+107 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:19,20:paraphrase 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved
+
+The system first considers all pronouns and definite noun phrases in the markable set as anaphors .
+The system first considers all pronouns and definite noun phrases in the markable set as anaphors .
+108 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+Then , several filters are applied to remove anaphors that are not relevant to the task definition .
+Then , several filters are applied to remove anaphors that are not relevant to the task definition .
+109 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+We implemented two types of filters : syntactic and semantic filters .
+We implemented two types of filters : syntactic and semantic .
+110 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 11:10:preserved
+
+Syntactic filters are used to filter out pleonastic its , or pronouns such as he , she , which are not expected to refer to proteins .
+Syntactic filters are used to filter out pleonastic its , or pronouns , like : he , she , which are not expected to refer to proteins .
+111 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12,13:13:paraphrase 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved
+
+Moreover , because the focus of our task is protein references , semantic filters can be used to filter out non-protein anaphors at this stage .
+Moreover , because our task focuses on protein references , semantic filters can be used to filter out non-protein anaphors at this stage .
+112 0:0:preserved 1:1:preserved 2:2:preserved 3,4,5,8:5,6:paraphrase 6:3:preserved 7:4:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved 24:22:preserved 25:23:preserved
+
+In practice , for definite noun phrase type of anaphors , this is done using a list of possible head words of protein references , and for pronouns , their context words are used .
+In practice , for definite noun phrase type of anaphors , this is accomplished , by using a list of possible head-words of protein references ; for pronouns , their context words are used .
+113 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:paraphrase 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 20,19:21:spelling 21:22:preserved 22:23:preserved 23:24:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved :15:mogrammar-prep
+
+More details of the methods can be found in the following section .
+More details of these methods can be found in the following section .
+114 0:0:preserved 1:1:preserved 2:2:preserved 3:3:bigrammar-det 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Step 3 - Antecedent candidate selection : For each anaphor , this component collects the antecedent candidates from the preceding expressions .
+Step 3 - Antecedent candidate selection : For each anaphor , this component collects the antecedent candidates from the preceding expressions .
+117 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+One of the candidates will become the response antecedent as a result of the antecedent prediction step .
+One of the candidates will become the response antecedent , as a result of the antecedent prediction step .
+118 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved
+
+In theory , all expressions in the set of markables can become antecedent candidates , however too much candidates makes it difficult to achieve correct antecedent prediction .
+In theory , all expressions in the set of markables can become antecedent candidates ; however , too many candidates makes it difficult to achieve correct antecedent prediction .
+119 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:16:preserved 15:15:preserved 16:17:preserved 17:18:paraphrase 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved
+
+Moreover , we also filter out candidates that violate syntactic or semantic constraints raised by the anaphor .
+Moreover , we also filter out candidates that violate syntactic or semantic constraints raised by the anaphor .
+120 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+In our system , this is done by using a window size in sentences , together with several syntactic filters .
+In our system , this is done by using a particular window size in sentences , together with several syntactic filters .
+121 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10,11:paraphrase 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+One of the syntactic filters is based on syntactic relations among phrases outputted from the parser .
+One of the syntactic filters is based on syntactic relations among phrases outputted from the parser .
+124 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+The idea behind this is that some types of syntactic relations imply the impossibility of coreference relations between its argument noun phrases and the inclusive expressions of these noun phrases .
+The idea behind this filter is that some types of syntactic relations imply the impossibility of coreference relations between its argument noun phrases and the inclusive expressions of these noun phrases .
+125 0:0:preserved 1:1:preserved 2:2:preserved 3:3,4:paraphrase 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved
+
+For example , the two expressions dominant negative form and its in our example in Table 1 , can not be coreferential with each other , since they are connected via the preposition of .
+For example , the two expressions : dominant negative form and its in our example in Table 1 , cannot be coreferential with each other , since they are connected via the preposition of .
+126 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18,19:19:spelling 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved
+
+Another syntactic filter removes pronouns which are not in the same pronoun family as the anaphor .
+Another syntactic filter removes pronouns that are not in the same pronoun family as the anaphor .
+129 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:bigrammar-others 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+This results in the disappearance of this in candidate antecedents of its .
+This results in the disappearance of this in candidate antecedents of its .
+130 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+Pronouns in the same family as its are its , it , and itself .
+Pronouns in the same family as its are its , it , and itself .
+131 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+Step 4 - Antecedent predicion : selects the best candidate in the antecedent candidate set , and forms a response coreference link .
+Step 4 - Antecedent prediction : The best candidate in the antecedent candidate set is selected , and a response coreference link is formed .
+134 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:typo 5:5:preserved 6:15,14:paraphrase 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:16:preserved 16:17:preserved 17:22,23:paraphrase 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:24:preserved
+
+Antecedent candidates are compared with one another using a comparison procedure .
+Antecedent candidates are compared with one another using a comparison procedure .
+135 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+This procedure implements a decision rule list containing four rules , encoding the following selection preference conditions :
+This procedure implements a decision rule list containing four rules , encoding the following selection preference conditions :
+136 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+-Rule 1 ( Number agreement - NUM-AGREE ) : The candidate which is not number conflict with anaphor is selected .
+-Rule 1 ( Number agreement - NUM-AGREE ) : The candidate , which does not conflict in number with the anaphor , is selected .
+139 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12,13,15,14:13,14,15,16,17:paraphrase 16:18:preserved 17:20:preserved 19,18:22,23:preserved :19:mogrammar-det
+
+-Rule 2 ( Semantic constraint - SEM-CONS ) : If anaphor is a protein reference , then protein candidate is selected .
+-Rule 2 ( Semantic constraint - SEM-CONS ) : If the anaphor is a protein reference , then a protein candidate is selected .
+141 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved :10:mogrammar-det :18:mogrammar-det
+
+-Rule 3 ( Discourse preference - DISC-PREF ) : According to the anaphor type , the farther candidate is selected .
+-Rule 3 ( Discourse preference - DISC-PREF ) : According to the anaphor type , the farther candidate is selected .
+144 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+-Default rule ( Default discourse preference - DEFAULT ) : The closer candidate is selected .
+-Default rule ( Default discourse preference - DEFAULT ) : The closer candidate is selected .
+147 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+The rules are implemented using different features of expressions such as syntactic types of expression , head noun , semantic types , etc. , in a similar way to [ 22 ] .
+The rules are implemented using different features of expressions , such as syntactic types of expressions , head noun , semantic types , etc. , in a similar way to [ 22 ] .
+150 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:bigrammar-nnum 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved
+
+Each rule in the decision list compares two candidates , and returns the preferrable candidate in concern with the anaphor .
+Each rule in the decision list compares two candidates , and returns the preferable candidate in concern with the anaphor .
+151 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 14:14,13:paraphrase 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+If equility happens , the next rule in the list is applied .
+If equility happens , the next rule in the list is applied .
+152 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+The default and also last rule in the decision rule list is special in the sense that depending on the anaphor , it prefers the closer or the farther candidate .
+The default and also last rule in the decision rule list is special in the sense that depending on the anaphor , it prefers the closer or the farther candidate .
+153 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Thanks to this rule , the decision list never results in the equility result .
+Because of this particular rule , the decision list never results in the equility result .
+154 0,1:0,1:paraphrase 2:2:preserved 3:4,3:paraphrase 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved
+
+By this way , candidates can be sorted , and the best candidate is selected as antecedent .
+In this way , candidates can be sorted , and the best candidate is selected as the antecedent .
+155 0:0:bigrammar-prep 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:17:preserved 17:18:preserved :16:mogrammar-det
+
+Figure 4 illustrates how the decision list works when comparing two candidates and .
+Figure 4 illustrates how the decision list works when comparing two candidates : and .
+156 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13:preserved 13:14:preserved
+
+More details about the implementation of the main components of our system shown in Figure 2 are presented below .
+More details concerning the implementation of the main components of our system shown in Figure 2 are presented below .
+159 0:0:preserved 1:1:preserved 2:2:paraphrase 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+In this step , we want to filter out those pronouns and definite noun phrases that are not target of this task , comprised of two types : non-anaphoric expressions , and anaphoric expressions which do not point to proteins .
+In this step , we want to filter out those pronouns and definite noun phrases that are not a target of this task . The expressions are comprised of two types : non-anaphoric expressions , and anaphoric expressions , which do not point to proteins .
+164 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23,24,25,26:paraphrase 23,24,25,26,28,29,27,31,30,32,33:27,28,29,30,32,31,33,35,34,36,37:preserved 34,35,36,37,38,39:39,40,41,42,43,44:preserved
+
+The term anaphoric is used with the common sense in NLP community .
+The term anaphoric is used with the common sense in the NLP community .
+165 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved :10:mogrammar-det
+
+Anaphoric expression means an expression that has a noun phrase as antecedent .
+Anaphoric expression refers to an expression that has a noun phrase as an antecedent .
+166 0:0:preserved 1:1:preserved 2:2,3:paraphrase 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved :12:mogrammar-det
+
+This means expressions with a sentence or phrase antecedents , or nominal but successive antecedents , are not our target and should be filtered out .
+Thus , expressions with a sentence or phrase antecedents , or nominal but successive antecedents , are not our target and should be filtered out .
+167 0,1:0:paraphrase 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+Non-anaphoric expressions includes first and second person pronouns such as I , we , you , . . . , and pleonastic it .
+Non-anaphoric expressions include first and second-person pronouns such as I , we , you , and pleonastic it .
+170 0:0:preserved 1:1:preserved 2:2:bigrammar-inter 3:3:preserved 4:4:preserved 5,6:5:spelling 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:18:preserved 20,21,22:17,16,15:preserved
+
+First and second person pronouns are easily to be recognized by the part-of-speech tags , thus we use part-of-speech information for the filtering .
+First and second-person pronouns are easily recognized by the part-of-speech tags ; thus , we use part-of-speech information for the filtering .
+171 0:0:preserved 1:1:preserved 2,3:2:spelling 4:3:preserved 7,8,9,5:6,4:paraphrase 6:5:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:13:preserved 15:12:preserved 16:14:preserved 17:15:preserved 18:16:preserved 19:17:preserved 20:18:preserved 21:19:preserved 22:20:preserved 23:21:preserved
+
+For pleonastic it , we make use of the following four patterns , which are similar to [ 13 ]
+For pleonastic it , we make use of the following four patterns , which are similar to [ 13 ] :
+172 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+It be [ Adj|Adv| verb ]* that
+It be [ Adj|Adv| verb ]* that
+175 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+It be Adj [ for NP ] to VP
+It be Adj [ for NP ] to VP
+178 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+It [ seems|appears|means|follows ] [ that ]*
+It [ seems|appears|means|follows ] [ that ]*
+181 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved
+
+NP [ makes|finds|take ] it [ Adj ]* [ for NP ]* [ to VP|Ving ]
+NP [ makes|finds|take ] it [ Adj ]* [ for NP ]* [ to VP|Ving ]
+184 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+To recognize and filter anaphoric expressions which do not point to proteins , the system is based on the protein semantic classification results determined by the method presented below .
+To recognize and filter anaphoric expressions that do not point to proteins , the system is based on the protein semantic classification results determined by the method presented below .
+187 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-others 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved
+
+For each anaphoric markable , the system collects a list of antecedent candidates , and select the most probable candidate to be the antecedent of the anaphor .
+For each anaphoric markable , the system collects a list of antecedent candidates , and select the most probable candidate to be the antecedent of the anaphor .
+192 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+Basically all expressions detected in the initial expression set are antecedent candidate , except for anaphoric pronouns .
+Basically , all of the expressions detected in the initial expression set are an antecedent candidate , with the exception of anaphoric pronouns .
+193 0:0:preserved 1:2:preserved 2:5:preserved 3:6:preserved 4:7:preserved 5:8:preserved 6:9:preserved 7:10:preserved 8:11:preserved 9:12:preserved 10,11:14,15:preserved 13,14:17,18,19,20:para-colocation 16,15:21,22:preserved :3:mogrammar-prep :4:mogrammar-det :13:mogrammar-det
+
+However , if the list contains too many candidates , then it may be more difficult for the later antecedent-selection algorithm .
+However , if the list contains too many candidates , then it may be more difficult for the later antecedent-selection algorithm .
+194 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Therefore , candidates that are not probable to be antecedent of the anaphor should be filtered out .
+Therefore , candidates that are not probable to be an antecedent of the anaphor should be filtered out .
+195 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved :9:mogrammar-det
+
+There are several filters that can be used :
+There are several filters that can be used :
+196 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved
+
+Window size sets a border to include or exclude antecedent candidates .
+Window size Borders are set to include or exclude antecedent candidates .
+199 0:0:preserved 1:1:preserved 2:3,4:paraphrase 4,3:2:bigrammar-nnum 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+This is a common method for antecedent candidate filtering having been used in the previous work [ 3 , 5 , 26 ] .
+This is a common method for antecedent candidate filtering , as seen in the previous work [ 3 , 5 , 26 ] .
+200 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9,10,11:11,10:paraphrase 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved
+
+Since our task focuses on anaphoric coreference , antecedent expressions normally appear not too far ( in sentence distance ) from the anaphors , using window sizes is a proper technique .
+Since our task focuses on anaphoric coreference , antecedent expressions normally appear not too far ( in sentence distance ) from the anaphors . Thus , using window sizes is a proper technique .
+201 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:25,24:paraphrase 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved
+
+Syntactic dependency relations The fact that arguments of some dependency relations such as poss-arg12 and prep-arg12 do not corefer with each other enables us to use them to correctly eliminate the number of antecedent candidates .
+Syntactic dependency relations Since arguments of some dependency relations ( such as poss-arg12 and prep-arg12 ) do not corefer with each other , they can be used to correctly eliminate the number of antecedent candidates .
+204 0:0:preserved 1:1:preserved 2:2:preserved 3,4,5:3:paraphrase 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22,23,24,25,26:23,24,25,26:paraphrase 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+For instance , two such truncated forms definitely cannot be antecedent of the protein in this context two such truncated forms of the protein
+For instance , two such truncated forms definitely cannot be an antecedent of the protein in this context : two such truncated forms of the protein .
+205 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved :10:mogrammar-det
+
+After filtering non-relevant antecedent candidates for an anaphor in the above step , depending on the anaphor type , the remained candidates are ranked by fixed rules , or by using a pairwise comparison procedure :
+After filtering non-relevant antecedent candidates for an anaphor in the step above , depending on the anaphor type , the remaining candidates are ranked by fixed rules , or by using a pairwise comparison procedure :
+210 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:10:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:bigrammar-wform 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+The relative pronoun can be said to be the easiest type of coreference resolution , because its antecedent expression is very close to the anaphor , and in many cases , it is right before the anaphor .
+The relative pronoun can be said to be the easiest type of coreference resolution , because its antecedent expression is very close to the anaphor , and in many cases , it is right before the anaphor .
+214 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+For this type of anaphors , any syntactic parser can be used to find the relations between relative pronouns and their arguments .
+For these types of anaphors , any syntactic parser can be used to find the relation between relative pronouns and their arguments .
+215 0:0:preserved 1,2:2,1:bigrammar-inter 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:bigrammar-nnum 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+This is exactly what our system does .
+Our system accomplishes this task .
+216 0,1,2,3,6:4,3,2:paraphrase 5,4:1,0:preserved 7:5:preserved
+
+It simply produces coreference links between the relative pronouns and their arguments .
+It simply produces coreference links between the relative pronouns and their arguments .
+217 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+However , a disadvantage of this method is when the parser makes mistake on finding the correct arguments , coreference also fails , as in the example " . . .of transcription factor NF-kappa B also encodes a p70 I kappa B protein , I kappa B gamma , which is identical to the C-terminal 607 amino acids of . . . "
+However , a disadvantage to using this method is that when the parser makes a mistake on finding the correct arguments , the coreference also fails . This is exemplified in the following : " . . .of transcription factor NF-kappa B also encodes a p70 I kappa B protein , I kappa B gamma , which is identical to the C-terminal 607 amino acids of . . . "
+220 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4,5:paraphrase 5:6:preserved 6:7:preserved 7:8:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19,20,21:23,24,25:preserved 23,24,25,26:27,28,29,30,31,32:paraphrase 57,56,55,54,53,52,51,50,49,48,47,46,45,44,43,42,41,40,39,38,37,36,58,59,60,61,62,31,30,29,28,27,35,34,33,32:37,34,35,36,38,39,40,41,42,43,44,45,47,46,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69:preserved :22:unaligned :26:unaligned
+
+This procedure compares two candidate expressions at a time with respect to preferences raised by the anaphor .
+This procedure compares two candidate expressions at a time with respect to preferences raised by the anaphor .
+225 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+The best antecedent expression is selected to form a response coreference link .
+The best antecedent expression is selected to form a response coreference link .
+226 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+In particular , a list of rules is used to compare two candidates of an anaphor in a deterministic manner .
+In particular , a list of rules is used to compare two candidates of an anaphor in a deterministic manner .
+227 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+For each rule , both of the candidates are checked against the condition hold by that rule .
+For each rule , both of the candidates are checked against the condition hold by that rule .
+228 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+If one candidate satisfies and the other does not , the procedure ends with the result that the former will be preferable to the latter .
+If one candidate satisfies and the other does not , the procedure ends with the result that the former will be preferable over the latter .
+229 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:bigrammar-prep 23:23:preserved 24:24:preserved 25:25:preserved
+
+If both satisfy or both do not satisfy , the procedure proceeds to the next rule in the same manner .
+If both satisfy or both do not satisfy , the procedure proceeds to the next rule in the same manner .
+230 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+The rules are applied in a succession order one after another until the inequality occurs , or end of the rule list is reached .
+The rules are applied in a successive order , one after another , until the inequality occurs , or until the end-of-the-rule list is reached .
+231 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:bigrammar-wform 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17,18,19,20:21:spelling 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved :19:mogrammar-prep :20:mogrammar-det
+
+The default rule of the procedure prefers the closer antecedent candidate .
+The default rule of the procedure , is in the preference of the closer antecedent candidate .
+232 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7,8,9,10,11:paraphrase 10,9,8,7:15,14,13,12:preserved
+
+By definition , two coreferential expressions refer to the same thing , which implies a semantic-constraint on coreference relationship .
+By definition , two coreferential expressions are identical , which implies a semantic-constraint on coreference relationship .
+238 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6,7,8,9,10:6,7:paraphrase 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved
+
+In other words , semantic types of coreferents must be compatible .
+In other words , semantic types of coreferents must be compatible .
+239 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved
+
+In practice , this compatibility is checked based on a given taxonomy of semantic classes in the following manner : two semantic classes are considered compatible or agreed with each other , when they have synonym relation , e.g. , or hypernym-hyponym relation .
+In practice , this compatibility is checked based on a given taxonomy of semantic classes in the following manner : two semantic classes are considered compatible or agreed with each other , when they have a synonym relation , or hypernym-hyponym relation .
+240 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:36:preserved 36:37:preserved 37:38:preserved 40:39:preserved 41:40:preserved 42:41:preserved 43:42:preserved :35:mogrammar-det
+
+In this work , we only focus on the Protein type , ignoring other possible semantic types , so we do not take the structure of taxonomy into account .
+In this work , we only focus on the Protein type , ignoring other possible semantic types , so the structure of the taxonomy is not taken into account .
+241 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19,20,21:24,25:paraphrase 22,27,28:26,27,28:preserved 23:19:preserved 24:20:preserved 25:21:preserved 26:23:preserved 29:29:preserved :22:mogrammar-det
+
+Thus , the likelihood that two expressions are semantically compatible is definitely beneficial for antecedent prediction , besides syntactic information .
+Therefore , the likelihood that two expressions are semantically compatible , is definitely beneficial for antecedent prediction , besides syntactic information .
+242 0:0:paraphrase 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+Focusing on specific entity types , i.e. Protein type , helps us to find a proper method for determining the likelihood , and how to encode the likelihood in coreference resolution .
+Focusing on specific entity types , i.e. , Protein type , enables us to find a proper method for determining the likelihood , and method for encoding the likelihood in coreference resolution .
+243 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:paraphrase 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23,24,25:24,25,26:paraphrase 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved
+
+Since gold protein annotations are given , we can use them in combination with syntactic information to judge whether an expression is protein-referential expession or not .
+Since gold protein annotations are given , we can use them in combination with syntactic information to judge whether an expression is a protein-referential expression or not .
+247 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved :22:mogrammar-det
+
+In details , if an expression is a noun phrase with a single head word , and it contains a protein mention that completely overlaps with the head word , then the expression is classied as Protein .
+If an expression is a noun phrase with a single head word , and it contains a protein mention that completely overlaps with the head word , then the expression is classified as Protein .
+248 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13:10:preserved 14:11:preserved 15:12:preserved 16:13:preserved 17:14:preserved 18:15:preserved 19:16:preserved 20:17:preserved 21:18:preserved 22:19:preserved 23:20:preserved 24:21:preserved 25:22:preserved 26:23:preserved 27:24:preserved 28:25:preserved 29:26:preserved 30:27:preserved 31:28:preserved 32:29:preserved 33:30:preserved 34:31:typo 35:32:preserved 36:33:preserved 37:34:preserved
+
+Another case is when the head noun is either protein or gene , and has a protein mention as its premodifier , such as the Tax protein .
+In another case , when the head noun is either protein or gene , and has a protein mention as its premodifier , such as the Tax protein .
+249 0:1:preserved 1:2:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved :0:mogrammar-prep
+
+For a coordinated noun phrase , if one of its constituents is classified as Protein , then that noun phrase is also classified as Protein .
+For a coordinated noun phrase , if one of its constituents is classified as a Protein , then that noun phrase is also classified as a Protein .
+250 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:26:preserved 25:27:preserved :14:mogrammar-det :25:mogrammar-det
+
+Pronouns , in particular , possessive pronouns occupy the majority of anaphoric pronouns in biological texts ( Table 5 ) .
+Pronouns , in particular , possessive pronouns , occupy the majority of anaphoric pronouns in biological texts ( Table 5 ) .
+255 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved
+
+However , they do not contain in themselves much useful information for the resolution , thus we need to exploit more information from its context [ 17 ] .
+However , they do not contain very much useful information for the resolution ; thus , we need to exploit more information from its context [ 17 ] .
+256 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 8:7,6:paraphrase 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:15:preserved 15:14:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+The analysis of BioNLP-ST 2011 also showed that we need different strategy to resolve such pronouns [ 18 ] .
+The analysis of BioNLP-ST 2011 also showed that we need a different strategy to resolve such pronouns [ 18 ] .
+257 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved :10:mogrammar-det
+
+Fortunately , the key to this problem lies in the context of pronouns .
+Fortunately , the key to this problem lies in the context of pronouns .
+258 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+We implemented a simple function to classify the semantic type of a possessive pronoun based on its context word .
+We implemented a simple function to classify the semantic type of a possessive pronoun , based on its context word .
+261 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved
+
+In particular , we check the noun phrase whose determiner is its or their ; if the noun phrase contains a protein key word then the inclusive pronoun is classified into the Protein semantic type .
+In particular , we check the noun phrase in which the determiner is its or their ; if the noun phrase contains a protein key word , then the inclusive pronoun is classified into the Protein semantic type .
+262 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8,9:paraphrase 9:11:preserved 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved 31:34:preserved 32:35:preserved 33:36:preserved 34:37:preserved 35:38:preserved :10:mogrammar-det
+
+protein key words can be a verb , a noun or an adjective that coocurred with protein mentions and can be used as a clue to distinguish the protein type from other semantic types .
+Protein key words can be a verb , a noun or an adjective that co-occurred with protein mentions , and can be used as a clue to distinguish the protein type from other semantic types .
+263 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:spelling 15:15:preserved 16:16:preserved 17:17:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved
+
+For example , the word binding in the following noun phrases its heterodimeric binding partner , or its binding site is a good clue to infer that it must be a protein reference .
+For example , the word binding in the following noun phrases : its heterodimeric binding partner , or its binding site , is a clue to infer that it must be a protein reference .
+264 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:22:preserved 21:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved
+
+For our preliminary experiment , we collect these key words manually by checking the noun phrases containing its and their in training data .
+For our preliminary experiment , we collect these keywords manually by checking the noun phrases containing its and their in the training data .
+265 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,9:8:spelling 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:21:preserved 22:22:preserved 23:23:preserved :20:mogrammar-det
+
+Our final protein key word set includes 12 words : binding , expression , interaction , regulation , phosphatase activity , localization , gene , sequence , region , phosphorylation , transactivation , and transcription .
+Our final protein keyword set includes 12 words : binding , expression , interaction , regulation , phosphatase activity , localization , gene , sequence , region , phosphorylation , transactivation , and transcription .
+266 0:0:preserved 1:1:preserved 2:2:preserved 3,4:3:spelling 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved 34:33:preserved 35:34:preserved
+
+In future , the protein key words can be collected automatically using the term corpus , or other resources of proteins .
+In future , the protein key words can be collected automatically using the term corpus , or other resources of proteins .
+267 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Coreferential definite noun phrases in text are used in broader meaning of coreference .
+Coreferential definite noun phrases in text are used to include a broader definition of coreference .
+272 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,10:8,9,10,12:paraphrase 9:11:preserved 11:13:preserved 12:14:preserved 13:15:preserved
+
+In other words , their antecedents do not necessarily exist in the textual context ; in particular in biomedical scientific papers , many definite noun phrases do not have antecedents since the referred concepts can be anything understood by experts in the domain .
+In other words , their antecedents do not necessarily exist in the textual context ; in particular , in biomedical scientific papers , many definite noun phrases do not have antecedents , since the referenced concepts can include any concept that is understood by subject matter experts in the domain .
+273 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:32:preserved 31:33:preserved 32:34:paraphrase 33:35:preserved 34:36:preserved 35,36:37,38,39,40,41:paraphrase 37,38:42,43:preserved 39:46,44,45:paraphrase 42,41,40:49,48,47:preserved
+
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is an uneasy task .
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is a difficult task .
+274 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10,11:10,11:paraphrase 12:12:preserved 13:13:preserved
+
+Knowing their semantic type helps to filter out irrelevant candidate antecedents , increasing chance to pick up the right antecedent or the precision of antecedent prediction .
+Knowing their semantic type helps to filter out irrelevant candidate antecedents , thereby increasing the chance of picking up the right antecedent , and increasing the precision of antecedent prediction .
+275 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:13,12:paraphrase 13:15:preserved 14,15:17,16:paraphrase 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:23,24:paraphrase 22,21:26,25:preserved 23:27:preserved 25,24:29,28:preserved :14:mogrammar-det
+
+In our implementation , decision to keep an anaphoric expression for further processing steps for an anaphoric definite noun phrase is based on a protein head word list .
+In our implementation , the decision to keep an anaphoric expression for further processing steps for an anaphoric definite noun phrase is based on a protein head word list .
+278 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved :4:mogrammar-det
+
+We tested two different head word lists : one is built automatically from the gold anaphoric nominals in gold data , the other word list contains top seven common head words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+We tested two different head word lists : one is built automatically from the gold anaphoric nominals in gold data ; the other word list contains the top seven common head words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+279 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved 46:47:preserved 47:48:preserved 48:49:preserved :26:mogrammar-det
+
+Semantic type information can be used in coreference resolution in several ways .
+Semantic type information can be used in coreference resolution in several ways .
+284 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+First , in anaphor selection , semantic information can be used to filter out non-protein anaphoric expressions .
+First , in anaphor selection , semantic information can be used to filter out non-protein anaphoric expressions .
+285 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved
+
+Second , in antecedent candidate filtering , semantic agreement between the antecedent candidates and the anaphoric expression is checked .
+Second , in antecedent candidate filtering , semantic agreement between the antecedent candidates and the anaphoric expression is checked .
+286 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Those candidates which are not agree with the anaphor in semantics are filtered out .
+Those candidates that are not in agreement with the anaphor in semantics are filtered out .
+287 0:0:preserved 1:1:preserved 2:2:bigrammar-others 3:3:preserved 4:4:preserved 5:5,6:paraphrase 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved
+
+For example , if anaphor is classified as protein referent , then non-protein antecedent candidates are removed from the candidate set of the anaphor .
+For example , if an anaphor is classified as a protein referent , then the non-protein antecedent candidates are removed from the candidate set of the anaphor .
+288 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:10:preserved 9:11:preserved 10:12:preserved 11:13:preserved 12:15:preserved 13:16:preserved 14:17:preserved 15:18:preserved 16:19:preserved 17:20:preserved 18:21:preserved 19:22:preserved 20:23:preserved 21:24:preserved 22:25:preserved 23:26:preserved 24:27:preserved :4:mogrammar-det :9:mogrammar-det :14:mogrammar-det
+
+Finally , in antecedent prediction : semantic agreement again can be used as a constraint when comparing two antecedent candidates to select the more probable candidate .
+Finally , in antecedent prediction : semantic agreement can again be used as a constraint when comparing two antecedent candidates to select the more probable candidate .
+289 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:8:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved
+
+Our minimal system configuration includes all the processing and filters from step 0 to step 3 as explained in the above section ( RB-MIN ) .
+Our minimal system configuration includes all of the processing and filters from step 0 to step 3 , as explained in the section above ( RB-MIN ) .
+297 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:23:preserved 21:22:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved :6:mogrammar-prep
+
+For antecedent candidate selection , the window size used in step 4 is set to 2 , which means antecedent candidates are collected in the two nearest sentences from the anaphor , and the sentence embedding the anaphor .
+For antecedent candidate selection , the window size used in step 4 is set to 2 , which means that antecedent candidates are collected in the two nearest sentences from the anaphor , and the sentence embedding the anaphor .
+298 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:20,19:bigrammar-others 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved
+
+As the statistics measured on the training set of the corpus shows that 97 .0% percent of protein coreference links have antecedents appearing in within 2 sentences .
+The statistics measured on the training set of the corpus shows that 97 .0% percent of protein coreference links have antecedents appearing in within 2 sentences .
+299 1:0:preserved 2:1:preserved 3:2:preserved 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19:preserved 21:20:preserved 22:21:preserved 23:22:preserved 24:23:preserved 25:24:preserved 26:25:preserved 27:26:preserved
+
+With this window size , the average number of candidates per anaphor is 6 .1 .
+With this window size , the average number of candidates per anaphor is 6 .1 .
+300 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Also , experiments with wider window sizes did not help .
+Also , experiments with wider window sizes did not help .
+301 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+The word list used to filter out anaphoric definite noun phrases in step 2 contains the following words : protein , gene , factor , molecule , element ,family , inhibitor , and receptor .
+The word list used to filter out anaphoric definite noun phrases in step 2 contains the following words : protein , gene , factor , molecule , element , family , inhibitor , and receptor .
+304 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:29:preserved 29:28:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved
+
+These words are selected from the top appearring head words extracted from the training data .
+These words are selected from the top appearing head words extracted from the training data .
+305 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:spelling 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Besides , premodifiers of definite noun phrases are also limited to numbers and popular premodifiers of proteins such as nuclear , transcription .
+Premodifiers of definite noun phrases are also limited to numbers and popular premodifiers of proteins , such as nuclear , and transcription .
+306 2:0:preserved 3:1:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:5:preserved 8:6:preserved 9:7:preserved 10:8:preserved 11:9:preserved 12:10:preserved 13:11:preserved 14:12:preserved 15:13:preserved 16:14:preserved 17:16:preserved 18:17:preserved 19:18:preserved 20:19,20:bigrammar-others 21:21:preserved 22:22:preserved
+
+Using this head word list and premodifiers , the system covers 83 .5 percent of the coreference links .
+Using this head word list and premodifiers , the system covers 83 .5 percent of the coreference links .
+307 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+To keep the minimal configuration simple , step 4 - antecedent selection of the baseline only uses the default comparison rule , which assures the closest antecedent candidate is selected .
+To keep the minimal configuration simple , step 4 - antecedent selection of the baseline only uses the default comparison rule , which assures that the closest antecedent candidate is selected .
+308 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23,24:bigrammar-others 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved
+
+Table 2 compares our system with the top four official results of the COREF shared task in BioNLP-ST 2011 [ 18 ] : UU [ 11 ] , UZ [ 29 ] , CU , and UT [ 4 ] .
+Table 2 compares our system with the top four official results of the COREF shared task in BioNLP-ST 2011 [ 18 ] : UU [ 11 ] , UZ [ 29 ] , CU , and UT [ 4 ] .
+311 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved
+
+The scoring scheme used throughout this paper is the protein coreference evaluation , the primary evaluation method of the COREF shared task [ 18 ] .
+The scoring scheme used throughout this paper is the protein coreference evaluation , the primary evaluation method of the COREF shared task [ 18 ] .
+312 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+This primary evaluation method , which was particularly designed for the shared task , is based on protein coreference links automatically generated from manually annotated coreference links .
+This primary evaluation method , which was particularly designed for the shared task , is based on protein coreference links that have been automatically generated from manually annotated coreference links .
+313 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:23:preserved 21:20,21,22,24:bigrammar-vtense 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved
+
+The last column ALL shows the overall results , while its preceding three columns PRON , DNP , and RELAT shows the protein resolution results by three major subtypes of anaphors : pronouns , definite noun phrase and relative pronouns , respectively .
+The last column ALL shows the overall results , while its preceding three columns PRON , DNP , and RELAT shows the protein resolution results by three major subtypes of anaphors : pronouns , definite noun phrase and relative pronouns , respectively .
+314 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved
+
+Note that RB-MIN with minimal configuration already outperforms the best result by the UU team , with up to 7 .1% higher in Fscore .
+Note that the results from RB-MIN with minimal configuration , already surpasses the best results obtained by the UU team , with up to 7 .1% higher performance in F-score .
+315 0:0:preserved 1:1:preserved 2:5,4,3,2:paraphrase 3:6:preserved 4:7:preserved 5:8:preserved 6:10:preserved 7:11:paraphrase 8,9,10:12,13,14:preserved 11:16,15:paraphrase 14,13,12:19,18,17:preserved 18,17,16:21,22,23:preserved 20,19:25,24:preserved 21:26,27:paraphrase 23,22:29,28:preserved
+
+Since RB-MIN uses similar preprocessing tools as UU [ 11 ] , but less information in antecedent prediction , this gap in performance is supposed to be caused by the different markable detection methods .
+Since RB-MIN uses similar preprocessing tools as UU [ 11 ] , but less information in antecedent prediction , this gap in performance is likely caused by the different markable detection methods .
+316 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24,25,26:24:paraphrase 27:25:preserved 28:26:preserved 29:27:preserved 30:28:preserved 31:29:preserved 32:30:preserved 33:31:preserved 34:32:preserved
+
+UU pointed in their paper that markable detection is one of the challenges of this task [ 11 ] .
+UU pointed in their paper that markable detection is one of the challenges of this task [ 11 ] .
+317 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+In their system , UU used a machine learning approach , and tested two distinguished models for markable detection : one solved both anaphors and antecedents together , the other treated anaphors and antecedents separately .
+In their system , UU used a machine learning approach , and tested two distinguished models for markable detection : one solved both anaphors and antecedents together , the other treated anaphors and antecedents separately .
+318 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+Meanwhile , our method is basically based on the boundary of noun phrases and pronouns , as is outputted from the parser .
+Meanwhile , our method is basically based on the boundary of noun phrases and pronouns , as is outputted from the parser .
+319 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved
+
+The patterns used to extract the proper noun phrases and pronouns , are manually designed concerning the markable boundaries annotated in the training data .
+The patterns used to extract the proper noun phrases and pronouns , are manually designed concerning the markable boundaries annotated in the training data .
+320 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+Breaking down the system performance by types of anaphors gives us an insight into what have been solved by our methods , and what needs more improvement effort .
+Breaking down the system performance by the different types of anaphors provides us with insight into what has been accomplished / solved by our methods , and also provides us with improvement opportunities .
+323 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:8,7,6:paraphrase 7:9:preserved 8:10:preserved 9:11:paraphrase 10:12:preserved 11::mogrammar-det 12:14:preserved 13:15:preserved 14:16:preserved 15,17,16:17,18,19:paraphrase 26:31:preserved :13:mogrammar-prep
+
+Concerning the RELAT type of coreference , we can see that RB-MIN and RB-FULL both achieve comparable results with the best team in BioNLP-ST 2011 .
+Concerning the RELAT type of coreference , we can see that RB-MIN and RB-FULL both achieve comparable results with the best team in BioNLP-ST 2011 .
+324 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved
+
+However , it should be noted that our antecedent prediction for the RELAT type is based completely on the output of Enju parser for the RELAT type , so in order to improve this type of coreference , we have to find ways to overcome the parse errors on noun phrase boundary detection and relative clause attachment ( See section Discussions ) .
+However , it should be noted that our antecedent prediction for the RELAT type is based solely on the output of the Enju parser for the RELAT type , so in order to improve this type of coreference , we have to find ways to overcome the parse errors on noun phrase boundary detection and relative clause attachment ( See Discussions section ) .
+325 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:paraphrase 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved 42:43:preserved 43:44:preserved 44:45:preserved 45:46:preserved 46:47:preserved 47:48:preserved 48:49:preserved 49:50:preserved 50:51:preserved 51:52:preserved 52:53:preserved 53:54:preserved 54:55:preserved 55:56:preserved 56:57:preserved 57:58:preserved 58:59:preserved 59:61:preserved 60:60:preserved 61:62:preserved 62:63:preserved :21:mogrammar-det
+
+The increase in system performance on the PRON and DNP types by RB-FULL demonstrate the effectiveness of discourse and semantic information in the performance of protein coreference resolution .
+The increase in system performance on the PRON and DNP types by RB-FULL demonstrate the effectiveness of discourse and semantic information in the performance of protein coreference resolution .
+328 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Comparing RB-MIN , RB-FULL and RB-MIN+1 , 3 , we found that rule 3 , which stands for discourse preference , works well for the PRON type ( 2 ) .
+Comparing RB-MIN , RB-FULL and RB-MIN+1 , 3 , we found that rule 3 , which stands for discourse preference , works well for the PRON type ( 2 ) .
+329 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+On the other hand , the major contribution to the improvement of DNP resolution is from rule 2 .
+On the other hand , the major contribution to the improvement of DNP resolution is from rule 2 .
+330 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+This rule successfully utilizes the domain-specific information , which shows that coreference resolution requires domain-specific information .
+This rule successfully utilizes the domain-specific information , which shows that coreference resolution requires domain-specific information .
+331 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+To further explore the elements contributed to this significant improvement , we analyzed our system in more details .
+To further explore the elements contributed to this significant improvement , we analyzed our system in more detail .
+332 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:bigrammar-nnum 18:18:preserved
+
+The analysis results are given in section Discussions .
+The analyses of the results are provided in the section entitled Discussions .
+333 0:0:preserved 1:1:bigrammar-nnum 2:4:preserved 3:5:preserved 4:6:paraphrase 5:7:preserved 6:9:preserved 7:11:preserved :2:mogrammar-prep :3:mogrammar-det :8:mogrammar-det
+
+" >
+" >
+339 0:0:preserved 1:1:preserved
+
+Table 3 compares various configurations of the rule-based system .
+Table 3 compares various configurations of the rule-based system .
+341 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+The first , RB-MIN , is the minimal system .
+The first , RB-MIN , is the minimal system .
+342 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+The following three show contribution of the three rules , NUM-AGREE , SEM-CONS , and DISC-PREF .
+The following three show the contribution of the three rules , NUM-AGREE , SEM-CONS , and DISC-PREF .
+343 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved :4:mogrammar-det
+
+RB-FULL is the full system .
+RB-FULL is the full system .
+344 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved
+
+To emphasize the contribution of the semantic rules , it also shows RB-FULL-sem system .
+To emphasize the contribution of the semantic rules , it also shows RB-FULL-sem system .
+345 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved
+
+The combination of rule 1 , 2 and 3 resulted in 62 .4% fscore ( RB-MIN+1 , 2 , 3 ) ( Table 3 ) In this configuration , rule 2 contribute to the increasement of 4 points Fscore on the development set , and 2 .3 points Fscore on the test set , when comparing RB-MIN+1 , 3 and RB-MIN+1 , 2 , 3 .
+The combination of rule 1 , 2 and 3 resulted in a 62 .4% F-score ( RB-MIN+1 , 2 , 3 ) ( Table 3 ) In this configuration , rule 2 contributes to a 4-point F-score increase in the development set , and 2 .3-point F-score increase on the test set , when comparing RB-MIN+1 , 3 and RB-MIN+1 , 2 , 3 .
+348 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12:13:preserved 13:14:spelling 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:bigrammar-nnum 32:33:preserved 33:34:bigrammar-det 36,37,34,35:35,37:para-colocation 38:36:spelling 39:38:bigrammar-prep 40:39:preserved 41:40:preserved 42:41:preserved 43:42:preserved 44:43:preserved 45,46,47:44,45:spelling 48:46:spelling 49:48:preserved 50:49:preserved 51:50:preserved 52:51:preserved 53:52:preserved 54:53:preserved 55:54:preserved 56:55:preserved 57:56:preserved 58:57:preserved 59:58:preserved 60:59:preserved 61:60:preserved 62:61:preserved 63:62:preserved 64:63:preserved 65:64:preserved
+
+However , the result of RB-MIN is more than still 7 points higher than the state-of-the-art performance .
+However , the result of RB-MIN is still more than 7 points higher than in state-of-the-art performance .
+349 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:8:preserved 8:9:preserved 9:7:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14::mogrammar-det 15:15:preserved 16:16:preserved 17:17:preserved :14:mogrammar-prep
+
+This gain is due to the fact that the rule ensures the semantic type of antecedents is the same as their anaphors , enabling the correct detection of antecedents .
+This gain is due to the fact that the rule ensures that the semantic type of antecedents is the same as for their anaphors , thus enabling the correct detection of antecedents .
+350 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10,11:bigrammar-others 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:22:preserved 21:23:preserved 22:24,25:bigrammar-others 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved :21:mogrammar-prep
+
+In other words , if anaphor is classified as a protein reference , then antecedent must also be a protein reference .
+In other words , if an anaphor is classified as a protein reference , then the antecedent must also be a protein reference .
+351 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved :5:mogrammar-det :15:mogrammar-det
+
+The following examples illustrate the way rule 2 works .
+The following examples illustrate the way rule 2 works .
+352 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved
+
+( Coreference examples in this paper are represented as below : gold anaphoric and antecedent expressions are bracketed , antecedents before anaphors ; gold protein mentions are underlined ; and incorrect response antecedents are in italics . )
+( Coreference examples in this paper are represented in the following manner : gold anaphoric and antecedent expressions are bracketed , antecedents before anaphors ; gold protein mentions are underlined ; and incorrect response antecedents are in italics . )
+353 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8,9:8,9,10,11:paraphrase 10:12:preserved 11:13:preserved 12:14:preserved 13:15:preserved 14:16:preserved 15:17:preserved 16:18:preserved 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:24:preserved 23:25:preserved 24:26:preserved 25:27:preserved 26:28:preserved 27:29:preserved 28:30:preserved 29:31:preserved 30:32:preserved 31:33:preserved 32:34:preserved 33:35:preserved 34:36:preserved 35:37:preserved 36:38:preserved 37:39:preserved
+
+- " Therefore , [ IRF-1 ] may be an important contributor to IL-12 signaling , and we speculate that the defective IL-12 responses seen in IRF-1- / - mice might be attributable , in part , to the absence of [ this transcription factor ] . " ( PMID-10358173 )
+- " Therefore , [ IRF-1 ] may be an important contributor to IL-12 signaling , and we speculate that the defective IL-12 responses seen in IRF-1- / - mice might be attributable , in part , to the absence of [ this transcription factor ] . " ( PMID-10358173 )
+356 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved
+
+In this example , without rule 2 , the faulty response antecedent of this transcription factor is part because it is the closet antecedent candidate agreeing with the anaphor on the singular number .
+In this example , without rule 2 , the faulty response antecedent of this transcription factor is part because it is the closet antecedent candidate agreeing with the anaphor on the singular number .
+359 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+Meanwhile since this transcription factor is recognized as a protein reference , its closest protein antecedent IRF-1 was successfully detected by RB-FULL .
+Meanwhile , since this transcription factor is recognized as a protein reference , its closest protein antecedent IRF-1 was successfully detected by RB-FULL .
+360 0:0:preserved 1:2:preserved 2:3:preserved 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved
+
+Another interesting example is
+Another example is :
+363 0:0:preserved 2:1:preserved 3:2:preserved
+
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( PMID-7964516 )
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( PMID-7964516 )
+366 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+Concerning the anaphoric pronoun its in this example , there are several antecedent candidates : this role , c-Myc , apoptosis , studies , a dominant negative form of its heterodimeric binding partner .
+Concerning the anaphoric pronoun its in this example , there are several antecedent candidates : this role , c-Myc , apoptosis , studies , a dominant negative form of its heterodimeric binding partner .
+369 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+Although studies and a dominant negative form of its heterodimeric binding partner have been crossed out because of disagreement in numbers , and violation of abandoned syntactic constraints correspondingly , the system would return the incorrect antecedent apoptosis instead of c-Myc .
+Although studies and a dominant negative form of its heterodimeric binding partner have been crossed out because of disagreement in numbers , and violation of abandoned syntactic constraints , correspondingly , the system would return the incorrect antecedent apoptosis instead of c-Myc .
+370 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved
+
+Fortunately , the containing noun phrase of the anaphor its has the modifier word binding , which is a clue for classifying its as a protein reference ( See Semantic type classification for pronominal anaphors ) .
+Fortunately , the containing noun phrase of the anaphor its has the modifier word binding , which is a clue for classifying its as a protein reference ( See Semantic type classification for pronominal anaphors ) .
+371 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+Rule 2 utilizes semantic classification result to make correct selection .
+Rule 2 utilizes semantic classification result to make the correct selection .
+372 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:9:preserved 9:10:preserved 10:11:preserved :8:mogrammar-det
+
+In our system , domain-specific semantic information is ultilized at two places : anaphor selection and antecedent prediction .
+In our system , domain-specific semantic information is utilized in two places : anaphor selection and antecedent prediction .
+377 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:spelling 9:9:bigrammar-prep 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved
+
+The effect of semantic information in antecedent prediction has been analyzed in above section .
+The effect of semantic information in antecedent prediction has been analyzed in the sections above .
+378 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:14:preserved 13:13:bigrammar-nnum 14:15:preserved :12:mogrammar-det
+
+In this subsection , we are going to explore the contribution of semantic information in the anaphor selection step .
+In this subsection , we are going to explore the contribution of semantic information in the anaphor selection step .
+379 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+To classify anaphors into protein or non-protein reference , our system employs a head-word based classfier for definite noun phrases , DEFNP-ANA-SEM , and a context-based classifier for pronouns , PRO-ANA-SEM ( Section Methods ) .
+To classify anaphors into protein or non-protein reference , our system employs a head-word based classifier for definite noun phrases , DEFNP-ANA-SEM , and a context-based classifier for pronouns , PRO-ANA-SEM ( Section Methods ) .
+382 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:typo 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+Without limiting the number of anaphors by using semantic information-based filtering , the precision significantly drops , causing a big decrease in Fscore ( Table 4 , RB-FULL w / o DEFNP-ANA-SEM ) . .
+Without limiting the number of anaphors by using semantic information-based filtering , the precision significantly drops , causing a big decrease in the F-score ( Table 4 , RB-FULL without DEFNP-ANA-SEM ) .
+383 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:23:spelling 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 30,29,28:29:spelling 31:30:preserved 32:31:preserved 33:32:preserved :22:mogrammar-det
+
+This is because the semantic filter is the only way to filter out definite noun phrase anaphors .
+This decrease is due to the fact that the semantic filter is the only way to filter out definite noun phrase anaphors .
+384 0:0,1:paraphrase 1:2:preserved 2:3,4,5,6,7:paraphrase 3,4,5:8,9,10:preserved 6,7,8,9,10,11,12,13,14,15,16:11,12,13,14,15,16,17,18,19,20,21:preserved
+
+Without the filter , all definite expressions , which include a huge amount of non-anaphoric expressions , are considered as anaphors .
+Without the filter , all definite expressions , which include a huge amount of non-anaphoric expressions , are considered as anaphors .
+385 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Besides the anaphoric use , definite noun phrases are also used to refer to entities or concepts in the common domain knowledge shared between readers and writers .
+Besides the anaphoric use , definite noun phrases are also used to refer to entities or concepts in the common domain knowledge shared between readers and writers .
+386 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+Statistics in [ 21 ] show that only around 30% of definite noun phrases are anaphoric , and the other uses according to their classification include associative , unfamiliar / larger situation , idiom and doubt .
+Statistics in [ 21 ] show that only around 30% of definite noun phrases are anaphoric , and the other uses according to their classification include associative , unfamiliar / larger situation , idiom and doubt .
+387 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved
+
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is extremely difficult .
+Distinguishing such non-anaphoric definite noun phrases from anaphoric ones is extremely difficult .
+388 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved
+
+In our system , contextual information of possessive pronouns is utilized through the protein key words ( Section Methods ) , and this contributed to 1 .8% gain in f-score ( Table 4 , RB-FULL w / o PRO-ANA-SEM ) .
+In our system , contextual information of possessive pronouns is utilized through the protein key words ( Section Methods ) , and this contributed to a 1 .8% gain in F-score ( Table 4 , RB-FULL without PRO-ANA-SEM ) .
+391 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved 34:35:preserved 35,36,37:36:spelling 38:37:preserved 39:38:preserved 40:39:preserved :25:mogrammar-det
+
+This is an encouraging sign to seek for a systematic method to exploit and include such contextual information in coreference resolution .
+This gain is a good indication for seeking a systematic method to develop and include such contextual information in coreference resolution .
+392 2,0,1,3,4:0,1,2,3,4,5:paraphrase 7,6,5:7,6:paraphrase 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:paraphrase 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved
+
+Below are the examples showing the effectiveness of semantic information from the context of pronouns .
+Examples showing the effectiveness of semantic information from the context of pronouns is provided below :
+393 0:14:preserved 1:12,13:paraphrase 2::unaligned 3:0:preserved 4:1:preserved 5,6:2,3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11,12:8,9:preserved 13:10:preserved 14:11:preserved
+
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( MID-7964516 )
+- " This role for [ c-Myc ] in apoptosis is now confirmed in studies using a dominant negative form of [ its ] heterodimeric binding partner , Max , which . . . " ( MID-7964516 )
+396 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved
+
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential . " ( PMID-10221658 )
+- " This ability of [ CIITA ] to facilitate promoter occupation is undissociable from [ its ] transactivation potential . " ( PMID-10221658 )
+399 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved
+
+- " In transient transfectin experiments , [ BCL6 ] can repress transcription from promoters linked to [ its ] DNA target sequence and this activity is . . . " ( PMID-8692924 )
+- " In transient transfectin experiments , [ BCL6 ] can repress transcription from promoters linked to [ its ] DNA target sequence and this activity is . . . " ( PMID-8692924 )
+402 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved
+
+- " [ Human immunodeficiency virus type 1 ( HIV-1 ) Tat ] , an early regulatory protein that is critical for viral gene expression and replication , transactivates the HIV-1 long terminal repeat ( LTR ) via [ its ] binding to the transactivation response element ( TAR ) and , . . . " ( PMID-9261367 )
+- " [ Human immunodeficiency virus type 1 ( HIV-1 ) Tat ] , an early regulatory protein that is critical for viral gene expression and replication , transactivates the HIV-1 long terminal repeat ( LTR ) via [ its ] binding to the transactivation response element ( TAR ) and , . . . " ( PMID-9261367 )
+405 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved 52:52:preserved 53:53:preserved 54:54:preserved 55:55:preserved 56:56:preserved 57:57:preserved 58:58:preserved
+
+In all the above examples , the appearance of words such as binding , transactivation , DNA target sequence in the noun phrases of which the anaphor plays a role as a determiner , is contextual indicator for the protein type .
+In all the examples above , the appearance of words such as binding , transactivation , DNA target sequence in the noun phrases for which the anaphor plays a role as a determiner , is a contextual indicator for the protein type .
+408 0:0:preserved 1:1:preserved 2:2:preserved 3:4:preserved 4:3:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:bigrammar-prep 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:36:preserved 36:37:preserved 37:38:preserved 38:39:preserved 39:40:preserved 40:41:preserved 41:42:preserved :35:mogrammar-det
+
+Since the anaphors are predicted as protein reference from their context , the system correctly detects their protein antecedents .
+Since the anaphors are predicted as protein reference from their context , the system correctly detects their protein antecedents .
+409 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Other challenges specific to the protein coreference task Number agreement is a constraint in English writing .
+Other challenges specific to the protein coreference task Number agreement is a constraint in English writing .
+414 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved
+
+However , we found in the data several coreferential expressions violating this constraint .
+However , in the data , we found several coreferential expressions that violate this constraint .
+415 0:0:preserved 1:1:preserved 2,3:6,7:preserved 4:2:preserved 5:3:preserved 6:4:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11,12:paraphrase 11:13:preserved 12:14:preserved 13:15:preserved
+
+For instance , the anaphor and antecedent in the following :
+The anaphor and antecedent in the following is an instance of this violation :
+416 0,1:7,8,9,10,11,12:paraphrase 3:0:preserved 4:1:preserved 5:2:preserved 6:3:preserved 7:4:preserved 8:5:preserved 9:6:preserved 10:13:preserved
+
+- " . . .for OTF-2 in DRA gene transcription .
+- " . . .for OTF-2 in DRA gene transcription .
+419 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+In contrast , [ OTF-1-enriched protein fractions ] did not affect DRA gene transcription although [ it ] functionally enhanced the transcription of another . . . " ( PMID-1560002 )
+In contrast , [ OTF-1-enriched protein fractions ] did not affect DRA gene transcription although [ it ] functionally enhanced the transcription of another . . . " ( PMID-1560002 )
+420 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved
+
+Coreference annotation and evaluation Current protein coreference evaluation scheme generates protein links ( links between anaphors and antecedent proteins ) from surface links ( links between anaphors and antecedent expressions ) , without concerning the relative position of antecedent proteins in the antecedent expression .
+Coreference annotation and evaluation Current protein coreference evaluation schemes generate protein links ( links between anaphors and antecedent proteins ) from surface links ( links between anaphors and antecedent expressions ) , without concerning the relative position of antecedent proteins in the antecedent expression .
+423 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:bigrammar-nnum 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved
+
+Therefore , when the proteins appear in premodifiers or postmodifers of noun phrases as [ cDNAs encoding EBF or a covalent homodimer of E47 ] in this example
+Therefore , when the proteins appear in premodifiers or postmodifers of noun phrases as [ cDNAs encoding EBF or a covalent homodimer of E47 ] in this example :
+424 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved
+
+- " With the aim of identifying genetic targets for these transcription factors , we stably transfected [ cDNAs encoding EBF or a covalent homodimer of E47 ] , individually or together , into immature hematopoietic Ba / F3 cells , which lack [ both factors ] . " ( PMID-9252117 )
+- " With the aim of identifying genetic targets for these transcription factors , we stably transfected [ cDNAs encoding EBF or a covalent homodimer of E47 ] , individually or together , into immature hematopoietic Ba / F3 cells , which lack [ both factors ] . " ( PMID-9252117 )
+427 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved 36:36:preserved 37:37:preserved 38:38:preserved 39:39:preserved 40:40:preserved 41:41:preserved 42:42:preserved 43:43:preserved 44:44:preserved 45:45:preserved 46:46:preserved 47:47:preserved 48:48:preserved 49:49:preserved 50:50:preserved 51:51:preserved
+
+Such proteins might not be the right antecedent proteins .
+Such proteins might not be the correct antecedent proteins .
+430 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:paraphrase 7:7:preserved 8:8:preserved 9:9:preserved
+
+In furture , corpus annotation and evaluation scheme should be revised for the ease of automation of coreference resolution .
+In future , revision of corpus annotation and evaluation schemes would benefit the ease of automation of coreference resolution .
+431 0:0:preserved 1:1:typo 2:2:preserved 3:5:preserved 4:6:preserved 5:7:preserved 6:8:preserved 7:9:bigrammar-nnum 8,9,10,11:3,4,10,11:paraphrase 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Parse error Coreference expression boundary is determined mostly based on noun phrase boundary output from parser .
+Parse error Coreference expression boundary is determined mostly based on noun phrase boundary output from the parser .
+434 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:16:preserved 16:17:preserved :15:mogrammar-det
+
+Therefore , parse error on noun phrase boundary strongly affects the performance of coreference resolution .
+Therefore , parse error on noun phrase boundary strongly affects the performance of coreference resolution .
+435 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved
+
+Examining the data , we found that many antecedent expressions of plural anaphors are coordinated noun phrases , which are unfortunately difficult cases to many parsers including Enju .
+Examining the data , we found that many antecedent expressions of plural anaphors are coordinated noun phrases , which are unfortunately difficult cases to many parsers including Enju .
+436 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved
+
+Incorporation of recent works for coordination resolution like [ 20 ] should be useful to improve the performance .
+Incorporation of recent works for coordination resolution like [ 20 ] should be useful for improving the performance .
+437 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 15,14:15,14:paraphrase 16:16:preserved 17:17:preserved 18:18:preserved
+
+The following example shows a coordination-structured antecedent AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 that was failed to be detected by the parser .
+The following example shows a coordination-structured antecedent AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 that failed to be detected by the parser .
+438 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25,26:25:para-passact 27:26:preserved 28:27:preserved 29:28:preserved 30:29:preserved 31:30:preserved 32:31:preserved 33:32:preserved
+
+The spurious response expression is transcription factors from several families .
+The spurious response expression is transcription factors from several families .
+439 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved
+
+- " granulocytic and monocytic lineages , transcription factors from several families are active , including [ AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 ] .
+- " granulocytic and monocytic lineages , transcription factors from several families are active , including [ AML1 / CBF beta , C / EBP , Ets , c-Myb , HOX , and MZF-1 ] .
+442 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved 20:20:preserved 21:21:preserved 22:22:preserved 23:23:preserved 24:24:preserved 25:25:preserved 26:26:preserved 27:27:preserved 28:28:preserved 29:29:preserved 30:30:preserved 31:31:preserved 32:32:preserved 33:33:preserved 34:34:preserved 35:35:preserved
+
+Few of [ these factors ] are expressed exclusively in myeloid cells ; . . . " ( PMID-9291089 )
+Few of [ these factors ] are expressed exclusively in myeloid cells ; . . . " ( PMID-9291089 )
+443 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 15:15:preserved 16:16:preserved 17:17:preserved 18:18:preserved 19:19:preserved
+
+Our work has confirmed again that domain knowledge is indispensable for coreference resolution .
+Our current work has reconfirmed that domain knowledge is indispensable for coreference resolution .
+448 0:0:preserved 1:2:preserved 2:3:preserved 3:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved
+
+Since the biologicaldomain has richer knowledge resources than any other domain , it would be interesting to continue studying how to exploit and employ domain-specific semantic information in coreference resolution for this domain .
+Since the biological domain has richer knowledge resources than any other domain , it would be interesting to continue studying how to exploit and employ domain-specific semantic information in coreference resolution for this domain .
+449 0:0:preserved 1:1:preserved 2:2,3:spelling 3:4:preserved 4:5:preserved 5:6:preserved 6:7:preserved 7:8:preserved 8:9:preserved 9:10:preserved 10:11:preserved 11:12:preserved 12:13:preserved 13:14:preserved 14:15:preserved 15:16:preserved 16:17:preserved 17:18:preserved 18:19:preserved 19:20:preserved 20:21:preserved 21:22:preserved 22:23:preserved 23:24:preserved 24:25:preserved 25:26:preserved 26:27:preserved 27:28:preserved 28:29:preserved 29:30:preserved 30:31:preserved 31:32:preserved 32:33:preserved 33:34:preserved
+
+Another conclusion concerns with markable detection .
+Another conclusion concerns markable detection .
+452 0:0:preserved 1:1:preserved 2:2:preserved 3::mogrammar-prep 4:3:preserved 5:4:preserved 6:5:preserved
+
+This subproblem is often thought as an easy task in coreference resolution systems , however , indeed it is an important subtask which strongly affects the performance of coreference system .
+This sub-problem is often regarded as an easy task in coreference resolution systems ; however , in actuality , it is an important subtask , which strongly affects the performance of coreference system .
+453 0:0:preserved 1:1:spelling 2:2:preserved 3:3:preserved 4:4:paraphrase 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:15:preserved 14:14:preserved 15:18:preserved 16:16,17:paraphrase 17:19:preserved 18:20:preserved 19:21:preserved 20:22:preserved 21:23:preserved 22:25:preserved 23:26:preserved 24:27:preserved 25:28:preserved 26:29:preserved 27:30:preserved 28:31:preserved 29:32:preserved 30:33:preserved
+
+Sticking to the gold data in the designing markable detection method as we did in this paper is one of the strategies .
+Sticking to the gold data in designing the markable detection method , as done in this paper , is one employed strategy .
+454 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:7:preserved 7:6:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:12:preserved 12,13:13:paraphrase 14:14:preserved 15:15:preserved 16:16:preserved 17:18:preserved 18:19:preserved 21,19,20:21,20:paraphrase 22:22:preserved
+
+However , from another perspective , the perspective of coreference data creation , we should revise the markable annotations , for the sake of automatic and robust markable detection .
+However , from the perspective of coreference data creation , revision of the markable annotations would aid in automatic and robust markable detection .
+455 0:0:preserved 1:1:preserved 2:2:preserved 4::unaligned 6,7:3,4:preserved 8:5:preserved 9:6:preserved 10:7:preserved 11:8:preserved 12:9:preserved 13,14,15,21,22,23,20:10,11,15,16,17:paraphrase 17,18,16:14,13,12:preserved 28,27,26,25,24:22,21,20,19,18:preserved
+
+As for the future , more effort should be spent on automating the semantic classification for coreference expressions using context .
+For future opportunities , more effort should be spent on automating the semantic classification for coreference expressions , using context .
+458 0,2,1,3:0,1,2:paraphrase 4:3:preserved 5:4:preserved 6:5:preserved 7:6:preserved 8:7:preserved 9:8:preserved 10:9:preserved 11:10:preserved 12:11:preserved 13:12:preserved 14:13:preserved 15:14:preserved 16:15:preserved 17:16:preserved 18:18:preserved 19:19:preserved 20:20:preserved
+
+Furthermore , it would be interesting to test the results in this study in a machine learning framework .
+Furthermore , it would be interesting to test the results in this study in a machine-learning framework .
+459 0:0:preserved 1:1:preserved 2:2:preserved 3:3:preserved 4:4:preserved 5:5:preserved 6:6:preserved 7:7:preserved 8:8:preserved 9:9:preserved 10:10:preserved 11:11:preserved 12:12:preserved 13:13:preserved 14:14:preserved 16,15:15:spelling 17:16:preserved 18:17:preserved
+
