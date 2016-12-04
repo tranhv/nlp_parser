@@ -1,7 +1,8 @@
 require 'engtagger'
 require 'lemmatizer'
 require 'json'
-require 'nokogiri'
+require 'xmlsimple'
+
 
 class ReadData
   DATA_PATH = "./data"
@@ -215,9 +216,14 @@ class ReadData
         output_file.write("\n")
       end
     end
-  end  
+  end
 
   def main
+    data_nucle = get_data_nucle(DATA_PATH + "/nucle3.0.sgml")
+  end
+
+
+  def main1
     # data_giza = get_data_giza(DATA_PATH + "/union.UA3.final")
     # merged_aln_crp = File.open(DATA_PATH + "/merged_kigoshi.txt","w")
     # merged_aln_crp.write("")
@@ -879,9 +885,70 @@ class ReadData
   end
 
   def get_data_nucle(xml_str)
-    doc = Nokogiri::XML(xml_str)
-    
-  end 
+    # DATA_PATH = './data'
+    # xml_str = DATA_PATH + "/nucle3.0.sgml"
+    # doc = Nokogiri::XML(File.open(xml_str))
+    # doc = Nokogiri::Slop(File.open(xml_str))
+    # puts "doc --> #{doc.inspect}"
+    docs = XmlSimple.xml_in(xml_str, { 'KeyAttr' => 'name' })
+
+    data = {}
+
+    docs["DOC"].each do |doc|
+      paras = []
+      doc["TEXT"].first["P"].each do |para|
+        paras << para
+      end
+
+# <MISTAKE start_par="1" start_off="210" end_par="1" end_off="216">
+#     <TYPE>Vform</TYPE>
+#     <CORRECTION>cause</CORRECTION>
+# </MISTAKE>
+# <MISTAKE start_par="1" start_off="217" end_par="1" end_off="219">
+#     <TYPE>Vform</TYPE>
+#     <CORRECTION>cause</CORRECTION>
+# </MISTAKE>
+      doc["ANNOTATION"].first["MISTAKE"].each do |mis|
+        puts "Wrong annotation data #{mis}" if mis["start_par"].to_i != mis["end_par"].to_i
+        length_align = mis["end_off"].to_i - mis["start_off"].to_i
+        para_ixd = mis["start_par"].to_i - 1
+        para = paras[para_ixd]
+        source, source_index, mis_source_index = find_sen(para.split("."), mis["start_off"].to_i)
+
+        puts "data --> #{data.inspect}"
+
+        if !data.empty? && data[doc["nid"]] && data[doc["nid"]][para_ixd] && data[doc["nid"]][para_ixd][source_index]
+          pair = data[doc["nid"]][para_ixd][source_index]
+        else
+          pair = Sentence_Pair.new
+          pair.Alignment = []
+          data[doc["nid"]] = {para_ixd => {source_index => pair}}
+        end
+        align = Alignment.new
+        str_to_replace = para[mis["end_off"].to_i, length_align]
+        pair.source = source
+        pair.target = source
+        source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
+        align.source_numbers = work_index
+        align.tag_name = mis["TYPE"].first
+        align.target_numbers = {:str_target => mis["CORRECTION"].first}
+        pair.Alignment << align
+      end
+    end
+    puts "data ==> #{data.inspect}"
+    data
+  end
+
+  def find_sen(arr_str, index)
+    len = 0
+    arr_str.each_with_index do |sen, idx|
+      len += sen.length + 1
+      if index <= len
+        return [sen, idx, index - (len - (sen.length + 1))]
+      end
+    end
+    return ["", -1, -1]
+  end
 
   def parse_alignment_meteor(line_align)
     line_align.gsub!("\t\t\t", "\t\t")

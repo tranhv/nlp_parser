@@ -1,0 +1,443 @@
+<root>
+<DOC nid="829">
+<TEXT>
+<TITLE>
+CREATING A HABITABLE ENVIRONMENT
+</TITLE>
+<P>
+Humans have many basic needs and one of them is to have an environment that can sustain their lives. Our current population is 6 billion people and it is still growing exponentially. This will, if not already, caused problems as there are very limited spaces for us. The solution can be obtain by using technology to achieve a better usage of space that we have and resolve the problems in lands that inhospitable such as desserts and swamps.
+</P>
+<P>
+Some countries are having difficulties in managing a place to live for their citizen as they tend to get overpopulated. This caused problem like the appearance of slums which most of the time is not safe due to the unhealthy environment. The only way to satisfy the increasing demands of space is by achieving a better usage of the land like designing taller building so it can accommodate more number of people with the same spaces. It is also important to create a better material that can support the buildings despite any natural disaster like earthquakes. A good example is Japan where there are a lot of tall condominiums despite the large number of earthquakes happening in there. Besides a better usage of lands, a better sanitation is also needed because a huge number of people need a clean environment to maintain their heath. For example, countries in Africa can accommodate more people if they can manage to design a better sanitation system.
+</P>
+<P>
+Countries with a lot of inhospitable space need not only to achieve a better space usage, but also to reforms the land to make it livable and technology can help it in a number of ways depending on the trouble the lands have. For example, countries with a lot of deserts can terraform their desert to increase their habitable land and using irrigation to provide clean water to the desert. Dubai will be a good example for this as previously the country got almost no natural water and they use irrigation to bring natural water to the country. Another example is Netherlands, whose most of his lands is a swamp under sea level, have used a good irrigation system to counter their problem and to make their land habitable.
+</P>
+<P>
+As the number of people grows, the need of habitable environment is unquestionably essential. In this era, Engineering designs can help to provide more habitable accommodation by designing a stronger material so it's possible to create a taller and safer building, a better and efficient sanitation system to prevent disease, and also by designing a way to change the condition of the inhabitable environment.
+</P>
+</TEXT>
+<ANNOTATION teacher_id="172">
+<MISTAKE start_par="1" start_off="210" end_par="1" end_off="216">
+<TYPE>Vform</TYPE>
+<CORRECTION>cause</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="1" start_off="252" end_par="1" end_off="258">
+<TYPE>Nn</TYPE>
+<CORRECTION>space</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="1" start_off="235" end_par="1" end_off="238">
+<TYPE>SVA</TYPE>
+<CORRECTION>is</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="1" start_off="287" end_par="1" end_off="293">
+<TYPE>Vform</TYPE>
+<CORRECTION>obtained</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="1" start_off="387" end_par="1" end_off="389">
+<TYPE>Wcip</TYPE>
+<CORRECTION>of</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="1" start_off="396" end_par="1" end_off="413">
+<TYPE>V0</TYPE>
+<CORRECTION>that are inhospitable</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="77" end_par="2" end_off="84">
+<TYPE>Nn</TYPE>
+<CORRECTION>citizens</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="42" end_par="2" end_off="50">
+<TYPE>Others</TYPE>
+<CORRECTION>managing to get</CORRECTION>
+<COMMENT>missing words</COMMENT>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="125" end_par="2" end_off="131">
+<TYPE>Vt</TYPE>
+<CORRECTION>has caused</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="132" end_par="2" end_off="139">
+<TYPE>Nn</TYPE>
+<CORRECTION>problems</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="149" end_par="2" end_off="159">
+<TYPE>Wcip</TYPE>
+<CORRECTION>formation and growth</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="192" end_par="2" end_off="194">
+<TYPE>Vform</TYPE>
+<CORRECTION>are</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="199" end_par="2" end_off="203">
+<TYPE>Others</TYPE>
+<CORRECTION>safe to live in</CORRECTION>
+<COMMENT>missing words</COMMENT>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="211" end_par="2" end_off="214">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION>their</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="285" end_par="2" end_off="287">
+<TYPE>Wcip</TYPE>
+<CORRECTION>for</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="328" end_par="2" end_off="331">
+<TYPE>Rloc</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="390" end_par="2" end_off="394">
+<TYPE>Wcip</TYPE>
+<CORRECTION>a greater</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="371" end_par="2" end_off="373">
+<TYPE>Pref</TYPE>
+<CORRECTION>the same area of land</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="412" end_par="2" end_off="432">
+<TYPE>Rloc</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="458" end_par="2" end_off="464">
+<TYPE>Wcip</TYPE>
+<CORRECTION>use</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="465" end_par="2" end_off="466">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="500" end_par="2" end_off="503">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="514" end_par="2" end_off="521">
+<TYPE>Wcip</TYPE>
+<CORRECTION>during</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="534" end_par="2" end_off="542">
+<TYPE>Nn</TYPE>
+<CORRECTION>disasters</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="579" end_par="2" end_off="584">
+<TYPE>Mec</TYPE>
+<CORRECTION>Japan,</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="678" end_par="2" end_off="680">
+<TYPE>Rloc</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="714" end_par="2" end_off="719">
+<TYPE>Nn</TYPE>
+<CORRECTION>land</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="721" end_par="2" end_off="722">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="788" end_par="2" end_off="792">
+<TYPE>Vt</TYPE>
+<CORRECTION>will need</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="831" end_par="2" end_off="836">
+<TYPE>Mec</TYPE>
+<CORRECTION>health</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="102" end_par="3" end_off="109">
+<TYPE>Vform</TYPE>
+<CORRECTION>reform</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="102" end_par="3" end_off="137">
+<TYPE>Wcip</TYPE>
+<CORRECTION>restore the land to a livable state</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="162" end_par="3" end_off="164">
+<TYPE>Pref</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="202" end_par="3" end_off="209">
+<TYPE>Wcip</TYPE>
+<CORRECTION>quality</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="202" end_par="3" end_off="224">
+<TYPE>Wcip</TYPE>
+<CORRECTION>quality of the land</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="263" end_par="3" end_off="270">
+<TYPE>Nn</TYPE>
+<CORRECTION>desert</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="275" end_par="3" end_off="284">
+<TYPE>Wcip</TYPE>
+<CORRECTION>transform</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="335" end_par="3" end_off="340">
+<TYPE>Vform</TYPE>
+<CORRECTION>use</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="482" end_par="3" end_off="485">
+<TYPE>Trans</TYPE>
+<CORRECTION>But</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="476" end_par="3" end_off="482">
+<TYPE>Mec</TYPE>
+<CORRECTION>water.</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="486" end_par="3" end_off="490">
+<TYPE>Pref</TYPE>
+<CORRECTION>it</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="491" end_par="3" end_off="494">
+<TYPE>SVA</TYPE>
+<CORRECTION>uses</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="577" end_par="3" end_off="582">
+<TYPE>Pref</TYPE>
+<CORRECTION>where</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="591" end_par="3" end_off="594">
+<TYPE>Pref</TYPE>
+<CORRECTION>the</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="595" end_par="3" end_off="600">
+<TYPE>Nn</TYPE>
+<CORRECTION>land</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="604" end_par="3" end_off="605">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="622" end_par="3" end_off="628">
+<TYPE>Sfrag</TYPE>
+<CORRECTION>level. It</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="629" end_par="3" end_off="633">
+<TYPE>SVA</TYPE>
+<CORRECTION>has</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="40" end_par="4" end_off="42">
+<TYPE>Wcip</TYPE>
+<CORRECTION>for</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="107" end_par="4" end_off="118">
+<TYPE>Mec</TYPE>
+<CORRECTION>engineering</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="83" end_par="4" end_off="92">
+<TYPE>Wcip</TYPE>
+<CORRECTION>increasing</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="162" end_par="4" end_off="175">
+<TYPE>Wcip</TYPE>
+<CORRECTION>environment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="189" end_par="4" end_off="190">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="229" end_par="4" end_off="235">
+<TYPE>Wcip</TYPE>
+<CORRECTION>build</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="236" end_par="4" end_off="263">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION>taller and safer buildings</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="209" end_par="4" end_off="225">
+<TYPE>Rloc</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="263" end_par="4" end_off="264">
+<TYPE>Mec</TYPE>
+<CORRECTION>and</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="338" end_par="4" end_off="363">
+<TYPE>Rloc</TYPE>
+<CORRECTION>changing</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="385" end_par="4" end_off="396">
+<TYPE>Wcip</TYPE>
+<CORRECTION>otherwise uninhabitable</CORRECTION>
+</MISTAKE>
+</ANNOTATION>
+</DOC>
+
+<DOC nid="830">
+<TEXT>
+<TITLE>
+The Factors that Shaped Biometrics
+</TITLE>
+<P>
+Identification has become more and more important in our society. Thanks to biometric identification, nowadays, we can open a locked door without keys, withdraw money from the bank without entering password, and travel around the world without taking various cards. Biometrics, by definition, refers to technologies of measurement and analysis of human body characteristics. These characteristics include fingerprints, eye retinas and irises, voice patterns, facial patterns and hand measurements. Besides some technologically determinists that allow the development of biometric identification, this technology is also shaped by three social factors, namely, the desire of the society for safety, convenience and economy.
+</P>
+<P>
+Safety is one of the crucial problems that many countries and companies concern. On one hand more and more virus and hack can access personal computers, so the secret data and documents may be stolen. On the other hand, some important departments need strict administration to their members to avoid information leaks. The United States Department of Defense (DoD) {Common Access Card}[HYPERLINK: http://en.wikipedia.org/wiki/Common_Access_Card] is a successful use of biometric identification. This card contains biometric data to add security and reduce the risk of falsification (Ben, 2008). As we can see, the biometric identification involved in important secure areas is designed to identify human with accuracy and reliability.
+</P>
+<P>
+Besides safety, convenience is also desirable for identifications. We do not want to spend time and effort to remember password, neither do we want to carry any cards or equipments to show our identification. For government and other organizations, they are also looking for small size equipments and time-saving progress of identification. Therefore nowadays the biometric identification progress is designed to be very quick, and the equipments can be easily set up or can be combined with other equipments. We can have fingerprint verification reader combined with built-in smartcard reader, and it only takes seconds to verify one's identification.
+</P>
+<P>
+Moreover, the society is looking for economic ways of identification. Therefore, the equipments of biometric identification tend to be in-expensive. For instance, Retinal Technologies, Inc. (RTI), which captures a retinal image at distances from the user's eye with the means of just using a patented aspheric lens array. Hence the RTI system is very inexpensively and can be commonly used (Retinal Technologies, Inc. Launches Company and Revolutionizes Biometrics With Patented Retinal Scanning Technology, 2001).
+</P>
+<P>
+The effects of the use of biometric identification are obvious. With biometric identification, our fingers, faces and even eyes become our identification. This technology is widely used in our society and it brings benefit to the government, the military, business and every individual.
+</P>
+<P>
+All in all, biometric identification achieves great development as human seek for better information protection, easier life style and greater economic profit, and it benefits much to those who shaped it.
+</P>
+<REFERENCE>
+<P>
+References B. Ben ({June 6}[HYPERLINK: http://en.wikipedia.org/wiki/June_6], {2008}[HYPERLINK: http://en.wikipedia.org/wiki/2008]). "{Bush pushes biometrics for national security}[HYPERLINK: http://www.fcw.com/online/news/152750-1.html]". Federal Computer Week. Retrieved 5th September, 2009, from {http://www.fcw.com/online/news/152750-1.html}[HYPERLINK: http://www.fcw.com/online/news/152750-1.html]
+</P>
+<P>
+Retinal Technologies, Inc. Launches Company and Revolutionizes Biometrics With Patented Retinal Scanning Technology (30th July,2001) Retrieved 5th, September, 2009, from {http://findarticles.com/p/articles/mi_m0EIN/is_2001_July_30/ai_76838243/}[HYPERLINK: http://findarticles.com/p/articles/mi_m0EIN/is_2001_July_30/ai_76838243/]
+</P>
+</REFERENCE>
+</TEXT>
+<ANNOTATION teacher_id="172">
+<MISTAKE start_par="1" start_off="511" end_par="1" end_off="526">
+<TYPE>Wform</TYPE>
+<CORRECTION>technological</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="72" end_par="2" end_off="79">
+<TYPE>Wcip</TYPE>
+<CORRECTION>are concerned about</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="107" end_par="2" end_off="112">
+<TYPE>Nn</TYPE>
+<CORRECTION>viruses</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="117" end_par="2" end_off="121">
+<TYPE>Wform</TYPE>
+<CORRECTION>hackers</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="156" end_par="2" end_off="159">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="259" end_par="2" end_off="273">
+<TYPE>Wcip</TYPE>
+<CORRECTION>rules</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="274" end_par="2" end_off="276">
+<TYPE>Wcip</TYPE>
+<CORRECTION>for</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="283" end_par="2" end_off="290">
+<TYPE>Others</TYPE>
+<CORRECTION>staff members over the use of confidential information</CORRECTION>
+<COMMENT>Meaning not complete</COMMENT>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="462" end_par="2" end_off="465">
+<TYPE>Wcip</TYPE>
+<CORRECTION>example</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="661" end_par="2" end_off="667">
+<TYPE>Wcip</TYPE>
+<CORRECTION>security-sensitive</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="639" end_par="2" end_off="647">
+<TYPE>Wcip</TYPE>
+<CORRECTION>employed</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="2" start_off="698" end_par="2" end_off="703">
+<TYPE>Nn</TYPE>
+<CORRECTION>people</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="50" end_par="3" end_off="65">
+<TYPE>Nn</TYPE>
+<CORRECTION>identification</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="50" end_par="3" end_off="66">
+<TYPE>Wcip</TYPE>
+<CORRECTION>identification purposes.</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="119" end_par="3" end_off="127">
+<TYPE>Nn</TYPE>
+<CORRECTION>passwords</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="129" end_par="3" end_off="136">
+<TYPE>Srun</TYPE>
+<CORRECTION>and neither</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="170" end_par="3" end_off="180">
+<TYPE>Nn</TYPE>
+<CORRECTION>equipment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="193" end_par="3" end_off="207">
+<TYPE>Wcip</TYPE>
+<CORRECTION>identity</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="286" end_par="3" end_off="296">
+<TYPE>Nn</TYPE>
+<CORRECTION>equipment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="322" end_par="3" end_off="324">
+<TYPE>Wcip</TYPE>
+<CORRECTION>for</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="297" end_par="3" end_off="322">
+<TYPE>Um</TYPE>
+<CORRECTION></CORRECTION>
+<COMMENT>Not sure what the phrase intends to mean</COMMENT>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="360" end_par="3" end_off="363">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="389" end_par="3" end_off="397">
+<TYPE>Wcip</TYPE>
+<CORRECTION>process</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="436" end_par="3" end_off="446">
+<TYPE>Nn</TYPE>
+<CORRECTION>equipment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="498" end_par="3" end_off="508">
+<TYPE>Nn</TYPE>
+<CORRECTION>equipment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="522" end_par="3" end_off="533">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION>a fingerprint</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="3" start_off="568" end_par="3" end_off="573">
+<TYPE>ArtOrDet</TYPE>
+<CORRECTION>a built</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="85" end_par="4" end_off="95">
+<TYPE>Nn</TYPE>
+<CORRECTION>equipment</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="124" end_par="4" end_off="128">
+<TYPE>SVA</TYPE>
+<CORRECTION>tends</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="135" end_par="4" end_off="147">
+<TYPE>Mec</TYPE>
+<CORRECTION>inexpensive</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="4" start_off="197" end_par="4" end_off="202">
+<TYPE>Sfrag</TYPE>
+<CORRECTION></CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="5" start_off="215" end_par="5" end_off="222">
+<TYPE>Nn</TYPE>
+<CORRECTION>benefits</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="5" start_off="256" end_par="5" end_off="264">
+<TYPE>Spar</TYPE>
+<CORRECTION>the business</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="6" start_off="67" end_par="6" end_off="72">
+<TYPE>Nn</TYPE>
+<CORRECTION>humans</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="6" start_off="167" end_par="6" end_off="183">
+<TYPE>Wcip</TYPE>
+<CORRECTION>brings tremendous benefits to</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="6" start_off="194" end_par="6" end_off="200">
+<TYPE>Vt</TYPE>
+<CORRECTION>shape</CORRECTION>
+</MISTAKE>
+</ANNOTATION>
+</DOC>
+</root>
