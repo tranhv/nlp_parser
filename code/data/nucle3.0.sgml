@@ -1,164 +1,93 @@
 <root>
-<DOC nid="829">
+<DOC nid="839">
 <TEXT>
-<TITLE>
-CREATING A HABITABLE ENVIRONMENT
-</TITLE>
 <P>
-Humans have many basic needs and one of them is to have an environment that can sustain their lives. Our current population is 6 billion people and it is still growing exponentially. This will, if not already, caused problems as there are very limited spaces for us. The solution can be obtain by using technology to achieve a better usage of space that we have and resolve the problems in lands that inhospitable such as desserts and swamps.
+In present days, engineers need to be creative and innovative in order to come up with new products. However, there are many problems that will hinder the engineering design process. We will focus our attention on the component decision process which will determine the type of raw materials to be used and the safety of the end product.
 </P>
 <P>
-Some countries are having difficulties in managing a place to live for their citizen as they tend to get overpopulated. This caused problem like the appearance of slums which most of the time is not safe due to the unhealthy environment. The only way to satisfy the increasing demands of space is by achieving a better usage of the land like designing taller building so it can accommodate more number of people with the same spaces. It is also important to create a better material that can support the buildings despite any natural disaster like earthquakes. A good example is Japan where there are a lot of tall condominiums despite the large number of earthquakes happening in there. Besides a better usage of lands, a better sanitation is also needed because a huge number of people need a clean environment to maintain their heath. For example, countries in Africa can accommodate more people if they can manage to design a better sanitation system.
+The cost of raw materials has risen significantly from the year 2003 to year 2009 and it has affected the electronics supply chain. We will look at two very important components in the manufacture of electronic components, gold and copper.
 </P>
 <P>
-Countries with a lot of inhospitable space need not only to achieve a better space usage, but also to reforms the land to make it livable and technology can help it in a number of ways depending on the trouble the lands have. For example, countries with a lot of deserts can terraform their desert to increase their habitable land and using irrigation to provide clean water to the desert. Dubai will be a good example for this as previously the country got almost no natural water and they use irrigation to bring natural water to the country. Another example is Netherlands, whose most of his lands is a swamp under sea level, have used a good irrigation system to counter their problem and to make their land habitable.
+The price of gold has risen from about US$380/troy ounce in June 2003 to about US$960/troy ounce in June 2009 ("Trend").1 Gold is a very important component in electrical conductivity and thus often used in contact points such as the communicating interface between the graphics card and the motherboard. Hence designs that need large amount of gold may not be feasible.
 </P>
 <P>
-As the number of people grows, the need of habitable environment is unquestionably essential. In this era, Engineering designs can help to provide more habitable accommodation by designing a stronger material so it's possible to create a taller and safer building, a better and efficient sanitation system to prevent disease, and also by designing a way to change the condition of the inhabitable environment.
+Another component is copper. Copper has good electrical conductivity which allows the conductor channel lengths and widths to be significantly reduced. This results in faster operating speed and greater circuit integration. However, the price of copper has risen from about US$1900/tonne in June 2003 to about US$6200/tonne in June 2009 ("Trend").1
+</P>
+<P>
+When engineers turn to other types of cheaper materials, some functions and accuracy of the end product may be sacrificed. However, if the engineers were to stick to their original design, the cost of the end product will be high. The high cost of the product may deter possible customers and in the end, the profit of the company will drop.
+</P>
+<P>
+Next we will look at product safety. The main idea of safety in a product is to ensure that the utilization of the product does not cause any injury or death to the user.
+</P>
+<P>
+One example would be the grounding of electronic devices. When electronic devices are not grounded properly, there is a probability that the user might get an electric shock when he/she accidentally come into contact with the device. If the current is very strong, there is even a chance that the user may die.
+</P>
+<P>
+Another example would be the cases of Apple's iPhone. There are many reports around the internet and on newspaper stating that some users' iPhone exploded and the main cause is due to the overheating of the lithium- ion battery.
+</P>
+<P>
+Lithium-ion battery has a temperature tolerance of about 60OC and anything above that will make the battery unsafe for use and in the worst case scenario; the battery explodes, causing injury or death to the user.
+</P>
+<P>
+Hazardous product can tarnish the reputation of the company and sometimes even result in the loss of innocent lives. Thus it is very important for engineers to do repeated trial test of the product to ensure that it is free of faults.
+</P>
+<P>
+From the points above, we can see that due to the increasing price of raw materials, it is very difficult to come up with new products consistently as it is very costly to build them. High selling price of the product will often deter potential customers and hence result in a fall of profit. Lastly, engineers must ensure that the product must be safe to use or it will end up not only spoiling the reputation of the company, it may even injure or kill someone.
+</P>
+<P>
+1"Trends in the Costs of Raw Materials." 2003-2009
+</P>
+<P>
 </P>
 </TEXT>
 <ANNOTATION teacher_id="172">
-<MISTAKE start_par="2" start_off="77" end_par="2" end_off="84">
-<TYPE>Nn</TYPE>
-<CORRECTION>citizens</CORRECTION>
+<MISTAKE start_par="1" start_off="72" end_par="1" end_off="76">
+<TYPE>Spar</TYPE>
+<CORRECTION>the year</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="2" start_off="42" end_par="2" end_off="50">
-<TYPE>Others</TYPE>
-<CORRECTION>managing to get</CORRECTION>
-<COMMENT>missing words</COMMENT>
+<MISTAKE start_par="2" start_off="193" end_par="2" end_off="198">
+<TYPE>V0</TYPE>
+<CORRECTION>is often</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="3" start_off="102" end_par="3" end_off="109">
-<TYPE>Vform</TYPE>
-<CORRECTION>reform</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="102" end_par="3" end_off="137">
-<TYPE>Wcip</TYPE>
-<CORRECTION>restore the land to a livable state</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="162" end_par="3" end_off="164">
-<TYPE>Pref</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="202" end_par="3" end_off="209">
-<TYPE>Wcip</TYPE>
-<CORRECTION>quality</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="202" end_par="3" end_off="224">
-<TYPE>Wcip</TYPE>
-<CORRECTION>quality of the land</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="263" end_par="3" end_off="270">
-<TYPE>Nn</TYPE>
-<CORRECTION>desert</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="275" end_par="3" end_off="284">
-<TYPE>Wcip</TYPE>
-<CORRECTION>transform</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="40" end_par="4" end_off="42">
-<TYPE>Wcip</TYPE>
-<CORRECTION>for</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="107" end_par="4" end_off="118">
-<TYPE>Mec</TYPE>
-<CORRECTION>engineering</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="263" end_par="4" end_off="264">
-<TYPE>Mec</TYPE>
-<CORRECTION>and</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="338" end_par="4" end_off="363">
-<TYPE>Rloc</TYPE>
-<CORRECTION>changing</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="385" end_par="4" end_off="396">
-<TYPE>Wcip</TYPE>
-<CORRECTION>otherwise uninhabitable</CORRECTION>
-</MISTAKE>
-</ANNOTATION>
-</DOC>
-
-<DOC nid="830">
-<TEXT>
-<TITLE>
-The Factors that Shaped Biometrics
-</TITLE>
-<P>
-Identification has become more and more important in our society. Thanks to biometric identification, nowadays, we can open a locked door without keys, withdraw money from the bank without entering password, and travel around the world without taking various cards. Biometrics, by definition, refers to technologies of measurement and analysis of human body characteristics. These characteristics include fingerprints, eye retinas and irises, voice patterns, facial patterns and hand measurements. Besides some technologically determinists that allow the development of biometric identification, this technology is also shaped by three social factors, namely, the desire of the society for safety, convenience and economy.
-</P>
-<P>
-Safety is one of the crucial problems that many countries and companies concern. On one hand more and more virus and hack can access personal computers, so the secret data and documents may be stolen. On the other hand, some important departments need strict administration to their members to avoid information leaks. The United States Department of Defense (DoD) {Common Access Card}[HYPERLINK: http://en.wikipedia.org/wiki/Common_Access_Card] is a successful use of biometric identification. This card contains biometric data to add security and reduce the risk of falsification (Ben, 2008). As we can see, the biometric identification involved in important secure areas is designed to identify human with accuracy and reliability.
-</P>
-<P>
-Besides safety, convenience is also desirable for identifications. We do not want to spend time and effort to remember password, neither do we want to carry any cards or equipments to show our identification. For government and other organizations, they are also looking for small size equipments and time-saving progress of identification. Therefore nowadays the biometric identification progress is designed to be very quick, and the equipments can be easily set up or can be combined with other equipments. We can have fingerprint verification reader combined with built-in smartcard reader, and it only takes seconds to verify one's identification.
-</P>
-<P>
-Moreover, the society is looking for economic ways of identification. Therefore, the equipments of biometric identification tend to be in-expensive. For instance, Retinal Technologies, Inc. (RTI), which captures a retinal image at distances from the user's eye with the means of just using a patented aspheric lens array. Hence the RTI system is very inexpensively and can be commonly used (Retinal Technologies, Inc. Launches Company and Revolutionizes Biometrics With Patented Retinal Scanning Technology, 2001).
-</P>
-<P>
-The effects of the use of biometric identification are obvious. With biometric identification, our fingers, faces and even eyes become our identification. This technology is widely used in our society and it brings benefit to the government, the military, business and every individual.
-</P>
-<P>
-All in all, biometric identification achieves great development as human seek for better information protection, easier life style and greater economic profit, and it benefits much to those who shaped it.
-</P>
-<REFERENCE>
-<P>
-References B. Ben ({June 6}[HYPERLINK: http://en.wikipedia.org/wiki/June_6], {2008}[HYPERLINK: http://en.wikipedia.org/wiki/2008]). "{Bush pushes biometrics for national security}[HYPERLINK: http://www.fcw.com/online/news/152750-1.html]". Federal Computer Week. Retrieved 5th September, 2009, from {http://www.fcw.com/online/news/152750-1.html}[HYPERLINK: http://www.fcw.com/online/news/152750-1.html]
-</P>
-<P>
-Retinal Technologies, Inc. Launches Company and Revolutionizes Biometrics With Patented Retinal Scanning Technology (30th July,2001) Retrieved 5th, September, 2009, from {http://findarticles.com/p/articles/mi_m0EIN/is_2001_July_30/ai_76838243/}[HYPERLINK: http://findarticles.com/p/articles/mi_m0EIN/is_2001_July_30/ai_76838243/]
-</P>
-</REFERENCE>
-</TEXT>
-<ANNOTATION teacher_id="172">
-<MISTAKE start_par="1" start_off="511" end_par="1" end_off="526">
-<TYPE>Wform</TYPE>
-<CORRECTION>technological</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="72" end_par="2" end_off="79">
-<TYPE>Wcip</TYPE>
-<CORRECTION>are concerned about</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="107" end_par="2" end_off="112">
-<TYPE>Nn</TYPE>
-<CORRECTION>viruses</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="117" end_par="2" end_off="121">
-<TYPE>Wform</TYPE>
-<CORRECTION>hackers</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="156" end_par="2" end_off="159">
+<MISTAKE start_par="2" start_off="329" end_par="2" end_off="334">
 <TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
+<CORRECTION>a large</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="2" start_off="259" end_par="2" end_off="273">
-<TYPE>Wcip</TYPE>
-<CORRECTION>rules</CORRECTION>
+<MISTAKE start_par="4" start_off="149" end_par="4" end_off="153">
+<TYPE>Vt</TYPE>
+<CORRECTION>are</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="2" start_off="274" end_par="2" end_off="276">
-<TYPE>Wcip</TYPE>
-<CORRECTION>for</CORRECTION>
+<MISTAKE start_par="6" start_off="199" end_par="6" end_off="203">
+<TYPE>SVA</TYPE>
+<CORRECTION>comes</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="2" start_off="283" end_par="2" end_off="290">
-<TYPE>Others</TYPE>
-<CORRECTION>staff members over the use of confidential information</CORRECTION>
-<COMMENT>Meaning not complete</COMMENT>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="462" end_par="2" end_off="465">
-<TYPE>Wcip</TYPE>
-<CORRECTION>example</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="661" end_par="2" end_off="667">
-<TYPE>Wcip</TYPE>
-<CORRECTION>security-sensitive</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="639" end_par="2" end_off="647">
-<TYPE>Wcip</TYPE>
-<CORRECTION>employed</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="698" end_par="2" end_off="703">
+<MISTAKE start_par="7" start_off="29" end_par="7" end_off="34">
 <TYPE>Nn</TYPE>
-<CORRECTION>people</CORRECTION>
+<CORRECTION>case</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="7" start_off="139" end_par="7" end_off="145">
+<TYPE>Nn</TYPE>
+<CORRECTION>iPhones</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="8" start_off="119" end_par="8" end_off="154">
+<TYPE>Srun</TYPE>
+<CORRECTION>use. In the worst case scenario,</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="9" start_off="10" end_par="9" end_off="17">
+<TYPE>Nn</TYPE>
+<CORRECTION>products</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="9" start_off="178" end_par="9" end_off="182">
+<TYPE>Nn</TYPE>
+<CORRECTION>tests</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="10" start_off="340" end_par="10" end_off="347">
+<TYPE>Vm</TYPE>
+<CORRECTION>is</CORRECTION>
+</MISTAKE>
+<MISTAKE start_par="10" start_off="425" end_par="10" end_off="461">
+<TYPE>Spar</TYPE>
+<CORRECTION> but even injuring or killing someone</CORRECTION>
 </MISTAKE>
 </ANNOTATION>
 </DOC>
