@@ -18,30 +18,6 @@ As the number of people grows, the need of habitable environment is unquestionab
 </P>
 </TEXT>
 <ANNOTATION teacher_id="172">
-<MISTAKE start_par="1" start_off="210" end_par="1" end_off="216">
-<TYPE>Vform</TYPE>
-<CORRECTION>cause</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="1" start_off="252" end_par="1" end_off="258">
-<TYPE>Nn</TYPE>
-<CORRECTION>space</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="1" start_off="235" end_par="1" end_off="238">
-<TYPE>SVA</TYPE>
-<CORRECTION>is</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="1" start_off="287" end_par="1" end_off="293">
-<TYPE>Vform</TYPE>
-<CORRECTION>obtained</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="1" start_off="387" end_par="1" end_off="389">
-<TYPE>Wcip</TYPE>
-<CORRECTION>of</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="1" start_off="396" end_par="1" end_off="413">
-<TYPE>V0</TYPE>
-<CORRECTION>that are inhospitable</CORRECTION>
-</MISTAKE>
 <MISTAKE start_par="2" start_off="77" end_par="2" end_off="84">
 <TYPE>Nn</TYPE>
 <CORRECTION>citizens</CORRECTION>
@@ -50,95 +26,6 @@ As the number of people grows, the need of habitable environment is unquestionab
 <TYPE>Others</TYPE>
 <CORRECTION>managing to get</CORRECTION>
 <COMMENT>missing words</COMMENT>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="125" end_par="2" end_off="131">
-<TYPE>Vt</TYPE>
-<CORRECTION>has caused</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="132" end_par="2" end_off="139">
-<TYPE>Nn</TYPE>
-<CORRECTION>problems</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="149" end_par="2" end_off="159">
-<TYPE>Wcip</TYPE>
-<CORRECTION>formation and growth</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="192" end_par="2" end_off="194">
-<TYPE>Vform</TYPE>
-<CORRECTION>are</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="199" end_par="2" end_off="203">
-<TYPE>Others</TYPE>
-<CORRECTION>safe to live in</CORRECTION>
-<COMMENT>missing words</COMMENT>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="211" end_par="2" end_off="214">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION>their</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="285" end_par="2" end_off="287">
-<TYPE>Wcip</TYPE>
-<CORRECTION>for</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="328" end_par="2" end_off="331">
-<TYPE>Rloc</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="390" end_par="2" end_off="394">
-<TYPE>Wcip</TYPE>
-<CORRECTION>a greater</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="371" end_par="2" end_off="373">
-<TYPE>Pref</TYPE>
-<CORRECTION>the same area of land</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="412" end_par="2" end_off="432">
-<TYPE>Rloc</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="458" end_par="2" end_off="464">
-<TYPE>Wcip</TYPE>
-<CORRECTION>use</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="465" end_par="2" end_off="466">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="500" end_par="2" end_off="503">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="514" end_par="2" end_off="521">
-<TYPE>Wcip</TYPE>
-<CORRECTION>during</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="534" end_par="2" end_off="542">
-<TYPE>Nn</TYPE>
-<CORRECTION>disasters</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="579" end_par="2" end_off="584">
-<TYPE>Mec</TYPE>
-<CORRECTION>Japan,</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="678" end_par="2" end_off="680">
-<TYPE>Rloc</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="714" end_par="2" end_off="719">
-<TYPE>Nn</TYPE>
-<CORRECTION>land</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="721" end_par="2" end_off="722">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="788" end_par="2" end_off="792">
-<TYPE>Vt</TYPE>
-<CORRECTION>will need</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="2" start_off="831" end_par="2" end_off="836">
-<TYPE>Mec</TYPE>
-<CORRECTION>health</CORRECTION>
 </MISTAKE>
 <MISTAKE start_par="3" start_off="102" end_par="3" end_off="109">
 <TYPE>Vform</TYPE>
@@ -168,50 +55,6 @@ As the number of people grows, the need of habitable environment is unquestionab
 <TYPE>Wcip</TYPE>
 <CORRECTION>transform</CORRECTION>
 </MISTAKE>
-<MISTAKE start_par="3" start_off="335" end_par="3" end_off="340">
-<TYPE>Vform</TYPE>
-<CORRECTION>use</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="482" end_par="3" end_off="485">
-<TYPE>Trans</TYPE>
-<CORRECTION>But</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="476" end_par="3" end_off="482">
-<TYPE>Mec</TYPE>
-<CORRECTION>water.</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="486" end_par="3" end_off="490">
-<TYPE>Pref</TYPE>
-<CORRECTION>it</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="491" end_par="3" end_off="494">
-<TYPE>SVA</TYPE>
-<CORRECTION>uses</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="577" end_par="3" end_off="582">
-<TYPE>Pref</TYPE>
-<CORRECTION>where</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="591" end_par="3" end_off="594">
-<TYPE>Pref</TYPE>
-<CORRECTION>the</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="595" end_par="3" end_off="600">
-<TYPE>Nn</TYPE>
-<CORRECTION>land</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="604" end_par="3" end_off="605">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="622" end_par="3" end_off="628">
-<TYPE>Sfrag</TYPE>
-<CORRECTION>level. It</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="629" end_par="3" end_off="633">
-<TYPE>SVA</TYPE>
-<CORRECTION>has</CORRECTION>
-</MISTAKE>
 <MISTAKE start_par="4" start_off="40" end_par="4" end_off="42">
 <TYPE>Wcip</TYPE>
 <CORRECTION>for</CORRECTION>
@@ -219,30 +62,6 @@ As the number of people grows, the need of habitable environment is unquestionab
 <MISTAKE start_par="4" start_off="107" end_par="4" end_off="118">
 <TYPE>Mec</TYPE>
 <CORRECTION>engineering</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="83" end_par="4" end_off="92">
-<TYPE>Wcip</TYPE>
-<CORRECTION>increasing</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="162" end_par="4" end_off="175">
-<TYPE>Wcip</TYPE>
-<CORRECTION>environment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="189" end_par="4" end_off="190">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="229" end_par="4" end_off="235">
-<TYPE>Wcip</TYPE>
-<CORRECTION>build</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="236" end_par="4" end_off="263">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION>taller and safer buildings</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="209" end_par="4" end_off="225">
-<TYPE>Rloc</TYPE>
-<CORRECTION></CORRECTION>
 </MISTAKE>
 <MISTAKE start_par="4" start_off="263" end_par="4" end_off="264">
 <TYPE>Mec</TYPE>
@@ -340,103 +159,6 @@ Retinal Technologies, Inc. Launches Company and Revolutionizes Biometrics With P
 <MISTAKE start_par="2" start_off="698" end_par="2" end_off="703">
 <TYPE>Nn</TYPE>
 <CORRECTION>people</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="50" end_par="3" end_off="65">
-<TYPE>Nn</TYPE>
-<CORRECTION>identification</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="50" end_par="3" end_off="66">
-<TYPE>Wcip</TYPE>
-<CORRECTION>identification purposes.</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="119" end_par="3" end_off="127">
-<TYPE>Nn</TYPE>
-<CORRECTION>passwords</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="129" end_par="3" end_off="136">
-<TYPE>Srun</TYPE>
-<CORRECTION>and neither</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="170" end_par="3" end_off="180">
-<TYPE>Nn</TYPE>
-<CORRECTION>equipment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="193" end_par="3" end_off="207">
-<TYPE>Wcip</TYPE>
-<CORRECTION>identity</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="286" end_par="3" end_off="296">
-<TYPE>Nn</TYPE>
-<CORRECTION>equipment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="322" end_par="3" end_off="324">
-<TYPE>Wcip</TYPE>
-<CORRECTION>for</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="297" end_par="3" end_off="322">
-<TYPE>Um</TYPE>
-<CORRECTION></CORRECTION>
-<COMMENT>Not sure what the phrase intends to mean</COMMENT>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="360" end_par="3" end_off="363">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="389" end_par="3" end_off="397">
-<TYPE>Wcip</TYPE>
-<CORRECTION>process</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="436" end_par="3" end_off="446">
-<TYPE>Nn</TYPE>
-<CORRECTION>equipment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="498" end_par="3" end_off="508">
-<TYPE>Nn</TYPE>
-<CORRECTION>equipment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="522" end_par="3" end_off="533">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION>a fingerprint</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="3" start_off="568" end_par="3" end_off="573">
-<TYPE>ArtOrDet</TYPE>
-<CORRECTION>a built</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="85" end_par="4" end_off="95">
-<TYPE>Nn</TYPE>
-<CORRECTION>equipment</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="124" end_par="4" end_off="128">
-<TYPE>SVA</TYPE>
-<CORRECTION>tends</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="135" end_par="4" end_off="147">
-<TYPE>Mec</TYPE>
-<CORRECTION>inexpensive</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="4" start_off="197" end_par="4" end_off="202">
-<TYPE>Sfrag</TYPE>
-<CORRECTION></CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="5" start_off="215" end_par="5" end_off="222">
-<TYPE>Nn</TYPE>
-<CORRECTION>benefits</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="5" start_off="256" end_par="5" end_off="264">
-<TYPE>Spar</TYPE>
-<CORRECTION>the business</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="6" start_off="67" end_par="6" end_off="72">
-<TYPE>Nn</TYPE>
-<CORRECTION>humans</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="6" start_off="167" end_par="6" end_off="183">
-<TYPE>Wcip</TYPE>
-<CORRECTION>brings tremendous benefits to</CORRECTION>
-</MISTAKE>
-<MISTAKE start_par="6" start_off="194" end_par="6" end_off="200">
-<TYPE>Vt</TYPE>
-<CORRECTION>shape</CORRECTION>
 </MISTAKE>
 </ANNOTATION>
 </DOC>

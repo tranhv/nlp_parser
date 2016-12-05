@@ -219,7 +219,8 @@ class ReadData
   end
 
   def main
-    data_nucle = get_data_nucle(DATA_PATH + "/nucle3.0.sgml")
+    data_nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
+    #puts "data_nucle --> #{data_nucle.inspect}"
   end
 
 
@@ -900,50 +901,52 @@ class ReadData
         paras << para
       end
 
-# <MISTAKE start_par="1" start_off="210" end_par="1" end_off="216">
-#     <TYPE>Vform</TYPE>
-#     <CORRECTION>cause</CORRECTION>
-# </MISTAKE>
-# <MISTAKE start_par="1" start_off="217" end_par="1" end_off="219">
-#     <TYPE>Vform</TYPE>
-#     <CORRECTION>cause</CORRECTION>
-# </MISTAKE>
       doc["ANNOTATION"].first["MISTAKE"].each do |mis|
         puts "Wrong annotation data #{mis}" if mis["start_par"].to_i != mis["end_par"].to_i
         length_align = mis["end_off"].to_i - mis["start_off"].to_i
         para_ixd = mis["start_par"].to_i - 1
-        para = paras[para_ixd]
+        para = paras[para_ixd].strip
         source, source_index, mis_source_index = find_sen(para.split("."), mis["start_off"].to_i)
-
-        puts "data --> #{data.inspect}"
 
         if !data.empty? && data[doc["nid"]] && data[doc["nid"]][para_ixd] && data[doc["nid"]][para_ixd][source_index]
           pair = data[doc["nid"]][para_ixd][source_index]
         else
           pair = Sentence_Pair.new
           pair.Alignment = []
-          data[doc["nid"]] = {para_ixd => {source_index => pair}}
+
+          if !data.empty? && data[doc["nid"]] && data[doc["nid"]][para_ixd]
+            data[doc["nid"]][para_ixd][source_index] = pair
+          elsif !data.empty? && data[doc["nid"]]
+            data[doc["nid"]][para_ixd] = {source_index => pair}
+          else
+            data[doc["nid"]] = {para_ixd => {source_index => pair}}
+          end
         end
         align = Alignment.new
-        str_to_replace = para[mis["end_off"].to_i, length_align]
+        str_to_replace = para[mis["start_off"].to_i, length_align]
         pair.source = source
         pair.target = source
         source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
         align.source_numbers = work_index
         align.tag_name = mis["TYPE"].first
-        align.target_numbers = {:str_target => mis["CORRECTION"].first}
+        align.target_numbers = {:str_target => mis["CORRECTION"].first, :str_source => str_to_replace}
         pair.Alignment << align
+        # break
       end
     end
-    puts "data ==> #{data.inspect}"
     data
   end
 
   def find_sen(arr_str, index)
+    #  puts "arr_str --> #{arr_str}"
+    #  puts "index --> #{index}"
     len = 0
     arr_str.each_with_index do |sen, idx|
+      #  puts "sen -->#{sen}--#{sen.length}"
       len += sen.length + 1
-      if index <= len
+      if index < len
+        #  puts "len -> #{len}"
+        #  puts "sen -> #{sen} --> #{sen.length}, idx ==> #{idx}, index - (len - (sen.length + 1)) --> #{index - (len - (sen.length + 1))}"
         return [sen, idx, index - (len - (sen.length + 1))]
       end
     end
