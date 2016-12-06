@@ -885,6 +885,22 @@ class ReadData
     return [data, target.join(" ")]
   end
 
+  def parser_data_nucle(data)
+    return_data = []
+    data.values.each do |doc|
+      doc.values.each do |para|
+        para.values.each do |sen|
+          return_data << parse_sen_nucle(sen)
+        end
+      end
+    end
+  end
+
+  def parse_sen_nucle(sen)
+    
+  end
+
+
   def get_data_nucle(xml_str)
     # DATA_PATH = './data'
     # xml_str = DATA_PATH + "/nucle3.0.sgml"
@@ -897,8 +913,7 @@ class ReadData
     content.gsub!(/&(?!(?:amp|lt|gt|quot|apos);)/, '&amp;')
     #docs = REXML::Document.new(content)
     docs = XmlSimple.xml_in(content, { 'KeyAttr' => 'name' })
-# puts "docs ==> #{docs.inspect}"
-# return
+
     data = {}
 
     docs["DOC"].each do |doc|
@@ -939,6 +954,9 @@ class ReadData
         pair.Alignment << align
         # break
       end
+
+      
+
     end
     data
   end
