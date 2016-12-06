@@ -891,8 +891,14 @@ class ReadData
     # doc = Nokogiri::XML(File.open(xml_str))
     # doc = Nokogiri::Slop(File.open(xml_str))
     # puts "doc --> #{doc.inspect}"
-    docs = XmlSimple.xml_in(xml_str, { 'KeyAttr' => 'name' })
+    # docs = XmlSimple.xml_in(xml_str, { 'KeyAttr' => 'name' })
 
+    content = File.open(xml_str,"r:iso-8859-1:utf-8").read
+    content.gsub!(/&(?!(?:amp|lt|gt|quot|apos);)/, '&amp;')
+    #docs = REXML::Document.new(content)
+    docs = XmlSimple.xml_in(content, { 'KeyAttr' => 'name' })
+# puts "docs ==> #{docs.inspect}"
+# return
     data = {}
 
     docs["DOC"].each do |doc|
