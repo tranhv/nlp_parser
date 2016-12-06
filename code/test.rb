@@ -1,4 +1,4 @@
-#require './read_data.rb'
+#require './read_data.rb' -- test
 require "json"
 
 class Test
