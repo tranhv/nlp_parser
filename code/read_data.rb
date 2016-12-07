@@ -219,8 +219,9 @@ class ReadData
   end
 
   def main
-    data_nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
-    #puts "data_nucle --> #{data_nucle.inspect}"
+    data_nucle = get_data_nucle(DATA_PATH + "/nucle3.0.sgml")
+    nucle_data = parser_data_nucle(data_nucle)
+    puts "nucle_data --> #{nucle_data.inspect}"
   end
 
 
@@ -890,14 +891,62 @@ class ReadData
     data.values.each do |doc|
       doc.values.each do |para|
         para.values.each do |sen|
+          puts "sen --> #{sen.inspect}"
           return_data << parse_sen_nucle(sen)
         end
       end
     end
+    return_data
   end
 
   def parse_sen_nucle(sen)
+    algins = sen.Alignment.sort{|x,y| y.source_numbers.split(",").first.to_i <=> x.source_numbers.split(",").first.to_i}
+    source_arr = sen.source.split(" ")
     
+    algins.each do |al|
+      target_replace = al.target_numbers
+      str_source_replace = get_string_by_index(al.source_numbers, sen.source)
+      if str_source_replace == target_replace[:str_source]
+        sen.target, sen.target_numbers = replace_string(str_replace, str_source_replace, sen.source, al.source_numbers.split(","))
+      else
+        puts "Some thing wrong #{sen.inspect}"
+      end
+    end
+    return sen
+  end
+
+  def replace_string(str_replace, str_need_replace, sen, indexs)
+    if indexs.count == 1
+      return sen.gsub!(str_need_replace, str_replace)
+    else
+      sen_arr = []
+      frist_matched = false
+      sen.split(" ").each_with_index do |e, index|
+        if indexs.include?(index)
+          if frist_matched == false
+            sen_arr << {:str => str_replace, :is_replace => true}
+            frist_matched = true
+          else
+            sen_arr << nil
+          end
+        else
+          sen_arr << {:str => e, :is_replace => false}
+        end
+      end
+      target = []
+      target_num = []
+      sen_arr.compact!.each_with_index do |e, index|
+        if e[:is_replace]
+          target << e[:str].split(" ")
+          e[:str].split(" ").each_with_index  do |s, i|
+            target_num << index + i
+          end
+        else
+          target << e[:str]
+        end
+      end
+      return {:target => target.join(" "), :target_numbers => target_num.join(",")}
+    end
   end
 
 
@@ -948,14 +997,18 @@ class ReadData
         pair.source = source
         pair.target = source
         source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
-        align.source_numbers = work_index
+        align.source_numbers = work_index.to_s
+        str_to_replace.split(" ").each_with_index do |e, index|
+            next if index == 1
+            align.source_numbers = ',' + (work_index + 1).to_s
+          end
         align.tag_name = mis["TYPE"].first
         align.target_numbers = {:str_target => mis["CORRECTION"].first, :str_source => str_to_replace}
         pair.Alignment << align
-        # break
+        break
       end
 
-      
+
 
     end
     data
