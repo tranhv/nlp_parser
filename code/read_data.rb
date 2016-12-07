@@ -906,6 +906,9 @@ class ReadData
     algins.each do |al|
       target_replace = al.target_numbers
       str_source_replace = get_string_by_index(al.source_numbers, sen.source)
+      puts "al --> #{al.inspect}"
+      puts "str_source_replace -> #{str_source_replace}"
+      puts "target_replace[:str_source] -> #{target_replace[:str_source]}"
       if str_source_replace == target_replace[:str_source]
         sen.target, sen.target_numbers = replace_string(str_replace, str_source_replace, sen.source, al.source_numbers.split(","))
       else
@@ -998,8 +1001,10 @@ class ReadData
         pair.target = source
         source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
         align.source_numbers = work_index.to_s
+        puts "str_to_replace -->#{str_to_replace}---"
         str_to_replace.split(" ").each_with_index do |e, index|
-            next if index == 1
+          puts "e --> #{e} -- index #{index}"
+            next if index == 0
             align.source_numbers = ',' + (work_index + 1).to_s
           end
         align.tag_name = mis["TYPE"].first
