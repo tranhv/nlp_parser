@@ -973,17 +973,22 @@ class ReadData
     docs = XmlSimple.xml_in(content, { 'KeyAttr' => 'name' })
 
     data = {}
-
+    
     docs["DOC"].each do |doc|
       paras = []
       doc["TEXT"].first["P"].each do |para|
         paras << para
       end
-
-      doc["ANNOTATION"].first["MISTAKE"].each do |mis|
+      is_index_zero = false
+      doc["ANNOTATION"].first["MISTAKE"].each_with_index do |mis, an_idx|
+        if an_idx == 0
+          is_index_zero = (mis["start_par"].to_i == 0)
+          puts "Wrong annotation data #{mis}" if mis["start_par"].to_i > 1
+        end
+        para_ixd = is_index_zero ? mis["start_par"].to_i : mis["start_par"].to_i - 1
         puts "Wrong annotation data #{mis}" if mis["start_par"].to_i != mis["end_par"].to_i
         length_align = mis["end_off"].to_i - mis["start_off"].to_i
-        para_ixd = mis["start_par"].to_i - 1
+        
         para = paras[para_ixd].strip
         source, source_index, mis_source_index = find_sen(para.split("."), mis["start_off"].to_i)
 
@@ -1025,7 +1030,25 @@ class ReadData
         # break
       end
 
-      
+      #For sen have not any MISTAKE
+      paras.each_with_index do |para, index|
+        # next unless data[doc["nid"]][index].nil? or 
+        para.split(".").each_with_index do |sen, idx|
+          next if data[doc["nid"]][index].nil? || data[doc["nid"]][index][idx].nil?
+          pair = Sentence_Pair.new
+          pair.Alignment = []
+          pair.source = sen
+          pair.target = sen
+          
+          if !data.empty? && data[doc["nid"]] && data[doc["nid"]][index]
+            data[doc["nid"]][index][idx] = pair
+          elsif !data.empty? && data[doc["nid"]]
+            data[doc["nid"]][index] = {idx => pair}
+          else
+            data[doc["nid"]] = {index => {idx => pair}}
+          end
+        end
+      end
 
     end
     data
