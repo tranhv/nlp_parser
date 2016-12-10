@@ -221,7 +221,7 @@ class ReadData
   def main
     data_nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
     nucle_data = parser_data_nucle(data_nucle)
-    puts "nucle_data --> #{nucle_data.inspect}"
+    #puts "nucle_data --> #{nucle_data.inspect}"
   end
 
 
@@ -906,20 +906,22 @@ class ReadData
     algins.each do |al|
       target_replace = al.target_numbers
       str_source_replace = get_string_by_index(al.source_numbers, sen.source)
-      # puts "al --> #{al.inspect}"
-      # puts "str_source_replace -> #{str_source_replace}"
-       puts "target_replace[:str_source] -> #{target_replace[:str_source]}"
-      if str_source_replace == target_replace[:str_source]
-        sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
-      else
+             
+      sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
+      if str_source_replace != target_replace[:str_source]
+        #sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
         puts "Some thing wrong #{sen.inspect}"
+        puts "target_replace[:str_source] ->#{target_replace[:str_source]}<"
+        puts "al --> #{al.inspect}"
+        puts "str_source_replace ->#{str_source_replace}<"
+
       end
     end
     return sen
   end
 
   def replace_string(str_replace, str_need_replace, sen, indexs)
-     puts "str_replace --> #{str_replace}, str_need_replace -->#{str_need_replace}, sen -->#{sen}, indexs -->#{indexs}---"
+     #puts "str_replace --> #{str_replace}, str_need_replace -->#{str_need_replace}, sen -->#{sen}, indexs -->#{indexs}---"
     sen_arr = []
     frist_matched = false
     sen.split(" ").each_with_index do |e, index|
@@ -948,7 +950,7 @@ class ReadData
         e[:str].split(" ").each_with_index  do |s, i|
           # puts "sssss"
           target_num << index + i
-           puts "target_num --> #{target_num}"
+           #puts "target_num --> #{target_num}"
         end
       else
         target << e[:str]
@@ -979,18 +981,24 @@ class ReadData
       doc["TEXT"].first["P"].each do |para|
         paras << para
       end
-      is_index_zero = false
+
+      is_index_zero = doc["TEXT"].first["TITLE"].nil? ? true : false
+
       doc["ANNOTATION"].first["MISTAKE"].each_with_index do |mis, an_idx|
-        if an_idx == 0
-          is_index_zero = (mis["start_par"].to_i == 0)
-          puts "Wrong annotation data #{mis}" if mis["start_par"].to_i > 1
-        end
+        # puts "======"
+        # if an_idx == 0
+        #   is_index_zero = (mis["start_par"].to_i == 0)
+        #   puts "Wrong annotation data #{mis}" if mis["start_par"].to_i > 1
+        # end
         para_ixd = is_index_zero ? mis["start_par"].to_i : mis["start_par"].to_i - 1
-        puts "Wrong annotation data #{mis}" if mis["start_par"].to_i != mis["end_par"].to_i
-        length_align = mis["end_off"].to_i - mis["start_off"].to_i
-        
         para = paras[para_ixd].strip
+        puts "Wrong annotation data 2 #{mis}" if (mis["end_par"].to_i - mis["end_par"].to_i) > 1
+        length_align = mis["end_off"].to_i - mis["start_off"].to_i
+
         source, source_index, mis_source_index = find_sen(para.split("."), mis["start_off"].to_i)
+        if mis["start_par"].to_i != mis["end_par"].to_i
+          length_align = source.length - mis_source_index
+        end
 
         if !data.empty? && data[doc["nid"]] && data[doc["nid"]][para_ixd] && data[doc["nid"]][para_ixd][source_index]
           pair = data[doc["nid"]][para_ixd][source_index]
@@ -1017,24 +1025,25 @@ class ReadData
         pair.target = source
         source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
         align.source_numbers = work_index.to_s
-        # puts "str_to_replace -->#{str_to_replace}---"
-        str_to_replace.split(" ").each_with_index do |e, index|
-          # puts "e --> #{e} -- index #{index}"
+        #  puts "str_to_replace -->#{str_to_replace}---source_word>#{source_word}<, work_index >#{work_index}<, x >{x}<"
+        str_to_replace.strip.split(" ").each_with_index do |e, index|
+          #  puts "e --> #{e} -- index #{index}"
             next if index == 0
-            align.source_numbers = ',' + (work_index + 1).to_s
+            align.source_numbers += ',' + (work_index + index).to_s
           end
         align.tag_name = mis["TYPE"].first
         str_tar = mis["CORRECTION"].first.empty? ? "" : mis["CORRECTION"].first
         align.target_numbers = {:str_target => str_tar, :str_source => str_to_replace}
         pair.Alignment << align
+        # puts "align -> #{align}"
+        # puts "============>>>>>>"
         # break
       end
 
       #For sen have not any MISTAKE
       paras.each_with_index do |para, index|
-        # next unless data[doc["nid"]][index].nil? or 
         para.split(".").each_with_index do |sen, idx|
-          next if data[doc["nid"]][index].nil? || data[doc["nid"]][index][idx].nil?
+          next if data[doc["nid"]] && data[doc["nid"]][index] && data[doc["nid"]][index][idx]
           pair = Sentence_Pair.new
           pair.Alignment = []
           pair.source = sen
@@ -1051,6 +1060,7 @@ class ReadData
       end
 
     end
+    #puts "DATA --> #{data.inspect}"
     data
   end
 
