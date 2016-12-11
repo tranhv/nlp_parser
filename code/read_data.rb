@@ -221,7 +221,7 @@ class ReadData
   def main
     data_nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
     nucle_data = parser_data_nucle(data_nucle)
-    #puts "nucle_data --> #{nucle_data.inspect}"
+    puts "nucle_data --> #{nucle_data.inspect}"
   end
 
 
@@ -891,7 +891,7 @@ class ReadData
     data.values.each do |doc|
       doc.values.each do |para|
         para.values.each do |sen|
-          # puts "sen --> #{sen.inspect}"
+          #puts "sen --> #{sen.inspect}"
           return_data << parse_sen_nucle(sen)
         end
       end
@@ -907,13 +907,13 @@ class ReadData
       target_replace = al.target_numbers
       str_source_replace = get_string_by_index(al.source_numbers, sen.source)
              
-      sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
+      sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.target, al.source_numbers.split(","))
       if str_source_replace != target_replace[:str_source]
         #sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
-        puts "Some thing wrong #{sen.inspect}"
-        puts "target_replace[:str_source] ->#{target_replace[:str_source]}<"
-        puts "al --> #{al.inspect}"
-        puts "str_source_replace ->#{str_source_replace}<"
+        # puts "Some thing wrong #{sen.inspect}"
+        # puts "target_replace[:str_source] ->#{target_replace[:str_source]}<"
+        # puts "al --> #{al.inspect}"
+        # puts "str_source_replace ->#{str_source_replace}<"
 
       end
     end
@@ -921,7 +921,8 @@ class ReadData
   end
 
   def replace_string(str_replace, str_need_replace, sen, indexs)
-     #puts "str_replace --> #{str_replace}, str_need_replace -->#{str_need_replace}, sen -->#{sen}, indexs -->#{indexs}---"
+    # puts "========================"
+    #  puts "str_replace --> #{str_replace}, str_need_replace -->#{str_need_replace}, sen -->#{sen}, indexs -->#{indexs}---"
     sen_arr = []
     frist_matched = false
     sen.split(" ").each_with_index do |e, index|
@@ -945,17 +946,19 @@ class ReadData
     
     sen_arr.compact.each_with_index do |e, index|
       if e[:is_replace]
-         #puts "e --> #{e.inspect}"
+        #  puts "e --> #{e.inspect}"
         target << e[:str].split(" ")
         e[:str].split(" ").each_with_index  do |s, i|
           # puts "sssss"
           target_num << index + i
-           #puts "target_num --> #{target_num}"
+          #  puts "target_num --> #{target_num}"
         end
       else
         target << e[:str]
       end
     end
+    # puts "target --> #{target.inspect}"
+    # puts "----------------------"
     return target.join(" "),target_num.join(",")
     #end
   end
@@ -1060,7 +1063,7 @@ class ReadData
       end
 
     end
-    #puts "DATA --> #{data.inspect}"
+    # puts "DATA --> #{data.inspect}"
     data
   end
 
