@@ -892,6 +892,7 @@ class ReadData
       doc.values.each do |para|
         para.values.each do |sen|
           #puts "sen --> #{sen.inspect}"
+          next if sen.source.strip.empty?
           return_data << parse_sen_nucle(sen)
         end
       end
@@ -901,23 +902,33 @@ class ReadData
 
   def parse_sen_nucle(sen)
     algins = sen.Alignment.sort{|x,y| y.source_numbers.split(",").first.to_i <=> x.source_numbers.split(",").first.to_i}
-    source_arr = sen.source.split(" ")
-    
-    algins.each do |al|
+    sen.source = sen.source.strip
+    sen.target = sen.target.strip    
+    algins.each_with_index do |al, al_index|
       target_replace = al.target_numbers
       str_source_replace = get_string_by_index(al.source_numbers, sen.source)
              
       sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.target, al.source_numbers.split(","))
+      if al.target_numbers.include?(",")
+        re_align(algins, al_index, al.target_numbers)
+      end
+
       if str_source_replace != target_replace[:str_source]
         #sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.source, al.source_numbers.split(","))
         # puts "Some thing wrong #{sen.inspect}"
         # puts "target_replace[:str_source] ->#{target_replace[:str_source]}<"
         # puts "al --> #{al.inspect}"
         # puts "str_source_replace ->#{str_source_replace}<"
-
       end
     end
     return sen
+  end
+
+  def re_align(aligns, al_index, target_numbers)
+    aligns.each_with_index do |al, index|
+      break if index == al_index
+      al.target_numbers = al.target_numbers.split(",").map{|e| e.to_i + target_numbers.split(",").count - 1 }.join(",")
+    end
   end
 
   def replace_string(str_replace, str_need_replace, sen, indexs)
