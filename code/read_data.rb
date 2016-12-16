@@ -219,9 +219,59 @@ class ReadData
   end
 
   def main
-    data_nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
-    nucle_data = parser_data_nucle(data_nucle)
-    puts "nucle_data --> #{nucle_data.inspect}"
+    # nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
+    nucle = get_data_nucle(DATA_PATH + "/corpusFull_fix_Trung.sgml")
+    data_nucle = parser_data_nucle(nucle)
+    # puts "data_nucle --> #{data_nucle.inspect}\n\n"
+
+    # generate_data_meteor(data_nucle)
+    generate_data_manli(data_nucle)
+
+    # METEOR ================    
+    # data_meteor_nucle = get_data_meteor_1_5(DATA_PATH + "/result_meteor_nucle.txt")
+    # data_meteor_nucle = insert_unaligned(data_meteor_nucle)
+    # data_meteor_nucle = remove_all_tags(data_meteor_nucle)   
+    # puts "Meteor: #{count_alignment(data_meteor_nucle)}\n"
+
+    # data_meteor_nucle = assign_tags(data_nucle, data_meteor_nucle)
+    # data_meteor_nucle = assign_tags_waln(data_meteor_nucle)
+    # puts "Meteor remove misc: #{count_alignment(data_meteor_nucle)}\n\n"
+
+    # # data_meteor1, data_meteor2 = split_data(data_meteor_nucle, N80_PERCENT)
+    # data_meteor_nucle = reduce_tags_preserved(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_wa(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_mogdet(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_exact(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_unaligned(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_wa(data_meteor_nucle)
+
+    # print_csv(data_meteor_nucle)
+    # END METEOR ============
+
+    # CHECK DATA ============
+    # tags = ["Vt", "Vm", "V0", "Vform", "SVA", "ArtOrDet", "Nn", "Npos", "Pform", "Pref", "Wcip", "Wa", "Wform", "Wtone", "Srun", "Smod", "Spar", "Sfrag", "Ssub", "WOinc", "WOadv", "Trans", "Mec", "Rloc", "Cit", "Others", "Um", "waln"]
+    
+    # puts "Tag count NUCLE: #{count_tags(data_nucle, tags)}\n"
+    # puts "Tag count Meteor: #{count_tags(data_meteor_nucle, tags)}\n\n"
+    # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
+    # # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
+    # puts "Tag count ngan: #{count_tags(data_ngan, tags)}\n"
+    # puts "Tag count kigoshi: #{count_tags(data_kigoshi, tags)}\n"
+    # puts "Tag count quynhanh: #{count_tags(data_quynhanh, tags)}"
+
+    # puts "compare_data_alignment --> #{compare_data_alignment(data_nucle, data_meteor_nucle)}\n"
+    # puts "compare_data --> #{compare_data(data_nucle, data_meteor_nucle, tags)}\n"
+
+    # puts "#{get_tags(data_nucle)}"
+
+    # data_meteor_1_5 = remove_all_but_wa(data_meteor_1_5)
+    # data_manli = remove_all_but_wa(data_manli)
+    # data_moses = remove_all_but_wa(data_moses)
+
+    # # print_data(data_SWA)
+    # print_data(data_meteor_1_5)
+    # print_data_manli(data_manli)
+    # print_data(data_moses)
   end
 
 
@@ -1006,7 +1056,7 @@ class ReadData
         # end
         para_ixd = is_index_zero ? mis["start_par"].to_i : mis["start_par"].to_i - 1
         para = paras[para_ixd].strip
-        puts "Wrong annotation data 2 #{mis}" if (mis["end_par"].to_i - mis["end_par"].to_i) > 1
+        # puts "Wrong annotation data 2 #{mis}" if (mis["end_par"].to_i - mis["end_par"].to_i) > 1
         length_align = mis["end_off"].to_i - mis["start_off"].to_i
 
         source, source_index, mis_source_index = find_sen(para.split("."), mis["start_off"].to_i)
@@ -1030,11 +1080,11 @@ class ReadData
         end
         align = Alignment.new
         str_to_replace = para[mis["start_off"].to_i, length_align]
-        if str_to_replace.nil?
-          puts "para -->#{para}-"
-          puts "mis -->#{mis}--"
-          puts "length_align -->#{length_align}---"
-        end
+        # if str_to_replace.nil?
+        #   puts "para -->#{para}-"
+        #   puts "mis -->#{mis}--"
+        #   puts "length_align -->#{length_align}---"
+        # end
         pair.source = source
         pair.target = source
         source_word, work_index, x = find_sen(source.split(" "), mis_source_index)
@@ -1140,7 +1190,7 @@ class ReadData
     return data
   end
 
-  def generate_data_manli(path)
+  def generate_data_manli_from_file(path)
     output = File.open(DATA_PATH + "/input_manli.txt", "w")
     output.write("")
     File.open(path, 'r').each_with_index do |line, index|
@@ -1154,6 +1204,31 @@ class ReadData
         output.write(line + "\n")
         next
       end
+    end
+  end
+
+  def generate_data_manli(data)
+    output = File.open(DATA_PATH + "/input_manli.txt", "w")
+    output.write("")
+    data.each_with_index do |line, index|
+      puts line if line.source.empty? or line.target.empty?
+      next if line.source.empty? or line.target.empty?
+      output.write(line.source + "\t" + line.target + "\n")
+    end
+  end
+
+  def generate_data_meteor(data)
+    output1 = File.open(DATA_PATH + "/source_meteor.txt", "w")
+    output1.write("")
+    data.each_with_index do |line, index|
+      # puts line
+      output1.write(line.source + "\n")
+    end
+
+    output2 = File.open(DATA_PATH + "/target_meteor.txt", "w")
+    output2.write("")
+    data.each_with_index do |line, index|
+      output2.write(line.target + "\n")
     end
   end
 
@@ -1577,11 +1652,11 @@ class ReadData
     data2
   end
 
-  def assign_tags_wa(data)
+  def assign_tags_waln(data)
     data.each do |line|
       line.Alignment.each do |aln|
         if (aln.tag_name.empty?)
-          aln.tag_name = "wa"
+          aln.tag_name = "waln"
         end
       end
     end
