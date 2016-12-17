@@ -958,7 +958,10 @@ class ReadData
       target_replace = al.target_numbers
       str_source_replace = get_string_by_index(al.source_numbers, sen.source)
              
-      sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.target, al.source_numbers.split(","))
+      sen.target, al.target_numbers = replace_string(target_replace[:str_target], str_source_replace, sen.target, al.source_numbers.split(","), al.tag_name)
+      
+      #puts "sen --> #{sen.inspect}<<<<<<<<<\n\n" if al.tag_name.upcase == 'UM' && target_replace[:str_target] != ''
+
       if al.target_numbers.include?(",")
         re_align(algins, al_index, al.target_numbers)
       end
@@ -981,7 +984,7 @@ class ReadData
     end
   end
 
-  def replace_string(str_replace, str_need_replace, sen, indexs)
+  def replace_string(str_replace, str_need_replace, sen, indexs, tag_name)
     # puts "========================"
     #  puts "str_replace --> #{str_replace}, str_need_replace -->#{str_need_replace}, sen -->#{sen}, indexs -->#{indexs}---"
     sen_arr = []
@@ -990,6 +993,10 @@ class ReadData
       
       if indexs.include?(index.to_s)
         # puts "index --> #{index} --> #{frist_matched}"
+        if tag_name.upcase == 'UM' && str_replace.empty?
+          sen_arr << {:str => e, :is_replace => true}
+          next
+        end
         if frist_matched == false
           # puts "shit"
           sen_arr << {:str => str_replace, :is_replace => true}
