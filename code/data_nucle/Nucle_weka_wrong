@@ -1,0 +1,25 @@
+need,'insert \'that\'',0,need,'insert \that\',0,NN,'NN NN',1,1,Ssub
+resource----nuclear,'redundant and can be replaced with \'known as\'',0,resource----nuclear,'redundant and can be replace with \known as\',0,JJ,'NN CC MD VB VBN IN VBN NN',1,1,Others
+'the citizens\'',their,0,'the citizens\',their,0,'DET NN',PRPS,1,1,Npos
+of,'insert \'the\' and delete \'of\'',0,of,'insert \the\ and delete \of\',0,IN,'NN NN CC VB NN',1,1,Others
+'flats, so that','delete the highlighted and replace with \'where\'',0,'flats, so that','delete the highlight and replace with \where\',0,'PPC RB POS','VB DET VBN CC VB IN NN',1,1,Trans
+'viewed this as \'not sufficient enough\'','this as insufficient. ',0,'view this as \not sufficient enough\','this as insufficient.',0,'VBN DET IN RB JJ NN','DET IN PP PPR',0,1,Spar
+most,'the companies\'',0,most,'the companies\',0,JJS,'DET NN',0,0,Others
+'The \'light welfare states\' besides having the support from the government body, they','Besides having support from the government, the \'light welfare states\'',0,'The \light welfare states\ besides have the support from the government body, they','Besides have support from the government, the \light welfare states\',0,'DET NN NN NN IN VBG DET NN IN DET NN PPC POS','IN VBG NN IN DET PPC DET NN NN NN',1,1,WOinc
+'still need to support','need to support their \'parasitic\'',0,'still need to support','need to support their \parasitic\',0,'RB NN TO POS','NN TO NN PRPS NN',0,0,Spar
+'the elderly\'','elderly people\'s',0,'the elderly\','elderly people\s',0,'DET NN','JJ POS',1,1,Npos
+'\'Elder- friendly housing\'','citizens. ',0,'\Elder- friendly housing\',citizens.,0,'NNP JJ NN','PP PPR',0,0,Um
+'Safe and reliable','\'Safe and reliable\'',0,'Safe and reliable','\Safe and reliable\',0,'NNP CC PPR','NNP CC NN',1,1,Mec
+'engineers\'','the doctors\'',0,engineers\,'the doctors\',0,NN,'DET NN',1,1,ArtOrDet
+'from customers\'','from the customer\'s',0,'from customers\','from the customer\s',0,'IN NN','IN DET POS',1,1,Others
+'patients\'','the patients\'',0,patients\,'the patients\',0,NN,'DET NN',1,1,ArtOrDet
+so-called,'the \'so\'',0,so-called,'the \so\',0,JJ,'DET NN',1,1,ArtOrDet
+due,'due \'to\'',0,due,'due \to\',0,JJ,'JJ NN',1,1,Wcip
+that,'that \'is\'',0,that,'that \is\',0,IN,'IN NN',0,1,V0
+'changed it to \'Reserved Carriage\'','a "Reserved Carriage\' is a better idea.',0,'change it to \Reserved Carriage\','a "Reserved Carriage\ be a good idea.',0,'JJ PRP TO VBN NNP','DET NNP NNP VBZ DET RB NN',1,1,Others
+'Such is the Grandparent Caregiver Relief\'                       ','For example, the Grandparent Caregiver Relief\' policy grants married couples an income tax relief of $3000 if a grandparent is helping the couple take care of their child.',0,'Such be the Grandparent Caregiver Relief\','For example, the Grandparent Caregiver Relief\ policy grant marry couple an income tax relief of $3000 if a grandparent be help the couple take care of their child.',0,'JJ VBZ DET NNP NNP NNP PPR','IN PPC DET NNP NNP NNP NN NNS JJ NNS DET NN NN NN IN CD IN DET NN VBZ VBG DET NN VB NN IN PRPS NN',0,1,Smod
+'\'work scientist\'','\'work scientist\'',1,'\work scientist\','\work scientist\',1,'NN NN','NN NN',1,1,Um
+'\'Nuclear power\'s new dawn\'','the article, \'Nuclear Power\'s New Dawn\',',0,'\Nuclear power\s new dawn\','the article, \Nuclear Power\s New Dawn\,',0,'NNP PRP JJ NN','DET PPC NNP PRP NNP PPR',1,1,Mec
+'operators\'','the operators\'',0,operators\,'the operators\',0,NN,'DET NN',1,1,ArtOrDet
+'of violating','violate individuals\'',0,'of violate','violate individuals\',0,'IN PPR','VB NN',0,0,Vform
+'employees\'','upon employees\'',0,employees\,'upon employees\',0,NN,'IN NN',1,1,Wcip

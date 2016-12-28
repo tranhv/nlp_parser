@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<learner><head sortkey="TR446*0100*2000*01">
+  <candidate><personnel><language>Thai</language><age>16-20</age></personnel><score>19.0</score></candidate>
+  <text>
+     <answer1>
+       <question_number>1</question_number>
+       <exam_score>2.2</exam_score>
+         <coded_answer>
+          <p>Dear Helen Ryan</p>
+          <p>My name is Steven. <NS type="TV"><i><NS type="UP"><i>I'am</i><c>I am</c></NS></i><c>I was</c></NS> very <NS type="S"><i>serpride</i><c>surprised</c></NS> when I <NS type="TV"><i>get</i><c>got</c></NS> the letter from you<NS type="UP"><i>. And</i><c> and</c></NS> heard that I have <NS type="TV"><i>win</i><c>won</c></NS> the <NS type="S"><i>prise</i><c>prize</c></NS><NS type="UP"><i>. <NS type="FV"><i><NS type="S"><i>Goging</i><c>Going</c></NS></i><c>To go</c></NS></i><c> to go</c></NS> on a camp <NS type="MT"><c>in</c></NS> California in the U.S.A. for one week.</p>
+          <p>Thank you for <NS type="RP"><i>every <NS type="AGN"><i>things</i><c>thing</c></NS></i><c>everything</c></NS></p>
+          <p><NS type="DA"><i>Your</i><c>Yours</c></NS> sincerely</p>
+          <p>Frank Steven.</p>
+         </coded_answer>
+     </answer1>
+     <answer2>
+       <question_number>3</question_number>
+       <exam_score>2.2</exam_score>
+         <coded_answer>
+          <p>Shopping is not always enjoyable.</p>
+          <p>Now let's start <NS type="S"><i>whith</i><c>with</c></NS> shopping at <NS type="MD"><c>the</c></NS> Beverley <NS type="SA"><i>Center</i><c>Centre</c></NS>.</p>
+         </coded_answer>
+     </answer2>
+  </text>
+</head></learner>

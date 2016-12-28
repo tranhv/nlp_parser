@@ -219,13 +219,45 @@ class ReadData
   end
 
   def main
+    # files = Dir.glob(DATA_PATH + "/dataset/01*/*.xml").sort.entries
+    
+    # file_aln = File.open(DATA_PATH + "/dataset/quynhanh/alignments.txt", "w")
+    # file_aln.write("")
+
+    # files.each do |file|
+    #   filename = file.split(".")[1].split("/")[3]
+    #   data = get_data_SWA(DATA_PATH + "/quynhanh/" + filename + "_merged.txt")
+    #   print_alignments(data, filename, file_aln)
+    # end
+
+    get_data_fce(DATA_PATH + "/dataset/0100_2000_06/doc11.xml")
+  end
+
+  def main2
     # nucle = get_data_nucle(DATA_PATH + "/nucle2.0.sgml")
     nucle = get_data_nucle(DATA_PATH + "/corpusFull_fix_Trung.sgml")
     data_nucle = parser_data_nucle(nucle)
+    data_nucle = remove_blank_senpair(data_nucle)
     # puts "data_nucle --> #{data_nucle.inspect}\n\n"
 
+    # data_nucle = reduce_tags_ArtOrDet(data_nucle)
+    # data_nucle = reduce_tags_Wcip(data_nucle)
+    # data_nucle = reduce_tags_Rloc(data_nucle)
+
+    # print_csv(data_nucle)
+
+    # Check xem thu tag Um co Correction hay khong
+    # Neu co Correction thi puts ra de xem
+    # data_nucle.each_with_index do |line, index|
+    #   line.Alignment.each_with_index do |aln, i|
+    #     if aln.tag_name == "Um" and !aln.target_numbers.empty?
+    #       puts ">>>>#{line.inspect}\n"
+    #     end
+    #   end
+    # end
+
     # generate_data_meteor(data_nucle)
-    generate_data_manli(data_nucle)
+    # generate_data_manli(data_nucle)
 
     # METEOR ================    
     # data_meteor_nucle = get_data_meteor_1_5(DATA_PATH + "/result_meteor_nucle.txt")
@@ -235,34 +267,48 @@ class ReadData
 
     # data_meteor_nucle = assign_tags(data_nucle, data_meteor_nucle)
     # data_meteor_nucle = assign_tags_waln(data_meteor_nucle)
-    # puts "Meteor remove misc: #{count_alignment(data_meteor_nucle)}\n\n"
+    # puts "Meteor count alignment: #{count_alignment(data_meteor_nucle)}\n\n"
 
-    # # data_meteor1, data_meteor2 = split_data(data_meteor_nucle, N80_PERCENT)
-    # data_meteor_nucle = reduce_tags_preserved(data_meteor_nucle)
-    # data_meteor_nucle = reduce_tags_wa(data_meteor_nucle)
-    # data_meteor_nucle = reduce_tags_mogdet(data_meteor_nucle)
-    # data_meteor_nucle = reduce_tags_exact(data_meteor_nucle)
-    # data_meteor_nucle = reduce_tags_unaligned(data_meteor_nucle)
-    # data_meteor_nucle = reduce_tags_wa(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_waln(data_meteor_nucle)
+    # data_meteor_nucle = reduce_tags_Rloc(data_meteor_nucle)
 
     # print_csv(data_meteor_nucle)
     # END METEOR ============
 
+    # MANLI =================
+    # data_manli = get_data_json(DATA_PATH + "/output_nucle.json")
+    # data_manli = insert_unaligned(data_manli)
+    # data_manli = remove_all_tags(data_manli)
+
+    # # puts "Manli count alignment: #{count_alignment(data_manli)}\n\n"    
+
+    # data_manli = assign_tags(data_nucle, data_manli)
+    # data_manli = assign_tags_waln(data_manli)
+
+    # data_manli = reduce_tags_waln(data_manli)
+    # data_manli = reduce_tags_Nn(data_manli)
+    # data_manli = reduce_tags_Wcip(data_manli)
+
+    # print_csv(data_manli)
+    # # END MANLI =============
+
     # CHECK DATA ============
     # tags = ["Vt", "Vm", "V0", "Vform", "SVA", "ArtOrDet", "Nn", "Npos", "Pform", "Pref", "Wcip", "Wa", "Wform", "Wtone", "Srun", "Smod", "Spar", "Sfrag", "Ssub", "WOinc", "WOadv", "Trans", "Mec", "Rloc", "Cit", "Others", "Um", "waln"]
-    
+    # tags = ["exact", "stem", "para", "unaligned", "syn"]
+
     # puts "Tag count NUCLE: #{count_tags(data_nucle, tags)}\n"
-    # puts "Tag count Meteor: #{count_tags(data_meteor_nucle, tags)}\n\n"
-    # puts "Tag count Manli: #{count_tags(data_manli, tags)}"
-    # # puts "Tag count GIZA: #{count_tags(data_moses, tags)}"
-    # puts "Tag count ngan: #{count_tags(data_ngan, tags)}\n"
-    # puts "Tag count kigoshi: #{count_tags(data_kigoshi, tags)}\n"
-    # puts "Tag count quynhanh: #{count_tags(data_quynhanh, tags)}"
+    # puts "Tag count Meteor: #{count_tags(data_meteor_nucle, tags)}\n"
+    # puts "Tag count Manli: #{count_tags(data_manli, tags)}\n\n"
 
-    # puts "compare_data_alignment --> #{compare_data_alignment(data_nucle, data_meteor_nucle)}\n"
-    # puts "compare_data --> #{compare_data(data_nucle, data_meteor_nucle, tags)}\n"
+    # puts "compare_data_alignment NUCLE METEOR --> #{compare_data_alignment(data_nucle, data_meteor_nucle)}\n"
+    # puts "compare_data_alignment NUCLE MANLI --> #{compare_data_alignment(data_nucle, data_manli)}\n"
+    # puts "compare_data NUCLE METEOR --> #{compare_data(data_nucle, data_meteor_nucle, tags)}\n"
+    # puts "compare_data NUCLE MANLI --> #{compare_data(data_nucle, data_manli, tags)}\n"
 
-    # puts "#{get_tags(data_nucle)}"
+    # puts "count NUCLE: #{data_nucle.count}\n"
+    # puts "count METEOR: #{data_meteor_nucle.count}\n"
+    # puts "count MANLI: #{data_manli.count}\n"
+    # puts "#{get_tags(data_meteor_nucle)}"
 
     # data_meteor_1_5 = remove_all_but_wa(data_meteor_1_5)
     # data_manli = remove_all_but_wa(data_manli)
@@ -873,6 +919,27 @@ class ReadData
     return data
   end
 
+  def get_data_fce(path)
+require 'engtagger'
+require 'lemmatizer'
+require 'json'
+require 'xmlsimple'
+    path = "./data/test.xml"
+    content = File.open(path,"r:iso-8859-1:utf-8").read
+    docs = XmlSimple.xml_in(content, { 'KeyAttr' => 'name' })
+
+    data = {}
+    puts docs.inspect
+
+    docs["DOC"].each do |doc|
+      paras = []
+      doc["TEXT"].first["P"].each do |para|
+        paras << para
+      end
+    end
+    puts docs
+
+  end
 
   def parse_giza_line(line)
     data = []
@@ -1526,21 +1593,21 @@ class ReadData
     return data
   end
 
-  def reduce_tags_wa(data)
+  def reduce_tags_waln(data)
     count = 0
     data.each do |line|
       aln_delete = []
       line.Alignment.each_with_index do |aln, i|
-        if (aln.tag_name == "wa")
+        if (aln.tag_name == "waln")
           aln_delete << i
           count = count + 1
-          break if count >= 17228
+          break if count >= 1017552
         end
-        break if count >= 17228
+        break if count >= 1017552
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 17228 
+      break if count >= 1017552 
       # 12456 meteor 100
       # 13012 manli 100
       # 6728 moses 100 
@@ -1555,6 +1622,91 @@ class ReadData
 
       # 32360 meteor qa 100
       # 17228 manli qa 100
+
+      # 950116 Nucle meteor
+      # 1017552 nucle manli
+    end
+    return data
+  end
+
+  def reduce_tags_Rloc(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "Rloc")
+          aln_delete << i
+          count = count + 1
+          break if count >= 2411
+        end
+        break if count >= 2411
+      end
+      # delete paraphrase alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 2411
+      #  1881 Nucle meteor
+      # 2411 Nucle
+    end
+    return data
+  end
+
+  def reduce_tags_ArtOrDet(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "ArtOrDet")
+          aln_delete << i
+          count = count + 1
+          break if count >= 2055
+        end
+        break if count >= 2055
+      end
+      # delete paraphrase alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 2055
+      #  2055 Nucle
+    end
+    return data
+  end
+
+  def reduce_tags_Wcip(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "Wcip")
+          aln_delete << i
+          count = count + 1
+          break if count >= 1096
+        end
+        break if count >= 1096
+      end
+      # delete paraphrase alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 1096
+      #  3336 Nucle 
+      # 1096 Nucle manli
+    end
+    return data
+  end
+
+  def reduce_tags_Nn(data)
+    count = 0
+    data.each do |line|
+      aln_delete = []
+      line.Alignment.each_with_index do |aln, i|
+        if (aln.tag_name == "Nn")
+          aln_delete << i
+          count = count + 1
+          break if count >= 848
+        end
+        break if count >= 848
+      end
+      # delete paraphrase alignments in the original array
+      line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
+      break if count >= 848
+      #  848 Nucle manli
     end
     return data
   end
@@ -1596,6 +1748,18 @@ class ReadData
     return data
   end
 
+  # Xoá những cặp câu có source hoặc target rỗng. Vì khi generate data manli
+  # mình phải xoá những cặp câu này (để khỏi lỗi). 
+  # Dùng với data nucle 
+  def remove_blank_senpair(data)
+    data1 = []
+    data.each_with_index do |line, index|
+      next if line.source.empty? or line.target.empty?
+      data1 << line
+    end
+    return data1
+  end
+
   def break_alignment(aln)
     aln_arr = []
     source_tmp = aln.source_numbers.split(",").map { |e| e.to_i }.sort
@@ -1628,6 +1792,7 @@ class ReadData
 
   def assign_tags(data1, data2)
     data1.each_with_index do |alignment1, index|
+
       # if data1[index].source.gsub("\n", "").strip == data2[index].source.gsub("\n", "").strip and data1[index].target.gsub("\n", "").strip == data2[index].target.gsub("\n", "").strip
         # Lấy ra được mãng có các mảng con mà mảng con có 2 phần tử là source_numbers và target_numbers
         alignment1_arr = data1[index].Alignment.map { |e| [e.source_numbers.split(",").sort.join(","), e.target_numbers.split(",").sort.join(",")] }
