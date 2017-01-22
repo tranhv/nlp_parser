@@ -2,6 +2,7 @@ require 'engtagger'
 require 'lemmatizer'
 require 'json'
 require 'xmlsimple'
+require 'nokogiri'
 
 
 class ReadData
@@ -230,7 +231,8 @@ class ReadData
     #   print_alignments(data, filename, file_aln)
     # end
 
-    get_data_fce(DATA_PATH + "/dataset/0100_2000_06/doc11.xml")
+    #get_data_fce(DATA_PATH + "/dataset/0100_2000_06/doc11.xml")
+    get_data_fce("./data/test.xml")
   end
 
   def main2
@@ -920,25 +922,67 @@ class ReadData
   end
 
   def get_data_fce(path)
-require 'engtagger'
-require 'lemmatizer'
-require 'json'
-require 'xmlsimple'
     path = "./data/test.xml"
-    content = File.open(path,"r:iso-8859-1:utf-8").read
-    docs = XmlSimple.xml_in(content, { 'KeyAttr' => 'name' })
+    text = "Nokogiri::XML::Text"
+    element = "Nokogiri::XML::Element"
 
-    data = {}
-    puts docs.inspect
+    doc = File.open(path) { |f| Nokogiri::XML(f) }
+    data = []
+    doc.xpath("//p").each do |p|
+      sentence_pair = Sentence_Pair.new
+      sentence_pair.source = ''
+      sentence_pair.target = ''
+      p.children.each do |tag|
+        puts "==================="
+        puts "tag --> #{tag}"
+        puts "tag class --> #{tag.class}"
+        puts "tag class NS --> #{tag.name == "NS"}"
+        if tag.class.to_s == text
+          sentence_pair.source = sentence_pair.source + tag
+          sentence_pair.target = sentence_pair.target + tag
+        end
+        if tag.class.to_s == element
+          if tag.name == "NS"
+            puts "tag NS --> #{tag.children}"
+            tag.children.each do |nsChild|
+              puts "=---"
+              puts "nsChild -> #{nsChild.inspect}"
+              puts "nsChild.class.to_s --> #{nsChild.class.to_s}"
+              puts "nsChild.name --> #{nsChild.name}"
+              puts "nsChild.class.to_s == element -> #{nsChild.class.to_s == element}"
+              if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "i"
+                  sentence_pair.source = sentence_pair.source + nsChild.children.first
+              end
+              if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "c"
+                sentence_pair.target = sentence_pair.target + nsChild.children.first
+              end
 
-    docs["DOC"].each do |doc|
-      paras = []
-      doc["TEXT"].first["P"].each do |para|
-        paras << para
+              puts "sentence --> #{sentence_pair}"
+              
+              puts "nsChild.children.length --> #{nsChild.children.length}"
+              if nsChild.name == "i" and nsChild.class.to_s == element and nsChild.children.length > 1
+                nsChild.children.each do |i|
+                  puts "i --> #{i}"
+                  if i.class.to_s == text
+                    sentence_pair.source = sentence_pair.source + i
+                  end
+                  if i.class.to_s == element and i.name == "NS"
+                    i.children.each do |insChild|
+                      puts "i_ns -> #{insChild}"
+                      if insChild.class.to_s == element and insChild.children.length == 1 and insChild.name == "i"
+                            sentence_pair.source = sentence_pair.source + insChild.children.first
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
       end
+      data << sentence_pair
     end
-    puts docs
-
+    puts "data --> #{data.inspect}"
   end
 
   def parse_giza_line(line)
