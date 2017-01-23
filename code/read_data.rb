@@ -921,6 +921,29 @@ class ReadData
     return data
   end
 
+  def build_number_fce(sentence_pair, text_source, text_target, tag_name)
+          source_arr = sentence_pair.source.split(" ")
+          target_arr = sentence_pair.target.split(" ")
+          text_source_arr = text_source.to_s.split(" ")
+          text_target_arr = text_target.to_s.split(" ")
+          
+          align = Alignment.new
+          sentence_pair.Alignment << align
+          source_num_arr = []
+          target_num_arr = []
+
+          text_source_arr.each_with_index do |_, index|
+            source_num_arr << index + source_arr.length
+          end
+
+          text_target_arr.each_with_index do |_, index|
+            target_num_arr << index + target_arr.length
+          end
+          align.source_numbers = source_num_arr.join(",")
+          align.target_numbers = target_num_arr.join(",")
+          align.tag_name = tag_name
+  end
+
   def get_data_fce(path)
     path = "./data/test.xml"
     text = "Nokogiri::XML::Text"
@@ -932,57 +955,55 @@ class ReadData
       sentence_pair = Sentence_Pair.new
       sentence_pair.source = ''
       sentence_pair.target = ''
+      data << sentence_pair
+
+      sentence_pair.Alignment = []
+
       p.children.each do |tag|
-        puts "==================="
-        puts "tag --> #{tag}"
-        puts "tag class --> #{tag.class}"
-        puts "tag class NS --> #{tag.name == "NS"}"
+        next if tag.to_s.strip == ""
         if tag.class.to_s == text
+          build_number_fce(sentence_pair, tag.to_s, tag.to_s, "")
           sentence_pair.source = sentence_pair.source + tag
           sentence_pair.target = sentence_pair.target + tag
         end
         if tag.class.to_s == element
           if tag.name == "NS"
-            puts "tag NS --> #{tag.children}"
-            tag.children.each do |nsChild|
-              puts "=---"
-              puts "nsChild -> #{nsChild.inspect}"
-              puts "nsChild.class.to_s --> #{nsChild.class.to_s}"
-              puts "nsChild.name --> #{nsChild.name}"
-              puts "nsChild.class.to_s == element -> #{nsChild.class.to_s == element}"
+            source_add = ""
+            target_add = ""
+            tag.children.each_with_index do |nsChild, nsChild_index|
               if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "i"
-                  sentence_pair.source = sentence_pair.source + nsChild.children.first
+                  source_add = source_add + nsChild.children.first
               end
               if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "c"
-                sentence_pair.target = sentence_pair.target + nsChild.children.first
+                target_add = target_add + nsChild.children.first
               end
-
-              puts "sentence --> #{sentence_pair}"
-              
-              puts "nsChild.children.length --> #{nsChild.children.length}"
               if nsChild.name == "i" and nsChild.class.to_s == element and nsChild.children.length > 1
                 nsChild.children.each do |i|
-                  puts "i --> #{i}"
                   if i.class.to_s == text
-                    sentence_pair.source = sentence_pair.source + i
+                    source_add = source_add + i
                   end
                   if i.class.to_s == element and i.name == "NS"
                     i.children.each do |insChild|
-                      puts "i_ns -> #{insChild}"
                       if insChild.class.to_s == element and insChild.children.length == 1 and insChild.name == "i"
-                            sentence_pair.source = sentence_pair.source + insChild.children.first
+                            source_add = source_add + insChild.children.first
                       end
                     end
                   end
                 end
               end
+
+              if nsChild_index == (tag.children.length - 1)
+                build_number_fce(sentence_pair, source_add, target_add, tag.attributes.first.last.value.to_s)
+                sentence_pair.source = sentence_pair.source + source_add
+                sentence_pair.target = sentence_pair.target + target_add
+              end
+
             end
           end
         end
       end
-      data << sentence_pair
     end
-    puts "data --> #{data.inspect}"
+    return data
   end
 
   def parse_giza_line(line)
