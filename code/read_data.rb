@@ -220,19 +220,118 @@ class ReadData
   end
 
   def main
-    # files = Dir.glob(DATA_PATH + "/dataset/01*/*.xml").sort.entries
+    files = Dir.glob(DATA_PATH + "/dataset/01*/*.xml").sort.entries
     
-    # file_aln = File.open(DATA_PATH + "/dataset/quynhanh/alignments.txt", "w")
-    # file_aln.write("")
+    # fce_full = File.open(DATA_PATH + "/dataset/fce_full.xml", "w")
+    # fce_full.write("")
 
     # files.each do |file|
-    #   filename = file.split(".")[1].split("/")[3]
-    #   data = get_data_SWA(DATA_PATH + "/quynhanh/" + filename + "_merged.txt")
-    #   print_alignments(data, filename, file_aln)
+    #   text = File.open(file, 'r').read
+    #   # puts "#{text} \n\n\n"
+    #   fce_full.write(text + "\n")
     # end
 
     #get_data_fce(DATA_PATH + "/dataset/0100_2000_06/doc11.xml")
-    get_data_fce("./data/test.xml")
+    # data_fce = get_data_fce("./data/fce_full.xml")
+    # puts data_fce
+
+    data_fce = []
+    files.each do |file|
+      data_fce << get_data_fce(file)
+      # puts "#{file}  \n"
+    end
+    data_fce.flatten!
+    # puts data_fce
+
+    # Doan nay de delete nhung cau source = "" hoac target = "" (khi dua vao manli bi loi)
+    puts "count before deleting --> #{data_fce.count}\n"
+    delete_list = []
+    data_fce.each_with_index do |line, i|
+      if line.source.empty? or line.target.empty?
+        delete_list << i
+      end
+    end
+    puts "#{delete_list}"
+
+    i = 0
+    delete_list.each do |del|
+      data_fce.delete_at(del - i)
+      i = i + 1
+    end
+    puts "count after deleting --> #{data_fce.count}\n"
+
+    # Doan nay de delete nhung cau qua dai (Manli bi loi, chay quai ko ra, ba nui no)
+    # i=0
+    delete_list = []
+    data_fce.each_with_index do |line, index|
+      if line.source.length > 1200
+        # puts "#{line.source.length} <---> #{line.source} \n"
+        # i=i+1
+        delete_list << index
+      end
+    end
+    # puts i  #so luong cau da bi delete
+
+    i = 0
+    delete_list.each do |del|
+      data_fce.delete_at(del - i)
+      i = i + 1
+    end
+    puts "count after deleting --> #{data_fce.count}\n"
+
+    # generate_data_meteor(data_fce)
+    # generate_data_manli(data_fce)
+
+    # FCE
+    # puts "#{get_tags(data_fce)}"
+    data_fce = refine_tag_preserved(data_fce)
+    puts "FCE: #{count_alignment(data_fce)}\n"
+
+    data_fce = reduce_tags_preserved(data_fce)
+
+    print_csv(data_fce)
+
+    # METEOR
+    data_meteor_fce = get_data_meteor_1_5(DATA_PATH + "/result_meteor_fce.txt")
+    data_meteor_fce = insert_unaligned(data_meteor_fce)
+    data_meteor_fce = remove_all_tags(data_meteor_fce)   
+    # puts "Meteor: #{count_alignment(data_meteor_fce)}\n"
+
+    data_meteor_fce = assign_tags(data_fce, data_meteor_fce)
+    data_meteor_fce = assign_tags_waln(data_meteor_fce)
+    puts "Meteor count alignment: #{count_alignment(data_meteor_fce)}\n\n"
+
+    # data_meteor_fce = reduce_tags_preserved(data_meteor_fce)
+    # data_meteor_fce = reduce_tags_waln(data_meteor_fce)
+
+    # print_csv(data_meteor_fce)
+
+    # MANLI
+    data_manli = get_data_json(DATA_PATH + "/output_manli_fce.json")
+    data_manli = insert_unaligned(data_manli)
+    data_manli = remove_all_tags(data_manli)
+
+    puts "Manli count alignment: #{count_alignment(data_manli)}\n\n"    
+
+    data_manli = assign_tags(data_fce, data_manli)
+    data_manli = assign_tags_waln(data_manli)
+
+    # data_manli = reduce_tags_preserved(data_manli)
+    # data_manli = reduce_tags_waln(data_manli)
+
+    # print_csv(data_manli)
+
+    # CHECK DATA
+    tags = ["preserved", "AGD", "AGN", "AGV", "DA", "DY", "FJ", "FN", "FV", "M", "MA", "MD", "MN", "MP", "MT", "MV", "MY", "R", "RN", "RP", "RQ", "RT", "RV", "RY", "S", "SX", "TV", "U", "UC", "UD", "UN", "UT", "UV", "UY", "W", "waln"]
+    puts "Tag count FCE: #{count_tags(data_fce, tags)}\n"
+    puts "Tag count METEOR: #{count_tags(data_meteor_fce, tags)}\n"
+    puts "Tag count MANLI: #{count_tags(data_manli, tags)}\n"
+
+    puts "compare_data_alignment FCE METEOR --> #{compare_data_alignment(data_fce, data_meteor_fce)}\n"
+    puts "compare_data_alignment FCE MANLI --> #{compare_data_alignment(data_fce, data_manli)}\n"
+
+    #===============================
+
   end
 
   def main2
@@ -945,7 +1044,7 @@ class ReadData
   end
 
   def get_data_fce(path)
-    path = "./data/test.xml"
+    # path = "./data/test.xml"
     text = "Nokogiri::XML::Text"
     element = "Nokogiri::XML::Element"
 
@@ -962,7 +1061,7 @@ class ReadData
       p.children.each do |tag|
         next if tag.to_s.strip == ""
         if tag.class.to_s == text
-          build_number_fce(sentence_pair, tag.to_s, tag.to_s, "")
+          build_number_fce(sentence_pair, tag.to_s, tag.to_s, "preserved")
           sentence_pair.source = sentence_pair.source + tag
           sentence_pair.target = sentence_pair.target + tag
         end
@@ -972,10 +1071,10 @@ class ReadData
             target_add = ""
             tag.children.each_with_index do |nsChild, nsChild_index|
               if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "i"
-                  source_add = source_add + nsChild.children.first
+                  source_add = source_add + " " + nsChild.children.first
               end
               if nsChild.class.to_s == element and nsChild.children.length == 1 and nsChild.name == "c"
-                target_add = target_add + nsChild.children.first
+                target_add = target_add + " " + nsChild.children.first
               end
               if nsChild.name == "i" and nsChild.class.to_s == element and nsChild.children.length > 1
                 nsChild.children.each do |i|
@@ -1589,13 +1688,13 @@ class ReadData
         if (aln.tag_name == "preserved")
           aln_delete << i
           count = count + 1
-          break if count >= 101860
+          break if count >= 410663
         end
-        break if count >= 101860
+        break if count >= 410663
       end
       # delete preserved alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 101860 
+      break if count >= 410663 
       # 58004 SWA 80
       # 11562 SWA 20
       # 69566 SWA 100
@@ -1609,6 +1708,9 @@ class ReadData
       #  104215 quynhanh 100
       # 87523 meteor qa 100
       # 101860 manli qa 100 
+      # 394068 meteor fce 100
+      # 349390 manli fce 100
+      # 410663 FCE 100
     end
     return data
   end
@@ -1666,13 +1768,13 @@ class ReadData
         if (aln.tag_name == "waln")
           aln_delete << i
           count = count + 1
-          break if count >= 1017552
+          break if count >= 160515
         end
-        break if count >= 1017552
+        break if count >= 160515
       end
       # delete wa alignments in the original array
       line.Alignment.delete_if.with_index { |_, index| aln_delete.include? index }
-      break if count >= 1017552 
+      break if count >= 160515 
       # 12456 meteor 100
       # 13012 manli 100
       # 6728 moses 100 
@@ -1690,6 +1792,8 @@ class ReadData
 
       # 950116 Nucle meteor
       # 1017552 nucle manli
+      # 80493 meteor fce 100
+      # 160515 manli fce 100
     end
     return data
   end
