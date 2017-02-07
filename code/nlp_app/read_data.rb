@@ -2248,10 +2248,11 @@ class ReadData
   end
 
   def build_output_data(data)
-    output = []
+    output = {}
     data.each_with_index do |pair, index_pair|
+      output[index_pair] = []
       pair.Alignment.each_with_index do |alg, index_aln|
-        output << [
+        output[index_pair] << [
           get_string_by_index(alg.source_numbers, pair.source), 
           get_string_by_index(alg.target_numbers, pair.target), 
           alg.tag_name

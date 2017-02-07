@@ -1,11 +1,4 @@
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 15px;
-}
+
 </style>
 <h2>Alignment Classification</h2>
 <h3>Input</h3>
@@ -18,23 +11,32 @@ th, td {
 </section>
 
 <h3>Output</h3>
-<% @data_output.each_with_index do |phase|%>
-  <table style="width:30%; border: 1px solid black;border-collapse: collapse;">
-    <tr>
-      <td style="border: 1px solid black;border-collapse: collapse;">
-        <%= phase[0]%>
-      </td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid black;border-collapse: collapse;">
-        <%= phase[1]%>
-      </td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid black;border-collapse: collapse;">
-        <%= phase[2]%>
-      </td>
-    </tr>
-  </table>
-  </br>
+<div>
+<% @data_output.each do |phase, values|%>
+  <% values.each_with_index do |alg, index|%>
+    <table style="border: 1px solid black;border-collapse: collapse;
+      <%if index < (values.length - 1)%> 
+      <%= 'float: left;'%>
+      <%end%>
+    ">
+      <tr>
+        <td style="border: 1px solid black;border-collapse: collapse;">
+          <%= alg[0]%>
+        </td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black;border-collapse: collapse;">
+          <%= alg[1]%>
+        </td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black;border-collapse: collapse;">
+          <%= alg[2]%>
+        </td>
+      </tr>
+    </table>
+  <%end%>
+  <br>
+  <br>
 <%end%>
+</div>
