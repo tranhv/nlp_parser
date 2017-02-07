@@ -22,7 +22,10 @@ class Nlp < Sinatra::Base
       else
         @content = "Data not found"
       end
-      # puts " content -->#{@content}---"
+      puts " content -->#{@content}---"
+      read_data = ReadData.new
+      @data_output = read_data.build_output_data(read_data.get_data_fce("./data/test_json.xml"))
+      puts "data --> #{@data_output.inspect}"
       erb :home
     end
 

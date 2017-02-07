@@ -1049,7 +1049,6 @@ class ReadData
   end
 
   def get_data_fce(path)
-    # path = "./data/test.xml"
     text = "Nokogiri::XML::Text"
     element = "Nokogiri::XML::Element"
 
@@ -2248,9 +2247,23 @@ class ReadData
     return data
   end
 
+  def build_output_data(data)
+    output = []
+    data.each_with_index do |pair, index_pair|
+      pair.Alignment.each_with_index do |alg, index_aln|
+        output << [
+          get_string_by_index(alg.source_numbers, pair.source), 
+          get_string_by_index(alg.target_numbers, pair.target), 
+          alg.tag_name
+          ]
+      end
+    end
+    output
+  end
+
 end
 
 
-obj = ReadData.new
-obj.main
+# obj = ReadData.new
+# obj.main
 
