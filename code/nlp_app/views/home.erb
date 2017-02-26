@@ -1,5 +1,12 @@
 <h2>Alignment Classification</h2>
 <h3>Input</h3>
+
+<section id="training">
+  <form action="/training" method="post">
+    <input type="submit" value="Training">
+  </form>
+<%= @training_output%>
+</section>
 <section id="submit">
   <form action="/" method="post">
     <textarea cols="100" rows="20" name="content" placeholder="Your data&hellip;"><% if !@content.empty? %><%= @content %><% end %></textarea>

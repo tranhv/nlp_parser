@@ -5,6 +5,9 @@ class Nlp < Sinatra::Base
     @content = ""
     @output = ""
     @@data_classified = nil
+    @training_output = "Chưa training"
+    @@classifier = nil
+    @@train = nil
     data_path = "./data"
     file_path = "./data/import_file.txt"
     # meteor_path = "../../../../meteor-1.5"
@@ -30,7 +33,14 @@ class Nlp < Sinatra::Base
         @data_output = read_data.build_output_data(@@data_classified)
       else
         @data_output = []
-      end 
+      end
+
+      unless @@train.nil?
+        @training_output = "Đã training xong!"
+      else
+        @training_output = "Chưa training!"
+      end
+
       erb :home
     end
 
@@ -62,12 +72,20 @@ class Nlp < Sinatra::Base
       read_data.print_arff(data_aligned)
 
       # read_data.build_weka_naivebayes(data_path + "/SWA_20.arff")
-      classifier, train = read_data.build_weka_svm_train(data_path + "/SWA_20.arff")
-      classification_results = read_data.build_weka_svm_test(data_path + "/arff.arff", classifier, train)
+      if @@classifier.nil? || @@train.nil?
+        redirect '/'
+      end
+      classification_results = read_data.build_weka_svm_test(data_path + "/arff.arff", @@classifier, @@train)
       @@data_classified = read_data.assign_classification_results(data_aligned, classification_results)
       # weka_cmd = "java -classpath ./lib/weka.jar weka.classifiers.functions.LibSVM -t ./data/SWA_20.arff"
       redirect '/'
     end
 
-    
+    post "/training" do
+      puts "Start training"
+      read_data = ReadData.new
+      @@classifier, @@train = read_data.build_weka_svm_train(data_path + "/SWA_20.arff")
+      puts "End training"
+      redirect '/'
+    end
 end
