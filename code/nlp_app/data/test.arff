@@ -1,0 +1,36 @@
+@relation SWA_classification
+
+@attribute s_str {The,that,supervised,morphological,analyzers,were,competitive,',',and,considerably,better,than,an,unsupervised,analyzer,a,heuristic,segmentation,method,.}
+@attribute t_str {The,that,supervised,morphological,analyzers,were,competitive,',',and,considerably,better,than,an,unsupervised,analyzer,a,heuristic,segmentation,method,.}
+@attribute st_samestr {0,1}
+@attribute s_stem {The,that,supervise,morphological,analyzer,be,competitive,',',and,considerably,good,than,an,unsupervised,a,heuristic,segmentation,method,.}
+@attribute t_stem {The,that,supervise,morphological,analyzer,be,competitive,',',and,considerably,good,than,an,unsupervised,a,heuristic,segmentation,method,.}
+@attribute st_samestem {0,1}
+@attribute s_pos {DET,IN,JJ,NN,NNS,VBD,PPR,CC,RB,PP}
+@attribute t_pos {DET,IN,JJ,NN,NNS,VBD,PPR,CC,RB,PP}
+@attribute st_precede {0,1}
+@attribute st_follow {0,1}
+@attribute class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}
+
+@data
+The,The,1,The,The,1,DET,DET,1,0,?
+that,that,1,that,that,1,IN,IN,0,1,?
+supervised,supervised,1,supervise,supervise,1,JJ,JJ,1,1,?
+morphological,morphological,1,morphological,morphological,1,NN,NN,1,1,?
+analyzers,analyzers,1,analyzer,analyzer,1,NNS,NNS,1,1,?
+were,were,1,be,be,1,VBD,VBD,1,1,?
+competitive,competitive,1,competitive,competitive,1,JJ,JJ,1,0,?
+',',',',1,',',',',1,PPR,PPR,0,1,?
+and,and,1,and,and,1,CC,CC,1,0,?
+considerably,considerably,1,considerably,considerably,1,RB,RB,0,1,?
+better,better,1,good,good,1,RB,RB,1,1,?
+than,than,1,than,than,1,IN,IN,1,1,?
+an,an,1,an,an,1,DET,DET,1,1,?
+unsupervised,unsupervised,1,unsupervised,unsupervised,1,NN,NN,1,1,?
+analyzer,analyzer,1,analyzer,analyzer,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+a,a,1,a,a,1,DET,DET,1,1,?
+heuristic,heuristic,1,heuristic,heuristic,1,NN,NN,1,1,?
+segmentation,segmentation,1,segmentation,segmentation,1,NN,NN,1,1,?
+method,method,1,method,method,1,NN,NN,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?

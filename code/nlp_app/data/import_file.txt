@@ -1,3 +1,3 @@
-6
-The experiments revealed that supervised morphological analyzers were competitive , and considerably better than an unsupervised analyzer and a heuristic segmentation method .
-The experimental results confirmed that supervised morphological analyzers were competitive with , and performed considerably better than an unsupervised analyzer and a heuristic segmentation method .
+0
+I am Mai
+I am Ngan 

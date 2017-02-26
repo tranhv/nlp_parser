@@ -220,8 +220,18 @@ class ReadData
   end
 
   def main
-    data_demo = get_data_demo("./data/import_file.txt")
-    puts data_demo
+    # data_demo = get_data_demo("./data/import_file.txt")
+    # puts data_demo
+    # data_test = get_data_demo(DATA_PATH + "/import_file.txt")
+    data_test = get_data_meteor_1_5(DATA_PATH + "/result_meteor.txt")
+    data_test = insert_unaligned(data_test)
+    # puts "data test --> #{data_test}"
+
+    data_test = remove_all_tags(data_test)
+    print_arff(data_test)
+    classification_results = build_weka_svm(DATA_PATH + "/SWA_20.arff", DATA_PATH + "/arff.arff")
+    data_test = assign_classification_results(data_test, classification_results)
+    puts "data_test --> #{data_test}"
   end
 
   def main_fce
@@ -1231,13 +1241,131 @@ class ReadData
     return data
   end
 
-  def build_weka_svm(path = '')
+  def build_weka_svm_train(path)
     dir = "./lib/weka.jar"
     Rjb::load(dir, jvmargs=["-Xmx4000M"])
     package_manager = Rjb::import("weka.core.WekaPackageManager")
     package_manager.loadPackages( false, true, false )
-    abstract_classifier = Rjb::import("weka.classifiers.AbstractClassifier")
-    java_class = Rjb::import("java.lang.Class").forName("weka.classifiers.functions.LibSVM")
+
+    libsvm = Rjb::import("weka.classifiers.functions.LibSVM")
+    svm = libsvm.new
+    obj = Rjb::import("weka.classifiers.functions.LibSVM")
+    classifier = obj.new
+
+    # weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/hvt/Downloads/weka-3-8-0 -seed 1
+    options = ("-S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1")
+    optionsArray = options.split(" ")
+    classifier.setOptions(optionsArray)
+
+    file = Rjb::import("java.io.FileReader").new(path)
+    train = Rjb::import("weka.core.Instances").new(file)
+
+    lastIndex = train.numAttributes() - 1
+
+    train.setClassIndex(train.numAttributes() - 1)
+    classifier.buildClassifier(train)
+
+    return train
+  end
+
+  def build_weka_svm_test(path, train)
+    dir = "./lib/weka.jar"
+    Rjb::load(dir, jvmargs=["-Xmx4000M"])
+    package_manager = Rjb::import("weka.core.WekaPackageManager")
+    package_manager.loadPackages( false, true, false )
+
+    libsvm = Rjb::import("weka.classifiers.functions.LibSVM")
+    svm = libsvm.new
+    obj = Rjb::import("weka.classifiers.functions.LibSVM")
+    classifier = obj.new
+
+    # weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/hvt/Downloads/weka-3-8-0 -seed 1
+    options = ("-S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1")
+    optionsArray = options.split(" ")
+    classifier.setOptions(optionsArray)
+
+    file = Rjb::import("java.io.FileReader").new(path)
+    test = Rjb::import("weka.core.Instances").new(file)
+
+    lastIndex = train.numAttributes() - 1
+
+    test.setClassIndex(test.numAttributes() - 1)
+
+    results = []
+    for i in 0..(test.numInstances() - 1)
+      index = classifier.classifyInstance(test.instance(i))
+      index = index.to_i
+      puts "index --> #{index}"
+      className = train.attribute(lastIndex).value(index)
+      puts "classname --> #{className}"
+      results << className
+    end
+    return results
+  end
+
+  def build_weka_svm(path = '', test_path = '')
+    dir = "./lib/weka.jar"
+    Rjb::load(dir, jvmargs=["-Xmx4000M"])
+    package_manager = Rjb::import("weka.core.WekaPackageManager")
+    package_manager.loadPackages( false, true, false )
+
+    # abstract_classifier = Rjb::import("weka.classifiers.AbstractClassifier")
+    # classifier = abstract_classifier.new
+    libsvm = Rjb::import("weka.classifiers.functions.LibSVM")
+    svm = libsvm.new
+    # classifier = libsvm.new_with_sig('Lweka.classifiers.AbstractClassifier;')
+    obj = Rjb::import("weka.classifiers.functions.LibSVM")
+    classifier = obj.new
+    # java_class = Rjb::import("java.lang.Class").forName("weka.classifiers.functions.LibSVM").newInstance()
+
+    # weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/hvt/Downloads/weka-3-8-0 -seed 1
+    options = ("-S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1")
+    optionsArray = options.split(" ")
+    classifier.setOptions(optionsArray)
+
+    # DataSource = Rjb::import("weka.core.converters.ConverterUtils.DataSource")
+    # data_src = DataSource.new(DATA_PATH + "/SWA_20.arff")
+    # instance = data_src.getDataSet()
+    file = Rjb::import("java.io.FileReader").new(path)
+    train = Rjb::import("weka.core.Instances").new(file)
+
+    file_test = Rjb::import("java.io.FileReader").new(test_path)
+    test = Rjb::import("weka.core.Instances").new(file_test)
+
+    lastIndex = train.numAttributes() - 1
+
+    train.setClassIndex(train.numAttributes() - 1)
+    classifier.buildClassifier(train)
+
+    test.setClassIndex(test.numAttributes() - 1)
+
+    # test.each_with_index do |ins,i|
+    #   pred = classifier.classifyInstance(test.instance(i))
+    #   puts "ID: #{test.instance(i).value(0)}\n"
+    #   puts "Actual: #{test.classAttribute().value(test.instance(i).classValue())}"
+    #   puts "Predict: #{test.classAttribute().value(pred)}"
+    # end
+    # for i in 0..(test.numInstances())
+    #   pred = classifier.classifyInstance(test.instance(i))
+    #   puts "ID: #{test.instance(i).value(0)}\n"
+    #   # puts "classattribute --> #{test.classAttribute().inspect}"
+    #   puts "test --> #{test.instance(i).inspect}"
+    #   # puts "Actual: #{test.classAttribute().value(test.instance(i).classValue())}"
+    #   att = test.classAttribute()
+    #   puts "Predict: #{att.value(pred)}"
+    # end
+
+    results = []
+    for i in 0..(test.numInstances() - 1)
+      index = classifier.classifyInstance(test.instance(i))
+      index = index.to_i
+      puts "index --> #{index}"
+      className = train.attribute(lastIndex).value(index)
+      puts "classname --> #{className}"
+      results << className
+    end
+    # puts results
+    return results
 
 # WekaPackageManager.loadPackages( false, true, false );
 # AbstractClassifier classifier = ( AbstractClassifier ) Class.forName(
@@ -1248,26 +1376,25 @@ class ReadData
 #     classifier.setOptions( optionsArray );
 # classifier.buildClassifier( train );
     
-    obj = Rjb::import("weka.classifiers.functions.LibSVM")
-    classifiers = obj.new
+    # obj = Rjb::import("weka.classifiers.functions.LibSVM")
+    # classifiers = obj.new
 
     #load the data using Java and Weka
-    data = Rjb::import("java.io.FileReader").new(path)
-    data = Rjb::import("weka.core.Instances").new(data)
+    # data = Rjb::import("java.io.FileReader").new(path)
+    # data = Rjb::import("weka.core.Instances").new(data)
     
     #Find the frequent itemsets
     # weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/hvt/Downloads/weka-3-8-0 -seed 1
-    classifiers.setKernelType(0)
+    # classifiers.setKernelType(0)
+    # classifiers.buildClassifier(data)
 
-    classifiers.buildClassifier(data)
-
-    output = File.open(DATA_PATH + "/weka-svm-output.txt", "w")
-    output.write("")
-    output.write(classifiers.toString)
-    output.close
+    # output = File.open(DATA_PATH + "/weka-svm-output.txt", "w")
+    # output.write("")
+    # output.write(classifier.toString)
+    # output.close
   end
 
-  def build_weka_naivebayes(path = '')
+  def build_weka_naivebayes(path = '', test_path)
     dir = "./lib/weka.jar"
     Rjb::load(dir, jvmargs=["-Xmx4000M"])
     obj = Rjb::import("weka.classifiers.bayes.NaiveBayes")
@@ -1276,6 +1403,7 @@ class ReadData
     #load the data using Java and Weka
     data = Rjb::import("java.io.FileReader").new(path)
     data = Rjb::import("weka.core.Instances").new(data)
+    data.setClassIndex(data.numAttributes() - 1)
     
     #Find the frequent itemsets
     classifiers.buildClassifier(data)
@@ -1284,6 +1412,17 @@ class ReadData
     output.write("")
     output.write(classifiers.toString)
     output.close
+  end
+
+  def assign_classification_results(data_test, classification_results)
+    i = 0
+    data_test.each_with_index do |line, index|
+      line.Alignment.each do |aln|
+        aln.tag_name = classification_results[i]
+        i = i+1
+      end
+    end
+    return data_test
   end
 
   def re_align(aligns, al_index, target_numbers)
@@ -1597,26 +1736,27 @@ class ReadData
     data_features = get_list_of_features(data) 
     file_arff = File.open(DATA_PATH + "/arff.arff", "w")
     file_arff.write("")
-    file_arff.write("@RELATION SWA_classification\n\n")
-    file_arff.write("@ATTRIBUTE s_str {#{build_distinct_value('s_str', data_features).join(",")}}\n")
-    file_arff.write("@ATTRIBUTE t_str {#{build_distinct_value('t_str', data_features).join(",")}}\n")
-    file_arff.write("@ATTRIBUTE st_samestr {0,1}\n")
-    file_arff.write("@ATTRIBUTE s_stem {#{build_distinct_value('s_stem', data_features).join(",")}}\n")
-    file_arff.write("@ATTRIBUTE t_stem {#{build_distinct_value('t_stem', data_features).join(",")}}\n")
-    file_arff.write("@ATTRIBUTE st_samestem {0,1}\n")
-    file_arff.write("@ATTRIBUTE s_pos {#{build_distinct_value('s_pos', data_features).join(",")}}\n")
-    file_arff.write("@ATTRIBUTE t_pos {#{build_distinct_value('t_pos', data_features).join(",")}}\n")
-    # file_arff.write("@ATTRIBUTE s_pos STRING")
-    # file_arff.write("@ATTRIBUTE t_pos STRING")
-    file_arff.write("@ATTRIBUTE st_precede {0,1}\n")
-    file_arff.write("@ATTRIBUTE st_follow {0,1}\n")
-    file_arff.write("@ATTRIBUTE class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
-    file_arff.write("@DATA\n")
+    file_arff.write("@relation SWA_classification\n\n")
+    file_arff.write("@attribute s_str {#{build_distinct_value('s_str', data_features).join(",")}}\n")
+    file_arff.write("@attribute t_str {#{build_distinct_value('t_str', data_features).join(",")}}\n")
+    file_arff.write("@attribute st_samestr {0,1}\n")
+    file_arff.write("@attribute s_stem {#{build_distinct_value('s_stem', data_features).join(",")}}\n")
+    file_arff.write("@attribute t_stem {#{build_distinct_value('t_stem', data_features).join(",")}}\n")
+    file_arff.write("@attribute st_samestem {0,1}\n")
+    file_arff.write("@attribute s_pos {#{build_distinct_value('s_pos', data_features).join(",")}}\n")
+    file_arff.write("@attribute t_pos {#{build_distinct_value('t_pos', data_features).join(",")}}\n")
+    # file_arff.write("@attribute s_pos STRING")
+    # file_arff.write("@attribute t_pos STRING")
+    file_arff.write("@attribute st_precede {0,1}\n")
+    file_arff.write("@attribute st_follow {0,1}\n")
+    file_arff.write("@attribute class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}\n\n")
+    file_arff.write("@data\n")
 
     data_features.each do |ft|
       array = [ft.s_str, ft.t_str, ft.st_samestr, ft.s_stem, ft.t_stem, ft.st_samestem, ft.s_pos, ft.t_pos, ft.st_precede, ft.st_follow, ft.tag_name]
       file_arff.write(array.map{|e| (e == nil || e == "") ? "?" : "#{e}"}.join(",") + "\n")
     end
+    file_arff.close
   end
 
   def print_csv(data)

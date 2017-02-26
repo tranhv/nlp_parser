@@ -1,0 +1,19 @@
+@relation SWA_classification
+
+@attribute s_str {I,am,Mai,}
+@attribute t_str {I,am,,Ngan}
+@attribute st_samestr {0,1}
+@attribute s_stem {I,be,Mai,}
+@attribute t_stem {I,be,,Ngan}
+@attribute st_samestem {0,1}
+@attribute s_pos {PRP,RB,NNP,}
+@attribute t_pos {PRP,RB,,NNP}
+@attribute st_precede {0,1}
+@attribute st_follow {0,1}
+@attribute class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}
+
+@data
+I,I,1,I,I,1,PRP,PRP,0,1,?
+am,am,1,be,be,1,RB,RB,1,0,?
+Mai,?,0,Mai,?,0,NNP,?,0,0,?
+?,Ngan,0,?,Ngan,0,?,NNP,0,0,?
