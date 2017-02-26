@@ -62,7 +62,8 @@ class Nlp < Sinatra::Base
       read_data.print_arff(data_aligned)
 
       # read_data.build_weka_naivebayes(data_path + "/SWA_20.arff")
-      classification_results = read_data.build_weka_svm(data_path + "/SWA_20.arff", data_path + "/arff.arff")
+      classifier, train = read_data.build_weka_svm_train(data_path + "/SWA_20.arff")
+      classification_results = read_data.build_weka_svm_test(data_path + "/arff.arff", classifier, train)
       @@data_classified = read_data.assign_classification_results(data_aligned, classification_results)
       # weka_cmd = "java -classpath ./lib/weka.jar weka.classifiers.functions.LibSVM -t ./data/SWA_20.arff"
       redirect '/'

@@ -229,7 +229,8 @@ class ReadData
 
     data_test = remove_all_tags(data_test)
     print_arff(data_test)
-    classification_results = build_weka_svm(DATA_PATH + "/SWA_20.arff", DATA_PATH + "/arff.arff")
+    train = build_weka_svm_train(DATA_PATH + "/SWA_20.arff")
+    classification_results = build_weka_svm_test(DATA_PATH + "/arff.arff", train)
     data_test = assign_classification_results(data_test, classification_results)
     puts "data_test --> #{data_test}"
   end
@@ -1265,24 +1266,14 @@ class ReadData
     train.setClassIndex(train.numAttributes() - 1)
     classifier.buildClassifier(train)
 
-    return train
+    return classifier, train
   end
 
-  def build_weka_svm_test(path, train)
+  def build_weka_svm_test(path, classifier, train)
     dir = "./lib/weka.jar"
     Rjb::load(dir, jvmargs=["-Xmx4000M"])
     package_manager = Rjb::import("weka.core.WekaPackageManager")
     package_manager.loadPackages( false, true, false )
-
-    libsvm = Rjb::import("weka.classifiers.functions.LibSVM")
-    svm = libsvm.new
-    obj = Rjb::import("weka.classifiers.functions.LibSVM")
-    classifier = obj.new
-
-    # weka.classifiers.functions.LibSVM -S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1 -model /Users/hvt/Downloads/weka-3-8-0 -seed 1
-    options = ("-S 0 -K 0 -D 3 -G 0.0 -R 0.0 -N 0.5 -M 40.0 -C 1.0 -E 0.001 -P 0.1")
-    optionsArray = options.split(" ")
-    classifier.setOptions(optionsArray)
 
     file = Rjb::import("java.io.FileReader").new(path)
     test = Rjb::import("weka.core.Instances").new(file)
