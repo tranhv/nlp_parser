@@ -31,6 +31,7 @@ class ReadData
                         :tag_name
                         )
   N80_PERCENT = 2759
+  PRESERVED = "preserved"
 
   def lemmatizer
     return @Lemmatizer if @Lemmatizer
@@ -2388,6 +2389,29 @@ class ReadData
           get_string_by_index(alg.target_numbers, pair.target), 
           alg.tag_name
           ]
+      end
+    end
+    output
+  end
+
+    def build_statistics(data)
+    output = {}
+    output["Total"] = {:count => 0, :percent => "100%"}
+    data.each_with_index do |pair, index_pair|
+      output["Total"][:count] += pair.Alignment.select {|alig| alig.tag_name != PRESERVED}.length
+    end
+
+    data.each_with_index do |pair, index_pair|
+      pair.Alignment.each_with_index do |alg, index_aln|
+        if alg.tag_name != PRESERVED
+          if output[alg.tag_name].nil?
+            output[alg.tag_name] = {:count => 1, :percent => (((1.to_f/output["Total"][:count].to_f)*100.0).round(2)).to_s + "%"}
+          else
+            output[alg.tag_name][:count] += 1
+            percent = ((output[alg.tag_name][:count].to_f/output["Total"][:count].to_f)*100).round(2)
+            output[alg.tag_name][:percent] = percent.to_s + "%"
+          end
+        end
       end
     end
     output

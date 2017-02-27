@@ -6,6 +6,7 @@ class Nlp < Sinatra::Base
     @output = ""
     @@data_classified = nil
     @training_output = "Chưa training"
+    @statistics = ""
     @@classifier = nil
     @@train = nil
     data_path = "./data"
@@ -27,10 +28,11 @@ class Nlp < Sinatra::Base
         @content = "Data not found"
       end
       read_data = ReadData.new
-      # @data_output = read_data.build_output_data(read_data.get_data_fce("./data/test_json.xml"))
+      #@@data_classified = read_data.get_data_fce("./data/test_json.xml")
       
       unless @@data_classified.nil?
         @data_output = read_data.build_output_data(@@data_classified)
+        @statistics = read_data.build_statistics(@@data_classified)
       else
         @data_output = []
       end
