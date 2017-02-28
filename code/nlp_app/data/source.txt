@@ -1,0 +1,6 @@
+The target parsers are adapted to the sentences for these constructions extracted from fiction and query texts .
+The analysis of the experimental results will illustrate the necessity for handling various sentence constructions by fundamental improvement of parsers such as re-construction of feature designs .
+Parsing is a fundamental natural language processing task and essential for various NLP applications .
+It was good at English-Japanese but not at Japanese-English translations .
+Specifically , we assume that there exist strong sense dependencies between a syntactic head and its dependents in the dependency tree , rather than between neighboring words in the sentence .
+In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .

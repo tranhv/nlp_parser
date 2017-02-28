@@ -1,22 +1,65 @@
-<h2>Alignment Classification</h2>
-<h3>Input</h3>
+<div id="container" style="white-space:nowrap">
+  <div id="image" style="display:inline; float: left;">
+    <img src="./images/Logo_UIT_Web_Transparent.png" alt="logo" style="width:50px;height:60px;">
+  </div>
+  <div id="texts"  align="center">
+    <font color="#0000A0"> ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH </font>
+    <p>
+    <font color="#0000A0"> TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN </font>
+  </div>
+</div>
+
+<hr>
+
+<head>
+  <title>Phân Lớp Liên Kết Từ</title>
+</head>
+
+<div align="center">
+  <font color = "blue"><h2>Phân lớp liên kết từ cho mục đích hỗ trợ học tiếng Anh </h2></font>
+</div>
 
 <section id="training">
   <form action="/training" method="post">
-    <input type="submit" value="Training">
+    <input type="submit" value="Huấn Luyện Ngữ Liệu">
   </form>
 <%= @training_output%>
+
+<h3>Input</h3>
+
 </section>
 <section id="submit">
   <form action="/" method="post">
-    <textarea cols="100" rows="20" name="content" placeholder="Your data&hellip;"><% if !@content.empty? %><%= @content %><% end %></textarea>
+    <textarea cols="100" rows="20" name="content" placeholder="Văn bản gốc&hellip;"><% if !@content.empty? %><%= @content %><% end %></textarea>
+    <textarea cols="100" rows="20" name="content2" placeholder="Văn bản đã được chỉnh sửa&hellip;"><% if !@content2.empty? %><%= @content2 %><% end %></textarea>
     </br>
-    <input type="submit" value="Run">
+    <input type="submit" value="Liên Kết Từ và Phân Lớp" style="font-size:11pt; background-color:#82CAFF;">
   </form>
 </section>
 
-<h3>Output</h3>
 <div>
+<h3>Thống Kê Lỗi</h3>
+
+<table style="border: 1px solid black;border-collapse: collapse;display:inline-block;float: left;">
+  <% @statistics.each do |key, value|%>
+      <tr style="height:29px;">
+            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+              <%= key%>
+            </td>
+            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+              <%= value[:count]%>
+            </td>
+            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+              <%= value[:percent]%>
+            </td>
+      </tr>
+<%end%>
+</table>
+
+<p>
+
+<h3>Output</h3>
+
 <% @data_output.each do |phase, values|%>
 <p><%=phase%></p>
   <% values.each_with_index do |alg, index|%>
@@ -45,24 +88,7 @@
     </div>
   <%end%>
   <br>
-  <br>
 <%end%>
-<h3>Statistics</h3>
-<br>
 
-<table style="border: 1px solid black;border-collapse: collapse;display:inline-block;float: left;>
-  <% @statistics.each do |key, value|%>
-      <tr style="height:29px;">
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
-              <%= key%>
-            </td>
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
-              <%= value[:count]%>
-            </td>
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
-              <%= value[:percent]%>
-            </td>
-      </tr>
-<%end%>
-</table>
+
 </div>

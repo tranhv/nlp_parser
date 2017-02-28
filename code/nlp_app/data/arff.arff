@@ -1,19 +1,207 @@
 @relation SWA_classification
 
-@attribute s_str {I,am,Mai,}
-@attribute t_str {I,am,,Ngan}
+@attribute s_str {In,experiments,',',we,show,the,appropriateness,of,considering,sense,dependencies,as,well,advantage,combination,fine-,and,coarse-grained,tag,sets,.,}
+@attribute t_str {In,experiments,',',we,display,the,appropriateness,of,considering,sense,dependencies,as,well,advantage,combination,fine-,and,coarse-grained,tag,sets,.,[having,?,Using,?]}
 @attribute st_samestr {0,1}
-@attribute s_stem {I,be,Mai,}
-@attribute t_stem {I,be,,Ngan}
+@attribute s_stem {In,experiment,',',we,show,the,appropriateness,of,consider,sense,dependency,as,well,advantage,combination,fine-,and,coarse-grained,tag,set,.,}
+@attribute t_stem {In,experiment,',',we,display,the,appropriateness,of,consider,sense,dependency,as,well,advantage,combination,fine-,and,coarse-grained,tag,set,.,[having,?,Using,?]}
 @attribute st_samestem {0,1}
-@attribute s_pos {PRP,RB,NNP,}
-@attribute t_pos {PRP,RB,,NNP}
+@attribute s_pos {IN,NNS,PPR,PRP,NN,DET,VBG,RB,CC,JJ,PP,}
+@attribute t_pos {IN,NNS,PPR,PRP,NN,DET,VBG,RB,CC,JJ,PP,RRB}
 @attribute st_precede {0,1}
 @attribute st_follow {0,1}
 @attribute class {preserved,bigrammar-vtense,bigrammar-wform,bigrammar-inter,paraphrase,unaligned,mogrammar-prep,mogrammar-det,bigrammar-prep,bigrammar-det,bigrammar-others,typo,spelling,duplicate,moproblematic,biproblematic,unspec}
 
 @data
-I,I,1,I,I,1,PRP,PRP,0,1,?
-am,am,1,be,be,1,RB,RB,1,0,?
-Mai,?,0,Mai,?,0,NNP,?,0,0,?
-?,Ngan,0,?,Ngan,0,?,NNP,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?
+In,In,1,In,In,1,IN,IN,1,1,?
+experiments,experiments,1,experiment,experiment,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+we,we,1,we,we,1,PRP,PRP,1,0,?
+show,display,0,show,display,0,NN,NN,1,1,?
+the,the,1,the,the,1,DET,DET,0,1,?
+appropriateness,appropriateness,1,appropriateness,appropriateness,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+considering,considering,1,consider,consider,1,VBG,VBG,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+sense,sense,1,sense,sense,1,NN,NN,1,1,?
+dependencies,dependencies,1,dependency,dependency,1,NNS,NNS,1,1,?
+',',',',1,',',',',1,PPR,PPR,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+well,well,1,well,well,1,RB,RB,1,1,?
+as,as,1,as,as,1,IN,IN,1,1,?
+the,the,1,the,the,1,DET,DET,1,1,?
+advantage,advantage,1,advantage,advantage,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,0,?
+the,the,1,the,the,1,DET,DET,0,1,?
+combination,combination,1,combination,combination,1,NN,NN,1,1,?
+of,of,1,of,of,1,IN,IN,1,1,?
+fine-,fine-,1,fine-,fine-,1,NN,NN,1,1,?
+and,and,1,and,and,1,CC,CC,1,1,?
+coarse-grained,coarse-grained,1,coarse-grained,coarse-grained,1,JJ,JJ,1,1,?
+tag,tag,1,tag,tag,1,NN,NN,1,1,?
+sets,sets,1,set,set,1,NNS,NNS,1,1,?
+.,.,1,.,.,1,PP,PP,1,1,?
+?,[having,0,?,[having,0,?,VBG,0,0,?
+?,?,0,?,?,0,?,PP,0,0,?
+?,Using,0,?,Using,0,?,VBG,0,0,?
+?,?],0,?,?],0,?,RRB,0,0,?

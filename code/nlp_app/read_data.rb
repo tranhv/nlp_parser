@@ -1224,7 +1224,7 @@ class ReadData
     return sen
   end
 
-  def get_data_demo(path)
+  def get_data_demo_old(path)
     data = []
     sentence_pair = Sentence_Pair.new
     File.open(path, 'r').each_with_index do |line, index|
@@ -1238,6 +1238,18 @@ class ReadData
         sentence_pair.target = line.gsub("\n","").gsub("\r","")
         data << sentence_pair
       end
+    end
+  end
+
+  def get_data_demo(path1, path2)
+    data = []
+    sentence_pair = Sentence_Pair.new
+    File.open(path1, 'r').each_with_index do |line, index|
+        sentence_pair.source = line.gsub("\n","").gsub("\r","")
+        data << sentence_pair
+    end
+    File.open(path2, 'r').each_with_index do |line, index|
+        data[index].target = line.gsub("\n","").gsub("\r","")
     end
 
     return data
