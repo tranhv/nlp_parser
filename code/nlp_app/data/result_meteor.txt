@@ -1,171 +1,118 @@
 Alignment 1
-In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+The target parsers are adapted to the sentences for these constructions extracted from fiction and query texts .
+The target parsers are adapted to sentences of these constructions extracted from fiction and query texts .
 Line2Start:Length	Line1Start:Length	Module		Score
 0:1			0:1			0		1.0
 1:1			1:1			0		1.0
 2:1			2:1			0		1.0
 3:1			3:1			0		1.0
-4:1			4:1			2		1.0
+4:1			4:1			0		1.0
 5:1			5:1			0		1.0
-6:1			6:1			0		1.0
-7:1			7:1			0		1.0
-8:1			8:1			0		1.0
-9:1			9:1			0		1.0
-10:1			10:1			0		1.0
-11:1			11:1			0		1.0
-12:1			12:1			0		1.0
-13:1			13:1			0		1.0
-14:1			14:1			0		1.0
-15:1			15:1			0		1.0
-16:1			16:1			0		1.0
-17:1			17:1			0		1.0
-18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
+6:1			7:1			0		1.0
+8:1			9:1			0		1.0
+9:1			10:1			0		1.0
+10:1			11:1			0		1.0
+11:1			12:1			0		1.0
+12:1			13:1			0		1.0
+13:1			14:1			0		1.0
+14:1			15:1			0		1.0
+15:1			16:1			0		1.0
+16:1			17:1			0		1.0
 
 Alignment 2
-In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+The analysis of the experimental results will illustrate the necessity for handling various sentence constructions by fundamental improvement of parsers such as re-construction of feature designs .
+Analysis of the experimental results illustrates the need to handle different sentence constructions through fundamental improvement of the parsers such as re-construction of feature designs .
 Line2Start:Length	Line1Start:Length	Module		Score
-0:1			0:1			0		1.0
-1:1			1:1			0		1.0
-2:1			2:1			0		1.0
-3:1			3:1			0		1.0
-4:1			4:1			2		1.0
-5:1			5:1			0		1.0
-6:1			6:1			0		1.0
-7:1			7:1			0		1.0
-8:1			8:1			0		1.0
-9:1			9:1			0		1.0
-10:1			10:1			0		1.0
-11:1			11:1			0		1.0
-12:1			12:1			0		1.0
-13:1			13:1			0		1.0
-14:1			14:1			0		1.0
-15:1			15:1			0		1.0
-16:1			16:1			0		1.0
-17:1			17:1			0		1.0
-18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
+1:1			2:1			0		1.0
+2:1			3:1			0		1.0
+3:1			4:1			0		1.0
+4:1			5:1			0		1.0
+5:1			7:1			1		1.0
+6:1			8:1			0		1.0
+7:1			9:1			3		1.0
+8:2			10:2			3		1.0
+10:1			12:1			3		1.0
+11:1			13:1			0		1.0
+12:1			14:1			0		1.0
+14:1			16:1			0		1.0
+15:1			17:1			0		1.0
+16:1			18:1			0		1.0
+18:1			19:1			0		1.0
+19:1			20:1			0		1.0
+20:1			21:1			0		1.0
+21:1			22:1			0		1.0
+22:1			23:1			0		1.0
+23:1			24:1			0		1.0
+24:1			25:1			0		1.0
+25:1			26:1			0		1.0
 
 Alignment 3
-In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+Parsing is a fundamental natural language processing task and essential for various NLP applications .
+Parsing is a fundamental natural language processing task and essential to various NLP applications .
 Line2Start:Length	Line1Start:Length	Module		Score
 0:1			0:1			0		1.0
 1:1			1:1			0		1.0
 2:1			2:1			0		1.0
 3:1			3:1			0		1.0
-4:1			4:1			2		1.0
+4:1			4:1			0		1.0
 5:1			5:1			0		1.0
 6:1			6:1			0		1.0
 7:1			7:1			0		1.0
 8:1			8:1			0		1.0
 9:1			9:1			0		1.0
-10:1			10:1			0		1.0
-11:1			11:1			0		1.0
+10:2			10:2			3		1.0
 12:1			12:1			0		1.0
 13:1			13:1			0		1.0
 14:1			14:1			0		1.0
-15:1			15:1			0		1.0
-16:1			16:1			0		1.0
-17:1			17:1			0		1.0
-18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
 
 Alignment 4
-In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+It was good at English-Japanese but not at Japanese-English translations .
+It excelled with English-Japanese translations , but not with Japanese-English translations .
 Line2Start:Length	Line1Start:Length	Module		Score
 0:1			0:1			0		1.0
-1:1			1:1			0		1.0
-2:1			2:1			0		1.0
-3:1			3:1			0		1.0
-4:1			4:1			2		1.0
-5:1			5:1			0		1.0
-6:1			6:1			0		1.0
-7:1			7:1			0		1.0
-8:1			8:1			0		1.0
-9:1			9:1			0		1.0
-10:1			10:1			0		1.0
-11:1			11:1			0		1.0
-12:1			12:1			0		1.0
-13:1			13:1			0		1.0
-14:1			14:1			0		1.0
-15:1			15:1			0		1.0
-16:1			16:1			0		1.0
-17:1			17:1			0		1.0
-18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
+3:1			4:1			0		1.0
+6:1			5:1			0		1.0
+7:1			6:1			0		1.0
+9:1			8:1			0		1.0
+10:1			9:1			0		1.0
+11:1			10:1			0		1.0
 
 Alignment 5
-In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+Specifically , we assume that there exist strong sense dependencies between a syntactic head and its dependents in the dependency tree , rather than between neighboring words in the sentence .
+Specifically , we assume that are strong sense dependencies between a syntactic head , and its dependents in the dependency tree , rather than between neighboring words of a sentence .
 Line2Start:Length	Line1Start:Length	Module		Score
 0:1			0:1			0		1.0
 1:1			1:1			0		1.0
 2:1			2:1			0		1.0
 3:1			3:1			0		1.0
-4:1			4:1			2		1.0
-5:1			5:1			0		1.0
-6:1			6:1			0		1.0
-7:1			7:1			0		1.0
-8:1			8:1			0		1.0
-9:1			9:1			0		1.0
-10:1			10:1			0		1.0
-11:1			11:1			0		1.0
-12:1			12:1			0		1.0
-13:1			13:1			0		1.0
+4:1			4:1			0		1.0
+5:1			6:1			2		1.0
+6:1			7:1			0		1.0
+7:1			8:1			0		1.0
+8:1			9:1			0		1.0
+9:1			10:1			0		1.0
+10:1			11:1			0		1.0
+11:1			12:1			0		1.0
+12:1			13:1			0		1.0
+13:1			21:1			0		1.0
 14:1			14:1			0		1.0
 15:1			15:1			0		1.0
 16:1			16:1			0		1.0
 17:1			17:1			0		1.0
 18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
+19:1			19:1			0		1.0
+20:1			20:1			0		1.0
+22:1			22:1			0		1.0
+23:1			23:1			0		1.0
+24:1			24:1			0		1.0
+25:1			25:1			0		1.0
+26:2			26:2			3		1.0
+28:2			28:2			3		1.0
+30:1			30:1			0		1.0
 
 Alignment 6
 In experiments , we show the appropriateness of considering the sense dependencies , as well as the advantage of the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+In experiments , we display the appropriateness of considering the sense dependencies , as well as the improvement of [having the result of fine- and coarse-grained tag sets .
 Line2Start:Length	Line1Start:Length	Module		Score
 0:1			0:1			0		1.0
 1:1			1:1			0		1.0
@@ -184,15 +131,13 @@ Line2Start:Length	Line1Start:Length	Module		Score
 14:1			14:1			0		1.0
 15:1			15:1			0		1.0
 16:1			16:1			0		1.0
-17:1			17:1			0		1.0
 18:1			18:1			0		1.0
-23:1			19:1			0		1.0
-24:1			20:1			0		1.0
-25:1			21:1			0		1.0
-26:1			22:1			0		1.0
-27:1			23:1			0		1.0
-28:1			24:1			0		1.0
-29:1			25:1			0		1.0
-30:1			26:1			0		1.0
-31:1			27:1			0		1.0
+20:1			19:1			0		1.0
+22:1			21:1			0		1.0
+23:1			22:1			0		1.0
+24:1			23:1			0		1.0
+25:1			24:1			0		1.0
+26:1			25:1			0		1.0
+27:1			26:1			0		1.0
+28:1			27:1			0		1.0
 

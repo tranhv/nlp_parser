@@ -1243,14 +1243,19 @@ class ReadData
 
   def get_data_demo(path1, path2)
     data = []
-    sentence_pair = Sentence_Pair.new
+    puts "path1 --> #{path1}"
+    puts "path2 --> #{path2}"
+    
     File.open(path1, 'r').each_with_index do |line, index|
+        sentence_pair = Sentence_Pair.new
         sentence_pair.source = line.gsub("\n","").gsub("\r","")
         data << sentence_pair
     end
     File.open(path2, 'r').each_with_index do |line, index|
         data[index].target = line.gsub("\n","").gsub("\r","")
     end
+
+    puts "daaaaaaaaa -> #{data}"
 
     return data
   end

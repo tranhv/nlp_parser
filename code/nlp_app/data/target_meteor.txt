@@ -1,6 +1,6 @@
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
-In experiments , we display the appropriateness of considering the sense dependencies , as well as the advantage of [having ? Using ?] the combination of fine- and coarse-grained tag sets .
+The target parsers are adapted to sentences of these constructions extracted from fiction and query texts .
+Analysis of the experimental results illustrates the need to handle different sentence constructions through fundamental improvement of the parsers such as re-construction of feature designs .
+Parsing is a fundamental natural language processing task and essential to various NLP applications .
+It excelled with English-Japanese translations , but not with Japanese-English translations .
+Specifically , we assume that are strong sense dependencies between a syntactic head , and its dependents in the dependency tree , rather than between neighboring words of a sentence .
+In experiments , we display the appropriateness of considering the sense dependencies , as well as the improvement of [having the result of fine- and coarse-grained tag sets .

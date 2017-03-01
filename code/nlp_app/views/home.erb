@@ -37,10 +37,12 @@
   </form>
 </section>
 
-<div>
-<h3>Thống Kê Lỗi</h3>
 
-<table style="border: 1px solid black;border-collapse: collapse;display:inline-block;float: left;">
+
+<h3>Thống Kê Lỗi</h3>
+<br>
+
+<table style="border: 1px solid black;border-collapse: collapse;display:inline-block;">
   <% @statistics.each do |key, value|%>
       <tr style="height:29px;">
             <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
@@ -56,9 +58,9 @@
 <%end%>
 </table>
 
-<p>
-
 <h3>Output</h3>
+
+<div>
 
 <% @data_output.each do |phase, values|%>
 <p><%=phase%></p>
