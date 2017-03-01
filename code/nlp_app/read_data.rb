@@ -1821,12 +1821,54 @@ class ReadData
       source_remain = (0..(source_length - 1)).to_a - source_num.flatten.map{|e| e.to_i}
       target_remain = (0..(target_length - 1)).to_a - target_num.flatten.map{|e| e.to_i}
 
-      source_remain.each do |remain|
-        pairs.Alignment << Alignment.new(remain.to_s,"","unaligned")
+      # source_remain.each do |remain|
+      #   pairs.Alignment << Alignment.new(remain.to_s,"","unaligned")
+      # end
+      # target_remain.each do |remain|
+      #   pairs.Alignment << Alignment.new("",remain.to_s,"unaligned")
+      # end
+
+      aligns = []
+      max_s = 0
+      max_t = 0
+      pairs.Alignment.each_with_index do |aln, i|
+        s_nums = aln.source_numbers.split(",").map(&:to_i)
+        t_nums = aln.target_numbers.split(",").map(&:to_i)
+        if s_nums.include?(max_s)
+          aligns << aln
+          max_s = s_nums.max
+          max_t = t_nums.max
+          next
+        end
+
+        count_miss_s = s_nums.min - max_s
+        count_miss_t = t_nums.min - max_t
+
+        if ( count_miss_s == 1) && (count_miss_t == 1)
+          aligns << aln
+          max_s = s_nums.max
+          max_t = t_nums.max
+          next
+        else
+          if count_miss_s > 1
+            ((max_s + 1)..(max_s + count_miss_s - 1)).each do |i|
+              aligns << Alignment.new(i.to_s, "", "unaligned")
+            end
+          end
+
+          if count_miss_t > 1
+            ((max_t + 1)..(max_t + count_miss_t - 1)).each do |i|
+              aligns << Alignment.new("", i.to_s,"unaligned")
+            end
+          end
+          aligns << aln
+          max_s = s_nums.max
+          max_t = t_nums.max
+        end
       end
-      target_remain.each do |remain|
-        pairs.Alignment << Alignment.new("",remain.to_s,"unaligned")
-      end
+
+      pairs.Alignment = aligns
+
     end
     return data
   end
