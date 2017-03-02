@@ -1,0 +1,30 @@
+.container{
+    white-space:nowrap
+}
+.button{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.td_statistics{
+border: 1px solid black;
+border-collapse: collapse;
+padding: 5px;
+}
+
+.unaligned{
+    background: red;
+    color: white;
+}
+
+.td_sentences{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.RP{
+    background: greenyellow;
+    color: black;
+}

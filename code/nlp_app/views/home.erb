@@ -1,4 +1,5 @@
-<div id="container" style="white-space:nowrap">
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<div id="container">
   <div id="image" style="display:inline; float: left;">
     <img src="./images/Logo_UIT_Web_Transparent.png" alt="logo" style="width:50px;height:60px;">
   </div>
@@ -21,7 +22,7 @@
 
 <section id="training">
   <form action="/training" method="post">
-    <input type="submit" value="Huấn Luyện Ngữ Liệu">
+    <input class="button" type="submit" value="Huấn Luyện Ngữ Liệu">
   </form>
 <%= @training_output%>
 
@@ -33,7 +34,7 @@
     <textarea cols="100" rows="20" name="content" placeholder="Văn bản gốc&hellip;"><% if !@content.empty? %><%= @content %><% end %></textarea>
     <textarea cols="100" rows="20" name="content2" placeholder="Văn bản đã được chỉnh sửa&hellip;"><% if !@content2.empty? %><%= @content2 %><% end %></textarea>
     </br>
-    <input type="submit" value="Liên Kết Từ và Phân Lớp" style="font-size:11pt; background-color:#82CAFF;">
+    <input class="button" type="submit" value="Liên Kết Từ và Phân Lớp" style="font-size:11pt; background-color:#82CAFF;">
   </form>
 </section>
 
@@ -45,13 +46,19 @@
 <table style="border: 1px solid black;border-collapse: collapse;display:inline-block;">
   <% @statistics.each do |key, value|%>
       <tr style="height:29px;">
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+            <td class="td_statistics 
+              <% if key == ''%>
+                <%=''%>
+              <%else%>
+                <%=key%>
+              <% end %>
+            ">
               <%= key%>
             </td>
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+            <td class="td_statistics">
               <%= value[:count]%>
             </td>
-            <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+            <td class="td_statistics">
               <%= value[:percent]%>
             </td>
       </tr>
@@ -82,7 +89,13 @@
           </td>
         </tr>
         <tr style="height:29px;">
-          <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;">
+          <td class="td_sentences 
+              <% if alg[2] == ''%>
+                <%=''%>
+              <%else%>
+                <%=alg[2]%>
+              <% end %>
+            ">
             <%= alg[2]%>
           </td>
         </tr>
